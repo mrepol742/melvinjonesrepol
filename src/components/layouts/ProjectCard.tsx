@@ -1,0 +1,54 @@
+import Link from "next/link";
+
+type ProjectCardProps = {
+  title: string;
+  description: string;
+  repo?: string;
+  link?: string;
+  download?: string;
+};
+
+export default function ProjectCard({
+  title,
+  description,
+  repo,
+  link,
+  download,
+}: ProjectCardProps) {
+  return (
+    <div className="bg-gray-800 rounded-2xl p-6 shadow hover:shadow-lg transition">
+      <h3 className="text-xl font-bold mb-2">{title}</h3>
+      <p className="text-white-800 mb-4">{description}</p>
+      {link && (
+        <Link
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 font-medium text-sm hover:underline mr-4"
+        >
+          View Project →
+        </Link>
+      )}
+      {repo && (
+        <Link
+          href={repo}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 font-medium text-sm hover:underline"
+        >
+          View Repo →
+        </Link>
+      )}
+      {download && (
+        <Link
+          href={download}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 font-medium text-sm hover:underline"
+        >
+          Download →
+        </Link>
+      )}
+    </div>
+  );
+}
