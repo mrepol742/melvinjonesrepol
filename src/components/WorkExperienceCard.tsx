@@ -12,10 +12,10 @@ export default function WorkExperienceCard({
   date,
 }: WorkExperienceProps) {
   return (
-    <div className="bg-gray-800 rounded-2xl p-6 shadow hover:shadow-lg transition mb-3">
+    <div className="bg-black/70 backdrop-blur rounded-xl p-6 shadow hover:shadow-lg transition mb-3">
       <h3 className="text-xl font-bold mb-2">{title}</h3>
       <span className="text-gray-500">{date}</span>
-      <p className="text-white-800 mb-4">{description}</p>
+      <p className="text-white-700 mb-4">{description}</p>
     </div>
   );
 }

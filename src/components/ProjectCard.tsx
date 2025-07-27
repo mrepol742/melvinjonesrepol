@@ -19,12 +19,12 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   return (
     <div
-      className="bg-gray-800 rounded-2xl p-6 shadow hover:shadow-lg transition"
+      className="bg-black/70 backdrop-blur rounded-xl p-6 shadow hover:shadow-lg transition"
       data-aos="fade-up"
       data-aos-delay={delay}
     >
       <h3 className="text-xl font-bold mb-2">{title}</h3>
-      <p className="text-white-800 mb-4">{description}</p>
+      <p className="text-white-700 mb-4">{description}</p>
       {link && (
         <Link
           href={link}
