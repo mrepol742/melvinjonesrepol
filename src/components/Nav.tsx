@@ -1,7 +1,8 @@
-"use client"
+"use client";
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -9,7 +10,14 @@ export default function Nav() {
   return (
     <nav className="rounded bg-gray-800 text-white p-4">
       <div className="mx-auto flex justify-between items-center">
-        <Link href="/" className="text-lg font-bold hover:underline">
+        <Link href="/" className="text-lg font-bold">
+          <Image
+            src="/favicon.png"
+            alt="Logo"
+            width={40}
+            height={40}
+            className="inline-block mr-2 rounded-full"
+          />
           Melvin Jones Repol
         </Link>
         {/* Hamburger button for mobile */}

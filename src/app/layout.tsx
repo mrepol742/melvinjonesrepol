@@ -42,16 +42,16 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    apple: "/favicon.png",
     other: [
       {
         rel: "icon",
-        url: "/favicon-32x32.png",
+        url: "/favicon.png",
         sizes: "32x32",
       },
       {
         rel: "icon",
-        url: "/favicon-16x16.png",
+        url: "/favicon.png",
         sizes: "16x16",
       },
     ],
@@ -66,10 +66,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
+        <div className="background-gloss">
+          <div className="gloss-circle circle1"></div>
+          <div className="gloss-circle circle2"></div>
+          <div className="gloss-circle circle3"></div>
+        </div>
         <Nav />
-        {children}
+        <div className="flex-1">{children}</div>
         <Footer />
       </body>
     </html>

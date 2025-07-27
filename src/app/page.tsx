@@ -8,8 +8,8 @@ export default function Home() {
           src="/images/melvinjonesrepol.png"
           alt="Hero Image"
           className="w-64 h-64 object-cover rounded-lg mb-6"
-          width={100}
-          height={100}
+          width={256}
+          height={256}
         />
         <h1 className="text-4xl font-bold">Hi, I&apos;m Melvin Jones</h1>
         <p className="text-gray-500">Software Engineer</p>
