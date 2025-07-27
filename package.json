@@ -14,6 +14,7 @@
     "@sentry/nextjs": "^9.42.0",
     "next": "15.4.4",
     "next-sitemap": "^4.2.3",
+    "nextjs-toploader": "^3.8.16",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },

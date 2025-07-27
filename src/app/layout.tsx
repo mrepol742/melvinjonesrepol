@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import NextTopLoader from "nextjs-toploader";
 import "./globals.css";
 
 const interSans = Inter({
@@ -86,6 +87,7 @@ export default function RootLayout({
           <div className="gloss-circle circle3"></div>
         </div>
         <Nav />
+        <NextTopLoader showSpinner={false} />
         <div className="flex-1">{children}</div>
         <Footer />
       </body>
