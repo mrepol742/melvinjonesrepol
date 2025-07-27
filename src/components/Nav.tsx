@@ -9,7 +9,9 @@ export default function Nav() {
   return (
     <nav className="rounded bg-gray-800 text-white p-4">
       <div className="mx-auto flex justify-between items-center">
-        <div className="text-lg font-bold">Melvin Jones Repol</div>
+        <Link href="/" className="text-lg font-bold hover:underline">
+          Melvin Jones Repol
+        </Link>
         {/* Hamburger button for mobile */}
         <button
           className="md:hidden flex flex-col justify-center items-center"
@@ -20,7 +22,7 @@ export default function Nav() {
           <span className="block w-6 h-0.5 bg-white mb-1"></span>
           <span className="block w-6 h-0.5 bg-white"></span>
         </button>
-        
+
         <ul className="hidden md:flex space-x-4">
           <li>
             <Link href="/" className="hover:underline">
@@ -33,12 +35,12 @@ export default function Nav() {
             </Link>
           </li>
           <li>
-            <Link href="/team" className="hover:underline">
-              Team
+            <Link href="/my-team" className="hover:underline">
+              My Team
             </Link>
           </li>
           <li>
-            <Link href="/contact" className="hover:underline">
+            <Link href="/contact-me" className="hover:underline">
               Contact
             </Link>
           </li>

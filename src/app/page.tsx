@@ -1,63 +1,25 @@
-import Hero from "../components/Hero";
-import Projects from "../components/Project";
-import Team from "../components/Team";
-import Footer from "../components/Footer";
-import Nav from "../components/Nav";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Melvin Jones",
-  description: "Melvin Jones Repol - Freelance Software Engineer",
-  openGraph: {
-    title: "Melvin Jones",
-    description: "Melvin Jones Repol - Freelance Software Engineer",
-    url: "https://melvinjonesrepol.com",
-    siteName: "Melvin Jones Repol",
-    images: [
-      {
-        url: "/images/melvinjonesrepol.png",
-        width: 800,
-        height: 600,
-        alt: "Melvin Jones Repol"
-      }
-    ],
-    locale: "en_US",
-    type: "website"
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Melvin Jones",
-    description: "Melvin Jones Repol - Freelance Software Engineer",
-    images: ["/images/melvinjonesrepol.png"],
-    creator: "@melvinjonesrepol"
-  },
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-    other: [
-      {
-        rel: "icon",
-        url: "/favicon-32x32.png",
-        sizes: "32x32"
-      },
-      {
-        rel: "icon",
-        url: "/favicon-16x16.png",
-        sizes: "16x16"
-      }
-    ]
-  },
-  themeColor: "#ffffff",
-};
+import Image from "next/image";
 
 export default function Home() {
   return (
     <main className="p-8">
-      <Nav />
-      <Hero/>
-      <Projects />
-      <Team />
-      <Footer />
+      <section>
+        <Image
+          src="/images/melvinjonesrepol.png"
+          alt="Hero Image"
+          className="w-64 h-64 object-cover rounded-lg mb-6"
+          width={100}
+          height={100}
+        />
+        <h1 className="text-4xl font-bold">Hi, I&apos;m Melvin Jones</h1>
+        <p className="text-gray-500">Software Engineer</p>
+        <p className="mt-4 max-w-2xl text-gray-500">
+          I&apos;m a Freelance Software Engineer specializing in full-stack web
+          development, SEO, data analytics, embedded systems with Arduino
+          programming, hardware and software troubleshooting, and building
+          progressive web applications.
+        </p>
+      </section>
     </main>
   );
 }
