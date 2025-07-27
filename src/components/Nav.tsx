@@ -62,6 +62,16 @@ export default function Nav() {
               Contact
             </Link>
           </li>
+          <li>
+            <Link href="https://mrepol742-read-cv.vercel.app" className="hover:underline">
+              CV
+            </Link>
+          </li>
+          <li>
+            <Link href="https://projectdeep.vercel.app" className="hover:underline">
+              Deep
+            </Link>
+          </li>
         </ul>
       </div>
       {/* Mobile dropdown menu */}
@@ -119,6 +129,24 @@ export default function Nav() {
               onClick={() => setMenuOpen(false)}
             >
               Contact
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="https://mrepol742-read-cv.vercel.app"
+              className="hover:underline"
+              onClick={() => setMenuOpen(false)}
+            >
+              CV
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="https://projectdeep.vercel.app"
+              className="hover:underline"
+              onClick={() => setMenuOpen(false)}
+            >
+              Deep
             </Link>
           </li>
         </ul>

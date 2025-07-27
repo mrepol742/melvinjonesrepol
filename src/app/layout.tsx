@@ -18,6 +18,21 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Melvin Jones",
   description: "Melvin Jones Repol - Freelance Software Engineer",
+  keywords: [
+    "Melvin Jones",
+    "Repol",
+    "Freelance Software Engineer",
+    "Full-Stack Web Development",
+    "SEO",
+    "Data Analytics",
+    "Embedded Systems",
+    "Arduino Programming",
+    "Hardware Troubleshooting",
+    "Software Troubleshooting",
+    "Progressive Web Applications",
+  ],
+  authors: [{ name: "Melvin Jones Repol", url: "https://melvinjonesrepol.com" }],
+  creator: "Melvin Jones Repol",
   openGraph: {
     title: "Melvin Jones",
     description: "Melvin Jones Repol - Freelance Software Engineer",
