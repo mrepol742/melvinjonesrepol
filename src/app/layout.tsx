@@ -29,7 +29,9 @@ export const metadata: Metadata = {
     "Software Troubleshooting",
     "Progressive Web Applications",
   ],
-  authors: [{ name: "Melvin Jones Repol", url: "https://melvinjonesrepol.com" }],
+  authors: [
+    { name: "Melvin Jones Repol", url: "https://melvinjonesrepol.com" },
+  ],
   creator: "Melvin Jones Repol",
   openGraph: {
     title: "Melvin Jones Gallano Repol - Software Engineer",
@@ -91,8 +93,8 @@ export default function RootLayout({
         <NextTopLoader showSpinner={false} />
         <div className="flex-1">
           <AOSWrapper />
-          {children}
-          </div>
+          <div className="container mx-auto px-1">{children}</div>
+        </div>
         <Footer />
       </body>
       <GoogleAnalytics gaId="G-5725N9VYZ4" />
