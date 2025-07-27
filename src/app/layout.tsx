@@ -13,10 +13,10 @@ const interSans = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Melvin Jones",
+  title: "Melvin Jones Gallano Repol - Software Engineer",
   description: "Melvin Jones Repol - Freelance Software Engineer",
   keywords: [
-    "Melvin Jones",
+    "Melvin Jones Gallano Repol - Software Engineer",
     "Repol",
     "Freelance Software Engineer",
     "Full-Stack Web Development",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Melvin Jones Repol", url: "https://melvinjonesrepol.com" }],
   creator: "Melvin Jones Repol",
   openGraph: {
-    title: "Melvin Jones",
+    title: "Melvin Jones Gallano Repol - Software Engineer",
     description: "Melvin Jones Repol - Freelance Software Engineer",
     url: "https://melvinjonesrepol.com",
     siteName: "Melvin Jones Repol",
@@ -48,10 +48,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Melvin Jones",
+    title: "Melvin Jones Gallano Repol - Software Engineer",
     description: "Melvin Jones Repol - Freelance Software Engineer",
     images: ["/images/melvinjonesrepol.png"],
-    creator: "@melvinjonesrepol",
+    creator: "@mrepol742",
   },
   icons: {
     icon: "/favicon.ico",
