@@ -48,6 +48,11 @@ export default function Nav() {
             </Link>
           </li>
           <li>
+            <Link href="/certificates" className="hover:underline">
+              Certificates
+            </Link>
+          </li>
+          <li>
             <Link href="/contact-me" className="hover:underline">
               Contact
             </Link>
