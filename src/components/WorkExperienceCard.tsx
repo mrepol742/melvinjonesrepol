@@ -1,0 +1,21 @@
+import Link from "next/link";
+
+type WorkExperienceProps = {
+  title: string;
+  description: string;
+  date: string;
+};
+
+export default function WorkExperienceCard({
+  title,
+  description,
+  date,
+}: WorkExperienceProps) {
+  return (
+    <div className="bg-gray-800 rounded-2xl p-6 shadow hover:shadow-lg transition mb-3">
+      <h3 className="text-xl font-bold mb-2">{title}</h3>
+      <span className="text-gray-500">{date}</span>
+      <p className="text-white-800 mb-4">{description}</p>
+    </div>
+  );
+}

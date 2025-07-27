@@ -53,6 +53,11 @@ export default function Nav() {
             </Link>
           </li>
           <li>
+            <Link href="/work-experience" className="hover:underline">
+              Work Experience
+            </Link>
+          </li>
+          <li>
             <Link href="/contact-me" className="hover:underline">
               Contact
             </Link>
@@ -82,16 +87,34 @@ export default function Nav() {
           </li>
           <li>
             <Link
-              href="/team"
+              href="/my-team"
               className="hover:underline"
               onClick={() => setMenuOpen(false)}
             >
-              Team
+              My Team
             </Link>
           </li>
           <li>
             <Link
-              href="/contact"
+              href="/certificates"
+              className="hover:underline"
+              onClick={() => setMenuOpen(false)}
+            >
+              Certificates
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/work-experience"
+              className="hover:underline"
+              onClick={() => setMenuOpen(false)}
+            >
+              Work Experience
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/contact-me"
               className="hover:underline"
               onClick={() => setMenuOpen(false)}
             >
