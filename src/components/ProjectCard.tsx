@@ -3,6 +3,7 @@ import Link from "next/link";
 type ProjectCardProps = {
   title: string;
   description: string;
+  delay?: number;
   repo?: string;
   link?: string;
   download?: string;
@@ -11,12 +12,17 @@ type ProjectCardProps = {
 export default function ProjectCard({
   title,
   description,
+  delay = 100,
   repo,
   link,
   download,
 }: ProjectCardProps) {
   return (
-    <div className="bg-gray-800 rounded-2xl p-6 shadow hover:shadow-lg transition">
+    <div
+      className="bg-gray-800 rounded-2xl p-6 shadow hover:shadow-lg transition"
+      data-aos="fade-up"
+      data-aos-delay={delay}
+    >
       <h3 className="text-xl font-bold mb-2">{title}</h3>
       <p className="text-white-800 mb-4">{description}</p>
       {link && (

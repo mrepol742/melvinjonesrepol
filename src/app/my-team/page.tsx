@@ -10,16 +10,19 @@ export default function MyTeam() {
             title="Melvin"
             description="Lead Designer"
             backgroundColor="bg-red-500"
+            delay={0}
           />
           <TeamCard
             title="Jones"
             description="Lead Marketer"
             backgroundColor="bg-yellow-500"
+            delay={300}
           />
           <TeamCard
             title="Repol"
             description="Lead Developer"
             backgroundColor="bg-blue-500"
+            delay={600}
           />
         </div>
       </section>

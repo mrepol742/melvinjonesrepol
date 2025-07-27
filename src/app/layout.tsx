@@ -4,6 +4,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import NextTopLoader from "nextjs-toploader";
+import AOSWrapper from "../components/AOSWrapper";
 import "./globals.css";
 
 const interSans = Inter({
@@ -88,7 +89,10 @@ export default function RootLayout({
         </div>
         <Nav />
         <NextTopLoader showSpinner={false} />
-        <div className="flex-1">{children}</div>
+        <div className="flex-1">
+          <AOSWrapper />
+          {children}
+          </div>
         <Footer />
       </body>
       <GoogleAnalytics gaId="G-5725N9VYZ4" />

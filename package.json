@@ -12,6 +12,7 @@
   "dependencies": {
     "@next/third-parties": "^15.4.4",
     "@sentry/nextjs": "^9.42.0",
+    "aos": "^2.3.4",
     "lucide-react": "^0.526.0",
     "next": "15.4.4",
     "next-sitemap": "^4.2.3",
@@ -22,6 +23,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@types/aos": "^3.0.7",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

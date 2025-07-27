@@ -4,6 +4,7 @@ type CertificateCardProps = {
   title: string;
   description: string;
   date: string;
+  delay?: number;
   type?: string;
   link: string;
 };
@@ -12,11 +13,16 @@ export default function CertificateCard({
   title,
   description,
   date,
+  delay = 100,
   type,
   link,
 }: CertificateCardProps) {
   return (
-    <div className="bg-gray-800 rounded-2xl p-6 shadow hover:shadow-lg transition mb-3">
+    <div
+      className="bg-gray-800 rounded-2xl p-6 shadow hover:shadow-lg transition mb-3"
+      data-aos="fade-up"
+      data-aos-delay={delay}
+    >
       <h3 className="text-xl font-bold mb-2">{title}</h3>
       <span>{type}</span>
       <p className="text-white-800 mb-4">
