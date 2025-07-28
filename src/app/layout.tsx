@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { ToastContainer } from "react-toastify";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import NextTopLoader from "nextjs-toploader";
@@ -95,9 +96,16 @@ export default function RootLayout({
           <AOSWrapper />
           <div className="container mx-auto px-1">{children}</div>
         </div>
+        <ToastContainer />
         <Footer />
       </body>
       <GoogleAnalytics gaId="G-5725N9VYZ4" />
+      <script
+        src="https://app.livechatai.com/embed.js"
+        data-id="cmdmcvh4n0001jt0c03xemlxw"
+        async
+        defer
+      ></script>
     </html>
   );
 }
