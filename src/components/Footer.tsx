@@ -25,16 +25,16 @@ export default function Footer() {
             <small className="block mt-4 text-xs text-green-400">
               This site is Open Source.{" "}
               <Link
-              href="https://github.com/mrepol742/melvinjonesrepol.com"
-              target="_blank"
-              className="underline hover:text-green-300"
+                href="https://github.com/mrepol742/melvinjonesrepol.com"
+                target="_blank"
+                className="underline hover:text-green-300"
               >
-              View on GitHub
+                View on GitHub
               </Link>
             </small>
           </div>
           {/* Links */}
-          <div className="flex flex-1 justify-between">
+          <div>
             <div>
               <h4 className="text-sm font-semibold mb-2 text-white">Links</h4>
               <ul className="space-y-1 text-sm">
@@ -44,52 +44,55 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/projects" className="hover:underline text-gray-400">
+                  <Link
+                    href="/projects"
+                    className="hover:underline text-gray-400"
+                  >
                     Projects
                   </Link>
                 </li>
                 <li>
-                  <Link href="/my-team" className="hover:underline text-gray-400">
+                  <Link
+                    href="/my-team"
+                    className="hover:underline text-gray-400"
+                  >
                     My Team
                   </Link>
                 </li>
                 <li>
-                  <Link href="/certificates" className="hover:underline text-gray-400">
+                  <Link
+                    href="/certificates"
+                    className="hover:underline text-gray-400"
+                  >
                     Certificates
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact-me" className="hover:underline text-gray-400">
+                  <Link
+                    href="/contact-me"
+                    className="hover:underline text-gray-400"
+                  >
                     Contact
                   </Link>
                 </li>
               </ul>
             </div>
-            <div>
-              <h4 className="text-sm font-semibold mb-2 text-white">
-                Resources
-              </h4>
-              <ul className="space-y-1 text-sm">
-                <li>
-                  <Link href="/blog" className="hover:underline text-gray-400">
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/privacy"
-                    className="hover:underline text-gray-400"
-                  >
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/terms" className="hover:underline text-gray-400">
-                    Terms of Service
-                  </Link>
-                </li>
-              </ul>
-            </div>
+          </div>
+          {/* Resources */}
+          <div>
+            <h4 className="text-sm font-semibold mb-2 text-white">Resources</h4>
+            <ul className="space-y-1 text-sm">
+              <li>
+                <Link href="/privacy" className="hover:underline text-gray-400">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms" className="hover:underline text-gray-400">
+                  Terms of Service
+                </Link>
+              </li>
+            </ul>
           </div>
           {/* Socials */}
           <div>
