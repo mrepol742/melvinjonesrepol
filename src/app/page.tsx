@@ -45,14 +45,14 @@ export default function Home() {
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              Hi, I&apos;m Melvin Jones Repol
+              Hi, I&apos;m Melvin Jones Gallano Repol
             </h1>
             <p
               className="text-gray-500"
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              Freelance Software Engineer
+              Freelance Software Engineer | DevOps
             </p>
             <p
               className="mt-4 max-w-2xl text-gray-500"

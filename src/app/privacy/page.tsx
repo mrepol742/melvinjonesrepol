@@ -1,3 +1,10 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy - Melvin Jones Repol",
+  description: "Privacy Policy for melvinjonesrepol.com",
+};
+
 export default function Privacy() {
   return (
     <main className="p-8">

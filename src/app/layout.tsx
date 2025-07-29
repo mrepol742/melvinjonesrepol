@@ -15,10 +15,11 @@ const interSans = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Melvin Jones Gallano Repol - Software Engineer",
-  description: "Melvin Jones Repol - Freelance Software Engineer",
+  title: "Melvin Jones Repol - Software Engineer | DevOps",
+  description:
+    "Freelance Software Engineer specializing in full-stack web development, SEO, data analytics, embedded systems with Arduino programming, hardware and software troubleshooting, and building progressive web applications.",
   keywords: [
-    "Melvin Jones Gallano Repol - Software Engineer",
+    "Melvin Jones Repol",
     "Repol",
     "Freelance Software Engineer",
     "Full-Stack Web Development",
@@ -31,13 +32,14 @@ export const metadata: Metadata = {
     "Progressive Web Applications",
   ],
   authors: [
-    { name: "Melvin Jones Repol", url: "https://melvinjonesrepol.com" },
+    { name: "Melvin Jones Repol", url: "https://www.melvinjonesrepol.com" },
   ],
   creator: "Melvin Jones Repol",
   openGraph: {
-    title: "Melvin Jones Gallano Repol - Software Engineer",
-    description: "Melvin Jones Repol - Freelance Software Engineer",
-    url: "https://melvinjonesrepol.com",
+    title: "Melvin Jones Repol - Software Engineer | DevOps",
+    description:
+      "Freelance Software Engineer specializing in full-stack web development, SEO, data analytics, embedded systems with Arduino programming, hardware and software troubleshooting, and building progressive web applications.",
+    url: "https://www.melvinjonesrepol.com",
     siteName: "Melvin Jones Repol",
     images: [
       {
@@ -52,8 +54,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Melvin Jones Gallano Repol - Software Engineer",
-    description: "Melvin Jones Repol - Freelance Software Engineer",
+    title: "Melvin Jones Repol - Software Engineer | DevOps",
+    description:
+      "Freelance Software Engineer specializing in full-stack web development, SEO, data analytics, embedded systems with Arduino programming, hardware and software troubleshooting, and building progressive web applications.",
     images: ["/images/melvinjonesrepol.png"],
     creator: "@mrepol742",
   },

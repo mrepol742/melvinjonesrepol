@@ -1,3 +1,10 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms of Service - Melvin Jones Repol",
+  description: "Terms of Service for melvinjonesrepol.com",
+};
+
 export default function Terms() {
   return (
     <main className="p-8">
@@ -23,13 +30,13 @@ export default function Terms() {
               2. Intellectual Property & Licensing
             </h3>
             <p>
-              The source code of this website is open source and available under MIT License.
-              However, unless otherwise noted, the content of this website
-              including text, images, design elements, and branding is the
-              intellectual property of Melvin Jones Repol and may be subject to
-              different licensing terms.
+              The source code of this website is open source and available under
+              MIT License. However, unless otherwise noted, the content of this
+              website including text, images, design elements, and branding is
+              the intellectual property of Melvin Jones Repol and may be subject
+              to different licensing terms.
             </p>
-            
+
             <h3 className="mt-4 font-semibold">3. Contact Form</h3>
             <p>
               By using the contact form, you consent to the collection of your

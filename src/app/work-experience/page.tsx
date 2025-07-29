@@ -1,4 +1,10 @@
 import WorkExperienceCard from "@/components/WorkExperienceCard";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Work Experience - Melvin Jones Repol",
+  description: "Here are some of the work experiences I had.",
+};
 
 export default function WorkExperience() {
   return (

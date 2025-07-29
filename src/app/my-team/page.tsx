@@ -1,4 +1,10 @@
 import TeamCard from "../../components/TeamCard";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "My Team - Melvin Jones Repol",
+  description: "Here are the amazing people I work with.",
+};
 
 export default function MyTeam() {
   return (
