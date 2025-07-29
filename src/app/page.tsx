@@ -1,6 +1,57 @@
 import Image from "next/image";
 import Link from "next/link";
 
+const skills = [
+  {
+    title: "Software Engineering",
+    color: "orange-600",
+    bg: "bg-orange-600/30",
+    description:
+      "I apply engineering principles to design, develop, test, and maintain reliable software systems. My focus is on creating efficient solutions that meet customer needs, using modern tools and technologies to ensure software quality and performance.",
+    delay: 600,
+  },
+  {
+    title: "Full Stack Web Development",
+    color: "blue-600",
+    bg: "",
+    description:
+      "I build dynamic websites and web applications using technologies like HTML, CSS, JavaScript, PHP, MySQL, NodeJS, Firebase, and MongoDB. My experience covers both frontend and backend, enabling me to deliver complete, scalable web solutions.",
+    delay: 700,
+  },
+  {
+    title: "Search Engine Optimization",
+    color: "green-600",
+    bg: "",
+    description:
+      "I optimize websites to improve their visibility in search engine results. My SEO process includes refining content, structure, and technical elements to drive organic traffic and enhance digital marketing efforts.",
+    delay: 800,
+  },
+  {
+    title: "Data Analytics",
+    color: "purple-600",
+    bg: "",
+    description:
+      "I transform raw data into actionable insights to support decision-making. Using a range of tools and processes, I identify trends, solve problems, and deliver valuable information for business growth.",
+    delay: 900,
+  },
+  {
+    title: "Embedded System Design (Arduino)",
+    color: "yellow-600",
+    bg: "",
+    description:
+      "I design and program embedded systems using Arduino, integrating hardware and software for IoT, robotics, and automation. My expertise includes selecting components, optimizing code, and troubleshooting hardware-software interactions.",
+    delay: 1000,
+  },
+  {
+    title: "Hardware & Software Troubleshooting",
+    color: "white-800",
+    bg: "",
+    description:
+      "I assemble, configure, and repair computer systems, ensuring optimal performance and security. My skills include diagnosing issues, installing operating systems, and using software tools to maintain reliable hardware and software environments.",
+    delay: 1100,
+  },
+];
+
 export default function Home() {
   return (
     <main className="p-8">
@@ -106,102 +157,55 @@ export default function Home() {
         </div>
 
         <div className="mt-16 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-          {/* Software Engineering */}
-          <div
-            className="bg-black/70 backdrop-blur rounded-xl shadow p-6 flex flex-col h-full"
-            data-aos="fade-up"
-            data-aos-delay="600"
-          >
-            <h3 className="text-xl font-semibold mb-2 text-orange-600">
-              Software Engineering
-            </h3>
-            <p className="text-white-700 mb-2">
-              I apply engineering principles to design, develop, test, and
-              maintain reliable software systems. My focus is on creating
-              efficient solutions that meet customer needs, using modern tools
-              and technologies to ensure software quality and performance.
-            </p>
-          </div>
-          {/* Full Stack Web Development */}
-          <div
-            className="bg-black/70 backdrop-blur rounded-xl shadow p-6 flex flex-col h-full"
-            data-aos="fade-up"
-            data-aos-delay="700"
-          >
-            <h3 className="text-xl font-semibold mb-2 text-blue-600">
-              Full Stack Web Development
-            </h3>
-            <p className="text-white-700 mb-2">
-              I build dynamic websites and web applications using technologies
-              like HTML, CSS, JavaScript, PHP, MySQL, NodeJS, Firebase, and
-              MongoDB. My experience covers both frontend and backend, enabling
-              me to deliver complete, scalable web solutions.
-            </p>
-          </div>
-          {/* Search Engine Optimization */}
-          <div
-            className="bg-black/70 backdrop-blur rounded-xl shadow p-6 flex flex-col h-full"
-            data-aos="fade-up"
-            data-aos-delay="800"
-          >
-            <h3 className="text-xl font-semibold mb-2 text-green-600">
-              Search Engine Optimization (SEO)
-            </h3>
-            <p className="text-white-700 mb-2">
-              I optimize websites to improve their visibility in search engine
-              results. My SEO process includes refining content, structure, and
-              technical elements to drive organic traffic and enhance digital
-              marketing efforts.
-            </p>
-          </div>
-          {/* Data Analytics */}
-          <div
-            className="bg-black/70 backdrop-blur rounded-xl shadow p-6 flex flex-col h-full"
-            data-aos="fade-up"
-            data-aos-delay="900"
-          >
-            <h3 className="text-xl font-semibold mb-2 text-purple-600">
-              Data Analytics
-            </h3>
-            <p className="text-white-700 mb-2">
-              I transform raw data into actionable insights to support
-              decision-making. Using a range of tools and processes, I identify
-              trends, solve problems, and deliver valuable information for
-              business growth.
-            </p>
-          </div>
-          {/* Embedded System Design with Arduino */}
-          <div
-            className="bg-black/70 backdrop-blur rounded-xl shadow p-6 flex flex-col h-full"
-            data-aos="fade-up"
-            data-aos-delay="1000"
-          >
-            <h3 className="text-xl font-semibold mb-2 text-yellow-600">
-              Embedded System Design (Arduino)
-            </h3>
-            <p className="text-white-700 mb-2">
-              I design and program embedded systems using Arduino, integrating
-              hardware and software for IoT, robotics, and automation. My
-              expertise includes selecting components, optimizing code, and
-              troubleshooting hardware-software interactions.
-            </p>
-          </div>
-          {/* Hardware and Software Troubleshooting */}
-          <div
-            className="bg-black/70 backdrop-blur rounded-xl shadow p-6 flex flex-col h-full"
-            data-aos="fade-up"
-            data-aos-delay="1100"
-          >
-            <h3 className="text-xl font-semibold mb-2 text-white-800">
-              Hardware &amp; Software Troubleshooting
-            </h3>
-            <p className="text-white-700 mb-2">
-              I assemble, configure, and repair computer systems, ensuring
-              optimal performance and security. My skills include diagnosing
-              issues, installing operating systems, and using software tools to
-              maintain reliable hardware and software environments.
-            </p>
-          </div>
+          {skills.map((skill, idx) => {
+            const bgGradients = [
+              "bg-gradient-to-tr from-orange-500/40 to-yellow-300/30",
+              "bg-gradient-to-br from-blue-600/30 to-purple-400/30",
+              "bg-gradient-to-tl from-green-500/30 to-lime-300/30",
+              "bg-gradient-to-r from-pink-500/30 to-red-400/30",
+              "bg-gradient-to-bl from-violet-500/30 to-indigo-300/30",
+              "bg-gradient-to-tr from-yellow-500/30 to-orange-300/30",
+            ];
+            const textColors = [
+              "text-orange-600",
+              "text-blue-600",
+              "text-green-600",
+              "text-purple-600",
+              "text-yellow-600",
+              "text-pink-600",
+            ];
+            const layouts = [
+              "flex-col",
+              "flex-col-reverse",
+              "flex-row gap-5",
+              "flex-row-reverse gap-5",
+            ];
+
+            const bg = bgGradients[idx % bgGradients.length];
+            const textColor = textColors[idx % textColors.length];
+            const layout = layouts[idx % layouts.length];
+
+            return (
+              <div
+                key={skill.title}
+                className={`bg-black/70 backdrop-blur rounded-xl shadow p-6 flex ${layout} h-full relative overflow-hidden`}
+                data-aos="fade-up"
+                data-aos-delay={skill.delay}
+              >
+                <div
+                  className={`absolute top-0 left-0 w-full h-full ${bg} pointer-events-none`}
+                />
+                <h3
+                  className={`text-xl font-semibold mb-2 ${textColor} relative z-10`}
+                >
+                  {skill.title}
+                </h3>
+                <p className="text-white-700 mb-2 relative z-10">
+                  {skill.description}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </section>
     </main>
