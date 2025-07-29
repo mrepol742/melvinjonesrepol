@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Search, X } from "lucide-react";
 import ProjectCard from "@/components/ProjectCard";
+import { Metadata } from "next";
 
 const projects = [
   {

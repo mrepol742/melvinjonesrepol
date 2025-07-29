@@ -4,51 +4,33 @@ import Link from "next/link";
 const skills = [
   {
     title: "Software Engineering",
-    color: "orange-600",
-    bg: "bg-orange-600/30",
     description:
       "I apply engineering principles to design, develop, test, and maintain reliable software systems. My focus is on creating efficient solutions that meet customer needs, using modern tools and technologies to ensure software quality and performance.",
-    delay: 600,
   },
   {
     title: "Full Stack Web Development",
-    color: "blue-600",
-    bg: "",
     description:
       "I build dynamic websites and web applications using technologies like HTML, CSS, JavaScript, PHP, MySQL, NodeJS, Firebase, and MongoDB. My experience covers both frontend and backend, enabling me to deliver complete, scalable web solutions.",
-    delay: 700,
   },
   {
     title: "Search Engine Optimization",
-    color: "green-600",
-    bg: "",
     description:
       "I optimize websites to improve their visibility in search engine results. My SEO process includes refining content, structure, and technical elements to drive organic traffic and enhance digital marketing efforts.",
-    delay: 800,
   },
   {
     title: "Data Analytics",
-    color: "purple-600",
-    bg: "",
     description:
       "I transform raw data into actionable insights to support decision-making. Using a range of tools and processes, I identify trends, solve problems, and deliver valuable information for business growth.",
-    delay: 900,
   },
   {
     title: "Embedded System Design (Arduino)",
-    color: "yellow-600",
-    bg: "",
     description:
       "I design and program embedded systems using Arduino, integrating hardware and software for IoT, robotics, and automation. My expertise includes selecting components, optimizing code, and troubleshooting hardware-software interactions.",
-    delay: 1000,
   },
   {
     title: "Hardware & Software Troubleshooting",
-    color: "white-800",
-    bg: "",
     description:
       "I assemble, configure, and repair computer systems, ensuring optimal performance and security. My skills include diagnosing issues, installing operating systems, and using software tools to maintain reliable hardware and software environments.",
-    delay: 1100,
   },
 ];
 
@@ -190,7 +172,7 @@ export default function Home() {
                 key={skill.title}
                 className={`bg-black/70 backdrop-blur rounded-xl shadow p-6 flex ${layout} h-full relative overflow-hidden`}
                 data-aos="fade-up"
-                data-aos-delay={skill.delay}
+                data-aos-delay={idx * 100}
               >
                 <div
                   className={`absolute top-0 left-0 w-full h-full ${bg} pointer-events-none`}
