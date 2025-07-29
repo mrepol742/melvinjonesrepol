@@ -69,6 +69,14 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
+                    href="/gallery"
+                    className="hover:underline text-gray-400"
+                  >
+                    Gallery
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/contact-me"
                     className="hover:underline text-gray-400"
                   >
@@ -82,6 +90,22 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-semibold mb-2 text-white">Resources</h4>
             <ul className="space-y-1 text-sm">
+              <li>
+                <Link
+                  href="/projects/webvium-browser"
+                  className="hover:underline text-gray-400"
+                >
+                  Webvium Browser
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/projects/orion-chatbot"
+                  className="hover:underline text-gray-400"
+                >
+                  Orion Chatbot
+                </Link>
+              </li>
               <li>
                 <Link href="/privacy" className="hover:underline text-gray-400">
                   Privacy Policy

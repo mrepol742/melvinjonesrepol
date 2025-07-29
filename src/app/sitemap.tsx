@@ -15,6 +15,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://www.melvinjonesrepol.com/projects/webvium-browser",
+      lastModified: new Date(),
+      priority: 0.5,
+    },
+    {
+      url: "https://www.melvinjonesrepol.com/projects/webvium-vpn",
+      lastModified: new Date(),
+      priority: 0.5,
+    },
+    {
+      url: "https://www.melvinjonesrepol.com/projects/orion-chatbot",
+      lastModified: new Date(),
+      priority: 0.5,
+    },
+    {
       url: "https://www.melvinjonesrepol.com/my-team",
       lastModified: new Date(),
       priority: 0.8,
@@ -29,6 +44,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://www.melvinjonesrepol.com/work-experience",
       lastModified: new Date(),
       changeFrequency: "yearly",
+      priority: 0.8,
+    },
+    {
+      url: "https://www.melvinjonesrepol.com/gallery",
+      lastModified: new Date(),
+      changeFrequency: "daily",
       priority: 0.8,
     },
     {

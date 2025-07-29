@@ -68,7 +68,7 @@ const projects = [
     title: "Project Orion",
     description:
       "Meet the lightning-fast Facebook Messenger chatbot, seamlessly managing multiple accounts with access to 271 commands.",
-    repo: "https://mrepol742.github.io/project-orion",
+    link: "/projects/orion-chatbot",
   },
   {
     title: "Online Catering System",
@@ -84,7 +84,7 @@ const projects = [
     title: "Webvium VPN",
     description:
       "Inspired from Webvium, Webvium VPN is a lightweight android VPN app focuses in speed, simplicity, security and privacy.",
-    download: "https://mrepol742.github.io/webviumvpn",
+    link: "/projects/webvium-vpn",
   },
   {
     title: "mrepol742.github.io",
@@ -96,7 +96,7 @@ const projects = [
     title: "Project Webvium",
     description:
       "A Project that aims to be the lightest, fastest, secured, private and full-featured android web browser. Programmed and design from Scratch.",
-    link: "https://mrepol742.github.io/webvium",
+    link: "/projects/webvium-browser",
   },
 ];
 

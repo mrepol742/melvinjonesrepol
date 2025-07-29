@@ -6,6 +6,7 @@ import {
   ShieldCheckIcon,
   BriefcaseBusinessIcon,
   ContactRoundIcon,
+  GalleryHorizontal,
 } from "lucide-react";
 
 export default function Nav() {
@@ -57,6 +58,14 @@ export default function Nav() {
               <BriefcaseBusinessIcon className="inline-block mr-1" />
               <span className="ml-1 overflow-hidden max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-200 whitespace-nowrap">
                 Work Experience
+              </span>
+            </Link>
+          </li>
+          <li>
+            <Link href="/gallery" className="group  flex items-center">
+              <GalleryHorizontal className="inline-block mr-1" />
+              <span className="ml-1 overflow-hidden max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-200 whitespace-nowrap">
+                Gallery
               </span>
             </Link>
           </li>
