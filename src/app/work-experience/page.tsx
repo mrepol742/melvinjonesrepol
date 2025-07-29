@@ -1,10 +1,15 @@
-import WorkExperienceCard from "../../components/WorkExperienceCard";
+import WorkExperienceCard from "@/components/WorkExperienceCard";
 
 export default function WorkExperience() {
   return (
     <main className="p-8">
       <section>
-        <h2 className="text-2xl font-semibold">Work Experience</h2>
+        <h1 className="text-2xl font-semibold" data-aos="fade-right">
+          Work Experience
+        </h1>
+        <p className="text-gray-500" data-aos="fade-right" data-aos-delay="100">
+          Here are some of the work experiences I had.
+        </p>
         <div className="mt-4">
           <WorkExperienceCard
             title="Freelance"

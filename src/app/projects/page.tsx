@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Search, X } from "lucide-react";
-import ProjectCard from "../../components/ProjectCard";
+import ProjectCard from "@/components/ProjectCard";
 
 const projects = [
   {
@@ -106,9 +106,9 @@ export default function Projects() {
   return (
     <main className="p-8">
       <section>
-        <h2 className="text-2xl font-semibold" data-aos="fade-right">
+        <h1 className="text-2xl font-semibold" data-aos="fade-right">
           Projects
-        </h2>
+        </h1>
         <p className="text-gray-500" data-aos="fade-right" data-aos-delay="100">
           Here are some of my projects that I have worked on.
         </p>

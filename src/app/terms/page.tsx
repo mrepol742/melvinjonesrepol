@@ -2,7 +2,7 @@ export default function Terms() {
   return (
     <main className="p-8">
       <section>
-        <h2 className="text-center text-2xl font-semibold">Terms of Service</h2>
+        <h1 className="text-center text-2xl font-semibold">Terms of Service</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
           <div className="col-span-full">
             <p>

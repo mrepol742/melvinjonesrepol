@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 type WorkExperienceProps = {
   title: string;
   description: string;

@@ -1,10 +1,6 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  HomeIcon,
   FolderKanbanIcon,
   ShieldHalfIcon,
   ShieldCheckIcon,
@@ -13,7 +9,6 @@ import {
 } from "lucide-react";
 
 export default function Nav() {
-  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <nav className="rounded-full m-5 bg-gray-800 text-white p-2 max-w-xl mx-auto shadow-lg hover:shadow-xl transition-shadow duration-300">
