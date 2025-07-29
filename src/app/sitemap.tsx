@@ -30,6 +30,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
+      url: "https://www.melvinjonesrepol.com/projects/axleshift-core-1",
+      lastModified: new Date(),
+      priority: 0.5,
+    },
+    {
+      url: "https://www.melvinjonesrepol.com/projects/ulisha-store",
+      lastModified: new Date(),
+      priority: 0.5,
+    },
+    {
       url: "https://www.melvinjonesrepol.com/my-team",
       lastModified: new Date(),
       priority: 0.8,

@@ -107,6 +107,22 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link
+                  href="/projects/axleshift-core-1"
+                  className="hover:underline text-gray-400"
+                >
+                  Axleshift Core 1
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/projects/ulisha-store"
+                  className="hover:underline text-gray-400"
+                >
+                  Ulisha Store
+                </Link>
+              </li>
+              <li>
                 <Link href="/privacy" className="hover:underline text-gray-400">
                   Privacy Policy
                 </Link>
@@ -114,6 +130,11 @@ export default function Footer() {
               <li>
                 <Link href="/terms" className="hover:underline text-gray-400">
                   Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link href="/sitemap.xml" className="hover:underline text-gray-400">
+                  Sitemap
                 </Link>
               </li>
             </ul>

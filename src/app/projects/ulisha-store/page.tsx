@@ -4,21 +4,19 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Orion Chatbot - Melvin Jones Repol",
+  title: "Ulisha Store - Melvin Jones Repol",
   description:
-    "Meet the lightning-fast Facebook Messenger chatbot, seamlessly managing multiple accounts with access to 271 commands.",
+    "A premier destination for quality fashion, accessories, and electronics. Bringing you the best products at competitive prices.",
 };
 
 const Images = [
-  "/images/orion-1.jpg",
-  "/images/orion-2.jpg",
-  "/images/orion-3.jpg",
-  "/images/orion-4.jpg",
-  "/images/orion-5.jpg",
-  "/images/orion-6.jpg",
+  "/images/ulisha-store-1.png",
+  "/images/ulisha-store-2.png",
+  "/images/ulisha-store-3.png",
+  "/images/ulisha-store-4.png",
 ];
 
-export default function OrionChatbot() {
+export default function UlishaStore() {
   return (
     <main className="p-8">
       <section>
@@ -29,17 +27,17 @@ export default function OrionChatbot() {
 
         <div className="flex items-center mb-4">
           <Image
-            src="/images/orion-icon.webp"
-            alt="Orion Icon"
+            src="/images/ulisha-store-icon.png"
+            alt="Ulisha Store Icon"
             width={70}
             height={70}
             className="rounded-full mr-7"
           />
           <div>
-            <h1 className="text-4xl font-bold">Orion Chatbot</h1>
+            <h1 className="text-4xl font-bold">Ulisha Store</h1>
             <p className="text-gray-700 mb-4">
-              Meet the lightning-fast Facebook Messenger chatbot, seamlessly
-              managing multiple accounts with access to 271 commands.
+              A premier destination for quality fashion, accessories, and
+              electronics. Bringing you the best products at competitive prices.
             </p>
           </div>
         </div>
@@ -51,8 +49,9 @@ export default function OrionChatbot() {
                 key={index}
                 src={image}
                 alt={`Screenshot ${index + 1}`}
-                width={250}
-                height={445}
+                width={400}
+                height={120}
+                sizes="(max-width: 640px) 90vw, 400px"
                 className="object-cover rounded-lg flex-shrink-0"
               />
             ))}

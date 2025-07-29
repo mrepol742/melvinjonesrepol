@@ -26,7 +26,7 @@ const projects = [
     title: "Ulisha Store",
     description:
       "A premier destination for quality fashion, accessories, and electronics. Bringing you the best products at competitive prices.",
-    link: "https://ulishastore.com",
+    link: "/projects/ulisha-store",
   },
   {
     title: "Devops Capstone Project",
@@ -44,7 +44,7 @@ const projects = [
     title: "Axleshift Core 1 - Capstone Project",
     description:
       "A freight management services. Providing Businesses with cutting-edge platform, security, and reliability.",
-    repo: "https://github.com/axleshift/core1",
+    repo: "/projects/axleshift-core-1",
   },
   {
     title: "Second Chance Backend Nodejs Capstone",

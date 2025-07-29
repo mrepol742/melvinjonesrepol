@@ -48,7 +48,7 @@ export default function WebviumVPN() {
               <Image
                 key={index}
                 src={image}
-                alt={`Screenshot ${index + 4}`}
+                alt={`Screenshot ${index + 1}`}
                 width={250}
                 height={445}
                 className="object-cover rounded-lg flex-shrink-0"

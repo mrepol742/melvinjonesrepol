@@ -28,6 +28,17 @@ const images = [
   "/images/orion-4.jpg",
   "/images/orion-5.jpg",
   "/images/orion-6.jpg",
+  "/images/ulisha-store-1.png",
+  "/images/ulisha-store-2.png",
+  "/images/ulisha-store-3.png",
+  "/images/ulisha-store-4.png",
+  "/images/axleshift-1.png",
+  "/images/axleshift-2.png",
+  "/images/axleshift-3.png",
+  "/images/axleshift-4.png",
+  "/images/axleshift-5.png",
+  "/images/axleshift-6.png",
+  "/images/axleshift-7.png",
 ];
 
 export default function Gallery() {
@@ -45,23 +56,26 @@ export default function Gallery() {
           A collection of images showcasing my projects and designs.
         </p>
         <div className="columns-3 md:columns-4 lg:columns-5 xl:columns-6 gap-4 p-4 space-y-4">
-          {images.map((src, idx) => (
-            <div
-              key={idx}
-              className="mb-4 break-inside-avoid"
-              data-aos="fade-up"
-              data-aos-delay={idx * 100}
-            >
-              <Image
-                src={src}
-                alt={`Gallery image ${idx + 1}`}
-                width={400}
-                height={Math.floor(250 + Math.random() * 150)}
-                className="rounded-lg w-full h-auto object-cover"
-                style={{ display: "block" }}
-              />
-            </div>
-          ))}
+          {images
+            .slice()
+            .sort(() => Math.random() - 0.5)
+            .map((src, idx) => (
+              <div
+                key={idx}
+                className="mb-4 break-inside-avoid"
+                data-aos="fade-up"
+                data-aos-delay={idx * 100}
+              >
+                <Image
+                  src={src}
+                  alt={`Gallery image ${idx + 1}`}
+                  width={400}
+                  height={Math.floor(250 + Math.random() * 150)}
+                  className="rounded-lg w-full h-auto object-cover"
+                  style={{ display: "block" }}
+                />
+              </div>
+            ))}
         </div>
       </section>
     </main>
