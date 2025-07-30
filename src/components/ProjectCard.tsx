@@ -28,8 +28,6 @@ export default function ProjectCard({
       {link && (
         <Link
           href={link}
-          target="_blank"
-          rel="noopener noreferrer"
           className="text-blue-600 font-medium text-sm hover:underline mr-4"
         >
           View Project →
@@ -39,7 +37,6 @@ export default function ProjectCard({
         <Link
           href={repo}
           target="_blank"
-          rel="noopener noreferrer"
           className="text-blue-600 font-medium text-sm hover:underline"
         >
           View Repo →
@@ -48,8 +45,6 @@ export default function ProjectCard({
       {download && (
         <Link
           href={download}
-          target="_blank"
-          rel="noopener noreferrer"
           className="text-blue-600 font-medium text-sm hover:underline"
         >
           Download →

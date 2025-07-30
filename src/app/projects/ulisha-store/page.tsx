@@ -35,7 +35,7 @@ export default function UlishaStore() {
           />
           <div>
             <h1 className="text-4xl font-bold">Ulisha Store</h1>
-            <p className="text-gray-700 mb-4">
+            <p className="text-gray-300 mb-4">
               A premier destination for quality fashion, accessories, and
               electronics. Bringing you the best products at competitive prices.
             </p>

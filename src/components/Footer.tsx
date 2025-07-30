@@ -124,6 +124,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/projects/point-of-sale"
+                  className="hover:underline text-gray-400"
+                >
+                  Point of Sale
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/projects/ulisha-store"
                   className="hover:underline text-gray-400"
                 >

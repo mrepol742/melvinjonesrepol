@@ -38,7 +38,7 @@ const projects = [
     title: "Project POS",
     description:
       "A lightweight, web-based and offline-capable POS system built for flawless performance, supporting multi-department roles and full functionality.",
-    repo: "https://github.com/mrepol742/project-pos",
+    link: "/projects/point-of-sale",
   },
   {
     title: "Axleshift Core 1 - Capstone Project",

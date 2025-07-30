@@ -38,7 +38,7 @@ export default function UlishaStore() {
           />
           <div>
             <h1 className="text-4xl font-bold">Axleshift Core 1</h1>
-            <p className="text-gray-700 mb-4">
+            <p className="text-gray-300 mb-4">
               A freight management services. Providing Businesses with
               cutting-edge platform, security, and reliability.
             </p>

@@ -167,7 +167,7 @@ export default function MyFriends() {
                   {friend.social.github && (
                     <Link
                       href={friend.social.github}
-                      className="text-gray-300 hover:text-gray-700"
+                      className="text-gray-300 hover:text-gray-300"
                     >
                       <Github className="inline" />
                     </Link>

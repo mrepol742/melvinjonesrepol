@@ -35,7 +35,7 @@ export default function WebviumVPN() {
           />
           <div>
             <h1 className="text-4xl font-bold">Webvium VPN</h1>
-            <p className="text-gray-700 mb-4">
+            <p className="text-gray-300 mb-4">
               Anonymous, Secured, Private and the fastest Virtual Private
               Network.
             </p>

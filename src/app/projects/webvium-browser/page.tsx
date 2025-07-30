@@ -41,7 +41,7 @@ export default function WebviumBrowser() {
           />
           <div>
             <h1 className="text-4xl font-bold">Webvium Browser</h1>
-            <p className="text-gray-700 mb-4">
+            <p className="text-gray-300 mb-4">
               Lightweight, Fast, Material and Full-Featured Android Web Browser.
             </p>
           </div>
