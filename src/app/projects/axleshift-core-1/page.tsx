@@ -1,4 +1,4 @@
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Plus } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,6 +7,43 @@ export const metadata: Metadata = {
   title: "Axleshift Core 1 - Melvin Jones Repol",
   description:
     "A freight management services. Providing Businesses with cutting-edge platform, security, and reliability.",
+  keywords: [
+    "Axleshift Core 1",
+    "Freight Management",
+    "Logistics",
+    "Business Solutions",
+    "Supply Chain",
+    "Transportation",
+    "Cargo Services",
+    "Fleet Management",
+    "Logistics Software",
+    "Business Platform",
+  ],
+  openGraph: {
+    title: "Axleshift Core 1 - Melvin Jones Repol",
+    description:
+      "A freight management services. Providing Businesses with cutting-edge platform, security, and reliability.",
+    url: "https://www.melvinjonesrepol.com/projects/axleshift-core-1",
+    siteName: "Melvin Jones Repol",
+    images: [
+      {
+        url: "/images/axleshift-1.png",
+        width: 800,
+        height: 600,
+        alt: "Axleshift Core 1 Screenshot",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Axleshift Core 1 - Melvin Jones Repol",
+    description:
+      "A freight management services. Providing Businesses with cutting-edge platform, security, and reliability.",
+    images: ["/images/axleshift-1.png"],
+    creator: "@mrepol742",
+  },
 };
 
 const Images = [
@@ -58,6 +95,22 @@ export default function UlishaStore() {
                 className="object-cover rounded-lg flex-shrink-0"
               />
             ))}
+          </div>
+        </div>
+
+        <div className="flex items-center bg-green-900/30 border border-green-700 rounded-lg p-4 mb-6">
+          <Plus className="w-6 h-6 text-green-300 mr-3" />
+          <div>
+            <span className="font-semibold text-green-300">Open Source:</span>
+            &nbsp;This project is open source. View the code on&nbsp;
+            <Link
+              href="https://github.com/mrepol742/axleshift-core1"
+              target="_blank"
+              className="text-green-300 hover:text-green-200"
+            >
+              GitHub
+            </Link>
+            .
           </div>
         </div>
       </section>

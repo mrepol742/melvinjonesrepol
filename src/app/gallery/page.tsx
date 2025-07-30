@@ -4,6 +4,30 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Gallery - Melvin Jones Repol",
   description: "A collection of images showcasing my projects and designs.",
+  keywords: ["Gallery", "Images", "Projects", "Designs", "Melvin Jones Repol"],
+  openGraph: {
+    title: "Gallery - Melvin Jones Repol",
+    description: "A collection of images showcasing my projects and designs.",
+    url: "https://www.melvinjonesrepol.com/gallery",
+    siteName: "Melvin Jones Repol",
+    images: [
+      {
+        url: "/images/melvinjonesrepol.png",
+        width: 1200,
+        height: 630,
+        alt: "Gallery Cover",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gallery - Melvin Jones Repol",
+    description: "A collection of images showcasing my projects and designs.",
+    images: ["/images/melvinjonesrepol.png"],
+    creator: "@mrepol742",
+  },
 };
 
 const images = [

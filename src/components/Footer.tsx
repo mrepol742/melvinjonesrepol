@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-8">
           {/* Logo & Description */}
           <div className="mb-6 md:mb-0">
-            <span className="text-2xl font-bold text-white">
+            <span className="text-2xl font-bold bg-gradient-to-tr from-violet-500 via-yellow-300 to-green-400 bg-clip-text text-transparent animate-gradient-shift">
               Melvin Jones Repol
             </span>
             <p className="mt-2 text-sm text-gray-400 max-w-xs">
@@ -31,6 +31,9 @@ export default function Footer() {
               >
                 View on GitHub
               </Link>
+            </small>
+            <small className="block mt-2 text-xs text-gray-500">
+              mrepol742@gmail.com
             </small>
           </div>
           {/* Links */}

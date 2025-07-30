@@ -4,6 +4,43 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Work Experience - Melvin Jones Repol",
   description: "Here are some of the work experiences I had.",
+  keywords: [
+    "Work Experience",
+    "Melvin Jones Repol",
+    "Software Engineer",
+    "Freelance Developer",
+    "IT Staff",
+    "Web Development",
+    "Full-Stack Developer",
+    "DevOps",
+    "Professional Experience",
+    "Career History",
+    "Software Development",
+    "IT Support",
+  ],
+  openGraph: {
+    title: "Work Experience - Melvin Jones Repol",
+    description: "Here are some of the work experiences I had.",
+    url: "https://www.melvinjonesrepol.com/work-experience",
+    siteName: "Melvin Jones Repol",
+    images: [
+      {
+        url: "/images/melvinjonesrepol.png",
+        width: 1200,
+        height: 630,
+        alt: "Work Experience Cover",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Work Experience - Melvin Jones Repol",
+    description: "Here are some of the work experiences I had.",
+    images: ["/images/melvinjonesrepol.png"],
+    creator: "@mrepol742",
+  },
 };
 
 export default function WorkExperience() {

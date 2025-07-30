@@ -5,7 +5,46 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Webvium Browser - Melvin Jones Repol",
-  description: "Lightweight, Fast, Material and Full-Featured Android Web Browser.",
+  description:
+    "Lightweight, Fast, Material and Full-Featured Android Web Browser.",
+  keywords: [
+    "Webvium Browser",
+    "Android Browser",
+    "Lightweight Browser",
+    "Fast Browser",
+    "Material Design",
+    "Full-Featured Browser",
+    "Web Browser",
+    "Mobile Browser",
+    "Internet Browser",
+    "Privacy-Focused Browser",
+    "Secure Browser",
+  ],
+  openGraph: {
+    title: "Webvium Browser - Melvin Jones Repol",
+    description:
+      "Lightweight, Fast, Material and Full-Featured Android Web Browser.",
+    url: "https://www.melvinjonesrepol.com/projects/webvium-browser",
+    siteName: "Melvin Jones Repol",
+    images: [
+      {
+        url: "/images/webvium-1.jpg",
+        width: 800,
+        height: 600,
+        alt: "Webvium Browser Screenshot",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Webvium Browser - Melvin Jones Repol",
+    description:
+      "Lightweight, Fast, Material and Full-Featured Android Web Browser.",
+    images: ["/images/webvium-1.jpg"],
+    creator: "@mrepol742",
+  },
 };
 
 const Images = [

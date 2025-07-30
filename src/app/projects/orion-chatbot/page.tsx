@@ -1,4 +1,4 @@
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Plus } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,6 +7,41 @@ export const metadata: Metadata = {
   title: "Orion Chatbot - Melvin Jones Repol",
   description:
     "Meet the lightning-fast Facebook Messenger chatbot, seamlessly managing multiple accounts with access to 271 commands.",
+  keywords: [
+    "Orion Chatbot",
+    "Facebook Messenger Bot",
+    "Chatbot",
+    "Multi-account Management",
+    "271 Commands",
+    "Messenger Automation",
+    "AI Chatbot",
+    "Orion Bot",
+  ],
+  openGraph: {
+    title: "Orion Chatbot - Melvin Jones Repol",
+    description:
+      "Meet the lightning-fast Facebook Messenger chatbot, seamlessly managing multiple accounts with access to 271 commands.",
+    url: "https://www.melvinjonesrepol.com/projects/orion-chatbot",
+    siteName: "Melvin Jones Repol",
+    images: [
+      {
+        url: "/images/orion-1.jpg",
+        width: 800,
+        height: 600,
+        alt: "Orion Chatbot Screenshot",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Orion Chatbot - Melvin Jones Repol",
+    description:
+      "Meet the lightning-fast Facebook Messenger chatbot, seamlessly managing multiple accounts with access to 271 commands.",
+    images: ["/images/orion-1.jpg"],
+    creator: "@mrepol742",
+  },
 };
 
 const Images = [
@@ -56,6 +91,22 @@ export default function OrionChatbot() {
                 className="object-cover rounded-lg flex-shrink-0"
               />
             ))}
+          </div>
+        </div>
+
+        <div className="flex items-center bg-green-900/30 border border-green-700 rounded-lg p-4 mb-6">
+          <Plus className="w-6 h-6 text-green-300 mr-3" />
+          <div>
+            <span className="font-semibold text-green-300">Open Source:</span>
+            &nbsp;This project is open source. View the code on&nbsp;
+            <Link
+              href="https://github.com/mrepol742/project-orion"
+              target="_blank"
+              className="text-green-300 hover:text-green-200"
+            >
+              GitHub
+            </Link>
+            .
           </div>
         </div>
       </section>

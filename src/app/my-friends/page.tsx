@@ -5,7 +5,48 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "My Friends - Melvin Jones Repol",
-  description: "Here are some of my friends who deserve a shoutout for their amazing work and contributions to the community.",
+  description:
+    "Here are some of my friends who deserve a shoutout for their amazing work and contributions to the community.",
+  keywords: [
+    "My Friends",
+    "Melvin Jones Repol",
+    "Samiun Nafis",
+    "Bharat Singh",
+    "Elisha Paul Okai",
+    "Jay Patrick Cano",
+    "Marvin Quillo Saik",
+    "Aavesh Jilani",
+    "Amos Ayomide",
+    "Emmanuel Emejulu",
+    "John Paul Caigas",
+    "Abass Dev",
+    "Jerome Edica",
+  ],
+  openGraph: {
+    title: "My Friends - Melvin Jones Repol",
+    description:
+      "Here are some of my friends who deserve a shoutout for their amazing work and contributions to the community.",
+    url: "https://www.melvinjonesrepol.com/my-friends",
+    siteName: "Melvin Jones Repol",
+    images: [
+      {
+        url: "/images/melvinjonesrepol.png",
+        width: 1200,
+        height: 630,
+        alt: "My Friends Cover",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "My Friends - Melvin Jones Repol",
+    description:
+      "Here are some of my friends who deserve a shoutout for their amazing work and contributions to the community.",
+    images: ["/images/melvinjonesrepol.png"],
+    creator: "@mrepol742",
+  },
 };
 
 const friends = [

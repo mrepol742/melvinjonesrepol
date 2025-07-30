@@ -7,6 +7,48 @@ export const metadata: Metadata = {
   title: "Ulisha Store - Melvin Jones Repol",
   description:
     "A premier destination for quality fashion, accessories, and electronics. Bringing you the best products at competitive prices.",
+  keywords: [
+    "Ulisha Store",
+    "Fashion",
+    "Accessories",
+    "Electronics",
+    "Online Shopping",
+    "E-commerce",
+    "Quality Products",
+    "Competitive Prices",
+    "Fashion Store",
+    "Electronics Store",
+    "Online Fashion",
+    "Online Electronics",
+    "Shopping",
+    "Retail",
+    "E-commerce Platform",
+  ],
+  openGraph: {
+    title: "Ulisha Store - Melvin Jones Repol",
+    description:
+      "A premier destination for quality fashion, accessories, and electronics. Bringing you the best products at competitive prices.",
+    url: "https://www.melvinjonesrepol.com/projects/ulisha-store",
+    siteName: "Melvin Jones Repol",
+    images: [
+      {
+        url: "/images/ulisha-store-1.png",
+        width: 800,
+        height: 600,
+        alt: "Ulisha Store Screenshot",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ulisha Store - Melvin Jones Repol",
+    description:
+      "A premier destination for quality fashion, accessories, and electronics. Bringing you the best products at competitive prices.",
+    images: ["/images/ulisha-store-1.png"],
+    creator: "@mrepol742",
+  },
 };
 
 const Images = [

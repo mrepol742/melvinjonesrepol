@@ -1,4 +1,4 @@
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Plus } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,6 +7,45 @@ export const metadata: Metadata = {
   title: "Point of Sale - Melvin Jones Repol",
   description:
     "A lightweight, web-based and offline-capable POS system built for flawless performance, supporting multi-department roles and full functionality.",
+  keywords: [
+    "Point of Sale",
+    "POS System",
+    "Web-based POS",
+    "Offline-capable POS",
+    "Multi-department POS",
+    "Retail Management",
+    "Sales System",
+    "Inventory Management",
+    "Business Solutions",
+    "Sales Management",
+    "Retail Software",
+    "POS Software",
+  ],
+  openGraph: {
+    title: "Point of Sale - Melvin Jones Repol",
+    description:
+      "A lightweight, web-based and offline-capable POS system built for flawless performance, supporting multi-department roles and full functionality.",
+    url: "https://www.melvinjonesrepol.com/projects/point-of-sale",
+    siteName: "Melvin Jones Repol",
+    images: [
+      {
+        url: "/images/pos-1.png",
+        width: 800,
+        height: 600,
+        alt: "Point of Sale Screenshot",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Point of Sale - Melvin Jones Repol",
+    description:
+      "A lightweight, web-based and offline-capable POS system built for flawless performance, supporting multi-department roles and full functionality.",
+    images: ["/images/pos-1.png"],
+    creator: "@mrepol742",
+  },
 };
 
 const Images = [
@@ -57,6 +96,22 @@ export default function PointOfSale() {
                 className="object-cover rounded-lg flex-shrink-0"
               />
             ))}
+          </div>
+        </div>
+
+        <div className="flex items-center bg-green-900/30 border border-green-700 rounded-lg p-4 mb-6">
+          <Plus className="w-6 h-6 text-green-300 mr-3" />
+          <div>
+            <span className="font-semibold text-green-300">Open Source:</span>
+            &nbsp;This project is open source. View the code on&nbsp;
+            <Link
+              href="https://github.com/mrepol742/project-pos"
+              target="_blank"
+              className="text-green-300 hover:text-green-200"
+            >
+              GitHub
+            </Link>
+            .
           </div>
         </div>
       </section>

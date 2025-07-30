@@ -44,7 +44,7 @@ const projects = [
     title: "Axleshift Core 1 - Capstone Project",
     description:
       "A freight management services. Providing Businesses with cutting-edge platform, security, and reliability.",
-    repo: "/projects/axleshift-core-1",
+    link: "/projects/axleshift-core-1",
   },
   {
     title: "Second Chance Backend Nodejs Capstone",

@@ -80,14 +80,6 @@ export default function Nav() {
               </span>
             </Link>
           </li>
-          <li>
-            <Link href="/contact-me" className="group  flex items-center">
-              <ContactRoundIcon className="inline-block mr-1" />
-              <span className="ml-1 overflow-hidden max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-200 whitespace-nowrap">
-                Contact
-              </span>
-            </Link>
-          </li>
         </ul>
       </div>
     </nav>

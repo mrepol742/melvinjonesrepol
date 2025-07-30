@@ -1,4 +1,4 @@
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Plus } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,6 +7,43 @@ export const metadata: Metadata = {
   title: "Webvium VPN - Melvin Jones Repol",
   description:
     "Anonymous, Secured, Private and the fastest Virtual Private Network.",
+  keywords: [
+    "Webvium VPN",
+    "Virtual Private Network",
+    "VPN",
+    "Anonymous VPN",
+    "Secured VPN",
+    "Private VPN",
+    "Fast VPN",
+    "Android VPN",
+    "Internet Security",
+    "Online Privacy",
+  ],
+  openGraph: {
+    title: "Webvium VPN - Melvin Jones Repol",
+    description:
+      "Anonymous, Secured, Private and the fastest Virtual Private Network.",
+    url: "https://www.melvinjonesrepol.com/projects/webvium-vpn",
+    siteName: "Melvin Jones Repol",
+    images: [
+      {
+        url: "/images/webviumvpn-1.jpg",
+        width: 800,
+        height: 600,
+        alt: "Webvium VPN Screenshot",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Webvium VPN - Melvin Jones Repol",
+    description:
+      "Anonymous, Secured, Private and the fastest Virtual Private Network.",
+    images: ["/images/webviumvpn-1.jpg"],
+    creator: "@mrepol742",
+  },
 };
 
 const Images = [
