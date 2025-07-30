@@ -17,7 +17,7 @@ const interSans = Inter({
 export const metadata: Metadata = {
   title: "Melvin Jones Repol - Software Engineer | DevOps",
   description:
-    "Freelance Software Engineer specializing in full-stack web development, SEO, data analytics, embedded systems with Arduino programming, hardware and software troubleshooting, and building progressive web applications.",
+    "Freelance Software Engineer specializing in full-stack web development, SEO, data analytics, embedded systems with Arduino, hardware & software troubleshooting, and PWA.",
   keywords: [
     "Melvin Jones Repol",
     "Repol",
@@ -34,6 +34,12 @@ export const metadata: Metadata = {
   authors: [
     { name: "Melvin Jones Repol", url: "https://www.melvinjonesrepol.com" },
   ],
+  alternates: {
+    canonical: "https://www.melvinjonesrepol.com",
+    types: {
+      "application/xml": "https://www.melvinjonesrepol.com/sitemap.xml",
+    },
+  },
   creator: "Melvin Jones Repol",
   openGraph: {
     title: "Melvin Jones Repol - Software Engineer | DevOps",
