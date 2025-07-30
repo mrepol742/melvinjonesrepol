@@ -26,7 +26,7 @@ export default function CertificateCard({
       <h3 className="text-xl font-bold mb-2">{title}</h3>
       <span>{type}</span>
       <p className="text-white-700 mb-4">
-        <span className="text-gray-500">{date}</span> {description}
+        <span className="text-gray-300">{date}</span> {description}
       </p>
 
       <Link

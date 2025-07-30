@@ -61,6 +61,14 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
+                    href="/my-friends"
+                    className="hover:underline text-gray-400"
+                  >
+                    My Friends
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/certificates"
                     className="hover:underline text-gray-400"
                   >
@@ -133,7 +141,10 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/sitemap.xml" className="hover:underline text-gray-400">
+                <Link
+                  href="/sitemap.xml"
+                  className="hover:underline text-gray-400"
+                >
                   Sitemap
                 </Link>
               </li>
@@ -206,7 +217,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-10 border-t border-gray-800 pt-6 text-center text-xs text-gray-500">
+        <div className="mt-10 border-t border-gray-800 pt-6 text-center text-xs text-gray-300">
           © {new Date().getFullYear()} Melvin Jones Repol. All rights reserved.
         </div>
       </div>

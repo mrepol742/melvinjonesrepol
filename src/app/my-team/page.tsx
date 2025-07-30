@@ -13,7 +13,7 @@ export default function MyTeam() {
         <h1 className="text-center text-2xl font-semibold" data-aos="fade-up">
           My Team
         </h1>
-        <p className="text-center text-gray-500" data-aos="fade-up" data-aos-delay="100">
+        <p className="text-center text-gray-300" data-aos="fade-up" data-aos-delay="100">
           Here are the amazing people I work with.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">

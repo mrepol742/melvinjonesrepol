@@ -49,7 +49,7 @@ export default function Gallery() {
           Gallery
         </h1>
         <p
-          className="text-center text-gray-500"
+          className="text-center text-gray-300"
           data-aos="fade-up"
           data-aos-delay="100"
         >

@@ -13,7 +13,7 @@ export default function WorkExperience() {
         <h1 className="text-2xl font-semibold" data-aos="fade-right">
           Work Experience
         </h1>
-        <p className="text-gray-500" data-aos="fade-right" data-aos-delay="100">
+        <p className="text-gray-300" data-aos="fade-right" data-aos-delay="100">
           Here are some of the work experiences I had.
         </p>
         <div className="mt-4">

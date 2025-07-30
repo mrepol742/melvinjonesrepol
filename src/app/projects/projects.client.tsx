@@ -111,7 +111,7 @@ export default function Projects() {
             Projects
           </h1>
           <p
-            className="text-gray-500"
+            className="text-gray-300"
             data-aos="fade-right"
             data-aos-delay="100"
           >

@@ -45,6 +45,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://www.melvinjonesrepol.com/my-friends",
+      lastModified: new Date(),
+      priority: 0.8,
+    },
+    {
       url: "https://www.melvinjonesrepol.com/certificates",
       lastModified: new Date(),
       changeFrequency: "monthly",

@@ -90,7 +90,7 @@ export default function Certificates() {
         <h1 className="text-2xl font-semibold" data-aos="fade-up">
           Certificates
         </h1>
-        <p className="text-gray-500" data-aos="fade-up" data-aos-delay="100">
+        <p className="text-gray-300" data-aos="fade-up" data-aos-delay="100">
           Here are some of the certificates I have earned through various
           courses and programs.
         </p>
