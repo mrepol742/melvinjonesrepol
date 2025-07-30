@@ -95,16 +95,6 @@ export default function Home() {
                   mrepol742@gmail.com
                 </button>
               </Link>
-              <Link href="/my-friends">
-                <button
-                  className="text-sm relative bg-gray-800 text-white px-7 py-4 mt-3 ml-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
-                  before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-gray-900 before:rounded-b-lg
-                  after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-gray-900 after:rounded-r-lg"
-                  style={{ boxShadow: "1px 1px 0 0 #111827" }}
-                >
-                  <Users className="inline" size={18} />
-                </button>
-              </Link>
             </div>
 
             <div
