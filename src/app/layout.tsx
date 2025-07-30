@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import NextTopLoader from "nextjs-toploader";
 import AOSWrapper from "../components/AOSWrapper";
 import "./globals.css";
+import Script from "next/script";
 
 const interSans = Inter({
   subsets: ["latin"],
@@ -91,6 +92,41 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          id="ld-json-website"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Melvin Jones Repol",
+              url: "https://www.melvinjonesrepol.com",
+            }),
+          }}
+        />
+        <Script
+          id="ld-json-organization"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Melvin Jones Repol",
+              url: "https://www.melvinjonesrepol.com",
+              logo: "/images/melvinjonesrepol.png",
+              sameAs: [
+                "https://facebook.com/melvinjonesrepol",
+                "https://x.com/@mrepol742",
+                "https://instagram.com/melvinjonesrepol/",
+                "https://linkedin.com/in/mrepol742/",
+                "https://github.com/mrepol742",
+                "https://www.youtube.com/@mrepol742",
+              ],
+            }),
+          }}
+        />
+      </head>
       <body
         className={`${interSans.className} antialiased min-h-screen flex flex-col`}
       >
