@@ -102,7 +102,7 @@ export default function OrionChatbot() {
                 alt={`Screenshot ${index + 1}`}
                 width={250}
                 height={445}
-                className="object-cover rounded-lg flex-shrink-0"
+                className="object-cover rounded-lg flex-shrink-0 border border-gray-700 hover:scale-99 transition-transform duration-200"
               />
             ))}
           </div>

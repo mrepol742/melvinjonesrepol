@@ -43,12 +43,12 @@ export const metadata: Metadata = {
 };
 
 const Images = [
-  "/images/canis-1.jpg",
-  "/images/canis-2.jpg",
-  "/images/canis-3.jpg",
-  "/images/canis-4.jpg",
-  "/images/canis-5.jpg",
-  "/images/canis-6.jpg",
+  "/images/canis-1.png",
+  "/images/canis-2.png",
+  "/images/canis-3.png",
+  "/images/canis-4.png",
+  "/images/canis-5.png",
+  "/images/canis-6.png",
 ];
 
 export default function CanisChatbot() {
@@ -102,9 +102,33 @@ export default function CanisChatbot() {
                 alt={`Screenshot ${index + 1}`}
                 width={250}
                 height={445}
-                className="object-cover rounded-lg flex-shrink-0"
+                className="object-cover rounded-lg flex-shrink-0 border border-gray-700 hover:scale-99 transition-transform duration-200"
               />
             ))}
+          </div>
+        </div>
+
+        <div className="flex items-center bg-blue-900/30 border border-blue-700 rounded-lg p-4 mb-2">
+          <Image
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/250px-Telegram_2019_Logo.svg.png"
+            alt="Telegram Icon"
+            width={19}
+            height={19}
+            className="mr-4"
+          />
+          <div>
+            <span className="font-semibold text-blue-300">
+              Telegram Version:
+            </span>
+            &nbsp;A Telegram version of this chatbot is available at&nbsp;
+            <Link
+              href="https://github.com/mrepol742/project-canis-tg"
+              target="_blank"
+              className="text-blue-300 hover:text-blue-200"
+            >
+              GitHub
+            </Link>
+            .
           </div>
         </div>
 
@@ -126,6 +150,8 @@ export default function CanisChatbot() {
 
         <span className="ml-auto text-xs text-gray-400">
           WhatsApp icon &copy; Meta Platforms, Inc.
+          <br />
+          Telegram icon &copy; Telegram FZ-LLC.
         </span>
       </section>
     </main>

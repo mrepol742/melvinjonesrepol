@@ -97,7 +97,7 @@ export default function UlishaStore() {
                 width={400}
                 height={120}
                 sizes="(max-width: 640px) 90vw, 400px"
-                className="object-cover rounded-lg flex-shrink-0"
+                className="object-cover rounded-lg flex-shrink-0 border border-gray-700 hover:scale-99 transition-transform duration-200"
               />
             ))}
           </div>
