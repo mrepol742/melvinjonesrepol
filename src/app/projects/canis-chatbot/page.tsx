@@ -4,31 +4,29 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Orion Chatbot - Melvin Jones Repol",
+  title: "Canis Chatbot - Melvin Jones Repol",
   description:
-    "Meet the lightning-fast Facebook Messenger chatbot, seamlessly managing multiple accounts with access to 271 commands.",
+    "A scalable, modular WhatsApp chatbot built in TypeScript. It leverages modern best practices, lean architecture, Prisma ORM, Dockerization, and environment-based configuration to deliver a robust, flexible successor to Orion.",
   keywords: [
-    "Orion Chatbot",
-    "Facebook Messenger Bot",
+    "Canis Chatbot",
+    "WhatsApp Bot",
     "Chatbot",
-    "Multi-account Management",
-    "271 Commands",
-    "Messenger Automation",
+    "WhatsApp Automation",
     "AI Chatbot",
-    "Orion Bot",
+    "Canis Bot",
   ],
   openGraph: {
-    title: "Orion Chatbot - Melvin Jones Repol",
+    title: "Canis Chatbot - Melvin Jones Repol",
     description:
-      "Meet the lightning-fast Facebook Messenger chatbot, seamlessly managing multiple accounts with access to 271 commands.",
-    url: "https://www.melvinjonesrepol.com/projects/orion-chatbot",
+      "A scalable, modular WhatsApp chatbot built in TypeScript. It leverages modern best practices, lean architecture, Prisma ORM, Dockerization, and environment-based configuration to deliver a robust, flexible successor to Orion.",
+    url: "https://www.melvinjonesrepol.com/projects/canis-chatbot",
     siteName: "Melvin Jones Repol",
     images: [
       {
-        url: "https://opengraph.githubassets.com/1/mrepol742/project-orion",
+        url: "https://opengraph.githubassets.com/1/mrepol742/project-canis",
         width: 800,
         height: 600,
-        alt: "Orion Chatbot Screenshot",
+        alt: "Canis Chatbot Screenshot",
       },
     ],
     locale: "en_US",
@@ -36,24 +34,24 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Orion Chatbot - Melvin Jones Repol",
+    title: "Canis Chatbot - Melvin Jones Repol",
     description:
-      "Meet the lightning-fast Facebook Messenger chatbot, seamlessly managing multiple accounts with access to 271 commands.",
-    images: ["https://opengraph.githubassets.com/1/mrepol742/project-orion"],
+      "A scalable, modular WhatsApp chatbot built in TypeScript. It leverages modern best practices, lean architecture, Prisma ORM, Dockerization, and environment-based configuration to deliver a robust, flexible successor to Orion.",
+    images: ["https://opengraph.githubassets.com/1/mrepol742/project-canis"],
     creator: "@mrepol742",
   },
 };
 
 const Images = [
-  "/images/orion-1.jpg",
-  "/images/orion-2.jpg",
-  "/images/orion-3.jpg",
-  "/images/orion-4.jpg",
-  "/images/orion-5.jpg",
-  "/images/orion-6.jpg",
+  "/images/canis-1.jpg",
+  "/images/canis-2.jpg",
+  "/images/canis-3.jpg",
+  "/images/canis-4.jpg",
+  "/images/canis-5.jpg",
+  "/images/canis-6.jpg",
 ];
 
-export default function OrionChatbot() {
+export default function CanisChatbot() {
   return (
     <main className="p-8">
       <section>
@@ -67,17 +65,19 @@ export default function OrionChatbot() {
 
         <div className="flex items-center mb-4">
           <Image
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Facebook_Messenger_logo_2025.svg/250px-Facebook_Messenger_logo_2025.svg.png"
-            alt="Facebook messenger icon"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/WhatsApp_Logo_green.svg/250px-WhatsApp_Logo_green.svg.png"
+            alt="Canis Icon"
             width={70}
             height={70}
             className="mr-7"
           />
           <div>
-            <h1 className="text-4xl font-bold">Orion Chatbot</h1>
+            <h1 className="text-4xl font-bold">Canis Chatbot</h1>
             <p className="text-gray-300 mb-4">
-              Meet the lightning-fast Facebook Messenger chatbot, seamlessly
-              managing multiple accounts with access to 271 commands.
+              A scalable, modular WhatsApp chatbot built in TypeScript. It
+              leverages modern best practices, lean architecture, Prisma ORM,
+              Dockerization, and environment-based configuration to deliver a
+              robust, flexible successor to Orion.
             </p>
           </div>
         </div>
@@ -87,7 +87,7 @@ export default function OrionChatbot() {
           <div>
             <span className="font-semibold text-yellow-300">Disclaimer:</span>
             &nbsp; By using this bot, you acknowledge that your account may be
-            at risk of suspension or ban by Facebook. The author and
+            at risk of suspension or ban by WhatsApp. The author and
             contributors are not liable for any loss, damage, or consequences
             resulting from the use of this software. Use at your own risk.
           </div>
@@ -114,7 +114,7 @@ export default function OrionChatbot() {
             <span className="font-semibold text-green-300">Open Source:</span>
             &nbsp;This project is open source. View the code on&nbsp;
             <Link
-              href="https://github.com/mrepol742/project-orion"
+              href="https://github.com/mrepol742/project-canis"
               target="_blank"
               className="text-green-300 hover:text-green-200"
             >
@@ -125,7 +125,7 @@ export default function OrionChatbot() {
         </div>
 
         <span className="ml-auto text-xs text-gray-400">
-          Facebook Messenger icon &copy; Meta Platforms, Inc.
+          WhatsApp icon &copy; Meta Platforms, Inc.
         </span>
       </section>
     </main>

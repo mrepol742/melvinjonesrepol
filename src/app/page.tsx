@@ -35,6 +35,24 @@ const skills = [
   },
 ];
 
+const bgGradients = [
+  "bg-gradient-to-tr from-orange-500/40 to-yellow-300/30",
+  "bg-gradient-to-br from-blue-600/30 to-purple-400/30",
+  "bg-gradient-to-tl from-green-500/30 to-lime-300/30",
+  "bg-gradient-to-r from-pink-500/30 to-red-400/30",
+  "bg-gradient-to-bl from-violet-500/30 to-indigo-300/30",
+  "bg-gradient-to-tr from-yellow-500/30 to-orange-300/30",
+];
+
+const textColors = [
+  "text-orange-600",
+  "text-blue-600",
+  "text-green-600",
+  "text-purple-600",
+  "text-yellow-600",
+  "text-pink-600",
+];
+
 export default function Home() {
   return (
     <main className="p-8">
@@ -139,56 +157,25 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-16 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-          {skills.map((skill, idx) => {
-            const bgGradients = [
-              "bg-gradient-to-tr from-orange-500/40 to-yellow-300/30",
-              "bg-gradient-to-br from-blue-600/30 to-purple-400/30",
-              "bg-gradient-to-tl from-green-500/30 to-lime-300/30",
-              "bg-gradient-to-r from-pink-500/30 to-red-400/30",
-              "bg-gradient-to-bl from-violet-500/30 to-indigo-300/30",
-              "bg-gradient-to-tr from-yellow-500/30 to-orange-300/30",
-            ];
-            const textColors = [
-              "text-orange-600",
-              "text-blue-600",
-              "text-green-600",
-              "text-purple-600",
-              "text-yellow-600",
-              "text-pink-600",
-            ];
-            const layouts = [
-              "flex-col",
-              "flex-col-reverse",
-              "flex-row gap-5",
-              "flex-row-reverse gap-5",
-            ];
+        <div className="mt-16 relative flex flex-col items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+            {skills.map((skill, idx) => {
+              const bg = bgGradients[idx % bgGradients.length];
+              const textColor = textColors[idx % textColors.length];
 
-            const bg = bgGradients[idx % bgGradients.length];
-            const textColor = textColors[idx % textColors.length];
-            const layout = layouts[idx % layouts.length];
-
-            return (
-              <div
-                key={skill.title}
-                className={`bg-black/70 backdrop-blur rounded-xl shadow p-6 flex ${layout} h-full relative overflow-hidden`}
-                data-aos="fade-up"
-                data-aos-delay={idx * 100}
-              >
+              return (
                 <div
-                  className={`absolute top-0 left-0 w-full h-full ${bg} pointer-events-none`}
-                />
-                <h3
-                  className={`text-xl font-semibold mb-2 ${textColor} relative z-10`}
+                  key={idx}
+                  className={`p-6 bg-gray-800 rounded-lg shadow-lg ${bg} ${textColor}`}
+                  data-aos="fade-up"
+                  data-aos-delay={`${idx * 100}`}
                 >
-                  {skill.title}
-                </h3>
-                <p className="text-white-700 mb-2 relative z-10">
-                  {skill.description}
-                </p>
-              </div>
-            );
-          })}
+                  <h3 className="text-xl font-semibold">{skill.title}</h3>
+                  <p className="mt-2 text-gray-300">{skill.description}</p>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
     </main>

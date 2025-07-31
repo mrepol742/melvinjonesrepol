@@ -57,7 +57,10 @@ export default function WebviumVPN() {
   return (
     <main className="p-8">
       <section>
-        <Link className="flex items-center mb-4" href="/projects">
+        <Link
+          className="flex items-center mb-4 hover:text-violet-500 transition-colors duration-200"
+          href="/projects"
+        >
           <ArrowLeft className="w-6 h-6 mr-2" />
           <h3 className="text-2xl font-semibold">Projects</h3>
         </Link>

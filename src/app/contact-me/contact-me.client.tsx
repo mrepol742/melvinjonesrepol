@@ -47,7 +47,7 @@ export default function ContactMe() {
       <section>
         <div className="flex flex-col items-center gap-4">
           <h1 className="text-center text-2xl font-semibold">Contact Me</h1>
-          <p className="text-gray-600 mb-6 text-center max-w-md">
+          <p className="text-grey-300 mb-6 text-center max-w-md">
             Have a question, project, or just want to say hi? Fill out the form
             below and I&apos;ll get back to you soon!
           </p>

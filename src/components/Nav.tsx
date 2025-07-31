@@ -5,7 +5,6 @@ import {
   ShieldHalfIcon,
   ShieldCheckIcon,
   BriefcaseBusinessIcon,
-  ContactRoundIcon,
   GalleryHorizontal,
   Users,
 } from "lucide-react";
@@ -27,13 +26,16 @@ export default function Nav() {
                   style={{ minWidth: 25, minHeight: 25, width: 25, height: 25 }}
                 />
               </span>
-              <span className="ml-1 overflow-hidden max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-200 whitespace-nowrap">
+              <span className="hover:text-orange-500 ml-1 overflow-hidden max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-200 whitespace-nowrap">
                 Melvin Jones Repol
               </span>
             </Link>
           </li>
           <li>
-            <Link href="/projects" className="group  flex items-center">
+            <Link
+              href="/projects"
+              className="group flex items-center hover:text-orange-500"
+            >
               <FolderKanbanIcon className="inline-block mr-1" />
               <span className="ml-1 overflow-hidden max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-200 whitespace-nowrap">
                 Projects
@@ -41,7 +43,10 @@ export default function Nav() {
             </Link>
           </li>
           <li>
-            <Link href="/my-team" className="group  flex items-center">
+            <Link
+              href="/my-team"
+              className="group flex items-center hover:text-orange-500"
+            >
               <ShieldHalfIcon className="inline-block mr-1" />
               <span className="ml-1 overflow-hidden max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-200 whitespace-nowrap">
                 My Team
@@ -49,7 +54,10 @@ export default function Nav() {
             </Link>
           </li>
           <li>
-            <Link href="/my-friends" className="group  flex items-center">
+            <Link
+              href="/my-friends"
+              className="group flex items-center hover:text-orange-500"
+            >
               <Users className="inline-block mr-1" />
               <span className="ml-1 overflow-hidden max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-200 whitespace-nowrap">
                 My Friends
@@ -57,7 +65,10 @@ export default function Nav() {
             </Link>
           </li>
           <li>
-            <Link href="/certificates" className="group  flex items-center">
+            <Link
+              href="/certificates"
+              className="group flex items-center hover:text-orange-500"
+            >
               <ShieldCheckIcon className="inline-block mr-1" />
               <span className="ml-1 overflow-hidden max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-200 whitespace-nowrap">
                 Certificates
@@ -65,7 +76,10 @@ export default function Nav() {
             </Link>
           </li>
           <li>
-            <Link href="/work-experience" className="group  flex items-center">
+            <Link
+              href="/work-experience"
+              className="group flex items-center hover:text-orange-500"
+            >
               <BriefcaseBusinessIcon className="inline-block mr-1" />
               <span className="ml-1 overflow-hidden max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-200 whitespace-nowrap">
                 Work Experience
@@ -73,7 +87,10 @@ export default function Nav() {
             </Link>
           </li>
           <li>
-            <Link href="/gallery" className="group  flex items-center">
+            <Link
+              href="/gallery"
+              className="group flex items-center hover:text-orange-500"
+            >
               <GalleryHorizontal className="inline-block mr-1" />
               <span className="ml-1 overflow-hidden max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-200 whitespace-nowrap">
                 Gallery

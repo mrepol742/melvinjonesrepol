@@ -20,7 +20,7 @@ const projects = [
     title: "Project Canis",
     description:
       "A scalable, modular WhatsApp chatbot built in TypeScript. It leverages modern best practices, lean architecture, Prisma ORM, Dockerization, and environment-based configuration to deliver a robust, flexible successor to Orion.",
-    repo: "https://github.com/mrepol742/project-canis",
+    link: "/projects/canis-chatbot",
   },
   {
     title: "Ulisha Store",

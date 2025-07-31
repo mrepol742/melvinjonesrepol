@@ -42,14 +42,14 @@ export default function Footer() {
               <h4 className="text-sm font-semibold mb-2 text-white">Links</h4>
               <ul className="space-y-1 text-sm">
                 <li>
-                  <Link href="/" className="hover:underline text-gray-400">
+                  <Link href="/" className="hover:text-orange-500 text-gray-400">
                     Home
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="/projects"
-                    className="hover:underline text-gray-400"
+                    className="hover:text-orange-500 text-gray-400"
                   >
                     Projects
                   </Link>
@@ -57,7 +57,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/my-team"
-                    className="hover:underline text-gray-400"
+                    className="hover:text-orange-500 text-gray-400"
                   >
                     My Team
                   </Link>
@@ -65,7 +65,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/my-friends"
-                    className="hover:underline text-gray-400"
+                    className="hover:text-orange-500 text-gray-400"
                   >
                     My Friends
                   </Link>
@@ -73,7 +73,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/certificates"
-                    className="hover:underline text-gray-400"
+                    className="hover:text-orange-500 text-gray-400"
                   >
                     Certificates
                   </Link>
@@ -81,7 +81,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/gallery"
-                    className="hover:underline text-gray-400"
+                    className="hover:text-orange-500 text-gray-400"
                   >
                     Gallery
                   </Link>
@@ -89,7 +89,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/contact-me"
-                    className="hover:underline text-gray-400"
+                    className="hover:text-orange-500 text-gray-400"
                   >
                     Contact
                   </Link>
@@ -104,7 +104,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/projects/webvium-browser"
-                  className="hover:underline text-gray-400"
+                  className="hover:text-orange-500 text-gray-400"
                 >
                   Webvium Browser
                 </Link>
@@ -112,7 +112,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/projects/orion-chatbot"
-                  className="hover:underline text-gray-400"
+                  className="hover:text-orange-500 text-gray-400"
                 >
                   Orion Chatbot
                 </Link>
@@ -120,7 +120,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/projects/axleshift-core-1"
-                  className="hover:underline text-gray-400"
+                  className="hover:text-orange-500 text-gray-400"
                 >
                   Axleshift Core 1
                 </Link>
@@ -128,7 +128,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/projects/point-of-sale"
-                  className="hover:underline text-gray-400"
+                  className="hover:text-orange-500 text-gray-400"
                 >
                   Point of Sale
                 </Link>
@@ -136,25 +136,33 @@ export default function Footer() {
               <li>
                 <Link
                   href="/projects/ulisha-store"
-                  className="hover:underline text-gray-400"
+                  className="hover:text-orange-500 text-gray-400"
                 >
                   Ulisha Store
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="hover:underline text-gray-400">
+                <Link
+                  href="/projects/canis-chatbot"
+                  className="hover:text-orange-500 text-gray-400"
+                >
+                  Canis Chatbot
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy" className="hover:text-orange-500 text-gray-400">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="hover:underline text-gray-400">
+                <Link href="/terms" className="hover:text-orange-500 text-gray-400">
                   Terms of Service
                 </Link>
               </li>
               <li>
                 <Link
                   href="/sitemap.xml"
-                  className="hover:underline text-gray-400"
+                  className="hover:text-orange-500 text-gray-400"
                 >
                   Sitemap
                 </Link>
