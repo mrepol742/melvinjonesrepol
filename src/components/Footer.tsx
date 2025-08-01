@@ -42,7 +42,10 @@ export default function Footer() {
               <h4 className="text-sm font-semibold mb-2 text-white">Links</h4>
               <ul className="space-y-1 text-sm">
                 <li>
-                  <Link href="/" className="hover:text-orange-500 text-gray-400">
+                  <Link
+                    href="/"
+                    className="hover:text-orange-500 text-gray-400"
+                  >
                     Home
                   </Link>
                 </li>
@@ -52,6 +55,14 @@ export default function Footer() {
                     className="hover:text-orange-500 text-gray-400"
                   >
                     Projects
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/gaming"
+                    className="hover:text-orange-500 text-gray-400"
+                  >
+                    Gaming
                   </Link>
                 </li>
                 <li>
@@ -150,12 +161,18 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="hover:text-orange-500 text-gray-400">
+                <Link
+                  href="/privacy"
+                  className="hover:text-orange-500 text-gray-400"
+                >
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="hover:text-orange-500 text-gray-400">
+                <Link
+                  href="/terms"
+                  className="hover:text-orange-500 text-gray-400"
+                >
                   Terms of Service
                 </Link>
               </li>

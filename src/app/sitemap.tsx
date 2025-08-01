@@ -53,5 +53,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: "https://www.melvinjonesrepol.com/terms",
     },
+    {
+      url: "https://www.melvinjonesrepol.com/gaming",
+    },
   ];
 }

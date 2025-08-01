@@ -1,6 +1,7 @@
-import { Users } from "lucide-react";
+import { Gamepad2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import SkillCard from "@/components/SkillCard";
 
 const skills = [
   {
@@ -145,7 +146,7 @@ export default function Home() {
             data-aos="fade-up"
             data-aos-delay="500"
           >
-            <div className="w-64 h-64 rounded-full bg-gradient-to-tr from-violet-500 via-yellow-300 to-green-400 animate-gradient-shift flex items-center justify-center bg-opacity-60 backdrop-blur-md">
+            <div className="w-64 h-64 rounded-full bg-gradient-to-tr from-violet-500 via-yellow-300 to-green-400 animate-gradient-shift flex items-center justify-center bg-opacity-60 backdrop-blur-md hover:scale-95 transition-transform duration-300">
               <Image
                 src="/images/melvinjonesrepol.transparent.png"
                 alt="Hero Image"
@@ -164,18 +165,41 @@ export default function Home() {
               const textColor = textColors[idx % textColors.length];
 
               return (
-                <div
-                  key={idx}
-                  className={`p-6 bg-gray-800 rounded-lg shadow-lg ${bg} ${textColor}`}
-                  data-aos="fade-up"
-                  data-aos-delay={`${idx * 100}`}
-                >
-                  <h3 className="text-xl font-semibold">{skill.title}</h3>
-                  <p className="mt-2 text-gray-300">{skill.description}</p>
-                </div>
+                <SkillCard
+                  key={idx + 1}
+                  title={skill.title}
+                  description={skill.description}
+                  bg={bg}
+                  textColor={textColor}
+                />
               );
             })}
           </div>
+        </div>
+
+        <div className="mt-16">
+          <h2
+            className="text-2xl font-semibold"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            My Gaming Activities
+          </h2>
+          <p className="text-gray-300" data-aos="fade-up" data-aos-delay="200">
+            I also enjoy gaming and often share my gaming activities. Check out
+            my latest games and achievements.
+          </p>
+          <Link href="/gaming" data-aos="fade-up" data-aos-delay="300">
+            <button
+              className="text-sm relative bg-orange-400 px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
+                  before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-orange-600 before:rounded-b-lg
+                  after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-orange-600 after:rounded-r-lg"
+              style={{ boxShadow: "1px 1px 0 0 #ea580c" }}
+            >
+              <Gamepad2 className="inline mr-2" />
+              View Gaming Activities
+            </button>
+          </Link>
         </div>
       </section>
     </main>

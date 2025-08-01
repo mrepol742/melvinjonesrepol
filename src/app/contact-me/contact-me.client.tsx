@@ -37,8 +37,8 @@ export default function ContactMe() {
 
     toast.promise(resolveAfter3Sec, {
       pending: "Sending your message...",
-      success: "Message sent successfully! 🎉",
-      error: "Failed to send message. Please try again. ❌",
+      success: "Message sent successfully!",
+      error: "Failed to send message. Please try again.",
     });
   };
 
