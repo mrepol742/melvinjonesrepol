@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     "Logistics Software",
     "Business Platform",
   ],
+  alternates: {
+    canonical: "https://www.melvinjonesrepol.com/projects/axleshift-core-1",
+  },
   openGraph: {
     title: "Axleshift Core 1 - Melvin Jones Repol",
     description:

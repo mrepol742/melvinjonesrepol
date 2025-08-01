@@ -22,6 +22,9 @@ export const metadata: Metadata = {
     "Abass Dev",
     "Jerome Edica",
   ],
+  alternates: {
+    canonical: "https://www.melvinjonesrepol.com/my-friends",
+  },
   openGraph: {
     title: "My Friends - Melvin Jones Repol",
     description:

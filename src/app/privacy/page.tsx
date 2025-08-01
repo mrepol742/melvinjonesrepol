@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Privacy Policy - Melvin Jones Repol",
   description:
     "Read the privacy policy for melvinjonesrepol.com to learn how your data is collected, used, and protected.",
+  alternates: {
+    canonical: "https://www.melvinjonesrepol.com/privacy",
+  },
   openGraph: {
     title: "Privacy Policy - Melvin Jones Repol",
     description:

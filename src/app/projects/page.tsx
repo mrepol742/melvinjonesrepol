@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     "Orion Chatbot",
     "Melvin Jones Repol",
   ],
+  alternates: {
+    canonical: "https://www.melvinjonesrepol.com/projects",
+  },
   openGraph: {
     title: "Projects - Melvin Jones Repol",
     description: "Here are some of my projects that I have worked on.",

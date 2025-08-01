@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     "AI Chatbot",
     "Canis Bot",
   ],
+  alternates: {
+    canonical: "https://www.melvinjonesrepol.com/projects/canis-chatbot",
+  },
   openGraph: {
     title: "Canis Chatbot - Melvin Jones Repol",
     description:

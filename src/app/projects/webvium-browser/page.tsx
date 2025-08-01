@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     "Privacy-Focused Browser",
     "Secure Browser",
   ],
+  alternates: {
+    canonical: "https://www.melvinjonesrepol.com/projects/webvium-browser",
+  },
   openGraph: {
     title: "Webvium Browser - Melvin Jones Repol",
     description:

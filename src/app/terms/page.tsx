@@ -3,6 +3,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Service - Melvin Jones Repol",
   description: "Terms of Service for melvinjonesrepol.com",
+  alternates: {
+    canonical: "https://www.melvinjonesrepol.com/terms",
+  },
   openGraph: {
     title: "Terms of Service - Melvin Jones Repol",
     description: "Terms of Service for melvinjonesrepol.com",

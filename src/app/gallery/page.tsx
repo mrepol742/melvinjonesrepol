@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Gallery - Melvin Jones Repol",
   description: "A collection of images showcasing my projects and designs.",
   keywords: ["Gallery", "Images", "Projects", "Designs", "Melvin Jones Repol"],
+  alternates: {
+    canonical: "https://www.melvinjonesrepol.com/gallery",
+  },
   openGraph: {
     title: "Gallery - Melvin Jones Repol",
     description: "A collection of images showcasing my projects and designs.",
@@ -63,6 +66,17 @@ const images = [
   "/images/axleshift-5.png",
   "/images/axleshift-6.png",
   "/images/axleshift-7.png",
+  "/images/canis-1.png",
+  "/images/canis-2.png",
+  "/images/canis-3.png",
+  "/images/canis-4.png",
+  "/images/canis-5.png",
+  "/images/canis-6.png",
+  "/images/pos-1.png",
+  "/images/pos-2.png",
+  "/images/pos-3.png",
+  "/images/pos-4.png",
+  "/images/pos-5.png",
 ];
 
 export default function Gallery() {

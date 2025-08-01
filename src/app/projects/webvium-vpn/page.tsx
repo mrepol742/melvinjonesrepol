@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     "Internet Security",
     "Online Privacy",
   ],
+  alternates: {
+    canonical: "https://www.melvinjonesrepol.com/projects/webvium-vpn",
+  },
   openGraph: {
     title: "Webvium VPN - Melvin Jones Repol",
     description:

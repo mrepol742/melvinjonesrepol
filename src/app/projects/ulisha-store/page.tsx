@@ -24,6 +24,9 @@ export const metadata: Metadata = {
     "Retail",
     "E-commerce Platform",
   ],
+  alternates: {
+    canonical: "https://www.melvinjonesrepol.com/projects/ulisha-store",
+  },
   openGraph: {
     title: "Ulisha Store - Melvin Jones Repol",
     description:

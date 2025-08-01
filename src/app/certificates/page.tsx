@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     "Laravel",
     "PHP",
   ],
+  alternates: {
+    canonical: "https://www.melvinjonesrepol.com/certificates",
+  },
   openGraph: {
     title: "Certificates - Melvin Jones Repol",
     description:

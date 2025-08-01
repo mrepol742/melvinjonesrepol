@@ -18,6 +18,9 @@ export const metadata: Metadata = {
     "Software Development",
     "IT Support",
   ],
+  alternates: {
+    canonical: "https://www.melvinjonesrepol.com/work-experience",
+  },
   openGraph: {
     title: "Work Experience - Melvin Jones Repol",
     description: "Here are some of the work experiences I had.",

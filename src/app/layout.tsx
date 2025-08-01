@@ -93,6 +93,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="hostname" content="www.melvinjonesrepol.com" />
         <Script
           id="ld-json-website"
           type="application/ld+json"

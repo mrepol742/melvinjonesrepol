@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     "Video Games",
     "PC Gaming",
   ],
+  alternates: {
+    canonical: "https://www.melvinjonesrepol.com/gaming",
+  },
   openGraph: {
     title: "Gaming - Melvin Jones Repol",
     description: "Here are some of my gaming achievements and activities.",

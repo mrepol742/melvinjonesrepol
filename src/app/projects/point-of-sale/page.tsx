@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     "Retail Software",
     "POS Software",
   ],
+  alternates: {
+    canonical: "https://www.melvinjonesrepol.com/projects/point-of-sale",
+  },
   openGraph: {
     title: "Point of Sale - Melvin Jones Repol",
     description:

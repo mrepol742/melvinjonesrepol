@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     "Email Me",
     "Professional Contact",
   ],
+  alternates: {
+    canonical: "https://www.melvinjonesrepol.com/contact-me",
+  },
   openGraph: {
     title: "Contact Me - Melvin Jones Repol",
     description:

@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     "Software Engineers",
     "Developers",
   ],
+  alternates: {
+    canonical: "https://www.melvinjonesrepol.com/my-team",
+  },
   openGraph: {
     title: "My Team - Melvin Jones Repol",
     description: "Here are the amazing people I work with.",
