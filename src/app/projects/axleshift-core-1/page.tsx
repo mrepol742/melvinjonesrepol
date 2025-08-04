@@ -1,7 +1,8 @@
-import { ArrowLeft, Plus } from "lucide-react";
 import { Metadata } from "next";
+import { ArrowLeft, Plus } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import DisqusComments from "@/components/DisqusComments";
 
 export const metadata: Metadata = {
   title: "Axleshift Core 1 - Melvin Jones Repol",
@@ -59,7 +60,7 @@ const Images = [
   "/images/axleshift-7.png",
 ];
 
-export default function UlishaStore() {
+export default function Axleshift() {
   return (
     <main className="p-8">
       <section>
@@ -70,7 +71,6 @@ export default function UlishaStore() {
           <ArrowLeft className="w-6 h-6 mr-2" />
           <h3 className="text-2xl font-semibold">Projects</h3>
         </Link>
-
         <div className="flex items-center mb-4">
           <Image
             src="/images/axleshift-transparent-icon.png"
@@ -87,7 +87,6 @@ export default function UlishaStore() {
             </p>
           </div>
         </div>
-
         <div className="w-full mb-8">
           <div className="flex overflow-x-auto space-x-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent py-2">
             {Images.map((image, index) => (
@@ -103,7 +102,6 @@ export default function UlishaStore() {
             ))}
           </div>
         </div>
-
         <div className="flex items-center bg-green-900/30 border border-green-700 rounded-lg p-4 mb-6">
           <Plus className="w-6 h-6 text-green-300 mr-3" />
           <div>
@@ -118,6 +116,14 @@ export default function UlishaStore() {
             </Link>
             .
           </div>
+        </div>
+
+        <div className="mt-8">
+          <h3>Comments</h3>
+          <p className="text-gray-400 mb-4">
+            Share your thoughts or ask questions about this project.
+          </p>
+          <DisqusComments slug="axleshift-core-1" title="Axleshift Core 1" />
         </div>
       </section>
     </main>

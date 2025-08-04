@@ -2,6 +2,7 @@ import { ArrowLeft, Info, Plus } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import DisqusComments from "@/components/DisqusComments";
 
 export const metadata: Metadata = {
   title: "Canis Chatbot - Melvin Jones Repol",
@@ -149,6 +150,14 @@ export default function CanisChatbot() {
             </Link>
             .
           </div>
+        </div>
+
+        <div className="mt-8">
+          <h3>Comments</h3>
+          <p className="text-gray-400 mb-4">
+            Share your thoughts or ask questions about this project.
+          </p>
+          <DisqusComments slug="canis-chatbot" title="Canis Chatbot" />
         </div>
 
         <span className="ml-auto text-xs text-gray-400">

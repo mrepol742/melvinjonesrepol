@@ -5,7 +5,7 @@ import { Search, X } from "lucide-react";
 import { toast } from "react-toastify";
 import GameCard from "@/components/GameCard";
 import Link from "next/link";
-import Image from "next/image";
+import DisqusComments from "@/components/DisqusComments";
 
 interface GameType {
   appid: number;
@@ -173,6 +173,15 @@ export default function Projects() {
                 Steam Profile
               </button>
             </Link>
+          </div>
+
+          <div className="mt-8">
+            <h3>Comments</h3>
+            <p className="text-gray-400 mb-4">
+              Recommend a game or share your thoughts about my gaming
+              activities.
+            </p>
+            <DisqusComments slug="gaming-comment" title="Gaming" />
           </div>
 
           <span className="ml-auto text-xs text-gray-400">

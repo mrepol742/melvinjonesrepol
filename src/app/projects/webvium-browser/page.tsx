@@ -1,3 +1,4 @@
+import DisqusComments from "@/components/DisqusComments";
 import { ArrowLeft } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
@@ -105,6 +106,14 @@ export default function WebviumBrowser() {
               />
             ))}
           </div>
+        </div>
+
+        <div className="mt-8">
+          <h3>Comments</h3>
+          <p className="text-gray-400 mb-4">
+            Share your thoughts or ask questions about this project.
+          </p>
+          <DisqusComments slug="webvium-browser" title="Webvium Browser" />
         </div>
       </section>
     </main>
