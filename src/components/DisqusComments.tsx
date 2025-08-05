@@ -7,10 +7,7 @@ interface DisqusCommentsProps {
   title: string;
 }
 
-export default function DisqusComments({
-  slug,
-  title,
-}: DisqusCommentsProps) {
+export default function DisqusComments({ slug, title }: DisqusCommentsProps) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [DiscussionEmbed, setDiscussionEmbed] = useState<any>(null);
 

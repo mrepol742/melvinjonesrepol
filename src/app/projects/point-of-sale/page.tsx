@@ -82,7 +82,7 @@ export default function PointOfSale() {
           />
           <div>
             <h1 className="text-4xl font-bold">Point of Sale</h1>
-            <p className="text-gray-300 mb-4">
+            <p className="mb-4">
               A lightweight, web-based and offline-capable POS system built for
               flawless performance, supporting multi-department roles and full
               functionality.
@@ -107,14 +107,14 @@ export default function PointOfSale() {
         </div>
 
         <div className="flex items-center bg-green-900/30 border border-green-700 rounded-lg p-4 mb-6">
-          <Plus className="w-6 h-6 text-green-300 mr-3" />
+          <Plus className="w-6 h-6 text-green-500 mr-3" />
           <div>
-            <span className="font-semibold text-green-300">Open Source:</span>
+            <span className="font-semibold text-green-500">Open Source:</span>
             &nbsp;This project is open source. View the code on&nbsp;
             <Link
               href="https://github.com/mrepol742/project-pos"
               target="_blank"
-              className="text-green-300 hover:text-green-200"
+              className="text-green-500 hover:text-green-200"
             >
               GitHub
             </Link>
@@ -124,10 +124,12 @@ export default function PointOfSale() {
 
         <div className="mt-8">
           <h3>Comments</h3>
-          <p className="text-gray-400 mb-4">
+          <p className="mb-4">
             Share your thoughts or ask questions about this project.
           </p>
-          <DisqusComments slug="project-pos" title="Project POS" />
+          <div className="bg-black p-4 rounded-xl mb-6">
+            <DisqusComments slug="project-pos" title="Project POS" />
+          </div>
         </div>
       </section>
     </main>

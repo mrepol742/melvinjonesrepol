@@ -79,7 +79,7 @@ export default function WebviumVPN() {
           />
           <div>
             <h1 className="text-4xl font-bold">Webvium VPN</h1>
-            <p className="text-gray-300 mb-4">
+            <p className="mb-4">
               Anonymous, Secured, Private and the fastest Virtual Private
               Network.
             </p>
@@ -103,10 +103,12 @@ export default function WebviumVPN() {
 
         <div className="mt-8">
           <h3>Comments</h3>
-          <p className="text-gray-400 mb-4">
+          <p className="mb-4">
             Share your thoughts or ask questions about this project.
           </p>
-          <DisqusComments slug="webvium-vpn" title="Webvium VPN" />
+          <div className="bg-black p-4 rounded-xl mb-6">
+            <DisqusComments slug="webvium-vpn" title="Webvium VPN" />
+          </div>
         </div>
       </section>
     </main>

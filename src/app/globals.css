@@ -94,3 +94,25 @@ body {
   background-size: 200% 200%;
   animation: gradient-shift 6s ease-in-out infinite;
 }
+
+/*
+ * This is a workaround to force light mode for Disqus comments
+ * inside an iframe, which does not respect the parent theme.
+ * It ensures that the Disqus comments section always appears in light mode,
+ * regardless of the site's theme.
+ * 
+ * https: //github.com/disqus/disqus-react/issues/153
+ */
+#disqus_thread {
+  /* force light mode */
+  color-scheme: light !important;
+  filter: none;
+  background-color: black !important;
+}
+
+/* If you switch your site to dark mode, keep forcing “light” inside the iframe */
+[data-theme="dark"] #disqus_thread {
+  color-scheme: light !important;
+  color: white !important;
+  background-color: black !important;
+} 

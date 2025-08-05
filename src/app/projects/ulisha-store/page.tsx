@@ -84,7 +84,7 @@ export default function UlishaStore() {
           />
           <div>
             <h1 className="text-4xl font-bold">Ulisha Store</h1>
-            <p className="text-gray-300 mb-4">
+            <p className="mb-4">
               A premier destination for quality fashion, accessories, and
               electronics. Bringing you the best products at competitive prices.
             </p>
@@ -109,10 +109,12 @@ export default function UlishaStore() {
 
         <div className="mt-8">
           <h3>Comments</h3>
-          <p className="text-gray-400 mb-4">
+          <p className="mb-4">
             Share your thoughts or ask questions about this project.
           </p>
-          <DisqusComments slug="ulisha-store" title="Ulisha Store" />
+          <div className="bg-black p-4 rounded-xl mb-6">
+            <DisqusComments slug="ulisha-store" title="Ulisha Store" />
+          </div>
         </div>
       </section>
     </main>
