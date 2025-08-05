@@ -53,7 +53,7 @@ export default function Projects() {
             Gaming
           </h1>
           <p
-            className="text-gray-300"
+            className="text-gray-500"
             data-aos="fade-right"
             data-aos-delay="100"
           >

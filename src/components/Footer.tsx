@@ -1,3 +1,5 @@
+"use client"
+
 import {
   FacebookIcon,
   InstagramIcon,
@@ -6,9 +8,12 @@ import {
   LinkedinIcon,
   YoutubeIcon,
 } from "lucide-react";
+import { useTheme } from "@/hooks/useTheme";
 import Link from "next/link";
 
 export default function Footer() {
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <footer className="bg-gray-900 text-gray-200 py-10 border-t border-gray-800">
       <div className="container mx-auto px-4">
@@ -188,6 +193,15 @@ export default function Footer() {
           </div>
           {/* Socials */}
           <div>
+            <h4 className="text-sm font-semibold mb-2">Theme</h4>
+            <div className="flex items-center space-x-3">
+              <button
+                onClick={toggleTheme}
+                className="px-3 py-1 bg-gray-700 rounded hover:bg-orange-500 transition-colors"
+              >
+                {theme === "dark" ? "Switch to Light" : "Switch to Dark"}
+              </button>
+            </div>
             <h4 className="text-sm font-semibold mb-2 text-white">Follow Us</h4>
             <div className="flex space-x-3">
               <Link

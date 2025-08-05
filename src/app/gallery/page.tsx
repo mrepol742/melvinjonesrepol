@@ -87,7 +87,7 @@ export default function Gallery() {
           Gallery
         </h1>
         <p
-          className="text-center text-gray-300"
+          className="text-center"
           data-aos="fade-up"
           data-aos-delay="100"
         >

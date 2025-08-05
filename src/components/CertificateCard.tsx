@@ -19,15 +19,14 @@ export default function CertificateCard({
 }: CertificateCardProps) {
   return (
     <div
-      className="bg-black/70 backdrop-blur rounded-xl p-6 shadow hover:shadow-lg transition mb-3"
+      className={`bg-black/10 backdrop-blur rounded-xl p-6 shadow hover:shadow-lg transition`}
       data-aos="fade-up"
       data-aos-delay={delay}
     >
       <h3 className="text-xl font-bold mb-2">{title}</h3>
       <span>{type}</span>
-      <p className="text-white-700 mb-4">
-        <span className="text-gray-300">{date}</span> {description}
-      </p>
+      <p>{description}</p>
+      <p className="mb-4">{date}</p>
 
       <Link
         href={link}

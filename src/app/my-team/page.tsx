@@ -55,7 +55,7 @@ export default function MyTeam() {
           My Team
         </h1>
         <p
-          className="text-center text-gray-300"
+          className="text-center"
           data-aos="fade-up"
           data-aos-delay="100"
         >

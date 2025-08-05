@@ -33,9 +33,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://www.melvinjonesrepol.com/my-team",
     },
     {
-      url: "https://www.melvinjonesrepol.com/my-friends",
-    },
-    {
       url: "https://www.melvinjonesrepol.com/certificates",
     },
     {

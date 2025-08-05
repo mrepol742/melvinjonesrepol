@@ -47,13 +47,13 @@ export default function ContactMe() {
       <section>
         <div className="flex flex-col items-center gap-4">
           <h1 className="text-center text-2xl font-semibold">Contact Me</h1>
-          <p className="text-grey-300 mb-6 text-center max-w-md">
+          <p className="mb-6 text-center max-w-md">
             Have a question, project, or just want to say hi? Fill out the form
             below and I&apos;ll get back to you soon!
           </p>
           <form
             onSubmit={handleSubmit}
-            className="bg-black/70 backdrop-blur shadow-lg rounded-xl p-8 w-full max-w-lg space-y-6"
+            className="bg-black/10 backdrop-blur shadow-lg rounded-xl p-8 w-full max-w-lg space-y-6"
           >
             <div>
               <label
@@ -68,7 +68,7 @@ export default function ContactMe() {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full border border-blue-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+                className="w-full border border-gray-500 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
                 required
                 placeholder="Your Name"
               />
@@ -86,7 +86,7 @@ export default function ContactMe() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full border border-blue-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+                className="w-full border border-gray-500 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
                 required
                 placeholder="you@email.com"
               />
@@ -104,7 +104,7 @@ export default function ContactMe() {
                 rows={5}
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full border border-blue-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition resize-none"
+                className="w-full border border-gray-500 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition resize-none"
                 required
                 placeholder="Type your message here..."
               />

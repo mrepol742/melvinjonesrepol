@@ -90,7 +90,7 @@ export default function Certificates() {
         <h1 className="text-2xl font-semibold" data-aos="fade-up">
           Certificates
         </h1>
-        <p className="text-gray-300" data-aos="fade-up" data-aos-delay="100">
+        <p data-aos="fade-up" data-aos-delay="100">
           Here are some of the certificates I have earned through various
           courses and programs.
         </p>
@@ -129,7 +129,7 @@ export default function Certificates() {
             )}
           </form>
         </div>
-        <div className="mt-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
           {certificates
             .filter(
               (certificate) =>

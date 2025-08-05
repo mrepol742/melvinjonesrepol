@@ -6,7 +6,7 @@ import {
   ShieldCheckIcon,
   BriefcaseBusinessIcon,
   GalleryHorizontal,
-  Users,
+  Contact,
 } from "lucide-react";
 
 export default function Nav() {
@@ -55,17 +55,6 @@ export default function Nav() {
           </li>
           <li>
             <Link
-              href="/my-friends"
-              className="group flex items-center hover:text-orange-500"
-            >
-              <Users className="inline-block mr-1" />
-              <span className="ml-1 overflow-hidden max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-200 whitespace-nowrap">
-                My Friends
-              </span>
-            </Link>
-          </li>
-          <li>
-            <Link
               href="/certificates"
               className="group flex items-center hover:text-orange-500"
             >
@@ -94,6 +83,17 @@ export default function Nav() {
               <GalleryHorizontal className="inline-block mr-1" />
               <span className="ml-1 overflow-hidden max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-200 whitespace-nowrap">
                 Gallery
+              </span>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/contact-me"
+              className="group flex items-center hover:text-orange-500"
+            >
+              <Contact className="inline-block mr-1" />
+              <span className="ml-1 overflow-hidden max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-200 whitespace-nowrap">
+                Contact
               </span>
             </Link>
           </li>

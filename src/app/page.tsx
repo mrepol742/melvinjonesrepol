@@ -68,14 +68,13 @@ export default function Home() {
               Hi, I&apos;m Melvin Jones Gallano Repol
             </h1>
             <p
-              className="text-gray-300"
               data-aos="fade-up"
               data-aos-delay="200"
             >
               Freelance Software Engineer | DevOps
             </p>
             <p
-              className="mt-4 max-w-2xl text-gray-300"
+              className="mt-4 max-w-2xl"
               data-aos="fade-up"
               data-aos-delay="300"
             >
@@ -125,19 +124,19 @@ export default function Home() {
                 <span className="block text-3xl font-bold text-blue-600">
                   5+
                 </span>
-                <span className="text-gray-600">Years Experience</span>
+                <span>Years Experience</span>
               </div>
               <div className="text-center">
                 <span className="block text-3xl font-bold text-green-600">
                   82+
                 </span>
-                <span className="text-gray-600">Projects</span>
+                <span>Projects</span>
               </div>
               <div className="text-center">
                 <span className="block text-3xl font-bold text-purple-600">
                   15+
                 </span>
-                <span className="text-gray-600">Happy Clients</span>
+                <span>Happy Clients</span>
               </div>
             </div>
           </div>
@@ -167,6 +166,7 @@ export default function Home() {
               return (
                 <SkillCard
                   key={idx + 1}
+                  loc={idx + 1}
                   title={skill.title}
                   description={skill.description}
                   bg={bg}
@@ -185,7 +185,7 @@ export default function Home() {
           >
             My Gaming Activities
           </h2>
-          <p className="text-gray-300" data-aos="fade-up" data-aos-delay="200">
+          <p data-aos="fade-up" data-aos-delay="200">
             I also enjoy gaming and often share my gaming activities. Check out
             my latest games and achievements.
           </p>
