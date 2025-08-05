@@ -35,20 +35,16 @@ export default function IPAddress() {
 
   return (
     <div style={{ padding: "2rem", fontFamily: "sans-serif" }}>
-      <h1>IP Address Tool</h1>
-      <p>
+      <h1 className="text-2xl font-bold">IP Address</h1>
+      <p className="mb-4">
         This tool will allow you to check your IP address and related
         information.
       </p>
 
       {ip && (
-        <div style={{ marginTop: "1rem" }}>
-          <p>
-            <strong>Your IP Address:</strong> {ip}
-          </p>
-          <p>
-            <strong>Version:</strong> {version}
-          </p>
+        <div className="mt-5 text-center">
+          <h2 className="font-bold text-4xl">{ip}</h2>
+          {version}
         </div>
       )}
     </div>

@@ -53,7 +53,6 @@ export default function Projects() {
             Gaming
           </h1>
           <p
-            className="text-gray-500"
             data-aos="fade-right"
             data-aos-delay="100"
           >
@@ -125,9 +124,6 @@ export default function Projects() {
                 }}
                 defaultValue=""
               >
-                <option value="" disabled>
-                  Select
-                </option>
                 <option value="">Default</option>
                 <option value="name">Name</option>
                 <option value="hours">Hours Played</option>
@@ -177,11 +173,13 @@ export default function Projects() {
 
           <div className="mt-8">
             <h3>Comments</h3>
-            <p className="text-gray-400 mb-4">
+            <p className="mb-4">
               Recommend a game or share your thoughts about my gaming
               activities.
             </p>
-            <DisqusComments slug="gaming-comment" title="Gaming" />
+            <div className="bg-black p-4 rounded-xl mb-6">
+              <DisqusComments slug="gaming-comment" title="Gaming" />
+            </div>
           </div>
 
           <span className="ml-auto text-xs text-gray-400">
