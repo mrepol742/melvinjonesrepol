@@ -172,7 +172,7 @@ export default function Projects() {
           </div>
 
           <div className="mt-8">
-            <h3>Comments</h3>
+            <h3 className="text-2xl">Comments</h3>
             <p className="mb-4">
               Recommend a game or share your thoughts about my gaming
               activities.

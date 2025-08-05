@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Source_Code_Pro } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { ToastContainer } from "react-toastify";
 import Nav from "../components/Nav";
@@ -9,7 +9,7 @@ import AOSWrapper from "../components/AOSWrapper";
 import "./globals.css";
 import Script from "next/script";
 
-const interSans = Inter({
+const sourceCodePro = Source_Code_Pro({
   subsets: ["latin"],
   weight: ["400", "700"],
   display: "swap",
@@ -129,7 +129,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${interSans.className} antialiased min-h-screen flex flex-col`}
+        className={`${sourceCodePro.className} antialiased min-h-screen flex flex-col`}
       >
         <div className="background-gloss">
           <div className="gloss-circle circle1"></div>

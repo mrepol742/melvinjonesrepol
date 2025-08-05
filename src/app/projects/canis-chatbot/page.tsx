@@ -153,7 +153,7 @@ export default function CanisChatbot() {
         </div>
 
         <div className="mt-8">
-          <h3>Comments</h3>
+          <h3 className="text-2xl">Comments</h3>
           <p className="mb-4">
             Share your thoughts or ask questions about this project.
           </p>
