@@ -53,5 +53,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: "https://www.melvinjonesrepol.com/gaming",
     },
+    {
+      url: "https://www.melvinjonesrepol.com/tools/open-graph",
+    },
+    {
+      url: "https://www.melvinjonesrepol.com/tools/ip-address",
+    },
+    {
+      url: "https://www.melvinjonesrepol.com/tools/qrcode-generator",
+    },
   ];
 }

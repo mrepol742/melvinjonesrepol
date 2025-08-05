@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   FacebookIcon,
@@ -187,6 +187,35 @@ export default function Footer() {
                   className="hover:text-orange-500 text-gray-400"
                 >
                   Sitemap
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-sm font-semibold mb-2 text-white">Tools</h4>
+            <ul className="space-y-1 text-sm">
+              <li>
+                <Link
+                  href="/tools/open-graph"
+                  className="hover:text-orange-500 text-gray-400"
+                >
+                  Open Graph Checker
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/ip-address"
+                  className="hover:text-orange-500 text-gray-400"
+                >
+                  IP Address Tool
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/qrcode-generator"
+                  className="hover:text-orange-500 text-gray-400"
+                >
+                  QR Code Generator
                 </Link>
               </li>
             </ul>
