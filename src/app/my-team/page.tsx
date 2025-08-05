@@ -54,29 +54,28 @@ export default function MyTeam() {
         <h1 className="text-center text-2xl font-semibold" data-aos="fade-up">
           My Team
         </h1>
-        <p
-          className="text-center"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
+        <p className="text-center" data-aos="fade-up" data-aos-delay="100">
           Here are the amazing people I work with.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
           <TeamCard
-            title="Melvin"
-            description="Lead Designer"
+            name="Melvin"
+            title="Lead Designer"
+            description="Creative mind behind our designs."
             backgroundColor="bg-red-500"
             delay={0}
           />
           <TeamCard
-            title="Jones"
-            description="Lead Marketer"
+            name="Jones"
+            title="Lead Marketer"
+            description="Expert in digital marketing strategies."
             backgroundColor="bg-yellow-500"
             delay={300}
           />
           <TeamCard
-            title="Repol"
-            description="Lead Developer"
+            name="Repol"
+            title="Lead Developer"
+            description="Full-stack developer with a passion for coding."
             backgroundColor="bg-blue-500"
             delay={600}
           />

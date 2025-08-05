@@ -148,15 +148,13 @@ export default function Projects() {
 
           <div className="my-6">
             <p
-              className="text-gray-300"
               data-aos="fade-up"
               data-aos-delay="200"
             >
               You can find more of my gaming activities on my steam profile.
             </p>
             <Link
-              href="https://steamcommunity.com/id/mrepol742/"
-              target="_blank"
+              href="https://steamcommunity.com/id/mrepol742"
               data-aos="fade-up"
               data-aos-delay="300"
             >

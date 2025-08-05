@@ -1,15 +1,9 @@
 "use client";
 
-import {
-  FacebookIcon,
-  InstagramIcon,
-  TwitterIcon,
-  GithubIcon,
-  LinkedinIcon,
-  YoutubeIcon,
-} from "lucide-react";
 import { useTheme } from "@/hooks/useTheme";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faGithub, faLinkedin, faSteam, faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 export default function Footer() {
   const { theme, toggleTheme } = useTheme();
@@ -76,14 +70,6 @@ export default function Footer() {
                     className="hover:text-orange-500 text-gray-400"
                   >
                     My Team
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/my-friends"
-                    className="hover:text-orange-500 text-gray-400"
-                  >
-                    My Friends
                   </Link>
                 </li>
                 <li>
@@ -238,29 +224,10 @@ export default function Footer() {
                 target="_blank"
                 aria-label="Facebook"
               >
-                <FacebookIcon
-                  size={20}
-                  className="hover:text-blue-500 transition"
-                />
-              </Link>
-              <Link
-                href="https://instagram.com/melvinjonesrepol"
-                target="_blank"
-                aria-label="Instagram"
-              >
-                <InstagramIcon
-                  size={20}
-                  className="hover:text-pink-400 transition"
-                />
-              </Link>
-              <Link
-                href="https://x.com/@mrepol742"
-                target="_blank"
-                aria-label="Twitter"
-              >
-                <TwitterIcon
-                  size={20}
-                  className="hover:text-blue-400 transition"
+                <FontAwesomeIcon
+                  icon={faFacebook}
+                  size="lg"
+                  className="hover:text-red-500 transition"
                 />
               </Link>
               <Link
@@ -268,9 +235,10 @@ export default function Footer() {
                 target="_blank"
                 aria-label="GitHub"
               >
-                <GithubIcon
-                  size={20}
-                  className="hover:text-gray-300 transition"
+                <FontAwesomeIcon
+                  icon={faGithub}
+                  size="lg"
+                  className="hover:text-red-500 transition"
                 />
               </Link>
               <Link
@@ -278,9 +246,10 @@ export default function Footer() {
                 target="_blank"
                 aria-label="LinkedIn"
               >
-                <LinkedinIcon
-                  size={20}
-                  className="hover:text-blue-700 transition"
+                <FontAwesomeIcon
+                  icon={faLinkedin}
+                  size="lg"
+                  className="hover:text-red-500 transition"
                 />
               </Link>
               <Link
@@ -288,8 +257,20 @@ export default function Footer() {
                 target="_blank"
                 aria-label="YouTube"
               >
-                <YoutubeIcon
-                  size={20}
+                <FontAwesomeIcon
+                  icon={faYoutube}
+                  size="lg"
+                  className="hover:text-red-500 transition"
+                />
+              </Link>
+              <Link
+                href="https://steamcommunity.com/id/mrepol742"
+                target="_blank"
+                aria-label="Steam"
+              >
+                <FontAwesomeIcon
+                  icon={faSteam}
+                  size="lg"
                   className="hover:text-red-500 transition"
                 />
               </Link>

@@ -1,8 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
-import { Code, GithubIcon, LinkedinIcon } from "lucide-react";
 
 type TeamCardProps = {
+  name: string;
   title: string;
   description: string;
   backgroundColor: string;
@@ -10,6 +9,7 @@ type TeamCardProps = {
 };
 
 export default function TeamCard({
+  name,
   title,
   description,
   backgroundColor,
@@ -34,26 +34,9 @@ export default function TeamCard({
           />
         </div>
       </div>
-      <h3 className="text-xl font-bold mb-2">{title}</h3>
-      <p className="mb-4">{description}</p>
-      <Link
-        href="/"
-        className="text-blue-500 hover:underline transition-colors duration-300"
-      >
-        <Code className="inline-block mx-2" />
-      </Link>
-      <Link
-        href="https://github.com/mrepol742/"
-        className="text-blue-500 hover:underline transition-colors duration-300"
-      >
-        <GithubIcon className="inline-block mx-2" />
-      </Link>
-      <Link
-        href="https://linkedin.com/in/mrepol742"
-        className="text-blue-500 hover:underline transition-colors duration-300"
-      >
-        <LinkedinIcon className="inline-block mx-2" />
-      </Link>
+      <h3 className="text-xl font-bold">{name}</h3>
+      <p>{title}</p>
+      <p>{description}</p>
     </div>
   );
 }

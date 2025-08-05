@@ -7,7 +7,11 @@ import Footer from "../components/Footer";
 import NextTopLoader from "nextjs-toploader";
 import AOSWrapper from "../components/AOSWrapper";
 import "./globals.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import Script from "next/script";
+
+config.autoAddCss = false;
 
 const sourceCodePro = Source_Code_Pro({
   subsets: ["latin"],

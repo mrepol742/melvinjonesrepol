@@ -1,3 +1,6 @@
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faDownload, faExpand } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
 type ProjectCardProps = {
@@ -28,26 +31,27 @@ export default function ProjectCard({
       {link && (
         <Link
           href={link}
-          className="text-blue-600 font-medium text-sm hover:underline mr-4"
+          className="font-medium text-sm hover:underline mr-2"
+          aria-label="View Project"
         >
-          View Project →
+          <FontAwesomeIcon icon={faExpand} size="xl" />
         </Link>
       )}
       {repo && (
         <Link
           href={repo}
           target="_blank"
-          className="text-blue-600 font-medium text-sm hover:underline"
+          className="font-medium text-sm hover:underline mr-2"
         >
-          View Repo →
+          <FontAwesomeIcon icon={faGithub} size="xl" />
         </Link>
       )}
       {download && (
         <Link
           href={download}
-          className="text-blue-600 font-medium text-sm hover:underline"
+          className="font-medium text-sm hover:underline mr-2"
         >
-          Download →
+          <FontAwesomeIcon icon={faDownload} size="xl" />
         </Link>
       )}
     </div>

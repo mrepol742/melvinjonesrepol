@@ -1,7 +1,8 @@
-import { Gamepad2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import SkillCard from "@/components/SkillCard";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGamepad } from "@fortawesome/free-solid-svg-icons";
 
 const skills = [
   {
@@ -196,7 +197,7 @@ export default function Home() {
                   after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-orange-600 after:rounded-r-lg"
               style={{ boxShadow: "1px 1px 0 0 #ea580c" }}
             >
-              <Gamepad2 className="inline mr-2" />
+              <FontAwesomeIcon icon={faGamepad} className="inline mr-2" size="xl" />
               View Gaming Activities
             </button>
           </Link>
