@@ -194,7 +194,7 @@ export default function Footer() {
           {/* Socials */}
           <div>
             <h4 className="text-sm font-semibold mb-2">Theme</h4>
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-3 mb-4">
               <button
                 onClick={toggleTheme}
                 className="px-3 py-1 bg-gray-700 rounded hover:bg-orange-500 transition-colors"

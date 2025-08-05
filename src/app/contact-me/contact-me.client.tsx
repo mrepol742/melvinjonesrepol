@@ -18,7 +18,7 @@ export default function ContactMe() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const resolveAfter3Sec = new Promise(async (resolve) => {
+    const resolveAfter3Sec = new Promise(async (resolve, reject) => {
       try {
         const response = await fetch("/api/contact", {
           method: "POST",
@@ -26,12 +26,16 @@ export default function ContactMe() {
           body: JSON.stringify(formData),
         });
 
-        if (!response.ok) throw new Error("Something went wrong");
+        if (!response.ok) {
+          const err = await response.json();
+          throw new Error(err?.error || "Something went wrong");
+        }
 
+        const data = await response.json();
         setFormData({ name: "", email: "", message: "" });
-        resolve(response);
+        resolve(data);
       } catch (error) {
-        resolve(error);
+        reject(error);
       }
     });
 
