@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     siteName: "Melvin Jones Repol",
     images: [
       {
-        url: "/images/ulisha-store-1.png",
+        url: "https://www.melvinjonesrepol.com/images/ulisha-store-1.png",
         width: 800,
         height: 600,
         alt: "Ulisha Store Screenshot",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: "Ulisha Store - Melvin Jones Repol",
     description:
       "A premier destination for quality fashion, accessories, and electronics. Bringing you the best products at competitive prices.",
-    images: ["/images/ulisha-store-1.png"],
+    images: ["https://www.melvinjonesrepol.com/images/ulisha-store-1.png"],
     creator: "@mrepol742",
   },
 };
@@ -64,7 +64,7 @@ const Images = [
 
 export default function UlishaStore() {
   return (
-    <main className="p-8">
+    <main className="p-3 md:p-8">
       <section>
         <Link
           className="flex items-center mb-4 hover:text-violet-500 transition-colors duration-200"

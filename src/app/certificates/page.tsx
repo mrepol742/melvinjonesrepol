@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "Melvin Jones Repol",
     images: [
       {
-        url: "/images/melvinjonesrepol.png",
+        url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.png",
         width: 1200,
         height: 630,
         alt: "Certificates Cover",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     title: "Certificates - Melvin Jones Repol",
     description:
       "Here are some of the certificates I have earned through various courses and programs.",
-    images: ["/images/melvinjonesrepol.png"],
+    images: ["https://www.melvinjonesrepol.com/images/melvinjonesrepol.png"],
     creator: "@mrepol742",
   },
 };

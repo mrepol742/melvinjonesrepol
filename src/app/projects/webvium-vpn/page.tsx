@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "Melvin Jones Repol",
     images: [
       {
-        url: "/images/webviumvpn-1.jpg",
+        url: "https://www.melvinjonesrepol.com/images/webviumvpn-1.jpg",
         width: 800,
         height: 600,
         alt: "Webvium VPN Screenshot",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     title: "Webvium VPN - Melvin Jones Repol",
     description:
       "Anonymous, Secured, Private and the fastest Virtual Private Network.",
-    images: ["/images/webviumvpn-1.jpg"],
+    images: ["https://www.melvinjonesrepol.com/images/webviumvpn-1.jpg"],
     creator: "@mrepol742",
   },
 };
@@ -110,7 +110,7 @@ export default function WebviumVPN() {
           __html: JSON.stringify(videoObject),
         }}
       />
-      <main className="p-8">
+      <main className="p-3 md:p-8">
         <section>
           <Link
             className="flex items-center mb-4 hover:text-violet-500 transition-colors duration-200"

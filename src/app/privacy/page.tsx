@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     siteName: "Melvin Jones Repol",
     images: [
       {
-        url: "/images/melvinjonesrepol.png",
+        url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.png",
         width: 1200,
         height: 630,
         alt: "Privacy Policy Cover",
@@ -29,14 +29,14 @@ export const metadata: Metadata = {
     title: "Privacy Policy - Melvin Jones Repol",
     description:
       "Read the privacy policy for melvinjonesrepol.com to learn how your data is collected, used, and protected.",
-    images: ["/images/melvinjonesrepol.png"],
+    images: ["https://www.melvinjonesrepol.com/images/melvinjonesrepol.png"],
     creator: "@mrepol742",
   },
 };
 
 export default function Privacy() {
   return (
-    <main className="p-8">
+    <main className="p-3 md:p-8">
       <section>
         <h1 className="text-center text-2xl font-semibold">Privacy Policy</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">

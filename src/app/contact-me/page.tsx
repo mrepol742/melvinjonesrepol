@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "Melvin Jones Repol",
     images: [
       {
-        url: "/images/melvinjonesrepol.png",
+        url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.png",
         width: 1200,
         height: 630,
         alt: "Contact Me Cover",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "Contact Me - Melvin Jones Repol",
     description:
       "Have a question, project, or just want to say hi? Fill out the form below and I'll get back to you soon!",
-    images: ["/images/melvinjonesrepol.png"],
+    images: ["https://www.melvinjonesrepol.com/images/melvinjonesrepol.png"],
     creator: "@mrepol742",
   },
 };

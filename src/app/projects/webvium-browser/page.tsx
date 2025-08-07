@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     siteName: "Melvin Jones Repol",
     images: [
       {
-        url: "/images/webvium-1.jpg",
+        url: "https://www.melvinjonesrepol.com/images/webvium-1.jpg",
         width: 800,
         height: 600,
         alt: "Webvium Browser Screenshot",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     title: "Webvium Browser - Melvin Jones Repol",
     description:
       "Lightweight, Fast, Material and Full-Featured Android Web Browser.",
-    images: ["/images/webvium-1.jpg"],
+    images: ["https://www.melvinjonesrepol.com/images/webvium-1.jpg"],
     creator: "@mrepol742",
   },
 };
@@ -118,7 +118,7 @@ export default function WebviumBrowser() {
           __html: JSON.stringify(videoObject),
         }}
       />
-      <main className="p-8">
+      <main className="p-3 md:p-8">
         <section>
           <Link
             className="flex items-center mb-4 hover:text-violet-500 transition-colors duration-200"

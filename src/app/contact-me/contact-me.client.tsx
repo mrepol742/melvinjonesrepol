@@ -47,7 +47,7 @@ export default function ContactMe() {
   };
 
   return (
-    <main className="p-8">
+    <main className="p-3 md:p-8">
       <section>
         <div className="flex flex-col items-center gap-4">
           <h1 className="text-center text-2xl font-semibold">Contact Me</h1>

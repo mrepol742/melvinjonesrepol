@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     siteName: "Melvin Jones Repol",
     images: [
       {
-        url: "/images/melvinjonesrepol.png",
+        url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.png",
         width: 1200,
         height: 630,
         alt: "Terms of Service Cover",
@@ -26,14 +26,14 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Terms of Service - Melvin Jones Repol",
     description: "Terms of Service for melvinjonesrepol.com",
-    images: ["/images/melvinjonesrepol.png"],
+    images: ["https://www.melvinjonesrepol.com/images/melvinjonesrepol.png"],
     creator: "@mrepol742",
   },
 };
 
 export default function Terms() {
   return (
-    <main className="p-8">
+    <main className="p-3 md:p-8">
       <section>
         <h1 className="text-center text-2xl font-semibold">Terms of Service</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">

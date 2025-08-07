@@ -106,7 +106,7 @@ export default function Projects() {
 
   return (
     <>
-      <main className="p-8">
+      <main className="p-3 md:p-8">
         <section>
           <h1 className="text-2xl font-semibold" data-aos="fade-right">
             Projects
@@ -149,7 +149,7 @@ export default function Projects() {
               )}
             </form>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+          <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-4 mt-4 space-y-4">
             {projects
               .filter(
                 (project) =>
@@ -159,13 +159,14 @@ export default function Projects() {
                     .includes(query.toLowerCase())
               )
               .map((project, idx) => (
-                <Link
-                  href={project.link || project.repo || "#"}
-                  key={idx}
-                  className="no-underline"
-                >
-                  <ProjectCard {...project} delay={idx * 100} />
-                </Link>
+                <div key={idx} className="mb-6">
+                  <Link
+                    href={project.link || project.repo || "#"}
+                    className="no-underline"
+                  >
+                    <ProjectCard {...project} delay={idx * 100} />
+                  </Link>
+                </div>
               ))}
           </div>
         </section>

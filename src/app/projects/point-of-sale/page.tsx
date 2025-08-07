@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     siteName: "Melvin Jones Repol",
     images: [
       {
-        url: "/images/pos-1.png",
+        url: "https://www.melvinjonesrepol.com/images/pos-1.png",
         width: 800,
         height: 600,
         alt: "Point of Sale Screenshot",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: "Point of Sale - Melvin Jones Repol",
     description:
       "A lightweight, web-based and offline-capable POS system built for flawless performance, supporting multi-department roles and full functionality.",
-    images: ["/images/pos-1.png"],
+    images: ["https://www.melvinjonesrepol.com/images/pos-1.png"],
     creator: "@mrepol742",
   },
 };
@@ -62,7 +62,7 @@ const Images = [
 
 export default function PointOfSale() {
   return (
-    <main className="p-8">
+    <main className="p-3 md:p-8">
       <section>
         <Link
           className="flex items-center mb-4 hover:text-violet-500 transition-colors duration-200"

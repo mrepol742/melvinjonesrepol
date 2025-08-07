@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "Melvin Jones Repol",
     images: [
       {
-        url: "/images/axleshift-1.png",
+        url: "https://www.melvinjonesrepol.com/images/axleshift-1.png",
         width: 800,
         height: 600,
         alt: "Axleshift Core 1 Screenshot",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     title: "Axleshift Core 1 - Melvin Jones Repol",
     description:
       "A freight management services. Providing Businesses with cutting-edge platform, security, and reliability.",
-    images: ["/images/axleshift-1.png"],
+    images: ["https://www.melvinjonesrepol.com/images/axleshift-1.png"],
     creator: "@mrepol742",
   },
 };
@@ -62,7 +62,7 @@ const Images = [
 
 export default function Axleshift() {
   return (
-    <main className="p-8">
+    <main className="p-3 md:p-8">
       <section>
         <Link
           className="flex items-center mb-4 hover:text-violet-500 transition-colors duration-200"

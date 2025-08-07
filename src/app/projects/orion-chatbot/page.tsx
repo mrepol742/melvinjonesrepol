@@ -59,7 +59,7 @@ const Images = [
 
 export default function OrionChatbot() {
   return (
-    <main className="p-8">
+    <main className="p-3 md:p-8">
       <section>
         <Link
           className="flex items-center mb-4 hover:text-violet-500 transition-colors duration-200"

@@ -86,7 +86,7 @@ export default function Certificates() {
   const [query, setQuery] = useState("");
 
   return (
-    <main className="p-8">
+    <main className="p-3 md:p-8">
       <section>
         <h1 className="text-2xl font-semibold" data-aos="fade-up">
           Certificates
@@ -130,7 +130,7 @@ export default function Certificates() {
             )}
           </form>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+        <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-4 mt-4 space-y-4">
           {certificates
             .filter(
               (certificate) =>
@@ -140,13 +140,11 @@ export default function Certificates() {
                   .includes(query.toLowerCase())
             )
             .map((certificate, idx) => (
-              <Link
-                href={certificate.link || "#"}
-                key={idx}
-                className="no-underline"
-              >
-                <CertificateCard {...certificate} delay={idx * 100} />
-              </Link>
+              <div key={idx} className="mb-6">
+                <Link href={certificate.link || "#"} className="no-underline">
+                  <CertificateCard {...certificate} delay={idx * 100} />
+                </Link>
+              </div>
             ))}
         </div>
       </section>

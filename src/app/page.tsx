@@ -94,7 +94,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webSite) }}
       />
-      <main className="p-8">
+      <main className="p-3 md:p-8">
         <section>
           <div className="flex flex-col-reverse md:flex-row items-center md:items-start md:justify-between gap-8">
             <div className="flex-1">

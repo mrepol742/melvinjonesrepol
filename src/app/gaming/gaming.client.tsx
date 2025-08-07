@@ -47,7 +47,7 @@ export default function Projects() {
 
   return (
     <>
-      <main className="p-8">
+      <main className="p-3 md:p-8">
         <section>
           <h1 className="text-2xl font-semibold" data-aos="fade-right">
             Gaming

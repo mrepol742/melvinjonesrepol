@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: "Melvin Jones Repol",
     images: [
       {
-        url: "/images/melvinjonesrepol.png",
+        url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.png",
         width: 1200,
         height: 630,
         alt: "Work Experience Cover",
@@ -41,14 +41,14 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Work Experience - Melvin Jones Repol",
     description: "Here are some of the work experiences I had.",
-    images: ["/images/melvinjonesrepol.png"],
+    images: ["https://www.melvinjonesrepol.com/images/melvinjonesrepol.png"],
     creator: "@mrepol742",
   },
 };
 
 export default function WorkExperience() {
   return (
-    <main className="p-8">
+    <main className="p-3 md:p-8">
       <section>
         <h1 className="text-2xl font-semibold" data-aos="fade-right">
           Work Experience
