@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Search, X } from "lucide-react";
 import ProjectCard from "@/components/ProjectCard";
+import Link from "next/link";
 
 const projects = [
   {
@@ -110,10 +111,7 @@ export default function Projects() {
           <h1 className="text-2xl font-semibold" data-aos="fade-right">
             Projects
           </h1>
-          <p
-            data-aos="fade-right"
-            data-aos-delay="100"
-          >
+          <p data-aos="fade-right" data-aos-delay="100">
             Here are some of my projects that I have worked on.
           </p>
           <div data-aos="fade-right" data-aos-delay="200">
@@ -161,11 +159,13 @@ export default function Projects() {
                     .includes(query.toLowerCase())
               )
               .map((project, idx) => (
-                <ProjectCard
-                  key={project.title + idx}
-                  {...project}
-                  delay={idx * 100}
-                />
+                <Link
+                  href={project.link || project.repo || "#"}
+                  key={idx}
+                  className="no-underline"
+                >
+                  <ProjectCard {...project} delay={idx * 100} />
+                </Link>
               ))}
           </div>
         </section>

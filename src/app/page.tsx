@@ -180,7 +180,7 @@ export default function Home() {
               data-aos="fade-up"
               data-aos-delay="500"
             >
-              <div className="w-64 h-64 rounded-full bg-gradient-to-tr from-violet-500 via-yellow-300 to-green-400 animate-gradient-shift flex items-center justify-center bg-opacity-60 backdrop-blur-md hover:scale-95 transition-transform duration-300">
+              <div className="w-64 h-64 rounded-full bg-gradient-to-tr from-violet-500 via-yellow-300 to-green-400 animate-gradient-shift flex items-center justify-center bg-opacity-60 backdrop-blur-md hover:scale-98 transition-transform duration-300">
                 <Image
                   src="/images/melvinjonesrepol.transparent.png"
                   alt="Hero Image"

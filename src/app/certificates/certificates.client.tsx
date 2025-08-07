@@ -3,6 +3,7 @@
 import { useState } from "react";
 import CertificateCard from "@/components/CertificateCard";
 import { Search, X } from "lucide-react";
+import Link from "next/link";
 
 const certificates = [
   {
@@ -139,11 +140,13 @@ export default function Certificates() {
                   .includes(query.toLowerCase())
             )
             .map((certificate, idx) => (
-              <CertificateCard
-                key={certificate.title + idx}
-                {...certificate}
-                delay={idx * 100}
-              />
+              <Link
+                href={certificate.link || "#"}
+                key={idx}
+                className="no-underline"
+              >
+                <CertificateCard {...certificate} delay={idx * 100} />
+              </Link>
             ))}
         </div>
       </section>

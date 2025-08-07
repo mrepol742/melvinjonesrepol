@@ -18,24 +18,24 @@ export default function CertificateCard({
   link,
 }: CertificateCardProps) {
   return (
-    <div
-      className={`bg-black/10 backdrop-blur rounded-xl p-6 shadow hover:shadow-lg transition`}
-      data-aos="fade-up"
-      data-aos-delay={delay}
-    >
-      <h3 className="text-xl font-bold mb-2">{title}</h3>
-      <span>{type}</span>
-      <p>{description}</p>
-      <p className="mb-4">{date}</p>
-
-      <Link
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-blue-600 font-medium text-sm hover:underline mr-4"
+    <div data-aos="fade-up" data-aos-delay={delay}>
+      <div
+        className={`bg-black/10 backdrop-blur rounded-xl p-6 shadow hover:scale-98 transition-transform duration-300`}
       >
-        View Certificate →
-      </Link>
+        <h3 className="text-xl font-bold mb-2">{title}</h3>
+        <span>{type}</span>
+        <p>{description}</p>
+        <p className="mb-4">{date}</p>
+
+        <Link
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 font-medium text-sm hover:underline mr-4"
+        >
+          View Certificate →
+        </Link>
+      </div>
     </div>
   );
 }

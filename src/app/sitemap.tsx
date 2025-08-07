@@ -62,5 +62,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: "https://www.melvinjonesrepol.com/tools/qrcode-generator",
     },
+    {
+      url: "https://www.melvinjonesrepol.com/book-a-demo",
+    },
   ];
 }

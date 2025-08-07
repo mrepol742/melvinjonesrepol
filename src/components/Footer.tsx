@@ -105,6 +105,14 @@ export default function Footer() {
             <ul className="space-y-1 text-sm">
               <li>
                 <Link
+                  href="/book-a-demo"
+                  className="hover:text-orange-500 text-gray-400"
+                >
+                  Book a Demo
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/projects/webvium-browser"
                   className="hover:text-orange-500 text-gray-400"
                 >

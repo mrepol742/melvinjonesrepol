@@ -69,13 +69,13 @@ export default function OrionChatbot() {
           <h3 className="text-2xl font-semibold">Projects</h3>
         </Link>
 
-        <div className="flex items-center mb-4">
+        <div className="block md:flex items-center mb-4">
           <Image
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Facebook_Messenger_logo_2025.svg/250px-Facebook_Messenger_logo_2025.svg.png"
             alt="Facebook messenger icon"
             width={70}
             height={70}
-            className="mr-7"
+            className="mr-7 mb-4 md:mb-0"
           />
           <div>
             <h1 className="text-4xl font-bold">Orion Chatbot</h1>

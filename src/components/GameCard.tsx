@@ -11,7 +11,7 @@ export default function GameCard({
 }: GameType) {
   return (
     <div
-      className="relative rounded-lg overflow-hidden shadow-lg h-48 flex items-end hover:scale-95 transition-transform duration-300"
+      className="relative rounded-lg overflow-hidden shadow-lg h-48 flex items-end hover:scale-98 transition-transform duration-300"
       style={{
         backgroundImage: `url(${cover_url})`,
         backgroundSize: "cover",

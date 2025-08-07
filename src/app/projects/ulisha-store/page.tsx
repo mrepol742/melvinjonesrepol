@@ -74,20 +74,29 @@ export default function UlishaStore() {
           <h3 className="text-2xl font-semibold">Projects</h3>
         </Link>
 
-        <div className="flex items-center mb-4">
+        <div className="block md:flex items-center mb-4">
           <Image
             src="/images/ulisha-store-icon.png"
             alt="Ulisha Store Icon"
             width={70}
             height={70}
-            className="rounded-full mr-7"
+            className="rounded-full mr-7 mb-4 md:mb-0"
           />
-          <div>
-            <h1 className="text-4xl font-bold">Ulisha Store</h1>
-            <p className="mb-4">
-              A premier destination for quality fashion, accessories, and
-              electronics. Bringing you the best products at competitive prices.
-            </p>
+          <div className="block md:flex flex-row w-full justify-between items-center">
+            <div>
+              <h1 className="text-4xl font-bold">Ulisha Store</h1>
+              <p className="mb-4">
+                A premier destination for quality fashion, accessories, and
+                electronics. Bringing you the best products at competitive
+                prices.
+              </p>
+            </div>
+            <Link
+              href="https://www.ulishastore.com"
+              className="bg-blue-500 text-white py-2 px-5 rounded hover:bg-blue-700 transition"
+            >
+              View
+            </Link>
           </div>
         </div>
 

@@ -120,20 +120,28 @@ export default function WebviumVPN() {
             <h3 className="text-2xl font-semibold">Projects</h3>
           </Link>
 
-          <div className="flex items-center mb-4">
+          <div className="block md:flex items-center mb-4">
             <Image
               src="/images/webviumvpn-transparent-icon.png"
               alt="Webvium VPN Icon"
               width={70}
               height={70}
-              className="bg-white rounded-full mr-7"
+              className="bg-white rounded-full mr-7 mb-4 md:mb-0"
             />
-            <div>
-              <h1 className="text-4xl font-bold">Webvium VPN</h1>
-              <p className="mb-4">
-                Anonymous, Secured, Private and the fastest Virtual Private
-                Network.
-              </p>
+            <div className="block md:flex flex-row w-full justify-between items-center">
+              <div>
+                <h1 className="text-4xl font-bold">Webvium VPN</h1>
+                <p className="mb-4">
+                  Anonymous, Secured, Private and the fastest Virtual Private
+                  Network.
+                </p>
+              </div>
+              <Link
+                href="https://mrepol742.github.io/webviumvpn/download"
+                className="bg-blue-500 text-white py-2 px-5 rounded hover:bg-blue-700 transition"
+              >
+                Download
+              </Link>
             </div>
           </div>
 

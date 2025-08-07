@@ -67,13 +67,13 @@ export default function CanisChatbot() {
           <h3 className="text-2xl font-semibold">Projects</h3>
         </Link>
 
-        <div className="flex items-center mb-4">
+        <div className="block md:flex items-center mb-4">
           <Image
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/WhatsApp_Logo_green.svg/250px-WhatsApp_Logo_green.svg.png"
             alt="Canis Icon"
             width={70}
             height={70}
-            className="mr-7"
+            className="mr-7 mb-4 md:mb-0"
           />
           <div>
             <h1 className="text-4xl font-bold">Canis Chatbot</h1>

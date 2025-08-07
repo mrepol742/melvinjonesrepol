@@ -71,20 +71,28 @@ export default function Axleshift() {
           <ArrowLeft className="w-6 h-6 mr-2" />
           <h3 className="text-2xl font-semibold">Projects</h3>
         </Link>
-        <div className="flex items-center mb-4">
+        <div className="block md:flex items-center mb-4">
           <Image
             src="/images/axleshift-transparent-icon.png"
             alt="Axleshift Icon"
             width={70}
             height={70}
-            className="bg-blue-500 rounded-full mr-7 p-4"
+            className="bg-blue-500 rounded-full mr-7 p-4 mb-4 md:mb-0"
           />
-          <div>
-            <h1 className="text-4xl font-bold">Axleshift Core 1</h1>
-            <p className="mb-4">
-              A freight management services. Providing Businesses with
-              cutting-edge platform, security, and reliability.
-            </p>
+          <div className="block md:flex flex-row w-full justify-between items-center">
+            <div>
+              <h1 className="text-4xl font-bold">Axleshift Core 1</h1>
+              <p className="mb-4">
+                A freight management services. Providing Businesses with
+                cutting-edge platform, security, and reliability.
+              </p>
+            </div>
+            <Link
+              href="/book-a-demo"
+              className="bg-blue-500 text-white py-2 px-5 rounded hover:bg-blue-700 transition"
+            >
+              Book a Demo
+            </Link>
           </div>
         </div>
         <div className="w-full mb-8">
@@ -123,7 +131,7 @@ export default function Axleshift() {
           <p className="mb-4">
             Share your thoughts or ask questions about this project.
           </p>
-          <div className="p-4 rounded-xl mb-6">
+          <div className="bg-black p-4 rounded-xl mb-6">
             <DisqusComments slug="axleshift-core-1" title="Axleshift Core 1" />
           </div>
         </div>
