@@ -40,7 +40,7 @@ export default function Nav() {
               <FontAwesomeIcon
                 icon={faFolder}
                 className="inline-block mr-1"
-                size="lg"
+                size="1x"
               />
               <span className="ml-1 overflow-hidden max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-200 whitespace-nowrap">
                 Projects
@@ -55,7 +55,7 @@ export default function Nav() {
               <FontAwesomeIcon
                 icon={faUser}
                 className="inline-block mr-1"
-                size="lg"
+                size="1x"
               />
               <span className="ml-1 overflow-hidden max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-200 whitespace-nowrap">
                 My Team
@@ -70,7 +70,7 @@ export default function Nav() {
               <FontAwesomeIcon
                 icon={faCertificate}
                 className="inline-block mr-1"
-                size="lg"
+                size="1x"
               />
               <span className="ml-1 overflow-hidden max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-200 whitespace-nowrap">
                 Certificates
@@ -85,7 +85,7 @@ export default function Nav() {
               <FontAwesomeIcon
                 icon={faBriefcase}
                 className="inline-block mr-1"
-                size="lg"
+                size="1x"
               />
               <span className="ml-1 overflow-hidden max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-200 whitespace-nowrap">
                 Work Experience
@@ -100,7 +100,7 @@ export default function Nav() {
               <FontAwesomeIcon
                 icon={faImages}
                 className="inline-block mr-1"
-                size="lg"
+                size="1x"
               />
               <span className="ml-1 overflow-hidden max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-200 whitespace-nowrap">
                 Gallery
@@ -115,7 +115,7 @@ export default function Nav() {
               <FontAwesomeIcon
                 icon={faEnvelope}
                 className="inline-block mr-1"
-                size="lg"
+                size="1x"
               />
               <span className="ml-1 overflow-hidden max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-200 whitespace-nowrap">
                 Contact

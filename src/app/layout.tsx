@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Source_Code_Pro } from "next/font/google";
+import { Source_Code_Pro, Maven_Pro } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { ToastContainer } from "react-toastify";
 import Nav from "../components/Nav";
@@ -9,7 +9,6 @@ import AOSWrapper from "../components/AOSWrapper";
 import "./globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import Script from "next/script";
 
 config.autoAddCss = false;
 
@@ -17,6 +16,14 @@ const sourceCodePro = Source_Code_Pro({
   subsets: ["latin"],
   weight: ["400", "700"],
   display: "swap",
+  variable: "--font-heading",
+});
+
+const mavenPro = Maven_Pro({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
+  variable: "--font-body",
 });
 
 export const metadata: Metadata = {
@@ -95,46 +102,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${sourceCodePro.variable} ${mavenPro.variable}`}
+    >
       <head>
         <meta name="hostname" content="www.melvinjonesrepol.com" />
-        <Script
-          id="ld-json-website"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: "Melvin Jones Repol",
-              url: "https://www.melvinjonesrepol.com",
-            }),
-          }}
-        />
-        <Script
-          id="ld-json-organization"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Melvin Jones Repol",
-              url: "https://www.melvinjonesrepol.com",
-              logo: "/images/melvinjonesrepol.png",
-              sameAs: [
-                "https://facebook.com/melvinjonesrepol",
-                "https://x.com/@mrepol742",
-                "https://instagram.com/melvinjonesrepol/",
-                "https://linkedin.com/in/mrepol742/",
-                "https://github.com/mrepol742",
-                "https://www.youtube.com/@mrepol742",
-              ],
-            }),
-          }}
-        />
       </head>
-      <body
-        className={`${sourceCodePro.className} antialiased min-h-screen flex flex-col`}
-      >
+      <body className="antialiased min-h-screen flex flex-col">
         <div className="background-gloss">
           <div className="gloss-circle circle1"></div>
           <div className="gloss-circle circle2"></div>

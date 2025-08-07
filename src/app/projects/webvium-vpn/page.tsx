@@ -58,59 +58,111 @@ const Images = [
 ];
 
 export default function WebviumVPN() {
+  const softwareApplication = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Webvium VPN",
+    operatingSystem: "ANDROID",
+    applicationCategory: "UtilitiesApplication",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.5",
+      reviewCount: "6030",
+    },
+    offers: {
+      "@type": "Offer",
+      price: "0",
+    },
+  };
+
+  const videoObject = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: "Webvium VPN - Anonymous, Secured, Private and the fastest Virtual Private Network.",
+    url: "https://www.melvinjonesrepol.com/projects/webvium-vpn",
+    description:
+      "Inspired from Webvium, Webvium VPN is a lightweight android VPN app focuses in speed, simplicity, security and privacy.",
+    thumbnailUrl: "https://www.melvinjonesrepol.com/images/webviumvpn-1.jpg",
+    uploadDate: "2025-08-05T08:00:00+08:00",
+    duration: "PT23S",
+    contentUrl:
+      "https://www.melvinjonesrepol.com/videos/Webvium%20VPN%20-%20Anonymous,%20Secured,%20Private%20and%20the%20fastest%20Virtual%20Private%20Network.mp4",
+    interactionStatistic: {
+      "@type": "InteractionCounter",
+      interactionType: {
+        "@type": "WatchAction",
+      },
+      userInteractionCount: 102111,
+    },
+  };
+
   return (
-    <main className="p-8">
-      <section>
-        <Link
-          className="flex items-center mb-4 hover:text-violet-500 transition-colors duration-200"
-          href="/projects"
-        >
-          <ArrowLeft className="w-6 h-6 mr-2" />
-          <h3 className="text-2xl font-semibold">Projects</h3>
-        </Link>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(softwareApplication),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(videoObject),
+        }}
+      />
+      <main className="p-8">
+        <section>
+          <Link
+            className="flex items-center mb-4 hover:text-violet-500 transition-colors duration-200"
+            href="/projects"
+          >
+            <ArrowLeft className="w-6 h-6 mr-2" />
+            <h3 className="text-2xl font-semibold">Projects</h3>
+          </Link>
 
-        <div className="flex items-center mb-4">
-          <Image
-            src="/images/webviumvpn-transparent-icon.png"
-            alt="Webvium VPN Icon"
-            width={70}
-            height={70}
-            className="bg-white rounded-full mr-7"
-          />
-          <div>
-            <h1 className="text-4xl font-bold">Webvium VPN</h1>
+          <div className="flex items-center mb-4">
+            <Image
+              src="/images/webviumvpn-transparent-icon.png"
+              alt="Webvium VPN Icon"
+              width={70}
+              height={70}
+              className="bg-white rounded-full mr-7"
+            />
+            <div>
+              <h1 className="text-4xl font-bold">Webvium VPN</h1>
+              <p className="mb-4">
+                Anonymous, Secured, Private and the fastest Virtual Private
+                Network.
+              </p>
+            </div>
+          </div>
+
+          <div className="w-full mb-8">
+            <div className="flex overflow-x-auto space-x-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent py-2">
+              {Images.map((image, index) => (
+                <Image
+                  key={index}
+                  src={image}
+                  alt={`Screenshot ${index + 1}`}
+                  width={250}
+                  height={445}
+                  className="object-cover rounded-lg flex-shrink-0 border border-gray-700 hover:scale-99 transition-transform duration-200"
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-8">
+            <h3 className="text-2xl">Comments</h3>
             <p className="mb-4">
-              Anonymous, Secured, Private and the fastest Virtual Private
-              Network.
+              Share your thoughts or ask questions about this project.
             </p>
+            <div className="bg-black p-4 rounded-xl mb-6">
+              <DisqusComments slug="webvium-vpn" title="Webvium VPN" />
+            </div>
           </div>
-        </div>
-
-        <div className="w-full mb-8">
-          <div className="flex overflow-x-auto space-x-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent py-2">
-            {Images.map((image, index) => (
-              <Image
-                key={index}
-                src={image}
-                alt={`Screenshot ${index + 1}`}
-                width={250}
-                height={445}
-                className="object-cover rounded-lg flex-shrink-0 border border-gray-700 hover:scale-99 transition-transform duration-200"
-              />
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-8">
-          <h3 className="text-2xl">Comments</h3>
-          <p className="mb-4">
-            Share your thoughts or ask questions about this project.
-          </p>
-          <div className="bg-black p-4 rounded-xl mb-6">
-            <DisqusComments slug="webvium-vpn" title="Webvium VPN" />
-          </div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+    </>
   );
 }
