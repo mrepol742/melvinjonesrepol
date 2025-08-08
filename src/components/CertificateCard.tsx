@@ -30,7 +30,6 @@ export default function CertificateCard({
         <Link
           href={link}
           target="_blank"
-          rel="noopener noreferrer"
           className="text-blue-600 font-medium text-sm hover:underline mr-4"
         >
           View Certificate →

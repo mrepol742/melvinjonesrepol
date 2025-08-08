@@ -70,6 +70,7 @@ export default function WorkExperience() {
             description="Incharge of maintaining the IT infrastructure, including hardware, software, and network. Responsible for troubleshooting technical issues, providing support to end-users, and ensuring the efficiency and reliability of the organization's IT system."
             date="April - June 2025"
             key={2}
+            cert="https://drive.google.com/file/d/1JZejlS9Dkb3rJkcx3UdfsaDh281d7QZ4/view?usp=drive_link"
           />
         </div>
       </section>
