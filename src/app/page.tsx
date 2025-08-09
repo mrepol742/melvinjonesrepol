@@ -187,32 +187,67 @@ export default function Home() {
                   className="w-60 h-60 object-cover rounded-full border-4 border-white shadow-lg"
                   width={240}
                   height={240}
+                  data-aos="zoom-in"
+                  data-aos-delay="600"
                 />
               </div>
             </div>
           </div>
 
-          <div className="mt-16 relative flex flex-col items-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
-              {skills.map((skill, idx) => {
-                const bg = bgGradients[idx % bgGradients.length];
-                const textColor = textColors[idx % textColors.length];
-
-                return (
-                  <SkillCard
-                    key={idx + 1}
-                    loc={idx + 1}
-                    title={skill.title}
-                    description={skill.description}
-                    bg={bg}
-                    textColor={textColor}
-                  />
-                );
-              })}
-            </div>
+          <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-4 mt-4 space-y-4">
+            <Image
+              src="/images/skills.png"
+              alt="Skills"
+              width={300}
+              height={300}
+              data-aos="fade-up"
+              data-aos-delay="100"
+              className="mt-8"
+            />
+            {skills.map((skill, idx) => (
+              <div
+                key={idx}
+                className={`${textColors[idx % textColors.length]}`}
+                data-aos="fade-up"
+                data-aos-delay={`${idx * 100}`}
+              >
+                <h3 className="text-xl font-semibold">{skill.title}</h3>
+                <p className="text-gray-700">{skill.description}</p>
+              </div>
+            ))}
           </div>
 
-          <div className="mt-16">
+          <div className="text-center text-3xl my-25 md:my-32">
+            <h4>
+              I take <span className="text-blue-500">action</span>. I embrace{" "}
+              <span className="underline">failure</span>. I grow <b>wiser</b>.
+            </h4>
+          </div>
+
+          <div className="my-24 md:my-32">
+            <h4 className="leading-relaxed">
+              Every build I undertake is guided by a few core principles:
+            </h4>
+            <ul className="list-disc list-inside my-6 text-left">
+              <li>
+                <strong>KISS</strong> — Keep It Simple, Stupid.
+              </li>
+              <li>
+                <strong>YAGNI</strong> — You Aren&apos;t Gonna Need It.
+              </li>
+              <li>
+                <strong>DRY</strong> — Don&apos;t Repeat Yourself.
+              </li>
+            </ul>
+            <h4 className="leading-relaxed mt-6">
+              If you are able to clearly write down your problem, then it is
+              already half solved.
+              <br />
+              <em>— Kidlin&apos;s Law</em>
+            </h4>
+          </div>
+
+          <div className="mt-8">
             <h2
               className="text-2xl font-semibold"
               data-aos="fade-up"
