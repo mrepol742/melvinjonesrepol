@@ -28,30 +28,30 @@ export default function ProjectCard({
         <h3 className="text-xl font-bold mb-2">{title}</h3>
         <p className="mb-4">{description}</p>
         {link && (
-          <Link
+          <a
             href={link}
             className="font-medium text-sm hover:underline mr-2"
             aria-label="View Project"
           >
             <FontAwesomeIcon icon={faExpand} size="xl" />
-          </Link>
+          </a>
         )}
         {repo && (
-          <Link
+          <a
             href={repo}
             target="_blank"
             className="font-medium text-sm hover:underline mr-2"
           >
             <FontAwesomeIcon icon={faGithub} size="xl" />
-          </Link>
+          </a>
         )}
         {download && (
-          <Link
+          <a
             href={download}
             className="font-medium text-sm hover:underline mr-2"
           >
             <FontAwesomeIcon icon={faDownload} size="xl" />
-          </Link>
+          </a>
         )}
       </div>
     </div>

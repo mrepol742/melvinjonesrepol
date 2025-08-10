@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SkillCard from "@/components/SkillCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGamepad } from "@fortawesome/free-solid-svg-icons";
+import { faCode, faGamepad } from "@fortawesome/free-solid-svg-icons";
 import Head from "next/head";
 
 const skills = [
@@ -216,14 +216,17 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="text-center text-3xl my-25 md:my-32" data-aos="fade-up">
+          <div
+            className="text-center text-3xl my-25 md:my-32"
+            data-aos="fade-up"
+          >
             <h4>
               I take <span className="text-blue-500">action</span>. I embrace{" "}
               <span className="underline">failure</span>. I grow <b>wiser</b>.
             </h4>
           </div>
 
-          <div className="my-24 md:my-32">
+          <div className="mt-24 md:mt-32">
             <h4 className="leading-relaxed" data-aos="fade-right">
               Every build I undertake is guided by a few core principles:
             </h4>
@@ -238,7 +241,11 @@ export default function Home() {
                 <strong>DRY</strong> — Don&apos;t Repeat Yourself.
               </li>
             </ul>
-            <h4 className="leading-relaxed mt-6" data-aos="fade-right" data-aos-delay="400">
+            <h4
+              className="leading-relaxed mt-6"
+              data-aos="fade-right"
+              data-aos-delay="400"
+            >
               If you are able to clearly write down your problem, then it is
               already half solved.
               <br />
@@ -271,6 +278,39 @@ export default function Home() {
                   size="xl"
                 />
                 View Gaming Activities
+              </button>
+            </Link>
+          </div>
+
+          <div
+            className="mt-8 max-w-2xl"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <p className="text-lg">
+              I’m building{" "}
+              <span className="font-bold text-blue-600">Hall of Codes</span> —
+              an open-source playground for developers, creatives, and
+              problem-solvers. It’s where ideas turn into projects, and projects
+              turn into opportunities to learn and collaborate.
+            </p>
+            <p className="mt-3 text-lg">
+              If you love building cool things, exploring new tech, or just
+              geeking out over code, you’re welcome to join the journey.
+            </p>
+            <Link href="https://hallofcodes.github.io" data-aos="fade-up" data-aos-delay="300">
+              <button
+                className="text-sm relative bg-blue-400 px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
+                  before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-blue-600 before:rounded-b-lg
+                  after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-blue-600 after:rounded-r-lg"
+                style={{ boxShadow: "1px 1px 0 0 #111827" }}
+              >
+                <FontAwesomeIcon
+                  icon={faCode}
+                  className="inline mr-2"
+                  size="xl"
+                />
+                Explore Hall of Codes
               </button>
             </Link>
           </div>

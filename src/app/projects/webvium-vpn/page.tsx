@@ -73,6 +73,11 @@ export default function WebviumVPN() {
       "@type": "Offer",
       price: "0",
     },
+    creator: {
+      "@type": "Person",
+      name: "Melvin Jones Repol",
+      url: "https://www.melvinjonesrepol.com",
+    },
   };
 
   const videoObject = {
@@ -147,6 +152,19 @@ export default function WebviumVPN() {
 
           <div className="w-full mb-8">
             <div className="flex overflow-x-auto space-x-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent py-2">
+              <video
+                width="320"
+                height="240"
+                controls
+                preload="none"
+                className="rounded-lg hover:scale-99 transition-transform duration-200"
+              >
+                <source
+                  src="/videos/Webvium VPN - Anonymous, Secured, Private and the fastest Virtual Private Network.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
               {Images.map((image, index) => (
                 <Image
                   key={index}

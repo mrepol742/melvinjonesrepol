@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 type CertificateCardProps = {
   title: string;
   description: string;
@@ -27,13 +25,13 @@ export default function CertificateCard({
         <p>{description}</p>
         <p className="mb-4">{date}</p>
 
-        <Link
+        <a
           href={link}
           target="_blank"
           className="text-blue-600 font-medium text-sm hover:underline mr-4"
         >
           View Certificate →
-        </Link>
+        </a>
       </div>
     </div>
   );

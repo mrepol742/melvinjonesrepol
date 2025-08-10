@@ -212,6 +212,14 @@ export default function Footer() {
                   QR Code Generator
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="https://go.melvinjonesrepol.com"
+                  className="hover:text-orange-500 text-gray-400"
+                >
+                  Shortlink
+                </Link>
+              </li>
             </ul>
           </div>
           {/* Socials */}

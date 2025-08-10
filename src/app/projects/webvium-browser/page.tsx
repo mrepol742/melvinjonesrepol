@@ -1,5 +1,5 @@
 import DisqusComments from "@/components/DisqusComments";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Video } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -81,6 +81,11 @@ export default function WebviumBrowser() {
       "@type": "Offer",
       price: "0",
     },
+    creator: {
+      "@type": "Person",
+      name: "Melvin Jones Repol",
+      url: "https://www.melvinjonesrepol.com",
+    }
   };
 
   const videoObject = {
@@ -103,6 +108,39 @@ export default function WebviumBrowser() {
       userInteractionCount: 5647018,
     },
   };
+
+  const features = [
+    {
+      title: "Customization",
+      description:
+        "Use the Interface settings, to change the app theme to dark or light. Add a little curved on edge of screen or make your favorite photo or wallpaper as app main background. Redefined your browsing experience with customization from Webvium.",
+    },
+    {
+      title: "Lightweight & Faster",
+      description:
+        "Webvium is designed to be the most lightweight app possible. Lightweight means faster installation time, faster download time, better app experience. Share this app to your friends within fraction of a seconds.",
+    },
+    {
+      title: "Material Design",
+      description:
+        "Immerse yourself in new and awesome browser fully material based designed. The colors and icons are carefully picked for you, and it uses one of the coolest fonts ever The Maven Pro from Google Fonts. Easier UI Navigation and modern based UI designs.",
+    },
+    {
+      title: "Total Browsing Control",
+      description:
+        "Here you can customize your all of web settings preferences if you wanted anytime. Webvium guaranteed that your the admin(super-user) of the app.",
+    },
+    {
+      title: "Incomparable Privacy",
+      description:
+        "Protect your privacy, Webvium does not collect any kind of data Your browsing activity is at highest security and anonymous.",
+    },
+    {
+      title: "You in Control",
+      description:
+        "Yeah, the only browser that allows you to backup all of your data settings preferences, history, searches, bookmarks and download list and export it when you needed.",
+    },
+  ];
 
   return (
     <>
@@ -155,6 +193,19 @@ export default function WebviumBrowser() {
 
           <div className="w-full mb-8">
             <div className="flex overflow-x-auto space-x-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent py-2">
+              <video
+                width="320"
+                height="240"
+                controls
+                preload="none"
+                className="rounded-lg hover:scale-99 transition-transform duration-200"
+              >
+                <source
+                  src="/videos/Webvium - Lightweight, Fast, Material and Full-Featured Android Web Browser.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
               {Images.map((image, index) => (
                 <Image
                   key={index}
@@ -164,6 +215,23 @@ export default function WebviumBrowser() {
                   height={445}
                   className="object-cover rounded-lg flex-shrink-0 border border-gray-700 hover:scale-99 transition-transform duration-200"
                 />
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-8">
+            <h3 className="text-2xl">Features</h3>
+            <div className="grid gap-4 mt-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {features.map((feature, index) => (
+                <div
+                  key={index}
+                  className="bg-black/10 backdrop-blur rounded-xl p-6 shadow hover:shadow-lg transition"
+                  data-aos="fade-up"
+                  data-aos-delay={`${index * 100}`}
+                >
+                  <h4 className="text-xl font-bold mb-2">{feature.title}</h4>
+                  <p>{feature.description}</p>
+                </div>
               ))}
             </div>
           </div>
