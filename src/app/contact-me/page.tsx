@@ -1,3 +1,4 @@
+import { ReCaptchaProvider } from "next-recaptcha-v3";
 import ContactMe from "./contact-me.client";
 import { Metadata } from "next";
 
@@ -50,5 +51,11 @@ export const metadata: Metadata = {
 };
 
 export default function ContactMePage() {
-  return <ContactMe />;
+  return (
+    <ReCaptchaProvider
+      reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+    >
+      <ContactMe />
+    </ReCaptchaProvider>
+  );
 }

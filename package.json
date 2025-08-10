@@ -20,6 +20,7 @@
     "disqus-react": "^1.1.7",
     "lucide-react": "^0.526.0",
     "next": "15.4.4",
+    "next-recaptcha-v3": "^1.5.2",
     "nextjs-toploader": "^3.8.16",
     "nodemailer": "^7.0.5",
     "react": "19.1.0",

@@ -1,5 +1,6 @@
 "use client";
 
+import { useReCaptcha } from "next-recaptcha-v3";
 import { useState } from "react";
 import { toast } from "react-toastify";
 
@@ -9,6 +10,7 @@ export default function ContactMe() {
     email: "",
     message: "",
   });
+  const { executeRecaptcha } = useReCaptcha();
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -20,10 +22,12 @@ export default function ContactMe() {
     e.preventDefault();
     const resolveAfter3Sec = new Promise(async (resolve, reject) => {
       try {
+        const token = await executeRecaptcha("contact");
+
         const response = await fetch("/api/contact", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
+          body: JSON.stringify({...formData, token }),
         });
 
         if (!response.ok) {

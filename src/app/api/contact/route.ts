@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { transporter } from "@/lib/smtp/nodemailer";
+import { recaptcha } from "@/lib/recaptcha";
 
 const disposableEmailDomains = [
   "mailinator.com",
@@ -50,7 +51,16 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
 
-    const { name, email, message } = body;
+    const { name, email, message, token } = body;
+
+    // recaptcha verification
+    if (!(await recaptcha(token)))
+      return NextResponse.json(
+        {
+          error: "reCAPTCHA verification failed. Please try again.",
+        },
+        { status: 400 }
+      );
 
     if (!name || !email || !message) {
       throw new Error("All fields are required.");
