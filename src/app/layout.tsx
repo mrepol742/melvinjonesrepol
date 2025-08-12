@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     siteName: "Melvin Jones Repol",
     images: [
       {
-        url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.png",
+        url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
         width: 800,
         height: 600,
         alt: "Melvin Jones Repol",
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     title: "Melvin Jones Repol - Software Engineer | DevOps",
     description:
       "Freelance Software Engineer specializing in full-stack web development, SEO, data analytics, embedded systems with Arduino programming, hardware and software troubleshooting, and building progressive web applications.",
-    images: ["https://www.melvinjonesrepol.com/images/melvinjonesrepol.png"],
+    images: ["https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png"],
     creator: "@mrepol742",
   },
   icons: {

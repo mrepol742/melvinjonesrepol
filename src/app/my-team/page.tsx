@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: "Melvin Jones Repol",
     images: [
       {
-        url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.png",
+        url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
         width: 1200,
         height: 630,
         alt: "My Team Cover",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "My Team - Melvin Jones Repol",
     description: "Here are the amazing people I work with.",
-    images: ["https://www.melvinjonesrepol.com/images/melvinjonesrepol.png"],
+    images: ["https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png"],
     creator: "@mrepol742",
   },
 };

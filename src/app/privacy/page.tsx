@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     siteName: "Melvin Jones Repol",
     images: [
       {
-        url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.png",
+        url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
         width: 1200,
         height: 630,
         alt: "Privacy Policy Cover",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Privacy Policy - Melvin Jones Repol",
     description:
       "Read the privacy policy for melvinjonesrepol.com to learn how your data is collected, used, and protected.",
-    images: ["https://www.melvinjonesrepol.com/images/melvinjonesrepol.png"],
+    images: ["https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png"],
     creator: "@mrepol742",
   },
 };
