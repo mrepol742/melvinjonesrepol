@@ -27,6 +27,7 @@ const mavenPro = Maven_Pro({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.melvinjonesrepol.com"),
   title: "Melvin Jones Repol - Software Engineer | DevOps",
   description:
     "Freelance Software Engineer specializing in full-stack web development, SEO, data analytics, embedded systems with Arduino, hardware & software troubleshooting, and PWA.",
