@@ -5,58 +5,67 @@ import { Search, X } from "lucide-react";
 import ProjectCard from "@/components/ProjectCard";
 import Link from "next/link";
 
-const projects = [
+export const projects = [
   {
     title: "My Portfolio",
     description: "A portfolio built with Next.js and Tailwind.",
     link: "https://melvinjonesrepol.vercel.app",
     repo: "https://github.com/mrepol742/melvinjonesrepol.vercel.app",
+    featured: false,
   },
   {
     title: "Project Canis TG",
     description: "Canis but for Telegram.",
     repo: "https://github.com/mrepol742/project-canis-tg",
+    featured: false,
   },
   {
     title: "Project Canis",
     description:
       "A scalable, modular WhatsApp chatbot built in TypeScript. It leverages modern best practices, lean architecture, Prisma ORM, Dockerization, and environment-based configuration to deliver a robust, flexible successor to Orion.",
     link: "/projects/canis-chatbot",
+    featured: true,
   },
   {
     title: "Ulisha Store",
     description:
       "A premier destination for quality fashion, accessories, and electronics. Bringing you the best products at competitive prices.",
     link: "/projects/ulisha-store",
+    featured: true,
   },
   {
     title: "Devops Capstone Project",
     description:
       "Completed as part of the IBM Devops Capstone Project on Coursera.",
     link: "https://github.com/mrepol742/devops-capstone-project",
+    featured: false,
   },
   {
     title: "Project POS",
     description:
       "A lightweight, web-based and offline-capable POS system built for flawless performance, supporting multi-department roles and full functionality.",
     link: "/projects/point-of-sale",
+    featured: true,
   },
   {
     title: "Axleshift Core 1 - Capstone Project",
     description:
       "A freight management services. Providing Businesses with cutting-edge platform, security, and reliability.",
     link: "/projects/axleshift-core-1",
+    featured: true,
   },
   {
     title: "Second Chance Backend Nodejs Capstone",
     description:
       "Completed as part of the IBM JavaScript Back-End Capstone Project on Coursera.",
     repo: "https://github.com/mrepol742/secondchance-backend-nodejs-capstone",
+    featured: false,
   },
   {
     title: "LGU Management System",
     description: "A Project for Project Management class.",
     repo: "https://github.com/lgu-ms/lgu-ms",
+    featured: false,
   },
   {
     title: "Project Deep",
@@ -64,40 +73,47 @@ const projects = [
       "A open-source collaboration! If you're eager to share your insights, tips, or experiences with a broader audience, contributing to Deep Repository is a fantastic opportunity.",
     repo: "https://github.com/mrepol742/project-deep",
     link: "https://projectdeep.vercel.app",
+    featured: false,
   },
   {
     title: "Project Orion",
     description:
       "Meet the lightning-fast Facebook Messenger chatbot, seamlessly managing multiple accounts with access to 271 commands.",
     link: "/projects/orion-chatbot",
+    featured: false,
   },
   {
     title: "Online Catering System",
     description: "A Project for HCI Subject.",
     repo: "https://github.com/mrepol742/Online-Catering-System",
+    featured: false,
   },
   {
     title: "Room Rental System",
     description: "A Project for Web Dev Subject.",
     repo: "https://github.com/mrepol742/Room-Rental-System",
+    featured: false,
   },
   {
     title: "Webvium VPN",
     description:
       "Inspired from Webvium, Webvium VPN is a lightweight android VPN app focuses in speed, simplicity, security and privacy.",
     link: "/projects/webvium-vpn",
+    featured: false,
   },
   {
     title: "mrepol742.github.io",
     description:
       "This is where i showcase my projects, landing pages, tools and other awesome things.",
     link: "https://github.com/mrepol742/mrepol742.github.io",
+    featured: false,
   },
   {
     title: "Project Webvium",
     description:
       "A Project that aims to be the lightest, fastest, secured, private and full-featured android web browser. Programmed and design from Scratch.",
     link: "/projects/webvium-browser",
+    featured: true,
   },
 ];
 
@@ -149,7 +165,7 @@ export default function Projects() {
               )}
             </form>
           </div>
-          <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-4 mt-4 space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {projects
               .filter(
                 (project) =>
@@ -159,7 +175,7 @@ export default function Projects() {
                     .includes(query.toLowerCase())
               )
               .map((project, idx) => (
-                <div key={idx} className="mb-6">
+                <div key={idx}>
                   <Link
                     href={project.link || project.repo || "#"}
                     className="no-underline"

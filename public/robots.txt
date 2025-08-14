@@ -1,5 +1,0 @@
-User-agent: *
-User-agent: Yandex
-Allow: /
-
-Sitemap: https://www.melvinjonesrepol.com/sitemap.xml

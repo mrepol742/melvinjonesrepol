@@ -1,9 +1,11 @@
+"use client"
+
 import Image from "next/image";
 import Link from "next/link";
-import SkillCard from "@/components/SkillCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode, faGamepad } from "@fortawesome/free-solid-svg-icons";
-import Head from "next/head";
+import { projects } from "@/app/projects/projects.client";
+import ProjectCard from "@/components/ProjectCard";
 
 const skills = [
   {
@@ -36,15 +38,6 @@ const skills = [
     description:
       "I assemble, configure, and repair computer systems, ensuring optimal performance and security. My skills include diagnosing issues, installing operating systems, and using software tools to maintain reliable hardware and software environments.",
   },
-];
-
-const bgGradients = [
-  "bg-gradient-to-tr from-orange-500/40 to-yellow-300/30",
-  "bg-gradient-to-br from-blue-600/30 to-purple-400/30",
-  "bg-gradient-to-tl from-green-500/30 to-lime-300/30",
-  "bg-gradient-to-r from-pink-500/30 to-red-400/30",
-  "bg-gradient-to-bl from-violet-500/30 to-indigo-300/30",
-  "bg-gradient-to-tr from-yellow-500/30 to-orange-300/30",
 ];
 
 const textColors = [
@@ -192,16 +185,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-4 mt-4 space-y-4">
-            <Image
-              src="/images/skills.png"
-              alt="Skills"
-              width={300}
-              height={300}
-              data-aos="fade-up"
-              data-aos-delay="100"
-              className="mt-8 bg-amber-500 rounded-lg"
-            />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
             {skills.map((skill, idx) => (
               <div key={idx} data-aos="fade-up" data-aos-delay={`${idx * 100}`}>
                 <h3
@@ -298,7 +282,11 @@ export default function Home() {
               If you love building cool things, exploring new tech, or just
               geeking out over code, you’re welcome to join the journey.
             </p>
-            <Link href="https://hallofcodes.github.io" data-aos="fade-up" data-aos-delay="300">
+            <Link
+              href="https://hallofcodes.github.io"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
               <button
                 className="text-sm relative bg-blue-400 px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
                   before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-blue-600 before:rounded-b-lg
@@ -313,6 +301,31 @@ export default function Home() {
                 Explore Hall of Codes
               </button>
             </Link>
+          </div>
+
+          <h4
+            className="text-center text-3xl my-8 text-amber-300"
+            data-aos="fade-up"
+          >
+            Featured Projects
+          </h4>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+            {projects && projects
+              .filter((project) => project.featured)
+              .map((project, idx) => (
+                <div
+                  key={idx}
+                  data-aos="fade-up"
+                  data-aos-delay={`${idx * 100}`}
+                >
+                  <Link
+                    href={project.link || project.repo || "#"}
+                    className="no-underline"
+                  >
+                    <ProjectCard {...project} />
+                  </Link>
+                </div>
+              ))}
           </div>
         </section>
       </main>

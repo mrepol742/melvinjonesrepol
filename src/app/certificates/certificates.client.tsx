@@ -130,7 +130,7 @@ export default function Certificates() {
             )}
           </form>
         </div>
-        <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-4 mt-4 space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           {certificates
             .filter(
               (certificate) =>
@@ -140,7 +140,7 @@ export default function Certificates() {
                   .includes(query.toLowerCase())
             )
             .map((certificate, idx) => (
-              <div key={idx} className="mb-6">
+              <div key={idx}>
                 <Link href={certificate.link || "#"} className="no-underline">
                   <CertificateCard {...certificate} delay={idx * 100} />
                 </Link>
