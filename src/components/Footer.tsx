@@ -59,7 +59,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/gaming"
-                    className="hover:text-orange-500 text-gray-400"
+                    className="hover:text-orange-500 text-blue-400"
                   >
                     Gaming
                   </Link>
@@ -96,6 +96,22 @@ export default function Footer() {
                     Contact
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/terms"
+                    className="hover:text-orange-500 text-gray-400"
+                  >
+                    Terms
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/privacy"
+                    className="hover:text-orange-500 text-gray-400"
+                  >
+                    Privacy
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -114,7 +130,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/projects/webvium-browser"
-                  className="hover:text-orange-500 text-gray-400"
+                  className="hover:text-orange-500 text-blue-400"
                 >
                   Webvium Browser
                 </Link>
@@ -146,7 +162,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/projects/ulisha-store"
-                  className="hover:text-orange-500 text-gray-400"
+                  className="hover:text-orange-500 text-blue-400"
                 >
                   Ulisha Store
                 </Link>
@@ -199,7 +215,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="https://go.melvinjonesrepol.com"
-                  className="hover:text-orange-500 text-gray-400"
+                  className="hover:text-orange-500 text-blue-400"
                 >
                   Shortlink
                 </Link>
