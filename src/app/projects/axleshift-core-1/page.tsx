@@ -1,8 +1,10 @@
 import { Metadata } from "next";
-import { ArrowLeft, Plus } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import DisqusComments from "@/components/DisqusComments";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export const metadata: Metadata = {
   title: "Axleshift Core 1 - Melvin Jones Repol",
@@ -95,7 +97,7 @@ export default function Axleshift() {
             className="flex items-center mb-4 hover:text-violet-500 transition-colors duration-200"
             href="/projects"
           >
-            <ArrowLeft className="w-6 h-6 mr-2" />
+            <FontAwesomeIcon icon={faChevronLeft} className="mr-2" />
             <h3 className="text-2xl font-semibold">Projects</h3>
           </Link>
           <div className="block md:flex items-center mb-4">
@@ -138,7 +140,7 @@ export default function Axleshift() {
             </div>
           </div>
           <div className="flex items-center bg-green-900/30 border border-green-700 rounded-lg p-4 mb-6">
-            <Plus className="w-6 h-6 text-green-500 mr-3" />
+            <FontAwesomeIcon icon={faGithub} className="text-green-500 mr-3" />
             <div>
               <span className="font-semibold text-green-500">Open Source:</span>
               &nbsp;This project is open source. View the code on&nbsp;

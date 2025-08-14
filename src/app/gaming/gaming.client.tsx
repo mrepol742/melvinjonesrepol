@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Search, X } from "lucide-react";
 import { toast } from "react-toastify";
 import GameCard from "@/components/GameCard";
 import Link from "next/link";
 import DisqusComments from "@/components/DisqusComments";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch, faX } from "@fortawesome/free-solid-svg-icons";
 
 interface GameType {
   appid: number;
@@ -52,10 +53,7 @@ export default function Projects() {
           <h1 className="text-2xl font-semibold" data-aos="fade-right">
             Gaming
           </h1>
-          <p
-            data-aos="fade-right"
-            data-aos-delay="100"
-          >
+          <p data-aos="fade-right" data-aos-delay="100">
             Here are some of my gaming achievements and activities.
           </p>
           <div
@@ -69,7 +67,7 @@ export default function Projects() {
               style={{ borderColor: "#e5e7eb" }}
             >
               <span className="absolute left-3 text-gray-400 pointer-events-none">
-                <Search size={18} />
+                <FontAwesomeIcon icon={faSearch} size="lg" />
               </span>
               <input
                 type="text"
@@ -92,7 +90,7 @@ export default function Projects() {
                   tabIndex={0}
                   style={{ right: "0.75rem" }}
                 >
-                  <X size={18} />
+                  <FontAwesomeIcon icon={faX} size="2xs" />
                 </button>
               )}
             </form>
@@ -147,10 +145,7 @@ export default function Projects() {
           </div>
 
           <div className="my-6">
-            <p
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
+            <p data-aos="fade-up" data-aos-delay="200">
               You can find more of my gaming activities on my steam profile.
             </p>
             <Link

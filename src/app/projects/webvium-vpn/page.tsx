@@ -1,5 +1,6 @@
 import DisqusComments from "@/components/DisqusComments";
-import { ArrowLeft } from "lucide-react";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -121,7 +122,7 @@ export default function WebviumVPN() {
             className="flex items-center mb-4 hover:text-violet-500 transition-colors duration-200"
             href="/projects"
           >
-            <ArrowLeft className="w-6 h-6 mr-2" />
+            <FontAwesomeIcon icon={faChevronLeft} className="mr-2" />
             <h3 className="text-2xl font-semibold">Projects</h3>
           </Link>
 

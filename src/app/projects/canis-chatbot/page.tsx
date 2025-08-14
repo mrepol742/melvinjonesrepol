@@ -1,8 +1,10 @@
-import { ArrowLeft, Info, Plus } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import DisqusComments from "@/components/DisqusComments";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft, faWarning } from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faTelegram } from "@fortawesome/free-brands-svg-icons";
 
 export const metadata: Metadata = {
   title: "Canis Chatbot - Melvin Jones Repol",
@@ -91,7 +93,7 @@ export default function CanisChatbot() {
             className="flex items-center mb-4 hover:text-violet-500 transition-colors duration-200"
             href="/projects"
           >
-            <ArrowLeft className="w-6 h-6 mr-2" />
+            <FontAwesomeIcon icon={faChevronLeft} className="mr-2" />
             <h3 className="text-2xl font-semibold">Projects</h3>
           </Link>
 
@@ -114,8 +116,11 @@ export default function CanisChatbot() {
             </div>
           </div>
 
-          <div className="flex items-start bg-yellow-900/30 border border-yellow-700 rounded-lg p-4 mb-6">
-            <Info className="text-yellow-500 mr-4 flex-shrink-0" size={32} />
+          <div className="flex bg-yellow-900/30 border border-yellow-700 rounded-lg p-4 mb-6">
+            <FontAwesomeIcon
+              icon={faWarning}
+              className="text-yellow-500 mr-3" size="2x"
+            />
             <div>
               <span className="font-semibold text-yellow-500">Disclaimer:</span>
               &nbsp; By using this bot, you acknowledge that your account may be
@@ -141,12 +146,9 @@ export default function CanisChatbot() {
           </div>
 
           <div className="flex items-center bg-blue-900/30 border border-blue-700 rounded-lg p-4 mb-2">
-            <Image
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/250px-Telegram_2019_Logo.svg.png"
-              alt="Telegram Icon"
-              width={19}
-              height={19}
-              className="mr-4"
+            <FontAwesomeIcon
+              icon={faTelegram}
+              className="w-6 h-6 text-blue-500 mr-3"
             />
             <div>
               <span className="font-semibold text-blue-500">
@@ -165,7 +167,7 @@ export default function CanisChatbot() {
           </div>
 
           <div className="flex items-center bg-green-900/30 border border-green-700 rounded-lg p-4 mb-6">
-            <Plus className="w-6 h-6 text-green-500 mr-3" />
+            <FontAwesomeIcon icon={faGithub} className="text-green-500 mr-3" />
             <div>
               <span className="font-semibold text-green-500">Open Source:</span>
               &nbsp;This project is open source. View the code on&nbsp;

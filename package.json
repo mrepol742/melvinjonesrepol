@@ -16,7 +16,6 @@
     "aos": "^2.3.4",
     "cheerio": "^1.1.2",
     "disqus-react": "^1.1.7",
-    "lucide-react": "^0.526.0",
     "next": "15.4.4",
     "next-recaptcha-v3": "^1.5.2",
     "nextjs-toploader": "^3.8.16",

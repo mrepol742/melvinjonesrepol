@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import CertificateCard from "@/components/CertificateCard";
-import { Search, X } from "lucide-react";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch, faX } from "@fortawesome/free-solid-svg-icons";
 
 const certificates = [
   {
@@ -102,7 +103,7 @@ export default function Certificates() {
             style={{ borderColor: "#e5e7eb" }}
           >
             <span className="absolute left-3 text-gray-400 pointer-events-none">
-              <Search size={18} />
+              <FontAwesomeIcon icon={faSearch} size="lg" />
             </span>
             <input
               type="text"
@@ -125,7 +126,7 @@ export default function Certificates() {
                 tabIndex={0}
                 style={{ right: "0.75rem" }}
               >
-                <X size={18} />
+                <FontAwesomeIcon icon={faX} size="2xs" />
               </button>
             )}
           </form>

@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Search, X } from "lucide-react";
 import ProjectCard from "@/components/ProjectCard";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faX } from "@fortawesome/free-solid-svg-icons/faX";
 
 export const projects = [
   {
@@ -41,7 +43,7 @@ export const projects = [
     featured: false,
   },
   {
-    title: "Project POS",
+    title: "Point of Sale",
     description:
       "A lightweight, web-based and offline-capable POS system built for flawless performance, supporting multi-department roles and full functionality.",
     link: "/projects/point-of-sale",
@@ -137,7 +139,7 @@ export default function Projects() {
               style={{ borderColor: "#e5e7eb" }}
             >
               <span className="absolute left-3 text-gray-400 pointer-events-none">
-                <Search size={18} />
+                <FontAwesomeIcon icon={faSearch} size="lg" />
               </span>
               <input
                 type="text"
@@ -160,7 +162,7 @@ export default function Projects() {
                   tabIndex={0}
                   style={{ right: "0.75rem" }}
                 >
-                  <X size={18} />
+                  <FontAwesomeIcon icon={faX} size="2xs" />
                 </button>
               )}
             </form>
