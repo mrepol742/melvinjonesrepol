@@ -1,4 +1,7 @@
+"use client"
+
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 type WorkExperienceProps = {
   id: number;
@@ -17,6 +20,8 @@ export default function WorkExperienceCard({
   date,
   cert,
 }: WorkExperienceProps) {
+  const router = useRouter();
+
   return (
     <Link href={cert || "#"}>
       <div
@@ -29,13 +34,13 @@ export default function WorkExperienceCard({
         <p className="mb-2 text-gray-500">{date}</p>
         <p className="mb-3">{description}</p>
         {cert && (
-          <a
-            href={cert}
-            target="_blank"
+          <span
+            onClick={() => router.push(cert)}
             className="text-blue-600 font-medium text-sm hover:underline mr-4"
+            aria-label={`Open ${title} link`}
           >
             View Certificate →
-          </a>
+          </span>
         )}
       </div>
     </Link>

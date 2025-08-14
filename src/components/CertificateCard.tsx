@@ -1,3 +1,5 @@
+import { useRouter } from "next/navigation";
+
 type CertificateCardProps = {
   title: string;
   description: string;
@@ -15,6 +17,8 @@ export default function CertificateCard({
   type,
   link,
 }: CertificateCardProps) {
+  const router = useRouter();
+
   return (
     <div data-aos="fade-up" data-aos-delay={delay}>
       <div
@@ -25,13 +29,13 @@ export default function CertificateCard({
         <p>{description}</p>
         <p className="mb-4">{date}</p>
 
-        <a
-          href={link}
-          target="_blank"
+        <span
+          onClick={() => router.push(link)}
           className="text-blue-600 font-medium text-sm hover:underline mr-4"
+          aria-label={`Open ${title} certificate link`}
         >
           View Certificate →
-        </a>
+        </span>
       </div>
     </div>
   );

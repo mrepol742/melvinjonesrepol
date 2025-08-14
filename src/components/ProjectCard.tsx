@@ -1,6 +1,7 @@
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faDownload, faExpand } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useRouter } from "next/navigation";
 
 type ProjectCardProps = {
   title: string;
@@ -19,6 +20,8 @@ export default function ProjectCard({
   link,
   download,
 }: ProjectCardProps) {
+  const router = useRouter();
+
   return (
     <div data-aos="fade-up" data-aos-delay={delay}>
       <div
@@ -27,30 +30,31 @@ export default function ProjectCard({
         <h3 className="text-xl font-bold mb-2">{title}</h3>
         <p className="mb-4">{description}</p>
         {link && (
-          <a
-            href={link}
+          <span
+            onClick={() => router.push(link)}
             className="font-medium text-sm hover:underline mr-2"
-            aria-label="View Project"
+            aria-label={`Open ${title} link`}
           >
             <FontAwesomeIcon icon={faExpand} size="xl" />
-          </a>
+          </span>
         )}
         {repo && (
-          <a
-            href={repo}
-            target="_blank"
+          <span
+            onClick={() => router.push(repo)}
             className="font-medium text-sm hover:underline mr-2"
+            aria-label={`Open ${title} link`}
           >
             <FontAwesomeIcon icon={faGithub} size="xl" />
-          </a>
+          </span>
         )}
         {download && (
-          <a
-            href={download}
+          <span
+            onClick={() => router.push(download)}
             className="font-medium text-sm hover:underline mr-2"
+            aria-label={`Open ${title} link`}
           >
             <FontAwesomeIcon icon={faDownload} size="xl" />
-          </a>
+          </span>
         )}
       </div>
     </div>
