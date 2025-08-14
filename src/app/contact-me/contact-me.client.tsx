@@ -61,7 +61,7 @@ export default function ContactMe() {
           </p>
           <form
             onSubmit={handleSubmit}
-            className="bg-black/10 backdrop-blur shadow-lg rounded-xl p-8 w-full max-w-lg space-y-6"
+            className="bg-black/10 backdrop-blur shadow-lg rounded-xl p-8 w-full max-w-lg space-y-3"
           >
             <div>
               <label
@@ -116,6 +116,11 @@ export default function ContactMe() {
                 required
                 placeholder="Type your message here..."
               />
+            </div>
+            <div className="text-sm text-gray-500 mb-4">
+              By clicking &quot;Submit,&quot; you consent to having your information
+              securely processed and sent via SMTP to the designated recipient
+              at mrepol742@gmail.com.
             </div>
             <button
               type="submit"

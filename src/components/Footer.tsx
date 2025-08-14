@@ -161,22 +161,6 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/privacy"
-                  className="hover:text-orange-500 text-gray-400"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/terms"
-                  className="hover:text-orange-500 text-gray-400"
-                >
-                  Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="/sitemap.xml"
                   className="hover:text-orange-500 text-gray-400"
                 >

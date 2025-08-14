@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Source_Code_Pro, Maven_Pro } from "next/font/google";
-import { GoogleAnalytics } from "@next/third-parties/google";
 import { ToastContainer } from "react-toastify";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
@@ -125,7 +124,7 @@ export default function RootLayout({
         <ToastContainer />
         <Footer />
       </body>
-      <GoogleAnalytics gaId="G-5725N9VYZ4" />
+      
       <script
         src="https://app.livechatai.com/embed.js"
         data-id="cmdmcvh4n0001jt0c03xemlxw"

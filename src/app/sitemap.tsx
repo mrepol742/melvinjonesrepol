@@ -45,12 +45,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://www.melvinjonesrepol.com/contact-me",
     },
     {
-      url: "https://www.melvinjonesrepol.com/privacy",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/terms",
-    },
-    {
       url: "https://www.melvinjonesrepol.com/gaming",
     },
     {
