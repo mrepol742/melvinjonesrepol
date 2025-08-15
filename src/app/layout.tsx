@@ -29,19 +29,19 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.melvinjonesrepol.com"),
   title: "Melvin Jones Repol - Software Engineer | DevOps",
   description:
-    "Freelance Software Engineer specializing in full-stack web development, SEO, data analytics, embedded systems with Arduino, hardware & software troubleshooting, and PWA.",
+    "I specialize in building robust, scalable software solutions that solve real-world problems. With a passion for technology  and a commitment to excellence, I bring ideas to life through code.",
   keywords: [
     "Melvin Jones Repol",
-    "Repol",
-    "Freelance Software Engineer",
-    "Full-Stack Web Development",
-    "SEO",
-    "Data Analytics",
-    "Embedded Systems",
-    "Arduino Programming",
-    "Hardware Troubleshooting",
-    "Software Troubleshooting",
-    "Progressive Web Applications",
+    "Software Engineer",
+    "DevOps",
+    "Web Development",
+    "AI Development",
+    "Open Source",
+    "Portfolio",
+    "Projects",
+    "Contact",
+    "Resume",
+    "Software Development",
   ],
   authors: [
     { name: "Melvin Jones Repol", url: "https://www.melvinjonesrepol.com" },
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Melvin Jones Repol - Software Engineer | DevOps",
     description:
-      "Freelance Software Engineer specializing in full-stack web development, SEO, data analytics, embedded systems with Arduino programming, hardware and software troubleshooting, and building progressive web applications.",
+      "I specialize in building robust, scalable software solutions that solve real-world problems. With a passion for technology  and a commitment to excellence, I bring ideas to life through code.",
     url: "https://www.melvinjonesrepol.com",
     siteName: "Melvin Jones Repol",
     images: [
@@ -74,8 +74,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Melvin Jones Repol - Software Engineer | DevOps",
     description:
-      "Freelance Software Engineer specializing in full-stack web development, SEO, data analytics, embedded systems with Arduino programming, hardware and software troubleshooting, and building progressive web applications.",
-    images: ["https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png"],
+      "I specialize in building robust, scalable software solutions that solve real-world problems. With a passion for technology  and a commitment to excellence, I bring ideas to life through code.",
+    images: [
+      "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+    ],
     creator: "@mrepol742",
   },
   icons: {
@@ -124,7 +126,7 @@ export default function RootLayout({
         <ToastContainer />
         <Footer />
       </body>
-      
+
       <script
         src="https://app.livechatai.com/embed.js"
         data-id="cmdmcvh4n0001jt0c03xemlxw"

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -8,36 +8,12 @@ import { projects } from "@/app/projects/projects.client";
 import ProjectCard from "@/components/ProjectCard";
 
 const skills = [
-  {
-    title: "Software Engineering",
-    description:
-      "I apply engineering principles to design, develop, test, and maintain reliable software systems. My focus is on creating efficient solutions that meet customer needs, using modern tools and technologies to ensure software quality and performance.",
-  },
-  {
-    title: "Full Stack Web Development",
-    description:
-      "I build dynamic websites and web applications using technologies like HTML, CSS, JavaScript, PHP, MySQL, NodeJS, Firebase, and MongoDB. My experience covers both frontend and backend, enabling me to deliver complete, scalable web solutions.",
-  },
-  {
-    title: "Search Engine Optimization",
-    description:
-      "I optimize websites to improve their visibility in search engine results. My SEO process includes refining content, structure, and technical elements to drive organic traffic and enhance digital marketing efforts.",
-  },
-  {
-    title: "Data Analytics",
-    description:
-      "I transform raw data into actionable insights to support decision-making. Using a range of tools and processes, I identify trends, solve problems, and deliver valuable information for business growth.",
-  },
-  {
-    title: "Embedded System Design (Arduino)",
-    description:
-      "I design and program embedded systems using Arduino, integrating hardware and software for IoT, robotics, and automation. My expertise includes selecting components, optimizing code, and troubleshooting hardware-software interactions.",
-  },
-  {
-    title: "Hardware & Software Troubleshooting",
-    description:
-      "I assemble, configure, and repair computer systems, ensuring optimal performance and security. My skills include diagnosing issues, installing operating systems, and using software tools to maintain reliable hardware and software environments.",
-  },
+  "I apply engineering principles to design, develop, test, and maintain reliable software systems. My focus is on creating efficient solutions that meet customer needs, using modern tools and technologies to ensure software quality and performance.",
+  "I build dynamic websites and web applications using technologies like HTML, CSS, JavaScript, PHP, MySQL, NodeJS, Firebase, and MongoDB. My experience covers both frontend and backend, enabling me to deliver complete, scalable web solutions.",
+  "I optimize websites to improve their visibility in search engine results. My SEO process includes refining content, structure, and technical elements to drive organic traffic and enhance digital marketing efforts.",
+  "I transform raw data into actionable insights to support decision-making. Using a range of tools and processes, I identify trends, solve problems, and deliver valuable information for business growth.",
+  "I design and program embedded systems using Arduino, integrating hardware and software for IoT, robotics, and automation. My expertise includes selecting components, optimizing code, and troubleshooting hardware-software interactions.",
+  "I assemble, configure, and repair computer systems, ensuring optimal performance and security. My skills include diagnosing issues, installing operating systems, and using software tools to maintain reliable hardware and software environments.",
 ];
 
 const textColors = [
@@ -47,6 +23,15 @@ const textColors = [
   "text-purple-600",
   "text-yellow-600",
   "text-pink-600",
+];
+
+const backgroundColors = [
+  "bg-orange-300/10",
+  "bg-blue-300/10",
+  "bg-green-300/10",
+  "bg-purple-300/10",
+  "bg-yellow-300/10",
+  "bg-pink-300/10",
 ];
 
 export default function Home() {
@@ -106,10 +91,18 @@ export default function Home() {
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
-                I&apos;m a Freelance Software Engineer specializing in
-                full-stack web development, SEO, data analytics, embedded
-                systems with Arduino programming, hardware and software
-                troubleshooting, and building progressive web applications.
+                I specialize in building robust, scalable software solutions
+                that solve real-world problems. With a passion for technology
+                and a commitment to excellence, I bring ideas to life through
+                code.
+              </p>
+              <p className="mt-2 max-w-2xl"
+                data-aos="fade-up"
+                data-aos-delay="350">
+                Whether it&apos;s developing web applications, optimizing
+                systems, or diving into data analytics, I&apos;m here to help
+                you achieve your goals. Let&apos;s create something amazing
+                together!
               </p>
 
               <div>
@@ -186,16 +179,18 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-            {skills.map((skill, idx) => (
-              <div key={idx} data-aos="fade-up" data-aos-delay={`${idx * 100}`}>
-                <h3
-                  className={` ${
-                    textColors[idx % textColors.length]
-                  } text-xl font-semibold`}
-                >
-                  {skill.title}
-                </h3>
-                <p>{skill.description}</p>
+            {skills.map((skill, index) => (
+              <div
+                key={index}
+                className={`p-6 rounded-xl shadow ${
+                  textColors[index % textColors.length]
+                } ${
+                  backgroundColors[index % backgroundColors.length]
+                } backdrop-blur`}
+                data-aos="fade-up"
+                data-aos-delay={`${index * 100}`}
+              >
+                <p className="text-lg">{skill}</p>
               </div>
             ))}
           </div>
@@ -310,22 +305,23 @@ export default function Home() {
             Featured Projects
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            {projects && projects
-              .filter((project) => project.featured)
-              .map((project, idx) => (
-                <div
-                  key={idx}
-                  data-aos="fade-up"
-                  data-aos-delay={`${idx * 100}`}
-                >
-                  <Link
-                    href={project.link || project.repo || "#"}
-                    className="no-underline"
+            {projects &&
+              projects
+                .filter((project) => project.featured)
+                .map((project, idx) => (
+                  <div
+                    key={idx}
+                    data-aos="fade-up"
+                    data-aos-delay={`${idx * 100}`}
                   >
-                    <ProjectCard {...project} />
-                  </Link>
-                </div>
-              ))}
+                    <Link
+                      href={project.link || project.repo || "#"}
+                      className="no-underline"
+                    >
+                      <ProjectCard {...project} />
+                    </Link>
+                  </div>
+                ))}
           </div>
         </section>
       </main>
