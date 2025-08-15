@@ -129,6 +129,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="https://ai.melvinjonesrepol.com"
+                  className="hover:text-orange-500 text-red-400"
+                >
+                  Melvin AI
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/projects/webvium-browser"
                   className="hover:text-orange-500 text-blue-400"
                 >
