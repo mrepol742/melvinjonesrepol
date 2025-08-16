@@ -182,7 +182,7 @@ export default function Home() {
             {skills.map((skill, index) => (
               <div
                 key={index}
-                className={`p-6 rounded-xl shadow ${
+                className={`p-6 rounded-xl ${
                   textColors[index % textColors.length]
                 } ${
                   backgroundColors[index % backgroundColors.length]

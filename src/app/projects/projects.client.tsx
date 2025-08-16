@@ -14,12 +14,14 @@ export const projects = [
     link: "https://melvinjonesrepol.vercel.app",
     repo: "https://github.com/mrepol742/melvinjonesrepol.vercel.app",
     featured: false,
+    languages: ["TypeScript"],
   },
   {
     title: "Project Canis TG",
     description: "Canis but for Telegram.",
     repo: "https://github.com/mrepol742/project-canis-tg",
     featured: false,
+    languages: ["TypeScript"],
   },
   {
     title: "Project Canis",
@@ -27,6 +29,7 @@ export const projects = [
       "A scalable, modular WhatsApp chatbot built in TypeScript. It leverages modern best practices, lean architecture, Prisma ORM, Dockerization, and environment-based configuration to deliver a robust, flexible successor to Orion.",
     link: "/projects/canis-chatbot",
     featured: true,
+    languages: ["TypeScript"],
   },
   {
     title: "Ulisha Store",
@@ -34,6 +37,7 @@ export const projects = [
       "A premier destination for quality fashion, accessories, and electronics. Bringing you the best products at competitive prices.",
     link: "/projects/ulisha-store",
     featured: true,
+    languages: ["TypeScript"],
   },
   {
     title: "Devops Capstone Project",
@@ -41,6 +45,7 @@ export const projects = [
       "Completed as part of the IBM Devops Capstone Project on Coursera.",
     link: "https://github.com/mrepol742/devops-capstone-project",
     featured: false,
+    languages: ["JavaScript"],
   },
   {
     title: "Point of Sale",
@@ -48,6 +53,7 @@ export const projects = [
       "A lightweight, web-based and offline-capable POS system built for flawless performance, supporting multi-department roles and full functionality.",
     link: "/projects/point-of-sale",
     featured: true,
+    languages: ["JavaScript"],
   },
   {
     title: "Axleshift Core 1 - Capstone Project",
@@ -55,6 +61,7 @@ export const projects = [
       "A freight management services. Providing Businesses with cutting-edge platform, security, and reliability.",
     link: "/projects/axleshift-core-1",
     featured: true,
+    languages: ["JavaScript"],
   },
   {
     title: "Second Chance Backend Nodejs Capstone",
@@ -62,12 +69,14 @@ export const projects = [
       "Completed as part of the IBM JavaScript Back-End Capstone Project on Coursera.",
     repo: "https://github.com/mrepol742/secondchance-backend-nodejs-capstone",
     featured: false,
+    languages: ["JavaScript"],
   },
   {
     title: "LGU Management System",
     description: "A Project for Project Management class.",
     repo: "https://github.com/lgu-ms/lgu-ms",
     featured: false,
+    languages: ["PHP"],
   },
   {
     title: "Project Deep",
@@ -76,6 +85,7 @@ export const projects = [
     repo: "https://github.com/mrepol742/project-deep",
     link: "https://projectdeep.vercel.app",
     featured: false,
+    languages: ["JavaScript"],
   },
   {
     title: "Project Orion",
@@ -83,18 +93,21 @@ export const projects = [
       "Meet the lightning-fast Facebook Messenger chatbot, seamlessly managing multiple accounts with access to 271 commands.",
     link: "/projects/orion-chatbot",
     featured: false,
+    languages: ["JavaScript"],
   },
   {
     title: "Online Catering System",
     description: "A Project for HCI Subject.",
     repo: "https://github.com/mrepol742/Online-Catering-System",
     featured: false,
+    languages: ["PHP"],
   },
   {
     title: "Room Rental System",
     description: "A Project for Web Dev Subject.",
     repo: "https://github.com/mrepol742/Room-Rental-System",
     featured: false,
+    languages: ["PHP"],
   },
   {
     title: "Webvium VPN",
@@ -102,6 +115,7 @@ export const projects = [
       "Inspired from Webvium, Webvium VPN is a lightweight android VPN app focuses in speed, simplicity, security and privacy.",
     link: "/projects/webvium-vpn",
     featured: false,
+    languages: ["Java"],
   },
   {
     title: "mrepol742.github.io",
@@ -109,6 +123,7 @@ export const projects = [
       "This is where i showcase my projects, landing pages, tools and other awesome things.",
     link: "https://github.com/mrepol742/mrepol742.github.io",
     featured: false,
+    languages: ["PHP"],
   },
   {
     title: "Project Webvium",
@@ -116,6 +131,7 @@ export const projects = [
       "A Project that aims to be the lightest, fastest, secured, private and full-featured android web browser. Programmed and design from Scratch.",
     link: "/projects/webvium-browser",
     featured: true,
+    languages: ["Java"],
   },
 ];
 
