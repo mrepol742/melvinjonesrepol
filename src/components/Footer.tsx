@@ -169,7 +169,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/projects/ulisha-store"
+                  href="https://www.ulishastore.com"
                   className="hover:text-orange-500 text-blue-400"
                 >
                   Ulisha Store

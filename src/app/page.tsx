@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode, faGamepad } from "@fortawesome/free-solid-svg-icons";
-import { projects } from "@/app/projects/projects.client";
+import { __projects } from "@/app/projects/projects.client";
 import ProjectCard from "@/components/ProjectCard";
 
 const skills = [
@@ -96,9 +96,11 @@ export default function Home() {
                 and a commitment to excellence, I bring ideas to life through
                 code.
               </p>
-              <p className="mt-2 max-w-2xl"
+              <p
+                className="mt-2 max-w-2xl"
                 data-aos="fade-up"
-                data-aos-delay="350">
+                data-aos-delay="350"
+              >
                 Whether it&apos;s developing web applications, optimizing
                 systems, or diving into data analytics, I&apos;m here to help
                 you achieve your goals. Let&apos;s create something amazing
@@ -305,8 +307,8 @@ export default function Home() {
             Featured Projects
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            {projects &&
-              projects
+            {__projects &&
+              __projects
                 .filter((project) => project.featured)
                 .map((project, idx) => (
                   <div

@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faX } from "@fortawesome/free-solid-svg-icons/faX";
 
-export const projects = [
+export const __projects = [
   {
     title: "My Portfolio",
     description: "A portfolio built with Next.js and Tailwind.",
@@ -137,6 +137,7 @@ export const projects = [
 
 export default function Projects() {
   const [query, setQuery] = useState("");
+  const [projects, setProjects] = useState(__projects);
 
   return (
     <>
@@ -146,13 +147,43 @@ export default function Projects() {
             Projects
           </h1>
           <p data-aos="fade-right" data-aos-delay="100">
-            Here are some of my projects that I have worked on.
+            Here are some of my projects that I have worked on. <br />
+            For more details, you can check out my{" "}
+            <Link href="https://github.com/mrepol742?tab=repositories">
+              Github Repo
+            </Link>
+            .
           </p>
-          <div data-aos="fade-right" data-aos-delay="200">
+          <div
+            data-aos="fade-right"
+            data-aos-delay="200"
+            className="flex flex-col gap-2 md:flex-row md:items-center md:gap-4"
+          >
+            <div className="flex items-center gap-2">
+              <select
+                id="filter"
+                className="border-b px-2 py-3 outline-none"
+                onChange={(e) => {
+                  const value = e.target.value;
+                  setProjects(() => {
+                    if (value === "default") return __projects;
+
+                    return __projects.filter(
+                      (project) => project.languages[0].toLowerCase() === value
+                    );
+                  });
+                }}
+              >
+                <option value="default">All</option>
+                <option value="java">Java</option>
+                <option value="javascript">JavaScript</option>
+                <option value="typescript">TypeScript</option>
+                <option value="php">PHP</option>
+              </select>
+            </div>
             <form
               onSubmit={(e) => e.preventDefault()}
-              className="border rounded my-4 flex items-center gap-2 relative px-2 py-1 w-full max-w-xs"
-              style={{ borderColor: "#e5e7eb" }}
+              className="border-b flex items-center gap-2 relative px-2 py-1 w-full max-w-xs md:max-w-sm"
             >
               <span className="absolute left-3 text-gray-400 pointer-events-none">
                 <FontAwesomeIcon icon={faSearch} size="lg" />
@@ -183,7 +214,8 @@ export default function Projects() {
               )}
             </form>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 mb-6">
             {projects
               .filter(
                 (project) =>

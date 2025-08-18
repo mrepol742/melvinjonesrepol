@@ -61,12 +61,37 @@ export default function Projects() {
             data-aos-delay="200"
             className="flex flex-col gap-2 md:flex-row md:items-center md:gap-4"
           >
+            <div className="flex items-center gap-2">
+              <select
+                id="filter"
+                className="border-b px-2 py-3 outline-none"
+                onChange={(e) => {
+                  const value = e.target.value;
+                  setSteamActivities((prev: GameType[]) => {
+                    const sorted = [...prev];
+                    if (value === "default") return defaultSort;
+
+                    if (value === "name") {
+                      sorted.sort((a, b) => a.name.localeCompare(b.name));
+                    } else if (value === "hours") {
+                      sorted.sort(
+                        (a, b) => b.playtime_hours - a.playtime_hours
+                      );
+                    }
+                    return sorted;
+                  });
+                }}
+              >
+                <option value="default">Purchased Date</option>
+                <option value="name">Name</option>
+                <option value="hours">Hours Played</option>
+              </select>
+            </div>
             <form
               onSubmit={(e) => e.preventDefault()}
-              className="border rounded flex items-center gap-2 relative px-2 py-1 w-full max-w-xs md:max-w-sm"
-              style={{ borderColor: "#e5e7eb" }}
+              className="border-b flex items-center gap-2 relative px-2 py-1 w-full max-w-xs md:max-w-sm"
             >
-              <span className="absolute left-3 text-gray-400 pointer-events-none">
+              <span className="absolute left-3 pointer-events-none">
                 <FontAwesomeIcon icon={faSearch} size="lg" />
               </span>
               <input
@@ -94,39 +119,6 @@ export default function Projects() {
                 </button>
               )}
             </form>
-            <div className="flex items-center gap-2">
-              <label htmlFor="filter" className="text-gray-400 text-sm">
-                Sort by:
-              </label>
-              <select
-                id="filter"
-                className="border rounded px-2 py-3 text-gray-200"
-                value={""}
-                onChange={(e) => {
-                  const value = e.target.value;
-                  if (value === "") {
-                    setSteamActivities(defaultSort);
-                    return;
-                  }
-                  setSteamActivities((prev: GameType[]) => {
-                    const sorted = [...prev];
-                    if (value === "name") {
-                      sorted.sort((a, b) => a.name.localeCompare(b.name));
-                    } else if (value === "hours") {
-                      sorted.sort(
-                        (a, b) => b.playtime_hours - a.playtime_hours
-                      );
-                    }
-                    return sorted;
-                  });
-                }}
-                defaultValue=""
-              >
-                <option value="">Default</option>
-                <option value="name">Name</option>
-                <option value="hours">Hours Played</option>
-              </select>
-            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 mb-6">
