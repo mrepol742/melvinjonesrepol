@@ -42,11 +42,10 @@ export default function Home() {
     url: "https://www.melvinjonesrepol.com",
     image: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.png",
     sameAs: [
-      "https://facebook.com/melvinjonesrepol",
-      "https://linkedin.com/in/mrepol742/",
-      "https://github.com/mrepol742",
       "https://mrepol742.github.io",
       "https://mrepol742-read-cv.vercel.app",
+      "https://mrepol742.vercel.app",
+      "https://mrepol742.netlify.app",
     ],
     jobTitle: "Freelance Software Engineer",
     worksFor: {
@@ -58,7 +57,7 @@ export default function Home() {
   const webSite = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Melvin Jones Repol",
+    name: "It's me Melvin Jones Repol",
     url: "https://www.melvinjonesrepol.com",
   };
 

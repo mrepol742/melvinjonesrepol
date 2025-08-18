@@ -27,7 +27,7 @@ const mavenPro = Maven_Pro({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.melvinjonesrepol.com"),
-  title: "Melvin Jones Repol",
+  title: "It's me Melvin Jones Repol",
   description:
     "I specialize in building robust, scalable software solutions that solve real-world problems. With a passion for technology  and a commitment to excellence, I bring ideas to life through code.",
   keywords: [
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   },
   creator: "Melvin Jones Repol",
   openGraph: {
-    title: "Melvin Jones Repol",
+    title: "It's me Melvin Jones Repol",
     description:
       "I specialize in building robust, scalable software solutions that solve real-world problems. With a passion for technology  and a commitment to excellence, I bring ideas to life through code.",
     url: "https://www.melvinjonesrepol.com",
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Melvin Jones Repol",
+    title: "It's me Melvin Jones Repol",
     description:
       "I specialize in building robust, scalable software solutions that solve real-world problems. With a passion for technology  and a commitment to excellence, I bring ideas to life through code.",
     images: [
