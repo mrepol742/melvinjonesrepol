@@ -33,13 +33,15 @@ export default function ProjectCard({
       <div
         className={`bg-black/10 backdrop-blur rounded-xl p-6 hover:scale-98 transition-transform duration-300`}
       >
-        <h3 className="text-xl font-bold mb-2">{title}</h3>
-        <p className="mb-4">{description}</p>
+        <h3 className="text-xl font-bold">{title}</h3>
+        <p className="mb-2">{description}</p>
         <div className="mb-4">
           {languages.map((lang, index) => (
-            <div key={index} className="text-sm flex items-center mb-1">
-              <FontAwesomeIcon icon={faCircleNotch} className="mr-1" />
-              {lang}
+            <div key={index} className="inline-block mr-2 mb-2">
+              <div className="text-white text-xs px-2 py-0.5 rounded-full border border-gray-600 bg-gray-700/40">
+                <FontAwesomeIcon icon={faCircleNotch} className="mr-1" />
+                {lang}
+              </div>
             </div>
           ))}
         </div>
@@ -49,7 +51,7 @@ export default function ProjectCard({
               onClick={() => router.push(link)}
               aria-label={`Open ${title} link`}
             >
-              <FontAwesomeIcon icon={faLink} size="xl" />
+              <FontAwesomeIcon icon={faLink} size="lg" />
             </span>
           )}
           {repo && (
@@ -57,7 +59,7 @@ export default function ProjectCard({
               onClick={() => router.push(repo)}
               aria-label={`Open ${title} link`}
             >
-              <FontAwesomeIcon icon={faGithub} size="xl" />
+              <FontAwesomeIcon icon={faGithub} size="lg" />
             </span>
           )}
           {download && (
@@ -65,7 +67,7 @@ export default function ProjectCard({
               onClick={() => router.push(download)}
               aria-label={`Open ${title} link`}
             >
-              <FontAwesomeIcon icon={faDownload} size="xl" />
+              <FontAwesomeIcon icon={faDownload} size="lg" />
             </span>
           )}
         </div>

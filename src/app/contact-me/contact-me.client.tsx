@@ -27,7 +27,7 @@ export default function ContactMe() {
         const response = await fetch("/api/contact", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({...formData, token }),
+          body: JSON.stringify({ ...formData, token }),
         });
 
         if (!response.ok) {
@@ -61,7 +61,7 @@ export default function ContactMe() {
           </p>
           <form
             onSubmit={handleSubmit}
-            className="bg-black/10 backdrop-blur shadow-lg rounded-xl p-8 w-full max-w-lg space-y-3"
+            className="bg-black/10 backdrop-blur shadow-lg rounded-xl p-8 w-full max-w-lg space-y-3 mb-4"
           >
             <div>
               <label
@@ -118,9 +118,9 @@ export default function ContactMe() {
               />
             </div>
             <div className="text-sm text-gray-500 mb-4">
-              By clicking &quot;Submit,&quot; you consent to having your information
-              securely processed and sent via SMTP to the designated recipient
-              at mrepol742@gmail.com.
+              By clicking &quot;Submit,&quot; you consent to having your
+              information securely processed and sent via SMTP to the designated
+              recipient at mrepol742@gmail.com.
             </div>
             <button
               type="submit"
@@ -129,6 +129,29 @@ export default function ContactMe() {
               🚀 Send Message
             </button>
           </form>
+          <div>
+            <h2 className="text-xl font-semibold mb-2">
+              Official Contact Email
+            </h2>
+            <a
+              href="mailto:mrepol742@gmail.com"
+              className="text-white inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-700 bg-gray-900 font-medium break-all hover:ring-2 hover:ring-blue-500 transition"
+            >
+              📩 mrepol742@gmail.com
+              <span className="ml-2 text-xs px-2 py-0.5 rounded-full border border-gray-600 bg-gray-700/40 text-gray-400">
+                primary
+              </span>
+            </a>
+            <h2 className="text-xl font-semibold mb-2">
+              Do‑Not‑Reply Address (Notifications Only)
+            </h2>
+            <div className="text-white inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-700 bg-gray-900 font-medium break-all">
+              📨 donotreply.mrepol742@gmail.com
+              <span className="ml-2 text-xs px-2 py-0.5 rounded-full border border-gray-600 bg-gray-700/40 text-gray-400">
+                no reply
+              </span>
+            </div>
+          </div>
         </div>
       </section>
     </main>
