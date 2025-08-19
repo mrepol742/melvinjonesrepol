@@ -143,6 +143,18 @@ export default function ContactMe() {
               </span>
             </a>
             <h2 className="text-xl font-semibold mb-2">
+              Official Project Support Email
+            </h2>
+            <a
+              href="mailto:support@melvinjonesrepol.com"
+              className="text-white inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-700 bg-gray-900 font-medium break-all hover:ring-2 hover:ring-blue-500 transition"
+            >
+              📩 support@melvinjonesrepol.com
+              <span className="ml-2 text-xs px-2 py-0.5 rounded-full border border-gray-600 bg-gray-700/40 text-gray-400">
+                primary
+              </span>
+            </a>
+            <h2 className="text-xl font-semibold mb-2">
               Do‑Not‑Reply Address (Notifications Only)
             </h2>
             <div className="text-white inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-700 bg-gray-900 font-medium break-all">
