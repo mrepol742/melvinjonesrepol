@@ -3,7 +3,13 @@
 import { useTheme } from "@/hooks/useTheme";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faGithub, faLinkedin, faSteam, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebook,
+  faGithub,
+  faLinkedin,
+  faSteam,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 
 export default function Footer() {
   const { theme, toggleTheme } = useTheme();
@@ -94,6 +100,14 @@ export default function Footer() {
                     className="hover:text-orange-500 text-gray-400"
                   >
                     Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://cv.melvinjonesrepol.com"
+                    className="hover:text-orange-500 text-blue-400"
+                  >
+                    CV
                   </Link>
                 </li>
                 <li>

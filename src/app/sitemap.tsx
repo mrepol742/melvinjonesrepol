@@ -12,6 +12,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://ai.melvinjonesrepol.com",
     },
     {
+      url: "https://cv.melvinjonesrepol.com",
+    },
+    {
       url: "https://www.melvinjonesrepol.com/projects",
     },
     {
