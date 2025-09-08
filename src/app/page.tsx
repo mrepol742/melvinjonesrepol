@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode, faGamepad } from "@fortawesome/free-solid-svg-icons";
 import { __projects } from "@/app/projects/projects.client";
 import ProjectCard from "@/components/ProjectCard";
+import NeofetchTerminal from "@/components/Neofetch";
 
 const skills = [
   "I apply engineering principles to design, develop, test, and maintain reliable software systems. My focus is on creating efficient solutions that meet customer needs, using modern tools and technologies to ensure software quality and performance.",
@@ -196,17 +197,14 @@ export default function Home() {
             ))}
           </div>
 
-          <div
-            className="text-center text-3xl my-25 md:my-32"
-            data-aos="fade-up"
-          >
+          <div className="text-3xl mt-12" data-aos="fade-up">
             <h4>
               I take <span className="text-blue-500">action</span>. I embrace{" "}
               <span className="underline">failure</span>. I grow <b>wiser</b>.
             </h4>
           </div>
 
-          <div className="mt-24 md:mt-32">
+          <div className="mt-12">
             <h4 className="leading-relaxed" data-aos="fade-right">
               Every build I undertake is guided by a few core principles:
             </h4>
@@ -324,6 +322,14 @@ export default function Home() {
                   </div>
                 ))}
           </div>
+
+          <h4
+            className="text-center text-3xl my-8 text-green-300"
+            data-aos="fade-up"
+          >
+            My Setup
+          </h4>
+          <NeofetchTerminal />
         </section>
       </main>
     </>
