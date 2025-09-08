@@ -1,0 +1,43 @@
+const BLOCKLIST_URL =
+  "https://raw.githubusercontent.com/disposable-email-domains/disposable-email-domains/refs/heads/main/disposable_email_blocklist.conf";
+
+let cachedDomains: Set<string> | null = null;
+let lastFetched: number | null = null;
+const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours in ms
+
+export async function isDisposableEmail(email: string): Promise<boolean> {
+  const domain = email.split("@").pop()?.toLowerCase();
+  if (!domain) return true;
+
+  const now = Date.now();
+
+  if (!cachedDomains || !lastFetched || now - lastFetched > CACHE_TTL) {
+    const res = await fetch(BLOCKLIST_URL);
+    if (!res.ok) {
+      throw new Error(`Failed to fetch blocklist: ${res.statusText}`);
+    }
+
+    const text = await res.text();
+    const domains = text
+      .split("\n")
+      .map((d) => d.trim().toLowerCase())
+      .filter(Boolean);
+
+    cachedDomains = new Set(domains);
+    lastFetched = now;
+  }
+
+  return cachedDomains.has(domain);
+}
+
+export function validateEmail(email: string) {
+  if (!/^[^@]+@[^@]+\.[^@]+$/.test(email)) return false;
+
+  const lower = email.toLowerCase();
+
+  if (/^(example|test|fake|dummy|admin|user)[0-9]*@/.test(lower)) return false;
+  if (/@(example\.com|test\.com|localhost|invalid|fake\.\w+)$/.test(lower))
+    return false;
+
+  return true;
+}

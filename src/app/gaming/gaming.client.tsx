@@ -42,7 +42,14 @@ export default function Projects() {
 
     toast.promise(resolveAfter3Sec, {
       pending: "Loading Steam activities...",
-      error: "Failed to load Steam activities. Please try again.",
+      error: {
+        render({ data }) {
+          const err = data as Error;
+          return (
+            err?.message || "Failed to load Steam activities. Please try again."
+          );
+        },
+      },
     });
   };
 
@@ -75,7 +82,7 @@ export default function Projects() {
                       sorted.sort((a, b) => a.name.localeCompare(b.name));
                     } else if (value === "hours") {
                       sorted.sort(
-                        (a, b) => b.playtime_hours - a.playtime_hours
+                        (a, b) => b.playtime_hours - a.playtime_hours,
                       );
                     }
                     return sorted;
@@ -124,7 +131,7 @@ export default function Projects() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 mb-6">
             {steamActivities
               .filter((game: GameType) =>
-                game.name.toLowerCase().includes(query.toLowerCase())
+                game.name.toLowerCase().includes(query.toLowerCase()),
               )
               .map((game: GameType, idx) => (
                 <GameCard

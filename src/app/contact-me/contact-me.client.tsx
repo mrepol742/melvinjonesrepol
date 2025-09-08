@@ -13,7 +13,7 @@ export default function ContactMe() {
   const { executeRecaptcha } = useReCaptcha();
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -46,7 +46,12 @@ export default function ContactMe() {
     toast.promise(resolveAfter3Sec, {
       pending: "Sending your message...",
       success: "Message sent successfully!",
-      error: "Failed to send message. Please try again.",
+      error: {
+        render({ data }) {
+          const err = data as Error;
+          return err?.message || "Failed to send message. Please try again.";
+        },
+      },
     });
   };
 
