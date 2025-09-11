@@ -8,6 +8,7 @@ import AOSWrapper from "../components/AOSWrapper";
 import "./globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import RecentGithubActivityShell from "@/components/RecentGithubActivityShell";
 
 config.autoAddCss = false;
 
@@ -123,6 +124,7 @@ export default function RootLayout({
           <AOSWrapper />
           <div className="container mx-auto">{children}</div>
         </div>
+        <RecentGithubActivityShell />
         <ToastContainer />
         <Footer />
       </body>
