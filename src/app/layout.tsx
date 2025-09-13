@@ -8,7 +8,8 @@ import AOSWrapper from "../components/AOSWrapper";
 import "./globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import RecentGithubActivityShell from "@/components/RecentGithubActivityShell";
+import RecentGithubActivityWrapper from "@/components/RecentGithubActivityWrapper";
+import RecentGithubActivity from "@/components/RecentGithubActivity";
 
 config.autoAddCss = false;
 
@@ -124,7 +125,9 @@ export default function RootLayout({
           <AOSWrapper />
           <div className="container mx-auto">{children}</div>
         </div>
-        <RecentGithubActivityShell />
+        <RecentGithubActivityWrapper>
+          <RecentGithubActivity />
+        </RecentGithubActivityWrapper>
         <ToastContainer />
         <Footer />
       </body>
