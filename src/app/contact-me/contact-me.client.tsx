@@ -122,11 +122,22 @@ export default function ContactMe() {
                 placeholder="Type your message here..."
               />
             </div>
-            <div className="text-sm text-gray-500 mb-4">
+            <p className="text-sm text-gray-500 mb-4">
               By clicking &quot;Submit,&quot; you consent to having your
               information securely processed and sent via SMTP to the designated
               recipient at mrepol742@gmail.com.
-            </div>
+            </p>
+            <p className="text-xs text-gray-500 mt-2">
+              This site is protected by reCAPTCHA and the Google{" "}
+              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+                Privacy Policy
+              </a>{" "}
+              and{" "}
+              <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">
+                Terms of Service
+              </a>{" "}
+              apply.
+            </p>
             <button
               type="submit"
               className="w-full bg-gradient-to-r from-blue-600 to-blue-400 text-white px-6 py-3 rounded-lg font-semibold shadow hover:from-blue-700 hover:to-blue-500 transition"
@@ -134,41 +145,6 @@ export default function ContactMe() {
               🚀 Send Message
             </button>
           </form>
-          <div>
-            <h2 className="text-xl font-semibold mb-2">
-              Official Contact Email
-            </h2>
-            <a
-              href="mailto:mrepol742@gmail.com"
-              className="text-white inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-700 bg-gray-900 font-medium break-all hover:ring-2 hover:ring-blue-500 transition"
-            >
-              📩 mrepol742@gmail.com
-              <span className="ml-2 text-xs px-2 py-0.5 rounded-full border border-gray-600 bg-gray-700/40 text-gray-400">
-                primary
-              </span>
-            </a>
-            <h2 className="text-xl font-semibold mb-2">
-              Official Project Support Email
-            </h2>
-            <a
-              href="mailto:support@melvinjonesrepol.com"
-              className="text-white inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-700 bg-gray-900 font-medium break-all hover:ring-2 hover:ring-blue-500 transition"
-            >
-              📩 support@melvinjonesrepol.com
-              <span className="ml-2 text-xs px-2 py-0.5 rounded-full border border-gray-600 bg-gray-700/40 text-gray-400">
-                primary
-              </span>
-            </a>
-            <h2 className="text-xl font-semibold mb-2">
-              Do‑Not‑Reply Address (Notifications Only)
-            </h2>
-            <div className="text-white inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-700 bg-gray-900 font-medium break-all">
-              📨 donotreply.mrepol742@gmail.com
-              <span className="ml-2 text-xs px-2 py-0.5 rounded-full border border-gray-600 bg-gray-700/40 text-gray-400">
-                no reply
-              </span>
-            </div>
-          </div>
         </div>
       </section>
     </main>

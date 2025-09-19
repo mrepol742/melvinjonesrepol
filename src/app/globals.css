@@ -106,7 +106,7 @@ h1, h2, h3, h4, h5, h6 {
  * inside an iframe, which does not respect the parent theme.
  * It ensures that the Disqus comments section always appears in light mode,
  * regardless of the site's theme.
- * 
+ *
  * https: //github.com/disqus/disqus-react/issues/153
  */
 #disqus_thread {
@@ -121,4 +121,8 @@ h1, h2, h3, h4, h5, h6 {
   color-scheme: light !important;
   color: white !important;
   background-color: black !important;
-} 
+}
+
+.grecaptcha-badge {
+  visibility: hidden !important;
+}
