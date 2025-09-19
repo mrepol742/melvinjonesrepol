@@ -12,12 +12,13 @@ export default function RecentGithubActivityWrapper({
   const [expanded, setExpanded] = useState(true);
 
   return (
-    <div className="fixed bottom-4 left-4 w-80">
+    <div className="fixed bottom-4 left-4 w-55 md:w-80">
       <div className="rounded-2xl bg-white shadow-lg text-sm">
         <div
           className="flex items-center justify-between px-4 py-2"
         >
-          <h2 className="text-base font-semibold text-black">Recent GitHub Activity</h2>
+          <h2 className="text-base font-semibold text-black hidden md:block">Recent GitHub Activity</h2>
+          <h2 className="text-base font-semibold text-black block md:hidden">Recent Activity</h2>
           <button
             onClick={() => setExpanded(!expanded)}
             className="ml-2 text-gray-500 hover:text-gray-700"
