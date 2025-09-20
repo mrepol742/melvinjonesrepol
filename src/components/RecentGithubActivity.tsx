@@ -10,6 +10,7 @@ import {
   faEye,
   faHeart,
   faPlus,
+  faStar,
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -33,9 +34,9 @@ export default async function RecentGithubActivity() {
       case "WatchEvent":
         return (
           <FontAwesomeIcon
-            icon={faEye}
-            aria-label="A user watch the repository."
-            title="Watch"
+            icon={faStar}
+            aria-label="A user starred the repository."
+            title="Star"
           />
         );
       case "PullRequestReviewEvent":
@@ -70,6 +71,7 @@ export default async function RecentGithubActivity() {
             title="Issues"
           />
         );
+      case "PullRequestReviewCommentEvent":
       case "IssueCommentEvent":
         return (
           <FontAwesomeIcon
@@ -146,7 +148,7 @@ export default async function RecentGithubActivity() {
       case "PublicEvent":
         return `${username} changed this repository from private to public.`;
       case "WatchEvent":
-        return `${username} has watched this repository.`;
+        return `${username} has starred this repository.`;
       case "ForkEvent":
         return `${username} has forked this repository.`;
       case "CreateEvent":
@@ -157,6 +159,8 @@ export default async function RecentGithubActivity() {
         return `deleted ${event.payload.ref} ${event.payload.ref_type}`;
       case "PullRequestReviewEvent":
         return `${username} has requested a review of this repository.`;
+      case "PullRequestReviewCommentEvent":
+        return event.payload.comment.body;
       default:
         console.log(JSON.stringify(event));
         return "";
@@ -169,22 +173,24 @@ export default async function RecentGithubActivity() {
       {events.map((event: any) => (
         <li
           key={event.id}
-          className="border-b border-gray-200 pb-2 last:border-b-0 last:pb-0"
+          className="border-b border-gray-200 pb-2 last:border-b-0 last:pb-0 flex overflow-hidden"
         >
           <span className="font-medium text-gray-800">
             {getEventType(event.type)}
           </span>
-          <Link
-            className="ml-2 text-gray-600"
-            href={`https://github.com/${event.repo?.name}`}
-          >
-            {event.repo?.name || "unknown repo"}
-          </Link>
-          <div className="text-xs text-gray-500 break-words">
-            {event.payload?.commits?.[0]?.message || getEventDescription(event)}
-          </div>
-          <div className="text-xs text-gray-500">
-            {new Date(event.created_at).toUTCString()}
+          <div className="ml-2">
+            <Link
+              className=" text-gray-600"
+              href={`https://github.com/${event.repo?.name}`}
+            >
+              {event.repo?.name || "unknown repo"}
+            </Link>
+            <div className="text-xs text-gray-500 break-words">
+              {event.payload?.commits?.[0]?.message || getEventDescription(event)}
+            </div>
+            <div className="text-xs text-gray-500">
+              {new Date(event.created_at).toLocaleString()}
+            </div>
           </div>
         </li>
       ))}

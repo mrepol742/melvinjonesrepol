@@ -24,7 +24,12 @@ export default function Nav() {
                   width={25}
                   height={25}
                   className="inline-block rounded-full"
-                  style={{ minWidth: 25, minHeight: 25, width: 25, height: 25 }}
+                  style={{
+                    minWidth: 25,
+                    minHeight: 25,
+                    width: 25,
+                    height: 25,
+                  }}
                 />
               </span>
               <span className="hover:text-orange-500 ml-1 overflow-hidden max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-200 whitespace-nowrap">

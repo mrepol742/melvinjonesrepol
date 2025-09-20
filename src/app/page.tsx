@@ -77,13 +77,13 @@ export default function Home() {
           <div className="flex flex-col-reverse md:flex-row items-center md:items-start md:justify-between gap-8">
             <div className="flex-1">
               <h1
-                className="text-4xl font-bold"
+                className="text-4xl font-black"
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
                 Hi, I&apos;m Melvin Jones Gallano Repol
               </h1>
-              <p data-aos="fade-up" data-aos-delay="200">
+              <p data-aos="fade-up" data-aos-delay="200" className="font-medium">
                 Freelance Software Engineer | DevOps
               </p>
               <p
@@ -114,7 +114,7 @@ export default function Home() {
                   data-aos-delay="350"
                 >
                   <button
-                    className="text-sm relative bg-orange-400 px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
+                    className="uppercase text-sm relative bg-orange-400 px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
                   before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-orange-600 before:rounded-b-lg
                   after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-orange-600 after:rounded-r-lg"
                     style={{ boxShadow: "1px 1px 0 0 #ea580c" }}
@@ -128,7 +128,7 @@ export default function Home() {
                   data-aos-delay="400"
                 >
                   <button
-                    className="text-sm relative bg-gray-800 text-white px-7 py-4 mt-3 ml-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
+                    className="uppercase text-sm relative bg-gray-800 text-white px-7 py-4 mt-3 ml-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
                   before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-gray-900 before:rounded-b-lg
                   after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-gray-900 after:rounded-r-lg"
                     style={{ boxShadow: "1px 1px 0 0 #111827" }}
@@ -136,31 +136,6 @@ export default function Home() {
                     mrepol742@gmail.com
                   </button>
                 </Link>
-              </div>
-
-              <div
-                className="mt-8 flex gap-8 justify-center md:justify-start"
-                data-aos="fade-up"
-                data-aos-delay="400"
-              >
-                <div className="text-center">
-                  <span className="block text-3xl font-bold text-blue-600">
-                    5+
-                  </span>
-                  <span>Years Experience</span>
-                </div>
-                <div className="text-center">
-                  <span className="block text-3xl font-bold text-green-600">
-                    82+
-                  </span>
-                  <span>Projects</span>
-                </div>
-                <div className="text-center">
-                  <span className="block text-3xl font-bold text-purple-600">
-                    15+
-                  </span>
-                  <span>Happy Clients</span>
-                </div>
               </div>
             </div>
             <div
@@ -177,6 +152,31 @@ export default function Home() {
                   height={240}
                 />
               </div>
+            </div>
+          </div>
+
+          <div
+            className="mt-8 flex gap-8 justify-center"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div className="text-center">
+              <span className="block text-6xl font-bold text-orange-600">
+                5+
+              </span>
+              <span>Years Experience</span>
+            </div>
+            <div className="text-center">
+              <span className="block text-6xl font-bold text-blue-600">
+                82+
+              </span>
+              <span>Projects</span>
+            </div>
+            <div className="text-center">
+              <span className="block text-6xl font-bold text-green-600">
+                15+
+              </span>
+              <span>Happy Clients</span>
             </div>
           </div>
 
@@ -204,11 +204,11 @@ export default function Home() {
             </h4>
           </div>
 
-          <div className="mt-12">
+          <div className="mt-4">
             <h4 className="leading-relaxed" data-aos="fade-right">
               Every build I undertake is guided by a few core principles:
             </h4>
-            <ul className="list-disc list-inside my-6 text-left">
+            <ul className="list-disc list-inside my-3 text-left">
               <li data-aos="fade-right" data-aos-delay="100">
                 <strong>KISS</strong> — Keep It Simple, Stupid.
               </li>
@@ -220,7 +220,7 @@ export default function Home() {
               </li>
             </ul>
             <h4
-              className="leading-relaxed mt-6"
+              className="leading-relaxed mt-3"
               data-aos="fade-right"
               data-aos-delay="400"
             >
