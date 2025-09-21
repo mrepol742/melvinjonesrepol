@@ -9,19 +9,26 @@ import { faX } from "@fortawesome/free-solid-svg-icons/faX";
 
 export const __projects = [
   {
+    title: "Web Appp",
+    description: "A simple yet powerful template that lets you convert any website into a functional Android APK with minimal effort. This project makes it easy to package your web app for mobile distribution without requiring deep Android development knowledge.",
+    repo: "https://github.com/mrepol742/web-appp",
+    featured: true,
+    languages: ["Kotlin"]
+  },
+  {
     title: "My Portfolio",
-    description: "A portfolio built with Next.js and Tailwind.",
-    link: "https://melvinjonesrepol.vercel.app",
-    repo: "https://github.com/mrepol742/melvinjonesrepol.vercel.app",
+    description: "A modern, responsive personal portfolio built with Next.js to showcase projects, skills, and achievements. Designed with performance and clean UI in mind, it highlights professional work in a sleek and interactive way.",
+    link: "https://www.melvinjonesrepol.com",
+    repo: "https://github.com/mrepol742/melvinjonesrepol",
     featured: false,
-    languages: ["TypeScript"],
+    languages: ["TypeScript"]
   },
   {
     title: "Project Canis TG",
-    description: "Canis but for Telegram.",
+    description: "An extension of the Canis project adapted specifically for Telegram, bringing its features into the chat platform.",
     repo: "https://github.com/mrepol742/project-canis-tg",
     featured: false,
-    languages: ["TypeScript"],
+    languages: ["TypeScript"]
   },
   {
     title: "Project Canis",
@@ -33,11 +40,10 @@ export const __projects = [
   },
   {
     title: "Ulisha Store",
-    description:
-      "A premier destination for quality fashion, accessories, and electronics. Bringing you the best products at competitive prices.",
+    description: "An e-commerce platform offering a wide selection of fashion, accessories, and electronics, designed to deliver both style and convenience. Built with modern technologies, it focuses on providing customers with a seamless shopping experience, competitive pricing, and reliable service.",
     link: "/projects/ulisha-store",
     featured: true,
-    languages: ["TypeScript"],
+    languages: ["TypeScript"]
   },
   {
     title: "Devops Capstone Project",
@@ -127,12 +133,11 @@ export const __projects = [
   },
   {
     title: "Project Webvium",
-    description:
-      "A Project that aims to be the lightest, fastest, secured, private and full-featured android web browser. Programmed and design from Scratch.",
+    description: "A lightweight, fast, and privacy-focused Android web browser built entirely from scratch to deliver a secure and efficient browsing experience. Designed to balance speed, security, and functionality, it aims to provide all the essential features of modern browsers while staying minimal and resource-friendly.",
     link: "/projects/webvium-browser",
     featured: true,
-    languages: ["Java"],
-  },
+    languages: ["Java"]
+  }
 ];
 
 export default function Projects() {
