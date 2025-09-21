@@ -154,16 +154,33 @@ export default async function RecentGithubActivity() {
       case "CreateEvent":
         return event.payload.description;
       case "PullRequestEvent":
-        return event.payload.pull_request.title;
+        const anyThingReleatedToPR = event.payload.pull_request;
+        return `${anyThingReleatedToPR.user.login} (${anyThingReleatedToPR.state}): ${anyThingReleatedToPR.title}`;
       case "DeleteEvent":
         return `deleted ${event.payload.ref} ${event.payload.ref_type}`;
       case "PullRequestReviewEvent":
         return `${username} has requested a review of this repository.`;
       case "PullRequestReviewCommentEvent":
-        return event.payload.comment.body;
+        return `${event.payload.comment.user.login}: ${event.payload.comment.body}`;
       default:
         console.log(JSON.stringify(event));
         return "";
+    }
+  }
+
+  {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+  }
+  function getEventUrl(event: any) {
+    switch (event.type) {
+      case "PullRequestReviewEvent":
+        return event.payload.review.html_url;
+      case "PullRequestEvent":
+        return event.payload.pull_request.html_url;
+      case "PullRequestReviewCommentEvent":
+        return event.payload.comment.html_url;
+      default:
+        return `https://github.com/${event.repo?.name}`;
     }
   }
 
@@ -179,14 +196,12 @@ export default async function RecentGithubActivity() {
             {getEventType(event.type)}
           </span>
           <div className="ml-2">
-            <Link
-              className=" text-gray-600"
-              href={`https://github.com/${event.repo?.name}`}
-            >
+            <Link className=" text-gray-600" href={getEventUrl(event)} target="_blank">
               {event.repo?.name || "unknown repo"}
             </Link>
             <div className="text-xs text-gray-500 break-words">
-              {event.payload?.commits?.[0]?.message || getEventDescription(event)}
+              {event.payload?.commits?.[0]?.message ||
+                getEventDescription(event)}
             </div>
             <div className="text-xs text-gray-500">
               {new Date(event.created_at).toLocaleString()}
