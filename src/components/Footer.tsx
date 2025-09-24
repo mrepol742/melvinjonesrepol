@@ -143,6 +143,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="https://wakatime.melvinjonesrepol.com"
+                  className="hover:text-orange-500 text-blue-400"
+                >
+                  Wakatime Stats
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="https://ai.melvinjonesrepol.com"
                   className="hover:text-orange-500 text-red-400"
                 >
