@@ -163,7 +163,6 @@ export default async function RecentGithubActivity() {
       case "PullRequestReviewCommentEvent":
         return `${event.payload.comment.user.login}: ${event.payload.comment.body}`;
       default:
-        console.log(JSON.stringify(event));
         return "";
     }
   }
@@ -196,7 +195,11 @@ export default async function RecentGithubActivity() {
             {getEventType(event.type)}
           </span>
           <div className="ml-2">
-            <Link className=" text-gray-600" href={getEventUrl(event)} target="_blank">
+            <Link
+              className=" text-gray-600"
+              href={getEventUrl(event)}
+              target="_blank"
+            >
               {event.repo?.name || "unknown repo"}
             </Link>
             <div className="text-xs text-gray-500 break-words">

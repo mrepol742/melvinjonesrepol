@@ -184,7 +184,7 @@ export default function WebviumBrowser() {
                 </p>
               </div>
               <Link
-                href="https://mrepol742.github.io/webviumdev/download"
+                href="https://released.melvinjonesrepol.com/android/webvium-browser.apk"
                 className="bg-blue-500 text-white py-2 px-5 rounded hover:bg-blue-700 transition"
               >
                 Download

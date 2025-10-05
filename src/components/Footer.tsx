@@ -4,6 +4,7 @@ import { useTheme } from "@/hooks/useTheme";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faAndroid,
   faFacebook,
   faGithub,
   faLinkedin,
@@ -319,6 +320,19 @@ export default function Footer() {
                   size="lg"
                   className="hover:text-red-500 transition"
                 />
+              </Link>
+            </div>
+            <div className="my-4 border flex justify-center py-2 hover:white/20">
+              <Link
+                href="https://released.melvinjonesrepol.com/android/melvinjones-app.apk"
+                aria-label="Melvin Jones App"
+              >
+                <FontAwesomeIcon
+                  icon={faAndroid}
+                  size="lg"
+                  className="hover:text-red-500 transition me-3"
+                />
+                Download App
               </Link>
             </div>
           </div>
