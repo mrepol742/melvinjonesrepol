@@ -45,8 +45,8 @@ export default function NeofetchTerminal({
   } = info;
 
   return (
-    <div className="w-full">
-      <div className="bg-gray-900/60 border border-gray-800 rounded-2xl p-6 shadow-lg backdrop-blur-sm">
+    <div className="w-full mt-10">
+      <div className="bg-gray-900/60 rounded p-6 backdrop-blur-sm">
         <div className="flex flex-col md:flex-row gap-6">
           {/* ASCII art / Logo */}
           <div className="flex-shrink-0 flex items-start justify-center md:justify-start">
@@ -157,7 +157,7 @@ function InfoRow({
 
 function Badge({ label }: { label: string }) {
   return (
-    <div className="px-2 py-0.5 border border-gray-800 rounded-md text-xs text-gray-300 bg-gray-900/30">
+    <div className="px-2 py-1 text-xs text-gray-300 bg-gray-900/30">
       {label}
     </div>
   );
