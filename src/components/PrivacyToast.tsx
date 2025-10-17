@@ -12,8 +12,8 @@ export default function PrivacyToast() {
 
   return (
     <div
-      data-aos="fade-up"
-      className={`${visible ? "fixed" : "hidden"} bottom-4 left-4 bg-gray-900 text-white text-sm px-4 py-3 rounded-md shadow-lg z-50 flex items-center gap-3 max-w-xs`}
+      data-aos="slide-left"
+      className={`${visible ? "fixed" : "hidden"} top-4 right-4 bg-gray-900 text-white text-sm px-4 py-3 rounded-md shadow-lg z-50 flex items-center gap-3 max-w-xs`}
     >
       <span>No cookies. No tracking. Just clean code and privacy.</span>
       <button

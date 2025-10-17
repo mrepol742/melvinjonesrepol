@@ -3,7 +3,7 @@ const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 export async function fetchGithubEvents(username: string) {
   if (!GITHUB_TOKEN) {
     console.error("Missing GITHUB_TOKEN in environment");
-    return;
+    return null;
   }
 
   const res = await fetch(
@@ -18,7 +18,7 @@ export async function fetchGithubEvents(username: string) {
 
   if (!res.ok) {
     console.error(`Failed to fetch GitHub events: ${res.statusText}`);
-    return;
+    return null;
   }
 
   return res.json();

@@ -142,25 +142,27 @@ export default async function RecentGithubActivity() {
   {
     /* eslint-disable @typescript-eslint/no-explicit-any */
   }
-  function getEventDescription(event: any) {
+  function getEventDescription(event: any): string {
+    const payload = event.payload;
+    const actor = event.actor;
+
     switch (event.type) {
+      case "PushEvent":
+        return `${actor.login} pushed to ${payload.ref.split("/")[2]} #${payload.head.slice(0, 7)} `;
       case "PublicEvent":
-        return `${username} changed this repository from private to public.`;
+        return `This repo is now public`;
       case "WatchEvent":
-        return `${username} has starred this repository.`;
+        return `Starred this repo`;
       case "ForkEvent":
-        return `${username} has forked this repository.`;
+        return `Forked this repo`;
       case "CreateEvent":
-        return event.payload.description;
+        return payload.description;
       case "PullRequestEvent":
-        const anyThingReleatedToPR = event.payload.pull_request;
-        return `${anyThingReleatedToPR.user.login} (${anyThingReleatedToPR.state}): ${anyThingReleatedToPR.title}`;
+        return `${actor.login} ${payload.action} #${payload.number}`;
       case "DeleteEvent":
-        return `deleted ${event.payload.ref} ${event.payload.ref_type}`;
+        return `Deleted ${payload.ref.split("/")[2]} ${payload.ref_type}`;
       case "PullRequestReviewEvent":
-        return `${username} has requested a review of this repository.`;
-      case "PullRequestReviewCommentEvent":
-        return `${event.payload.comment.user.login}: ${event.payload.comment.body}`;
+        return `${actor.login} has requested a review of this repo`;
       default:
         return "";
     }
@@ -169,14 +171,16 @@ export default async function RecentGithubActivity() {
   {
     /* eslint-disable @typescript-eslint/no-explicit-any */
   }
-  function getEventUrl(event: any) {
+  function getEventUrl(event: any): string {
+    const payload = event.payload;
+
     switch (event.type) {
       case "PullRequestReviewEvent":
-        return event.payload.review.html_url;
+        return payload.review.html_url;
       case "PullRequestEvent":
-        return event.payload.pull_request.html_url;
+        return payload.pull_request.html_url;
       case "PullRequestReviewCommentEvent":
-        return event.payload.comment.html_url;
+        return payload.comment.html_url;
       default:
         return `https://github.com/${event.repo?.name}`;
     }
@@ -185,32 +189,32 @@ export default async function RecentGithubActivity() {
   return (
     <ul className="space-y-2 max-h-96 overflow-y-auto">
       {/* eslint-disable @typescript-eslint/no-explicit-any */}
-      {events && events.map((event: any) => (
-        <li
-          key={event.id}
-          className="border-b border-gray-200 pb-2 last:border-b-0 last:pb-0 flex overflow-hidden"
-        >
-          <span className="font-medium text-gray-800">
-            {getEventType(event.type)}
-          </span>
-          <div className="ml-2">
-            <Link
-              className=" text-gray-600"
-              href={getEventUrl(event)}
-              target="_blank"
-            >
-              {event.repo?.name || "unknown repo"}
-            </Link>
-            <div className="text-xs text-gray-500 break-words">
-              {event.payload?.commits?.[0]?.message ||
-                getEventDescription(event)}
+      {events &&
+        events.map((event: any) => (
+          <li
+            key={event.id}
+            className="border-b border-gray-200 pb-2 last:border-b-0 last:pb-0 flex overflow-hidden"
+          >
+            <span className="font-medium text-gray-800">
+              {getEventType(event.type)}
+            </span>
+            <div className="ml-2">
+              <a
+                className=" text-gray-600"
+                href={getEventUrl(event)}
+                target="_blank"
+              >
+                {getEventDescription(event)}
+              </a>
+              <div className="text-xs text-gray-500 break-words">
+                {event.repo?.name || "unknown repo"}
+              </div>
+              <div className="text-xs text-gray-500">
+                {new Date(event.created_at).toLocaleString()}
+              </div>
             </div>
-            <div className="text-xs text-gray-500">
-              {new Date(event.created_at).toLocaleString()}
-            </div>
-          </div>
-        </li>
-      ))}
+          </li>
+        ))}
     </ul>
   );
 }
