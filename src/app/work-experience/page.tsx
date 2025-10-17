@@ -41,7 +41,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Work Experience - Melvin Jones Repol",
     description: "Here are some of the work experiences I had.",
-    images: ["https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png"],
+    images: [
+      "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+    ],
     creator: "@mrepol742",
   },
 };
@@ -62,14 +64,12 @@ export default function WorkExperience() {
             title="Software Engineer"
             description="Software Engineer I develop, deploy, and maintain efficient and reliable software and websites tailored to meet customer needs, based on system analysis, design, and business models. My responsibilities include gathering requirements, designing scalable architectures, implementing robust code, and ensuring quality through testing. I also handle deployment, monitor performance, and provide ongoing support and updates. I collaborate with clients and teams to deliver solutions using modern technologies and best practices, focusing on usability, security, and maintainability."
             date="2021 - Present"
-            id={1}
           />
           <WorkExperienceCard
             company="Apptrade Inc."
             title="IT Staff Intern"
             description="Incharge of maintaining the IT infrastructure, including hardware, software, and network. Responsible for troubleshooting technical issues, providing support to end-users, and ensuring the efficiency and reliability of the organization's IT system."
             date="April - June 2025"
-            id={2}
             cert="https://drive.google.com/file/d/1JZejlS9Dkb3rJkcx3UdfsaDh281d7QZ4/view?usp=drive_link"
           />
         </div>

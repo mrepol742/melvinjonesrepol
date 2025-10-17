@@ -11,12 +11,13 @@ export default function GameCard({
 }: GameType) {
   return (
     <div
-      className="relative rounded-lg overflow-hidden shadow-lg h-48 flex items-end hover:scale-98 transition-transform duration-300"
+      className="relative rounded-lg overflow-hidden shadow-lg h-48 flex items-end"
       style={{
         backgroundImage: `url(${cover_url})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
+      data-aos="fade-up"
     >
       <div className="w-full bg-gradient-to-t from-gray-900/80 via-gray-900/60 to-transparent absolute bottom-0 left-0 p-3">
         <h2 className="text-white text-lg font-semibold truncate">{name}</h2>

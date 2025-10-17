@@ -1,10 +1,9 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 type WorkExperienceProps = {
-  id: number;
   company: string;
   title: string;
   description: string;
@@ -13,7 +12,6 @@ type WorkExperienceProps = {
 };
 
 export default function WorkExperienceCard({
-  id,
   company,
   title,
   description,
@@ -27,7 +25,6 @@ export default function WorkExperienceCard({
       <div
         className={`bg-black/10 backdrop-blur rounded-xl p-6 shadow hover:shadow-lg transition`}
         data-aos="fade-up"
-        data-aos-delay={`${id * 100}`}
       >
         <h3 className="text-xl font-bold">{company}</h3>
         <p>{title}</p>

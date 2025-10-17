@@ -8,7 +8,6 @@ export default function AOSWrapper() {
   useEffect(() => {
     AOS.init({
       duration: 800,
-      once: true,
     });
   }, []);
 

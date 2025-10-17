@@ -235,7 +235,7 @@ export default function Projects() {
                     href={project.link || project.repo || "#"}
                     className="no-underline"
                   >
-                    <ProjectCard {...project} delay={idx * 100} />
+                    <ProjectCard {...project} />
                   </Link>
                 </div>
               ))}

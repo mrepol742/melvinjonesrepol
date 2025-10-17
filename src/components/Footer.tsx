@@ -38,9 +38,6 @@ export default function Footer() {
                 View on GitHub
               </Link>
             </small>
-            <small className="block mt-2 text-xs text-gray-500">
-              mrepol742@gmail.com
-            </small>
           </div>
           {/* Links */}
           <div>

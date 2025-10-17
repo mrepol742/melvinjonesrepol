@@ -143,7 +143,7 @@ export default function Certificates() {
             .map((certificate, idx) => (
               <div key={idx}>
                 <Link href={certificate.link || "#"} className="no-underline">
-                  <CertificateCard {...certificate} delay={idx * 100} />
+                  <CertificateCard {...certificate} />
                 </Link>
               </div>
             ))}

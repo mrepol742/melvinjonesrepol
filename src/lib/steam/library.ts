@@ -9,7 +9,8 @@ interface GameType {
 
 export async function fetchSteamLibrary() {
   if (!STEAM_API_KEY || !STEAM_ID) {
-    throw new Error("Missing STEAM_API_KEY or STEAM_ID in environment");
+    console.error("Missing STEAM_API_KEY or STEAM_ID in environment");
+    return null;
   }
 
   const res = await fetch(
@@ -18,7 +19,8 @@ export async function fetchSteamLibrary() {
   );
 
   if (!res.ok) {
-    throw new Error(`Failed to fetch Steam library: ${res.statusText}`);
+    console.error(`Failed to fetch Steam library: ${res.statusText}`);
+    return null;
   }
 
   const data = await res.json();

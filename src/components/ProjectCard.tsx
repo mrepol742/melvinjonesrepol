@@ -20,7 +20,6 @@ type ProjectCardProps = {
 export default function ProjectCard({
   title,
   description,
-  delay = 100,
   repo,
   link,
   download,
@@ -29,7 +28,7 @@ export default function ProjectCard({
   const router = useRouter();
 
   return (
-    <div data-aos="fade-up" data-aos-delay={delay}>
+    <div data-aos="fade-up">
       <div
         className={`bg-black/10 backdrop-blur rounded p-6 hover:scale-98 transition-transform duration-300`}
       >

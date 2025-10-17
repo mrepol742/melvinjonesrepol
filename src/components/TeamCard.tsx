@@ -13,14 +13,12 @@ export default function TeamCard({
   title,
   description,
   backgroundColor,
-  delay = 100,
 }: TeamCardProps) {
   return (
     <div className="text-center rounded-2xl p-6 transition"
     data-aos="zoom-in"
     data-aos-duration="800"
-    data-aos-easing="ease-in-out"
-    data-aos-delay={delay}>
+    data-aos-easing="ease-in-out">
       <div className="flex justify-center mb-6">
         <div
           className={`rounded-full ${backgroundColor} transition-colors duration-300 overflow-hidden w-32 h-32 flex items-center justify-center hover:bg-transparent`}

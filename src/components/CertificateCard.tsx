@@ -13,14 +13,13 @@ export default function CertificateCard({
   title,
   description,
   date,
-  delay = 100,
   type,
   link,
 }: CertificateCardProps) {
   const router = useRouter();
 
   return (
-    <div data-aos="fade-up" data-aos-delay={delay}>
+    <div data-aos="fade-up">
       <div
         className={`bg-black/10 backdrop-blur rounded-xl p-6 shadow hover:scale-98 transition-transform duration-300`}
       >

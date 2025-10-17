@@ -8,6 +8,8 @@ import { __projects } from "@/app/projects/projects.client";
 import ProjectCard from "@/components/ProjectCard";
 import NeofetchTerminal from "@/components/Neofetch";
 import FaceEyes from "@/components/FaceEyes";
+import { Services } from "@/components/Services";
+import ServicesCarousel from "@/components/ServicesCarousel";
 
 const skills = [
   "I apply engineering principles to design, develop, test, and maintain reliable software systems. My focus is on creating efficient solutions that meet customer needs, using modern tools and technologies to ensure software quality and performance.",
@@ -59,7 +61,7 @@ export default function Home() {
   const webSite = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "It's me Melvin Jones Repol",
+    name: "Melvin Jones Repol - Strategic Software & DevOps Partner",
     url: "https://www.melvinjonesrepol.com",
   };
 
@@ -82,14 +84,14 @@ export default function Home() {
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
-                Hi, I&apos;m Melvin Jones Gallano Repol
+                I&apos;m Melvin Jones Gallano Repol
               </h1>
               <p
                 data-aos="fade-up"
                 data-aos-delay="200"
                 className="font-medium"
               >
-                Freelance Software Engineer | DevOps
+                Software Engineer | CTO of Ulisha Limited
               </p>
               <p
                 className="mt-4 max-w-2xl"
@@ -99,14 +101,7 @@ export default function Home() {
                 I specialize in building robust, scalable software solutions
                 that solve real-world problems. With a passion for technology
                 and a commitment to excellence, I bring ideas to life through
-                code.
-              </p>
-              <p
-                className="mt-2 max-w-2xl"
-                data-aos="fade-up"
-                data-aos-delay="350"
-              >
-                Whether it&apos;s developing web applications, optimizing
+                code. Whether it&apos;s developing web applications, optimizing
                 systems, or diving into data analytics, I&apos;m here to help
                 you achieve your goals. Let&apos;s create something amazing
                 together!
@@ -160,32 +155,9 @@ export default function Home() {
             </div>
           </div>
 
-          <div
-            className="mt-8 flex gap-8 justify-center"
-            data-aos="fade-up"
-            data-aos-delay="400"
-          >
-            <div className="text-center">
-              <span className="block text-6xl font-bold text-orange-600">
-                5+
-              </span>
-              <span>Years Experience</span>
-            </div>
-            <div className="text-center">
-              <span className="block text-6xl font-bold text-blue-600">
-                82+
-              </span>
-              <span>Projects</span>
-            </div>
-            <div className="text-center">
-              <span className="block text-6xl font-bold text-green-600">
-                15+
-              </span>
-              <span>Happy Clients</span>
-            </div>
-          </div>
+          <ServicesCarousel Services={Services} />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skills.map((skill, index) => (
               <div
                 key={index}
@@ -195,7 +167,6 @@ export default function Home() {
                   backgroundColors[index % backgroundColors.length]
                 } backdrop-blur`}
                 data-aos="fade-up"
-                data-aos-delay={`${index * 100}`}
               >
                 <p className="text-lg">{skill}</p>
               </div>
@@ -323,11 +294,7 @@ export default function Home() {
               __projects
                 .filter((project) => project.featured)
                 .map((project, idx) => (
-                  <div
-                    key={idx}
-                    data-aos="fade-up"
-                    data-aos-delay={`${idx * 100}`}
-                  >
+                  <div key={idx} data-aos="fade-up">
                     <Link
                       href={project.link || project.repo || "#"}
                       className="no-underline"

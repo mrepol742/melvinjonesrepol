@@ -12,7 +12,11 @@ interface GameType {
   cover_url: string;
 }
 
-export default function ClientGames({ steamActivities }: { steamActivities: GameType[] }) {
+export default function ClientGames({
+  steamActivities,
+}: {
+  steamActivities: GameType[];
+}) {
   const [query, setQuery] = useState("");
   const [games, setGames] = useState<GameType[]>(steamActivities);
 
@@ -61,7 +65,11 @@ export default function ClientGames({ steamActivities }: { steamActivities: Game
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             className="outline-none px-9 py-2 w-full bg-transparent"
-            style={{ border: "none", boxShadow: "none", paddingRight: query ? "2.5rem" : undefined }}
+            style={{
+              border: "none",
+              boxShadow: "none",
+              paddingRight: query ? "2.5rem" : undefined,
+            }}
           />
           {query && (
             <button
@@ -77,18 +85,20 @@ export default function ClientGames({ steamActivities }: { steamActivities: Game
         </form>
       </div>
 
-      {/* Games Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 mb-6">
-        {games
-          .filter((game) => game.name.toLowerCase().includes(query.toLowerCase()))
-          .map((game, idx) => (
-            <GameCard
-              key={idx}
-              name={game.name}
-              playtime_hours={game.playtime_hours}
-              cover_url={game.cover_url}
-            />
-          ))}
+        {games &&
+          games
+            .filter((game) =>
+              game.name.toLowerCase().includes(query.toLowerCase()),
+            )
+            .map((game, idx) => (
+              <GameCard
+                key={idx}
+                name={game.name}
+                playtime_hours={game.playtime_hours}
+                cover_url={game.cover_url}
+              />
+            ))}
       </div>
     </>
   );

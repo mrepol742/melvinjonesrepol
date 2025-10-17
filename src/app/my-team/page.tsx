@@ -42,7 +42,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "My Team - Melvin Jones Repol",
     description: "Here are the amazing people I work with.",
-    images: ["https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png"],
+    images: [
+      "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+    ],
     creator: "@mrepol742",
   },
 };
@@ -55,7 +57,8 @@ export default function MyTeam() {
           My Team
         </h1>
         <p className="text-center" data-aos="fade-up" data-aos-delay="100">
-          Here are the amazing people I work with.
+          Here are the amazing people I work with. Even tho it&apos;s just me, myself
+          and I.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
           <TeamCard
@@ -63,21 +66,18 @@ export default function MyTeam() {
             title="Lead Designer"
             description="Creative mind behind our designs."
             backgroundColor="bg-red-500"
-            delay={0}
           />
           <TeamCard
             name="Jones"
             title="Lead Marketer"
             description="Expert in digital marketing strategies."
             backgroundColor="bg-yellow-500"
-            delay={300}
           />
           <TeamCard
             name="Repol"
             title="Lead Developer"
             description="Full-stack developer with a passion for coding."
             backgroundColor="bg-blue-500"
-            delay={600}
           />
         </div>
       </section>

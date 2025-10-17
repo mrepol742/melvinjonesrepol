@@ -7,7 +7,6 @@ import {
   faComment,
   faEarthAsia,
   faExclamation,
-  faEye,
   faHeart,
   faPlus,
   faStar,
@@ -186,7 +185,7 @@ export default async function RecentGithubActivity() {
   return (
     <ul className="space-y-2 max-h-96 overflow-y-auto">
       {/* eslint-disable @typescript-eslint/no-explicit-any */}
-      {events.map((event: any) => (
+      {events && events.map((event: any) => (
         <li
           key={event.id}
           className="border-b border-gray-200 pb-2 last:border-b-0 last:pb-0 flex overflow-hidden"

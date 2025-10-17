@@ -10,6 +10,8 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import RecentGithubActivityWrapper from "@/components/RecentGithubActivityWrapper";
 import RecentGithubActivity from "@/components/RecentGithubActivity";
+import { Services } from "@/components/Services";
+import PrivacyToast from "@/components/PrivacyToast";
 
 config.autoAddCss = false;
 
@@ -29,22 +31,10 @@ const mavenPro = Maven_Pro({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.melvinjonesrepol.com"),
-  title: "It's me Melvin Jones Repol",
+  title: "Melvin Jones Repol - Strategic Software & DevOps Partner",
   description:
     "I specialize in building robust, scalable software solutions that solve real-world problems. With a passion for technology  and a commitment to excellence, I bring ideas to life through code.",
-  keywords: [
-    "Melvin Jones Repol",
-    "Software Engineer",
-    "DevOps",
-    "Web Development",
-    "AI Development",
-    "Open Source",
-    "Portfolio",
-    "Projects",
-    "Contact",
-    "Resume",
-    "Software Development",
-  ],
+  keywords: Services,
   authors: [
     { name: "Melvin Jones Repol", url: "https://www.melvinjonesrepol.com" },
   ],
@@ -56,7 +46,7 @@ export const metadata: Metadata = {
   },
   creator: "Melvin Jones Repol",
   openGraph: {
-    title: "It's me Melvin Jones Repol",
+    title: "Melvin Jones Repol - Strategic Software & DevOps Partner",
     description:
       "I specialize in building robust, scalable software solutions that solve real-world problems. With a passion for technology  and a commitment to excellence, I bring ideas to life through code.",
     url: "https://www.melvinjonesrepol.com",
@@ -74,7 +64,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "It's me Melvin Jones Repol",
+    title: "Melvin Jones Repol - Strategic Software & DevOps Partner",
     description:
       "I specialize in building robust, scalable software solutions that solve real-world problems. With a passion for technology  and a commitment to excellence, I bring ideas to life through code.",
     images: [
@@ -124,6 +114,7 @@ export default function RootLayout({
         <div className="flex-1">
           <AOSWrapper />
           <div className="container mx-auto">{children}</div>
+          <PrivacyToast />
         </div>
         <RecentGithubActivityWrapper>
           <RecentGithubActivity />
