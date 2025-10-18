@@ -12,6 +12,7 @@ import RecentGithubActivityWrapper from "@/components/RecentGithubActivityWrappe
 import RecentGithubActivity from "@/components/RecentGithubActivity";
 import { Services } from "@/components/Services";
 import PrivacyToast from "@/components/PrivacyToast";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 
 config.autoAddCss = false;
 
@@ -102,6 +103,7 @@ export default function RootLayout({
     >
       <head>
         <meta name="hostname" content="www.melvinjonesrepol.com" />
+        <BreadcrumbJsonLd />
       </head>
       <body className="antialiased min-h-screen flex flex-col">
         <div className="background-gloss">
