@@ -62,6 +62,64 @@ const Images = [
   "/images/pos-5.png",
 ];
 
+const features = [
+  {
+    title: "Product & Inventory Management",
+    description:
+      "Add, edit and categorize products. Track current stock levels with real-time updates. Configure units of measure, variants and reorder thresholds for seamless inventory control.",
+  },
+  {
+    title: "Transaction Register & Checkout Interface",
+    description:
+      "Provide cashier-friendly UI for scanning or selecting items, applying discounts or taxes, accepting payments, and generating receipts/invoices for every sale.",
+  },
+  {
+    title: "Customer & Loyalty Management",
+    description:
+      "Maintain a customer database with purchase history, contact details and loyalty points. Offer registered customers special pricing or rewards programs to boost retention.",
+  },
+  {
+    title: "Employee & Role Management",
+    description:
+      "Manage user accounts with role-based access (e.g., cashier, manager, admin). Track shifts, permissions and audit logs of user actions across the system.",
+  },
+  {
+    title: "Offline Mode & Sync",
+    description:
+      "Allow the POS system to continue working even if network connectivity is lost. Queue transactions locally and sync when connectivity is restored to avoid disruptions.",
+  },
+  {
+    title: "Payment Gateway Integration",
+    description:
+      "Support for major payment providers (cards, mobile wallets, etc.), enabling secure payment capture, refunds and reconciliation. Ensure transactions are encrypted and PCI-compliant.",
+  },
+  {
+    title: "Analytics & Dashboards",
+    description:
+      "Track sales trends, best-selling items, employee performance and inventory turnover in visually-rich dashboards. Export reports in common formats (CSV, PDF) for further analysis.",
+  },
+  {
+    title: "Localization, Multi-Currency & Tax Configurations",
+    description:
+      "Support multiple currencies, regional tax rules and languages so the system works across different locales and store legal jurisdictions.",
+  },
+  {
+    title: "Theming & UI Customization",
+    description:
+      "Customize the look & feel of the POS UI — brand it with your company colours, pick layouts optimized for touch or desktop, and tailor wording to your workflow.",
+  },
+  {
+    title: "Data Export, Backup & Security",
+    description:
+      "Securely handle all sensitive data, provide automatic backups and support manual export/import of products, customers, transactions and other key data to maintain full control.",
+  },
+  {
+    title: "Audit Trails, Permissions & Compliance",
+    description:
+      "Log all critical actions (voids, refunds, user login/logout), enforce strong access controls, and maintain a clear audit trail — helping meet compliance and reduce risk.",
+  },
+];
+
 const SoftwareApplication = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -156,6 +214,23 @@ export default function PointOfSale() {
                 GitHub
               </Link>
               .
+            </div>
+          </div>
+
+          <div className="mt-8">
+            <h3 className="text-2xl">Features</h3>
+            <div className="grid gap-4 mt-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {features.map((feature, index) => (
+                <div
+                  key={index}
+                  className="bg-black/10 backdrop-blur rounded-xl p-6 shadow hover:shadow-lg transition"
+                  data-aos="fade-up"
+                  data-aos-delay={`${index * 100}`}
+                >
+                  <h4 className="text-xl font-bold mb-2">{feature.title}</h4>
+                  <p>{feature.description}</p>
+                </div>
+              ))}
             </div>
           </div>
 

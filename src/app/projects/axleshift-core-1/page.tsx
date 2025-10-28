@@ -62,6 +62,49 @@ const Images = [
   "/images/axleshift-7.png",
 ];
 
+const features = [
+  {
+    title: "End-to-End Freight Workflow",
+    description:
+      "Manage every stage of the logistics lifecycle — from shipment booking, pickup scheduling, carrier assignment, tracking and delivery confirmation — all within one unified platform.",
+  },
+  {
+    title: "Zero-Trust Architecture & Compliance",
+    description:
+      "Built with a zero-trust security model by default. Access controls, encryption-at-rest and in-transit, and full compliance with GDPR and CCPA-style regulations ensure secure handling of sensitive shipping data.",
+  },
+  {
+    title: "Carrier & Route Optimization",
+    description:
+      "Select optimal carriers, compare quotes dynamically, and plan the most efficient routes using real-time data to reduce cost and transit time for shipments.",
+  },
+  {
+    title: "Multi-Channel Visibility & Tracking",
+    description:
+      "Give stakeholders (shippers, carriers, recipients) access to live shipment status, location updates, ETAs, and exception alerts — improving transparency and reducing inquiries.",
+  },
+  {
+    title: "Data Integration & API-First Design",
+    description:
+      "Expose REST/GraphQL APIs for integration with external ERPs, WMS, e-commerce platforms or carrier systems. Make your logistics engine part of a broader enterprise ecosystem.",
+  },
+  {
+    title: "Rich Analytics & Reporting Suite",
+    description:
+      "Provide dashboards and reports on KPIs such as transit time, cost per shipment, carrier performance, load factor and carbon emissions — enabling data-driven decisions.",
+  },
+  {
+    title: "Backup, Audit Logs & Compliance-Ready Exports",
+    description:
+      "Maintain full control over your data — export shipment, carrier and inventory records; keep immutable audit trails for changes/actions; support internal or regulatory audits.",
+  },
+  {
+    title: "Scalable Cloud-Native Deployment",
+    description:
+      "Designed for deployment via containers (Docker/Kubernetes) or serverless platforms, enabling you to scale from a single small-site operation to a global logistics platform.",
+  },
+];
+
 const SoftwareApplication = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -81,7 +124,7 @@ const SoftwareApplication = {
   },
 };
 
-export default function Axleshift() {
+export default async function Axleshift() {
   return (
     <>
       <script
@@ -152,6 +195,23 @@ export default function Axleshift() {
                 GitHub
               </Link>
               .
+            </div>
+          </div>
+
+          <div className="mt-8">
+            <h3 className="text-2xl">Features</h3>
+            <div className="grid gap-4 mt-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {features.map((feature, index) => (
+                <div
+                  key={index}
+                  className="bg-black/10 backdrop-blur rounded-xl p-6 shadow hover:shadow-lg transition"
+                  data-aos="fade-up"
+                  data-aos-delay={`${index * 100}`}
+                >
+                  <h4 className="text-xl font-bold mb-2">{feature.title}</h4>
+                  <p>{feature.description}</p>
+                </div>
+              ))}
             </div>
           </div>
 
