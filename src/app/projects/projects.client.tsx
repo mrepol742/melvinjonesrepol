@@ -10,25 +10,28 @@ import { faX } from "@fortawesome/free-solid-svg-icons/faX";
 export const __projects = [
   {
     title: "Web Appp",
-    description: "A simple yet powerful template that lets you convert any website into a functional Android APK with minimal effort. This project makes it easy to package your web app for mobile distribution without requiring deep Android development knowledge.",
+    description:
+      "A simple yet powerful template that lets you convert any website into a functional Android APK with minimal effort. This project makes it easy to package your web app for mobile distribution without requiring deep Android development knowledge.",
     repo: "https://github.com/mrepol742/web-appp",
     featured: true,
-    languages: ["Kotlin"]
+    languages: ["Kotlin"],
   },
   {
     title: "My Portfolio",
-    description: "A modern, responsive personal portfolio built with Next.js to showcase projects, skills, and achievements. Designed with performance and clean UI in mind, it highlights professional work in a sleek and interactive way.",
+    description:
+      "A modern, responsive personal portfolio built with Next.js to showcase projects, skills, and achievements. Designed with performance and clean UI in mind, it highlights professional work in a sleek and interactive way.",
     link: "https://www.melvinjonesrepol.com",
     repo: "https://github.com/mrepol742/melvinjonesrepol",
     featured: false,
-    languages: ["TypeScript"]
+    languages: ["TypeScript"],
   },
   {
     title: "Project Canis TG",
-    description: "An extension of the Canis project adapted specifically for Telegram, bringing its features into the chat platform.",
+    description:
+      "An extension of the Canis project adapted specifically for Telegram, bringing its features into the chat platform.",
     repo: "https://github.com/mrepol742/project-canis-tg",
     featured: false,
-    languages: ["TypeScript"]
+    languages: ["TypeScript"],
   },
   {
     title: "Project Canis",
@@ -39,11 +42,12 @@ export const __projects = [
     languages: ["TypeScript"],
   },
   {
-    title: "Ulisha Store",
-    description: "An e-commerce platform offering a wide selection of fashion, accessories, and electronics, designed to deliver both style and convenience. Built with modern technologies, it focuses on providing customers with a seamless shopping experience, competitive pricing, and reliable service.",
-    link: "/projects/ulisha-store",
+    title: "Ulisha Store Next",
+    description:
+      "A modern and efficient e-commerce solution tailored for startups, enabling seamless setup and free hosting on Vercel and Supabase Cloud.",
+    link: "/projects/ulisha-store-next",
     featured: true,
-    languages: ["TypeScript"]
+    languages: ["TypeScript"],
   },
   {
     title: "Devops Capstone Project",
@@ -133,11 +137,12 @@ export const __projects = [
   },
   {
     title: "Project Webvium",
-    description: "A lightweight, fast, and privacy-focused Android web browser built entirely from scratch to deliver a secure and efficient browsing experience. Designed to balance speed, security, and functionality, it aims to provide all the essential features of modern browsers while staying minimal and resource-friendly.",
+    description:
+      "A lightweight, fast, and privacy-focused Android web browser built entirely from scratch to deliver a secure and efficient browsing experience. Designed to balance speed, security, and functionality, it aims to provide all the essential features of modern browsers while staying minimal and resource-friendly.",
     link: "/projects/webvium-browser",
     featured: true,
-    languages: ["Java"]
-  }
+    languages: ["Java"],
+  },
 ];
 
 export default function Projects() {
@@ -174,7 +179,7 @@ export default function Projects() {
                     if (value === "default") return __projects;
 
                     return __projects.filter(
-                      (project) => project.languages[0].toLowerCase() === value
+                      (project) => project.languages[0].toLowerCase() === value,
                     );
                   });
                 }}
@@ -227,7 +232,7 @@ export default function Projects() {
                   project.title.toLowerCase().includes(query.toLowerCase()) ||
                   project.description
                     .toLowerCase()
-                    .includes(query.toLowerCase())
+                    .includes(query.toLowerCase()),
               )
               .map((project, idx) => (
                 <div key={idx}>

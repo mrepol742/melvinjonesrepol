@@ -13,11 +13,9 @@ import {
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from "next/link";
 
 export default async function RecentGithubActivity() {
-  const username = "mrepol742";
-  const events = await fetchGithubEvents(username);
+  const events = await fetchGithubEvents("mrepol742");
 
   function getEventType(event: string) {
     switch (event) {

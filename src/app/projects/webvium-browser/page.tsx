@@ -8,7 +8,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Webvium Browser - Melvin Jones Repol",
   description:
-    "Lightweight, Fast, Material and Full-Featured Android Web Browser.",
+    "A lightweight, lightning-fast, ad-blocker and beautifully designed web browser for Android.",
   keywords: [
     "Webvium Browser",
     "Android Browser",
@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     "Internet Browser",
     "Privacy-Focused Browser",
     "Secure Browser",
+    "Browser Adblocker",
+    "Adblock",
+    "Built-in browser adblock",
   ],
   alternates: {
     canonical: "https://www.melvinjonesrepol.com/projects/webvium-browser",
@@ -28,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Webvium Browser - Melvin Jones Repol",
     description:
-      "Lightweight, Fast, Material and Full-Featured Android Web Browser.",
+      "A lightweight, lightning-fast, ad-blocker and beautifully designed web browser for Android.",
     url: "https://www.melvinjonesrepol.com/projects/webvium-browser",
     siteName: "Melvin Jones Repol",
     images: [
@@ -46,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Webvium Browser - Melvin Jones Repol",
     description:
-      "Lightweight, Fast, Material and Full-Featured Android Web Browser.",
+      "A lightweight, lightning-fast, ad-blocker and beautifully designed web browser for Android.",
     images: ["https://www.melvinjonesrepol.com/images/webvium-1.jpg"],
     creator: "@mrepol742",
   },
@@ -86,13 +89,13 @@ export default function WebviumBrowser() {
       "@type": "Person",
       name: "Melvin Jones Repol",
       url: "https://www.melvinjonesrepol.com",
-    }
+    },
   };
 
   const videoObject = {
     "@context": "https://schema.org",
     "@type": "VideoObject",
-    name: "Webvium - Lightweight, Fast, Material and Full-Featured Android Web Browser.",
+    name: "Webvium - A lightweight, lightning-fast, ad-blocker and beautifully designed web browser for Android.",
     url: "https://www.melvinjonesrepol.com/projects/webvium-browser",
     description:
       "A Project that aims to be the lightest, fastest, secured, private and full-featured android web browser. Programmed and design from Scratch.",
@@ -112,34 +115,34 @@ export default function WebviumBrowser() {
 
   const features = [
     {
-      title: "Customization",
+      title: "Endless Customization",
       description:
-        "Use the Interface settings, to change the app theme to dark or light. Add a little curved on edge of screen or make your favorite photo or wallpaper as app main background. Redefined your browsing experience with customization from Webvium.",
+        "Personalize your browsing experience like never before. Switch between light and dark themes, add soft screen curves, or set your favorite photo as the background. Webvium lets you redefine how your browser looks and feels—just the way you like it.",
     },
     {
-      title: "Lightweight & Faster",
+      title: "Lightweight. Lightning Fast.",
       description:
-        "Webvium is designed to be the most lightweight app possible. Lightweight means faster installation time, faster download time, better app experience. Share this app to your friends within fraction of a seconds.",
+        "Webvium is built with speed and simplicity in mind. It installs in seconds, loads instantly, and runs smoother than ever. Experience faster browsing, quicker downloads, and effortless sharing—all in one ultra-light package.",
     },
     {
-      title: "Material Design",
+      title: "Beautiful Material Design",
       description:
-        "Immerse yourself in new and awesome browser fully material based designed. The colors and icons are carefully picked for you, and it uses one of the coolest fonts ever The Maven Pro from Google Fonts. Easier UI Navigation and modern based UI designs.",
+        "Dive into a clean, modern interface inspired by Google’s Material Design. With carefully chosen colors, icons, and the elegant Maven Pro font, Webvium delivers a fresh, minimal, and intuitive browsing experience you’ll love to use.",
     },
     {
-      title: "Total Browsing Control",
+      title: "Total Control at Your Fingertips",
       description:
-        "Here you can customize your all of web settings preferences if you wanted anytime. Webvium guaranteed that your the admin(super-user) of the app.",
+        "You’re always in charge. From web preferences to privacy settings, Webvium gives you complete control over how you browse. Adjust anything, anytime—because you’re the true admin of your experience.",
     },
     {
-      title: "Incomparable Privacy",
+      title: "Unmatched Privacy Protection",
       description:
-        "Protect your privacy, Webvium does not collect any kind of data Your browsing activity is at highest security and anonymous.",
+        "Your data is yours alone. Webvium never tracks, collects, or shares your browsing activity. Enjoy complete anonymity and peace of mind with our commitment to total privacy.",
     },
     {
-      title: "You in Control",
+      title: "Your Data, Your Power",
       description:
-        "Yeah, the only browser that allows you to backup all of your data settings preferences, history, searches, bookmarks and download list and export it when you needed.",
+        "Back up everything—your history, bookmarks, searches, and settings—with just a tap. Webvium lets you export and restore your data whenever you need it, keeping you in full control at all times.",
     },
   ];
 
@@ -179,8 +182,8 @@ export default function WebviumBrowser() {
               <div>
                 <h1 className="text-4xl font-bold">Webvium Browser</h1>
                 <p className="mb-4">
-                  Lightweight, Fast, Material and Full-Featured Android Web
-                  Browser.
+                  A lightweight, lightning-fast, ad-blocker and beautifully
+                  designed web browser for Android.
                 </p>
               </div>
               <Link
@@ -202,7 +205,7 @@ export default function WebviumBrowser() {
                 className="rounded-lg hover:scale-99 transition-transform duration-200"
               >
                 <source
-                  src="/videos/Webvium - Lightweight, Fast, Material and Full-Featured Android Web Browser.mp4"
+                  src="/videos/Webvium - A lightweight, lightning-fast, ad-blocker and beautifully designed web browser for Android.mp4"
                   type="video/mp4"
                 />
                 Your browser does not support the video tag.

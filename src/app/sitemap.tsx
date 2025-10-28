@@ -36,7 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://www.melvinjonesrepol.com/projects/axleshift-core-1",
     },
     {
-      url: "https://www.melvinjonesrepol.com/projects/ulisha-store",
+      url: "https://www.melvinjonesrepol.com/projects/ulisha-store-next",
     },
     {
       url: "https://www.melvinjonesrepol.com/projects/point-of-sale",

@@ -11,7 +11,6 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import RecentGithubActivityWrapper from "@/components/RecentGithubActivityWrapper";
 import RecentGithubActivity from "@/components/RecentGithubActivity";
 import { Services } from "@/components/Services";
-import PrivacyToast from "@/components/PrivacyToast";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 
 config.autoAddCss = false;
@@ -116,7 +115,6 @@ export default function RootLayout({
         <div className="flex-1">
           <AOSWrapper />
           <div className="container mx-auto">{children}</div>
-          <PrivacyToast />
         </div>
         <RecentGithubActivityWrapper>
           <RecentGithubActivity />
