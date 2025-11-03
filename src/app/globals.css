@@ -1,104 +1,109 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+    --background: #ffffff;
+    --foreground: #171717;
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
 }
 
 .dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+    --background: #0a0a0a;
+    --foreground: #ededed;
 }
 
 html {
-  transition: background-color 0.3s ease, color 0.3s ease;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-body);
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body);
+    will-change: transform;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  letter-spacing: -0.05em;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.05em;
 }
 
 .background-gloss {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  top: 0;
-  left: 0;
-  z-index: -1;
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+    will-change: transform;
 }
 
 .gloss-circle {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.6;
-  animation: float 12s infinite ease-in-out alternate;
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.5;
+    transform: translate3d(0, 0, 0);
+    animation: float 14s ease-in-out infinite alternate;
+    will-change: transform, opacity;
+    filter: blur(40px);
+    mix-blend-mode: lighten;
 }
 
-/* Individual Circle Styles */
 .circle1 {
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle at center, #ff6ec4, #7873f5);
-  top: 10%;
-  left: 20%;
-  animation-delay: 0s;
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle at center, #ff6ec4, #7873f5);
+    top: 12%;
+    left: 18%;
+    animation-delay: 0s;
 }
 
 .circle2 {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle at center, #42e695, #3bb2b8);
-  top: 50%;
-  left: 60%;
-  animation-delay: 2s;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle at center, #42e695, #3bb2b8);
+    top: 48%;
+    left: 62%;
+    animation-delay: 2s;
 }
 
 .circle3 {
-  width: 250px;
-  height: 250px;
-  background: radial-gradient(circle at center, #f9d423, #ff4e50);
-  top: 70%;
-  left: 10%;
-  animation-delay: 4s;
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle at center, #f9d423, #ff4e50);
+    top: 72%;
+    left: 8%;
+    animation-delay: 4s;
 }
 
-/* Float Animation */
 @keyframes float {
-  0% {
-    transform: translateY(0) translateX(0) scale(1);
-  }
-
-  100% {
-    transform: translateY(-50px) translateX(50px) scale(1.1);
-  }
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    100% {
+        transform: translate3d(50px, -40px, 0) scale(1.05);
+    }
 }
 
 @keyframes gradient-shift {
-
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 .animate-gradient-shift {
-  background-size: 200% 200%;
-  animation: gradient-shift 6s ease-in-out infinite;
+    background-size: 180% 180%;
+    animation: gradient-shift 10s ease-in-out infinite;
 }
 
 /*
@@ -110,19 +115,19 @@ h1, h2, h3, h4, h5, h6 {
  * https: //github.com/disqus/disqus-react/issues/153
  */
 #disqus_thread {
-  /* force light mode */
-  color-scheme: light !important;
-  filter: none;
-  background-color: black !important;
+    /* force light mode */
+    color-scheme: light !important;
+    filter: none;
+    background-color: black !important;
 }
 
 /* If you switch your site to dark mode, keep forcing “light” inside the iframe */
 [data-theme="dark"] #disqus_thread {
-  color-scheme: light !important;
-  color: white !important;
-  background-color: black !important;
+    color-scheme: light !important;
+    color: white !important;
+    background-color: black !important;
 }
 
 .grecaptcha-badge {
-  visibility: hidden !important;
+    visibility: hidden !important;
 }

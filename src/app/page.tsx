@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode, faGamepad } from "@fortawesome/free-solid-svg-icons";
-import { __projects } from "@/app/projects/projects.client";
+import { projects } from "@/app/projects/projects.client";
 import ProjectCard from "@/components/ProjectCard";
 import NeofetchTerminal from "@/components/Neofetch";
 import FaceEyes from "@/components/FaceEyes";
@@ -290,19 +290,18 @@ export default function Home() {
             Featured Projects
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            {__projects &&
-              __projects
-                .filter((project) => project.featured)
-                .map((project, idx) => (
-                  <div key={idx} data-aos="fade-up">
-                    <Link
-                      href={project.link || project.repo || "#"}
-                      className="no-underline"
-                    >
-                      <ProjectCard {...project} />
-                    </Link>
-                  </div>
-                ))}
+            {projects
+              .filter((project) => project.featured)
+              .map((project, idx) => (
+                <div key={idx} data-aos="fade-up">
+                  <Link
+                    href={project.link || project.repo || "#"}
+                    className="no-underline"
+                  >
+                    <ProjectCard {...project} />
+                  </Link>
+                </div>
+              ))}
           </div>
 
           <NeofetchTerminal />

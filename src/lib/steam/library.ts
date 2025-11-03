@@ -11,7 +11,7 @@ export async function fetchSteamLibrary() {
   try {
     if (!STEAM_API_KEY || !STEAM_ID) {
       console.error("Missing STEAM_API_KEY or STEAM_ID in environment");
-      return null;
+      return [];
     }
 
     const res = await fetch(
@@ -21,7 +21,7 @@ export async function fetchSteamLibrary() {
 
     if (!res.ok) {
       console.error(`Failed to fetch Steam library: ${res.statusText}`);
-      return null;
+      return [];
     }
 
     const data = await res.json();
@@ -33,8 +33,7 @@ export async function fetchSteamLibrary() {
       cover_url: `https://cdn.cloudflare.steamstatic.com/steam/apps/${game.appid}/header.jpg`,
     }));
   } catch (err) {
-    console.log(err);
+    console.error(err);
+    return [];
   }
-
-  return null;
 }

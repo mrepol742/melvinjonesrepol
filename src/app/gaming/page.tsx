@@ -54,10 +54,10 @@ export default async function Gaming() {
   return (
     <main className="p-3 md:p-8">
       <section>
-        <h1 className="text-2xl font-semibold" data-aos="fade-right">
+        <h1 className="text-2xl font-semibold">
           Gaming
         </h1>
-        <p data-aos="fade-right" data-aos-delay="100">
+        <p>
           Here are some of my gaming achievements and activities.
         </p>
 
@@ -81,16 +81,6 @@ export default async function Gaming() {
               Steam Profile
             </button>
           </Link>
-        </div>
-
-        <div className="mt-8">
-          <h3 className="text-2xl">Comments</h3>
-          <p className="mb-4">
-            Recommend a game or share your thoughts about my gaming activities.
-          </p>
-          <div className="bg-black p-4 rounded-xl mb-6">
-            <DisqusComments slug="gaming-comment" title="Gaming" />
-          </div>
         </div>
 
         <span className="ml-auto text-xs text-gray-400">

@@ -7,7 +7,9 @@ import "aos/dist/aos.css";
 export default function AOSWrapper() {
   useEffect(() => {
     AOS.init({
-      duration: 800,
+      once: true,
+      throttleDelay: 100,
+      duration: 600,
     });
   }, []);
 

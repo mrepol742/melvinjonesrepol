@@ -89,14 +89,14 @@ export default function Certificates() {
   return (
     <main className="p-3 md:p-8">
       <section>
-        <h1 className="text-2xl font-semibold" data-aos="fade-up">
-          Certificates
+        <h1 className="text-2xl font-semibold">
+          My Certificates
         </h1>
-        <p data-aos="fade-up" data-aos-delay="100">
+        <p>
           Here are some of the certificates I have earned through various
           courses and programs.
         </p>
-        <div data-aos="fade-right" data-aos-delay="200">
+        <div>
           <form
             onSubmit={(e) => e.preventDefault()}
             className="border rounded my-4 flex items-center gap-2 relative px-2 py-1 w-full max-w-xs"
