@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ['/api'],
+      disallow: ["/api", "/projects?", "/gaming?"],
     },
     sitemap: "https://www.melvinjonesrepol.com/sitemap.xml",
   };

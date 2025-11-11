@@ -4,6 +4,11 @@
       "source": "/projects/(.*)",
       "destination": "/$1",
       "permanent": true
+    },
+    {
+      "source": "/legals/(.*)",
+      "destination": "/$1",
+      "permanent": true
     }
   ]
 }
