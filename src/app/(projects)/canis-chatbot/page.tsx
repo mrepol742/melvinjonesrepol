@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import DisqusComments from "@/components/DisqusComments";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft, faWarning } from "@fortawesome/free-solid-svg-icons";
+import { faWarning } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faTelegram } from "@fortawesome/free-brands-svg-icons";
 
 export const metadata: Metadata = {
@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     "Canis Bot",
   ],
   alternates: {
-    canonical: "https://www.melvinjonesrepol.com/projects/canis-chatbot",
+    canonical: "https://www.melvinjonesrepol.com/canis-chatbot",
   },
   openGraph: {
     title: "Canis Chatbot - Melvin Jones Repol",
     description:
       "A scalable, modular WhatsApp chatbot built in TypeScript. It leverages modern best practices, lean architecture, Prisma ORM, Dockerization, and environment-based configuration to deliver a robust, flexible successor to Orion.",
-    url: "https://www.melvinjonesrepol.com/projects/canis-chatbot",
+    url: "https://www.melvinjonesrepol.com/canis-chatbot",
     siteName: "Melvin Jones Repol",
     images: [
       {
@@ -122,14 +122,6 @@ export default function CanisChatbot() {
 
       <main className="p-3 md:p-8">
         <section>
-          <Link
-            className="flex items-center mb-4 hover:text-violet-500 transition-colors duration-200"
-            href="/projects"
-          >
-            <FontAwesomeIcon icon={faChevronLeft} className="mr-2" />
-            <h3 className="text-2xl font-semibold">Projects</h3>
-          </Link>
-
           <div className="block md:flex items-center mb-4">
             <Image
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/WhatsApp_Logo_green.svg/250px-WhatsApp_Logo_green.svg.png"

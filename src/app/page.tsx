@@ -4,11 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode, faGamepad } from "@fortawesome/free-solid-svg-icons";
-import { __projects } from "@/app/projects/projects.client";
+import projects from "@/lib/projectList";
 import ProjectCard from "@/components/ProjectCard";
 import NeofetchTerminal from "@/components/Neofetch";
 import FaceEyes from "@/components/FaceEyes";
-import { Services } from "@/components/Services";
+import Services from "@/lib/serviceList";
 import ServicesCarousel from "@/components/ServicesCarousel";
 
 const skills = [
@@ -91,7 +91,7 @@ export default function Home() {
                 data-aos-delay="200"
                 className="font-medium"
               >
-                Software Engineer | CTO of Ulisha Limited
+                Software Engineer
               </p>
               <p
                 className="mt-4 max-w-2xl"
@@ -156,6 +156,24 @@ export default function Home() {
           </div>
 
           <ServicesCarousel Services={Services} />
+
+          <div className="p-3 m-5 rounded-5 flex-1 bg-green-200/50">
+            <h2 className="text-lg font-semibold">
+              🚀 Webvium Browser Updates
+            </h2>
+            <p className="text-sm mt-1">
+              Webvium continues to evolve — new performance, features, design
+              updates are live! Check out what’s new below. It&apos;s been
+              almost a 3 years since the very last major update of Webvium.
+              Webvium v3.x.x is now here a much better version of itself.
+            </p>
+            <Link
+              href="/webvium-browser"
+              className="inline-block mt-3 text-sm font-medium underline hover:text-blue-200 transition"
+            >
+              View Latest Updates →
+            </Link>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skills.map((skill, index) => (
@@ -290,19 +308,18 @@ export default function Home() {
             Featured Projects
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            {__projects &&
-              __projects
-                .filter((project) => project.featured)
-                .map((project, idx) => (
-                  <div key={idx} data-aos="fade-up">
-                    <Link
-                      href={project.link || project.repo || "#"}
-                      className="no-underline"
-                    >
-                      <ProjectCard {...project} />
-                    </Link>
-                  </div>
-                ))}
+            {projects
+              .filter((project) => project.featured)
+              .map((project, idx) => (
+                <div key={idx} data-aos="fade-up">
+                  <Link
+                    href={project.link || project.repo || "#"}
+                    className="no-underline"
+                  >
+                    <ProjectCard {...project} />
+                  </Link>
+                </div>
+              ))}
           </div>
 
           <NeofetchTerminal />

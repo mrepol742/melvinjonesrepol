@@ -1,6 +1,4 @@
 import DisqusComments from "@/components/DisqusComments";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -22,13 +20,13 @@ export const metadata: Metadata = {
     "Online Privacy",
   ],
   alternates: {
-    canonical: "https://www.melvinjonesrepol.com/projects/webvium-vpn",
+    canonical: "https://www.melvinjonesrepol.com/webvium-vpn",
   },
   openGraph: {
     title: "Webvium VPN - Melvin Jones Repol",
     description:
       "Anonymous, Secured, Private and the fastest Virtual Private Network.",
-    url: "https://www.melvinjonesrepol.com/projects/webvium-vpn",
+    url: "https://www.melvinjonesrepol.com/webvium-vpn",
     siteName: "Melvin Jones Repol",
     images: [
       {
@@ -85,7 +83,7 @@ export default function WebviumVPN() {
     "@context": "https://schema.org",
     "@type": "VideoObject",
     name: "Webvium VPN - Anonymous, Secured, Private and the fastest Virtual Private Network.",
-    url: "https://www.melvinjonesrepol.com/projects/webvium-vpn",
+    url: "https://www.melvinjonesrepol.com/webvium-vpn",
     description:
       "Inspired from Webvium, Webvium VPN is a lightweight android VPN app focuses in speed, simplicity, security and privacy.",
     thumbnailUrl: "https://www.melvinjonesrepol.com/images/webviumvpn-1.jpg",
@@ -118,14 +116,6 @@ export default function WebviumVPN() {
       />
       <main className="p-3 md:p-8">
         <section>
-          <Link
-            className="flex items-center mb-4 hover:text-violet-500 transition-colors duration-200"
-            href="/projects"
-          >
-            <FontAwesomeIcon icon={faChevronLeft} className="mr-2" />
-            <h3 className="text-2xl font-semibold">Projects</h3>
-          </Link>
-
           <div className="block md:flex items-center mb-4">
             <Image
               src="/images/webviumvpn-transparent-icon.png"

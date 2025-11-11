@@ -5,7 +5,7 @@ import {
   faLink,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 type ProjectCardProps = {
   title: string;
@@ -25,8 +25,6 @@ export default function ProjectCard({
   download,
   languages,
 }: ProjectCardProps) {
-  const router = useRouter();
-
   return (
     <div data-aos="fade-up">
       <div
@@ -46,28 +44,19 @@ export default function ProjectCard({
         </div>
         <div className="flex items-end justify-end gap-2">
           {link && (
-            <span
-              onClick={() => router.push(link)}
-              aria-label={`Open ${title} link`}
-            >
+            <Link href={link} aria-label={`Open ${title} link`}>
               <FontAwesomeIcon icon={faLink} size="lg" />
-            </span>
+            </Link>
           )}
           {repo && (
-            <span
-              onClick={() => router.push(repo)}
-              aria-label={`Open ${title} link`}
-            >
+            <Link href={repo} aria-label={`Open ${title} link`}>
               <FontAwesomeIcon icon={faGithub} size="lg" />
-            </span>
+            </Link>
           )}
           {download && (
-            <span
-              onClick={() => router.push(download)}
-              aria-label={`Open ${title} link`}
-            >
+            <Link href={download} aria-label={`Open ${title} link`}>
               <FontAwesomeIcon icon={faDownload} size="lg" />
-            </span>
+            </Link>
           )}
         </div>
       </div>

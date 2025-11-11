@@ -1,6 +1,4 @@
 import DisqusComments from "@/components/DisqusComments";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -26,13 +24,13 @@ export const metadata: Metadata = {
     "Built-in browser adblock",
   ],
   alternates: {
-    canonical: "https://www.melvinjonesrepol.com/projects/webvium-browser",
+    canonical: "https://www.melvinjonesrepol.com/webvium-browser",
   },
   openGraph: {
     title: "Webvium Browser - Melvin Jones Repol",
     description:
       "A lightweight, lightning-fast, ad-blocker and beautifully designed web browser for Android.",
-    url: "https://www.melvinjonesrepol.com/projects/webvium-browser",
+    url: "https://www.melvinjonesrepol.com/webvium-browser",
     siteName: "Melvin Jones Repol",
     images: [
       {
@@ -96,7 +94,7 @@ export default function WebviumBrowser() {
     "@context": "https://schema.org",
     "@type": "VideoObject",
     name: "Webvium - A lightweight, lightning-fast, ad-blocker and beautifully designed web browser for Android.",
-    url: "https://www.melvinjonesrepol.com/projects/webvium-browser",
+    url: "https://www.melvinjonesrepol.com/webvium-browser",
     description:
       "A Project that aims to be the lightest, fastest, secured, private and full-featured android web browser. Programmed and design from Scratch.",
     thumbnailUrl: "https://www.melvinjonesrepol.com/images/webvium-1.jpg",
@@ -162,14 +160,6 @@ export default function WebviumBrowser() {
       />
       <main className="p-3 md:p-8">
         <section>
-          <Link
-            className="flex items-center mb-4 hover:text-violet-500 transition-colors duration-200"
-            href="/projects"
-          >
-            <FontAwesomeIcon icon={faChevronLeft} className="mr-2" />
-            <h3 className="text-2xl font-semibold">Projects</h3>
-          </Link>
-
           <div className="block md:flex items-center mb-4">
             <Image
               src="/images/webvium-icon.png"
@@ -205,7 +195,7 @@ export default function WebviumBrowser() {
                 className="rounded-lg hover:scale-99 transition-transform duration-200"
               >
                 <source
-                  src="/videos/Webvium - A lightweight, lightning-fast, ad-blocker and beautifully designed web browser for Android.mp4"
+                  src="/videos/Webvium - Lightweight, Fast, Material and Full-Featured Android Web Browser.mp4"
                   type="video/mp4"
                 />
                 Your browser does not support the video tag.

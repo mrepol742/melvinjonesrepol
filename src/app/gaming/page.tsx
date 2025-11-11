@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { Metadata } from "next";
-import DisqusComments from "@/components/DisqusComments";
-import ClientGames from "@/components/Games";
-import { fetchSteamLibrary } from "@/lib/steam/library";
+import { fetchSteamLibrary, GameType } from "@/lib/steam/library";
+import SearchForm from "@/components/form/SearchForm";
+import GameCard from "@/components/GameCard";
 
 export const metadata: Metadata = {
   title: "Gaming - Melvin Jones Repol",
@@ -48,20 +48,39 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function Gaming() {
-  const steamActivities = await fetchSteamLibrary();
+export default async function Gaming({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  const sParams = await searchParams;
+  const query = Array.isArray(sParams.q)
+    ? sParams.q.join(", ")
+    : sParams.q || "";
+  const steamActivities: GameType[] = await fetchSteamLibrary();
+  const filteredGames: GameType[] = steamActivities.filter((game) =>
+    game.name.toLowerCase().includes(query),
+  );
 
   return (
     <main className="p-3 md:p-8">
       <section>
-        <h1 className="text-2xl font-semibold" data-aos="fade-right">
-          Gaming
-        </h1>
-        <p data-aos="fade-right" data-aos-delay="100">
-          Here are some of my gaming achievements and activities.
-        </p>
+        <h1 className="text-2xl font-semibold">Gaming</h1>
+        <p>Here are some of my gaming achievements and activities.</p>
 
-        <ClientGames steamActivities={steamActivities} />
+        <SearchForm initialQuery={query} />
+
+        {filteredGames.length === 0 ? (
+          <div>
+            <h2>No results found.</h2>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 mb-6">
+            {filteredGames.map((game: GameType) => (
+              <GameCard key={game.appid} game={game} />
+            ))}
+          </div>
+        )}
 
         <div className="my-6">
           <p data-aos="fade-up" data-aos-delay="200">
@@ -81,16 +100,6 @@ export default async function Gaming() {
               Steam Profile
             </button>
           </Link>
-        </div>
-
-        <div className="mt-8">
-          <h3 className="text-2xl">Comments</h3>
-          <p className="mb-4">
-            Recommend a game or share your thoughts about my gaming activities.
-          </p>
-          <div className="bg-black p-4 rounded-xl mb-6">
-            <DisqusComments slug="gaming-comment" title="Gaming" />
-          </div>
         </div>
 
         <span className="ml-auto text-xs text-gray-400">

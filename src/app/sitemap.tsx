@@ -21,25 +21,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://www.melvinjonesrepol.com/projects",
     },
     {
-      url: "https://www.melvinjonesrepol.com/projects/webvium-browser",
+      url: "https://www.melvinjonesrepol.com/webvium-browser",
     },
     {
-      url: "https://www.melvinjonesrepol.com/projects/webvium-vpn",
+      url: "https://www.melvinjonesrepol.com/webvium-vpn",
     },
     {
-      url: "https://www.melvinjonesrepol.com/projects/orion-chatbot",
+      url: "https://www.melvinjonesrepol.com/orion-chatbot",
     },
     {
-      url: "https://www.melvinjonesrepol.com/projects/canis-chatbot",
+      url: "https://www.melvinjonesrepol.com/canis-chatbot",
     },
     {
-      url: "https://www.melvinjonesrepol.com/projects/axleshift-core-1",
+      url: "https://www.melvinjonesrepol.com/axleshift-core-1",
     },
     {
-      url: "https://www.melvinjonesrepol.com/projects/ulisha-store-next",
+      url: "https://www.melvinjonesrepol.com/ulisha-store-next",
     },
     {
-      url: "https://www.melvinjonesrepol.com/projects/point-of-sale",
+      url: "https://www.melvinjonesrepol.com/point-of-sale",
     },
     {
       url: "https://www.melvinjonesrepol.com/my-team",

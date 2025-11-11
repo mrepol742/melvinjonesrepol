@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Source_Code_Pro, Maven_Pro } from "next/font/google";
 import { ToastContainer } from "react-toastify";
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
+import Nav from "../components/layout/Nav";
+import Footer from "../components/layout/Footer";
 import NextTopLoader from "nextjs-toploader";
 import AOSWrapper from "../components/AOSWrapper";
 import "./globals.css";
@@ -10,7 +10,7 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import RecentGithubActivityWrapper from "@/components/RecentGithubActivityWrapper";
 import RecentGithubActivity from "@/components/RecentGithubActivity";
-import { Services } from "@/components/Services";
+import Services from "@/lib/serviceList";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 
 config.autoAddCss = false;

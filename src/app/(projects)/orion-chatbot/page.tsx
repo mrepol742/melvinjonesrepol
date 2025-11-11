@@ -1,6 +1,6 @@
 import DisqusComments from "@/components/DisqusComments";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faChevronLeft, faWarning } from "@fortawesome/free-solid-svg-icons";
+import { faWarning } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Metadata } from "next";
 import Image from "next/image";
@@ -21,13 +21,13 @@ export const metadata: Metadata = {
     "Orion Bot",
   ],
   alternates: {
-    canonical: "https://www.melvinjonesrepol.com/projects/orion-chatbot",
+    canonical: "https://www.melvinjonesrepol.com/orion-chatbot",
   },
   openGraph: {
     title: "Orion Chatbot - Melvin Jones Repol",
     description:
       "Meet the lightning-fast Facebook Messenger chatbot, seamlessly managing multiple accounts with access to 271 commands.",
-    url: "https://www.melvinjonesrepol.com/projects/orion-chatbot",
+    url: "https://www.melvinjonesrepol.com/orion-chatbot",
     siteName: "Melvin Jones Repol",
     images: [
       {
@@ -91,14 +91,6 @@ export default function OrionChatbot() {
 
       <main className="p-3 md:p-8">
         <section>
-          <Link
-            className="flex items-center mb-4 hover:text-violet-500 transition-colors duration-200"
-            href="/projects"
-          >
-            <FontAwesomeIcon icon={faChevronLeft} className="mr-2" />
-            <h3 className="text-2xl font-semibold">Projects</h3>
-          </Link>
-
           <div className="block md:flex items-center mb-4">
             <Image
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Facebook_Messenger_logo_2025.svg/250px-Facebook_Messenger_logo_2025.svg.png"

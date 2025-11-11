@@ -1,13 +1,4 @@
-"use client";
-
-import { useState } from "react";
-import ProjectCard from "@/components/ProjectCard";
-import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { faX } from "@fortawesome/free-solid-svg-icons/faX";
-
-export const __projects = [
+const Projects = [
   {
     title: "Web Appp",
     description:
@@ -37,7 +28,7 @@ export const __projects = [
     title: "Project Canis",
     description:
       "A scalable, modular WhatsApp chatbot built in TypeScript. It leverages modern best practices, lean architecture, Prisma ORM, Dockerization, and environment-based configuration to deliver a robust, flexible successor to Orion.",
-    link: "/projects/canis-chatbot",
+    link: "/canis-chatbot",
     featured: true,
     languages: ["TypeScript"],
   },
@@ -45,7 +36,7 @@ export const __projects = [
     title: "Ulisha Store Next",
     description:
       "A modern and efficient e-commerce solution tailored for startups, enabling seamless setup and free hosting on Vercel and Supabase Cloud.",
-    link: "/projects/ulisha-store-next",
+    link: "/ulisha-store-next",
     featured: true,
     languages: ["TypeScript"],
   },
@@ -61,7 +52,7 @@ export const __projects = [
     title: "Point of Sale",
     description:
       "A lightweight, web-based and offline-capable POS system built for flawless performance, supporting multi-department roles and full functionality.",
-    link: "/projects/point-of-sale",
+    link: "/point-of-sale",
     featured: true,
     languages: ["JavaScript"],
   },
@@ -69,7 +60,7 @@ export const __projects = [
     title: "Axleshift Core 1 - Capstone Project",
     description:
       "A freight management services. Providing Businesses with cutting-edge platform, security, and reliability.",
-    link: "/projects/axleshift-core-1",
+    link: "/axleshift-core-1",
     featured: true,
     languages: ["JavaScript"],
   },
@@ -101,7 +92,7 @@ export const __projects = [
     title: "Project Orion",
     description:
       "Meet the lightning-fast Facebook Messenger chatbot, seamlessly managing multiple accounts with access to 271 commands.",
-    link: "/projects/orion-chatbot",
+    link: "/orion-chatbot",
     featured: false,
     languages: ["JavaScript"],
   },
@@ -123,7 +114,7 @@ export const __projects = [
     title: "Webvium VPN",
     description:
       "Inspired from Webvium, Webvium VPN is a lightweight android VPN app focuses in speed, simplicity, security and privacy.",
-    link: "/projects/webvium-vpn",
+    link: "/webvium-vpn",
     featured: false,
     languages: ["Java"],
   },
@@ -139,114 +130,10 @@ export const __projects = [
     title: "Project Webvium",
     description:
       "A lightweight, fast, and privacy-focused Android web browser built entirely from scratch to deliver a secure and efficient browsing experience. Designed to balance speed, security, and functionality, it aims to provide all the essential features of modern browsers while staying minimal and resource-friendly.",
-    link: "/projects/webvium-browser",
+    link: "/webvium-browser",
     featured: true,
     languages: ["Java"],
   },
 ];
 
-export default function Projects() {
-  const [query, setQuery] = useState("");
-  const [projects, setProjects] = useState(__projects);
-
-  return (
-    <>
-      <main className="p-3 md:p-8">
-        <section>
-          <h1 className="text-2xl font-semibold" data-aos="fade-right">
-            Projects
-          </h1>
-          <p data-aos="fade-right" data-aos-delay="100">
-            Here are some of my projects that I have worked on. <br />
-            For more details, you can check out my{" "}
-            <Link href="https://github.com/mrepol742?tab=repositories">
-              Github Repo
-            </Link>
-            .
-          </p>
-          <div
-            data-aos="fade-right"
-            data-aos-delay="200"
-            className="flex flex-col gap-2 md:flex-row md:items-center md:gap-4"
-          >
-            <div className="flex items-center gap-2">
-              <select
-                id="filter"
-                className="border-b px-2 py-3 outline-none"
-                onChange={(e) => {
-                  const value = e.target.value;
-                  setProjects(() => {
-                    if (value === "default") return __projects;
-
-                    return __projects.filter(
-                      (project) => project.languages[0].toLowerCase() === value,
-                    );
-                  });
-                }}
-              >
-                <option value="default">All</option>
-                <option value="java">Java</option>
-                <option value="javascript">JavaScript</option>
-                <option value="typescript">TypeScript</option>
-                <option value="php">PHP</option>
-              </select>
-            </div>
-            <form
-              onSubmit={(e) => e.preventDefault()}
-              className="border-b flex items-center gap-2 relative px-2 py-1 w-full max-w-xs md:max-w-sm"
-            >
-              <span className="absolute left-3 text-gray-400 pointer-events-none">
-                <FontAwesomeIcon icon={faSearch} size="lg" />
-              </span>
-              <input
-                type="text"
-                placeholder="Search projects..."
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                className="outline-none px-9 py-2 w-full bg-transparent"
-                style={{
-                  border: "none",
-                  boxShadow: "none",
-                  paddingRight: query ? "2.5rem" : undefined,
-                }}
-              />
-              {query && (
-                <button
-                  type="button"
-                  onClick={() => setQuery("")}
-                  className="right-3 text-gray-400 hover:text-gray-600 absolute"
-                  aria-label="Clear search"
-                  tabIndex={0}
-                  style={{ right: "0.75rem" }}
-                >
-                  <FontAwesomeIcon icon={faX} size="2xs" />
-                </button>
-              )}
-            </form>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 mb-6">
-            {projects
-              .filter(
-                (project) =>
-                  project.title.toLowerCase().includes(query.toLowerCase()) ||
-                  project.description
-                    .toLowerCase()
-                    .includes(query.toLowerCase()),
-              )
-              .map((project, idx) => (
-                <div key={idx}>
-                  <Link
-                    href={project.link || project.repo || "#"}
-                    className="no-underline"
-                  >
-                    <ProjectCard {...project} />
-                  </Link>
-                </div>
-              ))}
-          </div>
-        </section>
-      </main>
-    </>
-  );
-}
+export default Projects;

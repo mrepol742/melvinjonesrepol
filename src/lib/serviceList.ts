@@ -1,4 +1,4 @@
-export const Services = [
+const Services = [
   "Melvin Jones Repol",
   "Software engineering consulting",
   "Enterprise software development",
@@ -41,3 +41,5 @@ export const Services = [
   "Android SDK expertise",
   "Mobile UX/UI design",
 ];
+
+export default Services;

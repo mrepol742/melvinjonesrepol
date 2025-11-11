@@ -157,7 +157,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/projects/webvium-browser"
+                  href="/webvium-browser"
                   className="hover:text-orange-500 text-blue-400"
                 >
                   Webvium Browser
@@ -165,7 +165,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/projects/orion-chatbot"
+                  href="/orion-chatbot"
                   className="hover:text-orange-500 text-gray-400"
                 >
                   Orion Chatbot
@@ -173,7 +173,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/projects/axleshift-core-1"
+                  href="/axleshift-core-1"
                   className="hover:text-orange-500 text-gray-400"
                 >
                   Axleshift Core 1
@@ -181,7 +181,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/projects/point-of-sale"
+                  href="/point-of-sale"
                   className="hover:text-orange-500 text-gray-400"
                 >
                   Point of Sale
@@ -197,7 +197,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/projects/canis-chatbot"
+                  href="/canis-chatbot"
                   className="hover:text-orange-500 text-gray-400"
                 >
                   Canis Chatbot

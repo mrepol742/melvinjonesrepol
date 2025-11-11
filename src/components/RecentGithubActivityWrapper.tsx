@@ -12,7 +12,7 @@ export default function RecentGithubActivityWrapper({
   const [expanded, setExpanded] = useState(true);
 
   return (
-    <div className="fixed bottom-4 left-4 w-70" data-aos="slide-right">
+    <div className="fixed bottom-4 left-4 w-70">
       <div className="rounded-lg bg-white shadow-lg text-sm">
         <div
           className="flex items-center justify-between px-4 py-2"

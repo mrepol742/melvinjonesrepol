@@ -1,6 +1,4 @@
 import DisqusComments from "@/components/DisqusComments";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,13 +19,13 @@ export const metadata: Metadata = {
     "New e-commerce platform for startups",
   ],
   alternates: {
-    canonical: "https://www.melvinjonesrepol.com/projects/ulisha-store-next",
+    canonical: "https://www.melvinjonesrepol.com/ulisha-store-next",
   },
   openGraph: {
     title: "Ulisha Store Next - Melvin Jones Repol",
     description:
       "A modern and efficient e-commerce solution tailored for startups, enabling seamless setup and free hosting on Vercel and Supabase Cloud.",
-    url: "https://www.melvinjonesrepol.com/projects/ulisha-store-next",
+    url: "https://www.melvinjonesrepol.com/ulisha-store-next",
     siteName: "Melvin Jones Repol",
     images: [
       {
@@ -164,14 +162,6 @@ export default function UlishaStore() {
 
       <main className="p-3 md:p-8">
         <section>
-          <Link
-            className="flex items-center mb-4 hover:text-violet-500 transition-colors duration-200"
-            href="/projects"
-          >
-            <FontAwesomeIcon icon={faChevronLeft} className="mr-2" />
-            <h3 className="text-2xl font-semibold">Projects</h3>
-          </Link>
-
           <div className="block md:flex items-center mb-4">
             <Image
               src="/images/ulisha-store-icon.png"

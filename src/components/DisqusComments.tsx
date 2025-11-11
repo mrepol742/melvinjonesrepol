@@ -21,7 +21,7 @@ export default function DisqusComments({ slug, title }: DisqusCommentsProps) {
 
   const disqusShortname = "melvinjonesrepol";
   const disqusConfig = {
-    url: `https://www.melvinjonesrepol.com/projects/${slug}`,
+    url: `https://www.melvinjonesrepol.com/${slug}`,
     identifier: slug,
     title: title,
   };
