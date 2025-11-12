@@ -24,6 +24,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://www.melvinjonesrepol.com/webvium-browser",
     },
     {
+      url: "https://www.melvinjonesrepol.com/webvium-browser/privacy-policy",
+    },
+    {
       url: "https://www.melvinjonesrepol.com/webvium-vpn",
     },
     {

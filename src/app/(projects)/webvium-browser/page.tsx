@@ -184,6 +184,16 @@ export default function WebviumBrowser() {
               </Link>
             </div>
           </div>
+          <span className="text-sm">
+            We value your privacy. Please review our{" "}
+            <Link
+              href="/webvium-browser/privacy-policy"
+              className="text-fuchsia-500 hover:text-fuchsia-400 underline underline-offset-2 transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            .
+          </span>
 
           <div className="w-full mb-8">
             <div className="flex overflow-x-auto space-x-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent py-2">
