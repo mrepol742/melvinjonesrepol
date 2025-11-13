@@ -1,4 +1,5 @@
 import DisqusComments from "@/components/DisqusComments";
+import { fetchGitCommits } from "@/lib/github/fetchGitCommits";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -67,7 +68,13 @@ const Images = [
   "/images/webvium-11.jpg",
 ];
 
-export default function WebviumBrowser() {
+export default async function WebviumBrowser() {
+  const gitCommits = await fetchGitCommits({
+    owner: "webvium",
+    repo: "webvium",
+    limit: 10,
+  });
+
   const softwareApplication = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -221,6 +228,25 @@ export default function WebviumBrowser() {
                 />
               ))}
             </div>
+          </div>
+
+          <div className="mt-8">
+            <h3 className="text-2xl">Changelog</h3>
+            {gitCommits
+              ? gitCommits.map((commit, i) => (
+                  <div key={i} className="mt-2">
+                    <h5 className="font-bold">
+                      {new Date(commit.date).toLocaleString()}
+                    </h5>
+                    <p className="whitespace-pre-line">
+                      {commit.commit.replace(
+                        /(feat|chore|fix|docs|refactor|test|style|perf|ci|build|revert):\s*/i,
+                        "",
+                      )}
+                    </p>
+                  </div>
+                ))
+              : "Changelog is not available now."}
           </div>
 
           <div className="mt-8">
