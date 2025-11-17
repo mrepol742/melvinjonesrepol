@@ -13,19 +13,19 @@ export default function RecentGithubActivityWrapper({
 
   return (
     <div className="fixed bottom-4 left-4 w-70">
-      <div className="rounded-lg bg-white shadow-lg text-sm">
+      <div className="rounded-lg bg-gray-800 text-white shadow-lg text-sm">
         <div
           className="flex items-center justify-between px-4 py-2"
           onClick={() => setExpanded(!expanded)}
         >
-          <h2 className="text-base font-semibold text-black hidden md:block">
+          <h2 className="text-base font-semibold hidden md:block">
             Public Contributions
           </h2>
-          <h2 className="text-base font-semibold text-black block md:hidden">
+          <h2 className="text-base font-semibold block md:hidden">
             Contributions
           </h2>
           <button
-            className="ml-2 text-gray-500 hover:text-gray-700"
+            className="ml-2 text-white hover:text-gray-700"
             aria-label={expanded ? "Collapse" : "Expand"}
           >
             <FontAwesomeIcon

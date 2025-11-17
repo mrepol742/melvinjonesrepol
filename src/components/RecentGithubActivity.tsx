@@ -191,23 +191,23 @@ export default async function RecentGithubActivity() {
         events.map((event: any) => (
           <li
             key={event.id}
-            className="border-b border-gray-200 pb-2 last:border-b-0 last:pb-0 flex overflow-hidden"
+            className="border-b border-gray-700 pb-2 last:border-b-0 last:pb-0 flex overflow-hidden"
           >
-            <span className="font-medium text-gray-800">
+            <span className="font-medium text-white">
               {getEventType(event.type)}
             </span>
             <div className="ml-2">
               <a
-                className=" text-gray-600"
+                className=" text-white"
                 href={getEventUrl(event)}
                 target="_blank"
               >
                 {getEventDescription(event)}
               </a>
-              <div className="text-xs text-gray-500 break-words">
+              <div className="text-xs text-white/50 break-words">
                 {event.repo?.name || "unknown repo"}
               </div>
-              <div className="text-xs text-gray-500">
+              <div className="text-xs text-white/50">
                 {new Date(event.created_at).toLocaleString()}
               </div>
             </div>
