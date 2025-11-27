@@ -312,12 +312,7 @@ export default function Home() {
               .filter((project) => project.featured)
               .map((project, idx) => (
                 <div key={idx} data-aos="fade-up">
-                  <Link
-                    href={project.link || project.repo || "#"}
-                    className="no-underline"
-                  >
-                    <ProjectCard {...project} />
-                  </Link>
+                  <ProjectCard {...project} />
                 </div>
               ))}
           </div>

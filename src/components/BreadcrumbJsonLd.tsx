@@ -1,11 +1,16 @@
-"use client";
-
-import { usePathname } from "next/navigation";
+import Head from "next/head";
+import { headers } from "next/headers";
 
 const baseUrl = "https://www.melvinjonesrepol.com";
 
-const BreadcrumbJsonLd = () => {
-  const pathname = usePathname();
+export default async function BreadcrumbJsonLd() {
+  const h = await headers();
+
+  const pathname =
+    h.get("x-invoke-path") ||
+    h.get("x-pathname") ||
+    h.get("next-url") ||
+    "/";
 
   const pathParts = pathname.split("/").filter(Boolean);
 
@@ -34,11 +39,11 @@ const BreadcrumbJsonLd = () => {
   };
 
   return (
+     <Head>
     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
     />
+     </Head>
   );
-};
-
-export default BreadcrumbJsonLd;
+}

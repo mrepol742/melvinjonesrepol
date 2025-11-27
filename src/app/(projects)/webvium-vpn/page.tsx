@@ -150,11 +150,10 @@ export default function WebviumVPN() {
                 width="320"
                 height="240"
                 controls
-                preload="none"
                 className="rounded-lg hover:scale-99 transition-transform duration-200"
               >
                 <source
-                  src="/videos/Webvium VPN - Anonymous, Secured, Private and the fastest Virtual Private Network.mp4"
+                  src="/videos/webvium-vpn.mp4"
                   type="video/mp4"
                 />
                 Your browser does not support the video tag.
