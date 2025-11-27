@@ -1,3 +1,4 @@
+import HorizontalAdDisplayUnit from "@/components/ads/HorizontalAdDisplay";
 import DisqusComments from "@/components/DisqusComments";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -175,6 +176,8 @@ export default function PointOfSale() {
               </Link>
             </div>
           </div>
+
+          <HorizontalAdDisplayUnit />
 
           <div className="w-full mb-8">
             <div className="flex overflow-x-auto space-x-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent py-2">

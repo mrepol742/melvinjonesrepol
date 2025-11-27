@@ -5,6 +5,7 @@ import DisqusComments from "@/components/DisqusComments";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWarning } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faTelegram } from "@fortawesome/free-brands-svg-icons";
+import HorizontalAdDisplayUnit from "@/components/ads/HorizontalAdDisplay";
 
 export const metadata: Metadata = {
   title: "Canis Chatbot - Melvin Jones Repol",
@@ -155,6 +156,8 @@ export default function CanisChatbot() {
               resulting from the use of this software. Use at your own risk.
             </div>
           </div>
+
+          <HorizontalAdDisplayUnit />
 
           <div className="w-full mb-8">
             <div className="flex overflow-x-auto space-x-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent py-2">

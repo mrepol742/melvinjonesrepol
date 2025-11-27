@@ -4,6 +4,7 @@ import Link from "next/link";
 import DisqusComments from "@/components/DisqusComments";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import HorizontalAdDisplayUnit from "@/components/ads/HorizontalAdDisplay";
 
 export const metadata: Metadata = {
   title: "Axleshift Core 1 - Melvin Jones Repol",
@@ -159,6 +160,9 @@ export default async function Axleshift() {
               </Link>
             </div>
           </div>
+
+          <HorizontalAdDisplayUnit />
+
           <div className="w-full mb-8">
             <div className="flex overflow-x-auto space-x-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent py-2">
               {Images.map((image, index) => (

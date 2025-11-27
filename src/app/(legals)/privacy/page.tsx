@@ -83,21 +83,20 @@ export default function Privacy() {
               <strong>LiveChat.ai:</strong> Data is used to provide real-time
               chat support. Please review LiveChat.ai’s privacy policy for
               details.
-              <br />
-              Your data is never sold or used for marketing purposes by this
-              site.
+              <strong>Google AdSense:</strong> Data is used to deliver
+              personalized or non-personalized advertisements and measure ad
+              performance. Please review Google’s privacy policy for details.
             </p>
 
             <h3 className="mt-4 font-semibold">3. Data Protection</h3>
             <p>
-              Third-party services (Disqus, LiveChat.ai) are responsible for
+              Third-party services (Disqus, LiveChat.ai, Google Adsense) are responsible for
               securing data they collect.
             </p>
 
             <h3 className="mt-4 font-semibold">4. Third-Party Services</h3>
             <p>
-              This website integrates with third-party services (Disqus and
-              LiveChat.ai). Your interactions with these services are governed
+              This website integrates with third-party services (Disqus, LiveChat.ai and Google Adsense). Your interactions with these services are governed
               by their respective privacy policies:
             </p>
             <ul className="list-disc list-inside ml-4">
@@ -131,14 +130,34 @@ export default function Privacy() {
                   LiveChat.ai Privacy Policy
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://policies.google.com/privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline text-blue-600"
+                >
+                  Google Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://adssettings.google.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline text-blue-600"
+                >
+                  Google Ad Personalization Settings
+                </a>
+              </li>
             </ul>
 
             <h3 className="mt-4 font-semibold">4. Your Rights</h3>
             <p>
               You may request access to, correction of, or deletion of your
               personal data collected via the Contact Me page at any time by
-              contacting me through the website. For data collected by Disqus or
-              LiveChat.ai, please contact those providers directly.
+              contacting me through the website. For data collected by Disqus,
+              LiveChat.ai or Google Adsense, please contact those providers directly.
             </p>
 
             <h3 className="mt-4 font-semibold">5. Changes to This Policy</h3>
@@ -148,7 +167,7 @@ export default function Privacy() {
             </p>
           </div>
         </div>
-      </section>
-    </main>
+      </section >
+    </main >
   );
 }

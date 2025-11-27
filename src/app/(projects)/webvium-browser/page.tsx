@@ -1,3 +1,4 @@
+import HorizontalAdDisplayUnit from "@/components/ads/HorizontalAdDisplay";
 import DisqusComments from "@/components/DisqusComments";
 import { fetchGitCommits } from "@/lib/github/fetchGitCommits";
 import { Metadata } from "next";
@@ -84,7 +85,7 @@ export default async function WebviumBrowser() {
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.5",
-      reviewCount: "1000",
+      reviewCount: "1079",
     },
     offers: {
       "@type": "Offer",
@@ -202,6 +203,8 @@ export default async function WebviumBrowser() {
             .
           </span>
 
+          <HorizontalAdDisplayUnit />
+
           <div className="w-full mb-8">
             <div className="flex overflow-x-auto space-x-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent py-2">
               <video
@@ -265,6 +268,8 @@ export default async function WebviumBrowser() {
               ))}
             </div>
           </div>
+
+          <HorizontalAdDisplayUnit />
 
           <div className="mt-8">
             <h3 className="text-2xl">Comments</h3>

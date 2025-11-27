@@ -1,3 +1,4 @@
+import HorizontalAdDisplayUnit from "@/components/ads/HorizontalAdDisplay";
 import DisqusComments from "@/components/DisqusComments";
 import { Metadata } from "next";
 import Image from "next/image";
@@ -187,6 +188,8 @@ export default function UlishaStore() {
               </Link>
             </div>
           </div>
+
+          <HorizontalAdDisplayUnit />
 
           <div className="w-full mb-8">
             <div className="flex overflow-x-auto space-x-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent py-2">
