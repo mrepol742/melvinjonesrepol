@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,6 +8,8 @@ import NeofetchTerminal from "@/components/Neofetch";
 import FaceEyes from "@/components/FaceEyes";
 import Services from "@/lib/serviceList";
 import ServicesCarousel from "@/components/ServicesCarousel";
+import { fetchSteamLibrary, GameType } from "@/lib/steam/library";
+import MostPlayedGames from "@/components/MostPlayedGames";
 
 const skills = [
   "I apply engineering principles to design, develop, test, and maintain reliable software systems. My focus is on creating efficient solutions that meet customer needs, using modern tools and technologies to ensure software quality and performance.",
@@ -65,6 +65,17 @@ export default function Home() {
     url: "https://www.melvinjonesrepol.com",
   };
 
+  const newReleases = [
+    {
+      title: "Webvium 3.0 is Here!",
+      description:
+        "Refractored, redesigned, and complete code overhaul. Bringing performance improvements, UI enchancements, features and much more.",
+      link: "/webvium-browser",
+      featured: true,
+      languages: ["Java"],
+    },
+  ];
+
   return (
     <>
       <script
@@ -77,6 +88,98 @@ export default function Home() {
       />
       <main className="p-3 md:p-8">
         <section>
+          <h4 className="text-3xl my-8 text-amber-500" data-aos="fade-up">
+            New Releases
+          </h4>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+            {newReleases.map((project, idx) => (
+              <div key={idx} data-aos="fade-up">
+                <ProjectCard {...project} />
+              </div>
+            ))}
+          </div>
+
+          <h4 className="text-3xl my-8 text-amber-500" data-aos="fade-up">
+            Featured Projects
+          </h4>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+            {projects
+              .filter((project) => project.featured)
+              .map((project, idx) => (
+                <div key={idx} data-aos="fade-up">
+                  <ProjectCard {...project} />
+                </div>
+              ))}
+          </div>
+
+          <h4 className="text-3xl my-8 text-amber-500" data-aos="fade-up">
+            Most Played Games
+          </h4>
+          <MostPlayedGames />
+
+          {/*
+
+          <ServicesCarousel Services={Services} />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {skills.map((skill, index) => (
+              <div
+                key={index}
+                className={`p-6 rounded-xl ${
+                  textColors[index % textColors.length]
+                } ${
+                  backgroundColors[index % backgroundColors.length]
+                } backdrop-blur`}
+                data-aos="fade-up"
+              >
+                <p className="text-lg">{skill}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-green-300/10 rounded block lg:flex flex-column mt-12">
+            <div>
+              <FaceEyes />
+            </div>
+            <div>
+              <div className="text-3xl p-5" data-aos="fade-up">
+                <h4>
+                  I take{" "}
+                  <span className="font-bold text-green-300">action</span>. I
+                  embrace <span className="underline">failure</span>. I grow{" "}
+                  <b>wiser</b>.
+                </h4>
+              </div>
+
+              <div className="p-5">
+                <h4 className="leading-relaxed" data-aos="fade-right">
+                  Every build I undertake is guided by a few core principles:
+                </h4>
+                <ul className="list-disc list-inside my-3 text-left">
+                  <li data-aos="fade-right" data-aos-delay="100">
+                    <strong>KISS</strong> — Keep It Simple, Stupid.
+                  </li>
+                  <li data-aos="fade-right" data-aos-delay="200">
+                    <strong>YAGNI</strong> — You Aren&apos;t Gonna Need It.
+                  </li>
+                  <li data-aos="fade-right" data-aos-delay="300">
+                    <strong>DRY</strong> — Don&apos;t Repeat Yourself.
+                  </li>
+                </ul>
+                <h4
+                  className="leading-relaxed mt-3"
+                  data-aos="fade-right"
+                  data-aos-delay="400"
+                >
+                  If you are able to clearly write down your problem, then it is
+                  already half solved.
+                  <br />
+                  <em>— Kidlin&apos;s Law</em>
+                </h4>
+              </div>
+            </div>
+          </div>*/}
+
           <div className="flex flex-col-reverse md:flex-row items-center md:items-start md:justify-between gap-8">
             <div className="flex-1">
               <h1
@@ -84,8 +187,15 @@ export default function Home() {
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
-                I&apos;m Melvin Jones Gallano Repol
+                Hi, how are you?
               </h1>
+              <h2
+                className="text-2xl font-bold"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                I&apos;m Melvin Jones Repol
+              </h2>
               <p
                 data-aos="fade-up"
                 data-aos-delay="200"
@@ -155,85 +265,6 @@ export default function Home() {
             </div>
           </div>
 
-          <ServicesCarousel Services={Services} />
-
-          <div className="p-3 m-5 rounded-5 flex-1 bg-green-200/50">
-            <h2 className="text-lg font-semibold">
-              🚀 Webvium Browser Updates
-            </h2>
-            <p className="text-sm mt-1">
-              Webvium continues to evolve — new performance, features, design
-              updates are live! Check out what’s new below. It&apos;s been
-              almost a 3 years since the very last major update of Webvium.
-              Webvium v3.x.x is now here a much better version of itself.
-            </p>
-            <Link
-              href="/webvium-browser"
-              className="inline-block mt-3 text-sm font-medium underline hover:text-blue-200 transition"
-            >
-              View Latest Updates →
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {skills.map((skill, index) => (
-              <div
-                key={index}
-                className={`p-6 rounded-xl ${
-                  textColors[index % textColors.length]
-                } ${
-                  backgroundColors[index % backgroundColors.length]
-                } backdrop-blur`}
-                data-aos="fade-up"
-              >
-                <p className="text-lg">{skill}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="bg-green-300/10 rounded block lg:flex flex-column mt-12">
-            <div>
-              <FaceEyes />
-            </div>
-            <div>
-              <div className="text-3xl p-5" data-aos="fade-up">
-                <h4>
-                  I take{" "}
-                  <span className="font-bold text-green-300">action</span>. I
-                  embrace <span className="underline">failure</span>. I grow{" "}
-                  <b>wiser</b>.
-                </h4>
-              </div>
-
-              <div className="p-5">
-                <h4 className="leading-relaxed" data-aos="fade-right">
-                  Every build I undertake is guided by a few core principles:
-                </h4>
-                <ul className="list-disc list-inside my-3 text-left">
-                  <li data-aos="fade-right" data-aos-delay="100">
-                    <strong>KISS</strong> — Keep It Simple, Stupid.
-                  </li>
-                  <li data-aos="fade-right" data-aos-delay="200">
-                    <strong>YAGNI</strong> — You Aren&apos;t Gonna Need It.
-                  </li>
-                  <li data-aos="fade-right" data-aos-delay="300">
-                    <strong>DRY</strong> — Don&apos;t Repeat Yourself.
-                  </li>
-                </ul>
-                <h4
-                  className="leading-relaxed mt-3"
-                  data-aos="fade-right"
-                  data-aos-delay="400"
-                >
-                  If you are able to clearly write down your problem, then it is
-                  already half solved.
-                  <br />
-                  <em>— Kidlin&apos;s Law</em>
-                </h4>
-              </div>
-            </div>
-          </div>
-
           <div className="block lg:flex flex-column gap-5">
             <div className="mt-8 bg-orange-400/10 rounded">
               <div className="p-5">
@@ -299,22 +330,6 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-          </div>
-
-          <h4
-            className="text-center text-3xl my-8 text-amber-500"
-            data-aos="fade-up"
-          >
-            Featured Projects
-          </h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            {projects
-              .filter((project) => project.featured)
-              .map((project, idx) => (
-                <div key={idx} data-aos="fade-up">
-                  <ProjectCard {...project} />
-                </div>
-              ))}
           </div>
 
           <NeofetchTerminal />
