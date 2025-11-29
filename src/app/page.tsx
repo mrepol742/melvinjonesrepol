@@ -9,7 +9,8 @@ import FaceEyes from "@/components/FaceEyes";
 import Services from "@/lib/serviceList";
 import ServicesCarousel from "@/components/ServicesCarousel";
 import { fetchSteamLibrary, GameType } from "@/lib/steam/library";
-import MostPlayedGames from "@/components/MostPlayedGames";
+import SteamSection from "@/components/home/SteamSection";
+import { WakatimeSection } from "@/components/home/WakatimeSection";
 
 const skills = [
   "I apply engineering principles to design, develop, test, and maintain reliable software systems. My focus is on creating efficient solutions that meet customer needs, using modern tools and technologies to ensure software quality and performance.",
@@ -113,9 +114,14 @@ export default function Home() {
           </div>
 
           <h4 className="text-3xl my-8 text-amber-500" data-aos="fade-up">
+            Programming Stats
+          </h4>
+          <WakatimeSection />
+
+          <h4 className="text-3xl my-8 text-amber-500" data-aos="fade-up">
             Most Played Games
           </h4>
-          <MostPlayedGames />
+          <SteamSection />
 
           {/*
 
@@ -180,22 +186,18 @@ export default function Home() {
             </div>
           </div>*/}
 
-          <div className="flex flex-col-reverse md:flex-row items-center md:items-start md:justify-between gap-8">
+          <div className="my-8 flex flex-col-reverse md:flex-row items-center md:items-start md:justify-between gap-8">
             <div className="flex-1">
+              <h4 className="text-3xl my-8 text-amber-500" data-aos="fade-up">
+                About me
+              </h4>
               <h1
                 className="text-4xl font-black"
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
-                Hi, how are you?
+                Melvin Jones Repol
               </h1>
-              <h2
-                className="text-2xl font-bold"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                I&apos;m Melvin Jones Repol
-              </h2>
               <p
                 data-aos="fade-up"
                 data-aos-delay="200"

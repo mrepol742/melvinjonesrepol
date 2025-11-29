@@ -1,7 +1,7 @@
 import { fetchSteamLibrary, GameType } from "@/lib/steam/library";
-import GameCard from "./GameCard";
+import GameCard from "../GameCard";
 
-export default async function MostPlayedGames() {
+export default async function SteamSection() {
   const steamActivities: GameType[] = await fetchSteamLibrary();
   const mostPlayedGames = [...steamActivities].sort(
     (a, b) => b.playtime_forever - a.playtime_forever
