@@ -88,10 +88,10 @@ export default function WebviumVPN() {
     description:
       "Inspired from Webvium, Webvium VPN is a lightweight android VPN app focuses in speed, simplicity, security and privacy.",
     thumbnailUrl: "https://www.melvinjonesrepol.com/images/webviumvpn-1.jpg",
-    uploadDate: "2025-08-05T08:00:00+08:00",
+    uploadDate: "2025-12-01T08:00:00+08:00",
     duration: "PT23S",
     contentUrl:
-      "https://www.melvinjonesrepol.com/videos/Webvium%20VPN%20-%20Anonymous,%20Secured,%20Private%20and%20the%20fastest%20Virtual%20Private%20Network.mp4",
+      "https://www.melvinjonesrepol.com/videos/webvium-vpn.mp4",
     interactionStatistic: {
       "@type": "InteractionCounter",
       interactionType: {

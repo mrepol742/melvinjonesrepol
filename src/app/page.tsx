@@ -66,7 +66,21 @@ export default function Home() {
     url: "https://www.melvinjonesrepol.com",
   };
 
-  const newReleases = [
+  const updates = [
+    {
+      title: "Updates to Webvium Legals",
+      description: "Please read the updated Privacy Policy & Terms of Service!",
+      link: "/webvium-browser#legals",
+      featured: true,
+      languages: ["Java"],
+    },
+    {
+      title: "Homepage Revamp & Ads",
+      description:
+        "Redesigned and modernized the homepage for a smoother user experience, a minor ad(s) view will be displayed on project section.",
+      featured: true,
+      languages: ["TypeScript"],
+    },
     {
       title: "Webvium 3.0 is Here!",
       description:
@@ -74,6 +88,21 @@ export default function Home() {
       link: "/webvium-browser",
       featured: true,
       languages: ["Java"],
+    },
+    {
+      title: "Generate Portolio using Wakatime Data",
+      description:
+        "Easily build your own portfolio, flex your coding skills and easy to deploy. All you just need is Wakatime API Key.",
+      link: "https://github.com/mrepol742/wakatime-profile",
+      featured: true,
+      languages: ["TypeScript"],
+    },
+    {
+      title: "Deploy your own Shortlink App!",
+      description: "Get your link, shorteeeeeen!",
+      link: "https://github.com/mrepol742/shortlink-app",
+      featured: true,
+      languages: ["TypeScript"],
     },
   ];
 
@@ -90,10 +119,10 @@ export default function Home() {
       <main className="p-3 md:p-8">
         <section>
           <h4 className="text-3xl my-8 text-amber-500" data-aos="fade-up">
-            New Releases
+            Updates
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            {newReleases.map((project, idx) => (
+            {updates.map((project, idx) => (
               <div key={idx} data-aos="fade-up">
                 <ProjectCard {...project} />
               </div>

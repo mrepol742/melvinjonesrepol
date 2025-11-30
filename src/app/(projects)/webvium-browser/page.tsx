@@ -106,10 +106,9 @@ export default async function WebviumBrowser() {
     description:
       "A Project that aims to be the lightest, fastest, secured, private and full-featured android web browser. Programmed and design from Scratch.",
     thumbnailUrl: "https://www.melvinjonesrepol.com/images/webvium-1.jpg",
-    uploadDate: "2025-08-05T08:00:00+08:00",
+    uploadDate: "2025-12-01T08:00:00+08:00",
     duration: "PT27S",
-    contentUrl:
-      "https://www.melvinjonesrepol.com/videos/Webvium%20-%20Lightweight,%20Fast,%20Material%20and%20Full-Featured%20Android%20Web%20Browser.mp4",
+    contentUrl: "https://www.melvinjonesrepol.com/videos/webvium-browser.mp4",
     interactionStatistic: {
       "@type": "InteractionCounter",
       interactionType: {
@@ -192,16 +191,6 @@ export default async function WebviumBrowser() {
               </Link>
             </div>
           </div>
-          <span className="text-sm">
-            We value your privacy. Please review our{" "}
-            <Link
-              href="/webvium-browser/privacy-policy"
-              className="text-fuchsia-500 hover:text-fuchsia-400 underline underline-offset-2 transition-colors"
-            >
-              Privacy Policy
-            </Link>
-            .
-          </span>
 
           <HorizontalAdDisplayUnit />
 
@@ -214,10 +203,7 @@ export default async function WebviumBrowser() {
                 preload="none"
                 className="rounded-lg hover:scale-99 transition-transform duration-200"
               >
-                <source
-                  src="/videos/webvium-browser.mp4"
-                  type="video/mp4"
-                />
+                <source src="/videos/webvium-browser.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               {Images.map((image, index) => (
@@ -235,21 +221,30 @@ export default async function WebviumBrowser() {
 
           <div className="mt-8">
             <h3 className="text-2xl">Changelog</h3>
-            {gitCommits
-              ? gitCommits.map((commit, i) => (
-                  <div key={i} className="mt-2">
+
+            {gitCommits ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                {gitCommits.map((commit, i) => (
+                  <div
+                    key={i}
+                    className="bg-black/10 backdrop-blur rounded-xl p-6 shadow hover:shadow-lg transition"
+                    data-aos="fade-up"
+                  >
                     <h5 className="font-bold">
                       {new Date(commit.date).toLocaleString()}
                     </h5>
-                    <p className="whitespace-pre-line">
+                    <p className="whitespace-pre-line mt-1">
                       {commit.commit.replace(
                         /(feat|chore|fix|docs|refactor|test|style|perf|ci|build|revert):\s*/i,
                         "",
                       )}
                     </p>
                   </div>
-                ))
-              : "Changelog is not available now."}
+                ))}
+              </div>
+            ) : (
+              <p className="mt-2">Changelog is not available now.</p>
+            )}
           </div>
 
           <div className="mt-8">
@@ -266,6 +261,45 @@ export default async function WebviumBrowser() {
                   <p>{feature.description}</p>
                 </div>
               ))}
+            </div>
+          </div>
+
+          <div className="mt-8" id="legals">
+            <h3 className="text-2xl font-semibold mb-4">Legal</h3>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div
+                className="bg-black/10 backdrop-blur rounded-xl p-6 shadow hover:shadow-lg transition"
+                data-aos="fade-up"
+              >
+                <h4 className="text-xl font-semibold mb-2">Privacy Policy</h4>
+                <p className="mb-4">
+                  Learn how Webvium Browser handles your data and protects your
+                  privacy.
+                </p>
+                <Link
+                  href="/webvium-browser/privacy-policy"
+                  className="text-blue-600 hover:underline font-medium"
+                >
+                  Read Privacy Policy →
+                </Link>
+              </div>
+
+              <div
+                className="bg-black/10 backdrop-blur rounded-xl p-6 shadow hover:shadow-lg transition"
+                data-aos="fade-up"
+              >
+                <h4 className="text-xl font-semibold mb-2">Terms of Service</h4>
+                <p className="mb-4">
+                  Understand the rules and conditions for using Webvium Browser.
+                </p>
+                <Link
+                  href="/webvium-browser/terms-of-service"
+                  className="text-blue-600 hover:underline font-medium"
+                >
+                  Read Terms of Service →
+                </Link>
+              </div>
             </div>
           </div>
 
