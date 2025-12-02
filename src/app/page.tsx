@@ -90,6 +90,14 @@ export default function Home() {
       languages: ["Java"],
     },
     {
+      title: "Appstore",
+      description:
+        "Due to legals issues webvium is no longer available or up to date with Galaxy and Amazon Appstore. Webvium is available to download officially here and in Uptodown.com.",
+      link: "https://webvium.en.uptodown.com/android",
+      featured: true,
+      languages: ["Java"],
+    },
+    {
       title: "Generate Portolio using Wakatime Data",
       description:
         "Easily build your own portfolio, flex your coding skills and easy to deploy. All you just need is Wakatime API Key.",
