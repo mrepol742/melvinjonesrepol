@@ -68,6 +68,14 @@ export default function Home() {
 
   const updates = [
     {
+      title: "Learning Rust",
+      description:
+        "I'm currently exploring Rust via PACT Advanced Rust Programming and Real World Applications via Coursera. You might see future projects of mine coded in Rust. Hope so...",
+      repo: "https://github.com/mrepol742/learning_rust",
+      featured: true,
+      languages: ["Rust"],
+    },
+    {
       title: "Updates to Webvium Legals",
       description: "Please read the updated Privacy Policy & Terms of Service!",
       link: "/webvium-browser#legals",
