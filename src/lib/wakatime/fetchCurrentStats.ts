@@ -39,7 +39,7 @@ export async function fetchCurrentStats(): Promise<Stat | undefined> {
 
     const res = await fetch(
       `https://wakatime.com/api/v1/users/current/stats/last_7_days?api_key=${WAKATIME_API_KEY}`,
-      { next: { revalidate: 86400 } },
+      { next: { revalidate: 10800 } }, // 3hours
     );
 
     if (!res.ok) {
