@@ -115,7 +115,7 @@ export default function WebviumVPN() {
           __html: JSON.stringify(videoObject),
         }}
       />
-      <main className="p-3 md:p-8">
+      <main className="my-18 p-3 md:p-8">
         <section>
           <div className="block md:flex items-center mb-4">
             <Image

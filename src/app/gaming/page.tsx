@@ -63,7 +63,7 @@ export default async function Gaming({
   );
 
   return (
-    <main className="p-3 md:p-8">
+    <main className="my-18 p-3 md:p-8">
       <section>
         <h1 className="text-2xl font-semibold">Gaming</h1>
         <p>Here are some of my gaming achievements and activities.</p>

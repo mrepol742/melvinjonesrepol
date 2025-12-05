@@ -25,7 +25,7 @@ export default function IPAddress() {
       } catch (err) {
         console.error("Error fetching IP address:", err);
         toast.error(
-          err instanceof Error ? err.message : "Failed to fetch IP address"
+          err instanceof Error ? err.message : "Failed to fetch IP address",
         );
       }
     };
@@ -34,19 +34,21 @@ export default function IPAddress() {
   }, []);
 
   return (
-    <div style={{ padding: "2rem", fontFamily: "sans-serif" }}>
-      <h1 className="text-2xl font-bold">IP Address</h1>
-      <p className="mb-4">
-        This tool will allow you to check your IP address and related
-        information.
-      </p>
+    <main className="my-18 p-3 md:p-8">
+      <section>
+        <h1 className="text-2xl font-bold">IP Address</h1>
+        <p className="mb-4">
+          This tool will allow you to check your IP address and related
+          information.
+        </p>
 
-      {ip && (
-        <div className="mt-5 text-center">
-          <h2 className="font-bold text-4xl">{ip}</h2>
-          {version}
-        </div>
-      )}
-    </div>
+        {ip && (
+          <div className="mt-5 text-center">
+            <h2 className="font-bold text-4xl">{ip}</h2>
+            {version}
+          </div>
+        )}
+      </section>
+    </main>
   );
 }

@@ -1,6 +1,6 @@
 export default function BookADemo() {
   return (
-    <main className="p-8 max-w-2xl mx-auto">
+    <main className="my-18 p-8 max-w-2xl mx-auto">
       <section>
         <h1 className="text-center text-4xl font-bold mb-4" data-aos="fade-up">
           Book a Demo

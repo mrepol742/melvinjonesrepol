@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function WebviumTermsOfService() {
   return (
-    <main className="p-4 md:p-10 max-w-3xl mx-auto">
+    <main className="my-18 p-4 md:p-10 max-w-3xl mx-auto">
       <section className="space-y-6">
         <h1 className="text-3xl font-bold">
           Terms of Service for Webvium Browser

@@ -11,6 +11,8 @@ import {
   faSteam,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
+import Script from "next/script";
+import Image from "next/image";
 
 export default function Footer() {
   const { theme, toggleTheme } = useTheme();
@@ -18,7 +20,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-200 py-10 border-t border-gray-800">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-8">
+        <div className="flex flex-col lg:flex-row md:justify-between md:items-start gap-8">
           {/* Logo & Description */}
           <div className="mb-6 md:mb-0">
             <span className="text-2xl font-bold bg-gradient-to-tr from-violet-500 via-yellow-300 to-green-400 bg-clip-text text-transparent animate-gradient-shift">
@@ -28,7 +30,7 @@ export default function Footer() {
               Building modern software experiences with passion and precision.
               Striving for excellence, one project at a time.
             </p>
-            <small className="block mt-4 text-xs text-green-400">
+            <small className="block mt-4 text-xs text-green-400 mb-3">
               This site is Open Source.{" "}
               <Link
                 href="https://github.com/mrepol742/melvinjonesrepol.com"
@@ -38,6 +40,64 @@ export default function Footer() {
                 View on GitHub
               </Link>
             </small>
+            <h4 className="text-sm font-semibold mb-2 text-white">Follow Us</h4>
+            <div className="flex space-x-3 mb-4">
+              <Link
+                href="https://facebook.com/melvinjonesrepol"
+                target="_blank"
+                aria-label="Facebook"
+              >
+                <FontAwesomeIcon
+                  icon={faFacebook}
+                  size="lg"
+                  className="hover:text-red-500 transition"
+                />
+              </Link>
+              <Link
+                href="https://github.com/mrepol742"
+                target="_blank"
+                aria-label="GitHub"
+              >
+                <FontAwesomeIcon
+                  icon={faGithub}
+                  size="lg"
+                  className="hover:text-red-500 transition"
+                />
+              </Link>
+              <Link
+                href="https://linkedin.com/in/mrepol742"
+                target="_blank"
+                aria-label="LinkedIn"
+              >
+                <FontAwesomeIcon
+                  icon={faLinkedin}
+                  size="lg"
+                  className="hover:text-red-500 transition"
+                />
+              </Link>
+              <Link
+                href="https://youtube.com/@mrepol742"
+                target="_blank"
+                aria-label="YouTube"
+              >
+                <FontAwesomeIcon
+                  icon={faYoutube}
+                  size="lg"
+                  className="hover:text-red-500 transition"
+                />
+              </Link>
+              <Link
+                href="https://steamcommunity.com/id/mrepol742"
+                target="_blank"
+                aria-label="Steam"
+              >
+                <FontAwesomeIcon
+                  icon={faSteam}
+                  size="lg"
+                  className="hover:text-red-500 transition"
+                />
+              </Link>
+            </div>
           </div>
           {/* Links */}
           <div>
@@ -261,77 +321,46 @@ export default function Footer() {
                 {theme === "dark" ? "Switch to Light" : "Switch to Dark"}
               </button>
             </div>
-            <h4 className="text-sm font-semibold mb-2 text-white">Follow Us</h4>
-            <div className="flex space-x-3">
-              <Link
-                href="https://facebook.com/melvinjonesrepol"
-                target="_blank"
-                aria-label="Facebook"
-              >
-                <FontAwesomeIcon
-                  icon={faFacebook}
-                  size="lg"
-                  className="hover:text-red-500 transition"
-                />
-              </Link>
-              <Link
-                href="https://github.com/mrepol742"
-                target="_blank"
-                aria-label="GitHub"
-              >
-                <FontAwesomeIcon
-                  icon={faGithub}
-                  size="lg"
-                  className="hover:text-red-500 transition"
-                />
-              </Link>
-              <Link
-                href="https://linkedin.com/in/mrepol742"
-                target="_blank"
-                aria-label="LinkedIn"
-              >
-                <FontAwesomeIcon
-                  icon={faLinkedin}
-                  size="lg"
-                  className="hover:text-red-500 transition"
-                />
-              </Link>
-              <Link
-                href="https://youtube.com/@mrepol742"
-                target="_blank"
-                aria-label="YouTube"
-              >
-                <FontAwesomeIcon
-                  icon={faYoutube}
-                  size="lg"
-                  className="hover:text-red-500 transition"
-                />
-              </Link>
-              <Link
-                href="https://steamcommunity.com/id/mrepol742"
-                target="_blank"
-                aria-label="Steam"
-              >
-                <FontAwesomeIcon
-                  icon={faSteam}
-                  size="lg"
-                  className="hover:text-red-500 transition"
-                />
-              </Link>
-            </div>
-            <div className="my-4 border flex justify-center py-2 hover:white/20">
+            <h4 className="text-sm font-semibold mb-2 text-white">My App</h4>
+            <div className="flex mb-4">
               <Link
                 href="https://released.melvinjonesrepol.com/android/melvinjones-app.apk"
                 aria-label="Melvin Jones App"
+                className="px-3 py-1 bg-gray-700 rounded hover:bg-orange-500 transition-colors"
               >
-                <FontAwesomeIcon
-                  icon={faAndroid}
-                  size="lg"
-                  className="hover:text-red-500 transition me-3"
-                />
-                Download App
+                <FontAwesomeIcon icon={faAndroid} size="lg" className="me-3" />
+                Download
               </Link>
             </div>
+            <h4 className="text-sm font-semibold mb-2 text-white">
+              Sponsor/Support
+            </h4>
+            <iframe
+              src="https://github.com/sponsors/mrepol742/button"
+              title="Sponsor mrepol742"
+              height="32"
+              className="mb-2"
+              width="133"
+              style={{ border: 0, borderRadius: "6px" }}
+            ></iframe>
+            <Link href="https://ko-fi.com/F1F6EHA8F" target="_blank">
+              <Image
+                height="36"
+                width="133"
+                style={{ border: "0px" }}
+                src="https://storage.ko-fi.com/cdn/kofi6.png?v=6"
+                className="mb-2"
+                alt="Buy Me a Coffee at ko-fi.com"
+              />
+            </Link>
+            <Link href="https://www.buymeacoffee.com/mrepol742">
+              <Image
+                alt="Buy me a coffee mrepol742"
+                height="36"
+                width="133"
+                src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=mrepol742&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff"
+              />
+            </Link>
           </div>
         </div>
         <div className="mt-10 border-t border-gray-800 pt-6 text-center text-xs text-gray-300">

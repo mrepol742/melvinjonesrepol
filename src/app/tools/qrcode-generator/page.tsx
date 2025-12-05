@@ -18,32 +18,41 @@ export default function QRCodeGenerator() {
   };
 
   return (
-    <div style={{ padding: "2rem", fontFamily: "sans-serif" }}>
-      <h1>QR Code Generator</h1>
-      <p>This tool will allow you to generate QR codes for any URL or text.</p>
+    <main className="my-18 p-3 md:p-8">
+      <section>
+        <h1 className="text-2xl font-bold">QR Code Generator</h1>
+        <p>
+          This tool will allow you to generate QR codes for any URL or text.
+        </p>
 
-      <form onSubmit={handleGenerate} style={{ marginBottom: "1rem" }}>
-        <input
-          type="text"
-          placeholder="Enter URL or text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          style={{ padding: "0.5rem", width: "300px" }}
-        />
-        <button
-          type="submit"
-          style={{ marginLeft: "1rem", padding: "0.5rem 1rem" }}
-        >
-          Generate
-        </button>
-      </form>
+        <form onSubmit={handleGenerate} style={{ marginBottom: "1rem" }}>
+          <input
+            type="text"
+            placeholder="Enter URL or text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            style={{ padding: "0.5rem", width: "300px" }}
+          />
+          <button
+            type="submit"
+            style={{ marginLeft: "1rem", padding: "0.5rem 1rem" }}
+          >
+            Generate
+          </button>
+        </form>
 
-      {qrUrl && (
-        <div style={{ marginTop: "1rem" }}>
-          <h3>Your QR Code:</h3>
-          <Image src={qrUrl} alt="Generated QR Code" width={150} height={150} />
-        </div>
-      )}
-    </div>
+        {qrUrl && (
+          <div style={{ marginTop: "1rem" }}>
+            <h3>Your QR Code:</h3>
+            <Image
+              src={qrUrl}
+              alt="Generated QR Code"
+              width={150}
+              height={150}
+            />
+          </div>
+        )}
+      </section>
+    </main>
   );
 }

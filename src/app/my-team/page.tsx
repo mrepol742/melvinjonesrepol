@@ -51,7 +51,7 @@ export const metadata: Metadata = {
 
 export default function MyTeam() {
   return (
-    <main className="p-3 md:p-8">
+    <main className="my-18 p-3 md:p-8">
       <section>
         <h1 className="text-center text-2xl font-semibold" data-aos="fade-up">
           My Team

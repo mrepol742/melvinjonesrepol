@@ -87,7 +87,7 @@ export default function Certificates() {
   const [query, setQuery] = useState("");
 
   return (
-    <main className="p-3 md:p-8">
+    <main className="my-18 p-3 md:p-8">
       <section>
         <h1 className="text-2xl font-semibold">
           My Certificates

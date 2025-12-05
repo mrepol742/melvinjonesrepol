@@ -134,8 +134,70 @@ export default function Home() {
       />
       <main className="p-3 md:p-8">
         <section>
-          <h4 className="text-3xl my-8 text-amber-500" data-aos="fade-up">
-            Updates
+          <div className="min-h-screen flex flex-col py-[-100] items-center justify-center text-center">
+            <div className="mb-10 w-64 h-64 rounded-full bg-gradient-to-tr from-violet-500 via-yellow-300 to-green-400 animate-gradient-shift flex items-center justify-center bg-opacity-60 backdrop-blur-md hover:scale-98 transition-transform duration-300">
+              <Image
+                src="/images/melvinjonesrepol.transparent.png"
+                alt="Hero Image"
+                className="w-60 h-60 object-cover rounded-full border-4 border-white shadow-lg"
+                width={240}
+                height={240}
+              />
+            </div>
+            <h1
+              className="text-5xl font-black mb-2"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              Melvin Jones Repol
+            </h1>
+            <p
+              className="max-w-lg text-2xl mb-5"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              I specialize in building robust, scalable software solutions that
+              solve real-world problems. With a passion for technology and a
+              commitment to excellence, I bring ideas to life through code.
+            </p>
+
+            <div>
+              <Link
+                href="/contact-me"
+                data-aos="fade-right"
+                data-aos-delay="350"
+              >
+                <button
+                  className="uppercase text-sm relative bg-orange-400 px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
+                  before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-orange-600 before:rounded-b-lg
+                  after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-orange-600 after:rounded-r-lg"
+                  style={{ boxShadow: "1px 1px 0 0 #ea580c" }}
+                >
+                  Hire me
+                </button>
+              </Link>
+              <Link
+                href="mailto:mrepol742@gmail.com"
+                data-aos="fade-right"
+                data-aos-delay="400"
+              >
+                <button
+                  className="uppercase text-sm relative bg-gray-800 text-white px-7 py-4 mt-3 ml-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
+                  before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-gray-900 before:rounded-b-lg
+                  after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-gray-900 after:rounded-r-lg"
+                  style={{ boxShadow: "1px 1px 0 0 #111827" }}
+                >
+                  mrepol742@gmail.com
+                </button>
+              </Link>
+            </div>
+          </div>
+
+          <h4
+            className="text-center text-3xl my-8 text-amber-500"
+            data-aos="fade-up"
+          >
+            New Updates
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {updates.map((project, idx) => (
@@ -145,7 +207,10 @@ export default function Home() {
             ))}
           </div>
 
-          <h4 className="text-3xl my-8 text-amber-500" data-aos="fade-up">
+          <h4
+            className="text-center text-3xl my-8 text-amber-500"
+            data-aos="fade-up"
+          >
             Featured Projects
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
@@ -158,12 +223,18 @@ export default function Home() {
               ))}
           </div>
 
-          <h4 className="text-3xl my-8 text-amber-500" data-aos="fade-up">
+          <h4
+            className="text-center text-3xl my-8 text-amber-500"
+            data-aos="fade-up"
+          >
             Programming Stats
           </h4>
           <WakatimeSection />
 
-          <h4 className="text-3xl my-8 text-amber-500" data-aos="fade-up">
+          <h4
+            className="text-center text-3xl my-8 text-amber-500"
+            data-aos="fade-up"
+          >
             Most Played Games
           </h4>
           <SteamSection />
@@ -230,87 +301,6 @@ export default function Home() {
               </div>
             </div>
           </div>*/}
-
-          <div className="my-8 flex flex-col-reverse md:flex-row items-center md:items-start md:justify-between gap-8">
-            <div className="flex-1">
-              <h4 className="text-3xl my-8 text-amber-500" data-aos="fade-up">
-                About me
-              </h4>
-              <h1
-                className="text-4xl font-black"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                Melvin Jones Repol
-              </h1>
-              <p
-                data-aos="fade-up"
-                data-aos-delay="200"
-                className="font-medium"
-              >
-                Software Engineer
-              </p>
-              <p
-                className="mt-4 max-w-2xl"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                I specialize in building robust, scalable software solutions
-                that solve real-world problems. With a passion for technology
-                and a commitment to excellence, I bring ideas to life through
-                code. Whether it&apos;s developing web applications, optimizing
-                systems, or diving into data analytics, I&apos;m here to help
-                you achieve your goals. Let&apos;s create something amazing
-                together!
-              </p>
-
-              <div>
-                <Link
-                  href="/contact-me"
-                  data-aos="fade-right"
-                  data-aos-delay="350"
-                >
-                  <button
-                    className="uppercase text-sm relative bg-orange-400 px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
-                  before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-orange-600 before:rounded-b-lg
-                  after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-orange-600 after:rounded-r-lg"
-                    style={{ boxShadow: "1px 1px 0 0 #ea580c" }}
-                  >
-                    Hire me
-                  </button>
-                </Link>
-                <Link
-                  href="mailto:mrepol742@gmail.com"
-                  data-aos="fade-right"
-                  data-aos-delay="400"
-                >
-                  <button
-                    className="uppercase text-sm relative bg-gray-800 text-white px-7 py-4 mt-3 ml-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
-                  before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-gray-900 before:rounded-b-lg
-                  after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-gray-900 after:rounded-r-lg"
-                    style={{ boxShadow: "1px 1px 0 0 #111827" }}
-                  >
-                    mrepol742@gmail.com
-                  </button>
-                </Link>
-              </div>
-            </div>
-            <div
-              className="flex-shrink-0 mb-6 md:mb-0 md:ml-8"
-              data-aos="fade-up"
-              data-aos-delay="500"
-            >
-              <div className="w-64 h-64 rounded-full bg-gradient-to-tr from-violet-500 via-yellow-300 to-green-400 animate-gradient-shift flex items-center justify-center bg-opacity-60 backdrop-blur-md hover:scale-98 transition-transform duration-300">
-                <Image
-                  src="/images/melvinjonesrepol.transparent.png"
-                  alt="Hero Image"
-                  className="w-60 h-60 object-cover rounded-full border-4 border-white shadow-lg"
-                  width={240}
-                  height={240}
-                />
-              </div>
-            </div>
-          </div>
 
           <div className="block lg:flex flex-column gap-5">
             <div className="mt-8 bg-orange-400/10 rounded">

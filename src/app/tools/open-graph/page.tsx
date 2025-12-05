@@ -31,31 +31,36 @@ export default function Home() {
   };
 
   return (
-    <div style={{ padding: "2rem", fontFamily: "sans-serif" }}>
-      <h1>Open Graph Checker</h1>
-      <form onSubmit={fetchOG}>
-        <input
-          type="text"
-          placeholder="Enter website URL"
-          value={url}
-          onChange={(e) => setUrl(e.target.value)}
-          style={{ padding: "0.5rem", width: "300px" }}
-        />
-        <button type="submit" style={{ marginLeft: "1rem", padding: "0.5rem" }}>
-          Fetch Metadata
-        </button>
-      </form>
+    <main className="my-18 p-3 md:p-8">
+      <section>
+        <h1 className="text-2xl font-bold">Open Graph Checker</h1>
+        <form onSubmit={fetchOG}>
+          <input
+            type="text"
+            placeholder="Enter website URL"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+            style={{ padding: "0.5rem", width: "300px" }}
+          />
+          <button
+            type="submit"
+            style={{ marginLeft: "1rem", padding: "0.5rem" }}
+          >
+            Fetch Metadata
+          </button>
+        </form>
 
-      {meta && (
-        <div style={{ marginTop: "2rem" }}>
-          <h2>Open Graph Metadata</h2>
-          {Object.entries(meta).map(([key, value]) => (
-            <p key={key}>
-              <strong>{key}:</strong> {value}
-            </p>
-          ))}
-        </div>
-      )}
-    </div>
+        {meta && (
+          <div style={{ marginTop: "2rem" }}>
+            <h2>Open Graph Metadata</h2>
+            {Object.entries(meta).map(([key, value]) => (
+              <p key={key}>
+                <strong>{key}:</strong> {value}
+              </p>
+            ))}
+          </div>
+        )}
+      </section>
+    </main>
   );
 }
