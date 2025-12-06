@@ -145,14 +145,14 @@ export default function Home() {
               />
             </div>
             <h1
-              className="text-5xl font-black mb-2"
+              className="text-3xl md:text-5xl font-black mb-2"
               data-aos="fade-up"
               data-aos-delay="100"
             >
               Melvin Jones Repol
             </h1>
             <p
-              className="max-w-lg text-2xl mb-5"
+              className="max-w-lg text-xl mb-5"
               data-aos="fade-up"
               data-aos-delay="300"
             >
@@ -370,6 +370,17 @@ export default function Home() {
           </div>
 
           <NeofetchTerminal />
+          <span className="ml-auto text-xs text-gray-400">
+            Gaming activity data powered by Steam API.
+          </span>
+          <span className="block ml-auto text-xs text-gray-400">
+            Coding activity data powered by{" "}
+            <Link href="https://wakatime.com/@mrepol742">WakaTime</Link>.
+          </span>
+          <span className="ml-auto text-xs text-gray-400">
+            All rights reserved. All trademarks are property of their respective
+            owners in the US and other countries.
+          </span>
         </section>
       </main>
     </>
