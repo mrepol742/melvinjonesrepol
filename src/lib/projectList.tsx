@@ -6,6 +6,7 @@ const Projects = [
     repo: "https://github.com/mrepol742/web-appp",
     featured: true,
     languages: ["Kotlin"],
+    cover: "https://opengraph.githubassets.com/1/mrepol742/web-appp",
   },
   {
     title: "My Portfolio",
@@ -15,6 +16,7 @@ const Projects = [
     repo: "https://github.com/mrepol742/melvinjonesrepol",
     featured: false,
     languages: ["TypeScript"],
+    cover: "https://opengraph.githubassets.com/1/mrepol742/melvinjonesrepol",
   },
   {
     title: "Project Canis TG",
@@ -23,6 +25,7 @@ const Projects = [
     repo: "https://github.com/mrepol742/project-canis-tg",
     featured: false,
     languages: ["TypeScript"],
+    cover: "https://opengraph.githubassets.com/1/mrepol742/project-canis-tg",
   },
   {
     title: "Project Canis",
@@ -31,6 +34,7 @@ const Projects = [
     link: "/canis-chatbot",
     featured: true,
     languages: ["TypeScript"],
+    cover: "https://opengraph.githubassets.com/1/mrepol742/project-canis",
   },
   {
     title: "Ulisha Store Next",
@@ -39,6 +43,8 @@ const Projects = [
     link: "/ulisha-store-next",
     featured: true,
     languages: ["TypeScript"],
+    cover:
+      "https://opengraph.githubassets.com/1/ulisha-limited/ulisha-store-next",
   },
   {
     title: "Devops Capstone Project",
@@ -47,6 +53,8 @@ const Projects = [
     link: "https://github.com/mrepol742/devops-capstone-project",
     featured: false,
     languages: ["JavaScript"],
+    cover:
+      "https://opengraph.githubassets.com/1/mrepol742/devops-capstone-project",
   },
   {
     title: "Point of Sale",
@@ -55,6 +63,7 @@ const Projects = [
     link: "/point-of-sale",
     featured: true,
     languages: ["JavaScript"],
+    cover: "https://opengraph.githubassets.com/1/mrepol742/project-pos",
   },
   {
     title: "Axleshift Core 1 - Capstone Project",
@@ -63,6 +72,7 @@ const Projects = [
     link: "/axleshift-core-1",
     featured: true,
     languages: ["JavaScript"],
+    cover: "https://opengraph.githubassets.com/1/mrepol742/axleshift-core1",
   },
   {
     title: "Second Chance Backend Nodejs Capstone",
@@ -71,6 +81,8 @@ const Projects = [
     repo: "https://github.com/mrepol742/secondchance-backend-nodejs-capstone",
     featured: false,
     languages: ["JavaScript"],
+    cover:
+      "https://opengraph.githubassets.com/1/mrepol742/secondchance-backend-nodejs-capstone",
   },
   {
     title: "LGU Management System",
@@ -78,6 +90,7 @@ const Projects = [
     repo: "https://github.com/lgu-ms/lgu-ms",
     featured: false,
     languages: ["PHP"],
+    cover: "https://opengraph.githubassets.com/1/lgu-ms/lgu-ms",
   },
   {
     title: "Project Deep",
@@ -87,6 +100,7 @@ const Projects = [
     link: "https://projectdeep.vercel.app",
     featured: false,
     languages: ["JavaScript"],
+    cover: "https://opengraph.githubassets.com/1/mrepol742/project-deep",
   },
   {
     title: "Project Orion",
@@ -95,6 +109,7 @@ const Projects = [
     link: "/orion-chatbot",
     featured: false,
     languages: ["JavaScript"],
+    cover: "https://opengraph.githubassets.com/1/mrepol742/project-orion",
   },
   {
     title: "Online Catering System",
@@ -102,6 +117,8 @@ const Projects = [
     repo: "https://github.com/mrepol742/Online-Catering-System",
     featured: false,
     languages: ["PHP"],
+    cover:
+      "https://opengraph.githubassets.com/1/mrepol742/Online-Catering-System",
   },
   {
     title: "Room Rental System",
@@ -109,6 +126,7 @@ const Projects = [
     repo: "https://github.com/mrepol742/Room-Rental-System",
     featured: false,
     languages: ["PHP"],
+    cover: "https://opengraph.githubassets.com/1/mrepol742/Room-Rental-System",
   },
   {
     title: "Webvium VPN",
@@ -117,6 +135,7 @@ const Projects = [
     link: "/webvium-vpn",
     featured: false,
     languages: ["Java"],
+    cover: "https://www.melvinjonesrepol.com/images/webviumvpn-banner.png",
   },
   {
     title: "mrepol742.github.io",
@@ -125,6 +144,7 @@ const Projects = [
     link: "https://github.com/mrepol742/mrepol742.github.io",
     featured: false,
     languages: ["PHP"],
+    cover: "https://opengraph.githubassets.com/1/mrepol742/mrepol742.github.io",
   },
   {
     title: "Project Webvium",
@@ -133,6 +153,7 @@ const Projects = [
     link: "/webvium-browser",
     featured: true,
     languages: ["Java"],
+    cover: "https://www.melvinjonesrepol.com/images/webvium-banner.png",
   },
 ];
 

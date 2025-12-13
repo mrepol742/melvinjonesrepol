@@ -5,6 +5,7 @@ import {
   faLink,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
 import Link from "next/link";
 
 type ProjectCardProps = {
@@ -15,6 +16,7 @@ type ProjectCardProps = {
   link?: string;
   download?: string;
   languages: string[];
+  cover?: string;
 };
 
 export default function ProjectCard({
@@ -24,12 +26,22 @@ export default function ProjectCard({
   link,
   download,
   languages,
+  cover,
 }: ProjectCardProps) {
   return (
     <div data-aos="fade-up">
       <div
         className={`bg-black/10 backdrop-blur rounded p-6 hover:scale-98 transition-transform duration-300`}
       >
+        {cover && (
+          <Image
+            src={cover}
+            alt={title}
+            width={800}
+            height={400}
+            className="w-full h-auto mb-4 rounded"
+          />
+        )}
         <h3 className="text-xl font-bold mb-2">{title}</h3>
         <p className="mb-2">{description}</p>
         <div className="mb-4">

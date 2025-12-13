@@ -45,7 +45,7 @@ export async function WakatimeSection() {
         ))}
       </div>
 
-      <div className="mt-6 grid grid-cols-3 md:grid-cols-5 xl:grid-cols-7 gap-3">
+      <div className="mt-6 grid grid-cols-3 md:grid-cols-5 xl:grid-cols-7 gap-3 mb-10">
         <div className="p-3">
           <p className="text-sm text-slate-500" data-aos="fade-up">Editors</p>
           <p className="font-semibold" data-aos="fade-up">

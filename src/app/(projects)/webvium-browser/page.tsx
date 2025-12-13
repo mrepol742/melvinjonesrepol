@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     siteName: "Melvin Jones Repol",
     images: [
       {
-        url: "https://www.melvinjonesrepol.com/images/webvium-1.jpg",
+        url: "https://www.melvinjonesrepol.com/images/webvium-banner.png",
         width: 800,
         height: 600,
         alt: "Webvium Browser Screenshot",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: "Webvium Browser - Melvin Jones Repol",
     description:
       "A lightweight, lightning-fast, ad-blocker and beautifully designed web browser for Android.",
-    images: ["https://www.melvinjonesrepol.com/images/webvium-1.jpg"],
+    images: ["https://www.melvinjonesrepol.com/images/webvium-banner.png"],
     creator: "@mrepol742",
   },
 };
@@ -105,7 +105,7 @@ export default async function WebviumBrowser() {
     url: "https://www.melvinjonesrepol.com/webvium-browser",
     description:
       "A Project that aims to be the lightest, fastest, secured, private and full-featured android web browser. Programmed and design from Scratch.",
-    thumbnailUrl: "https://www.melvinjonesrepol.com/images/webvium-1.jpg",
+    thumbnailUrl: "https://www.melvinjonesrepol.com/images/webvium-banner.png",
     uploadDate: "2025-12-01T08:00:00+08:00",
     duration: "PT27S",
     contentUrl: "https://www.melvinjonesrepol.com/videos/webvium-browser.mp4",

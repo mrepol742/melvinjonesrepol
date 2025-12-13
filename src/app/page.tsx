@@ -194,12 +194,20 @@ export default function Home() {
           </div>
 
           <h4
-            className="text-center text-3xl my-8 text-amber-500"
+            className="text-center text-3xl mb-4 text-amber-500"
             data-aos="fade-up"
           >
             New Updates
           </h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+          <p
+            className="text-center text-gray-400 max-w-2xl mx-auto mb-6"
+            data-aos="fade-up"
+          >
+            Fresh projects and improvements added recently to keep things
+            evolving. This section highlights what’s new, refined, or actively
+            being worked on.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mb-10">
             {updates.map((project, idx) => (
               <div key={idx} data-aos="fade-up">
                 <ProjectCard {...project} />
@@ -208,12 +216,20 @@ export default function Home() {
           </div>
 
           <h4
-            className="text-center text-3xl my-8 text-amber-500"
+            className="text-center text-3xl mb-4 text-amber-500"
             data-aos="fade-up"
           >
             Featured Projects
           </h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+          <p
+            className="text-center text-gray-400 max-w-2xl mx-auto mb-6"
+            data-aos="fade-up"
+          >
+            A curated selection of projects that best represent my skills and
+            creativity. These are the ones I’m most proud of and actively
+            showcase.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mb-10">
             {projects
               .filter((project) => project.featured)
               .map((project, idx) => (
@@ -224,19 +240,33 @@ export default function Home() {
           </div>
 
           <h4
-            className="text-center text-3xl my-8 text-amber-500"
+            className="text-center text-3xl mb-4 text-amber-500"
             data-aos="fade-up"
           >
             Programming Stats
           </h4>
+          <p
+            className="text-center text-gray-400 max-w-2xl mx-auto mb-6"
+            data-aos="fade-up"
+          >
+            A snapshot of my coding activity across languages and tools. Tracked
+            automatically to reflect real development time and habits.
+          </p>
           <WakatimeSection />
 
           <h4
-            className="text-center text-3xl my-8 text-amber-500"
+            className="text-center text-3xl mb-4 text-amber-500"
             data-aos="fade-up"
           >
             Most Played Games
           </h4>
+          <p
+            className="text-center text-gray-400 max-w-2xl mx-auto mb-6"
+            data-aos="fade-up"
+          >
+            Games I’ve spent the most time playing and enjoying. A mix of
+            favorites that reflect my taste and playstyle over time.
+          </p>
           <SteamSection />
 
           {/*
@@ -303,34 +333,10 @@ export default function Home() {
           </div>*/}
 
           <div className="block lg:flex flex-column gap-5">
-            <div className="mt-8 bg-orange-400/10 rounded">
-              <div className="p-5">
-                <p className="text-lg" data-aos="fade-up" data-aos-delay="200">
-                  I also enjoy{" "}
-                  <span className="font-bold text-orange-400">Gaming</span> and
-                  often share my gaming activities. Check out my latest games
-                  and achievements.
-                </p>
-                <Link href="/gaming" data-aos="fade-up" data-aos-delay="300">
-                  <button
-                    className="text-sm relative bg-orange-400 px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
-                    before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-orange-600 before:rounded-b-lg
-                    after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-orange-600 after:rounded-r-lg"
-                    style={{ boxShadow: "1px 1px 0 0 #ea580c" }}
-                  >
-                    <FontAwesomeIcon
-                      icon={faGamepad}
-                      className="inline mr-2"
-                      size="xl"
-                    />
-                    View Gaming Activities
-                  </button>
-                </Link>
-              </div>
-            </div>
+            <FaceEyes />
 
             <div
-              className="mt-8 bg-blue-400/10 rounded"
+              className=" bg-blue-400/10 rounded"
               data-aos="fade-up"
               data-aos-delay="200"
             >
@@ -353,8 +359,8 @@ export default function Home() {
                 >
                   <button
                     className="text-sm relative bg-blue-400 px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
-                    before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-blue-600 before:rounded-b-lg
-                    after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-blue-600 after:rounded-r-lg"
+                        before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-blue-600 before:rounded-b-lg
+                        after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-blue-600 after:rounded-r-lg"
                     style={{ boxShadow: "1px 1px 0 0 #111827" }}
                   >
                     <FontAwesomeIcon
