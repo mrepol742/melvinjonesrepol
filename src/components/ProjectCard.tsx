@@ -15,7 +15,7 @@ type ProjectCardProps = {
   repo?: string;
   link?: string;
   download?: string;
-  languages: string[];
+  languages?: string[];
   cover?: string;
 };
 
@@ -45,14 +45,15 @@ export default function ProjectCard({
         <h3 className="text-xl font-bold mb-2">{title}</h3>
         <p className="mb-2">{description}</p>
         <div className="mb-4">
-          {languages.map((lang, index) => (
-            <div key={index} className="inline-block mr-2 mb-2">
-              <div className="text-white text-xs px-2 py-1 bg-gray-900/30">
-                <FontAwesomeIcon icon={faCircleNotch} className="mr-1" />
-                {lang}
+          {languages &&
+            languages.map((lang, index) => (
+              <div key={index} className="inline-block mr-2 mb-2">
+                <div className="text-white text-xs px-2 py-1 bg-gray-900/30">
+                  <FontAwesomeIcon icon={faCircleNotch} className="mr-1" />
+                  {lang}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
         <div className="flex items-end justify-end gap-2">
           {link && (

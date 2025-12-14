@@ -68,6 +68,12 @@ export default function Home() {
 
   const updates = [
     {
+      title: "Licenses Updates",
+      description:
+        "Axleshift Core 1 and Point of Sale System newer updates will be released under 'Polyform Noncommercial License 1.0.0' refer to the project LICENSE file for more information, any commits before this updates will be under its previous license 'MIT with common clause'.",
+      featured: true,
+    },
+    {
       title: "Learning Rust",
       description:
         "I'm currently exploring Rust via PACT Advanced Rust Programming and Real World Applications via Coursera. You might see future projects of mine coded in Rust. Hope so...",
@@ -229,16 +235,42 @@ export default function Home() {
             creativity. These are the ones I’m most proud of and actively
             showcase.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mb-10">
+          <div className="flex flex-col gap-10 mb-10">
             {projects
               .filter((project) => project.featured)
-              .map((project, idx) => (
-                <div key={idx} data-aos="fade-up">
-                  <ProjectCard {...project} />
-                </div>
-              ))}
-          </div>
+              .map((project, idx) => {
+                const isEven = idx % 2 === 0;
 
+                return (
+                  <div
+                    key={idx}
+                    data-aos="fade-up"
+                    className="flex flex-col md:flex-row items-center gap-6"
+                  >
+                    <div
+                      className={`
+
+                        md:w-1/6
+                        ${isEven ? "flex-1 md:order-1" : "md:order-2"}
+                      `}
+                    >
+                      <span className="text-6xl font-bold text-gray-400 block">
+                        {String(idx + 1).padStart(2, "0")}
+                      </span>
+                      <span className="text-2xl font-bold text-gray-400 block">
+                        {project.title}
+                      </span>
+                    </div>
+
+                    <div className={`flex-1 ${isEven ? "order-2" : "order-1"}`}>
+                      <div className="max-w-sm lg:max-w-md xl:max-w-lg">
+                        <ProjectCard {...project} />
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
           <h4
             className="text-center text-3xl mb-4 text-amber-500"
             data-aos="fade-up"
