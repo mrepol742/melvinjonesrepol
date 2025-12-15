@@ -3,7 +3,7 @@ import { checkRateLimit } from "./lib/rateLimit";
 
 const env = process.env.NODE_ENV;
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const forwardedFor = request.headers.get("x-forwarded-for");
   const ip = forwardedFor?.split(",")[0] || "unknown";
   const origin = request.headers.get("origin");
