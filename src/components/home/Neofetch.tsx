@@ -11,12 +11,12 @@ export default function NeofetchTerminal({
       "   /'\_   _/`\\  ",
       "   \___)=(___/   ",
     ],
-    user: "mrepol742@archlinux",
-    os: "Arch Linux",
-    host: "My PC",
-    kernel: "Linux 6.16.4-arch1-1",
+    user: "mrepol742",
+    os: "Arch Linux x86_64",
+    host: "archlinux",
+    kernel: "Linux 6.17.9-arch1-1",
     uptime: "742d",
-    packages: "1123 (pacman)",
+    packages: "1223 (pacman)",
     shell: "zsh 5.9",
     resolution: "1920x1080",
     de: "Hyprland",
@@ -147,7 +147,7 @@ function InfoRow({
 }) {
   return (
     <div className={`flex items-center gap-2 col-span-${colSpan}`}>
-      <div className="w-24 text-right text-xs text-gray-400 pr-2 hidden sm:block">
+      <div className="w-24 text-right text-xs text-gray-400 pr-2">
         {label}
       </div>
       <div className="flex-1 font-mono text-sm text-gray-200">{value}</div>

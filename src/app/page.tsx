@@ -1,43 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCode, faGamepad } from "@fortawesome/free-solid-svg-icons";
-import projects from "@/lib/projectList";
+import { faCode } from "@fortawesome/free-solid-svg-icons";
 import ProjectCard from "@/components/ProjectCard";
-import NeofetchTerminal from "@/components/Neofetch";
+import NeofetchTerminal from "@/components/home/Neofetch";
 import FaceEyes from "@/components/FaceEyes";
-import Services from "@/lib/serviceList";
-import ServicesCarousel from "@/components/ServicesCarousel";
-import { fetchSteamLibrary, GameType } from "@/lib/steam/library";
 import SteamSection from "@/components/home/SteamSection";
 import { WakatimeSection } from "@/components/home/WakatimeSection";
-
-const skills = [
-  "I apply engineering principles to design, develop, test, and maintain reliable software systems. My focus is on creating efficient solutions that meet customer needs, using modern tools and technologies to ensure software quality and performance.",
-  "I build dynamic websites and web applications using technologies like HTML, CSS, JavaScript, PHP, MySQL, NodeJS, Firebase, and MongoDB. My experience covers both frontend and backend, enabling me to deliver complete, scalable web solutions.",
-  "I optimize websites to improve their visibility in search engine results. My SEO process includes refining content, structure, and technical elements to drive organic traffic and enhance digital marketing efforts.",
-  "I transform raw data into actionable insights to support decision-making. Using a range of tools and processes, I identify trends, solve problems, and deliver valuable information for business growth.",
-  "I design and program embedded systems using Arduino, integrating hardware and software for IoT, robotics, and automation. My expertise includes selecting components, optimizing code, and troubleshooting hardware-software interactions.",
-  "I assemble, configure, and repair computer systems, ensuring optimal performance and security. My skills include diagnosing issues, installing operating systems, and using software tools to maintain reliable hardware and software environments.",
-];
-
-const textColors = [
-  "text-orange-600",
-  "text-blue-600",
-  "text-green-600",
-  "text-purple-600",
-  "text-yellow-600",
-  "text-pink-600",
-];
-
-const backgroundColors = [
-  "bg-orange-300/10",
-  "bg-blue-300/10",
-  "bg-green-300/10",
-  "bg-purple-300/10",
-  "bg-yellow-300/10",
-  "bg-pink-300/10",
-];
+import ProjectSection from "@/components/home/ProjectSection";
 
 export default function Home() {
   const person = {
@@ -235,42 +205,8 @@ export default function Home() {
             creativity. These are the ones I’m most proud of and actively
             showcase.
           </p>
-          <div className="flex flex-col gap-10 mb-10">
-            {projects
-              .filter((project) => project.featured)
-              .map((project, idx) => {
-                const isEven = idx % 2 === 0;
+          <ProjectSection />
 
-                return (
-                  <div
-                    key={idx}
-                    data-aos="fade-up"
-                    className="flex flex-col md:flex-row items-center gap-6"
-                  >
-                    <div
-                      className={`
-
-                        md:w-1/6
-                        ${isEven ? "flex-1 md:order-1" : "md:order-2"}
-                      `}
-                    >
-                      <span className="text-6xl font-bold text-gray-400 block">
-                        {String(idx + 1).padStart(2, "0")}
-                      </span>
-                      <span className="text-2xl font-bold text-gray-400 block">
-                        {project.title}
-                      </span>
-                    </div>
-
-                    <div className={`flex-1 ${isEven ? "order-2" : "order-1"}`}>
-                      <div className="max-w-sm lg:max-w-md xl:max-w-lg">
-                        <ProjectCard {...project} />
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-          </div>
           <h4
             className="text-center text-3xl mb-4 text-amber-500"
             data-aos="fade-up"
@@ -300,69 +236,6 @@ export default function Home() {
             favorites that reflect my taste and playstyle over time.
           </p>
           <SteamSection />
-
-          {/*
-
-          <ServicesCarousel Services={Services} />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {skills.map((skill, index) => (
-              <div
-                key={index}
-                className={`p-6 rounded-xl ${
-                  textColors[index % textColors.length]
-                } ${
-                  backgroundColors[index % backgroundColors.length]
-                } backdrop-blur`}
-                data-aos="fade-up"
-              >
-                <p className="text-lg">{skill}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="bg-green-300/10 rounded block lg:flex flex-column mt-12">
-            <div>
-              <FaceEyes />
-            </div>
-            <div>
-              <div className="text-3xl p-5" data-aos="fade-up">
-                <h4>
-                  I take{" "}
-                  <span className="font-bold text-green-300">action</span>. I
-                  embrace <span className="underline">failure</span>. I grow{" "}
-                  <b>wiser</b>.
-                </h4>
-              </div>
-
-              <div className="p-5">
-                <h4 className="leading-relaxed" data-aos="fade-right">
-                  Every build I undertake is guided by a few core principles:
-                </h4>
-                <ul className="list-disc list-inside my-3 text-left">
-                  <li data-aos="fade-right" data-aos-delay="100">
-                    <strong>KISS</strong> — Keep It Simple, Stupid.
-                  </li>
-                  <li data-aos="fade-right" data-aos-delay="200">
-                    <strong>YAGNI</strong> — You Aren&apos;t Gonna Need It.
-                  </li>
-                  <li data-aos="fade-right" data-aos-delay="300">
-                    <strong>DRY</strong> — Don&apos;t Repeat Yourself.
-                  </li>
-                </ul>
-                <h4
-                  className="leading-relaxed mt-3"
-                  data-aos="fade-right"
-                  data-aos-delay="400"
-                >
-                  If you are able to clearly write down your problem, then it is
-                  already half solved.
-                  <br />
-                  <em>— Kidlin&apos;s Law</em>
-                </h4>
-              </div>
-            </div>
-          </div>*/}
 
           <div className="block lg:flex flex-column gap-5">
             <FaceEyes />
@@ -408,6 +281,7 @@ export default function Home() {
           </div>
 
           <NeofetchTerminal />
+
           <span className="ml-auto text-xs text-gray-400">
             Gaming activity data powered by Steam API.
           </span>
