@@ -13,6 +13,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import Script from "next/script";
 import Image from "next/image";
+import TrustPilotWidget from "../widget/TrustPilotWidget";
 
 export default function Footer() {
   const { theme, toggleTheme } = useTheme();
@@ -98,6 +99,8 @@ export default function Footer() {
                 />
               </Link>
             </div>
+
+            <TrustPilotWidget />
           </div>
           {/* Links */}
           <div>
