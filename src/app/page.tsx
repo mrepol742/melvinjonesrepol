@@ -17,10 +17,13 @@ export default function Home() {
     url: "https://www.melvinjonesrepol.com",
     image: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.png",
     sameAs: [
-      "https://mrepol742.github.io",
-      "https://mrepol742-read-cv.vercel.app",
-      "https://mrepol742.vercel.app",
-      "https://mrepol742.netlify.app",
+      "https://www.facebook.com/melvinjonesrepol",
+      "https://linkedin.com/in/mrepol742",
+      "https://github.com/mrepol742",
+      "https://wakatime.com/@mrepol742",
+      "https://www.youtube.com/@mrepol742",
+      "https://g.dev/mrepol742",
+      "https://steamcommunity.com/id/mrepol742",
     ],
     jobTitle: "Freelance Software Engineer",
     worksFor: {
