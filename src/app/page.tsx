@@ -283,19 +283,37 @@ export default function Home() {
             </div>
           </div>
 
-          <NeofetchTerminal />
+          <div className="mb-10">
+            <NeofetchTerminal />
+          </div>
 
-          <span className="ml-auto text-xs text-gray-400">
-            Gaming activity data powered by Steam API.
-          </span>
-          <span className="block ml-auto text-xs text-gray-400">
-            Coding activity data powered by{" "}
-            <Link href="https://wakatime.com/@mrepol742">WakaTime</Link>.
-          </span>
-          <span className="ml-auto text-xs text-gray-400">
-            All rights reserved. All trademarks are property of their respective
-            owners in the US and other countries.
-          </span>
+          <div className="ml-auto max-w-md text-right space-y-1 text-xs text-gray-400">
+            <p>
+              Featured project images may not always reflect the latest
+              versions.
+            </p>
+
+            <p>
+              Some freelance work is intentionally not shown to respect client
+              privacy.
+            </p>
+
+            <p>
+              Gaming activity data is sourced from Steam API. All game titles
+              and images are trademarks of their respective owners.
+            </p>
+
+            <p>
+              Coding activity is tracked via{" "}
+              <Link
+                href="https://wakatime.com/@mrepol742"
+                className="underline hover:text-gray-300"
+              >
+                WakaTime
+              </Link>
+              .
+            </p>
+          </div>
         </section>
       </main>
     </>

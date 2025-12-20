@@ -16,7 +16,8 @@ const Projects = [
     repo: "https://github.com/mrepol742/melvinjonesrepol",
     featured: false,
     languages: ["TypeScript"],
-    cover: "https://opengraph.githubassets.com/1/mrepol742/melvinjonesrepol",
+    cover:
+      "https://www.melvinjonesrepol.com/images/melvin-jones-repol-portfolio-new.png",
   },
   {
     title: "Project Canis TG",
@@ -43,8 +44,7 @@ const Projects = [
     link: "/ulisha-store-next",
     featured: true,
     languages: ["TypeScript"],
-    cover:
-      "https://opengraph.githubassets.com/1/ulisha-limited/ulisha-store-next",
+    cover: "https://www.melvinjonesrepol.com/images/ulisha-store-1.png",
   },
   {
     title: "Devops Capstone Project",
@@ -63,7 +63,7 @@ const Projects = [
     link: "/point-of-sale",
     featured: true,
     languages: ["JavaScript"],
-    cover: "https://opengraph.githubassets.com/1/mrepol742/project-pos",
+    cover: "https://www.melvinjonesrepol.com/images/pos-2.png",
   },
   {
     title: "Axleshift Core 1 - Capstone Project",
@@ -72,7 +72,7 @@ const Projects = [
     link: "/axleshift-core-1",
     featured: true,
     languages: ["JavaScript"],
-    cover: "https://opengraph.githubassets.com/1/mrepol742/axleshift-core1",
+    cover: "https://www.melvinjonesrepol.com/images/axleshift-3.png",
   },
   {
     title: "Second Chance Backend Nodejs Capstone",
@@ -144,7 +144,7 @@ const Projects = [
     link: "https://github.com/mrepol742/mrepol742.github.io",
     featured: false,
     languages: ["PHP"],
-    cover: "https://opengraph.githubassets.com/1/mrepol742/mrepol742.github.io",
+    cover: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
   },
   {
     title: "Project Webvium",

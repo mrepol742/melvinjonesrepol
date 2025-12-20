@@ -59,32 +59,32 @@ export default async function SteamSection() {
                   />
                   <div className="flex flex-row gap-3">
                     {game.playtime_2weeks && game.playtime_2weeks > 0 && (
-                      <div className="text-gray-300 text-sm">
+                      <div className="text-sm">
                         <span className="font-bold">2 Weeks:</span>{" "}
                         {formatHours(game.playtime_2weeks)}h
                       </div>
                     )}
 
                     {game.playtime_mac_forever > 0 && (
-                      <div className="text-gray-300 text-sm">
+                      <div className="text-sm">
                         <span className="font-bold">Mac:</span>{" "}
                         {formatHours(game.playtime_mac_forever)}h
                       </div>
                     )}
                     {game.playtime_linux_forever > 0 && (
-                      <div className="text-gray-300 text-sm">
+                      <div className="text-sm">
                         <span className="font-bold">Linux:</span>{" "}
                         {formatHours(game.playtime_linux_forever)}h
                       </div>
                     )}
                     {game.playtime_deck_forever > 0 && (
-                      <div className="text-gray-300 text-sm">
+                      <div className="text-sm">
                         <span className="font-bold">Deck:</span>{" "}
                         {formatHours(game.playtime_deck_forever)}h
                       </div>
                     )}
                     {game.rtime_last_played && game.rtime_last_played > 0 && (
-                      <div className="text-gray-300 text-sm">
+                      <div className="text-sm">
                         <span className="font-bold">Last Played:</span>{" "}
                         {lastPlayedText(game.rtime_last_played)}
                       </div>
