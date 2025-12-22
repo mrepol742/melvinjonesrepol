@@ -312,7 +312,7 @@ export default function Home() {
                 WakaTime
               </Link>
               .
-            </p>
+            </p>.
           </div>
         </section>
       </main>

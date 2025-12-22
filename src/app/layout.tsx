@@ -12,6 +12,8 @@ import RecentGithubActivityWrapper from "@/components/RecentGithubActivityWrappe
 import RecentGithubActivity from "@/components/RecentGithubActivity";
 import Services from "@/lib/serviceList";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
+import ServiceWorkerRegister from "@/components/ServiceWorkerRegister";
+import DevTools from "@/components/DevTools";
 
 config.autoAddCss = false;
 
@@ -127,6 +129,8 @@ export default function RootLayout({
         </RecentGithubActivityWrapper>
         <ToastContainer />
         <Footer />
+        <ServiceWorkerRegister />
+        <DevTools />
       </body>
 
       <script
