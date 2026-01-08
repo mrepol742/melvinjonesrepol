@@ -7,6 +7,30 @@ export async function proxy(request: NextRequest) {
   const forwardedFor = request.headers.get("x-forwarded-for");
   const ip = forwardedFor?.split(",")[0] || "unknown";
   const origin = request.headers.get("origin");
+  const ua = request.headers.get("user-agent") || "";
+
+  const headlessPatterns = [
+    "HeadlessChrome",
+    "PhantomJS",
+    "SlimerJS",
+    "Puppeteer",
+    "Playwright",
+    "Chrome-Lighthouse",
+  ];
+
+  const isHeadless = headlessPatterns.some((p) =>
+    ua.toLowerCase().includes(p.toLowerCase()),
+  );
+
+  if (isHeadless) {
+    return new NextResponse(
+      JSON.stringify({ error: "Automated browsers are not allowed" }),
+      {
+        status: 403,
+        headers: { "Content-Type": "application/json" },
+      },
+    );
+  }
 
   if (/api\//.test(request.nextUrl.pathname)) {
     const allowedOrigins =

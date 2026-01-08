@@ -13,7 +13,8 @@ import RecentGithubActivity from "@/components/RecentGithubActivity";
 import Services from "@/lib/serviceList";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import ServiceWorkerRegister from "@/components/ServiceWorkerRegister";
-import DevTools from "@/components/DevTools";
+import DevTools from "@/components/Headless";
+import Script from "next/script";
 
 config.autoAddCss = false;
 
@@ -110,6 +111,7 @@ export default function RootLayout({
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5077097159223655"
           crossOrigin="anonymous"
         ></script>
+        <Script src="/dev.js" strategy="afterInteractive" />
         <BreadcrumbJsonLd />
       </head>
       <body className="antialiased min-h-screen flex flex-col">
