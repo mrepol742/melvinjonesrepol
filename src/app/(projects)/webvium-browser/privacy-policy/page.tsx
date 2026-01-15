@@ -74,13 +74,65 @@ export default function WebviumPrivacyPolicy() {
           keep your data secure.
         </p>
 
-        <h2 className="text-2xl font-semibold">6. Changes to This Policy</h2>
+        <h2 className="text-2xl font-semibold">
+          6. Google News Content &amp; Regional Preferences
+        </h2>
+
+        <p className="mb-4">
+          Webvium Browser displays news content sourced from{" "}
+          <span className="font-medium">Google News</span> using publicly
+          available Google News RSS feeds.
+        </p>
+
+        <p className="mb-4">
+          The app may use the device’s{" "}
+          <span className="font-medium">language and regional settings</span>{" "}
+          (such as country and language) to display region-relevant news
+          headlines. This process is performed locally on the device and does
+          not involve, storing, or transmitting precise location data.
+        </p>
+
+        <p className="mb-4">
+          Webvium Browser does not access GPS, does not track users’ locations,
+          and does not store regional or location information.
+        </p>
+
+        <ul className="list-disc pl-6 mb-4">
+          <li>News titles</li>
+          <li>Short descriptions (snippets)</li>
+          <li>Source names</li>
+          <li>Links to the original publisher’s websites</li>
+        </ul>
+
+        <p className="mb-4">
+          When a user opens a news article, they are redirected to the original
+          publisher’s website, where the publisher’s own privacy policy applies.
+        </p>
+
+        <p className="text-sm text-gray-600">
+          Webvium Browser is not affiliated with, endorsed by, or sponsored by
+          Google. Google News is a trademark of Google LLC.
+        </p>
+
+        <p className="text-sm text-gray-600 mt-2">
+          For information about Google’s data practices, please visit{" "}
+          <Link
+            href="https://policies.google.com/privacy"
+            className="text-blue-600 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            https://policies.google.com/privacy
+          </Link>
+        </p>
+
+        <h2 className="text-2xl font-semibold">7. Changes to This Policy</h2>
         <p>
           We may update this Privacy Policy from time to time. Updates will be
           posted on this page with a new “Last Updated” date.
         </p>
 
-        <h2 className="text-2xl font-semibold">7. Contact</h2>
+        <h2 className="text-2xl font-semibold">8. Contact</h2>
         <p>
           If you have any questions or concerns about this Privacy Policy,
           please contact us at:

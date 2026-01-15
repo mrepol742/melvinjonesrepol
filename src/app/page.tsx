@@ -41,6 +41,14 @@ export default function Home() {
 
   const updates = [
     {
+      title: "Webvium v3.1.0 Update",
+      description:
+        "This update includes various bug fixes and performance improvements. Introduce News Discovery feature to stay updated with latest news articles from Google News.",
+      link: "/webvium-browser",
+      featured: true,
+      languages: ["Java"],
+    },
+    {
       title: "Licenses Updates",
       description:
         "Axleshift Core 1 and Point of Sale System newer updates will be released under 'Polyform Noncommercial License 1.0.0' refer to the project LICENSE file for more information, any commits before this updates will be under its previous license 'MIT with common clause'.",
@@ -292,17 +300,14 @@ export default function Home() {
               Featured project images may not always reflect the latest
               versions.
             </p>
-
             <p>
               Some freelance work is intentionally not shown to respect client
               privacy.
             </p>
-
             <p>
               Gaming activity data is sourced from Steam API. All game titles
               and images are trademarks of their respective owners.
             </p>
-
             <p>
               Coding activity is tracked via{" "}
               <Link
@@ -312,7 +317,8 @@ export default function Home() {
                 WakaTime
               </Link>
               .
-            </p>.
+            </p>
+            .
           </div>
         </section>
       </main>
