@@ -206,22 +206,6 @@ export default function Home() {
             className="text-center text-3xl mb-4 text-amber-500"
             data-aos="fade-up"
           >
-            Featured Projects
-          </h4>
-          <p
-            className="text-center text-gray-400 max-w-2xl mx-auto mb-6"
-            data-aos="fade-up"
-          >
-            A curated selection of projects that best represent my skills and
-            creativity. These are the ones I’m most proud of and actively
-            showcase.
-          </p>
-          <ProjectSection />
-
-          <h4
-            className="text-center text-3xl mb-4 text-amber-500"
-            data-aos="fade-up"
-          >
             Programming Stats
           </h4>
           <p
@@ -237,15 +221,18 @@ export default function Home() {
             className="text-center text-3xl mb-4 text-amber-500"
             data-aos="fade-up"
           >
-            Most Played Games
+            Featured Projects
           </h4>
           <p
             className="text-center text-gray-400 max-w-2xl mx-auto mb-6"
             data-aos="fade-up"
           >
-            Games I’ve spent the most time playing and enjoying. A mix of
-            favorites that reflect my taste and playstyle over time.
+            A curated selection of projects that best represent my skills and
+            creativity. These are the ones I’m most proud of and actively
+            showcase.
           </p>
+          <ProjectSection />
+
           <SteamSection />
 
           <div className="block lg:flex flex-column gap-5">
