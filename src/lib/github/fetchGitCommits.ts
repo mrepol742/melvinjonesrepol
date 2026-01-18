@@ -32,10 +32,12 @@ export async function fetchGitCommits({
   if (commits.length == 0) return undefined;
 
   /* eslint-disable @typescript-eslint/no-explicit-any */
-  const formatted = commits.map((commit: any) => ({
-    date: new Date(commit.commit.author.date).toISOString(),
-    commit: commit.commit.message,
-  }));
+  const formatted = commits
+    .filter((commit: any) => !/merge pull request/i.test(commit.commit.message))
+    .map((commit: any) => ({
+      date: new Date(commit.commit.author.date).toISOString(),
+      commit: commit.commit.message,
+    }));
 
   return formatted;
 }

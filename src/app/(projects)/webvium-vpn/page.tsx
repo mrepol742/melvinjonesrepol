@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Webvium VPN - Melvin Jones Repol",
+  title: "Download Webvium VPN - Melvin Jones Repol",
   description:
     "Anonymous, Secured, Private and the fastest Virtual Private Network.",
   keywords: [
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     canonical: "https://www.melvinjonesrepol.com/webvium-vpn",
   },
   openGraph: {
-    title: "Webvium VPN - Melvin Jones Repol",
+    title: "Download Webvium VPN - Melvin Jones Repol",
     description:
       "Anonymous, Secured, Private and the fastest Virtual Private Network.",
     url: "https://www.melvinjonesrepol.com/webvium-vpn",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Webvium VPN - Melvin Jones Repol",
+    title: "Download Webvium VPN - Melvin Jones Repol",
     description:
       "Anonymous, Secured, Private and the fastest Virtual Private Network.",
     images: ["https://www.melvinjonesrepol.com/images/webviumvpn-banner.png"],

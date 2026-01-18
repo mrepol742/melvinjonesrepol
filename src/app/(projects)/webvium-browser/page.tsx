@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Webvium Browser - Melvin Jones Repol",
+  title: "Download Webvium Browser - Melvin Jones Repol",
   description:
     "A lightweight, lightning-fast, ad-blocker and beautifully designed web browser for Android.",
   keywords: [
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     canonical: "https://www.melvinjonesrepol.com/webvium-browser",
   },
   openGraph: {
-    title: "Webvium Browser - Melvin Jones Repol",
+    title: "Download Webvium Browser - Melvin Jones Repol",
     description:
       "A lightweight, lightning-fast, ad-blocker and beautifully designed web browser for Android.",
     url: "https://www.melvinjonesrepol.com/webvium-browser",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Webvium Browser - Melvin Jones Repol",
+    title: "Download Webvium Browser - Melvin Jones Repol",
     description:
       "A lightweight, lightning-fast, ad-blocker and beautifully designed web browser for Android.",
     images: ["https://www.melvinjonesrepol.com/images/webvium-banner.png"],
@@ -200,7 +200,6 @@ export default async function WebviumBrowser() {
                 width="320"
                 height="240"
                 controls
-                preload="none"
                 className="rounded-lg hover:scale-99 transition-transform duration-200"
               >
                 <source src="/videos/webvium-browser.mp4" type="video/mp4" />
@@ -223,15 +222,15 @@ export default async function WebviumBrowser() {
             <h3 className="text-2xl">Changelog</h3>
 
             {gitCommits ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 bg-black/10 backdrop-blur rounded-xl p-6 shadow hover:shadow-lg transition">
                 {gitCommits.map((commit, i) => (
                   <div
                     key={i}
-                    className="bg-black/10 backdrop-blur rounded-xl p-6 shadow hover:shadow-lg transition"
+                    className=""
                     data-aos="fade-up"
                   >
                     <h5 className="font-bold">
-                      {new Date(commit.date).toLocaleString()}
+                      {new Date(commit.date).toLocaleDateString()}
                     </h5>
                     <p className="whitespace-pre-line mt-1">
                       {commit.commit.replace(
@@ -243,7 +242,7 @@ export default async function WebviumBrowser() {
                 ))}
               </div>
             ) : (
-              <p className="mt-2">Changelog is not available now.</p>
+              <p className="mt-2">Changelog is not available right now.</p>
             )}
           </div>
 
