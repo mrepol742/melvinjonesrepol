@@ -7,7 +7,7 @@ export default async function SteamSection() {
     (a, b) => b.playtime_forever - a.playtime_forever,
   );
   const top10 = mostPlayedGames.slice(0, 15);
-
+  const explicitPatterns = [/🔞/i, /sexy/i, /nsfw/i, /adult/i, /sex/i, /xxx/i];
   const formatHours = (minutes: number) => (minutes / 60).toFixed(2);
 
   const lastPlayedText = (timestamp: number) => {
@@ -22,19 +22,24 @@ export default async function SteamSection() {
   };
 
   const totalPlaytime2Weeks = steamActivities.reduce((sum, game) => {
-      return sum + (game.playtime_2weeks ?? 0);
+    return sum + (game.playtime_2weeks ?? 0);
   }, 0);
 
   const gameWithHighestPlaytime = steamActivities.reduce((maxGame, game) => {
-      const playtime = game.playtime_2weeks ?? 0;
-      return playtime > (maxGame.playtime_2weeks ?? 0) ? game : maxGame;
+    const playtime = game.playtime_2weeks ?? 0;
+    return playtime > (maxGame.playtime_2weeks ?? 0) ? game : maxGame;
   }, steamActivities[0]);
 
   const sortedByPlaytime2Weeks = [...steamActivities].sort((a, b) => {
-      const aPlaytime = a.playtime_2weeks ?? 0;
-      const bPlaytime = b.playtime_2weeks ?? 0;
-      return bPlaytime - aPlaytime; // highest first
+    const aPlaytime = a.playtime_2weeks ?? 0;
+    const bPlaytime = b.playtime_2weeks ?? 0;
+    return bPlaytime - aPlaytime; // highest first
   });
+
+  function sanitizeGameName(name: string) {
+    const isExplicit = explicitPatterns.some((pattern) => pattern.test(name));
+    return isExplicit ? "Private" : name;
+  }
 
   return (
     <>
@@ -54,7 +59,9 @@ export default async function SteamSection() {
 
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-3xl font-bold">{formatHours(totalPlaytime2Weeks)}  hrs</p>
+          <p className="text-3xl font-bold">
+            {formatHours(totalPlaytime2Weeks)} hrs
+          </p>
           <p className="text-sm text-slate-500">in the last 14 days</p>
         </div>
         <div className="text-right">
@@ -66,7 +73,9 @@ export default async function SteamSection() {
       <div className="mt-6 grid grid-cols-3 md:grid-cols-5 xl:grid-cols-7 gap-3 mb-10">
         {sortedByPlaytime2Weeks.slice(0, 5).map((game) => (
           <div key={game.name} className="p-3" data-aos="fade-up">
-            <p className="text-sm text-slate-500">{game.name}</p>
+            <p className="text-sm text-slate-500">
+              {sanitizeGameName(game.name)}
+            </p>
             <p className="font-semibold">
               {formatHours(game.playtime_2weeks ?? 0)} hrs
             </p>
