@@ -146,9 +146,9 @@ export default async function RecentGithubActivity() {
 
     switch (event.type) {
       case "PushEvent":
-        return `${actor.login} pushed to ${payload.ref.split("/")[2]} #${payload.head.slice(0, 7)} `;
+        return `Pushed #${payload.head.slice(0, 7)} `;
       case "PublicEvent":
-        return `This repo is now public`;
+        return `Public this repo`;
       case "WatchEvent":
         return `Starred this repo`;
       case "ForkEvent":
@@ -156,11 +156,11 @@ export default async function RecentGithubActivity() {
       case "CreateEvent":
         return payload.description;
       case "PullRequestEvent":
-        return `${actor.login} ${payload.action} #${payload.number}`;
+        return `${payload.action} #${payload.number}`;
       case "DeleteEvent":
         return `Deleted ${payload.ref.split("/")[2]} ${payload.ref_type}`;
       case "PullRequestReviewEvent":
-        return `${actor.login} has requested a review of this repo`;
+        return `Requested a review on this repo`;
       default:
         return "";
     }
@@ -184,6 +184,26 @@ export default async function RecentGithubActivity() {
     }
   }
 
+  function timeAgo(date: string) {
+    const diff = Date.now() - new Date(date).getTime();
+
+    const seconds = Math.floor(diff / 1000);
+    if (seconds < 60) return "now";
+
+    const minutes = Math.floor(seconds / 60);
+    if (minutes < 60) return `${minutes} minute${minutes > 1 ? "s" : ""} ago`;
+
+    const hours = Math.floor(minutes / 60);
+    if (hours < 24) return `${hours} hour${hours > 1 ? "s" : ""} ago`;
+
+    const days = Math.floor(hours / 24);
+    if (days === 1) return "a day ago";
+    if (days < 365) return `${days} days ago`;
+
+    const years = Math.floor(days / 365);
+    return years === 1 ? "a year ago" : `${years} years ago`;
+  }
+
   return (
     <ul className="space-y-2 max-h-96 overflow-y-auto">
       {/* eslint-disable @typescript-eslint/no-explicit-any */}
@@ -191,24 +211,24 @@ export default async function RecentGithubActivity() {
         events.map((event: any) => (
           <li
             key={event.id}
-            className="border-b border-gray-700 pb-2 last:border-b-0 last:pb-0 flex overflow-hidden"
+            className="last:border-b-0 last:pb-0 flex overflow-hidden"
           >
-            <span className="font-medium text-white">
+            <span className="font-medium text-gray-700">
               {getEventType(event.type)}
             </span>
             <div className="ml-2">
               <a
-                className=" text-white"
+                className=" text-gray-700"
                 href={getEventUrl(event)}
                 target="_blank"
               >
                 {getEventDescription(event)}
               </a>
-              <div className="text-xs text-white/50 break-words">
+              <div className="text-xs text-gray-600 break-words">
                 {event.repo?.name || "unknown repo"}
               </div>
-              <div className="text-xs text-white/50">
-                {new Date(event.created_at).toLocaleString()}
+              <div className="text-xs text-gray-500">
+                {timeAgo(event.created_at)}
               </div>
             </div>
           </li>

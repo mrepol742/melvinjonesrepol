@@ -12,8 +12,8 @@ export default function RecentGithubActivityWrapper({
   const [expanded, setExpanded] = useState(true);
 
   return (
-    <div className="fixed bottom-4 left-4 w-70">
-      <div className="rounded-lg bg-gray-800 text-white shadow-lg text-sm">
+    <div className="fixed bottom-4 left-4 w-70 z-50">
+      <div className="rounded-lg bg-white text-gray-800 text-sm">
         <div
           className="flex items-center justify-between px-4 py-2"
           onClick={() => setExpanded(!expanded)}
@@ -25,7 +25,7 @@ export default function RecentGithubActivityWrapper({
             Contributions
           </h2>
           <button
-            className="ml-2 text-white hover:text-gray-700"
+            className="ml-2 text-gray-700 hover:text-gray-300"
             aria-label={expanded ? "Collapse" : "Expand"}
           >
             <FontAwesomeIcon

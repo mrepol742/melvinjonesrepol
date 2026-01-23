@@ -13,7 +13,7 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
 
-    const { name, email, message, token } = body;
+    const { name, email, message, username, token } = body;
 
     // recaptcha verification
     if (!(await recaptcha(token)))
@@ -28,6 +28,12 @@ export async function POST(request: Request) {
       throw new Error("All fields are required.");
     }
 
+    if (username) {
+      throw new Error(
+        "Bots has no place here. If your not a bot type those fields manually.",
+      );
+    }
+
     if (!validateEmail(email)) {
       throw new Error("Invalid email format.");
     }
@@ -37,8 +43,8 @@ export async function POST(request: Request) {
 
     if ([NODE_MAILER_RECEIVER, NODE_MAILER_USER].includes(email)) {
       throw new Error(
-          "Nice try! 😏 You can't send this message using our emails. Please use your own email address."
-        );
+        "Nice try! 😏 You can't send this message using our emails. Please use your own email address.",
+      );
     }
 
     const wordCount = message.trim().split(/\s+/).length;

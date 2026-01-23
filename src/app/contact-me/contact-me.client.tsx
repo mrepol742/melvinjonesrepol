@@ -9,6 +9,7 @@ export default function ContactMe() {
     name: "",
     email: "",
     message: "",
+    username: "",
   });
   const { executeRecaptcha } = useReCaptcha();
 
@@ -36,7 +37,7 @@ export default function ContactMe() {
         }
 
         const data = await response.json();
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ name: "", email: "", message: "", username: "" });
         resolve(data);
       } catch (error) {
         reject(error);
@@ -86,6 +87,7 @@ export default function ContactMe() {
                 placeholder="Your Name"
               />
             </div>
+
             <div>
               <label
                 htmlFor="email"
@@ -102,6 +104,23 @@ export default function ContactMe() {
                 className="w-full border border-gray-500 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
                 required
                 placeholder="you@email.com"
+              />
+            </div>
+            <div className="absolute left-[-10000px] top-0 h-px w-px opacity-0">
+              <label
+                htmlFor="username"
+                className="block text-sm font-semibold mb-1 text-white-700"
+              >
+                Username
+              </label>
+              <input
+                type="username"
+                id="username"
+                name="username"
+                value={formData.username}
+                onChange={handleChange}
+                className="w-full border border-gray-500 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+                placeholder="Gotcha"
               />
             </div>
             <div>
@@ -129,11 +148,19 @@ export default function ContactMe() {
             </p>
             <p className="text-xs text-gray-500 mt-2">
               This site is protected by reCAPTCHA and the Google{" "}
-              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://policies.google.com/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Privacy Policy
               </a>{" "}
               and{" "}
-              <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://policies.google.com/terms"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Terms of Service
               </a>{" "}
               apply.
