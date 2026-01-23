@@ -2,6 +2,11 @@ import { GameType } from "@/lib/steam/library";
 
 export default function GameCard({ game }: { game: GameType }) {
   const formatHours = (minutes: number) => (minutes / 60).toFixed(2);
+  const explicitPatterns = [/🔞/i, /sexy/i, /nsfw/i, /adult/i, /sex/i, /xxx/i];
+
+  function isExplicitName(name: string) {
+    return explicitPatterns.some((pattern) => pattern.test(name));
+  }
 
   const lastPlayedText = (timestamp: number) => {
     if (!timestamp) return null;
@@ -18,7 +23,7 @@ export default function GameCard({ game }: { game: GameType }) {
     <div
       className="relative rounded-lg overflow-hidden shadow-lg h-48 flex items-end group"
       style={{
-        backgroundImage: `url(${game.cover_url})`,
+        backgroundImage: `url(${isExplicitName(game.name) ? "" : game.cover_url})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -27,7 +32,9 @@ export default function GameCard({ game }: { game: GameType }) {
         className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-gray-900/80 via-gray-900/90 to-transparent p-3
                       transition-all duration-300 ease-in-out max-h-16 group-hover:max-h-full overflow-hidden"
       >
-        <h2 className="text-white text-lg font-bold truncate">{game.name}</h2>
+        <h2 className="text-white text-lg font-bold truncate">
+          {isExplicitName(game.name) ? "Private" : game.name}
+        </h2>
         <div className="flex flex-row gap-3">
           <div className="text-gray-300 text-sm">
             <span className="font-bold">Total:</span>{" "}
