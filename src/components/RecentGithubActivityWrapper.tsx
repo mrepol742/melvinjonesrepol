@@ -9,7 +9,7 @@ export default function RecentGithubActivityWrapper({
 }: {
   children: React.ReactNode;
 }) {
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, setExpanded] = useState(false);
 
   return (
     <div className="fixed bottom-4 left-4 w-70 z-50">

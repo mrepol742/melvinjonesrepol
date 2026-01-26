@@ -125,6 +125,14 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
+                    href="/pricing"
+                    className="hover:text-orange-500 text-gray-400"
+                  >
+                    Pricing
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/gaming"
                     className="hover:text-orange-500 text-blue-400"
                   >
