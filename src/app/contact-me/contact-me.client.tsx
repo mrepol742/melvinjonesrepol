@@ -169,7 +169,7 @@ export default function ContactMe() {
               type="submit"
               className="w-full bg-gradient-to-r from-blue-600 to-blue-400 text-white px-6 py-3 rounded-lg font-semibold shadow hover:from-blue-700 hover:to-blue-500 transition"
             >
-              🚀 Send Message
+              Send Message
             </button>
           </form>
         </div>

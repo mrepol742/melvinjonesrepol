@@ -98,7 +98,7 @@ const Projects = [
       "A open-source collaboration! If you're eager to share your insights, tips, or experiences with a broader audience, contributing to Deep Repository is a fantastic opportunity.",
     repo: "https://github.com/mrepol742/project-deep",
     link: "https://projectdeep.vercel.app",
-    featured: false,
+    featured: true,
     languages: ["JavaScript"],
     cover: "https://opengraph.githubassets.com/1/mrepol742/project-deep",
   },
@@ -107,7 +107,7 @@ const Projects = [
     description:
       "Meet the lightning-fast Facebook Messenger chatbot, seamlessly managing multiple accounts with access to 271 commands.",
     link: "/orion-chatbot",
-    featured: false,
+    featured: true,
     languages: ["JavaScript"],
     cover: "https://opengraph.githubassets.com/1/mrepol742/project-orion",
   },
@@ -133,7 +133,7 @@ const Projects = [
     description:
       "Inspired from Webvium, Webvium VPN is a lightweight android VPN app focuses in speed, simplicity, security and privacy.",
     link: "/webvium-vpn",
-    featured: false,
+    featured: true,
     languages: ["Java"],
     cover: "https://www.melvinjonesrepol.com/images/webviumvpn-banner.png",
   },
