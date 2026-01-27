@@ -88,8 +88,8 @@ export default function FaceEyes() {
           cx="130"
           cy="100"
           r="90"
-          fill="#9ae6b4"
-          stroke="#48bb78"
+          fill="#60a5fa"
+          stroke="#60a5fa"
           strokeWidth="3"
         />
 

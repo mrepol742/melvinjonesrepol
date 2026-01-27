@@ -8,8 +8,6 @@ import AOSWrapper from "../components/AOSWrapper";
 import "./globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import RecentGithubActivityWrapper from "@/components/RecentGithubActivityWrapper";
-import RecentGithubActivity from "@/components/RecentGithubActivity";
 import Services from "@/lib/serviceList";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import ServiceWorkerRegister from "@/components/ServiceWorkerRegister";
@@ -126,13 +124,10 @@ export default function RootLayout({
           <AOSWrapper />
           <div className="container mx-auto">{children}</div>
         </div>
-        <RecentGithubActivityWrapper>
-          <RecentGithubActivity />
-        </RecentGithubActivityWrapper>
         <ToastContainer />
         <Footer />
         <ServiceWorkerRegister />
-        <DevTools />
+        {/*<DevTools />*/}
       </body>
 
       <script
