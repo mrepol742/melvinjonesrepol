@@ -34,7 +34,7 @@ export async function WakatimeSection() {
       </div>
 
       <div className="mt-6 grid grid-cols-3 md:grid-cols-5 xl:grid-cols-7 gap-3">
-        {topLanguages.slice(0, 5).map((lang) => (
+        {topLanguages.slice(0, 8).map((lang) => (
           <div key={lang.name} className="p-3" data-aos="fade-up">
             {getLanguageIcon(lang.name, { style: { fontSize: 48 } })}
             <p className="text-sm text-slate-500">{lang.name}</p>
