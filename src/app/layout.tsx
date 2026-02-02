@@ -109,6 +109,10 @@ export default function RootLayout({
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5077097159223655"
           crossOrigin="anonymous"
         ></script>
+        <meta
+          name="norton-safeweb-site-verification"
+          content="7OYXOPA9HX0VFEP0C7E6DC4CKZ6LHLNLLVL7QV8IPYT4WFW7D2O6GA1FHLJX6E0P-TDYU7AUIGXDXEIS1R9-QDRB3-VHETC2RK55C50DB81ZD6S1XUK0N-8UOBS3YVM4"
+        />
         <Script src="/dev.js" strategy="afterInteractive" />
         <BreadcrumbJsonLd />
       </head>
