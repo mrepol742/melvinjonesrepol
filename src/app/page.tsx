@@ -8,6 +8,8 @@ import FaceEyes from "@/components/FaceEyes";
 import SteamSection from "@/components/home/SteamSection";
 import { WakatimeSection } from "@/components/home/WakatimeSection";
 import ProjectSection from "@/components/home/ProjectSection";
+import RecentGithubActivityWrapper from "@/components/RecentGithubActivityWrapper";
+import RecentGithubActivity from "@/components/RecentGithubActivity";
 
 export default function Home() {
   const person = {
@@ -41,12 +43,17 @@ export default function Home() {
 
   const updates = [
     {
+      title: "Webvium Launcher Comming Soon!",
+      description:
+        "A lightweight and fast launcher for Android devices, designed to enhance user experience with a clean interface and essential features.",
+      featured: true,
+    },
+    {
       title: "Webvium v3.1.0 Update",
       description:
         "This update includes various bug fixes and performance improvements. Introduce News Discovery feature to stay updated with latest news articles from Google News.",
       link: "/webvium-browser",
       featured: true,
-      languages: ["Java"],
     },
     {
       title: "Licenses Updates",
@@ -60,21 +67,18 @@ export default function Home() {
         "I'm currently exploring Rust via PACT Advanced Rust Programming and Real World Applications via Coursera. You might see future projects of mine coded in Rust. Hope so...",
       repo: "https://github.com/mrepol742/learning_rust",
       featured: true,
-      languages: ["Rust"],
     },
     {
       title: "Updates to Webvium Legals",
       description: "Please read the updated Privacy Policy & Terms of Service!",
       link: "/webvium-browser#legals",
       featured: true,
-      languages: ["Java"],
     },
     {
       title: "Homepage Revamp & Ads",
       description:
         "Redesigned and modernized the homepage for a smoother user experience, a minor ad(s) view will be displayed on project section.",
       featured: true,
-      languages: ["TypeScript"],
     },
     {
       title: "Webvium 3.0 is Here!",
@@ -82,7 +86,6 @@ export default function Home() {
         "Refractored, redesigned, and complete code overhaul. Bringing performance improvements, UI enchancements, features and much more.",
       link: "/webvium-browser",
       featured: true,
-      languages: ["Java"],
     },
     {
       title: "Appstore",
@@ -90,7 +93,6 @@ export default function Home() {
         "Due to legals issues webvium is no longer available or up to date with Galaxy and Amazon Appstore. Webvium is available to download officially here and in Uptodown.com.",
       link: "https://webvium.en.uptodown.com/android",
       featured: true,
-      languages: ["Java"],
     },
     {
       title: "Generate Portolio using Wakatime Data",
@@ -98,14 +100,12 @@ export default function Home() {
         "Easily build your own portfolio, flex your coding skills and easy to deploy. All you just need is Wakatime API Key.",
       link: "https://github.com/mrepol742/wakatime-profile",
       featured: true,
-      languages: ["TypeScript"],
     },
     {
       title: "Deploy your own Shortlink App!",
       description: "Get your link, shorteeeeeen!",
       link: "https://github.com/mrepol742/shortlink-app",
       featured: true,
-      languages: ["TypeScript"],
     },
   ];
 
@@ -231,52 +231,50 @@ export default function Home() {
 
           <SteamSection />
 
-          <div className="block lg:flex flex-column gap-5">
+          <div
+            className=" bg-blue-400/10 mb-4 rounded block lg:flex flex-column gap-5"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <FaceEyes />
 
-            <div
-              className=" bg-blue-400/10 rounded"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <div className="p-5">
-                <p className="text-lg">
-                  I’m building{" "}
-                  <span className="font-bold text-blue-600">Hall of Codes</span>{" "}
-                  an open-source playground for developers, creatives, and
-                  problem-solvers. It’s where ideas turn into projects, and
-                  projects turn into opportunities to learn and collaborate.
-                </p>
-                <p className="mt-3 text-lg">
-                  If you love building cool things, exploring new tech, or just
-                  geeking out over code, you’re welcome to join the journey.
-                </p>
-                <Link
-                  href="https://hallofcodes.github.io"
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                >
-                  <button
-                    className="text-sm relative bg-blue-400 px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
+            <div className="p-5">
+              <p className="text-lg">
+                I’m building{" "}
+                <span className="font-bold text-blue-600">Hall of Codes</span>{" "}
+                an open-source playground for developers, creatives, and
+                problem-solvers. It’s where ideas turn into projects, and
+                projects turn into opportunities to learn and collaborate.
+              </p>
+              <p className="mt-3 text-lg">
+                If you love building cool things, exploring new tech, or just
+                geeking out over code, you’re welcome to join the journey.
+              </p>
+              <Link
+                href="https://hallofcodes.github.io"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <button
+                  className="text-sm relative bg-blue-400 px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
                         before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-blue-600 before:rounded-b-lg
                         after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-blue-600 after:rounded-r-lg"
-                    style={{ boxShadow: "1px 1px 0 0 #111827" }}
-                  >
-                    <FontAwesomeIcon
-                      icon={faCode}
-                      className="inline mr-2"
-                      size="xl"
-                    />
-                    Explore Hall of Codes
-                  </button>
-                </Link>
-              </div>
+                  style={{ boxShadow: "1px 1px 0 0 #111827" }}
+                >
+                  <FontAwesomeIcon
+                    icon={faCode}
+                    className="inline mr-2"
+                    size="xl"
+                  />
+                  Explore Hall of Codes
+                </button>
+              </Link>
             </div>
           </div>
 
-          <div className="mb-10">
+          {/*<div className="mb-10">
             <NeofetchTerminal />
-          </div>
+          </div>*/}
 
           <div className="ml-auto max-w-md text-right space-y-1 text-xs text-gray-400">
             <p>
@@ -305,6 +303,10 @@ export default function Home() {
           </div>
         </section>
       </main>
+
+      <RecentGithubActivityWrapper>
+        <RecentGithubActivity />
+      </RecentGithubActivityWrapper>
     </>
   );
 }
