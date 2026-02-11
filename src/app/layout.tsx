@@ -11,8 +11,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import Services from "@/lib/serviceList";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import ServiceWorkerRegister from "@/components/ServiceWorkerRegister";
-import DevTools from "@/components/Headless";
-import Script from "next/script";
+import DevToolsDetector from "@/components/DevToolsDetector";
 
 config.autoAddCss = false;
 
@@ -113,7 +112,6 @@ export default function RootLayout({
           name="norton-safeweb-site-verification"
           content="7OYXOPA9HX0VFEP0C7E6DC4CKZ6LHLNLLVL7QV8IPYT4WFW7D2O6GA1FHLJX6E0P-TDYU7AUIGXDXEIS1R9-QDRB3-VHETC2RK55C50DB81ZD6S1XUK0N-8UOBS3YVM4"
         />
-        <Script src="/dev.js" strategy="afterInteractive" />
         <BreadcrumbJsonLd />
       </head>
       <body className="antialiased min-h-screen flex flex-col">
@@ -131,7 +129,7 @@ export default function RootLayout({
         <ToastContainer />
         <Footer />
         <ServiceWorkerRegister />
-        {/*<DevTools />*/}
+        <DevToolsDetector />
       </body>
 
       <script
