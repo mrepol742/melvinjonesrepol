@@ -1,4 +1,3 @@
-import { ReCaptchaProvider } from "next-recaptcha-v3";
 import ContactMe from "./contact-me.client";
 import { Metadata } from "next";
 
@@ -45,17 +44,17 @@ export const metadata: Metadata = {
     title: "Contact Me - Melvin Jones Repol",
     description:
       "Have a question, project, or just want to say hi? Fill out the form below and I'll get back to you soon!",
-    images: ["https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png"],
+    images: [
+      "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+    ],
     creator: "@mrepol742",
   },
 };
 
 export default function ContactMePage() {
   return (
-    <ReCaptchaProvider
-      reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-    >
+    <>
       <ContactMe />
-    </ReCaptchaProvider>
+    </>
   );
 }

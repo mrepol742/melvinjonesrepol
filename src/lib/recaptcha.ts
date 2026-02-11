@@ -1,21 +1,43 @@
-const secret = process.env.RECAPTCHA_SECRET_KEY || "";
+import { RecaptchaEnterpriseServiceClient } from "@google-cloud/recaptcha-enterprise";
 
-async function recaptcha(token: string) {
+const projectId = process.env.GOOGLE_CLOUD_PROJECT || "";
+const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "";
+const action = "contact_me";
+
+const credentials = JSON.parse(
+  Buffer.from(process.env.GOOGLE_APPLICATION_CREDENTIALS!, "base64").toString(
+    "utf-8",
+  ),
+);
+const client = new RecaptchaEnterpriseServiceClient({ credentials });
+
+async function recaptcha(token: string): Promise<boolean> {
   if (!token) return false;
 
-  const verifyUrl = "https://www.google.com/recaptcha/api/siteverify";
+  try {
+    const [assessment] = await client.createAssessment({
+      parent: client.projectPath(projectId),
+      assessment: {
+        event: {
+          token,
+          siteKey,
+          expectedAction: action,
+        },
+      },
+    });
 
-  const response = await fetch(verifyUrl, {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: `secret=${secret}&response=${token}`,
-  });
+    const tokenProps = assessment.tokenProperties;
+    const score = assessment.riskAnalysis?.score ?? 0;
 
-  const data = await response.json();
+    if (!tokenProps?.valid || tokenProps.action !== action) {
+      return false;
+    }
 
-  if (data.action !== "contact") return false;
-
-  return data.success || data.score < 0.5;
+    return score >= 0.5;
+  } catch (err) {
+    console.error("Failed to validate captcha:", err);
+    return false;
+  }
 }
 
 export { recaptcha };

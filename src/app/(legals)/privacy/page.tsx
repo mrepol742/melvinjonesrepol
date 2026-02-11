@@ -54,8 +54,7 @@ export default function Privacy() {
         <ul className="list-disc list-inside ml-4">
           <li>
             <strong>Contact Me Page:</strong> Your name, email address, and
-            message when you submit the contact form. This information is stored
-            securely in a Supabase database.
+            message when you submit the contact form.
           </li>
           <li>
             <strong>Disqus Comments:</strong> When you comment, Disqus may
@@ -158,7 +157,18 @@ export default function Privacy() {
           Google Adsense, please contact those providers directly.
         </p>
 
-        <h2 className="text-2xl font-semibold">5. Changes to This Policy</h2>
+        <h2 className="text-2xl font-semibold">
+          5. Use of Google reCAPTCHA Enterprise
+        </h2>
+        <p>
+          This website uses Google reCAPTCHA Enterprise to protect against spam
+          and abuse on the Contact Me page. reCAPTCHA Enterprise collects
+          hardware and software information, such as device and application
+          data, and sends it to Google for analysis. This helps determine
+          whether the interaction is legitimate.
+        </p>
+
+        <h2 className="text-2xl font-semibold">6. Changes to This Policy</h2>
         <p>
           This policy may be updated from time to time. Changes will be posted
           on this page.

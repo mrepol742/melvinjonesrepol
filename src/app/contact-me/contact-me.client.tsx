@@ -1,7 +1,6 @@
 "use client";
 
-import { useReCaptcha } from "next-recaptcha-v3";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 export default function ContactMe() {
@@ -11,7 +10,21 @@ export default function ContactMe() {
     message: "",
     username: "",
   });
-  const { executeRecaptcha } = useReCaptcha();
+  const [grecaptchaLoaded, setGrecaptchaLoaded] = useState(false);
+
+  useEffect(() => {
+    const scriptId = "recaptcha-enterprise";
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement("script");
+      script.id = scriptId;
+      script.src = `https://www.google.com/recaptcha/enterprise.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`;
+      script.async = true;
+      script.onload = () => setGrecaptchaLoaded(true);
+      document.body.appendChild(script);
+    } else {
+      setGrecaptchaLoaded(true);
+    }
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -21,9 +34,17 @@ export default function ContactMe() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!grecaptchaLoaded || !window.grecaptcha?.enterprise) {
+      toast.error("reCAPTCHA is not loaded. Please try again later.");
+      return;
+    }
+
     const resolveAfter3Sec = new Promise(async (resolve, reject) => {
       try {
-        const token = await executeRecaptcha("contact");
+        const token = await window.grecaptcha.enterprise.execute(
+          process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? "",
+          { action: "contact_me" },
+        );
 
         const response = await fetch("/api/contact", {
           method: "POST",
@@ -145,25 +166,6 @@ export default function ContactMe() {
               By clicking &quot;Submit,&quot; you consent to having your
               information securely processed and sent via SMTP to the designated
               recipient at mrepol742@gmail.com.
-            </p>
-            <p className="text-xs text-gray-500 mt-2">
-              This site is protected by reCAPTCHA and the Google{" "}
-              <a
-                href="https://policies.google.com/privacy"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Privacy Policy
-              </a>{" "}
-              and{" "}
-              <a
-                href="https://policies.google.com/terms"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Terms of Service
-              </a>{" "}
-              apply.
             </p>
             <button
               type="submit"
