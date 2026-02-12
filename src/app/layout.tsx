@@ -95,6 +95,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const env = process.env.NEXT_PUBLIC_NODE_ENV || "production";
+  const isProduction = env === "production";
+
   return (
     <html
       lang="en"
@@ -128,8 +131,12 @@ export default function RootLayout({
         </div>
         <ToastContainer />
         <Footer />
-        <ServiceWorkerRegister />
-        <DevToolsDetector />
+        {isProduction && (
+          <>
+            <ServiceWorkerRegister />
+            <DevToolsDetector />
+          </>
+        )}
       </body>
 
       <script
