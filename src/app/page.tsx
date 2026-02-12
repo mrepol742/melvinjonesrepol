@@ -10,6 +10,7 @@ import { WakatimeSection } from "@/components/home/WakatimeSection";
 import ProjectSection from "@/components/home/ProjectSection";
 import RecentGithubActivityWrapper from "@/components/RecentGithubActivityWrapper";
 import RecentGithubActivity from "@/components/RecentGithubActivity";
+import { Youtube } from "@/components/home/Youtube";
 
 export default function Home() {
   const person = {
@@ -230,6 +231,22 @@ export default function Home() {
           <ProjectSection />
 
           <SteamSection />
+
+          <h4
+            className="text-center text-3xl mb-4 text-amber-500"
+            data-aos="fade-up"
+          >
+            Latest Videos
+          </h4>
+          <p
+            className="text-center text-gray-400 max-w-2xl mx-auto mb-6"
+            data-aos="fade-up"
+          >
+            A glimpse into my latest video content, where I share insights,
+            tutorials, and behind-the-scenes looks at my projects and gaming.
+            Check out what I’ve been up to on YouTube!
+          </p>
+          <Youtube />
 
           <div
             className=" bg-blue-400/10 mb-4 rounded block lg:flex flex-column gap-5"
