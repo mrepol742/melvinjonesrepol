@@ -1,5 +1,15 @@
 const Projects = [
   {
+    title: "Webvium Launcher",
+    description:
+      "Lightweight, modern and lightning-fast Android launcher thats currently in development. Built with speed, simplicity and customization in mind.",
+    link: "/webvium-launcher",
+    repo: "https://github.com/webvium/webvium-launcher",
+    featured: true,
+    languages: ["Kotlin"],
+    cover: "https://opengraph.githubassets.com/1/webvium/webvium-launcher",
+  },
+  {
     title: "Web Appp",
     description:
       "A simple yet powerful template that lets you convert any website into a functional Android APK with minimal effort. This project makes it easy to package your web app for mobile distribution without requiring deep Android development knowledge.",

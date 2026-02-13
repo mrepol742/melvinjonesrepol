@@ -48,6 +48,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://www.melvinjonesrepol.com/point-of-sale",
     },
     {
+      url: "https://www.melvinjonesrepol.com/webvium-launcher",
+    },
+    {
       url: "https://www.melvinjonesrepol.com/my-team",
     },
     {

@@ -71,11 +71,11 @@ const Images = [
 ];
 
 export default async function WebviumBrowser() {
-  const gitCommits = await fetchGitCommits({
-    owner: "webvium",
-    repo: "webvium",
-    limit: 10,
-  });
+  // const gitCommits = await fetchGitCommits({
+  //   owner: "webvium",
+  //   repo: "webvium",
+  //   limit: 10,
+  // });
 
   const softwareApplication = {
     "@context": "https://schema.org",

@@ -81,7 +81,9 @@ export default function Project({
 
       <section className="h-screen flex flex-col lg:flex-row items-center justify-center bg-white px-10 gap-12">
         <div data-aos="fade-up" className="max-w-xl">
-          <h2 className="text-4xl font-bold mb-6">About The Project</h2>
+          <h2 className="text-black text-4xl font-bold mb-6">
+            About The Project
+          </h2>
           <p className="text-gray-600 mb-4">{project.description_long}</p>
 
           <div className="flex gap-4 flex-wrap">
@@ -128,7 +130,7 @@ export default function Project({
       >
         <h2
           data-aos="fade-up"
-          className="text-4xl md:text-5xl font-bold mb-12 text-center"
+          className="text-black text-4xl md:text-5xl font-bold mb-12 text-center"
         >
           Features
         </h2>
@@ -141,7 +143,9 @@ export default function Project({
                 data-aos="zoom-in"
                 className="bg-white p-8 rounded shadow-lg hover:-translate-y-2 transition"
               >
-                <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
+                <h3 className="text-gray-700 text-xl font-semibold mb-4">
+                  {feature.title}
+                </h3>
                 <p className="text-gray-600">{feature.description}</p>
               </div>
             ))}

@@ -1,5 +1,6 @@
 import projects from "@/lib/projectList";
 import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons/faArrowRight";
 import { faCircleNotch } from "@fortawesome/free-solid-svg-icons/faCircleNotch";
 import { faLink } from "@fortawesome/free-solid-svg-icons/faLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -62,14 +63,14 @@ export default function ProjectSection() {
                     )}
                     <p className="mb-2">{project.description}</p>
                     <div className="flex items-end justify-end gap-2">
-                      {project.link && (
-                        <Link href={project.link}>
-                          <FontAwesomeIcon icon={faLink} size="lg" />
-                        </Link>
-                      )}
                       {project.repo && (
                         <Link href={project.repo}>
                           <FontAwesomeIcon icon={faGithub} size="lg" />
+                        </Link>
+                      )}
+                      {project.link && (
+                        <Link href={project.link}>
+                          <FontAwesomeIcon icon={faArrowRight} size="lg" />
                         </Link>
                       )}
                     </div>
