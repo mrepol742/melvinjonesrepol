@@ -184,7 +184,7 @@ export default function Home() {
             New Updates
           </h4>
           <p
-            className="text-center text-gray-400 max-w-2xl mx-auto mb-6"
+            className="text-center max-w-2xl mx-auto mb-6"
             data-aos="fade-up"
           >
             Fresh projects and improvements added recently to keep things
@@ -206,7 +206,7 @@ export default function Home() {
             Programming Stats
           </h4>
           <p
-            className="text-center text-gray-400 max-w-2xl mx-auto mb-6"
+            className="text-center max-w-2xl mx-auto mb-6"
             data-aos="fade-up"
           >
             A snapshot of my coding activity across languages and tools. Tracked
@@ -221,7 +221,7 @@ export default function Home() {
             Featured Projects
           </h4>
           <p
-            className="text-center text-gray-400 max-w-2xl mx-auto mb-6"
+            className="text-center max-w-2xl mx-auto mb-6"
             data-aos="fade-up"
           >
             A curated selection of projects that best represent my skills and
@@ -239,7 +239,7 @@ export default function Home() {
             Latest Videos
           </h4>
           <p
-            className="text-center text-gray-400 max-w-2xl mx-auto mb-6"
+            className="text-center max-w-2xl mx-auto mb-6"
             data-aos="fade-up"
           >
             A glimpse into my latest video content, where I share insights,
@@ -248,6 +248,20 @@ export default function Home() {
           </p>
           <Youtube />
 
+          <h4
+            className="text-center text-3xl mb-4 text-blue-400"
+            data-aos="fade-up"
+          >
+            Hall of Codes
+          </h4>
+          <p
+            className="text-center max-w-2xl mx-auto mb-6"
+            data-aos="fade-up"
+          >
+            A community for developers, creatives, and problem-solvers. It’s
+            where ideas turn into projects, and projects turn into opportunities
+            to learn and collaborate.
+          </p>
           <div
             className=" bg-blue-400/10 mb-4 rounded block lg:flex flex-column gap-5"
             data-aos="fade-up"
@@ -257,9 +271,7 @@ export default function Home() {
 
             <div className="p-5">
               <p className="text-lg">
-                I’m building{" "}
-                <span className="font-bold text-blue-600">Hall of Codes</span>{" "}
-                an open-source playground for developers, creatives, and
+                I’m building this community for developers, creatives, and
                 problem-solvers. It’s where ideas turn into projects, and
                 projects turn into opportunities to learn and collaborate.
               </p>
@@ -293,7 +305,7 @@ export default function Home() {
             <NeofetchTerminal />
           </div>*/}
 
-          <div className="ml-auto max-w-md text-right space-y-1 text-xs text-gray-400">
+          <div className="ml-auto max-w-md text-right space-y-1 text-xs">
             <p>
               Featured project images may not always reflect the latest
               versions.

@@ -40,7 +40,7 @@ export default function Project({
         <p
           data-aos="fade-up"
           data-aos-delay="200"
-          className="max-w-2xl text-lg md:text-xl text-gray-300"
+          className="max-w-2xl text-lg md:text-xl"
         >
           {project.description}
         </p>
@@ -52,7 +52,7 @@ export default function Project({
         >
           <a
             href="#features"
-            className="px-6 py-3 bg-white text-black rounded-full font-semibold hover:scale-105 transition"
+            className="px-6 py-3 bg-gray-950 text-gray-100 rounded-full font-semibold hover:scale-105 transition"
           >
             Explore
           </a>
@@ -61,7 +61,7 @@ export default function Project({
             <a
               href="https://github.com/"
               target="_blank"
-              className="px-6 py-3 border border-white rounded-full hover:bg-white hover:text-black transition"
+              className="px-6 py-3 border border-black rounded-full hover:bg-black hover:text-white hover:scale-105 transition"
             >
               View Source
             </a>
@@ -71,7 +71,7 @@ export default function Project({
             <a
               href={project.download_url}
               target="_blank"
-              className="px-6 py-3 border border-white rounded-full hover:bg-white hover:text-black transition"
+              className="px-6 py-3 border border-black rounded-full hover:bg-black hover:text-white hover:scale-105 transition"
             >
               Download
             </a>
@@ -79,8 +79,8 @@ export default function Project({
         </div>
       </section>
 
-      <section className="h-screen flex flex-col md:flex-row items-center justify-center bg-white px-10 gap-12">
-        <div data-aos="fade-right" className="max-w-xl">
+      <section className="h-screen flex flex-col lg:flex-row items-center justify-center bg-white px-10 gap-12">
+        <div data-aos="fade-up" className="max-w-xl">
           <h2 className="text-4xl font-bold mb-6">About The Project</h2>
           <p className="text-gray-600 mb-4">{project.description_long}</p>
 
@@ -110,7 +110,7 @@ export default function Project({
         </div>
 
         <div
-          data-aos="fade-left"
+          data-aos="fade-up"
           className="relative w-full max-w-lg h-80 rounded-2xl overflow-hidden shadow-2xl"
         >
           <Image
@@ -124,7 +124,7 @@ export default function Project({
 
       <section
         id="features"
-        className="min-h-screen flex flex-col justify-center items-center bg-gray-100 px-6 py-20"
+        className="min-h-screen flex flex-col justify-center items-center bg-gray-200 px-6 py-20"
       >
         <h2
           data-aos="fade-up"
@@ -133,14 +133,13 @@ export default function Project({
           Features
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl">
           {project.features &&
             project.features.map((feature, index) => (
               <div
                 key={index}
                 data-aos="zoom-in"
-                data-aos-delay={index * 200}
-                className="bg-white p-8 rounded-2xl shadow-lg hover:-translate-y-2 transition"
+                className="bg-white p-8 rounded shadow-lg hover:-translate-y-2 transition"
               >
                 <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
