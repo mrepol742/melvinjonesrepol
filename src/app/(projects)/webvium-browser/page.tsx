@@ -1,5 +1,6 @@
 import HorizontalAdDisplayUnit from "@/components/ads/HorizontalAdDisplay";
 import DisqusComments from "@/components/DisqusComments";
+import Project from "@/components/Project";
 import { fetchGitCommits } from "@/lib/github/fetchGitCommits";
 import { Metadata } from "next";
 import Image from "next/image";
@@ -84,8 +85,8 @@ export default async function WebviumBrowser() {
     applicationCategory: "BrowserApplication",
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "4.5",
-      reviewCount: "1079",
+      ratingValue: "4.7",
+      reviewCount: "23473",
     },
     offers: {
       "@type": "Offer",
@@ -165,156 +166,41 @@ export default async function WebviumBrowser() {
           __html: JSON.stringify(videoObject),
         }}
       />
-      <main className="my-18 p-3 md:p-8">
-        <section>
-          <div className="block md:flex items-center mb-4">
-            <Image
-              src="/images/webvium-icon.png"
-              alt="Webvium Icon"
-              width={70}
-              height={70}
-              className="rounded-full mr-7 mb-4 md:mb-0"
-            />
-            <div className="block md:flex flex-row w-full justify-between items-center">
-              <div>
-                <h1 className="text-4xl font-bold">Webvium Browser</h1>
-                <p className="mb-4">
-                  A lightweight, lightning-fast, ad-blocker and beautifully
-                  designed web browser for Android.
-                </p>
-              </div>
-              <Link
-                href="https://released.melvinjonesrepol.com/android/webvium-browser.apk"
-                className="bg-blue-500 text-white py-2 px-5 rounded hover:bg-blue-700 transition"
-              >
-                Download
-              </Link>
-            </div>
-          </div>
-
-          <HorizontalAdDisplayUnit />
-
-          <div className="w-full mb-8">
-            <div className="flex overflow-x-auto space-x-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent py-2">
-              <video
-                width="320"
-                height="240"
-                controls
-                className="rounded-lg hover:scale-99 transition-transform duration-200"
-              >
-                <source src="/videos/webvium-browser.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              {Images.map((image, index) => (
-                <Image
-                  key={index}
-                  src={image}
-                  alt={`Screenshot ${index + 1}`}
-                  width={250}
-                  height={445}
-                  className="object-cover rounded-lg flex-shrink-0 border border-gray-700 hover:scale-99 transition-transform duration-200"
-                />
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-8">
-            <h3 className="text-2xl">Changelog</h3>
-
-            {gitCommits ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 bg-black/10 backdrop-blur rounded-xl p-6 shadow hover:shadow-lg transition">
-                {gitCommits.map((commit, i) => (
-                  <div
-                    key={i}
-                    className=""
-                    data-aos="fade-up"
-                  >
-                    <h5 className="font-bold">
-                      {new Date(commit.date).toLocaleDateString()}
-                    </h5>
-                    <p className="whitespace-pre-line mt-1">
-                      {commit.commit.replace(
-                        /(feat|chore|fix|docs|refactor|test|style|perf|ci|build|revert):\s*/i,
-                        "",
-                      )}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <p className="mt-2">Changelog is not available right now.</p>
-            )}
-          </div>
-
-          <div className="mt-8">
-            <h3 className="text-2xl">Features</h3>
-            <div className="grid gap-4 mt-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className="bg-black/10 backdrop-blur rounded-xl p-6 shadow hover:shadow-lg transition"
-                  data-aos="fade-up"
-                  data-aos-delay={`${index * 100}`}
-                >
-                  <h4 className="text-xl font-bold mb-2">{feature.title}</h4>
-                  <p>{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-8" id="legals">
-            <h3 className="text-2xl font-semibold mb-4">Legal</h3>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div
-                className="bg-black/10 backdrop-blur rounded-xl p-6 shadow hover:shadow-lg transition"
-                data-aos="fade-up"
-              >
-                <h4 className="text-xl font-semibold mb-2">Privacy Policy</h4>
-                <p className="mb-4">
-                  Learn how Webvium Browser handles your data and protects your
-                  privacy.
-                </p>
-                <Link
-                  href="/webvium-browser/privacy-policy"
-                  className="text-blue-600 hover:underline font-medium"
-                >
-                  Read Privacy Policy →
-                </Link>
-              </div>
-
-              <div
-                className="bg-black/10 backdrop-blur rounded-xl p-6 shadow hover:shadow-lg transition"
-                data-aos="fade-up"
-              >
-                <h4 className="text-xl font-semibold mb-2">Terms of Service</h4>
-                <p className="mb-4">
-                  Understand the rules and conditions for using Webvium Browser.
-                </p>
-                <Link
-                  href="/webvium-browser/terms-of-service"
-                  className="text-blue-600 hover:underline font-medium"
-                >
-                  Read Terms of Service →
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          <HorizontalAdDisplayUnit />
-
-          <div className="mt-8">
-            <h3 className="text-2xl">Comments</h3>
-            <p className="mb-4">
-              Share your thoughts or ask questions about this project.
-            </p>
-            <div className="bg-black p-4 rounded-xl mb-6">
-              <DisqusComments slug="webvium-browser" title="Webvium Browser" />
-            </div>
-          </div>
-        </section>
-      </main>
+      <Project
+        project={{
+          title: "Webvium Browser",
+          description:
+            "A lightweight, lightning-fast, ad-blocker and beautifully designed web browser for Android.",
+          description_long:
+            "I built Webvium on 2018 with the vision of creating the lightest, fastest, most secure, private and full-featured android web browser. Programmed and design from Scratch. Webvium is built with speed and simplicity in mind. It installs in seconds, loads instantly, and runs smoother than ever. Experience faster browsing, quicker downloads, and effortless sharing—all in one ultra-light package.",
+          download_url:
+            "https://released.melvinjonesrepol.com/android/webvium-browser.apk",
+          is_open_source: false,
+          is_freeware: true,
+          license: "Proprietary Software",
+          preview_image: "/images/webvium-banner.png",
+          preview_image_alt: "Webvium Browser Screenshot",
+          features,
+          resources: [
+            {
+              title: "Download Webvium Browser on Uptodown",
+              url: "https://webvium.en.uptodown.com/android",
+            },
+            {
+              title: "Privacy Policy",
+              url: "/webvium-browser/privacy-policy",
+            },
+            {
+              title: "Terms of Service",
+              url: "/webvium-browser/terms-of-service",
+            },
+            {
+              title: "Follow us on Github",
+              url: "https://github.com/webvium",
+            },
+          ],
+        }}
+      />
     </>
   );
 }
