@@ -204,14 +204,6 @@ export default function Footer() {
             <ul className="space-y-1 text-sm">
               <li>
                 <Link
-                  href="/book-a-demo"
-                  className="hover:text-orange-500 text-gray-400"
-                >
-                  Book a Demo
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="https://wakatime.melvinjonesrepol.com"
                   className="hover:text-orange-500 text-blue-400"
                 >
@@ -236,18 +228,18 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/orion-chatbot"
+                  href="/webvium-launcher"
                   className="hover:text-orange-500 text-gray-400"
                 >
-                  Orion Chatbot
+                  Webvium Launcher
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/axleshift-core-1"
+                  href="/axleshift-freight-management"
                   className="hover:text-orange-500 text-gray-400"
                 >
-                  Axleshift Core 1
+                  Axleshift Freight Management
                 </Link>
               </li>
               <li>
