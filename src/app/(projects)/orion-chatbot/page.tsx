@@ -1,5 +1,6 @@
 import HorizontalAdDisplayUnit from "@/components/ads/HorizontalAdDisplay";
 import DisqusComments from "@/components/DisqusComments";
+import Project from "@/components/Project";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faWarning } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -80,6 +81,24 @@ const SoftwareApplication = {
   },
 };
 
+const features = [
+  {
+    title: "Lightning-Fast Performance",
+    description:
+      "Experience rapid response times and seamless interactions with the Orion Chatbot, designed to provide an efficient messaging experience on Facebook Messenger.",
+  },
+  {
+    title: "Multi-Account Management",
+    description:
+      "Easily manage multiple Facebook Messenger accounts with Orion Chatbot, allowing you to switch between accounts effortlessly and stay organized.",
+  },
+  {
+    title: "271 Commands at Your Fingertips",
+    description:
+      "Unlock a wide range of functionalities with access to 271 commands, enabling you to automate responses, manage conversations, and enhance your Messenger experience.",
+  },
+];
+
 export default function OrionChatbot() {
   return (
     <>
@@ -90,88 +109,28 @@ export default function OrionChatbot() {
         }}
       />
 
-      <main className="my-18 p-3 md:p-8">
-        <section>
-          <div className="block md:flex items-center mb-4">
-            <Image
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Facebook_Messenger_logo_2025.svg/250px-Facebook_Messenger_logo_2025.svg.png"
-              alt="Facebook messenger icon"
-              width={70}
-              height={70}
-              className="mr-7 mb-4 md:mb-0"
-            />
-            <div>
-              <h1 className="text-4xl font-bold">Orion Chatbot</h1>
-              <p className="mb-4">
-                Meet the lightning-fast Facebook Messenger chatbot, seamlessly
-                managing multiple accounts with access to 271 commands.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex bg-yellow-900/30 border border-yellow-700 rounded-lg p-4 mb-6">
-            <FontAwesomeIcon
-              icon={faWarning}
-              className="text-yellow-500 mr-3"
-              size="2x"
-            />
-            <div>
-              <span className="font-semibold text-yellow-500">Disclaimer:</span>
-              &nbsp; By using this bot, you acknowledge that your account may be
-              at risk of suspension or ban by Facebook. The author and
-              contributors are not liable for any loss, damage, or consequences
-              resulting from the use of this software. Use at your own risk.
-            </div>
-          </div>
-
-          <HorizontalAdDisplayUnit />
-
-          <div className="w-full mb-8">
-            <div className="flex overflow-x-auto space-x-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent py-2">
-              {Images.map((image, index) => (
-                <Image
-                  key={index}
-                  src={image}
-                  alt={`Screenshot ${index + 1}`}
-                  width={250}
-                  height={445}
-                  className="object-cover rounded-lg flex-shrink-0 border border-gray-700 hover:scale-99 transition-transform duration-200"
-                />
-              ))}
-            </div>
-          </div>
-
-          <div className="flex items-center bg-green-900/30 border border-green-700 rounded-lg p-4 mb-6">
-            <FontAwesomeIcon icon={faGithub} className="text-green-500 mr-3" />
-            <div>
-              <span className="font-semibold text-green-500">Open Source:</span>
-              &nbsp;This project is open source. View the code on&nbsp;
-              <Link
-                href="https://github.com/mrepol742/project-orion"
-                target="_blank"
-                className="text-green-500 hover:text-green-200"
-              >
-                GitHub
-              </Link>
-              .
-            </div>
-          </div>
-
-          <div className="mt-8">
-            <h3 className="text-2xl">Comments</h3>
-            <p className="mb-4">
-              Share your thoughts or ask questions about this project.
-            </p>
-            <div className="bg-black p-4 rounded-xl mb-6">
-              <DisqusComments slug="orion-chatbot" title="Orion Chatbot" />
-            </div>
-          </div>
-
-          <span className="ml-auto text-xs text-gray-400">
-            Facebook Messenger icon &copy; Meta Platforms, Inc.
-          </span>
-        </section>
-      </main>
+      <Project
+        project={{
+          title: "Orion Chatbot",
+          description:
+            "Meet the lightning-fast Facebook Messenger chatbot, seamlessly managing multiple accounts with access to 271 commands.",
+          description_long:
+            "Orion Chatbot is a powerful Facebook Messenger chatbot designed to provide users with a seamless and efficient messaging experience. With its lightning-fast response times and robust features, Orion Chatbot allows users to manage multiple accounts effortlessly. It boasts an impressive array of 271 commands, enabling users to perform a wide range of tasks and interactions within the Messenger platform. Whether you're looking to automate responses, manage conversations, or access various functionalities, Orion Chatbot is your go-to solution for enhancing your Messenger experience.",
+          view_source_url: "https://github.com/mrepol742/project-orion",
+          is_open_source: true,
+          is_freeware: false,
+          license: "GNU General Public License v3.0",
+          preview_image: "/images/orion-1.jpg",
+          preview_image_alt: "Orion Chatbot Preview Image",
+          features,
+          resources: [
+            {
+              title: "View Source Code on Github",
+              url: "https://github.com/mrepol742/project-orion",
+            },
+          ],
+        }}
+      />
     </>
   );
 }

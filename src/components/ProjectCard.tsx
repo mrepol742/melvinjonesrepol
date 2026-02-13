@@ -1,5 +1,6 @@
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import {
+    faArrowRight,
   faCircleNotch,
   faDownload,
   faLink,
@@ -56,11 +57,6 @@ export default function ProjectCard({
             ))}
         </div>
         <div className="flex items-end justify-end gap-2">
-          {link && (
-            <Link href={link} aria-label={`Open ${title} link`}>
-              <FontAwesomeIcon icon={faLink} size="lg" />
-            </Link>
-          )}
           {repo && (
             <Link href={repo} aria-label={`Open ${title} link`}>
               <FontAwesomeIcon icon={faGithub} size="lg" />
@@ -69,6 +65,11 @@ export default function ProjectCard({
           {download && (
             <Link href={download} aria-label={`Open ${title} link`}>
               <FontAwesomeIcon icon={faDownload} size="lg" />
+            </Link>
+          )}
+          {link && (
+            <Link href={link} aria-label={`Open ${title} link`}>
+              <FontAwesomeIcon icon={faArrowRight} size="lg" />
             </Link>
           )}
         </div>

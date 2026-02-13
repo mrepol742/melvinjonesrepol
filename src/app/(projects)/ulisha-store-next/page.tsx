@@ -1,5 +1,6 @@
 import HorizontalAdDisplayUnit from "@/components/ads/HorizontalAdDisplay";
 import DisqusComments from "@/components/DisqusComments";
+import Project from "@/components/Project";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -161,80 +162,37 @@ export default function UlishaStore() {
         }}
       />
 
-      <main className="my-18 p-3 md:p-8">
-        <section>
-          <div className="block md:flex items-center mb-4">
-            <Image
-              src="/images/ulisha-store-icon.png"
-              alt="Ulisha Store Icon"
-              width={70}
-              height={70}
-              className="rounded-full mr-7 mb-4 md:mb-0"
-            />
-            <div className="block md:flex flex-row w-full justify-between items-center">
-              <div>
-                <h1 className="text-4xl font-bold">Ulisha Store Next</h1>
-                <p className="mb-4">
-                  A modern and efficient e-commerce solution tailored for
-                  startups, enabling seamless setup and free hosting on Vercel
-                  and Supabase Cloud.
-                </p>
-              </div>
-              <Link
-                href="https://www.ulishastore.com"
-                className="bg-blue-500 text-white py-2 px-5 rounded hover:bg-blue-700 transition"
-              >
-                View
-              </Link>
-            </div>
-          </div>
-
-          <HorizontalAdDisplayUnit />
-
-          <div className="w-full mb-8">
-            <div className="flex overflow-x-auto space-x-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent py-2">
-              {Images.map((image, index) => (
-                <Image
-                  key={index}
-                  src={image}
-                  alt={`Screenshot ${index + 1}`}
-                  width={400}
-                  height={120}
-                  sizes="(max-width: 640px) 90vw, 400px"
-                  className="object-cover rounded-lg flex-shrink-0 border border-gray-700 hover:scale-99 transition-transform duration-200"
-                />
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-8">
-            <h3 className="text-2xl">Features</h3>
-            <div className="grid gap-4 mt-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className="bg-black/10 backdrop-blur rounded-xl p-6 shadow hover:shadow-lg transition"
-                  data-aos="fade-up"
-                  data-aos-delay={`${index * 100}`}
-                >
-                  <h4 className="text-xl font-bold mb-2">{feature.title}</h4>
-                  <p>{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-8">
-            <h3 className="text-2xl">Comments</h3>
-            <p className="mb-4">
-              Share your thoughts or ask questions about this project.
-            </p>
-            <div className="bg-black p-4 rounded-xl mb-6">
-              <DisqusComments slug="webvium-browser" title="Webvium Browser" />
-            </div>
-          </div>
-        </section>
-      </main>
+      <Project
+        project={{
+          title: "Ulisha Store Next",
+          description:
+            "Modern and efficient e-commerce solution tailored for startups, enabling seamless setup and free hosting on Vercel and Supabase Cloud.",
+          description_long:
+            "Ulisha Store Next is a modern and efficient e-commerce solution tailored for startups. It offers a seamless setup process and free hosting on Vercel and Supabase Cloud, allowing entrepreneurs to quickly launch their online stores without worrying about infrastructure. With a sleek design, intuitive user interface, and powerful features, Ulisha Store Next empowers businesses to create a compelling online shopping experience for their customers.",
+          view_source_url:
+            "https://github.com/ulisha-limited/ulisha-store-next",
+          is_open_source: true,
+          is_freeware: false,
+          license: "Polyform Noncommercial License 1.0.0",
+          preview_image: "/images/ulisha-store-1.png",
+          preview_image_alt: "Ulisha Store Screenshot",
+          features,
+          resources: [
+            {
+              title: "View Source Code on Github",
+              url: "https://github.com/ulisha-limited/ulisha-store-next",
+            },
+            {
+              title: "Visit Live Store",
+              url: "https://www.ulishastore.com",
+            },
+            {
+              title: "Follow us on Github",
+              url: "https://github.com/ulisha-limited",
+            },
+          ],
+        }}
+      />
     </>
   );
 }

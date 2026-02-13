@@ -39,7 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://www.melvinjonesrepol.com/canis-chatbot",
     },
     {
-      url: "https://www.melvinjonesrepol.com/axleshift-core-1",
+      url: "https://www.melvinjonesrepol.com/axleshift-freight-management",
     },
     {
       url: "https://www.melvinjonesrepol.com/ulisha-store-next",
@@ -73,9 +73,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://www.melvinjonesrepol.com/tools/qrcode-generator",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/book-a-demo",
     },
   ];
 }

@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWarning } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faTelegram } from "@fortawesome/free-brands-svg-icons";
 import HorizontalAdDisplayUnit from "@/components/ads/HorizontalAdDisplay";
+import Project from "@/components/Project";
 
 export const metadata: Metadata = {
   title: "Canis Chatbot - Melvin Jones Repol",
@@ -121,130 +122,28 @@ export default function CanisChatbot() {
         }}
       />
 
-      <main className="my-18 p-3 md:p-8">
-        <section>
-          <div className="block md:flex items-center mb-4">
-            <Image
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/WhatsApp_Logo_green.svg/250px-WhatsApp_Logo_green.svg.png"
-              alt="Canis Icon"
-              width={70}
-              height={70}
-              className="mr-7 mb-4 md:mb-0"
-            />
-            <div>
-              <h1 className="text-4xl font-bold">Canis Chatbot</h1>
-              <p className="mb-4">
-                A scalable, modular WhatsApp chatbot built in TypeScript. It
-                leverages modern best practices, lean architecture, Prisma ORM,
-                Dockerization, and environment-based configuration to deliver a
-                robust, flexible successor to Orion.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex bg-yellow-900/30 border border-yellow-700 rounded-lg p-4 mb-6">
-            <FontAwesomeIcon
-              icon={faWarning}
-              className="text-yellow-500 mr-3"
-              size="2x"
-            />
-            <div>
-              <span className="font-semibold text-yellow-500">Disclaimer:</span>
-              &nbsp; By using this bot, you acknowledge that your account may be
-              at risk of suspension or ban by WhatsApp. The author and
-              contributors are not liable for any loss, damage, or consequences
-              resulting from the use of this software. Use at your own risk.
-            </div>
-          </div>
-
-          <HorizontalAdDisplayUnit />
-
-          <div className="w-full mb-8">
-            <div className="flex overflow-x-auto space-x-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent py-2">
-              {Images.map((image, index) => (
-                <Image
-                  key={index}
-                  src={image}
-                  alt={`Screenshot ${index + 1}`}
-                  width={250}
-                  height={445}
-                  className="object-cover rounded-lg flex-shrink-0 border border-gray-700 hover:scale-99 transition-transform duration-200"
-                />
-              ))}
-            </div>
-          </div>
-
-          <div className="flex items-center bg-blue-900/30 border border-blue-700 rounded-lg p-4 mb-2">
-            <FontAwesomeIcon
-              icon={faTelegram}
-              className="w-6 h-6 text-blue-500 mr-3"
-            />
-            <div>
-              <span className="font-semibold text-blue-500">
-                Telegram Version:
-              </span>
-              &nbsp;A Telegram version of this chatbot is available at&nbsp;
-              <Link
-                href="https://github.com/mrepol742/project-canis-tg"
-                target="_blank"
-                className="text-blue-500 hover:text-blue-200"
-              >
-                GitHub
-              </Link>
-              .
-            </div>
-          </div>
-
-          <div className="flex items-center bg-green-900/30 border border-green-700 rounded-lg p-4 mb-6">
-            <FontAwesomeIcon icon={faGithub} className="text-green-500 mr-3" />
-            <div>
-              <span className="font-semibold text-green-500">Open Source:</span>
-              &nbsp;This project is open source. View the code on&nbsp;
-              <Link
-                href="https://github.com/mrepol742/project-canis"
-                target="_blank"
-                className="text-green-500 hover:text-green-200"
-              >
-                GitHub
-              </Link>
-              .
-            </div>
-          </div>
-
-          <div className="mt-8">
-            <h3 className="text-2xl">Features</h3>
-            <div className="grid gap-4 mt-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className="bg-black/10 backdrop-blur rounded-xl p-6 shadow hover:shadow-lg transition"
-                  data-aos="fade-up"
-                  data-aos-delay={`${index * 100}`}
-                >
-                  <h4 className="text-xl font-bold mb-2">{feature.title}</h4>
-                  <p>{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-8">
-            <h3 className="text-2xl">Comments</h3>
-            <p className="mb-4">
-              Share your thoughts or ask questions about this project.
-            </p>
-            <div className="bg-black p-4 rounded-xl mb-6">
-              <DisqusComments slug="canis-chatbot" title="Canis Chatbot" />
-            </div>
-          </div>
-
-          <span className="ml-auto text-xs text-gray-400">
-            WhatsApp icon &copy; Meta Platforms, Inc.
-            <br />
-            Telegram icon &copy; Telegram FZ-LLC.
-          </span>
-        </section>
-      </main>
+      <Project
+        project={{
+          title: "Canis Chatbot",
+          description:
+            "A scalable, modular WhatsApp chatbot built in TypeScript. It leverages modern best practices, lean architecture, Prisma ORM, Dockerization, and environment-based configuration to deliver a robust, flexible successor to Orion.",
+          description_long:
+            "Project Canis is a next-generation WhatsApp chatbot designed for scalability, modularity, and ease of use. Built with TypeScript, Prisma ORM, and Docker, it offers a robust platform for creating powerful chatbots that can handle a wide range of tasks on WhatsApp. With support for multiple AI providers, real-time features, and advanced security integrations, Project Canis is the ideal solution for anyone looking to build a versatile and production-ready WhatsApp chatbot.",
+          view_source_url: "https://github.com/mrepol742/project-canis",
+          is_open_source: true,
+          is_freeware: false,
+          license: "Apache License 2.0",
+          preview_image: "/images/canis-1.png",
+          preview_image_alt: "Canis Chatbot Screenshot",
+          features,
+          resources: [
+            {
+              title: "View Source Code on Github",
+              url: "https://github.com/mrepol742/project-canis",
+            },
+          ],
+        }}
+      />
     </>
   );
 }

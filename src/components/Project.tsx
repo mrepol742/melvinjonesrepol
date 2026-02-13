@@ -22,6 +22,7 @@ export default function Project({
     description_long: string;
     is_open_source: boolean;
     is_freeware: boolean;
+    is_no_longer_maintained?: boolean;
     license: string;
     preview_image: string;
     preview_image_alt: string;
@@ -87,6 +88,12 @@ export default function Project({
             {project.is_open_source && (
               <span className="px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
                 Open Source
+              </span>
+            )}
+
+            {project.is_no_longer_maintained && (
+              <span className="px-4 py-2 bg-red-100 text-red-700 rounded-full text-sm font-semibold">
+                Obsolete
               </span>
             )}
 

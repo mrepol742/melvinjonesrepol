@@ -5,13 +5,14 @@ import DisqusComments from "@/components/DisqusComments";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import HorizontalAdDisplayUnit from "@/components/ads/HorizontalAdDisplay";
+import Project from "@/components/Project";
 
 export const metadata: Metadata = {
-  title: "Axleshift Core 1 - Melvin Jones Repol",
+  title: "Axleshift Freight Management - Melvin Jones Repol",
   description:
     "A freight management services. Providing Businesses with cutting-edge platform, security, and reliability.",
   keywords: [
-    "Axleshift Core 1",
+    "Axleshift Freight Management",
     "Freight Management",
     "Logistics",
     "Business Solutions",
@@ -23,20 +24,20 @@ export const metadata: Metadata = {
     "Business Platform",
   ],
   alternates: {
-    canonical: "https://www.melvinjonesrepol.com/axleshift-core-1",
+    canonical: "https://www.melvinjonesrepol.com/axleshift-freight-management",
   },
   openGraph: {
-    title: "Axleshift Core 1 - Melvin Jones Repol",
+    title: "Axleshift Freight Management - Melvin Jones Repol",
     description:
       "A freight management services. Providing Businesses with cutting-edge platform, security, and reliability.",
-    url: "https://www.melvinjonesrepol.com/axleshift-core-1",
+    url: "https://www.melvinjonesrepol.com/axleshift-freight-management",
     siteName: "Melvin Jones Repol",
     images: [
       {
         url: "https://www.melvinjonesrepol.com/images/axleshift-1.png",
         width: 800,
         height: 600,
-        alt: "Axleshift Core 1 Screenshot",
+        alt: "Axleshift Freight Management Screenshot",
       },
     ],
     locale: "en_US",
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Axleshift Core 1 - Melvin Jones Repol",
+    title: "Axleshift Freight Management - Melvin Jones Repol",
     description:
       "A freight management services. Providing Businesses with cutting-edge platform, security, and reliability.",
     images: ["https://www.melvinjonesrepol.com/images/axleshift-1.png"],
@@ -134,97 +135,29 @@ export default async function Axleshift() {
         }}
       />
 
-      <main className="my-18 p-3 md:p-8">
-        <section>
-          <div className="block md:flex items-center mb-4">
-            <Image
-              src="/images/axleshift-transparent-icon.png"
-              alt="Axleshift Icon"
-              width={70}
-              height={70}
-              className="bg-blue-500 rounded-full mr-7 p-4 mb-4 md:mb-0"
-            />
-            <div className="block md:flex flex-row w-full justify-between items-center">
-              <div>
-                <h1 className="text-4xl font-bold">Axleshift Core 1</h1>
-                <p className="mb-4">
-                  A freight management services. Providing Businesses with
-                  cutting-edge platform, security, and reliability.
-                </p>
-              </div>
-              <Link
-                href="/book-a-demo"
-                className="bg-blue-500 text-white py-2 px-5 rounded hover:bg-blue-700 transition"
-              >
-                Book a Demo
-              </Link>
-            </div>
-          </div>
-
-          <HorizontalAdDisplayUnit />
-
-          <div className="w-full mb-8">
-            <div className="flex overflow-x-auto space-x-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent py-2">
-              {Images.map((image, index) => (
-                <Image
-                  key={index}
-                  src={image}
-                  alt={`Screenshot ${index + 1}`}
-                  width={400}
-                  height={120}
-                  sizes="(max-width: 640px) 90vw, 400px"
-                  className="object-cover rounded-lg flex-shrink-0 border border-gray-700 hover:scale-99 transition-transform duration-200"
-                />
-              ))}
-            </div>
-          </div>
-          <div className="flex items-center bg-green-900/30 border border-green-700 rounded-lg p-4 mb-6">
-            <FontAwesomeIcon icon={faGithub} className="text-green-500 mr-3" />
-            <div>
-              <span className="font-semibold text-green-500">Open Source:</span>
-              &nbsp;This project is open source. View the code on&nbsp;
-              <Link
-                href="https://github.com/mrepol742/axleshift-core1"
-                target="_blank"
-                className="text-green-500 hover:text-green-200"
-              >
-                GitHub
-              </Link>
-              .
-            </div>
-          </div>
-
-          <div className="mt-8">
-            <h3 className="text-2xl">Features</h3>
-            <div className="grid gap-4 mt-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className="bg-black/10 backdrop-blur rounded-xl p-6 shadow hover:shadow-lg transition"
-                  data-aos="fade-up"
-                  data-aos-delay={`${index * 100}`}
-                >
-                  <h4 className="text-xl font-bold mb-2">{feature.title}</h4>
-                  <p>{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-8">
-            <h3 className="text-2xl">Comments</h3>
-            <p className="mb-4">
-              Share your thoughts or ask questions about this project.
-            </p>
-            <div className="bg-black p-4 rounded-xl mb-6">
-              <DisqusComments
-                slug="axleshift-core-1"
-                title="Axleshift Core 1"
-              />
-            </div>
-          </div>
-        </section>
-      </main>
+      <Project
+        project={{
+          title: "Axleshift",
+          description:
+            "A freight management services. Providing Businesses with cutting-edge platform, security, and reliability.",
+          description_long:
+            "Axleshift is a comprehensive freight management solution designed to streamline logistics operations for businesses of all sizes. With a focus on cutting-edge technology, security, and reliability, Axleshift offers an end-to-end platform that covers every aspect of the freight lifecycle. From shipment booking and carrier assignment to real-time tracking and analytics, Axleshift empowers businesses to optimize their supply chain, reduce costs, and improve customer satisfaction. Built with a zero-trust architecture and compliance-ready features, Axleshift ensures that sensitive shipping data is handled securely while providing the tools needed for efficient logistics management.",
+          view_source_url:
+            "https://github.com/mrepol742/axleshift-freight-management",
+          is_open_source: true,
+          is_freeware: false,
+          license: "Polyform Noncommercial License 1.0.0",
+          preview_image: "/images/axleshift-1.png",
+          preview_image_alt: "Axleshift Screenshot",
+          features,
+          resources: [
+            {
+              title: "View Source Code on Github",
+              url: "https://github.com/mrepol742/axleshift-freight-management",
+            },
+          ],
+        }}
+      />
     </>
   );
 }

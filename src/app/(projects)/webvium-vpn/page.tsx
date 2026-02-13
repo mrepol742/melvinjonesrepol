@@ -1,5 +1,6 @@
 import HorizontalAdDisplayUnit from "@/components/ads/HorizontalAdDisplay";
 import DisqusComments from "@/components/DisqusComments";
+import Project from "@/components/Project";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -90,8 +91,7 @@ export default function WebviumVPN() {
     thumbnailUrl: "https://www.melvinjonesrepol.com/images/webviumvpn-1.jpg",
     uploadDate: "2025-12-01T08:00:00+08:00",
     duration: "PT23S",
-    contentUrl:
-      "https://www.melvinjonesrepol.com/videos/webvium-vpn.mp4",
+    contentUrl: "https://www.melvinjonesrepol.com/videos/webvium-vpn.mp4",
     interactionStatistic: {
       "@type": "InteractionCounter",
       interactionType: {
@@ -100,6 +100,29 @@ export default function WebviumVPN() {
       userInteractionCount: 102111,
     },
   };
+
+  const features = [
+    {
+      title: "Fast and Reliable",
+      description:
+        "Webvium VPN is designed to provide lightning-fast speeds and a stable connection, ensuring you can browse, stream, and download without interruptions.",
+    },
+    {
+      title: "Strong Security",
+      description:
+        "With robust encryption protocols, Webvium VPN keeps your data safe from hackers and prying eyes, giving you peace of mind while online.",
+    },
+    {
+      title: "Privacy Protection",
+      description:
+        "Webvium VPN hides your IP address and location, allowing you to browse the internet anonymously and protect your online identity.",
+    },
+    {
+      title: "User-Friendly Interface",
+      description:
+        "Webvium VPN features a simple and intuitive interface, making it easy for anyone to connect to a secure VPN server with just a few taps.",
+    },
+  ];
 
   return (
     <>
@@ -115,73 +138,34 @@ export default function WebviumVPN() {
           __html: JSON.stringify(videoObject),
         }}
       />
-      <main className="my-18 p-3 md:p-8">
-        <section>
-          <div className="block md:flex items-center mb-4">
-            <Image
-              src="/images/webviumvpn-transparent-icon.png"
-              alt="Webvium VPN Icon"
-              width={70}
-              height={70}
-              className="bg-white rounded-full mr-7 mb-4 md:mb-0"
-            />
-            <div className="block md:flex flex-row w-full justify-between items-center">
-              <div>
-                <h1 className="text-4xl font-bold">Webvium VPN</h1>
-                <p className="mb-4">
-                  Anonymous, Secured, Private and the fastest Virtual Private
-                  Network.
-                </p>
-              </div>
-              <Link
-                href="https://released.melvinjonesrepol.com/android/webvium-vpn.apk"
-                className="bg-blue-500 text-white py-2 px-5 rounded hover:bg-blue-700 transition"
-              >
-                Download
-              </Link>
-            </div>
-          </div>
-
-          <HorizontalAdDisplayUnit />
-
-          <div className="w-full mb-8">
-            <div className="flex overflow-x-auto space-x-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent py-2">
-              <video
-                width="320"
-                height="240"
-                controls
-                className="rounded-lg hover:scale-99 transition-transform duration-200"
-              >
-                <source
-                  src="/videos/webvium-vpn.mp4"
-                  type="video/mp4"
-                />
-                Your browser does not support the video tag.
-              </video>
-              {Images.map((image, index) => (
-                <Image
-                  key={index}
-                  src={image}
-                  alt={`Screenshot ${index + 1}`}
-                  width={250}
-                  height={445}
-                  className="object-cover rounded-lg flex-shrink-0 border border-gray-700 hover:scale-99 transition-transform duration-200"
-                />
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-8">
-            <h3 className="text-2xl">Comments</h3>
-            <p className="mb-4">
-              Share your thoughts or ask questions about this project.
-            </p>
-            <div className="bg-black p-4 rounded-xl mb-6">
-              <DisqusComments slug="webvium-vpn" title="Webvium VPN" />
-            </div>
-          </div>
-        </section>
-      </main>
+      <Project
+        project={{
+          title: "Webvium VPN",
+          description:
+            "Inspired from Webvium, Webvium VPN is a lightweight android VPN app focuses in speed, simplicity, security and privacy.",
+          description_long:
+            "Webvium VPN is a project inspired from Webvium Browser, aims to be the lightest, fastest, secured, private and full-featured android VPN app.",
+          download_url:
+            "https://released.melvinjonesrepol.com/android/webvium-vpn.apk",
+          is_open_source: false,
+          is_no_longer_maintained: true,
+          is_freeware: true,
+          license: "Proprietary Software",
+          preview_image: "/images/webviumvpn-banner.png",
+          preview_image_alt: "Webvium VPN Screenshot",
+          features,
+          resources: [
+            {
+              title: "Download Webvium VPN on Uptodown",
+              url: "https://webvium-vpn.en.uptodown.com/android",
+            },
+            {
+              title: "Follow us on Github",
+              url: "https://github.com/webvium",
+            },
+          ],
+        }}
+      />
     </>
   );
 }

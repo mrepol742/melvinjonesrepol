@@ -1,5 +1,6 @@
 import HorizontalAdDisplayUnit from "@/components/ads/HorizontalAdDisplay";
 import DisqusComments from "@/components/DisqusComments";
+import Project from "@/components/Project";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Metadata } from "next";
@@ -118,6 +119,11 @@ const features = [
     description:
       "Log all critical actions (voids, refunds, user login/logout), enforce strong access controls, and maintain a clear audit trail — helping meet compliance and reduce risk.",
   },
+  {
+    title: "Integrated File Sharing",
+    description:
+      "Easily share sales reports, inventory lists or customer data with team members or accountants through built-in file sharing features, streamlining collaboration and record-keeping.",
+  },
 ];
 
 const SoftwareApplication = {
@@ -149,96 +155,28 @@ export default function PointOfSale() {
         }}
       />
 
-      <main className="my-18 p-3 md:p-8">
-        <section>
-          <div className="block md:flex items-center mb-4">
-            <Image
-              src="/images/pos.gif"
-              alt="Point of Sale Icon"
-              width={70}
-              height={70}
-              className="rounded-full mr-7 mb-4 md:mb-0"
-            />
-            <div className="block md:flex flex-row w-full justify-between items-center">
-              <div>
-                <h1 className="text-4xl font-bold">Point of Sale</h1>
-                <p className="mb-4">
-                  A lightweight, web-based and offline-capable POS system built
-                  for flawless performance, supporting multi-department roles
-                  and full functionality.
-                </p>
-              </div>
-              <Link
-                href="/book-a-demo"
-                className="bg-blue-500 text-white py-2 px-5 rounded hover:bg-blue-700 transition"
-              >
-                Book a Demo
-              </Link>
-            </div>
-          </div>
-
-          <HorizontalAdDisplayUnit />
-
-          <div className="w-full mb-8">
-            <div className="flex overflow-x-auto space-x-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent py-2">
-              {Images.map((image, index) => (
-                <Image
-                  key={index}
-                  src={image}
-                  alt={`Screenshot ${index + 1}`}
-                  width={400}
-                  height={120}
-                  sizes="(max-width: 640px) 90vw, 400px"
-                  className="object-cover rounded-lg flex-shrink-0 border border-gray-700 hover:scale-99 transition-transform duration-200"
-                />
-              ))}
-            </div>
-          </div>
-
-          <div className="flex items-center bg-green-900/30 border border-green-700 rounded-lg p-4 mb-6">
-            <FontAwesomeIcon icon={faGithub} className="text-green-500 mr-3" />
-            <div>
-              <span className="font-semibold text-green-500">Open Source:</span>
-              &nbsp;This project is open source. View the code on&nbsp;
-              <Link
-                href="https://github.com/mrepol742/project-pos"
-                target="_blank"
-                className="text-green-500 hover:text-green-200"
-              >
-                GitHub
-              </Link>
-              .
-            </div>
-          </div>
-
-          <div className="mt-8">
-            <h3 className="text-2xl">Features</h3>
-            <div className="grid gap-4 mt-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className="bg-black/10 backdrop-blur rounded-xl p-6 shadow hover:shadow-lg transition"
-                  data-aos="fade-up"
-                  data-aos-delay={`${index * 100}`}
-                >
-                  <h4 className="text-xl font-bold mb-2">{feature.title}</h4>
-                  <p>{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-8">
-            <h3 className="text-2xl">Comments</h3>
-            <p className="mb-4">
-              Share your thoughts or ask questions about this project.
-            </p>
-            <div className="bg-black p-4 rounded-xl mb-6">
-              <DisqusComments slug="project-pos" title="Project POS" />
-            </div>
-          </div>
-        </section>
-      </main>
+      <Project
+        project={{
+          title: "Point of Sale",
+          description:
+            "A lightweight, web-based and offline-capable POS system built for flawless performance, supporting multi-department roles and full functionality.",
+          description_long:
+            "Point of Sale is a lightweight, web-based and offline-capable POS system built for flawless performance. It supports multi-department roles and full functionality, allowing businesses to manage sales, inventory, and customer interactions efficiently. With a sleek design, intuitive user interface, and powerful features, Point of Sale empowers businesses to streamline their operations and enhance the customer experience.",
+          view_source_url: "https://github.com/mrepol742/project-pos",
+          is_open_source: true,
+          is_freeware: false,
+          license: "Polyform Noncommercial License 1.0.0",
+          preview_image: "/images/pos-1.png",
+          preview_image_alt: "Point of Sale Screenshot",
+          features,
+          resources: [
+            {
+              title: "View Source Code on Github",
+              url: "https://github.com/mrepol742/project-pos",
+            },
+          ],
+        }}
+      />
     </>
   );
 }

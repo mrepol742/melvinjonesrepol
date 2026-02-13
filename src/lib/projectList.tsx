@@ -66,10 +66,10 @@ const Projects = [
     cover: "https://www.melvinjonesrepol.com/images/pos-2.png",
   },
   {
-    title: "Axleshift Core 1 - Capstone Project",
+    title: "Axleshift Freight Management",
     description:
       "A freight management services. Providing Businesses with cutting-edge platform, security, and reliability.",
-    link: "/axleshift-core-1",
+    link: "/axleshift-freight-management",
     featured: true,
     languages: ["JavaScript"],
     cover: "https://www.melvinjonesrepol.com/images/axleshift-3.png",
