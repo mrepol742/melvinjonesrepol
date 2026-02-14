@@ -47,6 +47,7 @@ export default function Home() {
       title: "Webvium Launcher Comming Soon!",
       description:
         "A lightweight and fast launcher for Android devices, designed to enhance user experience with a clean interface and essential features.",
+      link: "/webvium-launcher",
       featured: true,
     },
     {
@@ -183,10 +184,7 @@ export default function Home() {
           >
             New Updates
           </h4>
-          <p
-            className="text-center max-w-2xl mx-auto mb-6"
-            data-aos="fade-up"
-          >
+          <p className="text-center max-w-2xl mx-auto mb-6" data-aos="fade-up">
             Fresh projects and improvements added recently to keep things
             evolving. This section highlights what’s new, refined, or actively
             being worked on.
@@ -205,10 +203,7 @@ export default function Home() {
           >
             Programming Stats
           </h4>
-          <p
-            className="text-center max-w-2xl mx-auto mb-6"
-            data-aos="fade-up"
-          >
+          <p className="text-center max-w-2xl mx-auto mb-6" data-aos="fade-up">
             A snapshot of my coding activity across languages and tools. Tracked
             automatically to reflect real development time and habits.
           </p>
@@ -220,10 +215,7 @@ export default function Home() {
           >
             Featured Projects
           </h4>
-          <p
-            className="text-center max-w-2xl mx-auto mb-6"
-            data-aos="fade-up"
-          >
+          <p className="text-center max-w-2xl mx-auto mb-6" data-aos="fade-up">
             A curated selection of projects that best represent my skills and
             creativity. These are the ones I’m most proud of and actively
             showcase.
@@ -238,10 +230,7 @@ export default function Home() {
           >
             Latest Videos
           </h4>
-          <p
-            className="text-center max-w-2xl mx-auto mb-6"
-            data-aos="fade-up"
-          >
+          <p className="text-center max-w-2xl mx-auto mb-6" data-aos="fade-up">
             A glimpse into my latest video content, where I share insights,
             tutorials, and behind-the-scenes looks at my projects and gaming.
             Check out what I’ve been up to on YouTube!
@@ -254,10 +243,7 @@ export default function Home() {
           >
             Hall of Codes
           </h4>
-          <p
-            className="text-center max-w-2xl mx-auto mb-6"
-            data-aos="fade-up"
-          >
+          <p className="text-center max-w-2xl mx-auto mb-6" data-aos="fade-up">
             A community for developers, creatives, and problem-solvers. It’s
             where ideas turn into projects, and projects turn into opportunities
             to learn and collaborate.
@@ -315,8 +301,18 @@ export default function Home() {
               privacy.
             </p>
             <p>
-              Gaming activity data is sourced from Steam API. All game titles
-              and images are trademarks of their respective owners.
+              Gaming activity data is sourced from{" "}
+              <Link
+                href="https://steamcommunity.com/id/mrepol742/"
+                className="underline hover:text-gray-300"
+              >
+                Steam API
+              </Link>
+              .
+            </p>
+            <p>
+              All game titles and images are trademarks of their respective
+              owners.
             </p>
             <p>
               Coding activity is tracked via{" "}
@@ -328,7 +324,16 @@ export default function Home() {
               </Link>
               .
             </p>
-            .
+            <p>
+              Latest videos data are sourced from{" "}
+              <Link
+                href="https://www.youtube.com/@mrepol742"
+                className="underline hover:text-gray-300"
+              >
+                YouTube Data API v3
+              </Link>
+              .
+            </p>
           </div>
         </section>
       </main>

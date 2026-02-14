@@ -1,4 +1,5 @@
 import { fetchSteamLibrary, GameType } from "@/lib/steam/library";
+import { getTimeAgo, toHours } from "@/utils/date";
 import Image from "next/image";
 
 export default async function SteamSection() {
@@ -8,18 +9,6 @@ export default async function SteamSection() {
   );
   const top10 = mostPlayedGames.slice(0, 15);
   const explicitPatterns = [/🔞/i, /sexy/i, /nsfw/i, /adult/i, /sex/i, /xxx/i];
-  const formatHours = (minutes: number) => (minutes / 60).toFixed(2);
-
-  const lastPlayedText = (timestamp: number) => {
-    if (!timestamp) return null;
-    const lastPlayedDate = new Date(timestamp * 1000);
-    const now = new Date();
-    const diffHours = (
-      (now.getTime() - lastPlayedDate.getTime()) /
-      (1000 * 60 * 60)
-    ).toFixed(2);
-    return `${diffHours}h`;
-  };
 
   const totalPlaytime2Weeks = steamActivities.reduce((sum, game) => {
     return sum + (game.playtime_2weeks ?? 0);
@@ -60,7 +49,7 @@ export default async function SteamSection() {
       <div className="flex items-center justify-between">
         <div>
           <p className="text-3xl font-bold">
-            {formatHours(totalPlaytime2Weeks)} hrs
+            {toHours(totalPlaytime2Weeks)} hrs
           </p>
           <p className="text-sm text-slate-500">in the last 14 days</p>
         </div>
@@ -77,7 +66,7 @@ export default async function SteamSection() {
               {sanitizeGameName(game.name)}
             </p>
             <p className="font-semibold">
-              {formatHours(game.playtime_2weeks ?? 0)} hrs
+              {toHours(game.playtime_2weeks ?? 0)} hrs
             </p>
           </div>
         ))}
@@ -117,7 +106,7 @@ export default async function SteamSection() {
                   {game.name}
                 </span>
                 <span className="text-2xl font-bold text-gray-400 block">
-                  {formatHours(game.playtime_forever)} Total Hours
+                  {toHours(game.playtime_forever)} Total Hours
                 </span>
               </div>
               <div className={`flex-1 ${isEven ? "order-2" : "order-1"}`}>
@@ -136,32 +125,32 @@ export default async function SteamSection() {
                       {game.playtime_2weeks && game.playtime_2weeks > 0 && (
                         <div className="text-sm">
                           <span className="font-bold">2 Weeks:</span>{" "}
-                          {formatHours(game.playtime_2weeks)}h
+                          {toHours(game.playtime_2weeks)}h
                         </div>
                       )}
 
                       {game.playtime_mac_forever > 0 && (
                         <div className="text-sm">
                           <span className="font-bold">Mac:</span>{" "}
-                          {formatHours(game.playtime_mac_forever)}h
+                          {toHours(game.playtime_mac_forever)}h
                         </div>
                       )}
                       {game.playtime_linux_forever > 0 && (
                         <div className="text-sm">
                           <span className="font-bold">Linux:</span>{" "}
-                          {formatHours(game.playtime_linux_forever)}h
+                          {toHours(game.playtime_linux_forever)}h
                         </div>
                       )}
                       {game.playtime_deck_forever > 0 && (
                         <div className="text-sm">
                           <span className="font-bold">Deck:</span>{" "}
-                          {formatHours(game.playtime_deck_forever)}h
+                          {toHours(game.playtime_deck_forever)}h
                         </div>
                       )}
                       {game.rtime_last_played && game.rtime_last_played > 0 && (
                         <div className="text-sm">
                           <span className="font-bold">Last Played:</span>{" "}
-                          {lastPlayedText(game.rtime_last_played)}
+                          {getTimeAgo(game.rtime_last_played)}
                         </div>
                       )}
                     </div>

@@ -1,23 +1,12 @@
 import { GameType } from "@/lib/steam/library";
+import { getTimeAgo, toHours } from "@/utils/date";
 
 export default function GameCard({ game }: { game: GameType }) {
-  const formatHours = (minutes: number) => (minutes / 60).toFixed(2);
   const explicitPatterns = [/🔞/i, /sexy/i, /nsfw/i, /adult/i, /sex/i, /xxx/i];
 
   function isExplicitName(name: string) {
     return explicitPatterns.some((pattern) => pattern.test(name));
   }
-
-  const lastPlayedText = (timestamp: number) => {
-    if (!timestamp) return null;
-    const lastPlayedDate = new Date(timestamp * 1000);
-    const now = new Date();
-    const diffHours = (
-      (now.getTime() - lastPlayedDate.getTime()) /
-      (1000 * 60 * 60)
-    ).toFixed(2);
-    return `${diffHours}h`;
-  };
 
   return (
     <div
@@ -38,12 +27,12 @@ export default function GameCard({ game }: { game: GameType }) {
         <div className="flex flex-row gap-3">
           <div className="text-gray-300 text-sm">
             <span className="font-bold">Total:</span>{" "}
-            {formatHours(game.playtime_forever)}h
+            {toHours(game.playtime_forever)}h
           </div>
           {game.playtime_2weeks && game.playtime_2weeks > 0 && (
             <div className="text-gray-300 text-sm">
               <span className="font-bold">2 Weeks:</span>{" "}
-              {formatHours(game.playtime_2weeks)}h
+              {toHours(game.playtime_2weeks)}h
             </div>
           )}
         </div>
@@ -52,25 +41,25 @@ export default function GameCard({ game }: { game: GameType }) {
           {game.playtime_mac_forever > 0 && (
             <div className="text-gray-300 text-sm">
               <span className="font-bold">Mac:</span>{" "}
-              {formatHours(game.playtime_mac_forever)}h
+              {toHours(game.playtime_mac_forever)}h
             </div>
           )}
           {game.playtime_linux_forever > 0 && (
             <div className="text-gray-300 text-sm">
               <span className="font-bold">Linux:</span>{" "}
-              {formatHours(game.playtime_linux_forever)}h
+              {toHours(game.playtime_linux_forever)}h
             </div>
           )}
           {game.playtime_deck_forever > 0 && (
             <div className="text-gray-300 text-sm">
               <span className="font-bold">Deck:</span>{" "}
-              {formatHours(game.playtime_deck_forever)}h
+              {toHours(game.playtime_deck_forever)}h
             </div>
           )}
           {game.rtime_last_played && game.rtime_last_played > 0 && (
             <div className="text-gray-300 text-sm">
               <span className="font-bold">Last Played:</span>{" "}
-              {lastPlayedText(game.rtime_last_played)}
+              {getTimeAgo(game.rtime_last_played)}
             </div>
           )}
         </div>
