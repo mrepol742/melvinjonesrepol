@@ -44,7 +44,14 @@ export default function Home() {
 
   const updates = [
     {
-      title: "Webvium Launcher Comming Soon!",
+      title: "Floating Console Extension",
+      description:
+        "A Browser extension that provides a floating console for developers to easily access logs while browsing the web.",
+      link: "/floating-console-extension",
+      featured: true,
+    },
+    {
+      title: "Webvium Launcher",
       description:
         "A lightweight and fast launcher for Android devices, designed to enhance user experience with a clean interface and essential features.",
       link: "/webvium-launcher",

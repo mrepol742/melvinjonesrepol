@@ -59,7 +59,7 @@ export default function Project({
 
           {project.view_source_url && (
             <a
-              href="https://github.com/"
+              href={project.view_source_url}
               target="_blank"
               className="px-6 py-3 border border-black rounded-full hover:bg-black hover:text-white hover:scale-105 transition"
             >

@@ -51,6 +51,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://www.melvinjonesrepol.com/webvium-launcher",
     },
     {
+      url: "https://www.melvinjonesrepol.com/floating-console-extension",
+    },
+    {
       url: "https://www.melvinjonesrepol.com/my-team",
     },
     {

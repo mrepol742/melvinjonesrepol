@@ -281,6 +281,14 @@ export default function Footer() {
             <ul className="space-y-1 text-sm">
               <li>
                 <Link
+                  href="/floating-console-extension"
+                  className="hover:text-orange-500 text-gray-400"
+                >
+                  Floating Console Extension
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/tools/open-graph"
                   className="hover:text-orange-500 text-gray-400"
                 >
