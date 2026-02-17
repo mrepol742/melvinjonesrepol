@@ -150,8 +150,23 @@ export default function Project({
               </div>
             ))}
         </div>
+      </section>
 
-        <HorizontalAdDisplayUnit />
+      <section className="py-24 bg-gradient-to-b from-gray-200 to-white flex justify-center items-center">
+        <div data-aos="fade-up" className="w-full max-w-5xl px-6">
+          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center border border-gray-100">
+            <h3 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">
+              Sponsored
+            </h3>
+
+            <p className="text-gray-500 mb-8 max-w-xl mx-auto">
+              Supporting development and maintenance of this project through
+              sponsorship helps ensure its continued growth and improvement.
+            </p>
+
+            <HorizontalAdDisplayUnit />
+          </div>
+        </div>
       </section>
 
       <section className="h-screen flex flex-col justify-center items-center bg-black text-white px-6">
