@@ -101,6 +101,14 @@ export default async function WebviumLauncher() {
               title: "Follow us on Github",
               url: "https://github.com/webvium",
             },
+            {
+              title: "Privacy Policy",
+              url: "/legal/privacy-policy",
+            },
+            {
+              title: "Terms of Service",
+              url: "/legal/terms-of-service",
+            },
           ],
         }}
       />

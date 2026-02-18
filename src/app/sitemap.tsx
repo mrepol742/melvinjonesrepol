@@ -27,9 +27,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://www.melvinjonesrepol.com/webvium-browser",
     },
     {
-      url: "https://www.melvinjonesrepol.com/webvium-browser/privacy-policy",
-    },
-    {
       url: "https://www.melvinjonesrepol.com/webvium-vpn",
     },
     {
@@ -79,6 +76,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://www.melvinjonesrepol.com/tools/qrcode-generator",
+    },
+    {
+      url: "https://www.melvinjonesrepol.com/legal/privacy-policy",
+    },
+    {
+      url: "https://www.melvinjonesrepol.com/legal/terms-of-service",
     },
   ];
 }

@@ -85,6 +85,14 @@ export default async function FloatingConsoleExtension() {
               title: "Download Latest Release",
               url: "https://github.com/mrepol742/floating-console-extension/releases",
             },
+            {
+              title: "Privacy Policy",
+              url: "/legal/privacy-policy",
+            },
+            {
+              title: "Terms of Service",
+              url: "/legal/terms-of-service",
+            },
           ],
         }}
       />

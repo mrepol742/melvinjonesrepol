@@ -187,16 +187,16 @@ export default async function WebviumBrowser() {
               url: "https://webvium.en.uptodown.com/android",
             },
             {
+              title: "Follow us on Github",
+              url: "https://github.com/webvium",
+            },
+            {
               title: "Privacy Policy",
-              url: "/webvium-browser/privacy-policy",
+              url: "/legal/privacy-policy",
             },
             {
               title: "Terms of Service",
-              url: "/webvium-browser/terms-of-service",
-            },
-            {
-              title: "Follow us on Github",
-              url: "https://github.com/webvium",
+              url: "/legal/terms-of-service",
             },
           ],
         }}

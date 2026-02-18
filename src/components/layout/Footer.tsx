@@ -181,7 +181,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/terms"
+                    href="/legal/terms-of-service"
                     className="hover:text-orange-500 text-gray-400"
                   >
                     Terms
@@ -189,7 +189,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/privacy"
+                    href="/legal/privacy-policy"
                     className="hover:text-orange-500 text-gray-400"
                   >
                     Privacy
