@@ -313,6 +313,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/tools/user-agent"
+                  className="hover:text-orange-500 text-gray-400"
+                >
+                  User Agent Parser
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="https://go.melvinjonesrepol.com"
                   className="hover:text-orange-500 text-blue-400"
                 >

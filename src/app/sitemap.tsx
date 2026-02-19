@@ -78,6 +78,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://www.melvinjonesrepol.com/tools/qrcode-generator",
     },
     {
+      url: "https://www.melvinjonesrepol.com/tools/user-agent",
+    },
+    {
       url: "https://www.melvinjonesrepol.com/legal/privacy-policy",
     },
     {

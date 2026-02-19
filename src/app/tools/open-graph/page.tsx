@@ -1,66 +1,52 @@
-"use client";
+import OpenGraphTool from "@/components/tools/OpenGraph";
+import { Metadata } from "next";
 
-import { useState } from "react";
-import { toast } from "react-toastify";
+export const metadata: Metadata = {
+  title: "Open Graph Checker - Melvin Jones Repol",
+  description:
+    "Check and validate your Open Graph tags with our Open Graph Checker tool. Ensure your website's social media sharing is optimized with accurate metadata.",
+  keywords: [
+    "Open Graph Checker",
+    "Open Graph Validator",
+    "OG Tag Checker",
+    "Social Media Metadata Checker",
+    "Website Metadata Validator",
+    "OG Tag Validator",
+    "Open Graph Debugger",
+    "Social Sharing Metadata Checker",
+    "OG Tag Testing Tool",
+    "Open Graph Analysis Tool",
+  ],
+  alternates: {
+    canonical: "https://www.melvinjonesrepol.com/tools/open-graph",
+  },
+  openGraph: {
+    title: "Open Graph Checker - Melvin Jones Repol",
+    description:
+      "Check and validate your Open Graph tags with our Open Graph Checker tool. Ensure your website's social media sharing is optimized with accurate metadata.",
+    url: "https://www.melvinjonesrepol.com/tools/open-graph",
+    siteName: "Melvin Jones Repol",
+    images: [
+      {
+        url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.png",
+        width: 800,
+        height: 600,
+        alt: "Melvin Jones Repol Cover",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Open Graph Checker - Melvin Jones Repol",
+    description:
+      "Check and validate your Open Graph tags with our Open Graph Checker tool. Ensure your website's social media sharing is optimized with accurate metadata.",
+    images: ["https://www.melvinjonesrepol.com/images/melvinjonesrepol.png"],
+    creator: "@mrepol742",
+  },
+};
 
-type OpenGraphMeta = Record<string, string>;
-
-export default function Home() {
-  const [url, setUrl] = useState("");
-  const [meta, setMeta] = useState<OpenGraphMeta | null>(null);
-
-  const fetchOG = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setMeta(null);
-
-    try {
-      const res = await fetch("/api/tools/open-graph", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ url }),
-      });
-
-      const data = await res.json();
-
-      if (!res.ok) throw new Error(data.error || "Something went wrong");
-
-      setMeta(data.meta);
-    } catch (err) {
-      toast.error(err instanceof Error ? err.message : "An error occurred");
-    }
-  };
-
-  return (
-    <main className="my-18 p-3 md:p-8">
-      <section>
-        <h1 className="text-2xl font-bold">Open Graph Checker</h1>
-        <form onSubmit={fetchOG}>
-          <input
-            type="text"
-            placeholder="Enter website URL"
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
-            style={{ padding: "0.5rem", width: "300px" }}
-          />
-          <button
-            type="submit"
-            style={{ marginLeft: "1rem", padding: "0.5rem" }}
-          >
-            Fetch Metadata
-          </button>
-        </form>
-
-        {meta && (
-          <div style={{ marginTop: "2rem" }}>
-            <h2>Open Graph Metadata</h2>
-            {Object.entries(meta).map(([key, value]) => (
-              <p key={key}>
-                <strong>{key}:</strong> {value}
-              </p>
-            ))}
-          </div>
-        )}
-      </section>
-    </main>
-  );
+export default function OpenGraph() {
+  return <OpenGraphTool />;
 }

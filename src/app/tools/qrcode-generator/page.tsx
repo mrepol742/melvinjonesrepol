@@ -1,58 +1,48 @@
-"use client";
+import QRCodeGeneratorTool from "@/components/tools/QRCodeGenerator";
+import { Metadata } from "next";
 
-import Image from "next/image";
-import { useState } from "react";
+export const metadata: Metadata = {
+  title: "QR Code Generator - Melvin Jones Repol",
+  description:
+    "Generate QR codes for URLs, text, and more with our easy-to-use QR Code Generator tool. Create custom QR codes for your business, events, or personal use in seconds.",
+  keywords: [
+    "QR Code Generator",
+    "Generate QR Codes",
+    "QR Code Creator",
+    "QR Code Maker",
+    "Free QR Code Generator",
+    "Online QR Code Generator",
+  ],
+  alternates: {
+    canonical: "https://www.melvinjonesrepol.com/tools/qrcode-generator",
+  },
+  openGraph: {
+    title: "QR Code Generator - Melvin Jones Repol",
+    description:
+      "Generate QR codes for URLs, text, and more with our easy-to-use QR Code Generator tool. Create custom QR codes for your business, events, or personal use in seconds.",
+    url: "https://www.melvinjonesrepol.com/tools/qrcode-generator",
+    siteName: "Melvin Jones Repol",
+    images: [
+      {
+        url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.png",
+        width: 800,
+        height: 600,
+        alt: "Melvin Jones Repol Cover",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "QR Code Generator - Melvin Jones Repol",
+    description:
+      "Generate QR codes for URLs, text, and more with our easy-to-use QR Code Generator tool. Create custom QR codes for your business, events, or personal use in seconds.",
+    images: ["https://www.melvinjonesrepol.com/images/melvinjonesrepol.png"],
+    creator: "@mrepol742",
+  },
+};
 
 export default function QRCodeGenerator() {
-  const [input, setInput] = useState("");
-  const [qrUrl, setQrUrl] = useState("");
-
-  const handleGenerate = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim()) return;
-
-    const encoded = encodeURIComponent(input.trim());
-    const qrImageUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encoded}&size=200x200`;
-
-    setQrUrl(qrImageUrl);
-  };
-
-  return (
-    <main className="my-18 p-3 md:p-8">
-      <section>
-        <h1 className="text-2xl font-bold">QR Code Generator</h1>
-        <p>
-          This tool will allow you to generate QR codes for any URL or text.
-        </p>
-
-        <form onSubmit={handleGenerate} style={{ marginBottom: "1rem" }}>
-          <input
-            type="text"
-            placeholder="Enter URL or text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            style={{ padding: "0.5rem", width: "300px" }}
-          />
-          <button
-            type="submit"
-            style={{ marginLeft: "1rem", padding: "0.5rem 1rem" }}
-          >
-            Generate
-          </button>
-        </form>
-
-        {qrUrl && (
-          <div style={{ marginTop: "1rem" }}>
-            <h3>Your QR Code:</h3>
-            <Image
-              src={qrUrl}
-              alt="Generated QR Code"
-              width={150}
-              height={150}
-            />
-          </div>
-        )}
-      </section>
-    </main>
-  );
+  return <QRCodeGeneratorTool />;
 }
