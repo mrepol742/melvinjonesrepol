@@ -1,15 +1,23 @@
 import { NextRequest, NextResponse } from "next/server";
 import * as cheerio from "cheerio";
+import { recaptcha } from "@/lib/recaptcha";
 
 export async function POST(req: NextRequest) {
   try {
-    const { url } = await req.json();
+    const { url, username, token } = await req.json();
 
-    if (!url || !/^https?:\/\//.test(url)) {
-      return NextResponse.json({ error: "Invalid URL" }, { status: 400 });
+    // recaptcha verification
+    if (!(await recaptcha(token, "open_graph")))
+      throw new Error("reCAPTCHA verification failed. Please try again.");
+
+    const formattedUrl = /^https?:\/\//.test(url) ? url : `http://${url}`;
+    if (username) {
+      throw new Error(
+        "Bots has no place here. If your not a bot type those fields manually.",
+      );
     }
 
-    const response = await fetch(url);
+    const response = await fetch(formattedUrl);
     const html = await response.text();
     const $ = cheerio.load(html);
     const meta: Record<string, string> = {};
@@ -17,17 +25,24 @@ export async function POST(req: NextRequest) {
     $("meta").each((_, el) => {
       const property = $(el).attr("property") || $(el).attr("name");
       const content = $(el).attr("content");
-      if (property && content && property.startsWith("og:")) {
+      if (
+        property &&
+        content &&
+        ["title", "description", "og", "twitter"].some((prefix) =>
+          property.startsWith(prefix),
+        )
+      ) {
         meta[property] = content;
       }
     });
 
     return NextResponse.json({ meta });
-  } catch (err) {
-    console.error("Error fetching Open Graph metadata:", err);
+  } catch (error) {
     return NextResponse.json(
-      { error: "Failed to fetch or parse metadata" },
-      { status: 500 }
+      {
+        error: error instanceof Error ? error.message : "Internal server error",
+      },
+      { status: error instanceof Error ? 400 : 500 },
     );
   }
 }

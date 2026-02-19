@@ -16,13 +16,8 @@ export async function POST(request: Request) {
     const { name, email, message, username, token } = body;
 
     // recaptcha verification
-    if (!(await recaptcha(token)))
-      return NextResponse.json(
-        {
-          error: "reCAPTCHA verification failed. Please try again.",
-        },
-        { status: 400 },
-      );
+    if (!(await recaptcha(token, "contact_me")))
+      throw new Error("reCAPTCHA verification failed. Please try again.");
 
     if (!name || !email || !message) {
       throw new Error("All fields are required.");

@@ -52,12 +52,10 @@ export default function ContactMe() {
           body: JSON.stringify({ ...formData, token }),
         });
 
-        if (!response.ok) {
-          const err = await response.json();
-          throw new Error(err?.error || "Something went wrong");
-        }
-
         const data = await response.json();
+        if (!response.ok) {
+          throw new Error(data?.error || "Something went wrong");
+        }
         setFormData({ name: "", email: "", message: "", username: "" });
         resolve(data);
       } catch (error) {
