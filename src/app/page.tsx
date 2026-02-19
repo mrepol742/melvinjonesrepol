@@ -44,6 +44,17 @@ export default function Home() {
 
   const updates = [
     {
+      title: "Github Unsigned Commits",
+      description: "Due to configuration issues on one of my device some of my commits in past couple weeks were unsigned. To avoid conflicts these past commits will not be signed. I will make sure that all future commits are signed and verified.",
+    },
+    {
+      title: "Legals Update",
+      description:
+        "We updated our Privacy Policy and Terms of Service to ensure compliance with legal requirements and to provide transparency about how we handle user data. Please review the updated policies for more information.",
+      link: "/privacy-policy",
+      featured: true,
+    },
+    {
       title: "Floating Console Extension",
       description:
         "A Browser extension that provides a floating console for developers to easily access logs while browsing the web.",
@@ -65,35 +76,10 @@ export default function Home() {
       featured: true,
     },
     {
-      title: "Licenses Updates",
-      description:
-        "Axleshift Core 1 and Point of Sale System newer updates will be released under 'Polyform Noncommercial License 1.0.0' refer to the project LICENSE file for more information, any commits before this updates will be under its previous license 'MIT with common clause'.",
-      featured: true,
-    },
-    {
       title: "Learning Rust",
       description:
         "I'm currently exploring Rust via PACT Advanced Rust Programming and Real World Applications via Coursera. You might see future projects of mine coded in Rust. Hope so...",
       repo: "https://github.com/mrepol742/learning_rust",
-      featured: true,
-    },
-    {
-      title: "Updates to Webvium Legals",
-      description: "Please read the updated Privacy Policy & Terms of Service!",
-      link: "/webvium-browser#legals",
-      featured: true,
-    },
-    {
-      title: "Homepage Revamp & Ads",
-      description:
-        "Redesigned and modernized the homepage for a smoother user experience, a minor ad(s) view will be displayed on project section.",
-      featured: true,
-    },
-    {
-      title: "Webvium 3.0 is Here!",
-      description:
-        "Refractored, redesigned, and complete code overhaul. Bringing performance improvements, UI enchancements, features and much more.",
-      link: "/webvium-browser",
       featured: true,
     },
     {
