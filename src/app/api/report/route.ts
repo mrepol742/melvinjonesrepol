@@ -12,7 +12,18 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
 
-    const { email, type, message, crash_log } = body;
+    const {
+      device,
+      os_version,
+      app_version,
+      app_version_code,
+      app_name,
+      app_package_name,
+      email,
+      type,
+      message,
+      crash_log,
+    } = body;
 
     if (!type) throw new Error("Type of report is required.");
     if (!message) throw new Error("Message field is required.");
@@ -63,22 +74,42 @@ export async function POST(request: Request) {
       if (now - time > DUPLICATE_TIMEOUT) recentMessages.delete(key);
     }
 
+    const constructText = () => {
+      let text = `Report Type: ${type}`;
+      if (device) text += `\n\nDevice: ${device}`;
+      if (os_version) text += `\nOS Version: ${os_version}`;
+      if (app_version) text += `\nApp Version: ${app_version}`;
+      if (app_version_code) text += `\nApp Version Code: ${app_version_code}`;
+      if (app_name) text += `\nApp Name: ${app_name}`;
+      if (app_package_name) text += `\nApp Package Name: ${app_package_name}`;
+      text += `\nMessage:\n${message}`;
+      if (crash_log) text += `\n\nCrash Log:${crash_log}`;
+      return text;
+    };
+
+    const constructHtml = () => {
+      let html = `<strong>Report Type:</strong> ${type}<br>`;
+      if (device) html += `<strong>Device:</strong> ${device}<br>`;
+      if (os_version) html += `<strong>OS Version:</strong> ${os_version}<br>`;
+      if (app_version)
+        html += `<strong>App Version:</strong> ${app_version}<br>`;
+      if (app_version_code)
+        html += `<strong>App Version Code:</strong> ${app_version_code}<br>`;
+      if (app_name) html += `<strong>App Name:</strong> ${app_name}<br>`;
+      if (app_package_name)
+        html += `<strong>App Package Name:</strong> ${app_package_name}<br>`;
+      html += `<strong>Message:</strong><br>${message.replace(/\n/g, "<br>")}`;
+      if (crash_log)
+        html += `<br><br><strong>Crash Log:</strong><pre>${crash_log}</pre>`;
+      return html;
+    };
+
     const info = await transporter.sendMail({
       from: `Webvium ${type} <${email ? email : "No Email Provided"}>`,
       to: NODE_MAILER_RECEIVER,
       subject: `Webvium ${type} <${email ? email : "No Email Provided"}>`,
-      text:
-        type +
-        ":\n" +
-        message +
-        (crash_log ? `\n\nCrash Log:\n${crash_log}` : ""),
-      html:
-        type +
-        ":<br>" +
-        message +
-        (crash_log
-          ? `<br><br><strong>Crash Log:</strong><pre>${crash_log}</pre>`
-          : ""),
+      text: constructText(),
+      html: constructHtml(),
     });
 
     if (!info.messageId) {
