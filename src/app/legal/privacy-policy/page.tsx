@@ -189,6 +189,27 @@ export default function Privacy() {
         </p>
         <p>The browser is not affiliated with Google LLC.</p>
 
+        <h3 className="text-xl font-semibold">Send Report</h3>
+        <p>
+          Webvium Browser includes a “Send Report” feature that allows users to
+          submit feedback or bug reports via email. When you use this feature,
+          the following information may be collected and transmitted to us:
+        </p>
+
+        <ul className="list-disc list-inside ml-4">
+          <li>Your email address (optional)</li>
+          <li>Your message or feedback</li>
+          <li>Device information (e.g., model, OS version)</li>
+          <li>App version</li>
+          <li>Crash logs (optional)</li>
+        </ul>
+
+        <p>
+          This information is used solely for the purpose of responding to your
+          feedback and improving the application. We do not use this data for
+          any other purpose, and it is not shared with third parties.
+        </p>
+
         <h3 className="text-xl font-semibold">Third-Party Websites</h3>
         <p>
           Webvium Browser enables users to access third-party websites across

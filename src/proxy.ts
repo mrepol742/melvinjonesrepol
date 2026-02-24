@@ -48,8 +48,8 @@ export async function proxy(request: NextRequest) {
       );
     }
 
-    const maxRequest = /api\/contact/.test(request.nextUrl.pathname) ? 2 : 10;
-    const window = /api\/contact/.test(request.nextUrl.pathname)
+    const maxRequest = /api\/(contact|report)/.test(request.nextUrl.pathname) ? 2 : 10;
+    const window = /api\/(contact|report)/.test(request.nextUrl.pathname)
       ? 60 * 60 * 100
       : 5 * 60 * 100;
     const isAllowed = checkRateLimit(ip, maxRequest, window);
