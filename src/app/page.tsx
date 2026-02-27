@@ -44,8 +44,23 @@ export default function Home() {
 
   const updates = [
     {
+      title: "Payment powered Sci Calculator",
+      description:
+        "A scientific calculator with payment integration, allowing users to access advanced features and functionalities through a seamless payment process.",
+      link: "https://github.com/mrepol742/sci-calc",
+      featured: true,
+    },
+    {
+      title: "Football Matches Prediction",
+      description:
+        "Predictions based on team performance, player statistics, injuries, and historical data. Explore common approaches to predicting football matches.",
+      link: "/todays-football-matches",
+      featured: true,
+    },
+    {
       title: "Github Unsigned Commits",
-      description: "Due to configuration issues on one of my device some of my commits in past couple weeks were unsigned. To avoid conflicts these past commits will not be signed. I will make sure that all future commits are signed and verified.",
+      description:
+        "Due to configuration issues on one of my device some of my commits in past couple weeks were unsigned. To avoid conflicts these past commits will not be signed. I will make sure that all future commits are signed and verified.",
     },
     {
       title: "Legals Update",
