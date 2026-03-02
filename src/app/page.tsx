@@ -11,6 +11,7 @@ import ProjectSection from "@/components/home/ProjectSection";
 import RecentGithubActivityWrapper from "@/components/RecentGithubActivityWrapper";
 import RecentGithubActivity from "@/components/RecentGithubActivity";
 import { Youtube } from "@/components/home/Youtube";
+import Script from "next/script";
 
 export default function Home() {
   const person = {
@@ -187,7 +188,35 @@ export default function Home() {
           </div>
 
           <h4
-            className="text-center text-3xl mb-4 text-amber-500"
+            className="text-center text-3xl mb-4 text-red-500"
+            data-aos="fade-up"
+          >
+            Keep Android Open
+          </h4>
+          <p className="text-center max-w-2xl mx-auto mb-6" data-aos="fade-up">
+            In August 2025, Google{" "}
+            <Link className="underline" href="https://developer.android.com/developer-verification">
+              announced
+            </Link>{" "}
+            that as of September 2026, it will no longer be possible to develop
+            apps for the Android platform without first registering centrally
+            with Google. This registration will involve:
+          </p>
+          <ul
+            className="list-disc list-inside max-w-2xl mx-auto mb-6 text-left"
+            data-aos="fade-up"
+          >
+            <li>Paying a fee to Google</li>
+            <li>Agreeing to Google’s Terms and Conditions</li>
+            <li>Providing government identification</li>
+            <li>Uploading evidence of the developer’s private signing key</li>
+            <li>Listing all current and future application identifiers</li>
+          </ul>
+          <div id="keep-android-open"></div>
+          <Script src="https://keepandroidopen.org/banner.js?lang=en&size=mini&id=keep-android-open"></Script>
+
+          <h4
+            className="text-center text-3xl mb-4 text-amber-500 mt-6"
             data-aos="fade-up"
           >
             New Updates
