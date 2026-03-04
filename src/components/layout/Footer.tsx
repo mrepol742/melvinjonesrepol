@@ -268,6 +268,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="https://devpulse-waka.vercel.app"
+                  className="hover:text-indigo-500 text-gray-400"
+                >
+                  DevPulse
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/sitemap.xml"
                   className="hover:text-orange-500 text-gray-400"
                 >

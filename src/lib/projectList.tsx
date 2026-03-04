@@ -1,5 +1,15 @@
 const Projects = [
   {
+    title: "DevPulse",
+    description:
+      "Monitor your coding activity, create custom leaderboards, and compete with your team or the community. DevPulse brings WakaTime stats into a sleek, collaborative leaderboard experience.",
+    link: "https://devpulse-waka.vercel.app",
+    repo: "https://github.com/mrepol742/devpulse",
+    featured: true,
+    languages: ["TypeScript"],
+    cover: "https://opengraph.githubassets.com/1/mrepol742/devpulse",
+  },
+  {
     title: "Webvium Launcher",
     description:
       "Lightweight, modern and lightning-fast Android launcher thats currently in development. Built with speed, simplicity and customization in mind.",

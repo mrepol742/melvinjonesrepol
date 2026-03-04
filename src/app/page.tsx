@@ -45,6 +45,14 @@ export default function Home() {
 
   const updates = [
     {
+      title: "DevPulse",
+      description:
+        "Monitor your coding activity, create custom leaderboards, and compete with your team or the community. DevPulse brings WakaTime stats into a sleek, collaborative leaderboard experience.",
+      link: "https://devpulse-waka.vercel.app",
+      repo: "https://github.com/mrepol742/devpulse",
+      featured: true,
+    },
+    {
       title: "Payment powered Sci Calculator",
       description:
         "A scientific calculator with payment integration, allowing users to access advanced features and functionalities through a seamless payment process.",
@@ -161,12 +169,26 @@ export default function Home() {
 
             <div>
               <Link
+                href="https://github.com/mrepol742"
+                data-aos="fade-right"
+                data-aos-delay="350"
+              >
+                <button
+                  className="uppercase text-sm relative bg-indigo-400 px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
+                  before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-indigo-600 before:rounded-b-lg
+                  after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-indigo-600 after:rounded-r-lg"
+                  style={{ boxShadow: "1px 1px 0 0 #111827" }}
+                >
+                  Github
+                </button>
+              </Link>
+              <Link
                 href="/contact-me"
                 data-aos="fade-right"
                 data-aos-delay="350"
               >
                 <button
-                  className="uppercase text-sm relative bg-orange-400 px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
+                  className="uppercase text-sm relative bg-orange-400 px-7 py-4 mt-3 ml-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
                   before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-orange-600 before:rounded-b-lg
                   after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-orange-600 after:rounded-r-lg"
                   style={{ boxShadow: "1px 1px 0 0 #ea580c" }}
