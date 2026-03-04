@@ -1,65 +1,23 @@
 import { NextRequest, NextResponse } from "next/server";
 import { checkRateLimit } from "./lib/rateLimit";
+import HeadlessBrowserCheck from "./lib/proxy/headless-browser-check";
+import RateLimiter from "./lib/proxy/rate-limiter";
 
 const env = process.env.NODE_ENV;
 
-export async function proxy(request: NextRequest) {
-  const forwardedFor = request.headers.get("x-forwarded-for");
-  const ip = forwardedFor?.split(",")[0] || "unknown";
-  const origin = request.headers.get("origin");
-  const ua = request.headers.get("user-agent") || "";
+export async function proxy(req: NextRequest) {
+  const headlessResponse = HeadlessBrowserCheck(req);
+  if (headlessResponse) return headlessResponse;
 
-  const headlessPatterns = [
-    "HeadlessChrome",
-    "PhantomJS",
-    "SlimerJS",
-    "Puppeteer",
-    "Playwright",
-    "Chrome-Lighthouse",
-  ];
+  const rateLimiter = RateLimiter(req);
+  if (rateLimiter) return rateLimiter;
 
-  const isHeadless = headlessPatterns.some((p) =>
-    ua.toLowerCase().includes(p.toLowerCase()),
-  );
-
-  if (isHeadless) {
-    return new NextResponse(
-      JSON.stringify({ error: "Automated browsers are not allowed" }),
-      {
-        status: 403,
-        headers: { "Content-Type": "application/json" },
-      },
-    );
-  }
-
-  if (/api\//.test(request.nextUrl.pathname)) {
-    const allowedOrigins =
-      env === "development"
-        ? [/^http:\/\/localhost:\d+$/, /^http:\/\/127\.0\.0\.1:\d+$/] // dev
-        : [/^https?:\/\/([a-z0-9-]+\.)?melvinjonesrepol\.com$/]; // prod
-
-    const isAllowed1 =
-      origin && allowedOrigins.some((pattern) => pattern.test(origin));
-
-    if (!isAllowed1) {
-      return NextResponse.json(
-        { error: "Hehe you're going too far naah..." },
-        { status: 403 },
-      );
-    }
-
-    const maxRequest = /api\/(contact|report)/.test(request.nextUrl.pathname) ? 2 : 10;
-    const window = /api\/(contact|report)/.test(request.nextUrl.pathname)
-      ? 60 * 60 * 100
-      : 5 * 60 * 100;
-    const isAllowed = checkRateLimit(ip, maxRequest, window);
-    if (!isAllowed)
-      return NextResponse.json({ error: "Too many requests" }, { status: 429 });
-  }
-
-  if (/hello-world$/.test(request.nextUrl.pathname))
+  if (/hello-world$/.test(req.nextUrl.pathname))
     return new NextResponse("Hello World", { status: 200 });
-  return NextResponse.next();
+
+    return NextResponse.next({
+      request: { headers: req.headers },
+    });
 }
 
 export const config = {
