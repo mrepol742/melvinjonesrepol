@@ -140,7 +140,7 @@ export default function Home() {
       />
       <main className="p-3 md:p-8">
         <section>
-          <div className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
+          <div className="relative min-h-screen flex flex-col items-center justify-center text-center  overflow-hidden">
             <div className="relative z-10 max-w-4xl">
               <div
                 className="inline-flex items-center px-4 py-1 mb-6 text-sm font-medium bg-indigo-50 text-indigo-700 rounded-full border border-indigo-100"
@@ -214,7 +214,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative py-28 px-6 overflow-hidden">
+          <div className="relative py-14 md:py-28  overflow-hidden">
             <div className="relative z-10 max-w-4xl mx-auto">
               <h4
                 className="text-center text-3xl md:text-4xl font-bold mb-6 tracking-tight"
@@ -271,7 +271,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative py-28 px-6 overflow-hidden">
+          <div className="relative py-14 md:py-28  overflow-hidden">
             <h4
               className="text-center text-3xl mb-4 text-amber-500"
               data-aos="fade-up"
@@ -295,7 +295,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative py-28 px-6 overflow-hidden">
+          <div className="relative py-14 md:py-28  overflow-hidden">
             <h4
               className="text-center text-3xl text-amber-500"
               data-aos="fade-up"
@@ -312,7 +312,7 @@ export default function Home() {
             <WakatimeSection />
           </div>
 
-          <div className="relative py-28 px-6 overflow-hidden">
+          <div className="relative py-14 md:py-28  overflow-hidden">
             <h4
               className="text-center text-3xl text-amber-500"
               data-aos="fade-up"
@@ -332,7 +332,7 @@ export default function Home() {
 
           <SteamSection />
 
-          <div className="relative py-28 px-6 overflow-hidden">
+          <div className="relative py-14 md:py-28  overflow-hidden">
             <h4
               className="text-center text-3xl mb-4 text-amber-500"
               data-aos="fade-up"
@@ -350,7 +350,7 @@ export default function Home() {
             <Youtube />
           </div>
 
-          <div className="relative py-28 px-6 overflow-hidden">
+          <div className="relative py-14 md:py-28  overflow-hidden">
             <h4
               className="text-center text-3xl  text-blue-400"
               data-aos="fade-up"
