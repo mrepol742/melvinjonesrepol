@@ -140,209 +140,268 @@ export default function Home() {
       />
       <main className="p-3 md:p-8">
         <section>
-          <div className="min-h-screen flex flex-col py-[-100] items-center justify-center text-center">
-            <div className="mb-10 w-64 h-64 rounded-full bg-gradient-to-tr from-violet-500 via-yellow-300 to-green-400 animate-gradient-shift flex items-center justify-center bg-opacity-60 backdrop-blur-md hover:scale-98 transition-transform duration-300">
-              <Image
-                src="/images/melvinjonesrepol.transparent.png"
-                alt="Hero Image"
-                className="w-60 h-60 object-cover rounded-full border-4 border-white shadow-lg"
-                width={240}
-                height={240}
-              />
-            </div>
-            <h1
-              className="text-3xl md:text-5xl font-black mb-2"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              Melvin Jones Repol
-            </h1>
-            <p
-              className="max-w-lg text-xl mb-5"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
-              I specialize in building robust, scalable software solutions that
-              solve real-world problems. With a passion for technology and a
-              commitment to excellence, I bring ideas to life through code.
-            </p>
-
-            <div>
-              <Link
-                href="https://github.com/mrepol742"
-                data-aos="fade-right"
-                data-aos-delay="350"
+          <div className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
+            <div className="relative z-10 max-w-4xl">
+              <div
+                className="inline-flex items-center px-4 py-1 mb-6 text-sm font-medium bg-indigo-50 text-indigo-700 rounded-full border border-indigo-100"
+                data-aos="fade-up"
               >
-                <button
-                  className="uppercase text-sm relative bg-indigo-400 px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
+                Software Engineer • Full-Stack Developer
+              </div>
+
+              <h1
+                className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                Building Scalable Digital{" "}
+                <span className="text-indigo-600">Solutions</span>
+                <br /> That Drive Impact
+              </h1>
+
+              <p
+                className="max-w-2xl mx-auto text-lg md:text-xl mb-10 leading-relaxed"
+                data-aos="fade-up"
+                data-aos-delay="250"
+              >
+                I design and develop high-performance software systems that help
+                businesses innovate, scale, and succeed in a rapidly evolving
+                digital landscape.
+              </p>
+
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                <Link
+                  href="https://github.com/mrepol742"
+                  data-aos="fade-up"
+                  data-aos-delay="350"
+                >
+                  <button
+                    className="uppercase text-sm relative bg-indigo-400 px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
                   before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-indigo-600 before:rounded-b-lg
                   after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-indigo-600 after:rounded-r-lg"
-                  style={{ boxShadow: "1px 1px 0 0 #111827" }}
+                    style={{ boxShadow: "1px 1px 0 0 #111827" }}
+                  >
+                    Github
+                  </button>
+                </Link>
+
+                <Link
+                  href="/contact-me"
+                  data-aos="fade-up"
+                  data-aos-delay="400"
                 >
-                  Github
-                </button>
-              </Link>
-              <Link
-                href="/contact-me"
-                data-aos="fade-right"
-                data-aos-delay="350"
-              >
-                <button
-                  className="uppercase text-sm relative bg-orange-400 px-7 py-4 mt-3 ml-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
+                  <button
+                    className="uppercase text-sm relative bg-orange-400 px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
                   before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-orange-600 before:rounded-b-lg
                   after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-orange-600 after:rounded-r-lg"
-                  style={{ boxShadow: "1px 1px 0 0 #ea580c" }}
-                >
-                  Hire me
-                </button>
-              </Link>
-              <Link href="/pricing" data-aos="fade-right" data-aos-delay="400">
-                <button
-                  className="uppercase text-sm relative bg-gray-800 text-white px-7 py-4 mt-3 ml-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
+                    style={{ boxShadow: "1px 1px 0 0 #ea580c" }}
+                  >
+                    Hire Me
+                  </button>
+                </Link>
+
+                <Link href="/pricing" data-aos="fade-up" data-aos-delay="450">
+                  <button
+                    className="uppercase text-sm relative bg-gray-800 text-white px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
                   before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-gray-900 before:rounded-b-lg
                   after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-gray-900 after:rounded-r-lg"
-                  style={{ boxShadow: "1px 1px 0 0 #111827" }}
-                >
-                  Pricing
-                </button>
-              </Link>
+                    style={{ boxShadow: "1px 1px 0 0 #111827" }}
+                  >
+                    Pricing
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
 
-          <h4
-            className="text-center text-3xl mb-4 text-red-500"
-            data-aos="fade-up"
-          >
-            Keep Android Open
-          </h4>
-          <p className="text-center max-w-2xl mx-auto mb-6" data-aos="fade-up">
-            In August 2025, Google{" "}
-            <Link className="underline" href="https://developer.android.com/developer-verification">
-              announced
-            </Link>{" "}
-            that as of September 2026, it will no longer be possible to develop
-            apps for the Android platform without first registering centrally
-            with Google. This registration will involve:
-          </p>
-          <ul
-            className="list-disc list-inside max-w-2xl mx-auto mb-6 text-left"
-            data-aos="fade-up"
-          >
-            <li>Paying a fee to Google</li>
-            <li>Agreeing to Google’s Terms and Conditions</li>
-            <li>Providing government identification</li>
-            <li>Uploading evidence of the developer’s private signing key</li>
-            <li>Listing all current and future application identifiers</li>
-          </ul>
-          <div id="keep-android-open"></div>
-          <Script src="https://keepandroidopen.org/banner.js?lang=en&size=mini&id=keep-android-open"></Script>
+          <div className="relative py-28 px-6 overflow-hidden">
+            <div className="relative z-10 max-w-4xl mx-auto">
+              <h4
+                className="text-center text-3xl md:text-4xl font-bold mb-6 tracking-tight"
+                data-aos="fade-up"
+              >
+                Keep Android Open
+              </h4>
 
-          <h4
-            className="text-center text-3xl mb-4 text-amber-500 mt-6"
-            data-aos="fade-up"
-          >
-            New Updates
-          </h4>
-          <p className="text-center max-w-2xl mx-auto mb-6" data-aos="fade-up">
-            Fresh projects and improvements added recently to keep things
-            evolving. This section highlights what’s new, refined, or actively
-            being worked on.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mb-10">
-            {updates.map((project, idx) => (
-              <div key={idx} data-aos="fade-up">
-                <ProjectCard {...project} />
+              <p
+                className="text-center max-w-2xl mx-auto mb-12 leading-relaxed text-lg"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                In August 2025, Google{" "}
+                <Link
+                  className="underline decoration-gray-400 hover:decoration-gray-700 transition-colors"
+                  href="https://developer.android.com/developer-verification"
+                >
+                  announced
+                </Link>{" "}
+                that as of September 2026, it will no longer be possible to
+                develop apps for the Android platform without first registering
+                centrally with Google. This registration will involve:
+              </p>
+
+              <div
+                className="max-w-2xl mx-auto rounded-2xl p-8"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <ul className="space-y-4">
+                  <li className="flex items-start gap-3">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-red-500"></span>
+                    Paying a fee to Google
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-red-500"></span>
+                    Agreeing to Google’s Terms and Conditions
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-red-500"></span>
+                    Providing government identification
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-red-500"></span>
+                    Uploading evidence of the developer’s private signing key
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-red-500"></span>
+                    Listing all current and future application identifiers
+                  </li>
+                </ul>
               </div>
-            ))}
+            </div>
           </div>
 
-          <h4
-            className="text-center text-3xl mb-4 text-amber-500"
-            data-aos="fade-up"
-          >
-            Programming Stats
-          </h4>
-          <p className="text-center max-w-2xl mx-auto mb-6" data-aos="fade-up">
-            A snapshot of my coding activity across languages and tools. Tracked
-            automatically to reflect real development time and habits.
-          </p>
-          <WakatimeSection />
+          <div className="relative py-28 px-6 overflow-hidden">
+            <h4
+              className="text-center text-3xl mb-4 text-amber-500"
+              data-aos="fade-up"
+            >
+              New Updates
+            </h4>
+            <p
+              className="text-center max-w-2xl mx-auto mb-6"
+              data-aos="fade-up"
+            >
+              Fresh projects and improvements added recently to keep things
+              evolving. This section highlights what’s new, refined, or actively
+              being worked on.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mb-10">
+              {updates.map((project, idx) => (
+                <div key={idx} data-aos="fade-up">
+                  <ProjectCard {...project} />
+                </div>
+              ))}
+            </div>
+          </div>
 
-          <h4
-            className="text-center text-3xl mb-4 text-amber-500"
-            data-aos="fade-up"
-          >
-            Featured Projects
-          </h4>
-          <p className="text-center max-w-2xl mx-auto mb-6" data-aos="fade-up">
-            A curated selection of projects that best represent my skills and
-            creativity. These are the ones I’m most proud of and actively
-            showcase.
-          </p>
-          <ProjectSection />
+          <div className="relative py-28 px-6 overflow-hidden">
+            <h4
+              className="text-center text-3xl text-amber-500"
+              data-aos="fade-up"
+            >
+              Programming Stats
+            </h4>
+            <p
+              className="text-center max-w-2xl mx-auto mb-6"
+              data-aos="fade-up"
+            >
+              A snapshot of my coding activity across languages and tools.
+              Tracked automatically to reflect real development time and habits.
+            </p>
+            <WakatimeSection />
+          </div>
+
+          <div className="relative py-28 px-6 overflow-hidden">
+            <h4
+              className="text-center text-3xl text-amber-500"
+              data-aos="fade-up"
+            >
+              Featured Projects
+            </h4>
+            <p
+              className="text-center max-w-2xl mx-auto mb-6"
+              data-aos="fade-up"
+            >
+              A curated selection of projects that best represent my skills and
+              creativity. These are the ones I’m most proud of and actively
+              showcase.
+            </p>
+            <ProjectSection />
+          </div>
 
           <SteamSection />
 
-          <h4
-            className="text-center text-3xl mb-4 text-amber-500"
-            data-aos="fade-up"
-          >
-            Latest Videos
-          </h4>
-          <p className="text-center max-w-2xl mx-auto mb-6" data-aos="fade-up">
-            A glimpse into my latest video content, where I share insights,
-            tutorials, and behind-the-scenes looks at my projects and gaming.
-            Check out what I’ve been up to on YouTube!
-          </p>
-          <Youtube />
+          <div className="relative py-28 px-6 overflow-hidden">
+            <h4
+              className="text-center text-3xl mb-4 text-amber-500"
+              data-aos="fade-up"
+            >
+              Latest Videos
+            </h4>
+            <p
+              className="text-center max-w-2xl mx-auto mb-6"
+              data-aos="fade-up"
+            >
+              A glimpse into my latest video content, where I share insights,
+              tutorials, and behind-the-scenes looks at my projects and gaming.
+              Check out what I’ve been up to on YouTube!
+            </p>
+            <Youtube />
+          </div>
 
-          <h4
-            className="text-center text-3xl mb-4 text-blue-400"
-            data-aos="fade-up"
-          >
-            Hall of Codes
-          </h4>
-          <p className="text-center max-w-2xl mx-auto mb-6" data-aos="fade-up">
-            A community for developers, creatives, and problem-solvers. It’s
-            where ideas turn into projects, and projects turn into opportunities
-            to learn and collaborate.
-          </p>
-          <div
-            className=" bg-blue-400/10 mb-4 rounded block lg:flex flex-column gap-5"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <FaceEyes />
+          <div className="relative py-28 px-6 overflow-hidden">
+            <h4
+              className="text-center text-3xl  text-blue-400"
+              data-aos="fade-up"
+            >
+              Hall of Codes
+            </h4>
+            <p
+              className="text-center max-w-2xl mx-auto mb-6"
+              data-aos="fade-up"
+            >
+              A community for developers, creatives, and problem-solvers. It’s
+              where ideas turn into projects, and projects turn into
+              opportunities to learn and collaborate.
+            </p>
+            <div
+              className=" bg-blue-400/10 mb-4 rounded block lg:flex flex-column gap-5"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <FaceEyes />
 
-            <div className="p-5">
-              <p className="text-lg">
-                I’m building this community for developers, creatives, and
-                problem-solvers. It’s where ideas turn into projects, and
-                projects turn into opportunities to learn and collaborate.
-              </p>
-              <p className="mt-3 text-lg">
-                If you love building cool things, exploring new tech, or just
-                geeking out over code, you’re welcome to join the journey.
-              </p>
-              <Link
-                href="https://hallofcodes.github.io"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                <button
-                  className="text-sm relative bg-blue-400 px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
+              <div className="p-5">
+                <p className="text-lg">
+                  I’m building this community for developers, creatives, and
+                  problem-solvers. It’s where ideas turn into projects, and
+                  projects turn into opportunities to learn and collaborate.
+                </p>
+                <p className="mt-3 text-lg">
+                  If you love building cool things, exploring new tech, or just
+                  geeking out over code, you’re welcome to join the journey.
+                </p>
+                <Link
+                  href="https://hallofcodes.github.io"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
+                  <button
+                    className="text-sm relative bg-blue-400 px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
                         before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-blue-600 before:rounded-b-lg
                         after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-blue-600 after:rounded-r-lg"
-                  style={{ boxShadow: "1px 1px 0 0 #111827" }}
-                >
-                  <FontAwesomeIcon
-                    icon={faCode}
-                    className="inline mr-2"
-                    size="xl"
-                  />
-                  Explore Hall of Codes
-                </button>
-              </Link>
+                    style={{ boxShadow: "1px 1px 0 0 #111827" }}
+                  >
+                    <FontAwesomeIcon
+                      icon={faCode}
+                      className="inline mr-2"
+                      size="xl"
+                    />
+                    Explore Hall of Codes
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -392,6 +451,10 @@ export default function Home() {
                 YouTube Data API v3
               </Link>
               .
+            </p>
+            <p>
+              Public contributions data are sourced from my Github account
+              public contributions.
             </p>
           </div>
         </section>
