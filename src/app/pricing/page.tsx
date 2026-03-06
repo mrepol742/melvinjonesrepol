@@ -53,28 +53,37 @@ export default function PricingPage() {
   return (
     <main className="my-18 p-3 md:p-8">
       <section>
-        <h1 className="text-2xl font-semibold">My Pricing</h1>
-        <p>
-          Transparent pricing for professional full-stack development. Final
-          costs depend on project scope, complexity, and timeline.
-        </p>
+        <h1
+          className="text-2xl font-semibold"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          My Pricing for Full-Stack Development Services
+        </h1>
 
+        <p className="mt-2" data-aos="fade-up" data-aos-delay="100">
+          I offer transparent and competitive pricing for professional
+          full-stack development projects. Final costs depend on project scope,
+          complexity, features, and timeline. Contact me for a detailed quote
+          tailored to your project needs.
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 mb-6">
           <PricingCard
             title="Per Project"
-            price="₱25,000"
+            price="₱45,000"
             items={[
+              "Search Engine Optimization (SEO)",
               "Full-stack development",
               "Testing & optimization",
               "Deployment support",
-              "1 week free bug fixes",
+              "1 week free bug fixes (original scope)",
             ]}
           />
 
           <PricingCard
             title="Project + Maintenance"
-            price="₱25, 000"
-            subtitle="Monthly maintenance starts at ₱1,000 / m"
+            price="₱45, 000"
+            subtitle="Monthly maintenance starts at ₱1,000"
             items={[
               "Security vulnerability fixes",
               "Performance monitoring",
@@ -86,7 +95,8 @@ export default function PricingPage() {
 
           <PricingCard
             title="Long-Term Engagement"
-            price="₱20,000 / m"
+            price="₱10,000"
+            subtitle="Monthly development starts at ₱30,000"
             items={[
               "Ongoing development",
               "Feature enhancements",
@@ -99,10 +109,9 @@ export default function PricingPage() {
 
         <Link href="/contact-me" data-aos="fade-right" data-aos-delay="350">
           <button
-            className="uppercase text-sm relative bg-orange-400 px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
+            className="rounded uppercase text-sm relative bg-orange-400 px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
             before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-orange-600 before:rounded-b-lg
             after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-orange-600 after:rounded-r-lg"
-            style={{ boxShadow: "1px 1px 0 0 #ea580c" }}
           >
             Contact Me
           </button>
@@ -114,6 +123,7 @@ export default function PricingPage() {
           </h2>
 
           <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 mb-6">
+            <li data-aos="fade-up">✔ Search Engine Optimization (SEO)</li>
             <li data-aos="fade-up">✔ End-to-end full-stack expertise</li>
             <li data-aos="fade-up">✔ Scalable and secure architecture</li>
             <li data-aos="fade-up">✔ Clean, maintainable codebase</li>
@@ -127,10 +137,17 @@ export default function PricingPage() {
           </ul>
         </div>
 
-        <div className="mt-14 text-sm text-gray-600">
+        <div className="text-sm">
           <p className="mb-2" data-aos="fade-up">
             • A <strong>20% non-refundable down payment</strong> is required
-            before work begins.
+            before work begins. This secures your project in my schedule and
+            covers initial setup costs.
+          </p>
+          <p className="mb-2" data-aos="fade-up">
+            • We believed in our commitment to delivering high-quality work, you
+            have a choice to request for different payment terms. Please contact
+            me to discuss your specific needs and we can work together to find a
+            solution that fits your budget and project requirements.
           </p>
           <p className="mb-2" data-aos="fade-up">
             • Any changes outside the agreed scope are billed separately.

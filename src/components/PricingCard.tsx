@@ -23,7 +23,7 @@ export default function PricingCard({
 
         {subtitle && <p className="text-sm text-gray-500 mb-4">{subtitle}</p>}
 
-        <ul className="space-y-2 text-gray-700 text-sm">
+        <ul className="space-y-2 text-sm">
           {items.map((item, i) => (
             <li key={i} className="flex gap-2">
               <span>•</span>
