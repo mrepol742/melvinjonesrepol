@@ -30,7 +30,7 @@ export default function CertificateCard({
 
         <span
           onClick={() => router.push(link)}
-          className="text-blue-600 font-medium text-sm hover:underline mr-4"
+          className="font-medium text-sm hover:underline mr-4"
           aria-label={`Open ${title} certificate link`}
         >
           View Certificate →

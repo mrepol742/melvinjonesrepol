@@ -33,7 +33,7 @@ export default function WorkExperienceCard({
         {cert && (
           <span
             onClick={() => router.push(cert)}
-            className="text-blue-600 font-medium text-sm hover:underline mr-4"
+            className="font-medium text-sm hover:underline mr-4"
             aria-label={`Open ${title} link`}
           >
             View Certificate →

@@ -79,14 +79,29 @@ export default function ContactMe() {
     <main className="my-18 p-3 md:p-8">
       <section>
         <div className="flex flex-col items-center gap-4">
-          <h1 className="text-center text-2xl font-semibold">Contact Me</h1>
-          <p className="mb-6 text-center max-w-md">
-            Have a question, project, or just want to say hi? Fill out the form
-            below and I&apos;ll get back to you soon!
+          <h1
+            className="text-2xl font-semibold"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            Contact Me – Get in Touch
+          </h1>
+          <p
+            className="mb-6 text-center max-w-md"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            Whether you have a question, a project idea, or just want to
+            connect, fill out the form below and I will respond promptly. I’m
+            happy to discuss collaborations, freelance opportunities, or share
+            insights about web development, design, and technology.
           </p>
+
           <form
             onSubmit={handleSubmit}
             className="bg-black/10 backdrop-blur shadow-lg rounded-xl p-8 w-full max-w-lg space-y-3 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
           >
             <div>
               <label

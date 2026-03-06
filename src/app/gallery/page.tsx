@@ -3,14 +3,16 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Gallery - Melvin Jones Repol",
-  description: "A collection of images showcasing my projects and designs.",
+  description:
+    "Explore a collection of images showcasing my projects and designs.",
   keywords: ["Gallery", "Images", "Projects", "Designs", "Melvin Jones Repol"],
   alternates: {
     canonical: "https://www.melvinjonesrepol.com/gallery",
   },
   openGraph: {
     title: "Gallery - Melvin Jones Repol",
-    description: "A collection of images showcasing my projects and designs.",
+    description:
+      "Explore a collection of images showcasing my projects and designs.",
     url: "https://www.melvinjonesrepol.com/gallery",
     siteName: "Melvin Jones Repol",
     images: [
@@ -27,8 +29,11 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Gallery - Melvin Jones Repol",
-    description: "A collection of images showcasing my projects and designs.",
-    images: ["https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png"],
+    description:
+      "Explore a collection of images showcasing my projects and designs.",
+    images: [
+      "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+    ],
     creator: "@mrepol742",
   },
 };
@@ -83,15 +88,15 @@ export default function Gallery() {
   return (
     <main className="my-18 p-3 md:p-8">
       <section>
-        <h1 className="text-center text-2xl font-semibold" data-aos="fade-up">
-          Gallery
+        <h1 className="text-2xl font-semibold" data-aos="fade-up">
+          Project & Design Gallery
         </h1>
-        <p
-          className="text-center"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          A collection of images showcasing my projects and designs.
+
+        <p className="mt-2" data-aos="fade-up" data-aos-delay="100">
+          Explore a curated collection of images highlighting my personal
+          projects, design work, and creative digital solutions. Each image
+          represents a real-world project demonstrating skills in web
+          development, UI/UX, and design.
         </p>
         <div className="columns-3 md:columns-4 lg:columns-5 xl:columns-6 gap-4 p-4 space-y-4">
           {images
@@ -102,7 +107,6 @@ export default function Gallery() {
                 key={idx}
                 className="mb-4 break-inside-avoid"
                 data-aos="fade-up"
-                data-aos-delay={idx * 100}
               >
                 <Image
                   src={src}

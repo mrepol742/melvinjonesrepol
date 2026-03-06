@@ -8,6 +8,7 @@ import {
   faCertificate,
   faEnvelope,
   faFolder,
+  faGamepad,
   faImages,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
@@ -36,7 +37,7 @@ export default function Nav() {
 
   return (
     <nav
-      className={`fixed z-50 mt-5 top-0 left-1/2 transform -translate-x-1/2 rounded bg-gray-800 text-white p-3 max-w-xl shadow-lg hover:shadow-xl transition-transform duration-300 ${
+      className={`rounded md:rounded-full fixed z-50 mt-5 top-0 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white p-3 max-w-xl shadow-lg hover:shadow-xl transition-transform duration-300 ${
         show ? "translate-y-0" : "-translate-y-full"
       }`}
     >
@@ -60,7 +61,7 @@ export default function Nav() {
                 />
               </span>
               <span className="hover:text-orange-500 ml-1 overflow-hidden max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-200 whitespace-nowrap">
-                Melvin Jones Repol
+                Home
               </span>
             </Link>
           </li>
@@ -79,9 +80,24 @@ export default function Nav() {
               </span>
             </Link>
           </li>
+          <li className="hidden md:block">
+            <Link
+              href="/gaming"
+              className="group flex items-center hover:text-orange-500"
+            >
+              <FontAwesomeIcon
+                icon={faGamepad}
+                className="inline-block mr-1"
+                size="1x"
+              />
+              <span className="ml-1 overflow-hidden max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-200 whitespace-nowrap">
+                Gaming
+              </span>
+            </Link>
+          </li>
           <li>
             <Link
-              href="/my-team"
+              href="/teams"
               className="group flex items-center hover:text-orange-500"
             >
               <FontAwesomeIcon
@@ -90,7 +106,7 @@ export default function Nav() {
                 size="1x"
               />
               <span className="ml-1 overflow-hidden max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-200 whitespace-nowrap">
-                My Team
+                Teams
               </span>
             </Link>
           </li>

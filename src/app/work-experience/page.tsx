@@ -3,7 +3,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Work Experience - Melvin Jones Repol",
-  description: "Here are some of the work experiences I had.",
+  description:
+    "A summary of my professional work experience, including the roles, responsibilities, and projects I have contributed to throughout my career in development and technology.",
   keywords: [
     "Work Experience",
     "Melvin Jones Repol",
@@ -23,7 +24,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Work Experience - Melvin Jones Repol",
-    description: "Here are some of the work experiences I had.",
+    description:
+      "A summary of my professional work experience, including the roles, responsibilities, and projects I have contributed to throughout my career in development and technology.",
     url: "https://www.melvinjonesrepol.com/work-experience",
     siteName: "Melvin Jones Repol",
     images: [
@@ -40,7 +42,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Work Experience - Melvin Jones Repol",
-    description: "Here are some of the work experiences I had.",
+    description:
+      "A summary of my professional work experience, including the roles, responsibilities, and projects I have contributed to throughout my career in development and technology.",
     images: [
       "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
     ],
@@ -52,11 +55,13 @@ export default function WorkExperience() {
   return (
     <main className="my-18 p-3 md:p-8">
       <section>
-        <h1 className="text-2xl font-semibold" data-aos="fade-right">
-          Work Experience
+        <h1 className="text-2xl font-semibold" data-aos="fade-up">
+          Professional Work Experience
         </h1>
-        <p data-aos="fade-right" data-aos-delay="100">
-          Here are some of the work experiences I had.
+        <p className="mt-2" data-aos="fade-up" data-aos-delay="100">
+          A summary of my professional work experience, including the roles,
+          responsibilities, and projects I have contributed to throughout my
+          career in development and technology.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
           <WorkExperienceCard

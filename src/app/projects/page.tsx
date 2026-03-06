@@ -6,7 +6,8 @@ import SearchForm from "@/components/form/SearchForm";
 
 export const metadata: Metadata = {
   title: "Projects - Melvin Jones Repol",
-  description: "Here are some of my projects that I have worked on.",
+  description:
+    "Explore a collection of my personal software development projects, experiments, and tools I’ve built using modern technologies.",
   keywords: [
     "Projects",
     "Axleshift Core 1",
@@ -22,7 +23,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Projects - Melvin Jones Repol",
-    description: "Here are some of my projects that I have worked on.",
+    description:
+      "Explore a collection of my personal software development projects, experiments, and tools I’ve built using modern technologies.",
     url: "https://www.melvinjonesrepol.com/projects",
     siteName: "Melvin Jones Repol",
     images: [
@@ -39,7 +41,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Projects - Melvin Jones Repol",
-    description: "Here are some of my projects that I have worked on.",
+    description:
+      "Explore a collection of my personal software development projects, experiments, and tools I’ve built using modern technologies.",
     images: [
       "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
     ],
@@ -69,8 +72,19 @@ export default async function Projects({
   return (
     <main className="my-18 p-3 md:p-8">
       <section>
-        <h1 className="text-2xl font-semibold">My Projects</h1>
-        <p>Here are some of my projects that I have worked on.</p>
+        <h1
+          className="text-2xl font-semibold"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          Personal Projects Portfolio
+        </h1>
+        <p className="mt-2" data-aos="fade-up" data-aos-delay="100">
+          Explore a collection of my personal software development projects,
+          experiments, and tools I’ve built using modern technologies. These
+          projects showcase my skills in web development, problem solving, and
+          building real-world applications.
+        </p>
 
         <SearchForm initialQuery={query} />
 

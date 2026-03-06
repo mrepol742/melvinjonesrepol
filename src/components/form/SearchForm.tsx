@@ -33,7 +33,11 @@ export default function SearchForm({ initialQuery = "" }: ProjectSearchProps) {
   const clearSearch = () => setQuery("");
 
   return (
-    <div className="border border-gray-400 rounded my-4 flex items-center gap-2 relative px-2 py-1 w-full max-w-xs">
+    <div
+      className="border border-gray-400 rounded my-4 flex items-center gap-2 relative px-2 py-1 w-full max-w-xs"
+      data-aos="fade-up"
+      data-aos-delay="100"
+    >
       <span className="absolute left-3 text-gray-400 pointer-events-none">
         <FontAwesomeIcon icon={faSearch} size="lg" />
       </span>

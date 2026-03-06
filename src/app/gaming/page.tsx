@@ -65,8 +65,19 @@ export default async function Gaming({
   return (
     <main className="my-18 p-3 md:p-8">
       <section>
-        <h1 className="text-2xl font-semibold">Gaming</h1>
-        <p>Here are some of my gaming achievements and activities.</p>
+        <h1
+          className="text-2xl font-semibold"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          Gaming Achievements & Activities
+        </h1>
+        <p className="mt-2" data-aos="fade-up" data-aos-delay="100">
+          Explore my gaming journey, including achievements, high scores, and
+          participation in competitive and casual gaming activities. This
+          section highlights my skills, strategy, and dedication to the gaming
+          community.
+        </p>
 
         <SearchForm initialQuery={query} />
 

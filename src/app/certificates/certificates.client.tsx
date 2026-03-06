@@ -89,18 +89,26 @@ export default function Certificates() {
   return (
     <main className="my-18 p-3 md:p-8">
       <section>
-        <h1 className="text-2xl font-semibold">
-          My Certificates
+        <h1
+          className="text-2xl font-semibold"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          Professional Certificates & Certifications
         </h1>
-        <p>
-          Here are some of the certificates I have earned through various
-          courses and programs.
+
+        <p className="mt-2" data-aos="fade-up" data-aos-delay="100">
+          A collection of professional certificates I have earned from various
+          online courses, training programs, and technical learning platforms.
+          These certifications showcase my continuous learning in web
+          development, programming, and modern digital technologies.
         </p>
         <div>
           <form
             onSubmit={(e) => e.preventDefault()}
             className="border rounded my-4 flex items-center gap-2 relative px-2 py-1 w-full max-w-xs"
             style={{ borderColor: "#e5e7eb" }}
+            data-aos="fade-up" data-aos-delay="100"
           >
             <span className="absolute left-3 text-gray-400 pointer-events-none">
               <FontAwesomeIcon icon={faSearch} size="lg" />
@@ -138,7 +146,7 @@ export default function Certificates() {
                 certificate.title.toLowerCase().includes(query.toLowerCase()) ||
                 certificate.description
                   .toLowerCase()
-                  .includes(query.toLowerCase())
+                  .includes(query.toLowerCase()),
             )
             .map((certificate, idx) => (
               <div key={idx}>

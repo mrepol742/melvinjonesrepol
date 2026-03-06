@@ -176,10 +176,9 @@ export default function Home() {
                   data-aos-delay="350"
                 >
                   <button
-                    className="uppercase text-sm relative bg-indigo-400 px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
+                    className="rounded uppercase text-sm relative bg-indigo-400 px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
                   before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-indigo-600 before:rounded-b-lg
                   after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-indigo-600 after:rounded-r-lg"
-                    style={{ boxShadow: "1px 1px 0 0 #111827" }}
                   >
                     Github
                   </button>
@@ -191,10 +190,9 @@ export default function Home() {
                   data-aos-delay="400"
                 >
                   <button
-                    className="uppercase text-sm relative bg-orange-400 px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
+                    className="rounded uppercase text-sm relative bg-orange-400 px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
                   before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-orange-600 before:rounded-b-lg
                   after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-orange-600 after:rounded-r-lg"
-                    style={{ boxShadow: "1px 1px 0 0 #ea580c" }}
                   >
                     Hire Me
                   </button>
@@ -202,10 +200,9 @@ export default function Home() {
 
                 <Link href="/pricing" data-aos="fade-up" data-aos-delay="450">
                   <button
-                    className="uppercase text-sm relative bg-gray-800 text-white px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
+                    className="rounded uppercase text-sm relative bg-gray-800 text-white px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
                   before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-gray-900 before:rounded-b-lg
                   after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-gray-900 after:rounded-r-lg"
-                    style={{ boxShadow: "1px 1px 0 0 #111827" }}
                   >
                     Pricing
                   </button>
@@ -217,14 +214,14 @@ export default function Home() {
           <div className="relative py-14 md:py-28  overflow-hidden">
             <div className="relative z-10 max-w-4xl mx-auto">
               <h4
-                className="text-center text-3xl md:text-4xl font-bold mb-6 tracking-tight"
+                className="text-center text-red-500 text-3xl md:text-4xl mb-6 tracking-tight"
                 data-aos="fade-up"
               >
                 Keep Android Open
               </h4>
 
               <p
-                className="text-center max-w-2xl mx-auto mb-12 leading-relaxed text-lg"
+                className="text-center max-w-2xl mx-auto mb-5 leading-relaxed text-lg"
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
@@ -241,33 +238,67 @@ export default function Home() {
               </p>
 
               <div
-                className="max-w-2xl mx-auto rounded-2xl p-8"
+                className="max-w-2xl mx-auto rounded-2xl"
                 data-aos="fade-up"
                 data-aos-delay="200"
               >
                 <ul className="space-y-4">
-                  <li className="flex items-start gap-3">
+                  <li
+                    className="flex items-start gap-3"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                  >
                     <span className="mt-2 h-2 w-2 rounded-full bg-red-500"></span>
                     Paying a fee to Google
                   </li>
-                  <li className="flex items-start gap-3">
+                  <li
+                    className="flex items-start gap-3"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                  >
                     <span className="mt-2 h-2 w-2 rounded-full bg-red-500"></span>
                     Agreeing to Google’s Terms and Conditions
                   </li>
-                  <li className="flex items-start gap-3">
+                  <li
+                    className="flex items-start gap-3"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                  >
                     <span className="mt-2 h-2 w-2 rounded-full bg-red-500"></span>
                     Providing government identification
                   </li>
-                  <li className="flex items-start gap-3">
+                  <li
+                    className="flex items-start gap-3"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                  >
                     <span className="mt-2 h-2 w-2 rounded-full bg-red-500"></span>
                     Uploading evidence of the developer’s private signing key
                   </li>
-                  <li className="flex items-start gap-3">
+                  <li
+                    className="flex items-start gap-3"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                  >
                     <span className="mt-2 h-2 w-2 rounded-full bg-red-500"></span>
                     Listing all current and future application identifiers
                   </li>
                 </ul>
               </div>
+
+              <Link
+                href="https://keepandroidopen.org"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <button
+                  className="mt-5 rounded text-sm relative bg-red-500 px-7 py-4 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
+                  before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-red-700 before:rounded-b-lg
+                  after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-red-700 after:rounded-r-lg"
+                >
+                  Join the Movement
+                </button>
+              </Link>
             </div>
           </div>
 

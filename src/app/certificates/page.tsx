@@ -4,7 +4,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Certificates - Melvin Jones Repol",
   description:
-    "Here are some of the certificates I have earned through various courses and programs.",
+    "A collection of certificates I have earned through various courses and programs, showcasing my commitment to continuous learning and professional development in software engineering and DevOps.",
   keywords: [
     "Certificates",
     "Coursera",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Certificates - Melvin Jones Repol",
     description:
-      "Here are some of the certificates I have earned through various courses and programs.",
+      "A collection of certificates I have earned through various courses and programs, showcasing my commitment to continuous learning and professional development in software engineering and DevOps.",
     url: "https://www.melvinjonesrepol.com/certificates",
     siteName: "Melvin Jones Repol",
     images: [
@@ -44,8 +44,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Certificates - Melvin Jones Repol",
     description:
-      "Here are some of the certificates I have earned through various courses and programs.",
-    images: ["https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png"],
+      "A collection of certificates I have earned through various courses and programs, showcasing my commitment to continuous learning and professional development in software engineering and DevOps.",
+    images: [
+      "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+    ],
     creator: "@mrepol742",
   },
 };
