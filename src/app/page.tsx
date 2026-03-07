@@ -12,6 +12,7 @@ import RecentGithubActivityWrapper from "@/components/RecentGithubActivityWrappe
 import RecentGithubActivity from "@/components/RecentGithubActivity";
 import { Youtube } from "@/components/home/Youtube";
 import Script from "next/script";
+import Button from "@/components/Button";
 
 export default function Home() {
   const person = {
@@ -175,13 +176,9 @@ export default function Home() {
                   data-aos="fade-up"
                   data-aos-delay="350"
                 >
-                  <button
-                    className="rounded uppercase text-sm relative bg-indigo-400 px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
-                  before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-indigo-600 before:rounded-b-lg
-                  after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-indigo-600 after:rounded-r-lg"
-                  >
+                  <Button className="bg-indigo-400 before:bg-indigo-600 after:bg-indigo-600">
                     Github
-                  </button>
+                  </Button>
                 </Link>
 
                 <Link
@@ -189,23 +186,15 @@ export default function Home() {
                   data-aos="fade-up"
                   data-aos-delay="400"
                 >
-                  <button
-                    className="rounded uppercase text-sm relative bg-orange-400 px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
-                  before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-orange-600 before:rounded-b-lg
-                  after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-orange-600 after:rounded-r-lg"
-                  >
+                  <Button className="bg-orange-400 before:bg-orange-600 after:bg-orange-600">
                     Hire Me
-                  </button>
+                  </Button>
                 </Link>
 
                 <Link href="/pricing" data-aos="fade-up" data-aos-delay="450">
-                  <button
-                    className="rounded uppercase text-sm relative bg-gray-800 text-white px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
-                  before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-gray-900 before:rounded-b-lg
-                  after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-gray-900 after:rounded-r-lg"
-                  >
+                  <Button className="bg-gray-700 before:bg-gray-800 after:bg-gray-800 text-white">
                     Pricing
-                  </button>
+                  </Button>
                 </Link>
               </div>
             </div>
@@ -291,13 +280,9 @@ export default function Home() {
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
-                <button
-                  className="mt-5 rounded text-sm relative bg-red-500 px-7 py-4 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
-                  before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-red-700 before:rounded-b-lg
-                  after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-red-700 after:rounded-r-lg"
-                >
+                <Button className="bg-red-500 before:bg-red-700 after:bg-red-700">
                   Join the Movement
-                </button>
+                </Button>
               </Link>
             </div>
           </div>
@@ -418,19 +403,12 @@ export default function Home() {
                   data-aos="fade-up"
                   data-aos-delay="300"
                 >
-                  <button
-                    className="text-sm relative bg-blue-400 px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
-                        before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-blue-600 before:rounded-b-lg
-                        after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-blue-600 after:rounded-r-lg"
-                    style={{ boxShadow: "1px 1px 0 0 #111827" }}
+                  <Button
+                    icon={faCode}
+                    className="bg-blue-400 before:bg-blue-600 after:bg-blue-600"
                   >
-                    <FontAwesomeIcon
-                      icon={faCode}
-                      className="inline mr-2"
-                      size="xl"
-                    />
                     Explore Hall of Codes
-                  </button>
+                  </Button>
                 </Link>
               </div>
             </div>

@@ -14,6 +14,7 @@ import {
 import Script from "next/script";
 import Image from "next/image";
 import TrustPilotWidget from "../widget/TrustPilotWidget";
+import Button from "../Button";
 
 export default function Footer() {
   const { theme, toggleTheme } = useTheme();
@@ -339,24 +340,27 @@ export default function Footer() {
           </div>
           {/* Socials */}
           <div>
-            <h4 className="text-sm font-semibold mb-2">Theme</h4>
+            <h4 className="text-sm font-semibold">Theme</h4>
             <div className="flex items-center space-x-3 mb-4">
-              <button
+              <Button
                 onClick={toggleTheme}
-                className="px-3 py-1 bg-gray-700 rounded hover:bg-orange-500 transition-colors"
+                className="bg-gray-700 before:bg-gray-800 after:bg-gray-800"
               >
                 {theme === "dark" ? "Switch to Light" : "Switch to Dark"}
-              </button>
+              </Button>
             </div>
-            <h4 className="text-sm font-semibold mb-2 text-white">My App</h4>
+            <h4 className="text-sm font-semibold text-white">My App</h4>
             <div className="flex mb-4">
               <Link
                 href="https://released.melvinjonesrepol.com/android/melvinjones-app.apk"
                 aria-label="Melvin Jones App"
-                className="px-3 py-1 bg-gray-700 rounded hover:bg-orange-500 transition-colors"
               >
-                <FontAwesomeIcon icon={faAndroid} size="lg" className="me-3" />
-                Download
+                <Button
+                  icon={faAndroid}
+                  className="bg-gray-700 before:bg-gray-800 after:bg-gray-800"
+                >
+                  Download
+                </Button>
               </Link>
             </div>
             <h4 className="text-sm font-semibold mb-2 text-white">
@@ -366,17 +370,15 @@ export default function Footer() {
               src="https://github.com/sponsors/mrepol742/button"
               title="Sponsor mrepol742"
               height="32"
-              className="mb-2"
-              width="133"
-              style={{ border: 0, borderRadius: "6px" }}
+              className="mb-2 transition-transform duration-200 hover:translate-x-1 hover:translate-y-1"
+              width="170"
             ></iframe>
             <Link href="https://ko-fi.com/F1F6EHA8F" target="_blank">
               <Image
                 height="36"
-                width="133"
-                style={{ border: "0px" }}
+                width="170"
                 src="https://storage.ko-fi.com/cdn/kofi6.png?v=6"
-                className="mb-2"
+                className="mb-2 transition-transform duration-200 hover:translate-x-1 hover:translate-y-1"
                 alt="Buy Me a Coffee at ko-fi.com"
               />
             </Link>
@@ -384,7 +386,8 @@ export default function Footer() {
               <Image
                 alt="Buy me a coffee mrepol742"
                 height="36"
-                width="133"
+                width="170"
+                className="transition-transform duration-200 hover:translate-x-1 hover:translate-y-1"
                 src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=mrepol742&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff"
               />
             </Link>

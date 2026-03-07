@@ -1,9 +1,10 @@
 import { fetchCurrentStats } from "@/lib/wakatime/fetchCurrentStats";
 import { faLinux } from "@fortawesome/free-brands-svg-icons";
-import { faEdit, faLaptop } from "@fortawesome/free-solid-svg-icons";
+import { faEdit, faFile, faLaptop } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "devicon/devicon.min.css";
 import Link from "next/link";
+import Button from "../Button";
 
 export async function WakatimeSection() {
   const stats = await fetchCurrentStats();
@@ -88,14 +89,12 @@ export async function WakatimeSection() {
           data-aos="fade-right"
           data-aos-delay="350"
         >
-          <button
-            className="uppercase text-sm relative bg-orange-400 px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
-            before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-orange-600 before:rounded-b-lg
-            after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-orange-600 after:rounded-r-lg"
-            style={{ boxShadow: "1px 1px 0 0 #ea580c" }}
+          <Button
+            icon={faFile}
+            className="bg-orange-400 before:bg-orange-600 after:bg-orange-600"
           >
-            View My CV
-          </button>
+            View CV
+          </Button>
         </Link>
         <a
           href="https://wakatime.melvinjonesrepol.com/"

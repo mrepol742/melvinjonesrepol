@@ -6,7 +6,7 @@ export default function TrustPilotWidget() {
   return (
     <>
       <div
-        className="trustpilot-widget mt-5"
+        className="trustpilot-widget mt-5 transition-transform duration-200 hover:translate-x-1 hover:translate-y-1"
         data-locale="en-US"
         data-template-id="56278e9abfbbba0bdcd568bc"
         data-businessunit-id="69454e6374cf034e3abc67c7"

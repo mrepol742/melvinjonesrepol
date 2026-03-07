@@ -3,6 +3,8 @@ import projects from "@/lib/projectList";
 import Link from "next/link";
 import ProjectCard from "@/components/ProjectCard";
 import SearchForm from "@/components/form/SearchForm";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import Button from "@/components/Button";
 
 export const metadata: Metadata = {
   title: "Projects - Melvin Jones Repol",
@@ -104,21 +106,19 @@ export default async function Projects({
 
         <div className="my-6">
           <p data-aos="fade-up" data-aos-delay="200">
-            You can find more projects and cool stuff on my github account.
+            For more of my projects and code, check out my GitHub profile:
           </p>
           <Link
             href="https://github.com/mrepol742"
             data-aos="fade-up"
             data-aos-delay="300"
           >
-            <button
-              className="text-sm relative bg-orange-400 px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
-                          before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-orange-600 before:rounded-b-lg
-                          after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-orange-600 after:rounded-r-lg"
-              style={{ boxShadow: "1px 1px 0 0 #ea580c" }}
+            <Button
+              icon={faGithub}
+              className="bg-indigo-400 before:bg-indigo-600 after:bg-indigo-600"
             >
               Github
-            </button>
+            </Button>
           </Link>
         </div>
       </section>

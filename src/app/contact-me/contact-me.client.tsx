@@ -1,5 +1,6 @@
 "use client";
 
+import Button from "@/components/Button";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
@@ -180,12 +181,9 @@ export default function ContactMe() {
               information securely processed and sent via SMTP to the designated
               recipient at mrepol742@gmail.com.
             </p>
-            <button
-              type="submit"
-              className="w-full bg-gradient-to-r from-blue-600 to-blue-400 text-white px-6 py-3 rounded-lg font-semibold shadow hover:from-blue-700 hover:to-blue-500 transition"
-            >
+            <Button className="w-full bg-indigo-400 before:bg-indigo-600 after:bg-indigo-600">
               Send Message
-            </button>
+            </Button>
           </form>
         </div>
       </section>
