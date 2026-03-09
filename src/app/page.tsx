@@ -21,6 +21,17 @@ export default function Home() {
     name: "Melvin Jones Repol",
     url: "https://www.melvinjonesrepol.com",
     image: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.png",
+    description:
+      "Freelance Software Engineer specializing in DevOps, AI systems, and scalable web applications.",
+    jobTitle: "Freelance Software Engineer",
+    mainEntityOfPage: "https://www.melvinjonesrepol.com",
+    knowsAbout: [
+      "DevOps",
+      "Software Engineering",
+      "Web Development",
+      "Artificial Intelligence",
+      "Cloud Infrastructure",
+    ],
     sameAs: [
       "https://www.facebook.com/melvinjonesrepol",
       "https://linkedin.com/in/mrepol742",
@@ -30,7 +41,6 @@ export default function Home() {
       "https://g.dev/mrepol742",
       "https://steamcommunity.com/id/mrepol742",
     ],
-    jobTitle: "Freelance Software Engineer",
     worksFor: {
       "@type": "Organization",
       name: "Self-Employed",
@@ -42,6 +52,12 @@ export default function Home() {
     "@type": "WebSite",
     name: "Melvin Jones Repol - Strategic Software & DevOps Partner",
     url: "https://www.melvinjonesrepol.com",
+    inLanguage: "en",
+  };
+
+  const meMyselfI = {
+    "@context": "https://schema.org",
+    "@graph": [person, webSite],
   };
 
   const updates = [
@@ -133,11 +149,7 @@ export default function Home() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(person) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webSite) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(meMyselfI) }}
       />
       <main className="p-3 md:p-8">
         <section>
@@ -366,7 +378,7 @@ export default function Home() {
             <Youtube />
           </div>
 
-          <div className="relative py-14 md:py-28  overflow-hidden">
+          <div className="relative pt-14 md:pt-28  overflow-hidden">
             <h4
               className="text-center text-3xl  text-blue-400"
               data-aos="fade-up"
@@ -390,7 +402,7 @@ export default function Home() {
 
               <div className="p-5">
                 <p className="text-lg">
-                  I’m building this community for developers, creatives, and
+                  A community for developers, creatives, and
                   problem-solvers. It’s where ideas turn into projects, and
                   projects turn into opportunities to learn and collaborate.
                 </p>
@@ -417,6 +429,32 @@ export default function Home() {
           {/*<div className="mb-10">
             <NeofetchTerminal />
           </div>*/}
+
+          <section className="rounded border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 mb-5">
+            <div className="max-w-4xl mx-auto px-6 py-20">
+              <div className="mb-6">
+                <span className="text-sm font-semibold tracking-widest text-orange-500 uppercase">
+                  About
+                </span>
+                <h2 className="mt-2 text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+                  Melvin Jones Repol
+                </h2>
+              </div>
+
+              <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-lg">
+                Melvin Jones Repol is a freelance software engineer and
+                full-stack web developer passionate about building practical and
+                scalable digital solutions. With several years of experience in
+                web development and software engineering, he focuses on creating
+                efficient applications, automation tools, and modern web
+                platforms. His work combines problem-solving, DevOps practices,
+                and continuous learning in emerging technologies. Melvin
+                actively develops projects, experiments with new tools, and
+                shares his progress through various platforms while continuously
+                improving his skills as a developer.
+              </p>
+            </div>
+          </section>
 
           <div className="ml-auto max-w-md text-right space-y-1 text-xs">
             <p>

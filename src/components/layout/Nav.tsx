@@ -40,11 +40,17 @@ export default function Nav() {
       className={`rounded md:rounded-full fixed z-50 mt-5 top-0 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white p-3 max-w-xl shadow-lg hover:shadow-xl transition-transform duration-300 ${
         show ? "translate-y-0" : "-translate-y-full"
       }`}
+      aria-label="Main Navigation"
     >
       <div className="mx-auto flex justify-center items-center">
         <ul className="flex space-x-3">
           <li>
-            <Link href="/" className="group flex items-center">
+            <Link
+              href="/"
+              className="group flex items-center"
+              aria-label="Home - Melvin Jones Repol"
+              title="Home"
+            >
               <span className="relative flex items-center">
                 <Image
                   src="/favicon.png"
@@ -69,6 +75,8 @@ export default function Nav() {
             <Link
               href="/projects"
               className="group flex items-center hover:text-orange-500"
+              aria-label="Projects - Melvin Jones Repol"
+              title="Projects"
             >
               <FontAwesomeIcon
                 icon={faFolder}
@@ -80,7 +88,11 @@ export default function Nav() {
               </span>
             </Link>
           </li>
-          <li className="hidden md:block">
+          <li
+            className="hidden md:block"
+            aria-label="Gaming - Melvin Jones Repol"
+            title="Gaming"
+          >
             <Link
               href="/gaming"
               className="group flex items-center hover:text-orange-500"
@@ -99,6 +111,8 @@ export default function Nav() {
             <Link
               href="/teams"
               className="group flex items-center hover:text-orange-500"
+              aria-label="Teams - Melvin Jones Repol"
+              title="Teams"
             >
               <FontAwesomeIcon
                 icon={faUser}
@@ -114,6 +128,8 @@ export default function Nav() {
             <Link
               href="/certificates"
               className="group flex items-center hover:text-orange-500"
+              aria-label="Certificates - Melvin Jones Repol"
+              title="Certificates"
             >
               <FontAwesomeIcon
                 icon={faCertificate}
@@ -129,6 +145,8 @@ export default function Nav() {
             <Link
               href="/work-experience"
               className="group flex items-center hover:text-orange-500"
+              aria-label="Work Experience - Melvin Jones Repol"
+              title="Work Experience"
             >
               <FontAwesomeIcon
                 icon={faBriefcase}
@@ -144,6 +162,8 @@ export default function Nav() {
             <Link
               href="/gallery"
               className="group flex items-center hover:text-orange-500"
+              aria-label="Gallery - Melvin Jones Repol"
+              title="Gallery"
             >
               <FontAwesomeIcon
                 icon={faImages}
@@ -159,6 +179,8 @@ export default function Nav() {
             <Link
               href="/contact-me"
               className="group flex items-center hover:text-orange-500"
+              aria-label="Contact Me - Melvin Jones Repol"
+              title="Contact Me"
             >
               <FontAwesomeIcon
                 icon={faEnvelope}

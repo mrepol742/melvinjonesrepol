@@ -21,7 +21,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-gray-900 text-gray-200 py-10 border-t border-gray-800">
-      <div className="container mx-auto px-4">
+      <nav aria-label="Footer Navigation" className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row md:justify-between md:items-start gap-8">
           {/* Logo & Description */}
           <div className="mb-6 md:mb-0">
@@ -396,7 +396,7 @@ export default function Footer() {
         <div className="mt-10 border-t border-gray-800 pt-6 text-center text-xs text-gray-300">
           © {new Date().getFullYear()} Melvin Jones Repol. All rights reserved.
         </div>
-      </div>
+      </nav>
     </footer>
   );
 }

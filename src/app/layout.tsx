@@ -12,6 +12,7 @@ import Services from "@/lib/serviceList";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import ServiceWorkerRegister from "@/components/ServiceWorkerRegister";
 import DevToolsDetector from "@/components/DevToolsDetector";
+import ScrollTop from "@/components/ScrollTop";
 
 config.autoAddCss = false;
 
@@ -130,6 +131,7 @@ export default function RootLayout({
           <div className="container mx-auto">{children}</div>
         </div>
         <ToastContainer />
+        <ScrollTop />
         <Footer />
         {isProduction && (
           <>
