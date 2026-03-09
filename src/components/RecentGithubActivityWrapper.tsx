@@ -13,7 +13,7 @@ export default function RecentGithubActivityWrapper({
 
   return (
     <div className="fixed bottom-4 left-4 w-70 z-50">
-      <div className="rounded-lg bg-white text-gray-800 text-sm">
+      <div className="rounded bg-white text-gray-800 text-sm">
         <div
           className="flex items-center justify-between px-4 py-2"
           onClick={() => setExpanded(!expanded)}

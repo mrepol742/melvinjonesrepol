@@ -82,30 +82,32 @@ export default function WorkExperience() {
         <h2 className="text-2xl font-semibold" data-aos="fade-up">
           Partners and Collaborations
         </h2>
+
         <p className="mt-2" data-aos="fade-up" data-aos-delay="100">
-          I have collaborated with various developers to develop of efficient
-          and reliable solutions for clients. These collaborations have allowed
-          me to gain valuable experience and expand my skill set in software
-          development and project management.
+          I have collaborated with several developers to build efficient and
+          reliable software solutions for different projects. These partnerships
+          helped me improve my technical skills, share knowledge, and gain
+          practical experience in teamwork, problem-solving, and project
+          development.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-4">
           <WorkExperienceCard
             company="Samiun Nafis"
-            title="A Friend / Collaborator"
-            description="We created web applications and software solutions. This partnership involved sharing ideas, coding together, and contributing to the development of projects that leverage our combined skills and expertise in software development."
+            title="Software Development Collaborator"
+            description="Collaborated on building web applications and software solutions. We worked closely by sharing ideas, writing code together, and contributing to projects that combine our expertise in modern web development."
           />
 
           <WorkExperienceCard
             company="Efren Guno"
-            title="Collaborator"
-            description="Work together on Laravel React project."
+            title="Frontend Project Collaborator"
+            description="Worked together on frontend development project using Laravel and React, focusing on creating user friendly interfaces."
           />
 
           <WorkExperienceCard
             company="Lembou Pharel"
-            title="Collaborator"
-            description="Solving problems, sharing knowledge and working together on Laravel Angular project."
+            title="Full-Stack Collaborator"
+            description="Partnered on Laravel and Angular project, solving technical challenges, exchanging development knowledge, and delivering functional web application."
           />
         </div>
       </section>

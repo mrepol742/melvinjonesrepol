@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Image from "next/image";
+import GalleryComponent from "@/components/Gallery";
 
 export const metadata: Metadata = {
   title: "Gallery - Melvin Jones Repol",
@@ -84,6 +85,8 @@ const images = [
   "/images/pos-5.png",
 ];
 
+const videos = ["/videos/webvium-browser.mp4", "/videos/webvium-vpn.mp4"];
+
 export default function Gallery() {
   return (
     <main className="my-18 p-3 md:p-8">
@@ -98,27 +101,8 @@ export default function Gallery() {
           represents a real-world project demonstrating skills in web
           development, UI/UX, and design.
         </p>
-        <div className="columns-3 md:columns-4 lg:columns-5 xl:columns-6 gap-4 p-4 space-y-4">
-          {images
-            .slice()
-            .sort(() => Math.random() - 0.5)
-            .map((src, idx) => (
-              <div
-                key={idx}
-                className="mb-4 break-inside-avoid"
-                data-aos="fade-up"
-              >
-                <Image
-                  src={src}
-                  alt={`Gallery image ${idx + 1}`}
-                  width={400}
-                  height={Math.floor(250 + Math.random() * 150)}
-                  className="rounded-lg w-full h-auto object-cover"
-                  style={{ display: "block" }}
-                />
-              </div>
-            ))}
-        </div>
+
+        <GalleryComponent images={images} videos={videos} />
       </section>
     </main>
   );

@@ -24,7 +24,6 @@ export default async function RecentGithubActivity() {
         return (
           <FontAwesomeIcon
             icon={faCodeCommit}
-            aria-label="One or more commits pushed to a branch or tag"
             title="Push"
           />
         );
@@ -32,7 +31,6 @@ export default async function RecentGithubActivity() {
         return (
           <FontAwesomeIcon
             icon={faStar}
-            aria-label="A user starred the repository."
             title="Star"
           />
         );
@@ -40,7 +38,6 @@ export default async function RecentGithubActivity() {
         return (
           <FontAwesomeIcon
             icon={faCodeCompare}
-            aria-label="A user review a Pull Request."
             title="Pull Request Review"
           />
         );
@@ -48,7 +45,6 @@ export default async function RecentGithubActivity() {
         return (
           <FontAwesomeIcon
             icon={faCodePullRequest}
-            aria-label="A user send a Pull Request to a repository."
             title="Pull Request"
           />
         );
@@ -56,7 +52,6 @@ export default async function RecentGithubActivity() {
         return (
           <FontAwesomeIcon
             icon={faCodeFork}
-            aria-label="A user forks a repository."
             title="Fork"
           />
         );
@@ -64,7 +59,6 @@ export default async function RecentGithubActivity() {
         return (
           <FontAwesomeIcon
             icon={faExclamation}
-            aria-label="Creating, editing, closing, reopening, labeling, etc. for issues."
             title="Issues"
           />
         );
@@ -73,7 +67,6 @@ export default async function RecentGithubActivity() {
         return (
           <FontAwesomeIcon
             icon={faComment}
-            aria-label="When a comment is made on an issue or pull request."
             title="Issue Comment"
           />
         );
@@ -82,8 +75,7 @@ export default async function RecentGithubActivity() {
       case "PublicEvent":
         return (
           <FontAwesomeIcon
-            icon={faEarthAsia}
-            aria-label="Repository changed from private to public."
+          icon={faEarthAsia}
             title="Public"
           />
         );
@@ -91,7 +83,6 @@ export default async function RecentGithubActivity() {
         return (
           <FontAwesomeIcon
             icon={faTrash}
-            aria-label="Deleting a branch or tag."
             title="Delete"
           />
         );
@@ -99,7 +90,6 @@ export default async function RecentGithubActivity() {
         return (
           <FontAwesomeIcon
             icon={faPlus}
-            aria-label="Creating a branch, tag, or repository."
             title="Create"
           />
         );
@@ -109,7 +99,6 @@ export default async function RecentGithubActivity() {
         return (
           <FontAwesomeIcon
             icon={faEarthAsia}
-            aria-label="When a release is published, edited, etc."
             title="Release"
           />
         );
@@ -117,7 +106,6 @@ export default async function RecentGithubActivity() {
         return (
           <FontAwesomeIcon
             icon={faComment}
-            aria-label="When a comment is made on a commit."
             title="Commit Comment"
           />
         );
@@ -127,7 +115,6 @@ export default async function RecentGithubActivity() {
         return (
           <FontAwesomeIcon
             icon={faHeart}
-            aria-label="When someone sponsors another user/project."
             title="Sponsorship"
           />
         );
@@ -146,9 +133,9 @@ export default async function RecentGithubActivity() {
 
     switch (event.type) {
       case "PushEvent":
-        return `Pushed #${payload.head.slice(0, 7)} `;
+        return `Made a commit #${payload.head.slice(0, 7)} `;
       case "PublicEvent":
-        return `Public this repo`;
+        return `Marked this repo as public`;
       case "WatchEvent":
         return `Starred this repo`;
       case "ForkEvent":
