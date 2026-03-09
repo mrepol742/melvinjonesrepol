@@ -63,7 +63,7 @@ export default function WorkExperience() {
           responsibilities, and projects I have contributed to throughout my
           career in development and technology.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-4">
           <WorkExperienceCard
             company="Freelance"
             title="Software Engineer"
@@ -76,6 +76,36 @@ export default function WorkExperience() {
             description="Incharge of maintaining the IT infrastructure, including hardware, software, and network. Responsible for troubleshooting technical issues, providing support to end-users, and ensuring the efficiency and reliability of the organization's IT system."
             date="April - June 2025"
             cert="https://drive.google.com/file/d/1JZejlS9Dkb3rJkcx3UdfsaDh281d7QZ4/view?usp=drive_link"
+          />
+        </div>
+
+        <h2 className="text-2xl font-semibold" data-aos="fade-up">
+          Partners and Collaborations
+        </h2>
+        <p className="mt-2" data-aos="fade-up" data-aos-delay="100">
+          I have collaborated with various developers to develop of efficient
+          and reliable solutions for clients. These collaborations have allowed
+          me to gain valuable experience and expand my skill set in software
+          development and project management.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-4">
+          <WorkExperienceCard
+            company="Samiun Nafis"
+            title="A Friend / Collaborator"
+            description="We created web applications and software solutions. This partnership involved sharing ideas, coding together, and contributing to the development of projects that leverage our combined skills and expertise in software development."
+          />
+
+          <WorkExperienceCard
+            company="Efren Guno"
+            title="Collaborator"
+            description="Work together on Laravel React project."
+          />
+
+          <WorkExperienceCard
+            company="Lembou Pharel"
+            title="Collaborator"
+            description="Solving problems, sharing knowledge and working together on Laravel Angular project."
           />
         </div>
       </section>

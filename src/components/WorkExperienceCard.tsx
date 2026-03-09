@@ -7,7 +7,7 @@ type WorkExperienceProps = {
   company: string;
   title: string;
   description: string;
-  date: string;
+  date?: string;
   cert?: string;
 };
 
@@ -28,7 +28,7 @@ export default function WorkExperienceCard({
       >
         <h3 className="text-xl font-bold">{company}</h3>
         <p>{title}</p>
-        <p className="mb-2 text-gray-500">{date}</p>
+        {date && <p className="mb-2 text-gray-500">{date}</p>}
         <p className="mb-3">{description}</p>
         {cert && (
           <span

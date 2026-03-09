@@ -141,7 +141,7 @@ export default function Home() {
       />
       <main className="p-3 md:p-8">
         <section>
-          <div className="relative min-h-screen flex flex-col items-center justify-center text-center  overflow-hidden">
+          <div className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
             <div className="relative z-10 max-w-4xl">
               <div
                 className="inline-flex items-center px-4 py-1 mb-6 text-sm font-medium bg-indigo-50 text-indigo-700 rounded-full border border-indigo-100"

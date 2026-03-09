@@ -1,3 +1,4 @@
+import Button from "@/components/Button";
 import PricingCard from "@/components/PricingCard";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -16,6 +17,11 @@ export const metadata: Metadata = {
     "Web Development",
     "Mobile App Development",
     "Consulting",
+    "Static Site Development",
+    "Website to Native App",
+    "Website to APK",
+    "Web App Development",
+    "Web App",
   ],
   alternates: {
     canonical: "https://www.melvinjonesrepol.com/pricing",
@@ -67,7 +73,7 @@ export default function PricingPage() {
           complexity, features, and timeline. Contact me for a detailed quote
           tailored to your project needs.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 mb-3">
           <PricingCard
             title="Per Project"
             price="₱45,000"
@@ -105,56 +111,133 @@ export default function PricingPage() {
               "Startup & product-focused",
             ]}
           />
+
+          <PricingCard
+            title="Static Site Development"
+            price="₱1,999"
+            subtitle="One-time fee for 5 creative pages"
+            items={[
+              "Custom design",
+              "Responsive layout",
+              "SEO-friendly structure",
+              "Fast loading times",
+              "Ideal for portfolios & small businesses",
+              "3 Week of free maintenance for bug fixes, performance and seo optimizations",
+            ]}
+          />
+
+          <PricingCard
+            title="Website to Native App"
+            price="₱5,000"
+            subtitle="One-time fee for converting your website to a native app"
+            items={[
+              "Cross-platform compatibility",
+              "Optimized performance",
+              "Access to native features",
+              "Customizable UI/UX",
+              "Ideal for expanding your reach to mobile users",
+              "3 months of free maintenance for bug fixes and performance optimizations",
+            ]}
+          />
+
+          <PricingCard
+            title="Website to APK"
+            price="₱1,999"
+            subtitle="One-time fee for converting your website to an Android APK"
+            items={[
+              "Optimized for Android devices",
+              "Access to native features",
+              "Customizable UI/UX",
+              "Ideal for reaching Android users",
+              "3 months of free maintenance for bug fixes and performance optimizations",
+            ]}
+          />
         </div>
 
-        <Link href="/contact-me" data-aos="fade-right" data-aos-delay="350">
-          <button
-            className="rounded uppercase text-sm relative bg-orange-400 px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
-            before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:bg-orange-600 before:rounded-b-lg
-            after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-orange-600 after:rounded-r-lg"
-          >
-            Contact Me
-          </button>
-        </Link>
+        <div className="flex gap-2 mb-3">
+          <Link href="/contact-me" data-aos="fade-right" data-aos-delay="350">
+            <Button className="bg-orange-400 before:bg-orange-600 after:bg-orange-600">
+              Contact
+            </Button>
+          </Link>
 
-        <div className="p-10 mt-4">
-          <h2 className="text-2xl font-semibold" data-aos="fade-up">
-            What You’re Paying For
-          </h2>
-
-          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 mb-6">
-            <li data-aos="fade-up">✔ Search Engine Optimization (SEO)</li>
-            <li data-aos="fade-up">✔ End-to-end full-stack expertise</li>
-            <li data-aos="fade-up">✔ Scalable and secure architecture</li>
-            <li data-aos="fade-up">✔ Clean, maintainable codebase</li>
-            <li data-aos="fade-up">✔ Performance-optimized applications</li>
-            <li data-aos="fade-up">✔ Security best practices</li>
-            <li data-aos="fade-up">
-              ✔ Clear communication & realistic timelines
-            </li>
-            <li data-aos="fade-up">✔ Long-term technical reliability</li>
-            <li data-aos="fade-up">✔ A developer who thinks beyond delivery</li>
-          </ul>
+          <Link href="https://wa.me/+639283559507" data-aos="fade-right" data-aos-delay="350">
+            <Button className="bg-green-400 before:bg-green-600 after:bg-green-600">
+              WhatsApp
+            </Button>
+          </Link>
         </div>
 
         <div className="text-sm">
-          <p className="mb-2" data-aos="fade-up">
-            • A <strong>20% non-refundable down payment</strong> is required
-            before work begins. This secures your project in my schedule and
-            covers initial setup costs.
-          </p>
-          <p className="mb-2" data-aos="fade-up">
-            • We believed in our commitment to delivering high-quality work, you
-            have a choice to request for different payment terms. Please contact
-            me to discuss your specific needs and we can work together to find a
-            solution that fits your budget and project requirements.
-          </p>
-          <p className="mb-2" data-aos="fade-up">
-            • Any changes outside the agreed scope are billed separately.
-          </p>
-          <p data-aos="fade-up">
-            • 1 week of free maintenance covers existing bugs and defects only.
-          </p>
+          <section data-aos="fade-up" className="mb-4">
+            <h3 className="font-semibold mb-2">Payment Terms</h3>
+            <p className="mb-2">
+              A <strong>20% non-refundable down payment</strong> is required
+              before work begins. This secures your project in our schedule and
+              covers initial setup costs.
+            </p>
+            <p>
+              We are committed to delivering high-quality work. You may request
+              alternative payment terms—please contact us to discuss your
+              specific needs, and we will work together to find a solution that
+              fits your budget and project requirements.
+            </p>
+          </section>
+
+          <section data-aos="fade-up" className="mb-4">
+            <h3 className="font-semibold mb-2">Scope & Changes</h3>
+            <p>
+              Any changes outside the agreed-upon scope are billed separately.
+            </p>
+          </section>
+
+          <section data-aos="fade-up" className="mb-4">
+            <h3 className="font-semibold mb-2">App Deployment</h3>
+            <p>
+              We do not deploy Android APKs or other native applications using
+              our own Google Play Store or Apple App Store developer accounts.
+              Clients are responsible for creating and managing their own
+              developer accounts and submitting their applications to the
+              respective platforms.
+            </p>
+            <p>
+              While we may provide guidance or assistance during the submission
+              process, we are not responsible for managing the submission or for
+              any issues, delays, or decisions that may occur during the review
+              process conducted by the Google Play Store or Apple App Store.
+            </p>
+          </section>
+
+          <section data-aos="fade-up" className="mb-4">
+            <h3 className="font-semibold mb-2">Legal & Compliance</h3>
+            <p>
+              We are not responsible for any legal issues, including copyright
+              infringement, intellectual property disputes, or violations of
+              platform policies, that may arise from the content, design, or
+              functionality of the applications we develop. However, we may
+              provide warnings or guidance regarding potential legal or policy
+              concerns.
+            </p>
+            <p>
+              Clients remain solely responsible for ensuring that their
+              applications or website content comply with all applicable laws,
+              platform rules, and their own terms of service, privacy policies,
+              and other relevant policies.
+            </p>
+            <p>
+              We are not responsible for any issues related to political content
+              in the applications or websites.
+            </p>
+          </section>
+
+          <section data-aos="fade-up">
+            <h3 className="font-semibold mb-2">Maintenance</h3>
+            <p>
+              1 week of free maintenance covers existing bugs and defects only
+              (unless otherwise specified). New features or scope changes
+              require a new agreement.
+            </p>
+          </section>
         </div>
       </section>
     </main>
