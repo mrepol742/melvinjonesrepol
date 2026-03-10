@@ -1,5 +1,5 @@
 import Image from "next/image";
-import HorizontalAdDisplayUnit from "./ads/HorizontalAdDisplay";
+import HorizontalAdDisplayUnit from "./google/HorizontalAdDisplay";
 
 type ProjectFeature = {
   title: string;

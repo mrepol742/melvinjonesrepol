@@ -43,7 +43,7 @@ export default function Privacy() {
     <main className="my-18 p-4 md:p-10 max-w-3xl mx-auto">
       <section className="space-y-6">
         <h1 className="text-3xl font-bold">Privacy Policy</h1>
-        <p className="text-sm text-gray-500">Last Updated: February 18, 2026</p>
+        <p className="text-sm text-gray-500">Last Updated: March 11, 2026</p>
 
         <p>
           This Privacy Policy describes how Melvin Jones Repol ("we", "us", or
@@ -80,16 +80,17 @@ export default function Privacy() {
             voluntarily submitted.
           </li>
           <li>
-            <strong>Disqus Comments:</strong> Disqus may collect name, email, IP
-            address, and comment content according to their privacy policy.
-          </li>
-          <li>
             <strong>LiveChat.ai:</strong> Chat transcripts and contact
             information if provided.
           </li>
           <li>
-            <strong>Google AdSense:</strong> May use cookies and similar
+            <strong>Google Adsense:</strong> May use cookies and similar
             technologies to deliver advertisements.
+          </li>
+          <li>
+            <strong>Google Analytics:</strong> Collects aggregate data on
+            website traffic and user behavior. No personally identifiable
+            information is collected or stored by us through this tool.
           </li>
           <li>
             <strong>Google reCAPTCHA Enterprise:</strong> Collects device and
@@ -101,13 +102,17 @@ export default function Privacy() {
         <p>Data collected through the website is used solely to:</p>
         <ul className="list-disc list-inside ml-4">
           <li>Respond to inquiries</li>
-          <li>Display and moderate comments</li>
           <li>Provide chat support</li>
           <li>Deliver advertisements</li>
+          <li>Monitor and improve SEO performance</li>
           <li>Prevent spam and abuse</li>
+          <li>Analyze website traffic and user behavior</li>
+          <li>Ensure the security and integrity of the website</li>
         </ul>
 
-        <h2 className="text-2xl font-semibold">SEO / Google Search Console</h2>
+        <h2 className="text-2xl font-semibold">
+          Google Search Console & Analytics
+        </h2>
         <p>
           The melvinjonesrepol.com portfolio website uses{" "}
           <a
@@ -118,13 +123,24 @@ export default function Privacy() {
           >
             Google Search Console
           </a>{" "}
-          to monitor and improve search engine performance.
+          and{" "}
+          <a
+            href="https://developers.google.com/analytics"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline text-blue-600"
+          >
+            Google Analytics
+          </a>{" "}
+          to monitor website performance, track traffic sources, and optimize
+          search engine visibility.
         </p>
 
         <p>
-          This tool provides aggregate traffic and indexing information for SEO
-          purposes only. No personal data, browsing history, or user behavior is
-          tracked or collected for analytics purposes.
+          This tools provides aggregate data such as total visitors, page views,
+          bounce rates, and referral sources. No personally identifiable
+          information, browsing history, or user content is collected or stored
+          by us through these tools.
         </p>
 
         <p>Third-party services operate under their own privacy policies.</p>

@@ -8,4 +8,7 @@ interface Window {
       ready: (callback: () => void) => void;
     };
   };
+  gtag: {
+    (command: string, trackingId: string, config?: Record<string, any>): void;
+  };
 }

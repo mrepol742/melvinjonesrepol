@@ -1,4 +1,4 @@
-import HorizontalAdDisplayUnit from "@/components/ads/HorizontalAdDisplay";
+import HorizontalAdDisplayUnit from "@/components/google/HorizontalAdDisplay";
 import DisqusComments from "@/components/DisqusComments";
 import Project from "@/components/Project";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";

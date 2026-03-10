@@ -104,10 +104,8 @@ export default function Terms() {
         </h2>
         <p>Some Services integrate or interact with third-party services:</p>
         <ul className="list-disc list-inside ml-4">
-          <li>Disqus for comments</li>
           <li>LiveChat.ai for chat support</li>
-          <li>Google AdSense or other advertising services</li>
-          <li>GitHub for automatic update checks</li>
+          <li>Google Adsense</li>
           <li>
             Google News RSS feeds for displaying news on Webvium Browser’s
             homepage

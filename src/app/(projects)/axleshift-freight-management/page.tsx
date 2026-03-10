@@ -4,7 +4,7 @@ import Link from "next/link";
 import DisqusComments from "@/components/DisqusComments";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import HorizontalAdDisplayUnit from "@/components/ads/HorizontalAdDisplay";
+import HorizontalAdDisplayUnit from "@/components/google/HorizontalAdDisplay";
 import Project from "@/components/Project";
 
 export const metadata: Metadata = {

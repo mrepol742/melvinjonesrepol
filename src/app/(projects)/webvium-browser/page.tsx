@@ -1,4 +1,4 @@
-import HorizontalAdDisplayUnit from "@/components/ads/HorizontalAdDisplay";
+import HorizontalAdDisplayUnit from "@/components/google/HorizontalAdDisplay";
 import DisqusComments from "@/components/DisqusComments";
 import Project from "@/components/Project";
 import { fetchGitCommits } from "@/lib/github/fetchGitCommits";
