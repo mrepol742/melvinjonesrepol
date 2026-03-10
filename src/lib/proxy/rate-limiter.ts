@@ -15,6 +15,7 @@ export default function RateLimiter(request: NextRequest) {
     const isAllowed1 =
       origin && allowedOrigins.some((pattern) => pattern.test(origin));
 
+   // console.log(`[RateLimiter] IP: ${ip}, Origin: ${origin}, Path: ${request.nextUrl.pathname}, Allowed: ${isAllowed1}`);
     if (!isAllowed1) {
       return NextResponse.json(
         { error: "Hehe you're going too far naah..." },

@@ -9,19 +9,21 @@ export async function proxy(req: NextRequest) {
   const headlessResponse = HeadlessBrowserCheck(req);
   if (headlessResponse) return headlessResponse;
 
-  const rateLimiter = RateLimiter(req);
-  if (rateLimiter) return rateLimiter;
+  if (env === "production") {
+    const rateLimiter = RateLimiter(req);
+    if (rateLimiter) return rateLimiter;
+  }
 
   if (/hello-world$/.test(req.nextUrl.pathname))
     return new NextResponse("Hello World", { status: 200 });
 
-    return NextResponse.next({
-      request: { headers: req.headers },
-    });
+  return NextResponse.next({
+    request: { headers: req.headers },
+  });
 }
 
 export const config = {
   matcher: [
-    "/((?!_next/static|_next/image|favicon.ico|favicon.png|robots.txt|images|videos|api).*)",
+    "/((?!_next/static|_next/image|favicon.ico|favicon.png|robots.txt|images|videos).*)",
   ],
 };

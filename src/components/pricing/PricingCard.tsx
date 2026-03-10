@@ -1,11 +1,15 @@
 export default function PricingCard({
   title,
   price,
+  maintenancePrice,
+  currency,
   subtitle,
   items,
 }: {
   title: string;
   price: string;
+  maintenancePrice?: string;
+  currency: string;
   subtitle?: string;
   items: string[];
 }) {
@@ -21,7 +25,11 @@ export default function PricingCard({
           {price}
         </p>
 
-        {subtitle && <p className="text-sm text-gray-500 mb-4">{subtitle}</p>}
+        {subtitle && (
+          <p className="text-sm text-gray-500 mb-4">
+            {subtitle} {maintenancePrice && `${maintenancePrice}`}
+          </p>
+        )}
 
         <ul className="space-y-2 text-sm">
           {items.map((item, i) => (
