@@ -9,13 +9,12 @@ export default function RateLimiter(request: NextRequest) {
 
     const allowedOrigins =
       process.env.NODE_ENV === "development"
-        ? [/^http:\/\/localhost:\d+$/, /^http:\/\/127\.0\.0\.1:\d+$/] // dev
-        : [/^https?:\/\/([a-z0-9-]+\.)?melvinjonesrepol\.com$/]; // prod
+        ? [/^http:\/\/localhost:\d+$/, /^http:\/\/127\.0\.0\.1:\d+$/]
+        : [/^https?:\/\/([a-z0-9-]+\.)?melvinjonesrepol\.com(:\d+)?$/];
 
     const isAllowed1 =
-      origin && allowedOrigins.some((pattern) => pattern.test(origin));
+      !origin || allowedOrigins.some((pattern) => pattern.test(origin));
 
-   // console.log(`[RateLimiter] IP: ${ip}, Origin: ${origin}, Path: ${request.nextUrl.pathname}, Allowed: ${isAllowed1}`);
     if (!isAllowed1) {
       return NextResponse.json(
         { error: "Hehe you're going too far naah..." },
@@ -26,11 +25,17 @@ export default function RateLimiter(request: NextRequest) {
     const maxRequest = /api\/(contact|report)/.test(request.nextUrl.pathname)
       ? 2
       : 10;
+
     const window = /api\/(contact|report)/.test(request.nextUrl.pathname)
-      ? 60 * 60 * 100
-      : 5 * 60 * 100;
+      ? 60 * 60 * 1000
+      : 5 * 60 * 1000;
+
     const isAllowed = checkRateLimit(ip, maxRequest, window);
-    if (!isAllowed)
+
+    if (!isAllowed) {
       return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+    }
   }
+
+  return NextResponse.next();
 }
