@@ -4,13 +4,13 @@ export const metadata: Metadata = {
   title: "Terms of Service - Melvin Jones Repol",
   description: "Terms of Service for melvinjonesrepol.com and related projects",
   alternates: {
-    canonical: "https://www.melvinjonesrepol.com/terms",
+    canonical: "https://www.melvinjonesrepol.com/legal/terms-of-service",
   },
   openGraph: {
     title: "Terms of Service - Melvin Jones Repol",
     description:
       "Terms of Service for melvinjonesrepol.com and related projects",
-    url: "https://www.melvinjonesrepol.com/terms",
+    url: "https://www.melvinjonesrepol.com/legal/terms-of-service",
     siteName: "Melvin Jones Repol",
     images: [
       {

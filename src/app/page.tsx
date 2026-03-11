@@ -62,6 +62,13 @@ export default function Home() {
 
   const updates = [
     {
+      title: "Developer Client Agreement",
+      description:
+        "We have updated our Developer Client Agreement to clarify the terms and conditions for our development services. Please review the updated agreement for more details on our services, pricing, and policies.",
+      link: "/legal/developer-client-agreement",
+      featured: true,
+    },
+    {
       title: "DevPulse",
       description:
         "Monitor your coding activity, create custom leaderboards, and compete with your team or the community. DevPulse brings WakaTime stats into a sleek, collaborative leaderboard experience.",
@@ -402,9 +409,9 @@ export default function Home() {
 
               <div className="p-5">
                 <p className="text-lg">
-                  A community for developers, creatives, and
-                  problem-solvers. It’s where ideas turn into projects, and
-                  projects turn into opportunities to learn and collaborate.
+                  A community for developers, creatives, and problem-solvers.
+                  It’s where ideas turn into projects, and projects turn into
+                  opportunities to learn and collaborate.
                 </p>
                 <p className="mt-3 text-lg">
                   If you love building cool things, exploring new tech, or just

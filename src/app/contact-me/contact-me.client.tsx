@@ -1,6 +1,7 @@
 "use client";
 
 import Button from "@/components/Button";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
@@ -11,6 +12,7 @@ export default function ContactMe() {
     message: "",
     username: "",
   });
+
   const [grecaptchaLoaded, setGrecaptchaLoaded] = useState(false);
 
   useEffect(() => {
@@ -35,6 +37,7 @@ export default function ContactMe() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     if (!grecaptchaLoaded || !window.grecaptcha?.enterprise) {
       toast.error("reCAPTCHA is not loaded. Please try again later.");
       return;
@@ -54,10 +57,13 @@ export default function ContactMe() {
         });
 
         const data = await response.json();
+
         if (!response.ok) {
           throw new Error(data?.error || "Something went wrong");
         }
+
         setFormData({ name: "", email: "", message: "", username: "" });
+
         resolve(data);
       } catch (error) {
         reject(error);
@@ -78,113 +84,128 @@ export default function ContactMe() {
 
   return (
     <main className="my-18 p-3 md:p-8">
-      <section>
-        <div className="flex flex-col items-center gap-4">
-          <h1
-            className="text-2xl font-semibold"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            Contact Me – Get in Touch
-          </h1>
-          <p
-            className="mb-6 text-center max-w-md"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            Whether you have a question, a project idea, or just want to
-            connect, fill out the form below and I will respond promptly. I’m
-            happy to discuss collaborations, freelance opportunities, or share
-            insights about web development, design, and technology.
-          </p>
+      <section className="max-w-6xl mx-auto">
+        <div className="flex flex-col md:flex-row gap-10">
+          <div className="md:w-2/3">
+            <h1 className="text-2xl font-semibold mb-2" data-aos="fade-up">
+              Contact Me – Get in Touch
+            </h1>
 
-          <form
-            onSubmit={handleSubmit}
-            className="bg-black/10 backdrop-blur shadow-lg rounded-xl p-8 w-full max-w-lg space-y-3 mb-4"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div>
-              <label
-                htmlFor="name"
-                className="block text-sm font-semibold mb-1 text-white-700"
-              >
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className="w-full border border-gray-500 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
-                required
-                placeholder="Your Name"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-semibold mb-1 text-white-700"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full border border-gray-500 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
-                required
-                placeholder="you@email.com"
-              />
-            </div>
-            <div className="absolute left-[-10000px] top-0 h-px w-px opacity-0">
-              <label
-                htmlFor="username"
-                className="block text-sm font-semibold mb-1 text-white-700"
-              >
-                Username
-              </label>
-              <input
-                type="username"
-                id="username"
-                name="username"
-                value={formData.username}
-                onChange={handleChange}
-                className="w-full border border-gray-500 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
-                placeholder="Gotcha"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="message"
-                className="block text-sm font-semibold mb-1 text-white-700"
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={5}
-                value={formData.message}
-                onChange={handleChange}
-                className="w-full border border-gray-500 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition resize-none"
-                required
-                placeholder="Type your message here..."
-              />
-            </div>
-            <p className="text-sm text-gray-500 mb-4">
-              By clicking &quot;Submit,&quot; you consent to having your
-              information securely processed and sent via SMTP to the designated
-              recipient at mrepol742@gmail.com.
+            <p className="mb-6 max-w-md" data-aos="fade-up">
+              Whether you have a question, a project idea, or just want to
+              connect, fill out the form below and I will respond promptly. I'm
+              happy to discuss collaborations, freelance opportunities, or share
+              insights about web development and technology.
             </p>
-            <Button className="w-full bg-indigo-400 before:bg-indigo-600 after:bg-indigo-600">
-              Send Message
-            </Button>
-          </form>
+
+            <form
+              onSubmit={handleSubmit}
+              className="bg-black/10 backdrop-blur shadow-lg rounded-xl p-8 space-y-4"
+              data-aos="fade-up"
+            >
+              <div>
+                <label className="block text-sm font-semibold mb-1">Name</label>
+
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  placeholder="Your Name"
+                  className="w-full border border-gray-500 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold mb-1">
+                  Email
+                </label>
+
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  placeholder="you@email.com"
+                  className="w-full border border-gray-500 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none"
+                />
+              </div>
+
+              <div className="absolute left-[-10000px] top-0 opacity-0">
+                <input
+                  type="text"
+                  name="username"
+                  value={formData.username}
+                  onChange={handleChange}
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold mb-1">
+                  Message
+                </label>
+
+                <textarea
+                  rows={5}
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  placeholder="Type your message here..."
+                  className="w-full border border-gray-500 rounded-lg px-4 py-2 resize-none focus:ring-2 focus:ring-blue-400 outline-none"
+                />
+              </div>
+
+              <div className="text-sm text-gray-500">
+                By continuing, you agree to our{" "}
+                <a
+                  href="/legal/privacy-policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:underline"
+                >
+                  Privacy Policy
+                </a>
+                .
+              </div>
+
+              <Button className="w-full bg-indigo-400 before:bg-indigo-600 after:bg-indigo-600">
+                Send Message
+              </Button>
+            </form>
+          </div>
+
+          <div className="md:w-1/3 space-y-6">
+            <div>
+              <h2 className="text-xl font-semibold">Alternative Contact</h2>
+
+              <div className="flex flex-col">
+                <Link href="https://wa.me/+639283559507">
+                  <Button className="w-full bg-green-400 before:bg-green-600 after:bg-green-600">
+                    WhatsApp
+                  </Button>
+                </Link>
+
+                <Link href="https://www.facebook.com/melvinjonesrepol">
+                  <Button className="w-full bg-blue-400 before:bg-blue-600 after:bg-blue-600">
+                    Facebook
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            <div>
+              <h2 className="text-xl font-semibold">Documents & Policies</h2>
+
+              <Link href="/legal/developer-client-agreement">
+                <Button className="w-full bg-yellow-200 before:bg-yellow-400 after:bg-yellow-400">
+                  Developer Client Agreement
+                </Button>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </main>

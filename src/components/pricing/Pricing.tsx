@@ -212,52 +212,6 @@ export default function Pricing() {
             </p>
           </section>
 
-          <section data-aos="fade-up" className="mb-4">
-            <h3 className="font-semibold mb-2">Scope & Changes</h3>
-            <p>
-              Any changes outside the agreed-upon scope are billed separately.
-            </p>
-          </section>
-
-          <section data-aos="fade-up" className="mb-4">
-            <h3 className="font-semibold mb-2">App Deployment</h3>
-            <p>
-              We do not deploy Android APKs or other native applications using
-              our own Google Play Store or Apple App Store developer accounts.
-              Clients are responsible for creating and managing their own
-              developer accounts and submitting their applications to the
-              respective platforms.
-            </p>
-            <p>
-              While we may provide guidance or assistance during the submission
-              process, we are not responsible for managing the submission or for
-              any issues, delays, or decisions that may occur during the review
-              process conducted by the Google Play Store or Apple App Store.
-            </p>
-          </section>
-
-          <section data-aos="fade-up" className="mb-4">
-            <h3 className="font-semibold mb-2">Legal & Compliance</h3>
-            <p>
-              We are not responsible for any legal issues, including copyright
-              infringement, intellectual property disputes, or violations of
-              platform policies, that may arise from the content, design, or
-              functionality of the applications we develop. However, we may
-              provide warnings or guidance regarding potential legal or policy
-              concerns.
-            </p>
-            <p>
-              Clients remain solely responsible for ensuring that their
-              applications or website content comply with all applicable laws,
-              platform rules, and their own terms of service, privacy policies,
-              and other relevant policies.
-            </p>
-            <p>
-              We are not responsible for any issues related to political content
-              in the applications or websites.
-            </p>
-          </section>
-
           <section data-aos="fade-up">
             <h3 className="font-semibold mb-2">Maintenance</h3>
             <p>
@@ -267,6 +221,16 @@ export default function Pricing() {
             </p>
           </section>
         </div>
+
+        <Link
+          href="/legal/developer-client-agreement"
+          data-aos="fade-right"
+          data-aos-delay="350"
+        >
+          <Button className="bg-blue-400 before:bg-blue-600 after:bg-blue-600">
+            Developer Client Agreement
+          </Button>
+        </Link>
       </section>
     </main>
   );

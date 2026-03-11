@@ -56,6 +56,12 @@ const legalLinks = [
     description:
       "See how we and third-party services use cookies and similar tracking technologies.",
   },
+  {
+    href: "/legal/developer-client-agreement",
+    title: "Developer Client Agreement",
+    description:
+      "Review the terms and conditions for our development services.",
+  },
 ];
 
 export default function Legal() {

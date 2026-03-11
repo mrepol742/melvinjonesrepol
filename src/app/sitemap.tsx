@@ -89,5 +89,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: "https://www.melvinjonesrepol.com/legal/terms-of-service",
     },
+    {
+      url: "https://www.melvinjonesrepol.com/legal/cookie-policy",
+    },
+    {
+      url: "https://www.melvinjonesrepol.com/legal/developer-client-agreement",
+    },
   ];
 }
