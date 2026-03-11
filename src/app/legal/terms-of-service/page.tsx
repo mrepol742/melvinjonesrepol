@@ -39,7 +39,10 @@ export default function Terms() {
   return (
     <main className="my-18 p-4 md:p-10 max-w-3xl mx-auto">
       <section className="space-y-6">
-        <h1 className="text-3xl font-bold">Terms of Service</h1>
+        <div className="text-center">
+          <h1 className="text-3xl font-bold">Terms of Service</h1>
+          <p className="text-sm text-gray-500">Last Updated: March 11, 2026</p>
+        </div>
 
         <p>
           Welcome to melvinjonesrepol.com and related services (collectively,

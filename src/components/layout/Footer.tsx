@@ -15,6 +15,7 @@ import Script from "next/script";
 import Image from "next/image";
 import TrustPilotWidget from "../widget/TrustPilotWidget";
 import Button from "../Button";
+import { faDownload, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 export default function Footer() {
   const { theme, toggleTheme } = useTheme();
@@ -142,7 +143,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/my-team"
+                    href="/teams"
                     className="hover:text-orange-500 text-gray-400"
                   >
                     My Team
@@ -154,6 +155,14 @@ export default function Footer() {
                     className="hover:text-orange-500 text-gray-400"
                   >
                     Certificates
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/work-experience"
+                    className="hover:text-orange-500 text-gray-400"
+                  >
+                    Work Experience
                   </Link>
                 </li>
                 <li>
@@ -277,6 +286,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="https://keepandroidopen.org/"
+                  className="hover:text-orange-500 text-red-400"
+                >
+                  Keep Android Open
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/sitemap.xml"
                   className="hover:text-orange-500 text-gray-400"
                 >
@@ -340,32 +357,7 @@ export default function Footer() {
           </div>
           {/* Socials */}
           <div>
-            <h4 className="text-sm font-semibold">Theme</h4>
-            <div className="flex items-center space-x-3 mb-4">
-              <Button
-                onClick={toggleTheme}
-                className="bg-gray-700 before:bg-gray-800 after:bg-gray-800"
-              >
-                {theme === "dark" ? "Switch to Light" : "Switch to Dark"}
-              </Button>
-            </div>
-            <h4 className="text-sm font-semibold text-white">My App</h4>
-            <div className="flex mb-4">
-              <Link
-                href="https://released.melvinjonesrepol.com/android/melvinjones-app.apk"
-                aria-label="Melvin Jones App"
-              >
-                <Button
-                  icon={faAndroid}
-                  className="bg-gray-700 before:bg-gray-800 after:bg-gray-800"
-                >
-                  Download
-                </Button>
-              </Link>
-            </div>
-            <h4 className="text-sm font-semibold mb-2 text-white">
-              Sponsor/Support
-            </h4>
+            <h4 className="text-sm font-semibold mb-2 text-white">Sponsor</h4>
             <iframe
               src="https://github.com/sponsors/mrepol742/button"
               title="Sponsor mrepol742"
@@ -393,8 +385,18 @@ export default function Footer() {
             </Link>
           </div>
         </div>
-        <div className="mt-10 border-t border-gray-800 pt-6 text-center text-xs text-gray-300">
-          © {new Date().getFullYear()} Melvin Jones Repol. All rights reserved.
+        <div className="flex justify-between mt-10 border-t border-gray-800 pt-6 text-center text-xs text-gray-300">
+          <span>
+            © {new Date().getFullYear()} Melvin Jones Repol. All rights
+            reserved.
+          </span>
+          <button onClick={toggleTheme}>
+            {theme === "dark" ? (
+              <FontAwesomeIcon icon={faSun} />
+            ) : (
+              <FontAwesomeIcon icon={faMoon} />
+            )}
+          </button>
         </div>
       </nav>
     </footer>

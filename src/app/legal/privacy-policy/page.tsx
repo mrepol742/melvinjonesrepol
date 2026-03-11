@@ -42,8 +42,10 @@ export default function Privacy() {
   return (
     <main className="my-18 p-4 md:p-10 max-w-3xl mx-auto">
       <section className="space-y-6">
-        <h1 className="text-3xl font-bold">Privacy Policy</h1>
-        <p className="text-sm text-gray-500">Last Updated: March 11, 2026</p>
+        <div className="text-center">
+          <h1 className="text-3xl font-bold">Privacy Policy</h1>
+          <p className="text-sm text-gray-500">Last Updated: March 11, 2026</p>
+        </div>
 
         <p>
           This Privacy Policy describes how Melvin Jones Repol ("we", "us", or
@@ -64,10 +66,22 @@ export default function Privacy() {
 
         <h2 className="text-2xl font-semibold">1. Who We Are</h2>
         <p>The Services are developed and operated by Melvin Jones Repol.</p>
-        <p>
-          Website: https://www.melvinjonesrepol.com <br />
-          Email: mrepol742@gmail.com
-        </p>
+        <div>
+          Domains:
+          <ul className="list-disc list-inside ml-4">
+            <li>*.melvinjonesrepol.com</li>
+            <li>mrepol742.github.io</li>
+            <li>mrepol742.vercel.app</li>
+            <li>mrepol742.netlify.app</li>
+            <li>mrepol742.onrender.com</li>
+          </ul>
+          Emails:
+          <ul className="list-disc list-inside ml-4">
+            <li>Home: mrepol742@gmail.com</li>
+            <li>Support: support@melvinjonesrepol.com</li>
+            <li>General: me@melvinjonesrepol.com</li>
+          </ul>
+        </div>
 
         <h2 className="text-2xl font-semibold">
           2. Portfolio Website (melvinjonesrepol.com)
@@ -110,9 +124,9 @@ export default function Privacy() {
           <li>Ensure the security and integrity of the website</li>
         </ul>
 
-        <h2 className="text-2xl font-semibold">
+        <h3 className="text-xl font-semibold">
           Google Search Console & Analytics
-        </h2>
+        </h3>
         <p>
           The melvinjonesrepol.com portfolio website uses{" "}
           <a
@@ -144,6 +158,26 @@ export default function Privacy() {
         </p>
 
         <p>Third-party services operate under their own privacy policies.</p>
+
+        <h3 className="text-xl font-semibold">Hosting and Infrastructure</h3>
+
+        <p>
+          Our website is hosted by Vercel Inc., which provides the
+          infrastructure required to deliver this website. When you access our
+          site, certain technical data such as IP addresses, request
+          information, and performance logs may be processed by Vercel to ensure
+          the reliable and secure operation of the website. For more information
+          on how Vercel handles data, please review their{" "}
+          <a
+            href="https://vercel.com/legal/privacy-policy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline text-blue-600"
+          >
+            privacy policy
+          </a>
+          .
+        </p>
 
         <h2 className="text-2xl font-semibold">3. Webvium Browser</h2>
 

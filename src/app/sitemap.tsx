@@ -81,6 +81,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://www.melvinjonesrepol.com/tools/user-agent",
     },
     {
+      url: "https://www.melvinjonesrepol.com/legal",
+    },
+    {
       url: "https://www.melvinjonesrepol.com/legal/privacy-policy",
     },
     {
