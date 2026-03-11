@@ -64,6 +64,13 @@ export default function Privacy() {
           </li>
         </ul>
 
+        <p>
+          Melvin Jones Repol and Repol Systems operate as a single legal entity.
+          For the purposes of this Privacy Policy, “we,” “us,” and “our” refer
+          collectively to both names. All data collection, processing, and legal
+          responsibilities are handled by this single entity.
+        </p>
+
         <h2 className="text-2xl font-semibold">1. Who We Are</h2>
         <p>The Services are developed and operated by Melvin Jones Repol.</p>
         <div>

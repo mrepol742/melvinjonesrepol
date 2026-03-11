@@ -394,10 +394,16 @@ export default function Footer() {
           </div>
         </div>
         <div className="flex justify-between mt-10 border-t border-gray-800 pt-6 text-center text-xs text-gray-300">
-          <span>
-            © {new Date().getFullYear()} Melvin Jones Repol. All rights
-            reserved.
-          </span>
+          <div className="text-left">
+            <span className="block">
+              © {new Date().getFullYear()} Melvin Jones Repol. All rights
+              reserved.
+            </span>
+            <p className="text-muted text-gray-400 max-w-sm me-5">
+              Melvin Jones Repol (also known as Repol Systems) is a single legal
+              entity responsible for all services and content on this website.
+            </p>
+          </div>
           <button onClick={toggleTheme}>
             {theme === "dark" ? (
               <FontAwesomeIcon icon={faSun} />
