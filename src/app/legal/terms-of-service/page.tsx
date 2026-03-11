@@ -109,6 +109,7 @@ export default function Terms() {
         <ul className="list-disc list-inside ml-4">
           <li>LiveChat.ai for chat support</li>
           <li>Google Adsense</li>
+          <li>Trustpilot</li>
           <li>
             Google News RSS feeds for displaying news on Webvium Browser’s
             homepage
@@ -150,7 +151,7 @@ export default function Terms() {
 
         <h2 className="text-2xl font-semibold">9. Contact</h2>
         <p>
-          For any questions regarding these Terms, please contact us via the
+          For any questions regarding these Terms, please contact us via the{" "}
           <a
             href="https://www.melvinjonesrepol.com/contact-me"
             target="_blank"

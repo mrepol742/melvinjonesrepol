@@ -194,7 +194,7 @@ export default function Footer() {
                     href="/legal/terms-of-service"
                     className="hover:text-orange-500 text-gray-400"
                   >
-                    Terms
+                    Terms of Service
                   </Link>
                 </li>
                 <li>
@@ -202,7 +202,15 @@ export default function Footer() {
                     href="/legal/privacy-policy"
                     className="hover:text-orange-500 text-gray-400"
                   >
-                    Privacy
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/legal/cookie-policy"
+                    className="hover:text-orange-500 text-gray-400"
+                  >
+                    Cookie Policy
                   </Link>
                 </li>
               </ul>

@@ -124,6 +124,22 @@ export default function Privacy() {
           <li>Ensure the security and integrity of the website</li>
         </ul>
 
+        <h3 className="text-xl font-semibold">Trustpilot Widget</h3>
+        <p>
+          This site features a Trustpilot review widget. The widget is loaded
+          from{" "}
+          <a
+            href="https://www.trustpilot.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline text-blue-600"
+          >
+            Trustpilot
+          </a>{" "}
+          and may collect data such as your IP address and browsing information
+          according to their privacy policy.
+        </p>
+
         <h3 className="text-xl font-semibold">
           Google Search Console & Analytics
         </h3>
@@ -415,6 +431,16 @@ export default function Privacy() {
               className="underline text-blue-600"
             >
               Google Ad Personalization Settings
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://legal.trustpilot.com/privacy-policy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline text-blue-600"
+            >
+              Trustpilot
             </a>
           </li>
         </ul>
