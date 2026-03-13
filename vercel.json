@@ -6,8 +6,73 @@
       "permanent": true
     },
     {
-      "source": "/legals/(.*)",
-      "destination": "/$1",
+      "source": "/webvium",
+      "destination": "/webvium-browser",
+      "permanent": true
+    },
+    {
+      "source": "/webviumbeta",
+      "destination": "/webvium-browser",
+      "permanent": true
+    },
+    {
+      "source": "/webviumdev",
+      "destination": "/webvium-browser",
+      "permanent": true
+    },
+    {
+      "source": "/search",
+      "destination": "/webvium-browser",
+      "permanent": true
+    },
+    {
+      "source": "/webviumvpn",
+      "destination": "/webvium-vpn",
+      "permanent": true
+    },
+    {
+      "source": "/project-orion",
+      "destination": "/orion-chatbot",
+      "permanent": true
+    },
+    {
+      "source": "/viewip",
+      "destination": "/ip-address",
+      "permanent": true
+    },
+    {
+      "source": "/qrcode",
+      "destination": "/qrcode-generator",
+      "permanent": true
+    },
+    {
+      "source": "/useragent",
+      "destination": "/user-agent",
+      "permanent": true
+    },
+    {
+      "source": "/privacypolicy",
+      "destination": "/legal/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/terms",
+      "destination": "/legal/terms-of-service",
+      "permanent": true
+    },
+    {
+      "source": "/privacy",
+      "destination": "/legal/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/cookies",
+      "destination": "/legal/cookie-policy",
+      "permanent": true
+    },
+    {
+      "source": "/my-team",
+      "destination": "/teams",
       "permanent": true
     }
   ]
