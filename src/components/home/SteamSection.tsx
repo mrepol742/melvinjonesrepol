@@ -33,19 +33,25 @@ export default async function SteamSection() {
   return (
     <>
       <div className="relative py-28 px-6 overflow-hidden">
-        <h4
-          className="text-center text-3xl mb-4 text-amber-500"
-          data-aos="fade-up"
-        >
-          Gaming Stats
-        </h4>
-        <p
-          className="text-center text-gray-400 max-w-2xl mx-auto mb-6"
-          data-aos="fade-up"
-        >
-          A snapshot of my gaming activity across various genres and titles.
-          Tracked automatically to reflect real gaming time and habits.
-        </p>
+        <div className="text-center">
+          <h4
+            className="text-sm font-semibold tracking-widest text-green-500 uppercase mb-3"
+            data-aos="fade-up"
+          >
+            Steam
+          </h4>
+          <h2
+            className="text-3xl md:text-4xl font-bold mb-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            Gaming Activity
+          </h2>
+          <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
+            A snapshot of my gaming activity across various genres and titles.
+            Tracked automatically to reflect real gaming time and habits.
+          </p>
+        </div>
 
         <div className="flex items-center justify-between">
           <div>
@@ -75,19 +81,25 @@ export default async function SteamSection() {
       </div>
 
       <div className="relative py-28 px-6 overflow-hidden">
-        <h4
-          className="text-center text-3xl mb-4 text-amber-500"
-          data-aos="fade-up"
-        >
-          Most Played Games
-        </h4>
-        <p
-          className="text-center text-gray-400 max-w-2xl mx-auto mb-6"
-          data-aos="fade-up"
-        >
-          Games I’ve spent the most time playing and enjoying. A mix of
-          favorites that reflect my taste and playstyle over time.
-        </p>
+        <div className="text-center">
+          <h4
+            className="text-sm font-semibold tracking-widest text-indigo-500 uppercase mb-3"
+            data-aos="fade-up"
+          >
+            Top Games
+          </h4>
+          <h2
+            className="text-3xl md:text-4xl font-bold mb-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            Most Played Games
+          </h2>
+          <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
+            Games I’ve spent the most time playing and enjoying. A mix of
+            favorites that reflect my taste and playstyle over time.
+          </p>
+        </div>
 
         <div className="flex flex-col gap-10 mb-10">
           {top10.map((game: GameType, idx) => {

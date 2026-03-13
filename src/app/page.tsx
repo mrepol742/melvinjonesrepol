@@ -1,7 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCode } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChartLine,
+  faCode,
+  faGlobe,
+  faLaptopCode,
+  faMobileScreen,
+  faServer,
+} from "@fortawesome/free-solid-svg-icons";
 import ProjectCard from "@/components/ProjectCard";
 import NeofetchTerminal from "@/components/home/Neofetch";
 import FaceEyes from "@/components/FaceEyes";
@@ -152,6 +159,39 @@ export default function Home() {
     },
   ];
 
+  const services = [
+    {
+      title: "Web Development",
+      description:
+        "Custom responsive websites built with modern technologies to deliver performance, accessibility, and scalability.",
+      icon: faGlobe,
+    },
+    {
+      title: "Web App Development",
+      description:
+        "Powerful web applications designed to automate business workflows and support long-term digital growth.",
+      icon: faLaptopCode,
+    },
+    {
+      title: "Android App Development",
+      description:
+        "Modern Android applications built for performance, usability, and seamless mobile experiences.",
+      icon: faMobileScreen,
+    },
+    {
+      title: "Website Migration",
+      description:
+        "Secure migration of websites between servers, frameworks, or hosting environments with minimal downtime.",
+      icon: faServer,
+    },
+    {
+      title: "SEO / GEO Optimization",
+      description:
+        "Improve your visibility with search engine optimization and geo-targeted strategies that drive organic traffic.",
+      icon: faChartLine,
+    },
+  ];
+
   return (
     <>
       <script
@@ -219,17 +259,68 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative py-14 md:py-28  overflow-hidden">
-            <div className="relative z-10 max-w-4xl mx-auto">
+          <div className="relative py-16 md:py-24 overflow-hidden">
+            <div className="max-w-4xl mx-auto text-center px-6 mb-14">
               <h4
-                className="text-center text-red-500 text-3xl md:text-4xl mb-6 tracking-tight"
+                className="text-sm font-semibold tracking-widest text-amber-500 uppercase mb-3"
                 data-aos="fade-up"
               >
-                Keep Android Open
+                Services
               </h4>
 
+              <h2
+                className="text-3xl md:text-4xl font-bold mb-4"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                Freelance Development Services
+              </h2>
+
+              <p className="text-lg" data-aos="fade-up" data-aos-delay="200">
+                Professional development services to help businesses launch,
+                optimize, and scale their digital platforms.
+              </p>
+            </div>
+
+            <div className="max-w-7xl mx-auto px-2 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {services.map((service, index) => (
+                <div
+                  key={index}
+                  className="bg-black/10 backdrop-blur rounded p-6 hover:scale-98 transition-transform duration-300"
+                  data-aos="fade-up"
+                >
+                  <div className="text-amber-500 text-3xl mb-4">
+                    <FontAwesomeIcon icon={service.icon} />
+                  </div>
+
+                  <h3 className="text-xl font-semibold mb-3">
+                    {service.title}
+                  </h3>
+
+                  <p className="leading-relaxed">{service.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="relative py-14 md:py-28  overflow-hidden">
+            <div className="relative z-10 max-w-4xl mx-auto text-center">
+              <h4
+                className="text-sm font-semibold tracking-widest text-red-500 uppercase mb-3"
+                data-aos="fade-up"
+              >
+                Advocacy
+              </h4>
+              <h2
+                className="text-3xl md:text-4xl font-bold mb-4"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                Keep Android Open
+              </h2>
+
               <p
-                className="text-center max-w-2xl mx-auto mb-5 leading-relaxed text-lg"
+                className="max-w-2xl mx-auto mb-5 leading-relaxed text-lg"
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
@@ -245,59 +336,11 @@ export default function Home() {
                 centrally with Google. This registration will involve:
               </p>
 
-              <div
-                className="max-w-2xl mx-auto rounded-2xl"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                <ul className="space-y-4">
-                  <li
-                    className="flex items-start gap-3"
-                    data-aos="fade-up"
-                    data-aos-delay="100"
-                  >
-                    <span className="mt-2 h-2 w-2 rounded-full bg-red-500"></span>
-                    Paying a fee to Google
-                  </li>
-                  <li
-                    className="flex items-start gap-3"
-                    data-aos="fade-up"
-                    data-aos-delay="100"
-                  >
-                    <span className="mt-2 h-2 w-2 rounded-full bg-red-500"></span>
-                    Agreeing to Google’s Terms and Conditions
-                  </li>
-                  <li
-                    className="flex items-start gap-3"
-                    data-aos="fade-up"
-                    data-aos-delay="100"
-                  >
-                    <span className="mt-2 h-2 w-2 rounded-full bg-red-500"></span>
-                    Providing government identification
-                  </li>
-                  <li
-                    className="flex items-start gap-3"
-                    data-aos="fade-up"
-                    data-aos-delay="100"
-                  >
-                    <span className="mt-2 h-2 w-2 rounded-full bg-red-500"></span>
-                    Uploading evidence of the developer’s private signing key
-                  </li>
-                  <li
-                    className="flex items-start gap-3"
-                    data-aos="fade-up"
-                    data-aos-delay="100"
-                  >
-                    <span className="mt-2 h-2 w-2 rounded-full bg-red-500"></span>
-                    Listing all current and future application identifiers
-                  </li>
-                </ul>
-              </div>
-
               <Link
                 href="https://keepandroidopen.org"
                 data-aos="fade-up"
                 data-aos-delay="300"
+                className="flex justify-center"
               >
                 <Button className="bg-red-500 before:bg-red-700 after:bg-red-700">
                   Join the Movement
@@ -306,21 +349,28 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative py-14 md:py-28  overflow-hidden">
-            <h4
-              className="text-center text-3xl mb-4 text-amber-500"
-              data-aos="fade-up"
-            >
-              New Updates
-            </h4>
-            <p
-              className="text-center max-w-2xl mx-auto mb-6"
-              data-aos="fade-up"
-            >
-              Fresh projects and improvements added recently to keep things
-              evolving. This section highlights what’s new, refined, or actively
-              being worked on.
-            </p>
+          <div className="relative py-14 md:py-28 overflow-hidden">
+            <div className="text-center ">
+              <h4
+                className="text-sm font-semibold tracking-widest text-amber-500 uppercase mb-3"
+                data-aos="fade-up"
+              >
+                Project Updates
+              </h4>
+              <h2
+                className="text-3xl md:text-4xl font-bold mb-4"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                What’s New in My Projects
+              </h2>
+              <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
+                Fresh projects and improvements added recently to keep things
+                evolving. This section highlights what’s new, refined, or
+                actively being worked on.
+              </p>
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mb-10">
               {updates.map((project, idx) => (
                 <div key={idx} data-aos="fade-up">
@@ -331,77 +381,108 @@ export default function Home() {
           </div>
 
           <div className="relative py-14 md:py-28  overflow-hidden">
-            <h4
-              className="text-center text-3xl text-amber-500"
-              data-aos="fade-up"
-            >
-              Programming Stats
-            </h4>
-            <p
-              className="text-center max-w-2xl mx-auto mb-6"
-              data-aos="fade-up"
-            >
-              A snapshot of my coding activity across languages and tools.
-              Tracked automatically to reflect real development time and habits.
-            </p>
+            <div className="text-center">
+              <h4
+                className="text-sm font-semibold tracking-widest text-cyan-500 uppercase mb-3"
+                data-aos="fade-up"
+              >
+                Wakatime
+              </h4>
+              <h2
+                className="text-3xl md:text-4xl font-bold mb-4"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                Programming Activity
+              </h2>
+              <p
+                className="text-center max-w-2xl mx-auto mb-6"
+                data-aos="fade-up"
+              >
+                A snapshot of my coding activity across languages and tools.
+                Tracked automatically to reflect real development time and
+                habits.
+              </p>
+            </div>
             <WakatimeSection />
           </div>
 
           <div className="relative py-14 md:py-28  overflow-hidden">
-            <h4
-              className="text-center text-3xl text-amber-500"
-              data-aos="fade-up"
-            >
-              Featured Projects
-            </h4>
-            <p
-              className="text-center max-w-2xl mx-auto mb-6"
-              data-aos="fade-up"
-            >
-              A curated selection of projects that best represent my skills and
-              creativity. These are the ones I’m most proud of and actively
-              showcase.
-            </p>
+            <div className="text-center">
+              <h4
+                className="text-sm font-semibold tracking-widest text-fuchsia-500 uppercase mb-3"
+                data-aos="fade-up"
+              >
+                Explore My Work
+              </h4>
+              <h2
+                className="text-3xl md:text-4xl font-bold mb-4"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                Featured Projects
+              </h2>
+              <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
+                A curated selection of projects that best represent my skills
+                and creativity. These are the ones I’m most proud of and
+                actively showcase.
+              </p>
+            </div>
+
             <ProjectSection />
           </div>
 
           <SteamSection />
 
           <div className="relative py-14 md:py-28  overflow-hidden">
-            <h4
-              className="text-center text-3xl mb-4 text-amber-500"
-              data-aos="fade-up"
-            >
-              Latest Videos
-            </h4>
-            <p
-              className="text-center max-w-2xl mx-auto mb-6"
-              data-aos="fade-up"
-            >
-              A glimpse into my latest video content, where I share insights,
-              tutorials, and behind-the-scenes looks at my projects and gaming.
-              Check out what I’ve been up to on YouTube!
-            </p>
+            <div className="text-center">
+              <h4
+                className="text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3"
+                data-aos="fade-up"
+              >
+                Youtube
+              </h4>
+              <h2
+                className="text-3xl md:text-4xl font-bold mb-4"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                Latest Videos
+              </h2>
+              <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
+                A glimpse into my latest video content, where I share insights,
+                tutorials, and behind-the-scenes looks at my projects and
+                gaming. Check out what I’ve been up to on YouTube!
+              </p>
+            </div>
+
             <Youtube />
           </div>
 
-          <div className="relative pt-14 md:pt-28  overflow-hidden">
-            <h4
-              className="text-center text-3xl  text-blue-400"
-              data-aos="fade-up"
-            >
-              Hall of Codes
-            </h4>
-            <p
-              className="text-center max-w-2xl mx-auto mb-6"
-              data-aos="fade-up"
-            >
-              A community for developers, creatives, and problem-solvers. It’s
-              where ideas turn into projects, and projects turn into
-              opportunities to learn and collaborate.
-            </p>
+          <div className="relative pt-14 md:pt-28 overflow-hidden">
+            <div className="text-center">
+              <h4
+                className="text-sm font-semibold tracking-widest text-purple-500 uppercase mb-3"
+                data-aos="fade-up"
+              >
+                Community
+              </h4>
+              <h2
+                className="text-3xl md:text-4xl font-bold mb-4"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                Hall of Codes
+              </h2>
+              <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
+                A community for developers, creatives, and problem-solvers. It’s
+                where ideas turn into projects, and projects turn into
+                opportunities to learn and collaborate.
+              </p>
+            </div>
+
             <div
-              className=" bg-blue-400/10 mb-4 rounded block lg:flex flex-column gap-5"
+              className="block lg:flex flex-column gap-5"
               data-aos="fade-up"
               data-aos-delay="200"
             >
