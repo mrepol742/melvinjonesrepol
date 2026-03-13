@@ -158,18 +158,18 @@ export default function ContactMe() {
                 />
               </div>
 
-              <div className="text-sm text-gray-500">
+              <span className="text-sm">
                 By continuing, you agree to our{" "}
-                <a
+                <Link
                   href="/legal/privacy-policy"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-500 hover:underline"
                 >
                   Privacy Policy
-                </a>
+                </Link>
                 .
-              </div>
+              </span>
 
               <Button className="w-full bg-indigo-400 before:bg-indigo-600 after:bg-indigo-600">
                 Send Message
@@ -200,7 +200,7 @@ export default function ContactMe() {
               <h2 className="text-xl font-semibold">Documents & Policies</h2>
 
               <Link href="/legal/developer-client-agreement">
-                <Button className="w-full bg-yellow-200 before:bg-yellow-400 after:bg-yellow-400">
+                <Button className="w-full bg-yellow-200 before:bg-yellow-400 after:bg-yellow-400 text-black">
                   Developer Client Agreement
                 </Button>
               </Link>
