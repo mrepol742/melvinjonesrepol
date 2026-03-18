@@ -113,7 +113,7 @@ export default function RootLayout({
         <NortonSafeweb />
         <BreadcrumbJsonLd />
       </head>
-      <body className="antialiased min-h-screen flex flex-col">
+      <body className="antialiased min-h-screen flex flex-col background-grid">
         <div className="background-gloss">
           <div className="gloss-circle circle1"></div>
           <div className="gloss-circle circle2"></div>

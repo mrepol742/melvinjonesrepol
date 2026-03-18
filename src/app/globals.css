@@ -45,6 +45,20 @@ h1, h2, h3, h4, h5, h6 {
   animation: float 12s infinite ease-in-out alternate;
 }
 
+.background-grid {
+  background-image:
+    linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #818cf8 0%, #a78bfa 50%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* Individual Circle Styles */
 .circle1 {
   width: 300px;

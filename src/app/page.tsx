@@ -190,6 +190,12 @@ export default function Home() {
         "Improve your visibility with search engine optimization and geo-targeted strategies that drive organic traffic.",
       icon: faChartLine,
     },
+    {
+      title: "Angular, Next.js & Laravel Migration",
+      description:
+        "Easily upgrade your web applications to newer versions of Angular, Next.js, or Laravel with expert migration services that ensure a smooth transition.",
+      icon: faCode,
+    },
   ];
 
   return (
@@ -206,17 +212,18 @@ export default function Home() {
                 className="inline-flex items-center px-4 py-1 mb-6 text-sm font-medium bg-indigo-50 text-indigo-700 rounded-full border border-indigo-100"
                 data-aos="fade-up"
               >
-                Software Engineer • Full-Stack Developer
+                Software Engineer
               </div>
 
               <h1
-                className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight"
+                className="text-3xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight"
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
-                Building Scalable Digital{" "}
-                <span className="text-indigo-600">Solutions</span>
-                <br /> That Drive Impact
+                Building <span className="gradient-text">scalable digital</span>{" "}
+                <br />
+                solutions that drive <br />
+                <span className="gradient-text">tangible impact.</span>
               </h1>
 
               <p
