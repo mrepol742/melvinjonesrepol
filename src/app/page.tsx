@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChartLine,
   faCode,
+  faGear,
   faGlobe,
   faLaptopCode,
   faMobileScreen,
@@ -206,61 +207,94 @@ export default function Home() {
       />
       <main className="p-3 md:p-8">
         <section>
-          <div className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
-            <div className="relative z-10 max-w-4xl">
-              <div
-                className="inline-flex items-center px-4 py-1 mb-6 text-sm font-medium bg-indigo-50 text-indigo-700 rounded-full border border-indigo-100"
-                data-aos="fade-up"
-              >
-                Software Engineer
+          <div className="h-screen flex flex-col justify-center items-center text-center snap-start px-3">
+            <div
+              className="inline-flex items-center px-4 py-1 mb-6 text-sm font-medium bg-indigo-100 text-indigo-700 rounded-full"
+              data-aos="fade-up"
+            >
+              Software Engineer
+            </div>
+
+            <h1
+              className="text-3xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              Building <span className="gradient-text">scalable digital</span>{" "}
+              <br />
+              solutions that drive <br />
+              <span className="gradient-text-sub">tangible impact.</span>
+            </h1>
+
+            <p
+              className="max-w-2xl mx-auto text-lg md:text-xl mb-10 leading-relaxed"
+              data-aos="fade-up"
+              data-aos-delay="250"
+            >
+              I design and develop high-performance software systems that help
+              businesses innovate, scale, and succeed in a rapidly evolving
+              digital landscape.
+            </p>
+
+            <div
+              className="w-72 md:w-96 p-4 rounded-2xl border border-white/20 backdrop-blur-md shadow-lg flex flex-col gap-4"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div className="flex justify-between items-center">
+                <span
+                  className="font-bold"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  Melvin Jones Repol
+                </span>
+                <button
+                  className=""
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <FontAwesomeIcon icon={faGear} />
+                </button>
               </div>
 
-              <h1
-                className="text-3xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                Building <span className="gradient-text">scalable digital</span>{" "}
-                <br />
-                solutions that drive <br />
-                <span className="gradient-text">tangible impact.</span>
-              </h1>
+              <div className="flex gap-2">
+                <div className="w-6 h-6 rounded-full bg-gray-200"></div>
+                <div className="w-6 h-6 rounded-full bg-gray-200"></div>
+                <div className="w-6 h-6 rounded-full bg-gray-200"></div>
+              </div>
 
-              <p
-                className="max-w-2xl mx-auto text-lg md:text-xl mb-10 leading-relaxed"
-                data-aos="fade-up"
-                data-aos-delay="250"
-              >
-                I design and develop high-performance software systems that help
-                businesses innovate, scale, and succeed in a rapidly evolving
-                digital landscape.
-              </p>
+              <div className="flex gap-3">
+                <div className="flex-1 h-5 rounded-full bg-gray-200"></div>
+                <div className="w-6 h-5 rounded-full bg-gray-200"></div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-1 h-5 rounded-full bg-gray-200"></div>
+                <div className="w-6 h-5 rounded-full bg-gray-200"></div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-1 h-5 rounded-full bg-gray-200"></div>
+                <div className="w-6 h-5 rounded-full bg-gray-200"></div>
+              </div>
 
-              <div className="flex flex-wrap items-center justify-center gap-3">
+              <div className="flex gap-3">
                 <Link
                   href="https://github.com/mrepol742"
-                  data-aos="fade-up"
-                  data-aos-delay="350"
+                  className="px-2 py-1 text-sm"
                 >
-                  <Button className="bg-indigo-400 before:bg-indigo-600 after:bg-indigo-600">
-                    Github
-                  </Button>
+                  Github
                 </Link>
-
+                <Link
+                  href="/pricing"
+                  className="px-2 py-1 text-sm"
+                >
+                  Pricing
+                </Link>
                 <Link
                   href="/contact-me"
-                  data-aos="fade-up"
-                  data-aos-delay="400"
+                  className="px-2 py-1 text-sm"
                 >
-                  <Button className="bg-orange-400 before:bg-orange-600 after:bg-orange-600">
-                    Hire Me
-                  </Button>
-                </Link>
-
-                <Link href="/pricing" data-aos="fade-up" data-aos-delay="450">
-                  <Button className="bg-gray-700 before:bg-gray-800 after:bg-gray-800 text-white">
-                    Pricing
-                  </Button>
+                  Contact
                 </Link>
               </div>
             </div>
