@@ -235,69 +235,6 @@ export default function Home() {
               businesses innovate, scale, and succeed in a rapidly evolving
               digital landscape.
             </p>
-
-            <div
-              className="w-72 md:w-96 p-4 rounded-2xl border border-white/20 backdrop-blur-md shadow-lg flex flex-col gap-4"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
-              <div className="flex justify-between items-center">
-                <span
-                  className="font-bold"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                >
-                  Melvin Jones Repol
-                </span>
-                <button
-                  className=""
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                >
-                  <FontAwesomeIcon icon={faGear} />
-                </button>
-              </div>
-
-              <div className="flex gap-2">
-                <div className="w-6 h-6 rounded-full bg-gray-200"></div>
-                <div className="w-6 h-6 rounded-full bg-gray-200"></div>
-                <div className="w-6 h-6 rounded-full bg-gray-200"></div>
-              </div>
-
-              <div className="flex gap-3">
-                <div className="flex-1 h-5 rounded-full bg-gray-200"></div>
-                <div className="w-6 h-5 rounded-full bg-gray-200"></div>
-              </div>
-              <div className="flex gap-3">
-                <div className="flex-1 h-5 rounded-full bg-gray-200"></div>
-                <div className="w-6 h-5 rounded-full bg-gray-200"></div>
-              </div>
-              <div className="flex gap-3">
-                <div className="flex-1 h-5 rounded-full bg-gray-200"></div>
-                <div className="w-6 h-5 rounded-full bg-gray-200"></div>
-              </div>
-
-              <div className="flex gap-3">
-                <Link
-                  href="https://github.com/mrepol742"
-                  className="px-2 py-1 text-sm"
-                >
-                  Github
-                </Link>
-                <Link
-                  href="/pricing"
-                  className="px-2 py-1 text-sm"
-                >
-                  Pricing
-                </Link>
-                <Link
-                  href="/contact-me"
-                  className="px-2 py-1 text-sm"
-                >
-                  Contact
-                </Link>
-              </div>
-            </div>
           </div>
 
           <div className="relative py-16 md:py-24 overflow-hidden">
