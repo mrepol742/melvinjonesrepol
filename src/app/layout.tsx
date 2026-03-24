@@ -8,7 +8,6 @@ import AOSWrapper from "../components/AOSWrapper";
 import "./globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import Services from "@/lib/service-list";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import ServiceWorkerRegister from "@/components/ServiceWorkerRegister";
 import DevToolsDetector from "@/components/DevToolsDetector";
@@ -38,7 +37,18 @@ export const metadata: Metadata = {
   title: "Melvin Jones Repol - Strategic Software & DevOps Partner",
   description:
     "I specialize in building robust, scalable software solutions that solve real-world problems. With a passion for technology  and a commitment to excellence, I bring ideas to life through code.",
-  keywords: Services,
+  keywords: [
+    "Software Development",
+    "DevOps",
+    "Cloud Solutions",
+    "Microservices",
+    "API Development",
+    "CI/CD",
+    "Automation",
+    "Scalable Architecture",
+    "Technical Leadership",
+    "Software Consulting",
+  ],
   authors: [
     { name: "Melvin Jones Repol", url: "https://www.melvinjonesrepol.com" },
   ],
@@ -136,13 +146,6 @@ export default function RootLayout({
           </>
         )}
       </body>
-
-      <script
-        src="https://app.livechatai.com/embed.js"
-        data-id="cmdmcvh4n0001jt0c03xemlxw"
-        async
-        defer
-      ></script>
     </html>
   );
 }

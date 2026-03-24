@@ -44,7 +44,7 @@ export default function Privacy() {
       <section className="space-y-6">
         <div className="text-center">
           <h1 className="text-3xl font-bold">Privacy Policy</h1>
-          <p className="text-sm text-gray-500">Last Updated: March 11, 2026</p>
+          <p className="text-sm text-gray-500">Last Updated: March 24, 2026</p>
         </div>
 
         <p>
@@ -99,10 +99,6 @@ export default function Privacy() {
           <li>
             <strong>Contact Form:</strong> Name, email address, and message when
             voluntarily submitted.
-          </li>
-          <li>
-            <strong>LiveChat.ai:</strong> Chat transcripts and contact
-            information if provided.
           </li>
           <li>
             <strong>Google Adsense:</strong> May use cookies and similar
@@ -400,26 +396,6 @@ export default function Privacy() {
         </p>
 
         <ul className="list-disc list-inside ml-4">
-          <li>
-            <a
-              href="https://disqus.com/privacy-policy"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline text-blue-600"
-            >
-              Disqus Privacy Policy
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://livechat.ai/privacy-policy/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline text-blue-600"
-            >
-              LiveChat.ai Privacy Policy
-            </a>
-          </li>
           <li>
             <a
               href="https://policies.google.com/privacy"

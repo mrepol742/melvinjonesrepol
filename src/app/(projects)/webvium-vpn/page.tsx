@@ -1,9 +1,5 @@
-import HorizontalAdDisplayUnit from "@/components/google/HorizontalAdDisplay";
-import DisqusComments from "@/components/DisqusComments";
 import Project from "@/components/Project";
 import { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Download Webvium VPN - Melvin Jones Repol",

@@ -42,7 +42,7 @@ export default function CookiePolicy() {
       <section className="space-y-6">
         <div className="text-center">
           <h1 className="text-3xl font-bold">Cookie Policy</h1>
-          <p className="text-sm text-gray-500">Last Updated: March 11, 2026</p>
+          <p className="text-sm text-gray-500">Last Updated: March 24, 2026</p>
         </div>
 
         <p>
@@ -123,17 +123,6 @@ export default function CookiePolicy() {
               Google Adsense
             </a>{" "}
             – may use cookies to serve personalized advertisements.
-          </li>
-          <li>
-            <a
-              href="https://livechat.ai/privacy-policy/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline text-blue-600"
-            >
-              LiveChat.ai
-            </a>{" "}
-            – may collect session data if chat support is used.
           </li>
         </ul>
 

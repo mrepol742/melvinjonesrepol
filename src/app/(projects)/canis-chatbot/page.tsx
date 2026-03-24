@@ -1,11 +1,4 @@
 import { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import DisqusComments from "@/components/DisqusComments";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faWarning } from "@fortawesome/free-solid-svg-icons";
-import { faGithub, faTelegram } from "@fortawesome/free-brands-svg-icons";
-import HorizontalAdDisplayUnit from "@/components/google/HorizontalAdDisplay";
 import Project from "@/components/Project";
 
 export const metadata: Metadata = {

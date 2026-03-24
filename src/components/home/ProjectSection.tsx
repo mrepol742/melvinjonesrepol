@@ -1,85 +1,80 @@
 import projects from "@/lib/project-list";
-import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons/faArrowRight";
-import { faCircleNotch } from "@fortawesome/free-solid-svg-icons/faCircleNotch";
-import { faLink } from "@fortawesome/free-solid-svg-icons/faLink";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ProjectSection() {
+export default function ProjectCarousel() {
   return (
-    <div className="flex flex-col gap-10 mb-10">
-      {projects
-        .filter((project) => project.featured)
-        .map((project, idx) => {
-          const isEven = idx % 2 === 0;
-
-          return (
-            <div
-              key={idx}
-              data-aos="fade-up"
-              className="flex flex-col md:flex-row items-center gap-6"
-            >
-              <div
-                className={`
-                  md:w-1/6 flex-1 flex flex-col items-center
-                  ${isEven ? "md:order-1" : "md:order-2"}
-                `}
-              >
-                <span className="text-6xl font-bold text-gray-400 block">
-                  {String(idx + 1).padStart(2, "0")}
-                </span>
-                <span className="text-2xl font-bold text-gray-400 block">
-                  {project.title}
-                </span>
-                {project.languages &&
-                  project.languages.map((lang, index) => (
-                    <div key={index} className="inline-block mr-2 mb-2">
-                      <div className="text-white text-xs px-2 py-1 bg-gray-900/30">
-                        <FontAwesomeIcon
-                          icon={faCircleNotch}
-                          className="mr-1"
-                        />
-                        {lang}
-                      </div>
-                    </div>
-                  ))}
-              </div>
-
-              <div className={`flex-1 ${isEven ? "order-2" : "order-1"}`}>
-                <div data-aos="fade-up">
-                  <div
-                    className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 hover:scale-95 hover:backdrop-blur-xl transition-transform duration-300 shadow-lg/10"
-                  >
-                    {project.cover && (
+    <>
+      <div
+        className="overflow-x-auto scroll-smooth snap-x snap-mandatory flex gap-6 py-6 scrollbar-hide"
+        style={{
+          WebkitMaskImage:
+            "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
+          WebkitMaskRepeat: "no-repeat",
+          WebkitMaskSize: "100% 100%",
+        }}
+      >
+        {projects
+          .filter((project) => project.featured)
+          .map((project, idx) => (
+            <div key={idx} className="snap-start flex-shrink-0 w-80 md:w-96">
+              <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 hover:scale-105 hover:backdrop-blur-xl transition-transform duration-300 shadow-lg/10">
+                {project.cover && (
+                  <Link href={project.link || "#"}>
+                    <div className="relative w-full h-48 rounded-2xl overflow-hidden mb-4">
                       <Image
                         src={project.cover}
                         alt={project.title}
-                        width={800}
-                        height={400}
-                        className="w-full h-auto mb-4 rounded-2xl"
+                        fill
+                        className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
                       />
-                    )}
-                    <p className="mb-2">{project.description}</p>
-                    <div className="flex items-end justify-end gap-2">
-                      {project.repo && (
-                        <Link href={project.repo}>
-                          <FontAwesomeIcon icon={faGithub} size="lg" />
-                        </Link>
-                      )}
-                      {project.link && (
-                        <Link href={project.link}>
-                          <FontAwesomeIcon icon={faArrowRight} size="lg" />
-                        </Link>
-                      )}
                     </div>
-                  </div>
+                  </Link>
+                )}
+
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-3xl font-bold text-gray-400">
+                    {String(idx + 1).padStart(2, "0")}
+                  </span>
+                  <span className="text-xl font-bold">{project.title}</span>
+                </div>
+
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.languages?.map((lang, i) => (
+                    <span
+                      key={i}
+                      className="px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-sm bg-gray-500/20"
+                    >
+                      {lang}
+                    </span>
+                  ))}
+                </div>
+
+                <p className="mb-4 line-clamp-3">{project.description}</p>
+
+                <div className="flex justify-end items-center gap-4">
+                  {project.repo && (
+                    <Link href={project.repo}>
+                      <FontAwesomeIcon icon={faGithub} size="lg" />
+                    </Link>
+                  )}
+                  {project.link && (
+                    <Link
+                      href={project.link}
+                      className="inline-flex items-center text-white bg-purple-500 hover:bg-purple-600 font-medium text-sm px-4 py-2 rounded-lg transition-all"
+                    >
+                      Read more
+                      <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>
-          );
-        })}
-    </div>
+          ))}
+      </div>
+    </>
   );
 }

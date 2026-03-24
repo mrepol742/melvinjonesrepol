@@ -10,16 +10,12 @@ import {
   faMobileScreen,
   faServer,
 } from "@fortawesome/free-solid-svg-icons";
-import ProjectCard from "@/components/ProjectCard";
-import NeofetchTerminal from "@/components/home/Neofetch";
-import FaceEyes from "@/components/FaceEyes";
 import SteamSection from "@/components/home/SteamSection";
 import { WakatimeSection } from "@/components/home/WakatimeSection";
 import ProjectSection from "@/components/home/ProjectSection";
 import RecentGithubActivityWrapper from "@/components/RecentGithubActivityWrapper";
 import RecentGithubActivity from "@/components/RecentGithubActivity";
 import { Youtube } from "@/components/home/Youtube";
-import Script from "next/script";
 import Button from "@/components/Button";
 
 export default function Home() {
@@ -167,29 +163,38 @@ export default function Home() {
                 optimize, and scale their digital platforms.
               </p>
             </div>
-
-            <div className="max-w-7xl mx-auto px-2 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="max-w-7xl mx-auto px-4 grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               {services.map((service, index) => (
-                <div key={index} data-aos="fade-up">
+                <div
+                  key={index}
+                  className="group perspective"
+                  data-aos="fade-up"
+                >
                   <div
                     className="
+                    relative
                     rounded-xl
                     border border-gray-200/30
                     p-6
-                    shadow-lg
-                    hover:shadow-2xl hover:scale-95
-                    transition-all duration-300
+                    shadow-md
+                    overflow-hidden
+                    transition-transform duration-500
+                    group-hover:rotate-y-6 group-hover:shadow-xl
                   "
                   >
-                    <div className="text-3xl mb-4">
+                    <div className="text-4xl mb-5 transition-transform duration-300 group-hover:scale-110">
                       <FontAwesomeIcon icon={service.icon} />
                     </div>
 
-                    <h3 className="text-xl font-semibold mb-3">
+                    <h3 className="text-2xl font-bold mb-3 transition-transform duration-300 group-hover:translate-y-1">
                       {service.title}
                     </h3>
 
-                    <p className="leading-relaxed">{service.description}</p>
+                    <p className="leading-relaxed transition-transform duration-300 group-hover:translate-y-1">
+                      {service.description}
+                    </p>
+
+                    <span className="absolute -top-4 -right-4 w-12 h-12 border rounded-full opacity-10 transition-all duration-500 group-hover:scale-125"></span>
                   </div>
                 </div>
               ))}
@@ -292,6 +297,8 @@ export default function Home() {
             </div>
 
             <ProjectSection />
+
+            <span className="text-xs">Swipe left or right to see more...</span>
           </div>
 
           <SteamSection />
@@ -321,7 +328,7 @@ export default function Home() {
             <Youtube />
           </div>
 
-          <div className="relative pt-14 md:pt-28 overflow-hidden">
+          <div className="relative py-14 md:py-28 overflow-hidden">
             <div className="text-center">
               <h4
                 className="text-sm font-semibold tracking-widest text-purple-500 uppercase mb-3"
@@ -341,44 +348,20 @@ export default function Home() {
                 where ideas turn into projects, and projects turn into
                 opportunities to learn and collaborate.
               </p>
-            </div>
-
-            <div
-              className="block lg:flex flex-column gap-5"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <FaceEyes />
-
-              <div className="p-5">
-                <p className="text-lg">
-                  A community for developers, creatives, and problem-solvers.
-                  It’s where ideas turn into projects, and projects turn into
-                  opportunities to learn and collaborate.
-                </p>
-                <p className="mt-3 text-lg">
-                  If you love building cool things, exploring new tech, or just
-                  geeking out over code, you’re welcome to join the journey.
-                </p>
-                <Link
-                  href="https://hallofcodes.github.io"
-                  data-aos="fade-up"
-                  data-aos-delay="300"
+              <Link
+                href="https://hallofcodes.github.io"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <Button
+                  icon={faCode}
+                  className="bg-blue-400 before:bg-blue-600 after:bg-blue-600"
                 >
-                  <Button
-                    icon={faCode}
-                    className="bg-blue-400 before:bg-blue-600 after:bg-blue-600"
-                  >
-                    Explore Hall of Codes
-                  </Button>
-                </Link>
-              </div>
+                  Explore Hall of Codes
+                </Button>
+              </Link>
             </div>
           </div>
-
-          {/*<div className="mb-10">
-            <NeofetchTerminal />
-          </div>*/}
 
           <section className="rounded border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 mb-5">
             <div className="max-w-4xl mx-auto px-6 py-20">

@@ -41,7 +41,7 @@ export default function Terms() {
       <section className="space-y-6">
         <div className="text-center">
           <h1 className="text-3xl font-bold">Terms of Service</h1>
-          <p className="text-sm text-gray-500">Last Updated: March 11, 2026</p>
+          <p className="text-sm text-gray-500">Last Updated: March 24, 2026</p>
         </div>
 
         <p>
@@ -113,7 +113,6 @@ export default function Terms() {
         </h2>
         <p>Some Services integrate or interact with third-party services:</p>
         <ul className="list-disc list-inside ml-4">
-          <li>LiveChat.ai for chat support</li>
           <li>Google Adsense</li>
           <li>Trustpilot</li>
           <li>
