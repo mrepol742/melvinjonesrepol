@@ -113,7 +113,7 @@ export default async function SteamSection() {
               >
                 <div
                   className={`
-              md:w-1/6 flex-1
+              md:w-1/6 flex-1 flex flex-col items-center
               ${isEven ? "md:order-1" : "md:order-2"}
             `}
                 >
@@ -124,17 +124,16 @@ export default async function SteamSection() {
                     {toHours(game.playtime_forever)} Total Hours
                   </span>
                 </div>
+
                 <div className={`flex-1 ${isEven ? "order-2" : "order-1"}`}>
                   <div data-aos="fade-up">
-                    <div
-                      className={`bg-black/10 backdrop-blur rounded p-6 hover:scale-98 transition-transform duration-300`}
-                    >
+                    <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 hover:scale-95 hover:backdrop-blur-xl transition-transform duration-300 shadow-lg/10">
                       <Image
                         src={game.cover_url}
                         alt={game.name}
                         width={800}
                         height={400}
-                        className="w-full h-auto mb-4 rounded"
+                        className="w-full h-auto mb-4 rounded-2xl"
                       />
                       <div className="flex flex-row gap-3">
                         {game.playtime_2weeks && game.playtime_2weeks > 0 && (

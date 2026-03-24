@@ -16,7 +16,7 @@ export default function GameCard({ game }: { game: GameType }) {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      data-aos="fade-up" data-aos-delay="100"
+      data-aos="fade-up"
     >
       <div
         className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-gray-900/80 via-gray-900/90 to-transparent p-3

@@ -1,4 +1,4 @@
-import { fetchGithubEvents } from "@/lib/github/publicEvents";
+import { fetchGithubEvents } from "@/lib/github/event";
 import {
   faCodeCommit,
   faCodeCompare,

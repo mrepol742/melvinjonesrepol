@@ -68,98 +68,6 @@ export default function Home() {
     "@graph": [person, webSite],
   };
 
-  const updates = [
-    {
-      title: "Developer Client Agreement",
-      description:
-        "We have updated our Developer Client Agreement to clarify the terms and conditions for our development services. Please review the updated agreement for more details on our services, pricing, and policies.",
-      link: "/legal/developer-client-agreement",
-      featured: true,
-    },
-    {
-      title: "DevPulse",
-      description:
-        "Monitor your coding activity, create custom leaderboards, and compete with your team or the community. DevPulse brings WakaTime stats into a sleek, collaborative leaderboard experience.",
-      link: "https://devpulse-waka.vercel.app",
-      repo: "https://github.com/mrepol742/devpulse",
-      featured: true,
-    },
-    {
-      title: "Payment powered Sci Calculator",
-      description:
-        "A scientific calculator with payment integration, allowing users to access advanced features and functionalities through a seamless payment process.",
-      link: "https://github.com/mrepol742/sci-calc",
-      featured: true,
-    },
-    {
-      title: "Football Matches Prediction",
-      description:
-        "Predictions based on team performance, player statistics, injuries, and historical data. Explore common approaches to predicting football matches.",
-      link: "/todays-football-matches",
-      featured: true,
-    },
-    {
-      title: "Github Unsigned Commits",
-      description:
-        "Due to configuration issues on one of my device some of my commits in past couple weeks were unsigned. To avoid conflicts these past commits will not be signed. I will make sure that all future commits are signed and verified.",
-    },
-    {
-      title: "Legals Update",
-      description:
-        "We updated our Privacy Policy and Terms of Service to ensure compliance with legal requirements and to provide transparency about how we handle user data. Please review the updated policies for more information.",
-      link: "/privacy-policy",
-      featured: true,
-    },
-    {
-      title: "Floating Console Extension",
-      description:
-        "A Browser extension that provides a floating console for developers to easily access logs while browsing the web.",
-      link: "/floating-console-extension",
-      featured: true,
-    },
-    {
-      title: "Webvium Launcher",
-      description:
-        "A lightweight and fast launcher for Android devices, designed to enhance user experience with a clean interface and essential features.",
-      link: "/webvium-launcher",
-      featured: true,
-    },
-    {
-      title: "Webvium v3.1.0 Update",
-      description:
-        "This update includes various bug fixes and performance improvements. Introduce News Discovery feature to stay updated with latest news articles from Google News.",
-      link: "/webvium-browser",
-      featured: true,
-    },
-    {
-      title: "Learning Rust",
-      description:
-        "I'm currently exploring Rust via PACT Advanced Rust Programming and Real World Applications via Coursera. You might see future projects of mine coded in Rust. Hope so...",
-      repo: "https://github.com/mrepol742/learning_rust",
-      featured: true,
-    },
-    {
-      title: "Appstore",
-      description:
-        "Due to legals issues webvium is no longer available or up to date with Galaxy and Amazon Appstore. Webvium is available to download officially here and in Uptodown.com.",
-      link: "https://webvium.en.uptodown.com/android",
-      featured: true,
-    },
-    {
-      title: "Generate Portolio using Wakatime Data",
-      description:
-        "Easily build your own portfolio, flex your coding skills and easy to deploy. All you just need is Wakatime API Key.",
-      link: "https://github.com/mrepol742/wakatime-profile",
-      featured: true,
-    },
-    {
-      title: "Deploy your own Shortlink App!",
-      description: "Get your link, shorteeeeeen!",
-      link: "https://github.com/mrepol742/shortlink-app",
-      featured: true,
-    },
-  ];
-
   const services = [
     {
       title: "Web Development",
@@ -262,20 +170,27 @@ export default function Home() {
 
             <div className="max-w-7xl mx-auto px-2 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {services.map((service, index) => (
-                <div
-                  key={index}
-                  className="bg-black/10 backdrop-blur rounded p-6 hover:scale-98 transition-transform duration-300"
-                  data-aos="fade-up"
-                >
-                  <div className="text-amber-500 text-3xl mb-4">
-                    <FontAwesomeIcon icon={service.icon} />
+                <div key={index} data-aos="fade-up">
+                  <div
+                    className="
+                    rounded-xl
+                    border border-gray-200/30
+                    p-6
+                    shadow-lg
+                    hover:shadow-2xl hover:scale-95
+                    transition-all duration-300
+                  "
+                  >
+                    <div className="text-3xl mb-4">
+                      <FontAwesomeIcon icon={service.icon} />
+                    </div>
+
+                    <h3 className="text-xl font-semibold mb-3">
+                      {service.title}
+                    </h3>
+
+                    <p className="leading-relaxed">{service.description}</p>
                   </div>
-
-                  <h3 className="text-xl font-semibold mb-3">
-                    {service.title}
-                  </h3>
-
-                  <p className="leading-relaxed">{service.description}</p>
                 </div>
               ))}
             </div>
@@ -324,37 +239,6 @@ export default function Home() {
                   Join the Movement
                 </Button>
               </Link>
-            </div>
-          </div>
-
-          <div className="relative py-14 md:py-28 overflow-hidden">
-            <div className="text-center ">
-              <h4
-                className="text-sm font-semibold tracking-widest text-amber-500 uppercase mb-3"
-                data-aos="fade-up"
-              >
-                Project Updates
-              </h4>
-              <h2
-                className="text-3xl md:text-4xl font-bold mb-4"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                What’s New in My Projects
-              </h2>
-              <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
-                Fresh projects and improvements added recently to keep things
-                evolving. This section highlights what’s new, refined, or
-                actively being worked on.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mb-10">
-              {updates.map((project, idx) => (
-                <div key={idx} data-aos="fade-up">
-                  <ProjectCard {...project} />
-                </div>
-              ))}
             </div>
           </div>
 

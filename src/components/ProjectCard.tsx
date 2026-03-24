@@ -1,6 +1,6 @@
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import {
-    faArrowRight,
+  faArrowRight,
   faCircleNotch,
   faDownload,
   faLink,
@@ -31,47 +31,50 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   return (
     <div data-aos="fade-up">
-      <div
-        className={`bg-black/10 backdrop-blur rounded p-6 hover:scale-98 transition-transform duration-300`}
-      >
+      <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg max-w-sm mx-auto hover:scale-95 hover:backdrop-blur-xl transition-transform duration-300">
         {cover && (
-          <Image
-            src={cover}
-            alt={title}
-            width={800}
-            height={400}
-            className="w-full h-auto mb-4 rounded"
-          />
+          <Link href={link || "#"}>
+            <div className="relative w-full h-48 rounded-t-2xl overflow-hidden">
+              <Image
+                src={cover}
+                alt={title}
+                fill
+                className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          </Link>
         )}
-        <h3 className="text-xl font-bold mb-2">{title}</h3>
-        <p className="mb-2">{description}</p>
-        <div className="mb-4">
-          {languages &&
-            languages.map((lang, index) => (
-              <div key={index} className="inline-block mr-2 mb-2">
-                <div className="text-white text-xs px-2 py-1 bg-gray-900/30">
-                  <FontAwesomeIcon icon={faCircleNotch} className="mr-1" />
-                  {lang}
-                </div>
-              </div>
-            ))}
-        </div>
-        <div className="flex items-end justify-end gap-2">
-          {repo && (
-            <Link href={repo} aria-label={`Open ${title} link`}>
-              <FontAwesomeIcon icon={faGithub} size="lg" />
-            </Link>
-          )}
-          {download && (
-            <Link href={download} aria-label={`Open ${title} link`}>
-              <FontAwesomeIcon icon={faDownload} size="lg" />
-            </Link>
-          )}
-          {link && (
-            <Link href={link} aria-label={`Open ${title} link`}>
-              <FontAwesomeIcon icon={faArrowRight} size="lg" />
-            </Link>
-          )}
+
+        <div className="p-6 text-center">
+          <Link href={link || "#"}>
+            <h5 className="mt-2 mb-4 text-xl font-semibold tracking-tight">
+              {title}
+            </h5>
+          </Link>
+
+          <p className="mb-6 line-clamp-3">{description}</p>
+
+          <div className="flex justify-center items-center gap-3">
+            {repo && (
+              <Link href={repo} className="">
+                <FontAwesomeIcon icon={faGithub} size="lg" />
+              </Link>
+            )}
+            {download && (
+              <Link href={download} className="">
+                <FontAwesomeIcon icon={faDownload} size="lg" />
+              </Link>
+            )}
+            {link && (
+              <Link
+                href={link}
+                className="inline-flex items-center text-white bg-purple-500 hover:bg-purple-600 font-medium text-sm px-4 py-2 rounded-lg transition-all"
+              >
+                Read more
+                <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
+              </Link>
+            )}
+          </div>
         </div>
       </div>
     </div>

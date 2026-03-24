@@ -93,116 +93,127 @@ export default function ContactMe() {
 
             <p className="mb-6 max-w-md" data-aos="fade-up">
               Whether you have a question, a project idea, or just want to
-              connect, fill out the form below and I will respond promptly. I'm
-              happy to discuss collaborations, freelance opportunities, or share
-              insights about web development and technology.
+              connect, fill out the form below and I will respond promptly.
             </p>
 
-            <form
-              onSubmit={handleSubmit}
-              className="bg-black/10 backdrop-blur shadow-lg rounded-xl p-8 space-y-4"
-              data-aos="fade-up"
-            >
-              <div>
-                <label className="block text-sm font-semibold mb-1">Name</label>
+            <div data-aos="fade-up">
+              <form
+                onSubmit={handleSubmit}
+                className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 hover:scale-95 hover:backdrop-blur-xl transition-transform duration-300 shadow-lg/10"
+              >
+                <div data-aos="fade-up">
+                  <label className="block text-sm font-semibold mb-1">
+                    Name
+                  </label>
 
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  placeholder="Your Name"
-                  className="w-full border border-gray-500 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none"
-                />
-              </div>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    placeholder="Your Name"
+                    className="w-full border border-gray-500 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none"
+                  />
+                </div>
 
-              <div>
-                <label className="block text-sm font-semibold mb-1">
-                  Email
-                </label>
+                <div data-aos="fade-up">
+                  <label className="block text-sm font-semibold mb-1">
+                    Email
+                  </label>
 
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  placeholder="you@email.com"
-                  className="w-full border border-gray-500 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none"
-                />
-              </div>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    placeholder="you@email.com"
+                    className="w-full border border-gray-500 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none"
+                  />
+                </div>
 
-              <div className="absolute left-[-10000px] top-0 opacity-0">
-                <input
-                  type="text"
-                  name="username"
-                  value={formData.username}
-                  onChange={handleChange}
-                />
-              </div>
+                <div className="absolute left-[-10000px] top-0 opacity-0">
+                  <input
+                    type="text"
+                    name="username"
+                    value={formData.username}
+                    onChange={handleChange}
+                  />
+                </div>
 
-              <div>
-                <label className="block text-sm font-semibold mb-1">
-                  Message
-                </label>
+                <div data-aos="fade-up">
+                  <label className="block text-sm font-semibold mb-1">
+                    Message
+                  </label>
 
-                <textarea
-                  rows={5}
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  placeholder="Type your message here..."
-                  className="w-full border border-gray-500 rounded-lg px-4 py-2 resize-none focus:ring-2 focus:ring-blue-400 outline-none"
-                />
-              </div>
+                  <textarea
+                    rows={5}
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    placeholder="Type your message here..."
+                    className="w-full border border-gray-500 rounded-lg px-4 py-2 resize-none focus:ring-2 focus:ring-blue-400 outline-none"
+                  />
+                </div>
 
-              <span className="text-sm">
-                By continuing, you agree to our{" "}
-                <Link
-                  href="/legal/privacy-policy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 hover:underline"
+                <span className="text-sm" data-aos="fade-up">
+                  By continuing, you agree to our{" "}
+                  <Link
+                    href="/legal/privacy-policy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:underline"
+                  >
+                    Privacy Policy
+                  </Link>
+                  .
+                </span>
+
+                <Button
+                  data-aos="fade-up"
+                  className="w-full bg-indigo-400 before:bg-indigo-600 after:bg-indigo-600"
                 >
-                  Privacy Policy
-                </Link>
-                .
-              </span>
-
-              <Button className="w-full bg-indigo-400 before:bg-indigo-600 after:bg-indigo-600">
-                Send Message
-              </Button>
-            </form>
+                  Send Message
+                </Button>
+              </form>
+            </div>
           </div>
 
-          <div className="md:w-1/3 space-y-6">
-            <div>
-              <h2 className="text-xl font-semibold">Alternative Contact</h2>
-
-              <div className="flex flex-col">
-                <Link href="https://wa.me/+639283559507">
-                  <Button className="w-full bg-green-400 before:bg-green-600 after:bg-green-600">
-                    WhatsApp
-                  </Button>
+          <div className="md:w-1/3 flex flex-col gap-6" data-aos="fade-up">
+            <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 hover:scale-95 hover:backdrop-blur-xl transition-transform duration-300 shadow-lg/10">
+              <h2 className="text-lg font-semibold" data-aos="fade-up">
+                Alternative Contact
+              </h2>
+              <div className="flex flex-col gap-2">
+                <Link
+                  href="https://wa.me/+639283559507"
+                  className="underline-offset-2 hover:underline"
+                  data-aos="fade-up"
+                >
+                  WhatsApp
                 </Link>
-
-                <Link href="https://www.facebook.com/melvinjonesrepol">
-                  <Button className="w-full bg-blue-400 before:bg-blue-600 after:bg-blue-600">
-                    Facebook
-                  </Button>
+                <Link
+                  href="https://www.facebook.com/melvinjonesrepol"
+                  className="underline-offset-2 hover:underline"
+                  data-aos="fade-up"
+                >
+                  Facebook
                 </Link>
               </div>
             </div>
 
-            <div>
-              <h2 className="text-xl font-semibold">Documents & Policies</h2>
-
-              <Link href="/legal/developer-client-agreement">
-                <Button className="w-full bg-yellow-200 before:bg-yellow-400 after:bg-yellow-400 text-black">
-                  Developer Client Agreement
-                </Button>
+            <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 hover:scale-95 hover:backdrop-blur-xl transition-transform duration-300 shadow-lg/10">
+              <h2 className="text-lg font-semibold" data-aos="fade-up">
+                Documents & Policies
+              </h2>
+              <Link
+                href="/legal/developer-client-agreement"
+                className="underline-offset-2 hover:underline"
+                data-aos="fade-up"
+              >
+                Developer Client Agreement
               </Link>
             </div>
           </div>

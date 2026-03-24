@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { checkRateLimit } from "./lib/rateLimit";
+import { checkRateLimit } from "./utils/rate-limit";
 import HeadlessBrowserCheck from "./lib/proxy/headless-browser-check";
 import RateLimiter from "./lib/proxy/rate-limiter";
 

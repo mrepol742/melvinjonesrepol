@@ -1,4 +1,4 @@
-import { fetchCurrentStats } from "@/lib/wakatime/fetchCurrentStats";
+import { fetchCurrentStats } from "@/lib/wakatime/stat";
 import { faLinux } from "@fortawesome/free-brands-svg-icons";
 import { faEdit, faFile, faLaptop } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

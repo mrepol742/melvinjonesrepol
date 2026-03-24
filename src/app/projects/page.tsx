@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import projects from "@/lib/projectList";
+import projects from "@/lib/project-list";
 import Link from "next/link";
 import ProjectCard from "@/components/ProjectCard";
 import SearchForm from "@/components/form/SearchForm";
@@ -12,13 +12,14 @@ export const metadata: Metadata = {
     "Explore a collection of my personal software development projects, experiments, and tools I’ve built using modern technologies.",
   keywords: [
     "Projects",
-    "Axleshift Core 1",
-    "Ulisha Store",
-    "Webvium Browser",
-    "Webvium VPN",
-    "Point of Sale",
-    "Orion Chatbot",
-    "Melvin Jones Repol",
+    "Software Development",
+    "Personal Projects",
+    "Programming",
+    "Coding",
+    "Web Development",
+    "Open Source",
+    "GitHub Projects",
+    "Tech Portfolio",
   ],
   alternates: {
     canonical: "https://www.melvinjonesrepol.com/projects",
@@ -95,7 +96,7 @@ export default async function Projects({
             <h2>No results found.</h2>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-4 mb-6">
             {filteredProjects.map((project, idx) => (
               <div key={idx}>
                 <ProjectCard {...project} />

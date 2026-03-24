@@ -1,4 +1,4 @@
-import projects from "@/lib/projectList";
+import projects from "@/lib/project-list";
 import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons/faArrowRight";
 import { faCircleNotch } from "@fortawesome/free-solid-svg-icons/faCircleNotch";
@@ -23,7 +23,7 @@ export default function ProjectSection() {
             >
               <div
                 className={`
-                  md:w-1/6 flex-1
+                  md:w-1/6 flex-1 flex flex-col items-center
                   ${isEven ? "md:order-1" : "md:order-2"}
                 `}
               >
@@ -50,7 +50,7 @@ export default function ProjectSection() {
               <div className={`flex-1 ${isEven ? "order-2" : "order-1"}`}>
                 <div data-aos="fade-up">
                   <div
-                    className={`bg-black/10 backdrop-blur rounded p-6 hover:scale-98 transition-transform duration-300`}
+                    className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 hover:scale-95 hover:backdrop-blur-xl transition-transform duration-300 shadow-lg/10"
                   >
                     {project.cover && (
                       <Image
@@ -58,7 +58,7 @@ export default function ProjectSection() {
                         alt={project.title}
                         width={800}
                         height={400}
-                        className="w-full h-auto mb-4 rounded"
+                        className="w-full h-auto mb-4 rounded-2xl"
                       />
                     )}
                     <p className="mb-2">{project.description}</p>

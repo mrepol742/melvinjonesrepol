@@ -20,21 +20,25 @@ export default function CertificateCard({
 
   return (
     <div data-aos="fade-up">
-      <div
-        className={`bg-black/10 backdrop-blur rounded-xl p-6 shadow hover:scale-98 transition-transform duration-300`}
-      >
-        <h3 className="text-xl font-bold mb-2">{title}</h3>
-        <span>{type}</span>
-        <p>{description}</p>
-        <p className="mb-4">{date}</p>
+      <div className="p-6 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg max-w-sm mx-auto hover:scale-95 hover:backdrop-blur-xl transition-transform duration-300">
+        {type && (
+          <span className="px-2 py-1 rounded-full text-xs font-medium">
+            {type}
+          </span>
+        )}
+        <h3 className="text-lg font-semibold">{title}</h3>
+        <p className="flex-1 leading-relaxed">{description}</p>
 
-        <span
-          onClick={() => router.push(link)}
-          className="font-medium text-sm hover:underline mr-4"
-          aria-label={`Open ${title} certificate link`}
-        >
-          View Certificate →
-        </span>
+        <div className="flex items-center justify-between mt-4">
+          <span className="text-sm italic">{date}</span>
+          <button
+            onClick={() => router.push(link)}
+            className="text-sm font-medium underline-offset-2 group-hover:underline"
+            aria-label={`Open ${title} certificate link`}
+          >
+            View Certificate →
+          </button>
+        </div>
       </div>
     </div>
   );

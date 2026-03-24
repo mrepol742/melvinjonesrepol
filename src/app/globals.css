@@ -82,7 +82,7 @@ h1, h2, h3, h4, h5, h6 {
   background: radial-gradient(circle at center, #42e695, #3bb2b8);
   top: 50%;
   left: 60%;
-  animation-delay: 2s;
+  animation-delay: 0s;
 }
 
 .circle3 {
@@ -91,7 +91,7 @@ h1, h2, h3, h4, h5, h6 {
   background: radial-gradient(circle at center, #f9d423, #ff4e50);
   top: 70%;
   left: 10%;
-  animation-delay: 4s;
+  animation-delay: 0s;
 }
 
 /* Float Animation */

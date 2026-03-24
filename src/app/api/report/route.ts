@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { transporter } from "@/lib/smtp/nodemailer";
-import { isDisposableEmail, validateEmail } from "@/lib/emailChecker";
+import { isDisposableEmail, validateEmail } from "@/lib/email-checker";
 import crypto from "crypto";
 
 const recentMessages = new Map<string, number>();

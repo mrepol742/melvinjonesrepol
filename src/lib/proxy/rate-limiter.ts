@@ -1,41 +1,45 @@
 import { NextRequest, NextResponse } from "next/server";
-import { checkRateLimit } from "../rateLimit";
+import { checkRateLimit } from "../../utils/rate-limit";
 
-export default function RateLimiter(request: NextRequest) {
-  if (/api\//.test(request.nextUrl.pathname)) {
-    const forwardedFor = request.headers.get("x-forwarded-for");
-    const ip = forwardedFor?.split(",")[0] || "unknown";
-    const origin = request.headers.get("origin");
-
-    const allowedOrigins =
-      process.env.NODE_ENV === "development"
-        ? [/^http:\/\/localhost:\d+$/, /^http:\/\/127\.0\.0\.1:\d+$/]
-        : [/^https?:\/\/([a-z0-9-]+\.)?melvinjonesrepol\.com(:\d+)?$/];
-
-    const isAllowed1 =
-      !origin || allowedOrigins.some((pattern) => pattern.test(origin));
-
-    if (!isAllowed1) {
-      return NextResponse.json(
-        { error: "Hehe you're going too far naah..." },
-        { status: 403 },
-      );
-    }
-
-    const maxRequest = /api\/(contact|report)/.test(request.nextUrl.pathname)
-      ? 2
-      : 10;
-
-    const window = /api\/(contact|report)/.test(request.nextUrl.pathname)
-      ? 60 * 60 * 1000
-      : 5 * 60 * 1000;
-
-    const isAllowed = checkRateLimit(ip, maxRequest, window);
-
-    if (!isAllowed) {
-      return NextResponse.json({ error: "Too many requests" }, { status: 429 });
-    }
+export default function RateLimiter(
+  request: NextRequest,
+): NextResponse | undefined {
+  if (!/api\//.test(request.nextUrl.pathname)) {
+    return undefined;
   }
 
-  return NextResponse.next();
+  const forwardedFor = request.headers.get("x-forwarded-for");
+  const ip = forwardedFor?.split(",")[0] || "unknown";
+  const origin = request.headers.get("origin");
+
+  const allowedOrigins =
+    process.env.NODE_ENV === "development"
+      ? [/^http:\/\/localhost:\d+$/, /^http:\/\/127\.0\.0\.1:\d+$/]
+      : [/^https?:\/\/([a-z0-9-]+\.)?melvinjonesrepol\.com(:\d+)?$/];
+
+  const isAllowed1 =
+    !origin || allowedOrigins.some((pattern) => pattern.test(origin));
+
+  if (!isAllowed1) {
+    return NextResponse.json(
+      { error: "Hehe you're going too far naah..." },
+      { status: 403 },
+    );
+  }
+
+  const maxRequest = /api\/(contact|report)/.test(request.nextUrl.pathname)
+    ? 2
+    : 10;
+
+  const window = /api\/(contact|report)/.test(request.nextUrl.pathname)
+    ? 60 * 60 * 1000
+    : 5 * 60 * 1000;
+
+  const isAllowed = checkRateLimit(ip, maxRequest, window);
+
+  if (!isAllowed) {
+    return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+  }
+
+  return undefined;
 }

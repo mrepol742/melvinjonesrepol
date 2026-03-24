@@ -67,7 +67,7 @@ export default function WorkExperience() {
           <WorkExperienceCard
             company="Freelance"
             title="Software Engineer"
-            description="Software Engineer I develop, deploy, and maintain efficient and reliable software and websites tailored to meet customer needs, based on system analysis, design, and business models. My responsibilities include gathering requirements, designing scalable architectures, implementing robust code, and ensuring quality through testing. I also handle deployment, monitor performance, and provide ongoing support and updates. I collaborate with clients and teams to deliver solutions using modern technologies and best practices, focusing on usability, security, and maintainability."
+            description="I develop, deploy, and maintain efficient and reliable software and websites tailored to meet customer needs, based on system analysis, design, and business models."
             date="2021 - Present"
           />
           <WorkExperienceCard
@@ -76,38 +76,6 @@ export default function WorkExperience() {
             description="Incharge of maintaining the IT infrastructure, including hardware, software, and network. Responsible for troubleshooting technical issues, providing support to end-users, and ensuring the efficiency and reliability of the organization's IT system."
             date="April - June 2025"
             cert="https://drive.google.com/file/d/1JZejlS9Dkb3rJkcx3UdfsaDh281d7QZ4/view?usp=drive_link"
-          />
-        </div>
-
-        <h2 className="text-2xl font-semibold" data-aos="fade-up">
-          Partners and Collaborations
-        </h2>
-
-        <p className="mt-2" data-aos="fade-up" data-aos-delay="100">
-          I have collaborated with several developers to build efficient and
-          reliable software solutions for different projects. These partnerships
-          helped me improve my technical skills, share knowledge, and gain
-          practical experience in teamwork, problem-solving, and project
-          development.
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-4">
-          <WorkExperienceCard
-            company="Samiun Nafis"
-            title="Software Development Collaborator"
-            description="Collaborated on building web applications and software solutions. We worked closely by sharing ideas, writing code together, and contributing to projects that combine our expertise in modern web development."
-          />
-
-          <WorkExperienceCard
-            company="Efren Guno"
-            title="Frontend Project Collaborator"
-            description="Worked together on frontend development project using Laravel and React, focusing on creating user friendly interfaces."
-          />
-
-          <WorkExperienceCard
-            company="Lembou Pharel"
-            title="Full-Stack Collaborator"
-            description="Partnered on Laravel and Angular project, solving technical challenges, exchanging development knowledge, and delivering functional web application."
           />
         </div>
       </section>

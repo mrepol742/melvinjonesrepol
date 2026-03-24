@@ -21,23 +21,31 @@ export default function WorkExperienceCard({
   const router = useRouter();
 
   return (
-    <Link href={cert || "#"}>
-      <div
-        className={`bg-black/10 backdrop-blur rounded-xl p-6 shadow hover:shadow-lg transition`}
-        data-aos="fade-up"
-      >
-        <h3 className="text-xl font-bold">{company}</h3>
-        <p>{title}</p>
-        {date && <p className="mb-2 text-gray-500">{date}</p>}
-        <p className="mb-3">{description}</p>
+    <Link href={cert || "#"} data-aos="fade-up">
+      <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 hover:scale-95 hover:backdrop-blur-xl transition-transform duration-300 shadow-lg/10">
+        <div className="mb-5 flex items-center justify-between">
+          <h3 className="text-lg font-semibold">{company}</h3>
+          {date && <span className="text-sm italic">{date}</span>}
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <p className="font-medium">{title}</p>
+          <p className="leading-relaxed flex-1">{description}</p>
+        </div>
+
         {cert && (
-          <span
-            onClick={() => router.push(cert)}
-            className="font-medium text-sm hover:underline mr-4"
-            aria-label={`Open ${title} link`}
-          >
-            View Certificate →
-          </span>
+          <div className="mt-4 flex justify-end">
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                router.push(cert);
+              }}
+              className="text-sm font-medium underline-offset-2 hover:underline"
+              aria-label={`Open ${title} certificate link`}
+            >
+              View Certificate →
+            </button>
+          </div>
         )}
       </div>
     </Link>
