@@ -363,29 +363,64 @@ export default function Home() {
             </div>
           </div>
 
-          <section className="rounded border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 mb-5">
-            <div className="max-w-4xl mx-auto px-6 py-20">
-              <div className="mb-6">
-                <span className="text-sm font-semibold tracking-widest text-orange-500 uppercase">
+          <section className="border-t border-gray-200 dark:border-gray-800 mb-5">
+            <div className="max-w-5xl mx-auto px-6 py-16">
+              {/* Header */}
+              <div className="mb-10">
+                <p className="text-xs font-semibold tracking-widest uppercase mb-3">
                   About
-                </span>
-                <h2 className="mt-2 text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+                </p>
+                <h2 className="text-3xl md:text-4xl font-bold leading-tight">
                   Melvin Jones Repol
                 </h2>
               </div>
 
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-lg">
-                Melvin Jones Repol is a freelance software engineer and
-                full-stack web developer passionate about building practical and
-                scalable digital solutions. With several years of experience in
-                web development and software engineering, he focuses on creating
-                efficient applications, automation tools, and modern web
-                platforms. His work combines problem-solving, DevOps practices,
-                and continuous learning in emerging technologies. Melvin
-                actively develops projects, experiments with new tools, and
-                shares his progress through various platforms while continuously
-                improving his skills as a developer.
-              </p>
+              {/* Content Layout */}
+              <div className="grid md:grid-cols-3 gap-10">
+                {/* Summary */}
+                <div className="md:col-span-2">
+                  <p className="leading-relaxed text-base md:text-lg">
+                    Melvin Jones Repol is a freelance software engineer and
+                    full-stack web developer focused on building practical and
+                    scalable digital solutions. With years of experience in web
+                    development and software engineering, he specializes in
+                    developing efficient applications, automation tools, and
+                    modern web platforms.
+                  </p>
+
+                  <p className="mt-4 leading-relaxed text-base md:text-lg">
+                    His work integrates strong problem-solving skills, DevOps
+                    practices, and continuous exploration of emerging
+                    technologies. He actively builds projects, experiments with
+                    new tools, and shares his progress while consistently
+                    refining his expertise.
+                  </p>
+                </div>
+
+                {/* Key Info (Enterprise-style side panel) */}
+                <div className="space-y-6">
+                  <div>
+                    <p className="text-xs uppercase tracking-wide mb-1">Role</p>
+                    <p className="font-medium">Freelance Software Engineer</p>
+                  </div>
+
+                  <div>
+                    <p className="text-xs uppercase tracking-wide mb-1">
+                      Focus
+                    </p>
+                    <p className="font-medium">Full-Stack Development</p>
+                  </div>
+
+                  <div>
+                    <p className="text-xs uppercase tracking-wide mb-1">
+                      Expertise
+                    </p>
+                    <p className="font-medium">
+                      Android & Web Applications, Automation, DevOps
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
 
