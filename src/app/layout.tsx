@@ -15,6 +15,7 @@ import ScrollTop from "@/components/ScrollTop";
 import GoogleAnalytics from "@/components/google/GoogleAnalytics";
 import GoogleAds from "@/components/google/GoogleAdsense";
 import NortonSafeweb from "@/components/NortonSafeweb";
+import BrowserCheck from "@/components/BrowserCheck";
 
 config.autoAddCss = false;
 
@@ -143,6 +144,7 @@ export default function RootLayout({
             <GoogleAnalytics />
             <ServiceWorkerRegister />
             <DevToolsDetector />
+            <BrowserCheck />
           </>
         )}
       </body>

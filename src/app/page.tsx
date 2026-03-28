@@ -8,6 +8,7 @@ import {
   faGlobe,
   faLaptopCode,
   faMobileScreen,
+  faPesoSign,
   faServer,
 } from "@fortawesome/free-solid-svg-icons";
 import SteamSection from "@/components/home/SteamSection";
@@ -17,6 +18,7 @@ import RecentGithubActivityWrapper from "@/components/RecentGithubActivityWrappe
 import RecentGithubActivity from "@/components/RecentGithubActivity";
 import { Youtube } from "@/components/home/Youtube";
 import Button from "@/components/Button";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export default function Home() {
   const person = {
@@ -66,15 +68,9 @@ export default function Home() {
 
   const services = [
     {
-      title: "Web Development",
-      description:
-        "Custom responsive websites built with modern technologies to deliver performance, accessibility, and scalability.",
-      icon: faGlobe,
-    },
-    {
       title: "Web App Development",
       description:
-        "Powerful web applications designed to automate business workflows and support long-term digital growth.",
+        "Powerful web applications designed to automate business workflows and support long-term digital growth. Integrating modern technologies to create efficient, scalable, and user-friendly solutions.",
       icon: faLaptopCode,
     },
     {
@@ -163,41 +159,49 @@ export default function Home() {
                 optimize, and scale their digital platforms.
               </p>
             </div>
-            <div className="max-w-7xl mx-auto px-4 grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-              {services.map((service, index) => (
-                <div
-                  key={index}
-                  className="group perspective"
-                  data-aos="fade-up"
-                >
+
+            <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6 md:auto-rows-[220px]">
+              {services.map((service, index) => {
+                let spanClass = "";
+
+                if (index === 0) {
+                  spanClass = "md:col-span-1 md:row-span-2";
+                } else {
+                  spanClass = "md:col-span-1 md:row-span-1";
+                }
+
+                return (
                   <div
-                    className="
-                    relative
-                    rounded-xl
-                    border border-gray-200/30
-                    p-6
-                    shadow-md
-                    overflow-hidden
-                    transition-transform duration-500
-                    group-hover:rotate-y-6 group-hover:shadow-xl
-                  "
+                    key={index}
+                    className={`group perspective ${spanClass} h-auto md:h-full`}
+                    data-aos="fade-up"
                   >
-                    <div className="text-4xl mb-5 transition-transform duration-300 group-hover:scale-110">
-                      <FontAwesomeIcon icon={service.icon} />
+                    <div
+                      className="
+                        relative
+                        h-full
+                        rounded-xl
+                        border border-gray-200/30
+                        p-6
+                        shadow-md
+                        overflow-hidden
+                        transition-transform duration-500
+                        group-hover:rotate-y-6 group-hover:shadow-xl
+                      "
+                    >
+                      <h3 className="text-2xl font-bold mb-3 transition-transform duration-300 group-hover:translate-y-1">
+                        {service.title}
+                      </h3>
+
+                      <p className="leading-relaxed transition-transform duration-300 group-hover:translate-y-1">
+                        {service.description}
+                      </p>
+
+                      <span className="absolute -top-4 -right-4 w-12 h-12 border rounded-full opacity-10 transition-all duration-500 group-hover:scale-125"></span>
                     </div>
-
-                    <h3 className="text-2xl font-bold mb-3 transition-transform duration-300 group-hover:translate-y-1">
-                      {service.title}
-                    </h3>
-
-                    <p className="leading-relaxed transition-transform duration-300 group-hover:translate-y-1">
-                      {service.description}
-                    </p>
-
-                    <span className="absolute -top-4 -right-4 w-12 h-12 border rounded-full opacity-10 transition-all duration-500 group-hover:scale-125"></span>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
@@ -326,6 +330,8 @@ export default function Home() {
             </div>
 
             <Youtube />
+
+            <span className="text-xs">Swipe left or right to see more...</span>
           </div>
 
           <div className="relative py-14 md:py-28 overflow-hidden">
@@ -348,18 +354,32 @@ export default function Home() {
                 where ideas turn into projects, and projects turn into
                 opportunities to learn and collaborate.
               </p>
-              <Link
-                href="https://hallofcodes.github.io"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                <Button
-                  icon={faCode}
-                  className="bg-blue-400 before:bg-blue-600 after:bg-blue-600"
+              <div className="flex flex-col md:flex-row justify-center gap-1 md:gap-4">
+                <Link
+                  href="https://hallofcodes.github.io"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
                 >
-                  Explore Hall of Codes
-                </Button>
-              </Link>
+                  <Button
+                    icon={faCode}
+                    className="bg-purple-500 before:bg-purple-700 after:bg-purple-700"
+                  >
+                    Website
+                  </Button>
+                </Link>
+                <Link
+                  href="https://github.com/hallofcodes"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
+                  <Button
+                    icon={faGithub}
+                    className="bg-purple-500 before:bg-purple-700 after:bg-purple-700"
+                  >
+                    Github
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -395,6 +415,15 @@ export default function Home() {
                     new tools, and shares his progress while consistently
                     refining his expertise.
                   </p>
+
+                  <Link href="/pricing" data-aos="fade-up" data-aos-delay="300">
+                    <Button
+                      icon={faPesoSign}
+                      className="text-white bg-gray-800 before:bg-gray-900 after:bg-gray-900"
+                    >
+                      Pricing
+                    </Button>
+                  </Link>
                 </div>
 
                 {/* Key Info (Enterprise-style side panel) */}

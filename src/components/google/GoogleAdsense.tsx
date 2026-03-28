@@ -13,7 +13,7 @@ export default function GoogleAds() {
       <Script
         crossOrigin="anonymous"
         strategy="afterInteractive"
-        src={`hthttps://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${NEXT_PUBLIC_GOOGLE_ADS_PUBLISHER_ID}`}
+        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${NEXT_PUBLIC_GOOGLE_ADS_PUBLISHER_ID}`}
       />
     </>
   );

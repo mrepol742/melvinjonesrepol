@@ -21,26 +21,32 @@ export async function Youtube() {
   }
 
   return (
-    <div className="max-w-6xl mx-auto px-4 mb-10">
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {videos.map((video: any) => {
-          const videoId = video.id?.videoId;
-          if (!videoId) return null;
+    <div
+      className="overflow-x-auto scroll-smooth snap-x snap-mandatory flex gap-6 py-6 scrollbar-hide"
+      style={{
+        WebkitMaskImage:
+          "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
+        WebkitMaskRepeat: "no-repeat",
+        WebkitMaskSize: "100% 100%",
+      }}
+    >
+      {videos.map((video: any, idx: number) => {
+        const videoId = video.id?.videoId;
+        if (!videoId) return null;
 
-          return (
-            <div key={videoId} className="w-full">
-              <div className="relative aspect-video">
-                <iframe
-                  src={`https://www.youtube.com/embed/${videoId}`}
-                  title={video.snippet?.title || "YouTube video"}
-                  className="absolute top-0 left-0 w-full h-full rounded-2xl shadow-lg"
-                  allowFullScreen
-                />
-              </div>
+        return (
+          <div key={idx} className="snap-start flex-shrink-0 w-80 md:w-96">
+            <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 hover:scale-105 hover:backdrop-blur-xl transition-transform duration-300 shadow-lg/10">
+              <iframe
+                src={`https://www.youtube.com/embed/${videoId}`}
+                title={video.snippet?.title || "YouTube video"}
+                className="w-full h-48 rounded-2xl"
+                allowFullScreen
+              />
             </div>
-          );
-        })}
-      </div>
+          </div>
+        );
+      })}
     </div>
   );
 }

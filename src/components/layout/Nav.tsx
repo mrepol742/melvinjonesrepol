@@ -16,6 +16,7 @@ import { useEffect, useState } from "react";
 
 export default function Nav() {
   const [show, setShow] = useState(true);
+  const [showDesktopContact, setShowDesktopContact] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
@@ -34,6 +35,16 @@ export default function Nav() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setShowDesktopContact(window.innerWidth >= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <nav
@@ -175,23 +186,36 @@ export default function Nav() {
               </span>
             </Link>
           </li>
-          <li>
-            <Link
-              href="/contact-me"
-              className="group flex items-center hover:text-orange-500"
-              aria-label="Contact Me - Melvin Jones Repol"
-              title="Contact Me"
-            >
-              <FontAwesomeIcon
-                icon={faEnvelope}
-                className="inline-block mr-1"
-                size="1x"
-              />
-              <span className="ml-1 overflow-hidden max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-200 whitespace-nowrap">
-                Contact
-              </span>
-            </Link>
-          </li>
+          {showDesktopContact ? (
+            <li className="bg-gray-700 hover:bg-orange-400 transition-all text-white rounded-full px-2 py-1">
+              <Link
+                href="/contact-me"
+                className="flex items-center whitespace-nowrap text-xs"
+                aria-label="Contact Me - Melvin Jones Repol"
+                title="Contact Me"
+              >
+                Contact Me
+              </Link>
+            </li>
+          ) : (
+            <li>
+              <Link
+                href="/contact-me"
+                className="group flex items-center hover:text-orange-500"
+                aria-label="Contact Me - Melvin Jones Repol"
+                title="Contact Me"
+              >
+                <FontAwesomeIcon
+                  icon={faEnvelope}
+                  className="inline-block mr-1"
+                  size="1x"
+                />
+                <span className="ml-1 overflow-hidden max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-200 whitespace-nowrap">
+                  Contact
+                </span>
+              </Link>
+            </li>
+          )}
         </ul>
       </div>
     </nav>
