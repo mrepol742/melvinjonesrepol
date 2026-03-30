@@ -19,6 +19,7 @@ import RecentGithubActivity from "@/components/features/home/RecentGithubActivit
 import { Youtube } from "@/components/features/home/Youtube";
 import Button from "@/components/ui/Button";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import ServicesCarousel from "@/components/features/home/Services";
 
 export default function Home() {
   const person = {
@@ -135,6 +136,8 @@ export default function Home() {
               businesses innovate, scale, and succeed in a rapidly evolving
               digital landscape.
             </p>
+
+            <ServicesCarousel />
           </div>
 
           <div className="relative py-16 md:py-24 overflow-hidden">
