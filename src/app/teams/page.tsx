@@ -1,4 +1,4 @@
-import TeamCard from "../../components/TeamCard";
+import TeamCard from "../../components/features/teams/TeamCard";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

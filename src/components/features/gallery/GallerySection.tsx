@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Masonry from "react-masonry-css";
 
 type MediaItem = {
   type: "image" | "video";
@@ -34,7 +35,11 @@ export default function Gallery({
 
   return (
     <>
-      <div className="columns-3 md:columns-4 lg:columns-5 xl:columns-6 gap-4 p-4 space-y-4">
+      <Masonry
+        breakpointCols={{ default: 4, 1025: 3, 768: 2, 640: 1 }}
+        className="flex gap-6"
+        columnClassName="space-y-6"
+      >
         {media.map((item, idx) => (
           <div
             key={idx}
@@ -60,7 +65,7 @@ export default function Gallery({
             )}
           </div>
         ))}
-      </div>
+      </Masonry>
 
       {selectedIndex !== null && (
         <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-50">

@@ -1,4 +1,4 @@
-import Pricing from "@/components/pricing/Pricing";
+import Pricing from "@/components/features/pricing/Pricing";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

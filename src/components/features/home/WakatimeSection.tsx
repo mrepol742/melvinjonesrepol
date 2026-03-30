@@ -4,7 +4,7 @@ import { faEdit, faFile, faLaptop } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "devicon/devicon.min.css";
 import Link from "next/link";
-import Button from "../Button";
+import Button from "@/components/ui/Button";
 
 export async function WakatimeSection() {
   const stats = await fetchCurrentStats();

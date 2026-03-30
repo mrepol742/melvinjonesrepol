@@ -1,4 +1,4 @@
-import Button from "@/components/Button";
+import Button from "@/components/ui/Button";
 import { faShieldAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Metadata } from "next";

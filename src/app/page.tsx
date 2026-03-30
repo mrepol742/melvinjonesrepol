@@ -11,13 +11,13 @@ import {
   faPesoSign,
   faServer,
 } from "@fortawesome/free-solid-svg-icons";
-import SteamSection from "@/components/home/SteamSection";
-import { WakatimeSection } from "@/components/home/WakatimeSection";
-import ProjectSection from "@/components/home/ProjectSection";
-import RecentGithubActivityWrapper from "@/components/RecentGithubActivityWrapper";
-import RecentGithubActivity from "@/components/RecentGithubActivity";
-import { Youtube } from "@/components/home/Youtube";
-import Button from "@/components/Button";
+import SteamSection from "@/components/features/home/SteamSection";
+import { WakatimeSection } from "@/components/features/home/WakatimeSection";
+import ProjectSection from "@/components/features/home/ProjectSection";
+import RecentGithubActivityWrapper from "@/components/features/home/RecentGithubActivityWrapper";
+import RecentGithubActivity from "@/components/features/home/RecentGithubActivity";
+import { Youtube } from "@/components/features/home/Youtube";
+import Button from "@/components/ui/Button";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export default function Home() {
@@ -385,68 +385,85 @@ export default function Home() {
 
           <section className="border-t border-gray-200 dark:border-gray-800 mb-5">
             <div className="max-w-5xl mx-auto px-6 py-16">
-              {/* Header */}
-              <div className="mb-10">
-                <p className="text-xs font-semibold tracking-widest uppercase mb-3">
-                  About
-                </p>
-                <h2 className="text-3xl md:text-4xl font-bold leading-tight">
-                  Melvin Jones Repol
-                </h2>
-              </div>
-
-              {/* Content Layout */}
-              <div className="grid md:grid-cols-3 gap-10">
-                {/* Summary */}
-                <div className="md:col-span-2">
-                  <p className="leading-relaxed text-base md:text-lg">
-                    Melvin Jones Repol is a freelance software engineer and
-                    full-stack web developer focused on building practical and
-                    scalable digital solutions. With years of experience in web
-                    development and software engineering, he specializes in
-                    developing efficient applications, automation tools, and
-                    modern web platforms.
-                  </p>
-
-                  <p className="mt-4 leading-relaxed text-base md:text-lg">
-                    His work integrates strong problem-solving skills, DevOps
-                    practices, and continuous exploration of emerging
-                    technologies. He actively builds projects, experiments with
-                    new tools, and shares his progress while consistently
-                    refining his expertise.
-                  </p>
-
-                  <Link href="/pricing" data-aos="fade-up" data-aos-delay="300">
-                    <Button
-                      icon={faPesoSign}
-                      className="text-white bg-gray-800 before:bg-gray-900 after:bg-gray-900"
-                    >
-                      Pricing
-                    </Button>
-                  </Link>
+              <div className="mb-10 flex items-center gap-6">
+                <div className="hidden md:block shrink-0 self-start">
+                  <Image
+                    src="/images/melvinjonesrepol.png"
+                    alt="Melvin Jones Repol"
+                    className="w-20 h-20 rounded-xl object-cover"
+                    width={80}
+                    height={80}
+                  />
                 </div>
 
-                {/* Key Info (Enterprise-style side panel) */}
-                <div className="space-y-6">
+                <div>
                   <div>
-                    <p className="text-xs uppercase tracking-wide mb-1">Role</p>
-                    <p className="font-medium">Freelance Software Engineer</p>
+                    <p className="text-xs font-semibold tracking-widest uppercase mb-3">
+                      About
+                    </p>
+                    <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+                      Melvin Jones Repol
+                    </h2>
                   </div>
+                  <div className="grid md:grid-cols-3 gap-10">
+                    <div className="md:col-span-2">
+                      <p className="leading-relaxed text-base md:text-lg">
+                        Melvin Jones Repol is a freelance software engineer and
+                        full-stack web developer focused on building practical
+                        and scalable digital solutions. With years of experience
+                        in web development and software engineering, he
+                        specializes in developing efficient applications,
+                        automation tools, and modern web platforms.
+                      </p>
 
-                  <div>
-                    <p className="text-xs uppercase tracking-wide mb-1">
-                      Focus
-                    </p>
-                    <p className="font-medium">Full-Stack Development</p>
-                  </div>
+                      <p className="mt-4 leading-relaxed text-base md:text-lg">
+                        His work integrates strong problem-solving skills,
+                        DevOps practices, and continuous exploration of emerging
+                        technologies. He actively builds projects, experiments
+                        with new tools, and shares his progress while
+                        consistently refining his expertise.
+                      </p>
 
-                  <div>
-                    <p className="text-xs uppercase tracking-wide mb-1">
-                      Expertise
-                    </p>
-                    <p className="font-medium">
-                      Android & Web Applications, Automation, DevOps
-                    </p>
+                      <Link
+                        href="/pricing"
+                        data-aos="fade-up"
+                        data-aos-delay="300"
+                      >
+                        <Button
+                          icon={faPesoSign}
+                          className="text-white bg-gray-800 before:bg-gray-900 after:bg-gray-900"
+                        >
+                          Pricing
+                        </Button>
+                      </Link>
+                    </div>
+
+                    <div className="space-y-6">
+                      <div>
+                        <p className="text-xs uppercase tracking-wide mb-1">
+                          Role
+                        </p>
+                        <p className="font-medium">
+                          Freelance Software Engineer
+                        </p>
+                      </div>
+
+                      <div>
+                        <p className="text-xs uppercase tracking-wide mb-1">
+                          Focus
+                        </p>
+                        <p className="font-medium">Full-Stack Development</p>
+                      </div>
+
+                      <div>
+                        <p className="text-xs uppercase tracking-wide mb-1">
+                          Expertise
+                        </p>
+                        <p className="font-medium">
+                          Android & Web Applications, Automation, DevOps
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

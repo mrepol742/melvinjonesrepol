@@ -13,8 +13,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import Script from "next/script";
 import Image from "next/image";
-import TrustPilotWidget from "../widget/TrustPilotWidget";
-import Button from "../Button";
+import TrustPilotWidget from "./TrustPilotWidget";
 import { faDownload, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 export default function Footer() {

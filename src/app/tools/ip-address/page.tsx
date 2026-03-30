@@ -1,4 +1,4 @@
-import IPAddressTool from "@/components/tools/IPAddress";
+import IPAddressTool from "@/components/features/tools/IPAddress";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

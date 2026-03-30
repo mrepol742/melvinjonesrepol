@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Image from "next/image";
-import GalleryComponent from "@/components/Gallery";
+import GalleryComponent from "@/components/features/gallery/GallerySection";
 
 export const metadata: Metadata = {
   title: "Gallery - Melvin Jones Repol",
@@ -95,7 +95,7 @@ export default function Gallery() {
           Project & Design Gallery
         </h1>
 
-        <p className="mt-2" data-aos="fade-up" data-aos-delay="100">
+        <p className="mt-2 mb-5" data-aos="fade-up" data-aos-delay="100">
           Explore a curated collection of images highlighting my personal
           projects, design work, and creative digital solutions. Each image
           represents a real-world project demonstrating skills in web

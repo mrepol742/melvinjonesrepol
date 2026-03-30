@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import Project from "@/components/Project";
+import Project from "@/components/ui/Project";
 
 export const metadata: Metadata = {
   title: "Axleshift Freight Management - Melvin Jones Repol",

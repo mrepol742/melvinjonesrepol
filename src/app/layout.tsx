@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
 import { Source_Code_Pro, Maven_Pro } from "next/font/google";
 import { ToastContainer } from "react-toastify";
-import Nav from "../components/layout/Nav";
-import Footer from "../components/layout/Footer";
+import Nav from "../components/shared/Nav";
+import Footer from "../components/shared/Footer";
 import NextTopLoader from "nextjs-toploader";
-import AOSWrapper from "../components/AOSWrapper";
+import AOSWrapper from "../components/shared/AOSWrapper";
 import "./globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
-import ServiceWorkerRegister from "@/components/ServiceWorkerRegister";
-import DevToolsDetector from "@/components/DevToolsDetector";
-import ScrollTop from "@/components/ScrollTop";
-import GoogleAnalytics from "@/components/google/GoogleAnalytics";
-import GoogleAds from "@/components/google/GoogleAdsense";
-import NortonSafeweb from "@/components/NortonSafeweb";
-import BrowserCheck from "@/components/BrowserCheck";
+import BreadcrumbJsonLd from "@/components/ui/BreadcrumbJsonLd";
+import ServiceWorkerRegister from "@/components/shared/ServiceWorkerRegister";
+import ScrollTop from "@/components/ui/ScrollTop";
+import GoogleAnalytics from "@/components/shared/GoogleAnalytics";
+import GoogleAds from "@/components/shared/GoogleAdsense";
+import NortonSafeweb from "@/components/shared/NortonSafeweb";
+import BrowserCheck from "@/components/shared/BrowserCheck";
+import DevToolsDetector from "@/components/shared/DevToolsDetector";
 
 config.autoAddCss = false;
 

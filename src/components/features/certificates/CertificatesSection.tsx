@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import CertificateCard from "@/components/CertificateCard";
+import CertificateCard from "@/components/features/certificates/CertificateCard";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faX } from "@fortawesome/free-solid-svg-icons";
+import Masonry from "react-masonry-css";
+import SearchForm from "@/components/ui/SearchForm";
 
 const certificates = [
   {
@@ -103,8 +105,21 @@ const certificates = [
   },
 ];
 
-export default function Certificates() {
-  const [query, setQuery] = useState("");
+export default async function Certificates({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  const sParams = await searchParams;
+  const query = Array.isArray(sParams.q)
+    ? sParams.q.join(", ")
+    : sParams.q || "";
+
+  const filteredCertificates = certificates.filter(
+    (certificate) =>
+      certificate.title.toLowerCase().includes(query.toLowerCase()) ||
+      certificate.description.toLowerCase().includes(query.toLowerCase()),
+  );
 
   return (
     <main className="my-18 p-3 md:p-8">
@@ -123,65 +138,43 @@ export default function Certificates() {
           These certifications showcase my continuous learning in web
           development, programming, and modern digital technologies.
         </p>
-        <div>
-          <form
-            onSubmit={(e) => e.preventDefault()}
-            className="border rounded my-4 flex items-center gap-2 relative px-2 py-1 w-full max-w-xs"
-            style={{ borderColor: "#e5e7eb" }}
-            data-aos="fade-up"
-            data-aos-delay="100"
+
+        <SearchForm initialQuery={query} />
+
+        {filteredCertificates.length === 0 ? (
+          <div>
+            <h2>No results found.</h2>
+          </div>
+        ) : (
+          <Masonry
+            breakpointCols={{ default: 4, 1025: 3, 768: 2, 640: 1 }}
+            className="flex gap-6"
+            columnClassName="space-y-6"
           >
-            <span className="absolute left-3 text-gray-400 pointer-events-none">
-              <FontAwesomeIcon icon={faSearch} size="lg" />
-            </span>
-            <input
-              type="text"
-              placeholder="Search certificates..."
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              className="outline-none px-9 py-2 w-full bg-transparent"
-              style={{
-                border: "none",
-                boxShadow: "none",
-                paddingRight: query ? "2.5rem" : undefined,
-              }}
-            />
-            {query && (
-              <button
-                type="button"
-                onClick={() => setQuery("")}
-                className="right-3 text-gray-400 hover:text-gray-600 absolute"
-                aria-label="Clear search"
-                tabIndex={0}
-                style={{ right: "0.75rem" }}
-              >
-                <FontAwesomeIcon icon={faX} size="2xs" />
-              </button>
-            )}
-          </form>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-          {certificates
-            .filter(
-              (certificate) =>
-                certificate.title.toLowerCase().includes(query.toLowerCase()) ||
-                certificate.description
-                  .toLowerCase()
-                  .includes(query.toLowerCase()),
-            )
-            .map((certificate, idx) => (
-              <div key={idx}>
-                <Link
-                  href={certificate.link || "#"}
-                  className="no-underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <CertificateCard {...certificate} />
-                </Link>
-              </div>
-            ))}
-        </div>
+            {filteredCertificates
+              .filter(
+                (certificate) =>
+                  certificate.title
+                    .toLowerCase()
+                    .includes(query.toLowerCase()) ||
+                  certificate.description
+                    .toLowerCase()
+                    .includes(query.toLowerCase()),
+              )
+              .map((certificate, idx) => (
+                <div key={idx}>
+                  <Link
+                    href={certificate.link || "#"}
+                    className="no-underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <CertificateCard {...certificate} />
+                  </Link>
+                </div>
+              ))}
+          </Masonry>
+        )}
       </section>
     </main>
   );

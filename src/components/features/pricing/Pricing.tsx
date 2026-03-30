@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import PricingCard from "./PricingCard";
-import Button from "../Button";
+import Button from "@/components/ui/Button";
 import { useState } from "react";
 import { toast } from "react-toastify";
 

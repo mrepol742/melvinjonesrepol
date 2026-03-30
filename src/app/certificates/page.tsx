@@ -1,4 +1,4 @@
-import Certificates from "./certificates.client";
+import Certificates from "../../components/features/certificates/CertificatesSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -52,6 +52,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function CertificatesPage() {
-  return <Certificates />;
+export default async function CertificatesPage({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  const sParams = await searchParams;
+  return <Certificates searchParams={Promise.resolve(sParams)} />;
 }
