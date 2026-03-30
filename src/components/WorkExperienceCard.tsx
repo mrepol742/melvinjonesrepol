@@ -21,7 +21,12 @@ export default function WorkExperienceCard({
   const router = useRouter();
 
   return (
-    <Link href={cert || "#"} data-aos="fade-up">
+    <Link
+      href={cert || "#"}
+      data-aos="fade-up"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 hover:scale-95 hover:backdrop-blur-xl transition-transform duration-300 shadow-lg/10">
         <div className="mb-5 flex items-center justify-between">
           <h3 className="text-lg font-semibold">{company}</h3>

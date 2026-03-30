@@ -24,14 +24,27 @@ const certificates = [
     type: "Certificate of Particiption",
     description: "Asia Open RAN Academy",
     date: "12-2024",
-    link: "https://drive.google.com/file/d/1fnhQ8kud8dCXdFtUGDDDUZ3MCdlKBfYE/view?usp=sharing",
+    link: "/certificates/ai-ml.pdf",
   },
   {
     title: "Introduction to RAN, 5G, and Open RAN",
     type: "Certificate of Particiption",
     description: "Asia Open RAN Academy",
     date: "11-2024",
-    link: "https://drive.google.com/file/d/139AF3kBrgM3Z12dTCxnpv97aOXaOBqBO/view?usp=sharing",
+    link: "/certificates/introduction-to-open-ran-and-5g.pdf",
+  },
+  {
+    title: "Information Management in the Digital Age",
+    description: "Trueline",
+    date: "11-2024",
+    link: "/certificates/information-management-digital-age.jpg",
+  },
+  {
+    title: "Research Forum 2024",
+    type: "Certificate of Attendance",
+    description: "Bestlink College of the Philippines",
+    date: "9-2024",
+    link: "/certificates/research-forum-2024.jpg",
   },
   {
     title: "Managing Cybersecurity Incidents and Disasters",
@@ -76,6 +89,13 @@ const certificates = [
     link: "https://www.coursera.org/account/accomplishments/certificate/UH3LKLXAY5WK",
   },
   {
+    title: "Student Research Forum for A.Y 2023-2024",
+    type: "Certificate of Particiption",
+    description: "Bestlink College of the Philippines",
+    date: "9-2023",
+    link: "/certificates/student-research-forum-2023-2024.jpg",
+  },
+  {
     title: "Sololearn Course Completion Certificates",
     description: "Sololearn",
     date: "1-2019 2-2022",
@@ -108,7 +128,8 @@ export default function Certificates() {
             onSubmit={(e) => e.preventDefault()}
             className="border rounded my-4 flex items-center gap-2 relative px-2 py-1 w-full max-w-xs"
             style={{ borderColor: "#e5e7eb" }}
-            data-aos="fade-up" data-aos-delay="100"
+            data-aos="fade-up"
+            data-aos-delay="100"
           >
             <span className="absolute left-3 text-gray-400 pointer-events-none">
               <FontAwesomeIcon icon={faSearch} size="lg" />
@@ -150,7 +171,12 @@ export default function Certificates() {
             )
             .map((certificate, idx) => (
               <div key={idx}>
-                <Link href={certificate.link || "#"} className="no-underline">
+                <Link
+                  href={certificate.link || "#"}
+                  className="no-underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <CertificateCard {...certificate} />
                 </Link>
               </div>
