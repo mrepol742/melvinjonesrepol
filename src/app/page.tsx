@@ -113,7 +113,7 @@ export default function Home() {
               className="inline-flex items-center px-4 py-1 mb-6 text-sm font-medium bg-indigo-100 text-indigo-700 rounded-full"
               data-aos="fade-up"
             >
-              Software Engineer
+              Software &amp; AI Engineer | Arch Linux Advocate
             </div>
 
             <h1

@@ -1,4 +1,4 @@
-import ContactMe from "./contact-me.client";
+import ContactMe from "../../components/features/contact-me/ContactMeSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

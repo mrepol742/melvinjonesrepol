@@ -1,6 +1,10 @@
 "use client";
 
 import Button from "@/components/ui/Button";
+import Input from "@/components/ui/Input";
+import { faAt, faPerson, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons/faSearch";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
@@ -96,57 +100,52 @@ export default function ContactMe() {
               connect, fill out the form below and I will respond promptly.
             </p>
 
-            <div data-aos="fade-up">
-              <form
-                onSubmit={handleSubmit}
-                className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 hover:scale-95 hover:backdrop-blur-xl transition-transform duration-300 shadow-lg/10"
-              >
-                <div data-aos="fade-up">
-                  <label className="block text-sm font-semibold mb-1">
-                    Name
-                  </label>
+            <form onSubmit={handleSubmit}>
+              <div data-aos="fade-up" className="mb-4">
+                <Input
+                  icon={faUser}
+                  handleChange={handleChange}
+                  form={{
+                    name: "name",
+                    value: formData.name,
+                    placeholder: "Your Name",
+                    required: true,
+                  }}
+                />
+              </div>
 
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    placeholder="Your Name"
-                    className="w-full border border-gray-500 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none"
-                  />
-                </div>
+              <div data-aos="fade-up" className="mb-4">
+                <Input
+                  icon={faAt}
+                  handleChange={handleChange}
+                  form={{
+                    name: "email",
+                    value: formData.email,
+                    placeholder: "you@example.com",
+                    required: true,
+                  }}
+                />
+              </div>
 
-                <div data-aos="fade-up">
-                  <label className="block text-sm font-semibold mb-1">
-                    Email
-                  </label>
+              <div className="absolute left-[-10000px] top-0 opacity-0">
+                <input
+                  type="text"
+                  name="username"
+                  value={formData.username}
+                  onChange={handleChange}
+                />
+              </div>
 
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    placeholder="you@email.com"
-                    className="w-full border border-gray-500 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none"
-                  />
-                </div>
+              <div data-aos="fade-up">
+                <label className="block text-sm font-semibold mb-1">
+                  Message
+                </label>
 
-                <div className="absolute left-[-10000px] top-0 opacity-0">
-                  <input
-                    type="text"
-                    name="username"
-                    value={formData.username}
-                    onChange={handleChange}
-                  />
-                </div>
-
-                <div data-aos="fade-up">
-                  <label className="block text-sm font-semibold mb-1">
-                    Message
-                  </label>
-
+                <div
+                  className="flex items-center gap-2 px-4 py-2 rounded-xl border
+                         transition-all duration-300
+                         focus-within:shadow-md focus-within:-translate-y-[1px]"
+                >
                   <textarea
                     rows={5}
                     name="message"
@@ -154,35 +153,35 @@ export default function ContactMe() {
                     onChange={handleChange}
                     required
                     placeholder="Type your message here..."
-                    className="w-full border border-gray-500 rounded-lg px-4 py-2 resize-none focus:ring-2 focus:ring-blue-400 outline-none"
+                    className="w-full outline-none bg-transparent text-sm placeholder:opacity-60"
                   />
                 </div>
+              </div>
 
-                <span className="text-sm" data-aos="fade-up">
-                  By continuing, you agree to our{" "}
-                  <Link
-                    href="/legal/privacy-policy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-500 hover:underline"
-                  >
-                    Privacy Policy
-                  </Link>
-                  .
-                </span>
-
-                <Button
-                  data-aos="fade-up"
-                  className="w-full bg-indigo-400 before:bg-indigo-600 after:bg-indigo-600"
+              <span className="text-sm" data-aos="fade-up">
+                By continuing, you agree to our{" "}
+                <Link
+                  href="/legal/privacy-policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:underline"
                 >
-                  Send Message
-                </Button>
-              </form>
-            </div>
+                  Privacy Policy
+                </Link>
+                .
+              </span>
+
+              <Button
+                data-aos="fade-up"
+                className="w-full bg-indigo-400 before:bg-indigo-600 after:bg-indigo-600"
+              >
+                Send Message
+              </Button>
+            </form>
           </div>
 
           <div className="md:w-1/3 flex flex-col gap-6" data-aos="fade-up">
-            <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 hover:scale-95 hover:backdrop-blur-xl transition-transform duration-300 shadow-lg/10">
+            <div>
               <h2 className="text-lg font-semibold" data-aos="fade-up">
                 Alternative Contact
               </h2>
@@ -191,6 +190,8 @@ export default function ContactMe() {
                   href="https://wa.me/+639283559507"
                   className="underline-offset-2 hover:underline"
                   data-aos="fade-up"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   WhatsApp
                 </Link>
@@ -198,13 +199,15 @@ export default function ContactMe() {
                   href="https://www.facebook.com/melvinjonesrepol"
                   className="underline-offset-2 hover:underline"
                   data-aos="fade-up"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Facebook
                 </Link>
               </div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 hover:scale-95 hover:backdrop-blur-xl transition-transform duration-300 shadow-lg/10">
+            <div>
               <h2 className="text-lg font-semibold" data-aos="fade-up">
                 Documents & Policies
               </h2>
@@ -212,6 +215,8 @@ export default function ContactMe() {
                 href="/legal/developer-client-agreement"
                 className="underline-offset-2 hover:underline"
                 data-aos="fade-up"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Developer Client Agreement
               </Link>

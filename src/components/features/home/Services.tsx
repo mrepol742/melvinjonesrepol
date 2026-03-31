@@ -43,6 +43,24 @@ const techStack = [
   { name: "Zoho", icon: "devicon-zoho-plain colored" },
   { name: "PM2", icon: "devicon-pm2-plain colored" },
   { name: "Cloudflare", icon: "devicon-cloudflare-plain colored" },
+  { name: "Vite", icon: "devicon-vitejs-plain colored" },
+  { name: "Jest", icon: "devicon-jest-plain colored" },
+  { name: "Webpack", icon: "devicon-webpack-plain colored" },
+  { name: "AMD", icon: "devicon-amd-plain colored" },
+  { name: "LLM", icon: "devicon-llm-plain colored" },
+  { name: "VLLM", icon: "devicon-vllm-plain colored" },
+  { name: "Hugging Face", icon: "devicon-huggingface-plain colored" },
+  { name: "Maven", icon: "devicon-maven-plain colored" },
+  { name: "Gradle", icon: "devicon-gradle-plain colored" },
+  { name: "NPM", icon: "devicon-npm-original colored" },
+  { name: "Yarn", icon: "devicon-yarn-plain colored" },
+  { name: "PNPM", icon: "devicon-pnpm-plain colored" },
+  { name: "Linux", icon: "devicon-linux-plain colored" },
+  { name: "Windows", icon: "devicon-windows-plain colored" },
+  { name: "Font Awesome", icon: "devicon-fontawesome-plain colored" },
+  { name: "Material Design", icon: "devicon-materialdesign-plain colored" },
+  { name: "Material Icons", icon: "devicon-materialicons-plain colored" },
+  { name: "Google Fonts", icon: "devicon-google-plain colored" },
 ];
 
 function MarqueeRow({ reverse = false }) {
@@ -72,7 +90,7 @@ function MarqueeRow({ reverse = false }) {
 export default function TechStackPage() {
   return (
     <div className="w-full max-w-full overflow-x-clip">
-      <div className="w-full max-w-6xl space-y-6">
+      <div className="w-full space-y-6">
         <MarqueeRow />
         <MarqueeRow reverse />
       </div>
