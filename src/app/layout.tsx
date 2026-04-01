@@ -16,6 +16,7 @@ import GoogleAds from "@/components/shared/GoogleAdsense";
 import NortonSafeweb from "@/components/shared/NortonSafeweb";
 import BrowserCheck from "@/components/shared/BrowserCheck";
 import DevToolsDetector from "@/components/shared/DevToolsDetector";
+import Algolia from "@/components/shared/Algolia";
 
 config.autoAddCss = false;
 
@@ -122,6 +123,7 @@ export default function RootLayout({
         <meta name="hostname" content="www.melvinjonesrepol.com" />
         {isProduction && <GoogleAds />}
         <NortonSafeweb />
+        <Algolia />
         <BreadcrumbJsonLd />
       </head>
       <body className="antialiased min-h-screen flex flex-col background-grid">
