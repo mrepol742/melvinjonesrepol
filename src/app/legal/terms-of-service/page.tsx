@@ -41,7 +41,7 @@ export default function Terms() {
       <section className="space-y-6">
         <div className="text-center">
           <h1 className="text-3xl font-bold">Terms of Service</h1>
-          <p className="text-sm text-gray-500">Last Updated: March 24, 2026</p>
+          <p className="text-sm text-gray-500">Last Updated: April 1, 2026</p>
         </div>
 
         <p>
@@ -119,6 +119,7 @@ export default function Terms() {
             Google News RSS feeds for displaying news on Webvium Browser’s
             homepage
           </li>
+          <li>Algolia Search</li>
         </ul>
         <p>
           Each third-party service operates under its own terms and privacy

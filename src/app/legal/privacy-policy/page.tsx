@@ -44,7 +44,7 @@ export default function Privacy() {
       <section className="space-y-6">
         <div className="text-center">
           <h1 className="text-3xl font-bold">Privacy Policy</h1>
-          <p className="text-sm text-gray-500">Last Updated: March 24, 2026</p>
+          <p className="text-sm text-gray-500">Last Updated: April 1, 2026</p>
         </div>
 
         <p>
@@ -113,6 +113,12 @@ export default function Privacy() {
             <strong>Google reCAPTCHA Enterprise:</strong> Collects device and
             interaction data to prevent spam and abuse.
           </li>
+          <li>
+            <strong>Algolia Search:</strong> May collect search queries and
+            interaction data to provide search functionality. No personally
+            identifiable information is collected or stored by us through this
+            tool.
+          </li>
         </ul>
 
         <h3 className="text-xl font-semibold">How Data Is Used</h3>
@@ -125,6 +131,7 @@ export default function Privacy() {
           <li>Prevent spam and abuse</li>
           <li>Analyze website traffic and user behavior</li>
           <li>Ensure the security and integrity of the website</li>
+          <li>Provide search functionality</li>
         </ul>
 
         <h3 className="text-xl font-semibold">Trustpilot Widget</h3>

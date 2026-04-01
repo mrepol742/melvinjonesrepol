@@ -1,3 +1,4 @@
+import AlgoliaSearch from "@/components/shared/AlgoliaSearch";
 import Button from "@/components/ui/Button";
 import Link from "next/link";
 
@@ -25,32 +26,25 @@ export default function NotFound() {
   return (
     <div className="flex min-h-screen items-center justify-center px-6">
       <div className="w-full max-w-xl text-center">
-        <h1 className="text-8xl font-bold tracking-tight">404</h1>
+        <h1 className="text-8xl font-bold tracking-tight">
+          <span className="text-indigo-500">4</span>
+          <span className="text-gray-500">0</span>
+          <span className="text-indigo-500">4</span>
+        </h1>
 
-        <h2 className="mt-6 text-2xl font-semibold">Page not found</h2>
+        <h2 className="mt-6 text-2xl font-semibold">“{quote}”</h2>
 
         <p className="my-3 leading-relaxed">
           The page you’re looking for doesn’t exist or may have been moved.
         </p>
 
-        <p className="text-sm italic">“{quote}”</p>
-
-        <div className="mt-10 flex flex-wrap justify-center gap-4">
-          <Link href="/">
-            <Button className="bg-cyan-500 after:bg-cyan-600 before:bg-cyan-600">
-              Back to Home
-            </Button>
-          </Link>
-
-          <Link href="/contact-me">
-            <Button className="bg-orange-500 after:bg-orange-600 before:bg-orange-600">
-              Contact Me
-            </Button>
-          </Link>
+        <div className="mt-6 rounded-full text-start">
+          <AlgoliaSearch />
         </div>
 
-        <p className="mt-10 text-xs text-neutral-400">
-          Tip: Check the URL or head back to the homepage.
+        <p className="text-xs text-gray-500">
+          Dont worry the search works even if the page doesn't! Powered by
+          Algolia.
         </p>
       </div>
     </div>

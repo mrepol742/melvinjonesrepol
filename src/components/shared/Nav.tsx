@@ -227,7 +227,9 @@ export default function Nav() {
 
       <button
         onClick={toggleTheme}
-        className="hidden md:flex fixed top-5 right-5 z-50 h-11 w-11 items-center justify-center rounded-full bg-gray-800 text-white shadow-lg transition-transform duration-300 hover:shadow-xl focus:outline-none"
+        className={`hidden md:flex fixed top-5 right-5 z-50 h-10 w-10 items-center justify-center rounded-full bg-gray-800 text-white shadow-lg transition-transform duration-300 hover:shadow-xl focus:outline-none ${
+          show ? "translate-y-0" : "-translate-y-full"
+        }`}
         aria-label="Toggle Theme"
       >
         {theme === "dark" ? (

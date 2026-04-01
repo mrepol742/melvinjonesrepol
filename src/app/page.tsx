@@ -1,11 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChartLine,
   faCode,
-  faGear,
-  faGlobe,
   faLaptopCode,
   faMobileScreen,
   faPesoSign,
