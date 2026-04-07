@@ -16,8 +16,9 @@ type ProjectCardProps = {
   repo?: string;
   link?: string;
   download?: string;
-  languages?: string[];
+  technology?: string[];
   cover?: string;
+  archived?: boolean;
 };
 
 export default function ProjectCard({
@@ -26,8 +27,9 @@ export default function ProjectCard({
   repo,
   link,
   download,
-  languages,
+  technology,
   cover,
+  archived,
 }: ProjectCardProps) {
   return (
     <div data-aos="fade-up">
@@ -46,6 +48,12 @@ export default function ProjectCard({
         )}
 
         <div className="p-6 text-center">
+          {archived && (
+            <span className="inline-block px-3 py-1 text-sm font-medium text-gray-500 bg-gray-200 rounded-full">
+              Archived
+            </span>
+          )}
+
           <Link href={link || "#"}>
             <h5 className="mt-2 mb-4 text-xl font-semibold tracking-tight">
               {title}
@@ -53,6 +61,19 @@ export default function ProjectCard({
           </Link>
 
           <p className="mb-6 line-clamp-3">{description}</p>
+
+          {technology && technology.length > 0 && (
+            <div className="flex flex-wrap gap-2 mb-6">
+              {technology.map((tech, idx) => (
+                <span
+                  key={idx}
+                  className="px-3 py-1 bg-indigo-500 text-white text-sm font-medium rounded-full"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          )}
 
           <div className="flex justify-center items-center gap-3">
             {repo && (

@@ -1,29 +1,19 @@
 "use client";
 
 import projects from "@/lib/project-list";
-import Link from "next/link";
-import Project from "@/components/ui/Project";
 import SearchForm from "@/components/ui/SearchForm";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Button from "@/components/ui/Button";
 import ProjectCard from "@/components/features/projects/ProjectCard";
 import Masonry from "react-masonry-css";
+import Link from "next/link";
 
-export default async function ProjectSection({
-  searchParams,
-}: {
-  searchParams: Promise<Record<string, string | string[] | undefined>>;
-}) {
-  const sParams = await searchParams;
-  const query = Array.isArray(sParams.q)
-    ? sParams.q.join(", ")
-    : sParams.q || "";
-
+export default async function ProjectSection({ query }: { query: string }) {
   const filteredProjects = projects.filter(
     (project) =>
       project.title.toLowerCase().includes(query) ||
-      project.languages.some((lang) =>
-        lang.toLowerCase().includes(query.toLowerCase()),
+      project.technology.some((tech) =>
+        tech.toLowerCase().includes(query.toLowerCase()),
       ) ||
       project.description.toLowerCase().includes(query),
   );
@@ -66,9 +56,13 @@ export default async function ProjectSection({
         )}
 
         <div className="my-6">
-          <p data-aos="fade-up" data-aos-delay="200">
-            For more of my projects and code, check out my GitHub profile:
+          <p data-aos="fade-up" data-aos-delay="200" className="max-w-xl">
+            Client's projects are confidential, but I’m always open to sharing
+            more about my personal projects and code. If you’re interested in
+            seeing more of my work, feel free to check out my GitHub profile
+            where I regularly share updates on my projects and experiments.
           </p>
+
           <Link
             href="https://github.com/mrepol742"
             data-aos="fade-up"

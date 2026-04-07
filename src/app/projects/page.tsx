@@ -1,12 +1,4 @@
 import { Metadata } from "next";
-import projects from "@/lib/project-list";
-import Link from "next/link";
-import Project from "@/components/ui/Project";
-import SearchForm from "@/components/ui/SearchForm";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import Button from "@/components/ui/Button";
-import ProjectCard from "@/components/features/projects/ProjectCard";
-import Masonry from "react-masonry-css";
 import ProjectSection from "@/components/features/projects/ProjectSection";
 
 export const metadata: Metadata = {
@@ -62,6 +54,10 @@ export default async function Projects({
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const sParams = await searchParams;
+  const query = Array.isArray(sParams.q)
+    ? sParams.q.join(", ")
+    : sParams.q || "";
 
-  return <ProjectSection searchParams={Promise.resolve(sParams)} />;
+
+  return <ProjectSection query={query} />;
 }
