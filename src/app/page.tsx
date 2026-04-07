@@ -26,15 +26,21 @@ export default function Home() {
     url: "https://www.melvinjonesrepol.com",
     image: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.png",
     description:
-      "Freelance Software Engineer specializing in DevOps, AI systems, and scalable web applications.",
+      "I design and develop high-performance software systems that help businesses innovate, scale, and succeed in a rapidly evolving digital landscape. With a focus on practical solutions and continuous learning, I build projects that integrate strong problem-solving skills, DevOps practices, and emerging technologies.",
     jobTitle: "Freelance Software Engineer",
     mainEntityOfPage: "https://www.melvinjonesrepol.com",
     knowsAbout: [
-      "DevOps",
-      "Software Engineering",
+      "Software Development",
       "Web Development",
-      "Artificial Intelligence",
-      "Cloud Infrastructure",
+      "Mobile App Development",
+      "DevOps",
+      "AI Systems",
+      "Automation",
+      "Cloud Computing",
+      "Open Source Software",
+      "Webvium Browser",
+      "Webvium VPN",
+      "Webvium Launcher",
     ],
     sameAs: [
       "https://www.facebook.com/melvinjonesrepol",
@@ -137,7 +143,7 @@ export default function Home() {
             <ServicesCarousel />
           </div>
 
-          <div className="relative py-16 md:py-24 overflow-hidden">
+          {/*<div className="relative py-16 md:py-24 overflow-hidden">
             <div className="max-w-4xl mx-auto text-center px-6 mb-14">
               <h4
                 className="text-sm font-semibold tracking-widest text-amber-500 uppercase mb-3"
@@ -203,7 +209,7 @@ export default function Home() {
                 );
               })}
             </div>
-          </div>
+          </div>*/}
 
           <div className="relative py-14 md:py-28  overflow-hidden">
             <div className="relative z-10 max-w-4xl mx-auto text-center">
@@ -235,7 +241,11 @@ export default function Home() {
                 </Link>{" "}
                 that as of September 2026, it will no longer be possible to
                 develop apps for the Android platform without first registering
-                centrally with Google. This registration will involve:
+                centrally with Google. This move threatens the open nature of
+                Android and the freedom of developers to create and distribute
+                apps without gatekeeping. I advocate for keeping Android open
+                and accessible to all developers, ensuring that innovation and
+                creativity can continue to thrive on the platform.
               </p>
 
               <Link

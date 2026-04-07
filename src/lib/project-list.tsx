@@ -1,13 +1,14 @@
 const Projects = [
   {
-    title: "DevPulse",
+    title: "Protocol Discussion Platform",
     description:
-      "Monitor your coding activity, create custom leaderboards, and compete with your team or the community. DevPulse brings WakaTime stats into a sleek, collaborative leaderboard experience.",
-    link: "https://devpulse-waka.vercel.app",
-    repo: "https://github.com/mrepol742/devpulse",
+      "A content-first discussion platform where users can post structured protocols, create discussion threads, and engage through comments, reviews, and voting — with intelligent search and filtering powered by Typesense.",
+    link: "/protocol-discussion-platform",
+    repo: "https://github.com/mrepol742/protocol-discussion-platform",
     featured: true,
-    languages: ["TypeScript"],
-    cover: "/images/devpulse-waka.png",
+    technology: ["Laravel", "React", "Typesense", "Tailwind CSS"],
+    cover:
+      "/images/protocol-discussion-platform.png",
   },
   {
     title: "Webvium Launcher",
@@ -16,7 +17,7 @@ const Projects = [
     link: "/webvium-launcher",
     repo: "https://github.com/webvium/webvium-launcher",
     featured: true,
-    languages: ["Kotlin"],
+    technology: ["Kotlin"],
     cover: "https://opengraph.githubassets.com/1/webvium/webvium-launcher",
   },
   {
@@ -25,7 +26,7 @@ const Projects = [
       "A simple yet powerful template that lets you convert any website into a functional Android APK with minimal effort. This project makes it easy to package your web app for mobile distribution without requiring deep Android development knowledge.",
     repo: "https://github.com/mrepol742/web-appp",
     featured: true,
-    languages: ["Kotlin"],
+    technology: ["Kotlin"],
     cover: "https://opengraph.githubassets.com/1/mrepol742/web-appp",
   },
   {
@@ -35,9 +36,8 @@ const Projects = [
     link: "https://www.melvinjonesrepol.com",
     repo: "https://github.com/mrepol742/melvinjonesrepol",
     featured: false,
-    languages: ["TypeScript"],
-    cover:
-      "/images/melvin-jones-repol-portfolio-new.png",
+    technology: ["Next.js", "Tailwind CSS"],
+    cover: "/images/melvin-jones-repol-portfolio-new.png",
   },
   {
     title: "Project Canis TG",
@@ -45,7 +45,7 @@ const Projects = [
       "An extension of the Canis project adapted specifically for Telegram, bringing its features into the chat platform.",
     repo: "https://github.com/mrepol742/project-canis-tg",
     featured: false,
-    languages: ["TypeScript"],
+    technology: ["TypeScript"],
     cover: "https://opengraph.githubassets.com/1/mrepol742/project-canis-tg",
   },
   {
@@ -54,7 +54,7 @@ const Projects = [
       "A scalable, modular WhatsApp chatbot built in TypeScript. It leverages modern best practices, lean architecture, Prisma ORM, Dockerization, and environment-based configuration to deliver a robust, flexible successor to Orion.",
     link: "/canis-chatbot",
     featured: true,
-    languages: ["TypeScript"],
+    technology: ["TypeScript"],
     cover: "https://opengraph.githubassets.com/1/mrepol742/project-canis",
   },
   {
@@ -63,7 +63,7 @@ const Projects = [
       "A modern and efficient e-commerce solution tailored for startups, enabling seamless setup and free hosting on Vercel and Supabase Cloud.",
     link: "/ulisha-store-next",
     featured: true,
-    languages: ["TypeScript"],
+    technology: ["Next.js", "Supabase", "Tailwind CSS"],
     cover: "/images/ulisha-store-next-ecommerce.png",
   },
   {
@@ -72,9 +72,10 @@ const Projects = [
       "Completed as part of the IBM Devops Capstone Project on Coursera.",
     link: "https://github.com/mrepol742/devops-capstone-project",
     featured: false,
-    languages: ["JavaScript"],
+    technology: ["JavaScript"],
     cover:
       "https://opengraph.githubassets.com/1/mrepol742/devops-capstone-project",
+    archived: true,
   },
   {
     title: "Point of Sale",
@@ -82,7 +83,7 @@ const Projects = [
       "A lightweight, web-based and offline-capable POS system built for flawless performance, supporting multi-department roles and full functionality.",
     link: "/point-of-sale",
     featured: true,
-    languages: ["JavaScript"],
+    technology: ["Laravel", "React", "Bootstrap"],
     cover: "/images/point-of-sale-system.png",
   },
   {
@@ -91,7 +92,7 @@ const Projects = [
       "A freight management services. Providing Businesses with cutting-edge platform, security, and reliability.",
     link: "/axleshift-freight-management",
     featured: true,
-    languages: ["JavaScript"],
+    technology: ["JavaScript", "React", "Node.js", "MongoDB", "Bootstrap"],
     cover: "https://www.melvinjonesrepol.com/images/axleshift-3.png",
   },
   {
@@ -100,17 +101,19 @@ const Projects = [
       "Completed as part of the IBM JavaScript Back-End Capstone Project on Coursera.",
     repo: "https://github.com/mrepol742/secondchance-backend-nodejs-capstone",
     featured: false,
-    languages: ["JavaScript"],
+    technology: ["JavaScript"],
     cover:
       "https://opengraph.githubassets.com/1/mrepol742/secondchance-backend-nodejs-capstone",
+    archived: true,
   },
   {
     title: "LGU Management System",
     description: "A Project for Project Management class.",
     repo: "https://github.com/lgu-ms/lgu-ms",
     featured: false,
-    languages: ["PHP"],
+    technology: ["PHP"],
     cover: "https://opengraph.githubassets.com/1/lgu-ms/lgu-ms",
+    archived: true,
   },
   {
     title: "Project Deep",
@@ -119,7 +122,7 @@ const Projects = [
     repo: "https://github.com/mrepol742/project-deep",
     link: "https://projectdeep.vercel.app",
     featured: true,
-    languages: ["JavaScript"],
+    technology: ["JavaScript"],
     cover: "https://opengraph.githubassets.com/1/mrepol742/project-deep",
   },
   {
@@ -128,25 +131,28 @@ const Projects = [
       "Meet the lightning-fast Facebook Messenger chatbot, seamlessly managing multiple accounts with access to 271 commands.",
     link: "/orion-chatbot",
     featured: true,
-    languages: ["JavaScript"],
+    technology: ["JavaScript"],
     cover: "https://opengraph.githubassets.com/1/mrepol742/project-orion",
+    archived: true,
   },
   {
     title: "Online Catering System",
     description: "A Project for HCI Subject.",
     repo: "https://github.com/mrepol742/Online-Catering-System",
     featured: false,
-    languages: ["PHP"],
+    technology: ["PHP"],
     cover:
       "https://opengraph.githubassets.com/1/mrepol742/Online-Catering-System",
+    archived: true,
   },
   {
     title: "Room Rental System",
     description: "A Project for Web Dev Subject.",
     repo: "https://github.com/mrepol742/Room-Rental-System",
     featured: false,
-    languages: ["PHP"],
+    technology: ["PHP"],
     cover: "https://opengraph.githubassets.com/1/mrepol742/Room-Rental-System",
+    archived: true,
   },
   {
     title: "Webvium VPN",
@@ -154,8 +160,9 @@ const Projects = [
       "Inspired from Webvium, Webvium VPN is a lightweight android VPN app focuses in speed, simplicity, security and privacy.",
     link: "/webvium-vpn",
     featured: true,
-    languages: ["Java"],
+    technology: ["Java"],
     cover: "https://www.melvinjonesrepol.com/images/webviumvpn-banner.png",
+    archived: true,
   },
   {
     title: "mrepol742.github.io",
@@ -163,8 +170,9 @@ const Projects = [
       "This is where i showcase my projects, landing pages, tools and other awesome things.",
     link: "https://github.com/mrepol742/mrepol742.github.io",
     featured: false,
-    languages: ["PHP"],
+    technology: ["PHP"],
     cover: "/images/myportfolio.png",
+    archived: true,
   },
   {
     title: "Project Webvium",
@@ -172,7 +180,7 @@ const Projects = [
       "A lightweight, fast, and privacy-focused Android web browser built entirely from scratch to deliver a secure and efficient browsing experience. Designed to balance speed, security, and functionality, it aims to provide all the essential features of modern browsers while staying minimal and resource-friendly.",
     link: "/webvium-browser",
     featured: true,
-    languages: ["Java"],
+    technology: ["Java"],
     cover: "https://www.melvinjonesrepol.com/images/webvium-banner.png",
   },
 ];
