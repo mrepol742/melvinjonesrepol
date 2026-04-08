@@ -38,14 +38,14 @@ export default async function SteamSection() {
             className="text-sm font-semibold tracking-widest text-green-500 uppercase mb-3"
             data-aos="fade-up"
           >
-            Steam
+            Gaming Activity
           </h4>
           <h2
             className="text-3xl md:text-4xl font-bold mb-4"
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            Gaming Activity
+            I do play games, you know?
           </h2>
           <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
             A snapshot of my gaming activity across various genres and titles.
@@ -76,6 +76,11 @@ export default async function SteamSection() {
             </div>
           ))}
         </div>
+
+        <span className="text-xs">
+          I mainly play racing and strategy games—if you spot anything else, it
+          probably isn’t me.
+        </span>
       </div>
 
       <div className="relative py-28 px-6 overflow-hidden">
@@ -91,7 +96,7 @@ export default async function SteamSection() {
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            Most Played Games
+            My All-Time Favorites
           </h2>
           <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
             Games I’ve spent the most time playing and enjoying. A mix of
@@ -170,6 +175,7 @@ export default async function SteamSection() {
             </div>
           ))}
         </div>
+
         <span className="text-xs">Swipe left or right to see more...</span>
       </div>
     </>

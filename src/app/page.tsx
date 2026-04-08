@@ -17,6 +17,9 @@ import { Youtube } from "@/components/features/home/Youtube";
 import Button from "@/components/ui/Button";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import ServicesCarousel from "@/components/features/home/Services";
+import SecurityPractices from "@/components/features/home/SecurityPractices";
+import AI from "@/components/features/home/AI";
+import ScrambleText from "@/components/ui/ScrambleText";
 
 export default function Home() {
   const person = {
@@ -315,6 +318,56 @@ export default function Home() {
             <span className="text-xs">Swipe left or right to see more...</span>
           </div>
 
+          <div className="relative py-14 md:py-28 overflow-hidden">
+            <div className="text-center">
+              <h4
+                className="text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3"
+                data-aos="fade-up"
+              >
+                Security
+              </h4>
+              <h2
+                className="text-3xl md:text-4xl font-bold mb-4"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                I Take Security Seriously
+              </h2>
+              <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
+                Security is built in my workflow from commit to release. Here
+                are some of the practices I use to keep code, dependencies, and
+                published packages trustworthy.
+              </p>
+            </div>
+
+            <SecurityPractices />
+          </div>
+
+          <div className="relative py-14 md:py-28 overflow-hidden">
+            <div className="text-center">
+              <h4
+                className="text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3"
+                data-aos="fade-up"
+              >
+                AI/ML in Development
+              </h4>
+              <h2
+                className="text-3xl md:text-4xl font-bold mb-4"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                Yes, I Use AI in My Workflow
+              </h2>
+              <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
+                AI is part of my day-to-day workflow to improve velocity,
+                clarity, and code quality while keeping human (like me) the
+                final decision-maker.
+              </p>
+            </div>
+
+            <AI />
+          </div>
+
           <SteamSection />
 
           <div className="relative py-14 md:py-28  overflow-hidden">
@@ -323,7 +376,7 @@ export default function Home() {
                 className="text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3"
                 data-aos="fade-up"
               >
-                Youtube
+                YouTube Channel
               </h4>
               <h2
                 className="text-3xl md:text-4xl font-bold mb-4"
@@ -350,7 +403,7 @@ export default function Home() {
                 className="text-sm font-semibold tracking-widest text-purple-500 uppercase mb-3"
                 data-aos="fade-up"
               >
-                Community
+                Dev Community
               </h4>
               <h2
                 className="text-3xl md:text-4xl font-bold mb-4"
@@ -364,6 +417,14 @@ export default function Home() {
                 where ideas turn into projects, and projects turn into
                 opportunities to learn and collaborate.
               </p>
+
+              <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
+                We believe in the power of shared knowledge and collective
+                growth. Join us to connect, collaborate, and create with
+                like-minded individuals who are passionate about coding and
+                innovation.
+              </p>
+
               <div className="flex flex-col md:flex-row justify-center gap-1 md:gap-4">
                 <Link
                   href="https://hallofcodes.github.io"
