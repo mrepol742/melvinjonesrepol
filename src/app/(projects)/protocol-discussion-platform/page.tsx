@@ -40,20 +40,52 @@ export const metadata: Metadata = {
     title: "Protocol Discussion Platform - Melvin Jones Repol",
     description:
       "A content-first discussion platform where users can post structured protocols, create discussion threads, and engage through comments, reviews, and voting.",
-    images: ["https://www.melvinjonesrepol.com/images/protocol-discussion-platform.png"],
+    images: [
+      "https://www.melvinjonesrepol.com/images/protocol-discussion-platform.png",
+    ],
     creator: "@mrepol742",
   },
 };
 
 const features = [
   {
-    title: "Free Cloud Deployment",
+    title: "Content-First Discussion",
     description:
-      "Bonus: Deploy your store instantly and for free using Vercel and Supabase Cloud. Enjoy seamless hosting, automatic scaling, and a fully managed backend out of the box.",
+      "Users can post structured protocols as the main content, allowing for focused discussions around specific topics.",
+  },
+  {
+    title: "Discussion Threads",
+    description:
+      "Each protocol can have its own discussion thread, enabling users to engage in focused conversations and share insights.",
+  },
+  {
+    title: "Comments and Reviews",
+    description:
+      "Users can comment on protocols and provide reviews, fostering a collaborative environment for feedback and improvement.",
+  },
+  {
+    title: "Voting Mechanism",
+    description:
+      "Users can vote on protocols and comments, helping to surface the most valuable contributions and promote quality content.",
+  },
+  {
+    title: "Intelligent Search and Filtering",
+    description:
+      "Powered by Typesense, the platform offers intelligent search and filtering capabilities to help users find relevant protocols and discussions quickly.",
+  },
+  {
+    title: "AI Summarization",
+    description:
+      "The platform includes AI-powered summarization features that can generate concise summaries of reviews, making it easier for users to grasp the key points and insights from lengthy discussions.",
+  },
+  {
+    title: "Open Source and Freeware",
+    description:
+      "The platform is open source and available under the MIT License, allowing anyone to contribute, modify, and use it freely.",
   },
 ];
 
-export default function UlishaStore() {
+export default function ProtocolDiscussionPlatform() {
   return (
     <>
       <Project

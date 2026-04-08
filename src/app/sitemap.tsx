@@ -24,6 +24,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://www.melvinjonesrepol.com/protocol-discussion-platform",
     },
     {
+      url: "https://www.melvinjonesrepol.com/web-surface-scan",
+    },
+    {
       url: "https://www.melvinjonesrepol.com/pricing",
     },
     {

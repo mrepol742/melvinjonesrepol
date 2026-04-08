@@ -6,9 +6,28 @@ const Projects = [
     link: "/protocol-discussion-platform",
     repo: "https://github.com/mrepol742/protocol-discussion-platform",
     featured: true,
-    technology: ["Laravel", "React", "Typesense", "Tailwind CSS"],
-    cover:
-      "/images/protocol-discussion-platform.png",
+    technology: ["Laravel", "React", "TypeScript", "Typesense", "Tailwind CSS"],
+    cover: "/images/protocol-discussion-platform.png",
+  },
+  {
+    title: "Web Surface Scan",
+    description:
+      "A lightweight developer-focused tool for analyzing a website’s technology stack, integrations, and potential security flaws using automated browser inspection.",
+    link: "/web-surface-scan",
+    repo: "https://github.com/mrepol742/web-surface-scan",
+    featured: true,
+    technology: ["Node.js", "TypeScript"],
+    cover: "https://opengraph.githubassets.com/1/mrepol742/web-surface-scan",
+  },
+  {
+    title: "DJ Mixer Console",
+    description:
+      "A simple, lightweight and fully offline capable mixer console that showcase Web Audio API capabilities in handling audio streams and real time audio manipulation.",
+    link: "https://dj-remix-console.netlify.app",
+    repo: "https://github.com/mrepol742/dj-mixer-console",
+    featured: true,
+    technology: ["Angular", "TypeScript", "Web Audio API", "Tailwind CSS"],
+    cover: "https://opengraph.githubassets.com/1/mrepol742/dj-mixer-console",
   },
   {
     title: "Webvium Launcher",
@@ -36,7 +55,7 @@ const Projects = [
     link: "https://www.melvinjonesrepol.com",
     repo: "https://github.com/mrepol742/melvinjonesrepol",
     featured: false,
-    technology: ["Next.js", "Tailwind CSS"],
+    technology: ["Next.js", "TypeScript", "Tailwind CSS"],
     cover: "/images/melvin-jones-repol-portfolio-new.png",
   },
   {
@@ -63,7 +82,7 @@ const Projects = [
       "A modern and efficient e-commerce solution tailored for startups, enabling seamless setup and free hosting on Vercel and Supabase Cloud.",
     link: "/ulisha-store-next",
     featured: true,
-    technology: ["Next.js", "Supabase", "Tailwind CSS"],
+    technology: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
     cover: "/images/ulisha-store-next-ecommerce.png",
   },
   {
@@ -83,7 +102,7 @@ const Projects = [
       "A lightweight, web-based and offline-capable POS system built for flawless performance, supporting multi-department roles and full functionality.",
     link: "/point-of-sale",
     featured: true,
-    technology: ["Laravel", "React", "Bootstrap"],
+    technology: ["Laravel", "JavaScript", "React", "Bootstrap"],
     cover: "/images/point-of-sale-system.png",
   },
   {
