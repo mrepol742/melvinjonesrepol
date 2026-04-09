@@ -67,13 +67,13 @@ export default async function SteamSection() {
         </div>
 
         <div className="mt-6 grid grid-cols-3 md:grid-cols-5 xl:grid-cols-7 gap-3 mb-10">
-          {sortedByPlaytime2Weeks.slice(0, 5).map((game) => (
-            <div key={game.name} className="p-3" data-aos="fade-up">
+          {sortedByPlaytime2Weeks.slice(0, 5).map((game, index) => (
+            <article key={index} className="p-3" data-aos="fade-up">
               <p className="text-sm">{sanitizeGameName(game.name)}</p>
               <p className="font-semibold">
                 {toHours(game.playtime_2weeks ?? 0)} hrs
               </p>
-            </div>
+            </article>
           ))}
         </div>
 
@@ -113,8 +113,11 @@ export default async function SteamSection() {
             WebkitMaskSize: "100% 100%",
           }}
         >
-          {top10.map((game: GameType, idx) => (
-            <div key={idx} className="snap-start flex-shrink-0 w-80 md:w-96">
+          {top10.map((game: GameType, index) => (
+            <article
+              key={index}
+              className="snap-start flex-shrink-0 w-80 md:w-96"
+            >
               <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 hover:scale-105 hover:backdrop-blur-xl transition-transform duration-300 shadow-lg/10">
                 <div className="relative w-full h-48 rounded-2xl overflow-hidden mb-4">
                   <Image
@@ -127,7 +130,7 @@ export default async function SteamSection() {
 
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-3xl font-bold text-gray-400">
-                    {String(idx + 1).padStart(2, "0")}
+                    {String(index + 1).padStart(2, "0")}
                   </span>
                   <span className="text-xl font-bold">{game.name}</span>
                 </div>
@@ -172,7 +175,7 @@ export default async function SteamSection() {
                   )}
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 

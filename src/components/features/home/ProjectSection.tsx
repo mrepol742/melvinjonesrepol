@@ -20,7 +20,10 @@ export default function ProjectCarousel() {
         {projects
           .filter((project) => project.featured)
           .map((project, idx) => (
-            <div key={idx} className="snap-start flex-shrink-0 w-80 md:w-96">
+            <article
+              key={idx}
+              className="snap-start flex-shrink-0 w-80 md:w-96"
+            >
               <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 hover:scale-105 hover:backdrop-blur-xl transition-transform duration-300 shadow-lg/10">
                 {project.cover && (
                   <Link href={project.link || "#"}>
@@ -72,7 +75,7 @@ export default function ProjectCarousel() {
                   )}
                 </div>
               </div>
-            </div>
+            </article>
           ))}
       </div>
     </>

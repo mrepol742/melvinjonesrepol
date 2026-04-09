@@ -27,25 +27,20 @@ export default function AI() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
       {ai.map((item, index) => (
-        <div
+        <article
           key={index}
-          className="w-full md:max-w-md md:mx-auto rounded-2xl border border-zinc-800 p-5 md:p-6 bg-zinc-900/40 backdrop-blur"
+          className="rounded-2xl border p-4 shadow-sm transition-transform duration-200 hover:-translate-y-0.5"
           data-aos="fade-up"
           data-aos-delay={100 * (index + 1)}
         >
-          <ScrambleText
-            as="h3"
-            text={item.title}
-            durationMs={5000}
-            className="font-semibold mb-2"
-          />
+          <h3 className="text-xs uppercase tracking-wide">{item.title}</h3>
           <ScrambleText
             as="p"
             text={item.description}
             durationMs={2000}
-            className="text-sm"
+            className="mt-2 text-sm"
           />
-        </div>
+        </article>
       ))}
     </div>
   );

@@ -13,13 +13,14 @@ import { WakatimeSection } from "@/components/features/home/WakatimeSection";
 import ProjectSection from "@/components/features/home/ProjectSection";
 import RecentGithubActivityWrapper from "@/components/features/home/RecentGithubActivityWrapper";
 import RecentGithubActivity from "@/components/features/home/RecentGithubActivity";
-import { Youtube } from "@/components/features/home/Youtube";
+import { YoutubeSection } from "@/components/features/home/YoutubeSection";
 import Button from "@/components/ui/Button";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import ServicesCarousel from "@/components/features/home/Services";
 import SecurityPractices from "@/components/features/home/SecurityPractices";
 import AI from "@/components/features/home/AI";
 import ScrambleText from "@/components/ui/ScrambleText";
+import { GithubSection } from "@/components/features/home/GithubSection";
 
 export default function Home() {
   const person = {
@@ -318,6 +319,8 @@ export default function Home() {
             <span className="text-xs">Swipe left or right to see more...</span>
           </div>
 
+          <GithubSection />
+
           <div className="relative py-14 md:py-28 overflow-hidden">
             <div className="text-center">
               <h4
@@ -392,7 +395,7 @@ export default function Home() {
               </p>
             </div>
 
-            <Youtube />
+            <YoutubeSection />
 
             <span className="text-xs">Swipe left or right to see more...</span>
           </div>
