@@ -1,6 +1,6 @@
 "use client";
 
-import projects from "@/lib/project-list";
+import projects, { Templates } from "@/lib/project-list";
 import SearchForm from "@/components/ui/SearchForm";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Button from "@/components/ui/Button";
@@ -43,7 +43,7 @@ export default async function ProjectSection({ query }: { query: string }) {
           </div>
         ) : (
           <Masonry
-            breakpointCols={{ default: 4, 1025: 3, 768: 2, 640: 1 }}
+            breakpointCols={{ default: 4, 1025: 2, 640: 1 }}
             className="flex gap-6"
             columnClassName="space-y-6"
           >
@@ -76,6 +76,32 @@ export default async function ProjectSection({ query }: { query: string }) {
             </Button>
           </Link>
         </div>
+
+        <h2
+          className="text-2xl font-semibold"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          Templates
+        </h2>
+        <p className="my-2" data-aos="fade-up" data-aos-delay="100">
+          I also maintain a collection of open-source templates and starter kits
+          for various frameworks and use cases. These templates are designed to
+          help other developers get up and running quickly with best practices
+          and modern tooling.
+        </p>
+
+        <Masonry
+          breakpointCols={{ default: 4, 1025: 2, 640: 1 }}
+          className="flex gap-6"
+          columnClassName="space-y-6"
+        >
+          {Templates.map((template, idx) => (
+            <div key={idx}>
+              <ProjectCard {...template} />
+            </div>
+          ))}
+        </Masonry>
       </section>
     </main>
   );

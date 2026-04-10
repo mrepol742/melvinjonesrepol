@@ -204,4 +204,42 @@ const Projects = [
   },
 ];
 
+export const Templates = [
+  {
+    title: "Laravel GraphQL",
+    description:
+      "A boilerplate template for building GraphQL APIs with Laravel, providing a solid foundation for rapid development and efficient API design.",
+    repo: "https://github.com/mrepol742/laravel-graphql-template",
+  },
+  {
+    title: "Laravel React",
+    description:
+      "A boilerplate template for building React applications with Laravel, providing a solid foundation for rapid development and efficient API design.",
+    repo: "https://github.com/mrepol742/laravel-react-template",
+  },
+  {
+    title: "Laravel React TypeScript",
+    description:
+      "A boilerplate template for building React applications with Laravel and TypeScript, providing a solid foundation for rapid development and efficient API design.",
+    repo: "https://github.com/mrepol742/laravel-react-ts-template",
+  },
+  {
+    title: "Angular",
+    description:
+      "A boilerplate template for building Angular applications, providing a solid foundation for rapid development and efficient API design.",
+    repo: "https://github.com/mrepol742/angular-boilerplate",
+  },
+  {
+    title: "Responsive Views",
+    description:
+      "An Android template using Fragments, bottom navbar, navigation drawer and floating action buttons.",
+    repo: "https://github.com/mrepol742/templateresponsiveviews",
+  },
+  {
+    title: "Read CV",
+    description: "A simple CV template exported from read.cv.",
+    repo: "https://github.com/mrepol742/read-cv",
+  },
+];
+
 export default Projects;
