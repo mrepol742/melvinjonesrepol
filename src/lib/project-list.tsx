@@ -1,5 +1,14 @@
 const Projects = [
   {
+    title: "Ulisha Store Laravel",
+    description:
+      "A modern and efficient e-commerce solutions tailored for small to medium-sized businesses specifically built with Laravel, enabling seamless setup and cost effective web hosting.",
+    link: "/ulisha-store-laravel",
+    featured: true,
+    technology: ["Laravel", "Blade", "React", "Tailwind CSS"],
+    cover: "/images/ulisha-store-next.png",
+  },
+  {
     title: "Protocol Discussion Platform",
     description:
       "A content-first discussion platform where users can post structured protocols, create discussion threads, and engage through comments, reviews, and voting — with intelligent search and filtering powered by Typesense.",
