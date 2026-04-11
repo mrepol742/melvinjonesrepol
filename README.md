@@ -7,29 +7,29 @@ Here you'll find a showcase of my projects, skills, and experience as a develope
 
 ---
 
-![Portfolio Screenshot](https://www.melvinjonesrepol.com/images/melvin-jones-repol-portfolio-new.png)
+## Setup
 
----
-
-## Installation
-
-You can run this portfolio locally by cloning the repo:
+Install dependencies and configure `.env`
 
 ```bash
-git clone https://github.com/mrepol742/melvinjonesrepol.git
-cd melvinjonesrepol
 npm install
+cp .env.example .env
+```
+
+## Development Server
+
+To start a local development server, run:
+
+```bash
 npm run dev
 ```
 
-## License
+Once the server is running, open your browser and navigate to `http://localhost:4000/`. The application will automatically reload whenever you modify any of the source files.
 
-MIT License
+## Building
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+To build the project run:
+
+```bash
+npm run  build
+```
