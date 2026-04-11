@@ -544,53 +544,41 @@ export default function Home() {
             </div>
           </section>
 
-          <div className="ml-auto max-w-md text-right space-y-1 text-xs">
-            <p>
-              Featured project images may not always reflect the latest
-              versions.
-            </p>
-            <p>
-              Some freelance work is intentionally not shown to respect client
-              privacy.
-            </p>
-            <p>
-              Gaming activity data is sourced from{" "}
-              <Link
-                href="https://steamcommunity.com/id/mrepol742/"
-                className="underline hover:text-gray-300"
-              >
-                Steam API
-              </Link>
-              .
-            </p>
-            <p>
-              All game titles and images are trademarks of their respective
-              owners.
-            </p>
-            <p>
-              Coding activity is tracked via{" "}
-              <Link
-                href="https://wakatime.com/@mrepol742"
-                className="underline hover:text-gray-300"
-              >
-                WakaTime
-              </Link>
-              .
-            </p>
-            <p>
-              Latest videos data are sourced from{" "}
-              <Link
-                href="https://www.youtube.com/@mrepol742"
-                className="underline hover:text-gray-300"
-              >
-                YouTube Data API v3
-              </Link>
-              .
-            </p>
-            <p>
-              Public contributions data are sourced from my Github account
-              public contributions.
-            </p>
+          <div className="relative py-14 md:py-28 overflow-hidden">
+            <div className="relative mx-auto max-w-4xl">
+              <div className="relative rounded-3xl border border-zinc-800/80  backdrop-blur-xl p-6 md:p-10 shadow-[0_10px_50px_-20px_rgba(0,0,0,0.35)]">
+                <div className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 mb-4">
+                  <span className="h-2 w-2 rounded-full bg-orange-500 animate-pulse" />
+                  <span className="text-xs font-medium tracking-wide text-orange-600 dark:text-orange-400 uppercase">
+                    End of Page
+                  </span>
+                </div>
+
+                <h3 className="text-2xl md:text-3xl font-bold mb-4 leading-tight">
+                  You made it to the end — thanks for stopping by.
+                </h3>
+
+                <p className="text-sm md:text-base leading-relaxed">
+                  I appreciate you taking the time to explore my work. If you
+                  have questions, want to collaborate, or just want to say hi,
+                  feel free to reach out through any of the contact options
+                  above. I’m always open to connecting with fellow developers,
+                  teams, and people building interesting things.
+                </p>
+
+                <div className="mt-6 flex flex-wrap items-center gap-3">
+                  <span className="text-xs md:text-sm rounded-full border px-3 py-1">
+                    Open to collaboration
+                  </span>
+                  <span className="text-xs md:text-sm rounded-full border px-3 py-1">
+                    Freelance-friendly
+                  </span>
+                  <span className="text-xs md:text-sm rounded-full border px-3 py-1">
+                    Let’s build something great
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>
