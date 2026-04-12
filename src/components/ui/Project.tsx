@@ -32,54 +32,64 @@ export default function Project({
 }) {
   return (
     <>
-      <section className="h-screen flex flex-col justify-center items-center px-6 text-center">
-        <h1 data-aos="fade-up" className="text-5xl md:text-7xl font-bold mb-6">
-          {project.title}
-        </h1>
+      <section className="relative min-h-screen flex items-center px-6 md:px-10 lg:px-16 overflow-hidden">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -top-24 left-1/3 h-64 w-64 rounded-full bg-blue-500/10 blur-3xl" />
+          <div className="absolute bottom-10 right-10 h-44 w-44 rounded-full bg-cyan-400/10 blur-3xl" />
+        </div>
 
-        <p
-          data-aos="fade-up"
-          data-aos-delay="200"
-          className="max-w-2xl text-lg md:text-xl"
-        >
-          {project.description}
-        </p>
-
-        <div
-          data-aos="fade-up"
-          data-aos-delay="400"
-          className="flex gap-4 mt-8 flex-wrap justify-center"
-        >
-          <a
-            href="#features"
-            className="px-6 py-3 bg-gray-950 text-gray-100 rounded-full font-semibold hover:scale-105 transition"
+        <div className="relative w-full max-w-5xl">
+          <h1
+            data-aos="fade-up"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight max-w-4xl bg-gradient-to-r from-zinc-900 via-zinc-700 to-zinc-500 dark:from-white dark:via-zinc-200 dark:to-zinc-400 bg-clip-text text-transparent"
           >
-            Explore
-          </a>
+            {project.title}
+          </h1>
 
-          {project.view_source_url && (
-            <a
-              href={project.view_source_url}
-              target="_blank"
-              className="px-6 py-3 border border-black rounded-full hover:bg-black hover:text-white hover:scale-105 transition"
-            >
-              View Source
-            </a>
-          )}
+          <p
+            data-aos="fade-up"
+            data-aos-delay="150"
+            className="max-w-3xl text-base md:text-lg lg:text-xl text-zinc-600 dark:text-zinc-300 leading-relaxed"
+          >
+            {project.description}
+          </p>
 
-          {project.download_url && (
+          <div
+            data-aos="fade-up"
+            data-aos-delay="300"
+            className="flex gap-3 md:gap-4 mt-10 flex-wrap"
+          >
             <a
-              href={project.download_url}
-              target="_blank"
-              className="px-6 py-3 border border-black rounded-full hover:bg-black hover:text-white hover:scale-105 transition"
+              href="#features"
+              className="px-6 py-3 rounded-full font-semibold bg-zinc-900 text-zinc-100 dark:bg-white dark:text-zinc-900 shadow-lg shadow-zinc-900/20 hover:scale-105 transition"
             >
-              Download
+              Explore
             </a>
-          )}
+
+            {project.view_source_url && (
+              <a
+                href={project.view_source_url}
+                target="_blank"
+                className="px-6 py-3 rounded-full font-medium border border-zinc-300 dark:border-zinc-700 bg-white/70 dark:bg-zinc-900/40 hover:bg-zinc-900 hover:text-white dark:hover:bg-white dark:hover:text-zinc-900 hover:scale-105 transition"
+              >
+                View Source
+              </a>
+            )}
+
+            {project.download_url && (
+              <a
+                href={project.download_url}
+                target="_blank"
+                className="px-6 py-3 rounded-full font-medium border border-zinc-300 dark:border-zinc-700 bg-white/70 dark:bg-zinc-900/40 hover:bg-zinc-900 hover:text-white dark:hover:bg-white dark:hover:text-zinc-900 hover:scale-105 transition"
+              >
+                Download
+              </a>
+            )}
+          </div>
         </div>
       </section>
 
-      <section className="h-screen flex flex-col lg:flex-row items-center justify-center bg-white px-10 gap-12">
+      <section className="h-screen py-10 md:py-0 flex flex-col lg:flex-row items-center justify-center bg-white px-10 gap-12">
         <div data-aos="fade-up" className="max-w-xl">
           <h2 className="text-black text-4xl font-bold mb-6">
             About The Project

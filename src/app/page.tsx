@@ -118,15 +118,12 @@ export default function Home() {
           <div className="h-screen flex flex-col justify-center items-center text-center snap-start px-3">
             <div
               className="inline-flex items-center px-4 py-1 mb-6 text-sm font-medium bg-indigo-100 text-indigo-700 rounded-full"
-              data-aos="fade-up"
             >
               Software &amp; AI Engineer | Arch Linux Advocate
             </div>
 
             <h1
               className="text-3xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight"
-              data-aos="fade-up"
-              data-aos-delay="100"
             >
               Building <span className="gradient-text">scalable digital</span>{" "}
               <br />
@@ -136,8 +133,6 @@ export default function Home() {
 
             <p
               className="max-w-2xl mx-auto text-lg md:text-xl mb-10 leading-relaxed"
-              data-aos="fade-up"
-              data-aos-delay="250"
             >
               I design and develop high-performance software systems that help
               businesses innovate, scale, and succeed in a rapidly evolving

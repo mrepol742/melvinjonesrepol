@@ -159,7 +159,7 @@ export default function UlishaStore() {
         project={{
           title: "Ulisha Store Laravel",
           description:
-            "Modern and efficient e-commerce solution tailored for startups, enabling seamless setup and free hosting on Vercel and Supabase Cloud.",
+            "A modern and efficient e-commerce solutions tailored for small to medium-sized businesses specifically built with Laravel, enabling seamless setup and cost effective web hosting.",
           description_long:
             "Ulisha Store Laravel is a modern and efficient e-commerce solution tailored for small to medium-sized businesses. Built with Laravel, it offers a seamless setup process and cost-effective web hosting options. The platform provides essential features such as product management, shopping cart functionality, user accounts, and an intuitive admin dashboard. With a focus on performance and user experience, Ulisha Store Laravel is the ideal choice for startups looking to establish a strong online presence without the hassle of complex configurations.",
           is_open_source: false,
