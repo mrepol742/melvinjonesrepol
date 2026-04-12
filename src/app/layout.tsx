@@ -17,6 +17,7 @@ import NortonSafeweb from "@/components/shared/NortonSafeweb";
 import BrowserCheck from "@/components/shared/BrowserCheck";
 import DevToolsDetector from "@/components/shared/DevToolsDetector";
 import Algolia from "@/components/shared/Algolia";
+import { getRecentPosts } from "@/lib/posts";
 
 config.autoAddCss = false;
 
@@ -113,6 +114,7 @@ export default function RootLayout({
 }>) {
   const env = process.env.NEXT_PUBLIC_NODE_ENV || "production";
   const isProduction = env === "production";
+  const posts = getRecentPosts(5);
 
   return (
     <html
@@ -127,28 +129,28 @@ export default function RootLayout({
         <BreadcrumbJsonLd />
       </head>
       <body className="antialiased min-h-screen flex flex-col background-grid">
-          <div className="background-gloss">
-            <div className="gloss-circle circle1"></div>
-            <div className="gloss-circle circle2"></div>
-            <div className="gloss-circle circle3"></div>
-          </div>
-          <Nav />
-          <NextTopLoader showSpinner={false} />
-          <div className="flex-1">
-            <AOSWrapper />
-            <div className="container mx-auto">{children}</div>
-          </div>
-          <ToastContainer />
-          <ScrollTop />
-          <Footer />
-          {isProduction && (
-            <>
-              <GoogleAnalytics />
-              <ServiceWorkerRegister />
-              <DevToolsDetector />
-              <BrowserCheck />
-            </>
-          )}
+        <div className="background-gloss">
+          <div className="gloss-circle circle1"></div>
+          <div className="gloss-circle circle2"></div>
+          <div className="gloss-circle circle3"></div>
+        </div>
+        <Nav />
+        <NextTopLoader showSpinner={false} />
+        <div className="flex-1">
+          <AOSWrapper />
+          <div className="container mx-auto">{children}</div>
+        </div>
+        <ToastContainer />
+        <ScrollTop />
+        <Footer posts={posts} />
+        {isProduction && (
+          <>
+            <GoogleAnalytics />
+            <ServiceWorkerRegister />
+            <DevToolsDetector />
+            <BrowserCheck />
+          </>
+        )}
       </body>
     </html>
   );

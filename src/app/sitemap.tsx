@@ -18,6 +18,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://wakatime.melvinjonesrepol.com",
     },
     {
+      url: "https://www.melvinjonesrepol.com/blog",
+    },
+    {
       url: "https://www.melvinjonesrepol.com/projects",
     },
     {

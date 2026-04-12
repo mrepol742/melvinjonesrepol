@@ -15,8 +15,13 @@ import Script from "next/script";
 import Image from "next/image";
 import TrustPilotWidget from "./TrustPilotWidget";
 import { faDownload, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { getRecentPosts } from "@/lib/posts";
 
-export default function Footer() {
+export default function Footer({
+  posts,
+}: {
+  posts: { slug: string; title: string }[];
+}) {
   const { theme, toggleTheme } = useTheme();
 
   return (
@@ -122,6 +127,14 @@ export default function Footer() {
                     className="hover:text-orange-500 text-gray-400"
                   >
                     Projects
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/blog"
+                    className="hover:text-orange-500 text-gray-400"
+                  >
+                    Blog
                   </Link>
                 </li>
                 <li>
@@ -309,7 +322,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div>
+          <div className="max-w-full md:max-w-90 lg:max-w-40 xl:max-w-50">
             <h4 className="text-sm font-semibold mb-2 text-white">Tools</h4>
             <ul className="space-y-1 text-sm">
               <li>
@@ -361,6 +374,27 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
+
+            <h4 className="text-sm font-semibold my-2 text-white">
+              Recent Posts
+            </h4>
+            {posts.length > 0 ? (
+              <ul className="space-y-1 text-sm">
+                {posts.map((post) => (
+                  <li key={post.slug}>
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="block max-w-full truncate hover:text-orange-500 text-gray-400"
+                      title={post.title}
+                    >
+                      {post.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-gray-400 text-sm">No recent posts.</p>
+            )}
           </div>
           {/* Socials */}
           <div>
