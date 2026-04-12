@@ -1,7 +1,40 @@
 import { getAllPosts } from "@/lib/posts";
+import { Metadata } from "next";
 import Link from "next/link";
 
 const POSTS_PER_PAGE = 5;
+
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string }>;
+}): Promise<Metadata> {
+  const sp = await searchParams;
+  const rawPage = Number(sp?.page ?? "1");
+  const page = Number.isFinite(rawPage) && rawPage > 0 ? rawPage : 1;
+
+  return {
+    title: `Blog - Page ${page}`,
+    description: `Browse my blog posts, insights, and experiences on software development, technology trends, and personal growth in the tech industry. Page ${page}.`,
+    keywords: ["blog", "software development", "technology", "personal growth"],
+    openGraph: {
+      title: `Blog - Page ${page}`,
+      description: `Browse my blog posts, insights, and experiences on software development, technology trends, and personal growth in the tech industry. Page ${page}.`,
+      type: "website",
+      siteName: "Melvin Jones Repol",
+      locale: "en_US",
+    },
+    alternates: {
+      canonical: `https://www.melvinjonesrepol.com/blog?page=${page}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `Blog - Page ${page}`,
+      description: `Browse my blog posts, insights, and experiences on software development, technology trends, and personal growth in the tech industry. Page ${page}.`,
+      creator: "@mrepol742",
+    },
+  };
+}
 
 export default async function BlogPage({
   searchParams,

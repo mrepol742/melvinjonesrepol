@@ -5,12 +5,31 @@ import type { Metadata } from "next";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { CodeBlock } from "@/components/ui/CodeBlock";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 function getPostBySlug(slug: string) {
-  const filePath = path.join(process.cwd(), "src/content/blog", `${slug}.mdx`);
-  const source = fs.readFileSync(filePath, "utf-8");
-  const { content, data } = matter(source);
-  return { content, data };
+  try {
+    if (!slug || slug.includes("/") || slug.includes("\\")) {
+      return null;
+    }
+
+    const filePath = path.join(
+      process.cwd(),
+      "src/content/blog",
+      `${slug}.mdx`,
+    );
+
+    if (!fs.existsSync(filePath)) {
+      return null;
+    }
+
+    const source = fs.readFileSync(filePath, "utf-8");
+    const { content, data } = matter(source);
+
+    return { content, data };
+  } catch {
+    return null;
+  }
 }
 
 export async function generateMetadata({
@@ -19,23 +38,36 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const { data } = getPostBySlug(slug);
+  const post = getPostBySlug(slug);
 
-  const title = data.title ?? "Blog Post";
-  const description = data.excerpt ?? "Read this blog post.";
+  if (!post)
+    return {
+      title: "Blog Post Not Found",
+      description: "The requested blog post could not be found.",
+    };
+
+  const title = post.data.title ?? "Blog Post";
+  const description = post.data.excerpt ?? "Read this blog post.";
 
   return {
     title,
     description,
+    keywords: post.data.topics,
     openGraph: {
       title,
       description,
       type: "article",
+      siteName: "Melvin Jones Repol",
+      locale: "en_US",
+    },
+    alternates: {
+      canonical: `https://www.melvinjonesrepol.com/blog/${slug}`,
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      creator: "@mrepol742",
     },
   };
 }
@@ -46,8 +78,13 @@ export default async function BlogPost({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const { content, data } = getPostBySlug(slug);
+  const post = getPostBySlug(slug);
 
+  if (!post) {
+    notFound();
+  }
+
+  const { content, data } = post;
   const components = {
     pre: (props: React.HTMLAttributes<HTMLPreElement>) => <pre {...props} />,
     code: (props: React.HTMLAttributes<HTMLModElement>) => (

@@ -14,7 +14,7 @@ export async function proxy(req: NextRequest) {
     if (rateLimiter) return rateLimiter;
   }
 
-  if (/hello-world$/.test(req.nextUrl.pathname))
+  if (/^\/hello-world$/.test(req.nextUrl.pathname))
     return new NextResponse("Hello World", { status: 200 });
 
   return NextResponse.next({
