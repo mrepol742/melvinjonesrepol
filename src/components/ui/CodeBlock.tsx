@@ -1,6 +1,6 @@
 import { codeToHtml } from "shiki";
 
-export async function CodeBlock(props) {
+export async function CodeBlock(props: React.HTMLAttributes<HTMLElement>) {
   const raw = String(props.children ?? "");
 
   // Extract language from className
