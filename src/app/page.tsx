@@ -21,6 +21,7 @@ import SecurityPractices from "@/components/features/home/SecurityPractices";
 import AI from "@/components/features/home/AI";
 import ScrambleText from "@/components/ui/ScrambleText";
 import { GithubSection } from "@/components/features/home/GithubSection";
+import AchievementsSection from "@/components/features/home/AchievementsSection";
 
 export default function Home() {
   const person = {
@@ -116,24 +117,18 @@ export default function Home() {
       <main className="p-3 md:p-8">
         <section>
           <div className="h-screen flex flex-col justify-center items-center text-center snap-start px-3">
-            <div
-              className="inline-flex items-center px-4 py-1 mb-6 text-sm font-medium bg-indigo-100 text-indigo-700 rounded-full"
-            >
+            <div className="inline-flex items-center px-4 py-1 mb-6 text-sm font-medium bg-indigo-100 text-indigo-700 rounded-full">
               Software &amp; AI Engineer | Arch Linux Advocate
             </div>
 
-            <h1
-              className="text-3xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight"
-            >
+            <h1 className="text-3xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
               Building <span className="gradient-text">scalable digital</span>{" "}
               <br />
               solutions that drive <br />
               <span className="gradient-text-sub">tangible impact.</span>
             </h1>
 
-            <p
-              className="max-w-2xl mx-auto text-lg md:text-xl mb-10 leading-relaxed"
-            >
+            <p className="max-w-2xl mx-auto text-lg md:text-xl mb-10 leading-relaxed">
               I design and develop high-performance software systems that help
               businesses innovate, scale, and succeed in a rapidly evolving
               digital landscape.
@@ -366,6 +361,31 @@ export default function Home() {
             <AI />
           </div>
 
+          <div className="relative py-14 md:py-28 overflow-hidden">
+            <div className="text-center">
+              <h4
+                className="text-sm font-semibold tracking-widest text-green-500 uppercase mb-3"
+                data-aos="fade-up"
+              >
+                Achievements
+              </h4>
+              <h2
+                className="text-3xl md:text-4xl font-bold mb-4"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                Feedback &amp; Testimonials
+              </h2>
+              <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
+                A collection of feedback and testimonials from clients,
+                collaborators, and peers that highlight the impact of my work
+                and the value I bring to projects.
+              </p>
+            </div>
+
+            <AchievementsSection />
+          </div>
+
           <SteamSection />
 
           <div className="relative py-14 md:py-28  overflow-hidden">
@@ -527,11 +547,7 @@ export default function Home() {
           </section>
 
           <section className="flex flex-wrap justify-center gap-4 mb-16">
-            <Link
-              href="/pricing"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
+            <Link href="/pricing" data-aos="fade-up" data-aos-delay="300">
               <Button
                 icon={faPesoSign}
                 className="text-white bg-gray-800 before:bg-gray-900 after:bg-gray-900"
@@ -539,11 +555,7 @@ export default function Home() {
                 Pricing
               </Button>
             </Link>
-            <Link
-              href="/contact-me"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
+            <Link href="/contact-me" data-aos="fade-up" data-aos-delay="300">
               <Button
                 icon={faServer}
                 className="text-white bg-gray-800 before:bg-gray-900 after:bg-gray-900"
@@ -551,11 +563,7 @@ export default function Home() {
                 Contact
               </Button>
             </Link>
-            <Link
-              href="/blog"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
+            <Link href="/blog" data-aos="fade-up" data-aos-delay="300">
               <Button
                 icon={faChartLine}
                 className="text-white bg-gray-800 before:bg-gray-900 after:bg-gray-900"
