@@ -69,7 +69,7 @@ export default function Nav() {
               >
                 <span className="relative flex items-center">
                   <Image
-                    src="/favicon.png"
+                    src="/favicon.ico"
                     alt="Logo"
                     width={25}
                     height={25}

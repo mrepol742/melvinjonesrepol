@@ -453,15 +453,15 @@ export default function Home() {
           </div>
 
           <section className="border-t border-gray-200 dark:border-gray-800 mb-5">
-            <div className="max-w-5xl mx-auto px-6 py-16">
-              <div className="mb-10 flex items-center gap-6">
-                <div className="hidden md:block shrink-0 self-start">
+            <div className="mx-auto px-6 py-16">
+              <div className="mb-10 flex flex-col md:flex-row items-center gap-6">
+                <div className="shrink-0 self-start">
                   <Image
-                    src="/images/melvinjonesrepol.png"
+                    src="/images/melvin-jones-repol-black.jpg"
                     alt="Melvin Jones Repol"
-                    className="w-20 h-20 rounded-xl object-cover"
-                    width={80}
-                    height={80}
+                    className="rounded-xl object-cover"
+                    width={400}
+                    height={400}
                   />
                 </div>
 
@@ -492,19 +492,6 @@ export default function Home() {
                         with new tools, and shares his progress while
                         consistently refining his expertise.
                       </p>
-
-                      <Link
-                        href="/pricing"
-                        data-aos="fade-up"
-                        data-aos-delay="300"
-                      >
-                        <Button
-                          icon={faPesoSign}
-                          className="text-white bg-gray-800 before:bg-gray-900 after:bg-gray-900"
-                        >
-                          Pricing
-                        </Button>
-                      </Link>
                     </div>
 
                     <div className="space-y-6">
@@ -537,6 +524,45 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </section>
+
+          <section className="flex flex-wrap justify-center gap-4 mb-16">
+            <Link
+              href="/pricing"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <Button
+                icon={faPesoSign}
+                className="text-white bg-gray-800 before:bg-gray-900 after:bg-gray-900"
+              >
+                Pricing
+              </Button>
+            </Link>
+            <Link
+              href="/contact-me"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <Button
+                icon={faServer}
+                className="text-white bg-gray-800 before:bg-gray-900 after:bg-gray-900"
+              >
+                Contact
+              </Button>
+            </Link>
+            <Link
+              href="/blog"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <Button
+                icon={faChartLine}
+                className="text-white bg-gray-800 before:bg-gray-900 after:bg-gray-900"
+              >
+                Blog
+              </Button>
+            </Link>
           </section>
 
           <div className="relative py-14 md:py-28 overflow-hidden">
