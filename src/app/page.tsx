@@ -22,6 +22,7 @@ import AI from "@/components/features/home/AI";
 import ScrambleText from "@/components/ui/ScrambleText";
 import { GithubSection } from "@/components/features/home/GithubSection";
 import AchievementsSection from "@/components/features/home/AchievementsSection";
+import BlogSection from "@/components/features/home/BlogSection";
 
 export default function Home() {
   const person = {
@@ -384,6 +385,31 @@ export default function Home() {
             </div>
 
             <AchievementsSection />
+          </div>
+
+          <div className="relative py-14 md:py-28 overflow-hidden">
+            <div className="text-center">
+              <h4
+                className="text-sm font-semibold tracking-widest text-green-500 uppercase mb-3"
+                data-aos="fade-up"
+              >
+                Blog
+              </h4>
+              <h2
+                className="text-3xl md:text-4xl font-bold mb-4"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                Insights &amp; Experiences
+              </h2>
+              <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
+                A collection of my thoughts, insights, and experiences on
+                software development, technology trends, and personal growth in
+                the tech
+              </p>
+            </div>
+
+            <BlogSection />
           </div>
 
           <SteamSection />

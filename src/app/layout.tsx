@@ -18,6 +18,7 @@ import BrowserCheck from "@/components/shared/BrowserCheck";
 import DevToolsDetector from "@/components/shared/DevToolsDetector";
 import Algolia from "@/components/shared/Algolia";
 import { getRecentPosts } from "@/lib/posts";
+import PrivacyPolicyPrompt from "@/components/shared/PrivacyPolicyPrompt";
 
 config.autoAddCss = false;
 
@@ -140,6 +141,7 @@ export default function RootLayout({
           <AOSWrapper />
           <div className="container mx-auto">{children}</div>
         </div>
+        <PrivacyPolicyPrompt />
         <ToastContainer />
         <ScrollTop />
         <Footer posts={posts} />
