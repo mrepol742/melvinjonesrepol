@@ -87,8 +87,8 @@ export default function ContactMe() {
   };
 
   return (
-    <main className="my-18 p-3 md:p-8">
-      <section className="max-w-6xl mx-auto">
+    <main className="h-screen flex items-center p-3 md:p-8">
+      <section className="mx-auto">
         <div className="flex flex-col md:flex-row gap-10">
           <div className="md:w-2/3">
             <h1 className="text-2xl font-semibold mb-2" data-aos="fade-up">

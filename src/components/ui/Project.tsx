@@ -41,7 +41,7 @@ export default function Project({
         <div className="relative w-full max-w-5xl">
           <h1
             data-aos="fade-up"
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight max-w-4xl bg-gradient-to-r from-zinc-900 via-zinc-700 to-zinc-500 dark:from-white dark:via-zinc-200 dark:to-zinc-400 bg-clip-text text-transparent"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight max-w-4xl"
           >
             {project.title}
           </h1>
@@ -49,7 +49,7 @@ export default function Project({
           <p
             data-aos="fade-up"
             data-aos-delay="150"
-            className="max-w-3xl text-base md:text-lg lg:text-xl text-zinc-600 dark:text-zinc-300 leading-relaxed"
+            className="max-w-3xl text-base md:text-lg lg:text-xl leading-relaxed"
           >
             {project.description}
           </p>
