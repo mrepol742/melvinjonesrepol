@@ -21,8 +21,9 @@ import SecurityPractices from "@/components/features/home/SecurityPractices";
 import AI from "@/components/features/home/AI";
 import ScrambleText from "@/components/ui/ScrambleText";
 import { GithubSection } from "@/components/features/home/GithubSection";
-import AchievementsSection from "@/components/features/home/AchievementsSection";
+import AchievementsSection from "@/components/features/home/AchievementSection";
 import BlogSection from "@/components/features/home/BlogSection";
+import CertificateSection from "@/components/features/home/CertificateSection";
 
 export default function Home() {
   const person = {
@@ -385,6 +386,32 @@ export default function Home() {
             </div>
 
             <AchievementsSection />
+          </div>
+
+          <div className="relative py-14 md:py-28  overflow-hidden">
+            <div className="text-center">
+              <h4
+                className="text-sm font-semibold tracking-widest text-fuchsia-500 uppercase mb-3"
+                data-aos="fade-up"
+              >
+                Certifications
+              </h4>
+              <h2
+                className="text-3xl md:text-4xl font-bold mb-4"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                Featured Certifications
+              </h2>
+              <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
+                A collection of my featured certifications that highlight my
+                skills and expertise.
+              </p>
+            </div>
+
+            <CertificateSection />
+
+            <span className="text-xs">Swipe left or right to see more...</span>
           </div>
 
           <div className="relative py-14 md:py-28 overflow-hidden">

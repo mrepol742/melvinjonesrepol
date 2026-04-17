@@ -56,7 +56,7 @@ const deliveryStandards = [
   "Security and quality gates before merge and production rollout",
 ];
 
-export default function AchievementsSection() {
+export default function AchievementSection() {
   return (
     <section className="w-full space-y-6">
       <div className="mx-auto max-w-6xl">
