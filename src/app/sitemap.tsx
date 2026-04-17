@@ -1,111 +1,14 @@
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
+import staticSitemap from "./sitemaps/static";
+import blogsSitemap from "./sitemaps/blogs";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: "https://www.melvinjonesrepol.com",
-    },
-    {
-      url: "https://go.melvinjonesrepol.com",
-    },
-    {
-      url: "https://ai.melvinjonesrepol.com",
-    },
-    {
-      url: "https://cv.melvinjonesrepol.com",
-    },
-    {
-      url: "https://wakatime.melvinjonesrepol.com",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/blog",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/projects",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/ulisha-store-laravel",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/protocol-discussion-platform",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/web-surface-scan",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/pricing",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/webvium-browser",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/webvium-vpn",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/orion-chatbot",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/canis-chatbot",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/axleshift-freight-management",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/ulisha-store-next",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/point-of-sale",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/webvium-launcher",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/floating-console-extension",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/teams",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/certificates",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/work-experience",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/gallery",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/contact-me",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/gaming",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/tools/open-graph",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/tools/ip-address",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/tools/qrcode-generator",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/tools/user-agent",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/legal",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/legal/privacy-policy",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/legal/terms-of-service",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/legal/cookie-policy",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/legal/developer-client-agreement",
-    },
-  ];
+export const revalidate = 86400; // 24 hours (in seconds)
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const [staticUrls, blogUrls] = await Promise.all([
+    staticSitemap(),
+    blogsSitemap(),
+  ]);
+
+  return [...staticUrls, ...blogUrls];
 }
