@@ -139,121 +139,84 @@ export default function Home() {
             <ServicesCarousel />
           </div>
 
-          {/*<div className="relative py-16 md:py-24 overflow-hidden">
-            <div className="max-w-4xl mx-auto text-center px-6 mb-14">
-              <h4
-                className="text-sm font-semibold tracking-widest text-amber-500 uppercase mb-3"
-                data-aos="fade-up"
-              >
-                Services
-              </h4>
-
-              <h2
-                className="text-3xl md:text-4xl font-bold mb-4"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                Freelance Development Services
-              </h2>
-
-              <p className="text-lg" data-aos="fade-up" data-aos-delay="200">
-                Professional development services to help businesses launch,
-                optimize, and scale their digital platforms.
-              </p>
-            </div>
-
-            <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6 md:auto-rows-[220px]">
-              {services.map((service, index) => {
-                let spanClass = "";
-
-                if (index === 0) {
-                  spanClass = "md:col-span-1 md:row-span-2";
-                } else {
-                  spanClass = "md:col-span-1 md:row-span-1";
-                }
-
-                return (
-                  <div
-                    key={index}
-                    className={`group perspective ${spanClass} h-auto md:h-full`}
-                    data-aos="fade-up"
-                  >
-                    <div
-                      className="
-                        relative
-                        h-full
-                        rounded-xl
-                        border border-gray-200/30
-                        p-6
-                        shadow-md
-                        overflow-hidden
-                        transition-transform duration-500
-                        group-hover:rotate-y-6 group-hover:shadow-xl
-                      "
-                    >
-                      <h3 className="text-2xl font-bold mb-3 transition-transform duration-300 group-hover:translate-y-1">
-                        {service.title}
-                      </h3>
-
-                      <p className="leading-relaxed transition-transform duration-300 group-hover:translate-y-1">
-                        {service.description}
-                      </p>
-
-                      <span className="absolute -top-4 -right-4 w-12 h-12 border rounded-full opacity-10 transition-all duration-500 group-hover:scale-125"></span>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>*/}
-
-          <div className="relative py-14 md:py-28  overflow-hidden">
-            <div className="relative z-10 max-w-4xl mx-auto text-center">
-              <h4
-                className="text-sm font-semibold tracking-widest text-red-500 uppercase mb-3"
-                data-aos="fade-up"
-              >
-                Advocacy
-              </h4>
-              <h2
-                className="text-3xl md:text-4xl font-bold mb-4"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                Keep Android Open
-              </h2>
-
-              <p
-                className="max-w-2xl mx-auto mb-5 leading-relaxed text-lg"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                In August 2025, Google{" "}
-                <Link
-                  className="underline decoration-gray-400 hover:decoration-gray-700 transition-colors"
-                  href="https://developer.android.com/developer-verification"
+          <div className="relative py-14 md:py-28 overflow-hidden">
+            <div className="relative z-10 max-w-6xl mx-auto px-4">
+              <div className="text-center mb-10 md:mb-14">
+                <h4
+                  className="text-sm font-semibold tracking-widest text-blue-500 uppercase mb-3"
+                  data-aos="fade-up"
                 >
-                  announced
-                </Link>{" "}
-                that as of September 2026, it will no longer be possible to
-                develop apps for the Android platform without first registering
-                centrally with Google. This move threatens the open nature of
-                Android and the freedom of developers to create and distribute
-                apps without gatekeeping. I advocate for keeping Android open
-                and accessible to all developers, ensuring that innovation and
-                creativity can continue to thrive on the platform.
-              </p>
+                  Engineering Philosophy
+                </h4>
+                <h2
+                  className="text-3xl md:text-5xl font-bold leading-tight"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  Anyone can ship software.
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-violet-500">
+                    Not everyone ships quality.
+                  </span>
+                </h2>
+              </div>
 
-              <Link
-                href="https://keepandroidopen.org"
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-7">
+                <div
+                  className="mt-8 md:mt-10 border rounded-2xl px-5 py-4 md:px-6 md:py-5"
+                  data-aos="fade-up"
+                  data-aos-delay="160"
+                >
+                  <h3 className="text-xl md:text-2xl font-semibold mb-3">
+                    Fire-and-Forget Culture
+                  </h3>
+                  <p className="leading-relaxed mb-4">
+                    A lot of developers rush to launch, then abandon the project
+                    and move on to the next one. Fast output feels good, but
+                    neglected software quickly becomes fragile, slow, and hard
+                    to maintain.
+                  </p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    Shipping is only the beginning — not the finish line.
+                  </p>
+                </div>
+
+                <div
+                  className="mt-8 md:mt-10 border rounded-2xl px-5 py-4 md:px-6 md:py-5"
+                  data-aos="fade-up"
+                  data-aos-delay="230"
+                >
+                  <h3 className="text-xl md:text-2xl font-semibold mb-3">
+                    Build for Long-Term Quality
+                  </h3>
+                  <p className="leading-relaxed mb-4">
+                    I focus on clean architecture, maintainable code, and
+                    continuous improvement after release. Great products
+                    aren&apos;t just launched — they are cared for, refined, and
+                    scaled over time.
+                  </p>
+                  <p className="text-sm">
+                    Quality is a long-term commitment, not a one-time effort.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                className="mt-8 md:mt-10 px-5 py-4 md:px-6 md:py-5"
                 data-aos="fade-up"
                 data-aos-delay="300"
-                className="flex justify-center"
               >
-                <Button className="bg-red-500 before:bg-red-700 after:bg-red-700">
-                  Join the Movement
-                </Button>
-              </Link>
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                  <div>
+                    <p className="text-sm uppercase tracking-wider font-semibold">
+                      Great software is not built once — it is improved,
+                      maintained, and trusted over time.
+                    </p>
+                    <p className="mt-1 text-sm md:text-base leading-relaxed">
+                      Melvin Jones Repol
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -263,14 +226,14 @@ export default function Home() {
                 className="text-sm font-semibold tracking-widest text-cyan-500 uppercase mb-3"
                 data-aos="fade-up"
               >
-                Wakatime
+                Coding Activity
               </h4>
               <h2
                 className="text-3xl md:text-4xl font-bold mb-4"
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
-                Programming Activity
+                I Code, Therefore I Am
               </h2>
               <p
                 className="text-center max-w-2xl mx-auto mb-6"
