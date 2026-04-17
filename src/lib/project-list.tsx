@@ -6,7 +6,7 @@ const Projects = [
     link: "/ulisha-store-laravel",
     featured: true,
     technology: ["Laravel", "Blade", "React", "Tailwind CSS"],
-    cover: "/images/ulisha-store-next.png",
+    cover: "/images/ulisha-store-laravel.png",
   },
   {
     title: "Protocol Discussion Platform",

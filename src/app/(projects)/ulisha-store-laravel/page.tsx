@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: "Melvin Jones Repol",
     images: [
       {
-        url: "https://www.melvinjonesrepol.com/images/ulisha-store-1.png",
+        url: "https://www.melvinjonesrepol.com/images/ulisha-store-laravel.png",
         width: 800,
         height: 600,
         alt: "Ulisha Store Screenshot",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Ulisha Store Laravel - Melvin Jones Repol",
     description:
       "A modern and efficient e-commerce solutions tailored for small to medium-sized businesses specifically built with Laravel, enabling seamless setup and cost effective web hosting.",
-    images: ["https://www.melvinjonesrepol.com/images/ulisha-store-1.png"],
+    images: ["https://www.melvinjonesrepol.com/images/ulisha-store-laravel.png"],
     creator: "@mrepol742",
   },
 };
@@ -165,7 +165,7 @@ export default function UlishaStore() {
           is_open_source: false,
           is_freeware: false,
           license: "Polyform Noncommercial License 1.0.0",
-          preview_image: "/images/ulisha-store-1.png",
+          preview_image: "/images/ulisha-store-laravel.png",
           preview_image_alt: "Ulisha Store Screenshot",
           features,
           resources: [
