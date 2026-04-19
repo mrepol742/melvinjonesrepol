@@ -24,6 +24,7 @@ import { GithubSection } from "@/components/features/home/GithubSection";
 import AchievementsSection from "@/components/features/home/AchievementSection";
 import BlogSection from "@/components/features/home/BlogSection";
 import CertificateSection from "@/components/features/home/CertificateSection";
+import EngineeringPhilosophySection from "@/components/features/home/EngineeringPhilosophySection";
 
 export default function Home() {
   const person = {
@@ -160,63 +161,7 @@ export default function Home() {
                 </h2>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-7">
-                <div
-                  className="mt-8 md:mt-10 border rounded-2xl px-5 py-4 md:px-6 md:py-5"
-                  data-aos="fade-up"
-                  data-aos-delay="160"
-                >
-                  <h3 className="text-xl md:text-2xl font-semibold mb-3">
-                    Fire-and-Forget Culture
-                  </h3>
-                  <p className="leading-relaxed mb-4">
-                    A lot of developers rush to launch, then abandon the project
-                    and move on to the next one. Fast output feels good, but
-                    neglected software quickly becomes fragile, slow, and hard
-                    to maintain.
-                  </p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    Shipping is only the beginning — not the finish line.
-                  </p>
-                </div>
-
-                <div
-                  className="mt-8 md:mt-10 border rounded-2xl px-5 py-4 md:px-6 md:py-5"
-                  data-aos="fade-up"
-                  data-aos-delay="230"
-                >
-                  <h3 className="text-xl md:text-2xl font-semibold mb-3">
-                    Build for Long-Term Quality
-                  </h3>
-                  <p className="leading-relaxed mb-4">
-                    I focus on clean architecture, maintainable code, and
-                    continuous improvement after release. Great products
-                    aren&apos;t just launched — they are cared for, refined, and
-                    scaled over time.
-                  </p>
-                  <p className="text-sm">
-                    Quality is a long-term commitment, not a one-time effort.
-                  </p>
-                </div>
-              </div>
-
-              <div
-                className="mt-8 md:mt-10 px-5 py-4 md:px-6 md:py-5"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                  <div>
-                    <p className="text-sm uppercase tracking-wider font-semibold">
-                      Great software is not built once — it is improved,
-                      maintained, and trusted over time.
-                    </p>
-                    <p className="mt-1 text-sm md:text-base leading-relaxed">
-                      Melvin Jones Repol
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <EngineeringPhilosophySection />
             </div>
           </div>
 
