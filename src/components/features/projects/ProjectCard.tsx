@@ -33,7 +33,7 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   return (
     <div data-aos="fade-up">
-      <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg max-w-sm mx-auto hover:scale-95 hover:backdrop-blur-xl transition-transform duration-300">
+      <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg max-w-sm mx-auto group hover:shadow-2xl transition-shadow duration-300">
         {cover && (
           <Link href={link || "#"}>
             <div className="relative w-full h-48 rounded-t-2xl overflow-hidden">

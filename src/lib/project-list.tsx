@@ -83,7 +83,7 @@ const Projects = [
     link: "/canis-chatbot",
     featured: true,
     technology: ["TypeScript"],
-    cover: "https://opengraph.githubassets.com/1/mrepol742/project-canis",
+    cover: "/images/canis-1.png",
   },
   {
     title: "Ulisha Store Next",
@@ -92,7 +92,7 @@ const Projects = [
     link: "/ulisha-store-next",
     featured: true,
     technology: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
-    cover: "/images/ulisha-store-next-ecommerce.png",
+    cover: "/images/ulisha-store-1.png",
   },
   {
     title: "Devops Capstone Project",
@@ -112,7 +112,7 @@ const Projects = [
     link: "/point-of-sale",
     featured: true,
     technology: ["Laravel", "JavaScript", "React", "Bootstrap"],
-    cover: "/images/point-of-sale-system.png",
+    cover: "/images/point-of-sale.png",
   },
   {
     title: "Axleshift Freight Management",
@@ -160,7 +160,7 @@ const Projects = [
     link: "/orion-chatbot",
     featured: true,
     technology: ["JavaScript"],
-    cover: "https://opengraph.githubassets.com/1/mrepol742/project-orion",
+    cover: "/images/orion-1.jpg",
     archived: true,
   },
   {

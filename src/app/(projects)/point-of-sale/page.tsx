@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "Melvin Jones Repol",
     images: [
       {
-        url: "https://www.melvinjonesrepol.com/images/pos-1.png",
+        url: "https://www.melvinjonesrepol.com/images/point-of-sale.png",
         width: 800,
         height: 600,
         alt: "Point of Sale Screenshot",
@@ -44,17 +44,17 @@ export const metadata: Metadata = {
     title: "Point of Sale - Melvin Jones Repol",
     description:
       "A lightweight, web-based and offline-capable POS system built for flawless performance, supporting multi-department roles and full functionality.",
-    images: ["https://www.melvinjonesrepol.com/images/pos-1.png"],
+    images: ["https://www.melvinjonesrepol.com/images/point-of-sale.png"],
     creator: "@mrepol742",
   },
 };
 
 const Images = [
-  "/images/pos-1.png",
-  "/images/pos-2.png",
-  "/images/pos-3.png",
-  "/images/pos-4.png",
-  "/images/pos-5.png",
+  "/images/point-of-sale.png",
+  "/images/point-of-sale-1.png",
+  "/images/point-of-sale-2.png",
+  "/images/point-of-sale-3.png",
+  "/images/point-of-sale-4.png",
 ];
 
 const features = [
@@ -160,9 +160,10 @@ export default function PointOfSale() {
           is_open_source: true,
           is_freeware: false,
           license: "Polyform Noncommercial License 1.0.0",
-          preview_image: "/images/pos-1.png",
+          preview_image: "/images/point-of-sale.png",
           preview_image_alt: "Point of Sale Screenshot",
           features,
+          images: Images,
           resources: [
             {
               title: "View Source Code on Github",

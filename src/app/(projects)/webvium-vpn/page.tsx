@@ -150,6 +150,7 @@ export default function WebviumVPN() {
           preview_image: "/images/webviumvpn-banner.png",
           preview_image_alt: "Webvium VPN Screenshot",
           features,
+          images: Images,
           resources: [
             {
               title: "Download Webvium VPN on Uptodown",

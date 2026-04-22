@@ -116,9 +116,9 @@ export default async function SteamSection() {
           {top10.map((game: GameType, index) => (
             <article
               key={index}
-              className="snap-start flex-shrink-0 w-80 md:w-96"
+              className="group snap-start flex-shrink-0 w-80 md:w-96"
             >
-              <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 hover:scale-105 hover:backdrop-blur-xl transition-transform duration-300 shadow-lg/10">
+              <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-lg/10">
                 <div className="relative w-full h-48 rounded-2xl overflow-hidden mb-4">
                   <Image
                     src={game.cover_url}

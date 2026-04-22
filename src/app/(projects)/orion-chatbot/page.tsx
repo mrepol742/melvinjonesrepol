@@ -116,6 +116,7 @@ export default function OrionChatbot() {
           preview_image: "/images/orion-1.jpg",
           preview_image_alt: "Orion Chatbot Preview Image",
           features,
+          images: Images,
           resources: [
             {
               title: "View Source Code on Github",

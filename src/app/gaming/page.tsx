@@ -86,7 +86,7 @@ export default async function Gaming({
             <h2>No results found.</h2>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-4 mb-6">
             {filteredGames.map((game: GameType) => (
               <GameCard key={game.appid} game={game} />
             ))}

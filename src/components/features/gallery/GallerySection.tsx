@@ -36,7 +36,7 @@ export default function Gallery({
   return (
     <>
       <Masonry
-        breakpointCols={{ default: 4, 1025: 3, 768: 2, 640: 1 }}
+        breakpointCols={{ 2560: 5, 1440: 4, 1025: 3, 768: 2, 640: 1 }}
         className="flex gap-6"
         columnClassName="space-y-6"
       >

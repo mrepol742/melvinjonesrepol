@@ -173,6 +173,7 @@ export default function UlishaStore() {
           preview_image: "/images/ulisha-store-1.png",
           preview_image_alt: "Ulisha Store Screenshot",
           features,
+          images: Images,
           resources: [
             {
               title: "View Source Code on Github",
