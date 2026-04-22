@@ -144,6 +144,7 @@ export default async function Axleshift() {
           preview_image: "/images/axleshift-1.png",
           preview_image_alt: "Axleshift Screenshot",
           features,
+          images: Images,
           resources: [
             {
               title: "View Source Code on Github",

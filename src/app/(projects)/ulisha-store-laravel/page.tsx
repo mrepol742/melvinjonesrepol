@@ -43,16 +43,18 @@ export const metadata: Metadata = {
     title: "Ulisha Store Laravel - Melvin Jones Repol",
     description:
       "A modern and efficient e-commerce solutions tailored for small to medium-sized businesses specifically built with Laravel, enabling seamless setup and cost effective web hosting.",
-    images: ["https://www.melvinjonesrepol.com/images/ulisha-store-laravel.png"],
+    images: [
+      "https://www.melvinjonesrepol.com/images/ulisha-store-laravel.png",
+    ],
     creator: "@mrepol742",
   },
 };
 
 const Images = [
-  "/images/ulisha-store-1.png",
-  "/images/ulisha-store-2.png",
-  "/images/ulisha-store-3.png",
-  "/images/ulisha-store-4.png",
+  "/images/ulisha-store-laravel.png",
+  "/images/ulisha-store-laravel-1.png",
+  "/images/ulisha-store-laravel-2.png",
+  "/images/ulisha-store-laravel-3.png",
 ];
 
 const features = [
@@ -168,6 +170,7 @@ export default function UlishaStore() {
           preview_image: "/images/ulisha-store-laravel.png",
           preview_image_alt: "Ulisha Store Screenshot",
           features,
+          images: Images,
           resources: [
             {
               title: "Visit Live Store",

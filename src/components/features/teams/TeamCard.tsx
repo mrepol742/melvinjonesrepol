@@ -33,8 +33,8 @@ export default function TeamCard({
         </div>
       </div>
       <h3 className="text-xl font-bold">{name}</h3>
-      <p>{title}</p>
-      <p>{description}</p>
+      <p className="text-sm text-gray-500 mb-4">{title}</p>
+      <p className="max-w-md mx-auto">{description}</p>
     </div>
   );
 }

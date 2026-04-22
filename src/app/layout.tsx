@@ -139,7 +139,7 @@ export default function RootLayout({
         <NextTopLoader showSpinner={false} />
         <div className="flex-1">
           <AOSWrapper />
-          <div className="container mx-auto">{children}</div>
+          <div className=" ">{children}</div>
         </div>
         <PrivacyPolicyPrompt />
         <ToastContainer />

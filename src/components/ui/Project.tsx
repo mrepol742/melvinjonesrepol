@@ -26,202 +26,209 @@ export default function Project({
     license: string;
     preview_image: string;
     preview_image_alt: string;
+    images?: string[];
     features: ProjectFeature[];
     resources: ProjectResource[];
   };
 }) {
   return (
-    <>
-      <section className="relative min-h-screen flex items-center px-6 md:px-10 lg:px-16 overflow-hidden">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -top-24 left-1/3 h-64 w-64 rounded-full bg-blue-500/10 blur-3xl" />
-          <div className="absolute bottom-10 right-10 h-44 w-44 rounded-full bg-cyan-400/10 blur-3xl" />
-        </div>
-
-        <div className="relative w-full max-w-5xl">
-          <h1
-            data-aos="fade-up"
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight max-w-4xl"
-          >
-            {project.title}
-          </h1>
-
-          <p
-            data-aos="fade-up"
-            data-aos-delay="150"
-            className="max-w-3xl text-base md:text-lg lg:text-xl leading-relaxed"
-          >
-            {project.description}
-          </p>
-
-          <div
-            data-aos="fade-up"
-            data-aos-delay="300"
-            className="flex gap-3 md:gap-4 mt-10 flex-wrap"
-          >
-            <a
-              href="#features"
-              className="px-6 py-3 rounded-full font-semibold bg-zinc-900 text-zinc-100 dark:bg-white dark:text-zinc-900 shadow-lg shadow-zinc-900/20 hover:scale-105 transition"
-            >
-              Explore
-            </a>
-
-            {project.view_source_url && (
-              <a
-                href={project.view_source_url}
-                target="_blank"
-                className="px-6 py-3 rounded-full font-medium border border-zinc-300 dark:border-zinc-700 bg-white/70 dark:bg-zinc-900/40 hover:bg-zinc-900 hover:text-white dark:hover:bg-white dark:hover:text-zinc-900 hover:scale-105 transition"
-              >
-                View Source
-              </a>
-            )}
-
-            {project.download_url && (
-              <a
-                href={project.download_url}
-                target="_blank"
-                className="px-6 py-3 rounded-full font-medium border border-zinc-300 dark:border-zinc-700 bg-white/70 dark:bg-zinc-900/40 hover:bg-zinc-900 hover:text-white dark:hover:bg-white dark:hover:text-zinc-900 hover:scale-105 transition"
-              >
-                Download
-              </a>
-            )}
-          </div>
-        </div>
-      </section>
-
-      <section className="h-screen py-10 md:py-0 flex flex-col lg:flex-row items-center justify-center bg-white px-10 gap-12">
-        <div data-aos="fade-up" className="max-w-xl">
-          <h2 className="text-black text-4xl font-bold mb-6">
-            About The Project
-          </h2>
-          <p className="text-gray-600 mb-4">{project.description_long}</p>
-
-          <div className="flex gap-4 flex-wrap">
-            {project.is_open_source && (
-              <span className="px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
-                Open Source
-              </span>
-            )}
-
-            {project.is_no_longer_maintained && (
-              <span className="px-4 py-2 bg-red-100 text-red-700 rounded-full text-sm font-semibold">
-                Obsolete
-              </span>
-            )}
-
-            {project.is_freeware && (
-              <span className="px-4 py-2 bg-yellow-100 text-yellow-700 rounded-full text-sm font-semibold">
-                Freeware
-              </span>
-            )}
-
-            <span className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">
-              {project.license}
-            </span>
-          </div>
-        </div>
-
-        <div
-          data-aos="fade-up"
-          className="relative w-full max-w-lg h-80 rounded-2xl overflow-hidden shadow-2xl"
-        >
+    <main className="bg-white text-zinc-900">
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-800 text-white">
+        <div className="absolute inset-0 opacity-40">
           <Image
             src={project.preview_image}
             alt={project.preview_image_alt}
             fill
             className="object-cover"
+            priority
           />
         </div>
-      </section>
 
-      <section
-        id="features"
-        className="min-h-screen flex flex-col justify-center items-center bg-gray-200 px-6 py-20"
-      >
-        <h2
-          data-aos="fade-up"
-          className="text-black text-4xl md:text-5xl font-bold mb-12 text-center"
-        >
-          Features
-        </h2>
+        <div className="absolute inset-0 bg-black/60" />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl">
-          {project.features &&
-            project.features.map((feature, index) => (
-              <div
-                key={index}
-                data-aos="zoom-in"
-                className="bg-white p-8 rounded shadow-lg hover:-translate-y-2 transition"
-              >
-                <h3 className="text-gray-700 text-xl font-semibold mb-4">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
-            ))}
-        </div>
-      </section>
+        <div className="relative max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+              {project.title}
+            </h1>
 
-      <section className="py-24 bg-gradient-to-b from-gray-200 to-white flex justify-center items-center">
-        <div data-aos="fade-up" className="w-full max-w-5xl px-6">
-          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center border border-gray-100">
-            <h3 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">
-              Sponsored
-            </h3>
-
-            <p className="text-gray-500 mb-8 max-w-xl mx-auto">
-              Supporting development and maintenance of this project through
-              sponsorship helps ensure its continued growth and improvement.
+            <p className="mt-6 text-lg text-zinc-200 leading-relaxed">
+              {project.description}
             </p>
 
-            <HorizontalAdDisplayUnit />
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="#features"
+                className="px-6 py-3 rounded-full bg-white text-black font-semibold hover:scale-105 transition"
+              >
+                Explore
+              </a>
+
+              {project.view_source_url && (
+                <a
+                  href={project.view_source_url}
+                  target="_blank"
+                  className="px-6 py-3 rounded-full border border-white/40 hover:bg-white hover:text-black transition"
+                >
+                  Source
+                </a>
+              )}
+
+              {project.download_url && (
+                <a
+                  href={project.download_url}
+                  target="_blank"
+                  className="px-6 py-3 rounded-full border border-white/40 hover:bg-white hover:text-black transition"
+                >
+                  Download
+                </a>
+              )}
+            </div>
+          </div>
+
+          <div className="hidden lg:block relative">
+            <div className="relative w-full h-[420px] rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+              <Image
+                src={project.preview_image}
+                alt={project.preview_image_alt}
+                fill
+                className="object-cover"
+              />
+            </div>
+
+            {project.images?.[1] && (
+              <div className="absolute -bottom-10 -right-10 w-56 h-40 rounded-xl overflow-hidden border border-white/10 shadow-xl">
+                <Image
+                  src={project.images[1]}
+                  alt="preview"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            )}
           </div>
         </div>
       </section>
 
-      <section className="h-screen flex flex-col justify-center items-center bg-black text-white px-6">
-        <h2 data-aos="fade-up" className="text-4xl font-bold mb-10 text-center">
-          Resources
-        </h2>
+      <section className="max-w-6xl mx-auto px-6 py-24 grid lg:grid-cols-3 gap-12">
+        <div className="lg:col-span-2">
+          <h2 className="text-3xl font-bold mb-6">About the Product</h2>
+          <p className="text-zinc-600 leading-relaxed">
+            {project.description_long}
+          </p>
+        </div>
 
-        <div className="flex flex-col md:flex-row gap-6">
-          {project.resources &&
-            project.resources.map((resource, index) => (
-              <a
-                key={index}
-                data-aos="fade-up"
-                data-aos-delay="100"
-                href={resource.url}
-                target="_blank"
-                className={`px-8 py-4 hover:scale-105 transition rounded-xl ${index === 0 ? "bg-white text-black font-semibold" : "border border-white hover:bg-white hover:text-black"}`}
+        <aside className="space-y-4">
+          <div className="p-5 rounded-xl border bg-zinc-50">
+            <h3 className="font-semibold mb-3">Project Details</h3>
+
+            <div className="space-y-2 text-sm text-zinc-600">
+              <p>License: {project.license}</p>
+              <p>
+                Status:{" "}
+                {project.is_no_longer_maintained ? "Deprecated" : "Active"}
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-2 mt-4">
+              {project.is_open_source && (
+                <span className="text-xs px-3 py-1 bg-green-100 text-green-700 rounded-full">
+                  Open Source
+                </span>
+              )}
+              {project.is_freeware && (
+                <span className="text-xs px-3 py-1 bg-blue-100 text-blue-700 rounded-full">
+                  Freeware
+                </span>
+              )}
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      {project.images?.length ? (
+        <section className="bg-zinc-950 py-24 text-white">
+          <div className="max-w-6xl mx-auto px-6">
+            <h2 className="text-3xl font-bold mb-10">Gallery</h2>
+
+            <div className="grid md:grid-cols-3 gap-4">
+              {project.images.map((img, i) => (
+                <div
+                  key={i}
+                  className="relative h-64 rounded-xl overflow-hidden group"
+                >
+                  <Image
+                    src={img}
+                    alt="project image"
+                    fill
+                    className="object-cover group-hover:scale-110 transition"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      <section id="features" className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl font-bold mb-12 text-center">Features</h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {project.features?.map((f, i) => (
+              <div
+                key={i}
+                className="p-8 rounded-2xl border bg-white shadow-sm hover:-translate-y-1 transition"
               >
-                {resource.title}
+                <h3 className="text-xl font-semibold mb-3">{f.title}</h3>
+                <p className="text-zinc-600">{f.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-gradient-to-b from-zinc-100 to-white">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <HorizontalAdDisplayUnit />
+        </div>
+      </section>
+
+      <section className="py-24 bg-zinc-950 text-white">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold mb-10">Resources</h2>
+
+          <div className="flex flex-wrap justify-center gap-4">
+            {project.resources?.map((r, i) => (
+              <a
+                key={i}
+                href={r.url}
+                target="_blank"
+                className="px-6 py-3 rounded-full border border-white/30 hover:bg-white hover:text-black transition"
+              >
+                {r.title}
               </a>
             ))}
+          </div>
         </div>
       </section>
 
       {project.is_open_source && (
-        <section className="h-screen flex flex-col justify-center items-center text-center px-6">
-          <h3 data-aos="fade-up" className="text-2xl font-semibold mb-4">
-            Ready to Get Started?
-          </h3>
-
-          <p data-aos="fade-up" data-aos-delay="200" className="mb-6">
-            Clone the repository and start building today.
+        <section className="py-24 text-center bg-white">
+          <h3 className="text-2xl font-semibold mb-4">Start Building</h3>
+          <p className="text-zinc-600 mb-8">
+            Clone the repository and contribute.
           </p>
 
           <a
-            data-aos="fade-up"
-            data-aos-delay="400"
             href={project.view_source_url}
             target="_blank"
-            className="px-8 py-4 bg-white text-black rounded-full font-semibold hover:scale-105 transition"
+            className="px-8 py-4 rounded-full bg-black text-white hover:scale-105 transition"
           >
             Get Started
           </a>
         </section>
       )}
-    </>
+    </main>
   );
 }

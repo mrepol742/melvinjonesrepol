@@ -435,12 +435,12 @@ export default function Home() {
 
           <section className="border-t border-gray-200 dark:border-gray-800 mb-5">
             <div className="mx-auto px-6 py-16">
-              <div className="mb-10 flex flex-col md:flex-row items-center gap-6">
+              <div className="group mb-10 flex flex-col md:flex-row items-center gap-6">
                 <div className="shrink-0 self-start">
                   <Image
                     src="/images/melvin-jones-repol-black.jpg"
                     alt="Melvin Jones Repol"
-                    className="rounded-xl object-cover"
+                    className="rounded-xl object-cover group-hover:scale-105 transition-transform duration-300"
                     width={400}
                     height={400}
                   />

@@ -129,6 +129,7 @@ export default function CanisChatbot() {
           preview_image: "/images/canis-1.png",
           preview_image_alt: "Canis Chatbot Screenshot",
           features,
+          images: Images,
           resources: [
             {
               title: "View Source Code on Github",

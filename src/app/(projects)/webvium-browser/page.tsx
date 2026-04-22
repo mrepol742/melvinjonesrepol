@@ -176,6 +176,7 @@ export default async function WebviumBrowser() {
           preview_image: "/images/webvium-banner.png",
           preview_image_alt: "Webvium Browser Screenshot",
           features,
+          images: Images,
           resources: [
             {
               title: "Download Webvium Browser on Uptodown",

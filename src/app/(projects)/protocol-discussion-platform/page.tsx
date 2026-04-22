@@ -47,6 +47,13 @@ export const metadata: Metadata = {
   },
 };
 
+const Images = [
+  "/images/protocol-discussion-platform.png",
+  "/images/protocol-discussion-platform-1.png",
+  "/images/protocol-discussion-platform-2.png",
+  "/images/protocol-discussion-platform-3.png",
+];
+
 const features = [
   {
     title: "Content-First Discussion",
@@ -103,6 +110,7 @@ export default function ProtocolDiscussionPlatform() {
           preview_image: "/images/protocol-discussion-platform.png",
           preview_image_alt: "Protocol Discussion Screenshot",
           features,
+          images: Images,
           resources: [
             {
               title: "View Source Code on Github",
