@@ -23,7 +23,7 @@ export default function WorkExperience() {
           <WorkExperienceCard
             company="Freelance"
             title="Software Engineer"
-            description="I develop, deploy, and maintain efficient and reliable software and websites tailored to meet customer needs, based on system analysis, design, and business models."
+            description="Delivered custom web and mobile applications for capstone students, business clients, and independent projects (public and private). Led the full software development lifecycle—from requirements gathering and system planning to design, development, and production deployment. Translated client needs into scalable, production-ready solutions and provided ongoing maintenance and improvements. Utilized technologies such as Laravel, React, Next.js, Node.js, Java and Kotlin to build efficient, user-focused applications aligned with business and project goals."
             date="2021 - Present"
           />
           <WorkExperienceCard

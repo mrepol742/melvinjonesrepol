@@ -45,7 +45,7 @@ export default function WorkExperienceCard({
         </div>
 
         {/* Description */}
-        <p className="text-sm leading-relaxed line-clamp-3">{description}</p>
+        <p className="text-sm leading-relaxed">{description}</p>
 
         {/* Footer */}
         {cert && (

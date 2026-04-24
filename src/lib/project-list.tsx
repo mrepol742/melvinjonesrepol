@@ -1,5 +1,13 @@
 const Projects = [
   {
+    title: "[Redacted]",
+    description: "[Redacted]",
+    link: "https://dis.melvinjonesrepol.com",
+    featured: true,
+    technology: ["Laravel", "Blade", "React", "Tailwind CSS"],
+    cover: "https://www.melvinjonesrepol.com/images/webvium-banner.png",
+  },
+  {
     title: "Ulisha Store Laravel",
     description:
       "A modern and efficient e-commerce solutions tailored for small to medium-sized businesses specifically built with Laravel, enabling seamless setup and cost effective web hosting.",
