@@ -4,7 +4,7 @@ const Projects = [
     description: "[Redacted]",
     link: "https://dis.melvinjonesrepol.com",
     featured: true,
-    technology: ["Laravel", "Blade", "React", "Tailwind CSS"],
+    technology: ["Laravel", "React", "GraphQL", "Tailwind CSS"],
     cover: "https://www.melvinjonesrepol.com/images/webvium-banner.png",
   },
   {

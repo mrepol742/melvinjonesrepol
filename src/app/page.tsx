@@ -32,24 +32,12 @@ export default function Home() {
     "@type": "Person",
     name: "Melvin Jones Repol",
     url: "https://www.melvinjonesrepol.com",
-    image: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.png",
+    image:
+      "https://www.melvinjonesrepol.com/images/melvin-jones-repol-black-circle.png",
     description:
-      "I design and develop high-performance software systems that help businesses innovate, scale, and succeed in a rapidly evolving digital landscape. With a focus on practical solutions and continuous learning, I build projects that integrate strong problem-solving skills, DevOps practices, and emerging technologies.",
-    jobTitle: "Freelance Software Engineer",
+      "Building scalable systems from planning and design to development and production support, helping businesses grow efficiently.",
+    jobTitle: "Software Engineer",
     mainEntityOfPage: "https://www.melvinjonesrepol.com",
-    knowsAbout: [
-      "Software Development",
-      "Web Development",
-      "Mobile App Development",
-      "DevOps",
-      "AI Systems",
-      "Automation",
-      "Cloud Computing",
-      "Open Source Software",
-      "Webvium Browser",
-      "Webvium VPN",
-      "Webvium Launcher",
-    ],
     sameAs: [
       "https://www.facebook.com/melvinjonesrepol",
       "https://linkedin.com/in/mrepol742",
@@ -68,7 +56,7 @@ export default function Home() {
   const webSite = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Melvin Jones Repol - Strategic Software & DevOps Partner",
+    name: "Melvin Jones Repol - Software Engineer",
     url: "https://www.melvinjonesrepol.com",
     inLanguage: "en",
   };
@@ -77,39 +65,6 @@ export default function Home() {
     "@context": "https://schema.org",
     "@graph": [person, webSite],
   };
-
-  const services = [
-    {
-      title: "Web App Development",
-      description:
-        "Powerful web applications designed to automate business workflows and support long-term digital growth. Integrating modern technologies to create efficient, scalable, and user-friendly solutions.",
-      icon: faLaptopCode,
-    },
-    {
-      title: "Android App Development",
-      description:
-        "Modern Android applications built for performance, usability, and seamless mobile experiences.",
-      icon: faMobileScreen,
-    },
-    {
-      title: "Website Migration",
-      description:
-        "Secure migration of websites between servers, frameworks, or hosting environments with minimal downtime.",
-      icon: faServer,
-    },
-    {
-      title: "SEO / GEO Optimization",
-      description:
-        "Improve your visibility with search engine optimization and geo-targeted strategies that drive organic traffic.",
-      icon: faChartLine,
-    },
-    {
-      title: "Angular, Next.js & Laravel Migration",
-      description:
-        "Easily upgrade your web applications to newer versions of Angular, Next.js, or Laravel with expert migration services that ensure a smooth transition.",
-      icon: faCode,
-    },
-  ];
 
   return (
     <>
@@ -132,9 +87,9 @@ export default function Home() {
             </h1>
 
             <p className="max-w-2xl mx-auto text-lg md:text-xl mb-10 leading-relaxed">
-              I design and develop high-performance software systems that help
-              businesses innovate, scale, and succeed in a rapidly evolving
-              digital landscape.
+              I design, build, and maintain scalable software systems, covering
+              planning, development, and production support to help businesses
+              grow and operate efficiently.
             </p>
 
             <ServicesCarousel />
@@ -208,8 +163,8 @@ export default function Home() {
                 Featured Projects
               </h2>
               <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
-                A curated selection of projects that best represent my skills
-                and creativity. These are the ones I’m most proud of and
+                A curated selection of personal projects that best represent my
+                skills and creativity. These are the ones I’m most proud of and
                 actively showcase.
               </p>
             </div>
