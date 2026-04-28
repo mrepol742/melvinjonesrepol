@@ -1,0 +1,286 @@
+---
+title: "Security Best Practices Everyone Should Know: Developer to Developer"
+date: "2026-04-28"
+excerpt: "In the ever-evolving landscape of web development and application security, it's crucial for developers to stay informed about best practices to protect their applications and users. In this post, we'll explore some essential security best practices that every developer should know and implement to enhance the security of their applications."
+topics:
+  [
+    "security",
+    "best practices",
+    "developer",
+    "web development",
+    "application security",
+  ]
+---
+
+There is no such thing as a perfectly secure system. There is no one size fits all solution to security. However, there are some best practices that every developer should know and follow
+to help improve the security of their applications and systems.
+
+## Rate Limiting
+
+Rate limiting is a technique used to control the amount of traffic that a user or client can send to a server in a given period of time.
+This can help prevent abuse and protect against denial of service attacks. Implementing rate limiting can be done using various methods, such as token buckets, leaky buckets, or fixed windows.
+
+With Rate Limiting, you can set limits on the number of requests a user can make in a certain time frame, which can help prevent brute force attacks and reduce the risk of server overload.
+
+If you did not setup rate limiting, an attacker could potentially send a large number of requests to your server, overwhelming it and causing it to crash or become unresponsive.
+This can lead to a denial of service for legitimate users and can also be used as a distraction while the attacker attempts to exploit other vulnerabilities in your system.
+
+This is an example of a simple rate limiter implemented in Next.js proxy. It checks the number of requests from a specific IP address and blocks requests that exceed the defined limits.
+
+```ts
+import { NextRequest, NextResponse } from "next/server";
+import { checkRateLimit } from "../../utils/rate-limit";
+
+export default function RateLimiter(
+  request: NextRequest,
+): NextResponse | undefined {
+  if (!/api\//.test(request.nextUrl.pathname)) {
+    return undefined;
+  }
+
+  const forwardedFor = request.headers.get("x-forwarded-for");
+  const ip = forwardedFor?.split(",")[0] || "unknown";
+  const origin = request.headers.get("origin");
+
+  const allowedOrigins =
+    process.env.NODE_ENV === "development"
+      ? [/^http:\/\/localhost:\d+$/, /^http:\/\/127\.0\.0\.1:\d+$/]
+      : [/^https?:\/\/([a-z0-9-]+\.)?melvinjonesrepol\.com(:\d+)?$/];
+
+  const isAllowed1 =
+    !origin || allowedOrigins.some((pattern) => pattern.test(origin));
+
+  if (!isAllowed1) {
+    return NextResponse.json(
+      { error: "Hehe you're going too far naah..." },
+      { status: 403 },
+    );
+  }
+
+  const maxRequest = /api\/(contact|report)/.test(request.nextUrl.pathname)
+    ? 2
+    : 10;
+
+  const window = /api\/(contact|report)/.test(request.nextUrl.pathname)
+    ? 60 * 60 * 1000
+    : 5 * 60 * 1000;
+
+  const isAllowed = checkRateLimit(ip, maxRequest, window);
+
+  if (!isAllowed) {
+    return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+  }
+
+  return undefined;
+}
+```
+
+Check Rate Limit function:
+
+```ts
+const ipRequests: Record<string, { count: number; firstRequest: number }> = {};
+
+export function checkRateLimit(
+  ip: string,
+  maxRequests: number,
+  rateLimitWindow: number,
+): boolean {
+  const now = Date.now();
+
+  if (!ipRequests[ip]) {
+    ipRequests[ip] = { count: 1, firstRequest: now };
+    return true;
+  }
+
+  const data = ipRequests[ip];
+  if (now - data.firstRequest < rateLimitWindow) {
+    if (data.count >= maxRequests) {
+      return false; // ❌ over the limit
+    }
+    data.count++;
+    return true;
+  }
+
+  // reset window
+  ipRequests[ip] = { count: 1, firstRequest: now };
+  return true;
+}
+```
+
+## Input Validation
+
+We used different types of input validation to ensure that the data being sent to our applications is in the correct format and does not contain any malicious code.
+This can help prevent common vulnerabilities such as SQL injection, cross-site scripting (XSS), and command injection. Input validation can be done using various techniques, such as regular expressions, whitelisting, and blacklisting. It is important to validate all user input, including data from forms, query parameters, and headers.
+
+Improper input validation can lead to security vulnerabilities, such as SQL injection, where an attacker can inject malicious SQL code into a query, or cross-site scripting (XSS),
+where an attacker can inject malicious code into a web page that is then executed by the user's browser.
+
+## Authentication and Authorization
+
+Authentication is the process of verifying the identity of a user or client, while authorization is the process of determining what actions a user or client is allowed to perform.
+Implementing strong authentication and authorization mechanisms can help protect against unauthorized access and ensure that users only have access to the resources they are allowed to access.
+
+Using strong passwords, multi-factor authentication, and role-based access control can help improve the security of your applications and systems.
+
+## Email & Phone Number Verification
+
+Email and phone number verification can help ensure that the contact information provided by users is valid and can be used for communication.
+This can help prevent spam, fraud, and other malicious activities. Implementing email and phone number verification can be done using various methods, such as sending a verification code or link to the user's email or phone number.
+
+Blocking well known disposable email domains and phone numbers can also help prevent abuse and improve the quality of your user base.
+
+## Honeypots
+
+This are so called decoys that are designed to attract and trap attackers. They can be used to detect and analyze attacks, as well as to divert attackers away from more valuable targets.
+Honeypots can be implemented in various ways, such as fake inputs, fake login pages, fake databases, or fake network services.
+
+Honeypots can help improve the security of your applications and systems by providing early warning of attacks and allowing you to analyze attack patterns and techniques.
+Blocking them before they can cause harm can help prevent damage to your systems and protect your users.
+
+## ReCAPTCHA or HCAPTCHA
+
+ReCAPTCHA and HCAPTCHA are popular tools used to protect websites from spam and abuse by verifying that a user is human. They can help prevent automated bots from submitting forms,
+creating accounts, or performing other actions on your website.
+
+Implementing ReCAPTCHA or HCAPTCHA can help improve the security of your applications and systems by reducing the risk of spam and abuse. They can also help improve the user experience by preventing unwanted interactions with your website.
+
+This is an example of how to implement ReCAPTCHA Enterprise and Honeypot in a Laravel application. The code validates the email and password fields, checks for the honeypot field, and verifies the ReCAPTCHA response.
+
+```php
+$request->validate(
+           [
+               'email' => 'required|string',
+               'password' => 'required|string',
+               'username' => [new Honeypot()],
+               'g-recaptcha-response' => ['required', new RecaptchaEnterprise('login')],
+           ],
+           [
+               'g-recaptcha-response.required' =>
+                   'Please try again later or contact support if the problem persists.',
+           ],
+       );
+```
+
+## Browser Fingerprinting and Header Analysis
+
+Browser fingerprinting and header analysis are techniques used to identify and track users based on their browser and device characteristics.
+This can help improve security by allowing you to detect and block suspicious activity, such as bots or malicious users. Many bots and automation followed the same patterns,
+so by analyzing the headers and fingerprints, you can identify and block them before they can cause harm.
+
+For example, automation usually have the same user agent, or they might not have certain headers that a normal browser would have. By analyzing these patterns, you can improve the security of your applications and systems.
+
+This is an example of a simple headless browser check implemented in Next.js proxy. It checks the user agent header for known patterns associated with headless browsers and blocks requests that match those patterns.
+
+```ts
+import { NextResponse } from "next/server";
+
+const HEADLESS_PATTERNS = [
+  "HeadlessChrome",
+  "PhantomJS",
+  "SlimerJS",
+  "Puppeteer",
+  "Playwright",
+  "Chrome-Lighthouse",
+] as const;
+
+// block bots, pass through real browsers
+export default function HeadlessBrowserCheck(
+  req: Request,
+): NextResponse | undefined {
+  const ua = req.headers.get("user-agent") ?? "";
+  const isHeadless = HEADLESS_PATTERNS.some((p) =>
+    ua.toLowerCase().includes(p.toLowerCase()),
+  );
+
+  if (isHeadless) {
+    return new NextResponse(
+      JSON.stringify({ error: "Automated browsers are not allowed" }),
+      {
+        status: 403,
+        headers: { "Content-Type": "application/json" },
+      },
+    );
+  }
+
+  return undefined;
+}
+```
+
+## Dependabot and Snyk
+
+Dependabot and Snyk are tools that help you keep your dependencies up to date and secure. They can automatically scan your dependencies for vulnerabilities and provide alerts when
+new vulnerabilities are discovered.
+
+Using tools like Dependabot and Snyk can help improve the security of your applications and systems by ensuring that you are using the latest and most secure versions of your dependencies.
+
+## Database Encryption (Only if you have sensitive data)
+
+Database encryption is the process of encrypting data stored in a database to protect it from unauthorized access. This can help improve the security of your applications and systems by
+ensuring that sensitive data is protected even if the database is compromised.
+
+Implementing database encryption can be done using various methods, such as encrypting data at rest, encrypting data in transit, or using field-level encryption.
+It is important to carefully consider the performance implications of database encryption and to choose a method that is appropriate for your specific use case.
+
+## OTP, Magic Links, and Passwordless Authentication
+
+OTP (One-Time Passwords), Magic Links, and Passwordless Authentication are methods of authentication that do not require users to remember and enter a password.
+These methods can help improve security by reducing the risk of password-related vulnerabilities, such as weak passwords, password reuse, and phishing attacks.
+
+## Content Security Policy (CSP)
+
+Content Security Policy (CSP) is a security feature that helps prevent cross-site scripting (XSS) and other code injection attacks by specifying which sources of content are allowed to be loaded by a web page.
+Implementing a Content Security Policy can help improve the security of your applications and systems by reducing the risk of XSS and other code injection attacks.
+It is important to carefully configure your CSP to allow only trusted sources of content while blocking potentially malicious sources.
+
+Though not all website need a CSP, it is a good practice to implement one if your website includes user-generated content or if you want to add an extra layer of security to your application.
+
+## CORS
+
+The developer nightmare, Cross-Origin Resource Sharing (CORS) is a security feature implemented by web browsers to prevent malicious websites from making unauthorized requests to a
+different domain. CORS can be a complex topic, but it is important for developers to understand how it works and how to properly configure it to ensure the security of their applications and systems.
+
+Improperly configured CORS can lead to security vulnerabilities, such as allowing unauthorized access to your API or exposing sensitive data to malicious websites.
+It is important to carefully configure your CORS settings to allow only trusted origins and to restrict the types of requests that are allowed.
+
+## Cloudflare or Other CDN and WAF
+
+Not all Security Measures are implemented in the code, using a CDN (Content Delivery Network) and WAF (Web Application Firewall) can help improve the security of your applications and systems by providing additional layers of protection against various types of attacks,
+such as DDoS attacks, SQL injection, and cross-site scripting (XSS).
+
+CDNs can help improve the performance and security of your applications by caching content and distributing it across multiple servers, while WAFs can help protect your applications by filtering and monitoring incoming traffic for malicious activity.
+
+## IP Blocking and Geo-Blocking
+
+IP blocking and geo-blocking are techniques used to restrict access to your applications and systems based on the IP address or geographic location of the user.
+This can help improve security by blocking access from known malicious IP addresses or from regions that are not relevant to your business.
+
+## Learn Social Engineering and Phishing Attacks
+
+Majority of attacks are not technical, but rather social engineering and phishing attacks. Learning about these types of attacks can help you understand how attackers manipulate people to gain access to sensitive information or systems.
+They pretend to be someone else, such as a trusted friend, colleague, or organization, to trick victims into revealing sensitive information or performing actions that can compromise security.
+
+They will do this by sending emails, creating fake websites, events or social media profiles, or even making phone calls to trick victims into revealing sensitive information or performing actions that can compromise security.
+Don't install software from untrusted sources, and be cautious when clicking on links or downloading attachments from unknown senders.
+
+Vercel got hacked recently, and the attack was done through a compromised employee account. This highlights the importance of being aware of social engineering and phishing attacks, and taking steps to protect yourself and your organization from these types of attacks.
+
+In Cybersecurity, you have no friends, only targets and attackers. Always be cautious and vigilant when it comes to security, and never let your guard down.
+
+- Melvin Jones
+
+## Your Hosting Provider
+
+Choosing a reputable hosting provider that prioritizes security can help improve the security of your applications and systems. Look for hosting providers that offer features such as regular security updates, DDoS protection, and secure data centers.
+A good hosting provider can help ensure that your applications and systems are protected against various types of attacks and vulnerabilities, and can also provide support and resources to help you maintain the security of your applications.
+
+As you can see the list goes on and on, but these are some of the most important security best practices that every developer should know and implement to enhance the security of their applications and systems.
+By following these best practices, you can help protect your applications and users from various types of attacks and vulnerabilities, and can also improve the overall security posture of your applications and systems.
+Remember that security is an ongoing process, and it is important to stay informed about the latest security threats and best practices.
+
+Security is not just the responsibility of security professionals, but it is a shared responsibility that involves everyone involved in the development and maintenance of applications and systems.
+The list of best practices is endless, and it is important to continuously learn and adapt to new security threats and vulnerabilities.
+
+---
+
+It's overwelming, I know. But you don't have to implement all of these at once, start with the ones that are most relevant to your application and gradually implement more as needed.
+The important thing is to be aware of these best practices and to continuously work towards improving the security of your applications and systems.

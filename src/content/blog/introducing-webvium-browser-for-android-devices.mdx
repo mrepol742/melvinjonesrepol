@@ -1,0 +1,108 @@
+---
+title: "Introducing: Webvium Browser for Android Devices"
+date: "2026-04-28"
+excerpt: "Excited to announce the release of Webvium Browser for Android devices! Webvium is a lightweight, fast, and secure web browser designed to provide an exceptional browsing experience on mobile devices. With a focus on privacy and performance, Webvium offers features like ad-blocking, tracking protection, and a user-friendly interface. Whether you're browsing the web for work or leisure, Webvium is here to enhance your online experience."
+topics: ["web browser", "android", "technology", "privacy", "performance"]
+---
+
+## The Problem with Existing Browsers
+
+Many web browsers for Android devices are bloated with features that can slow down performance and consume more resources. Additionally, some browsers may not prioritize user privacy,
+leading to concerns about data tracking and security. As a result, users often find themselves stuck with browsers that don't meet their needs for speed, security, and a seamless browsing experience.
+
+## My First Project
+
+One of my projects in early days of learning to code was to build a web browser for Android devices. Why Webvium Browser? why not a calculator or something? Back then I have a problem with
+existing browsers, they are slow and not optimized for low-end devices. I wanted to create a browser that is lightweight, fast, and secure, and that could provide a great browsing experience on any Android device.
+Another challenge was to build a browser that could run on low-end devices without consuming too much resources. I wanted to create a browser that could be used by anyone, regardless of their device's capabilities.
+That means 0 dependencies, pure Java and Android SDK. I wanted to create a browser that could compete with the big players in the market, with a one goal. Make it as light as possible as fast as possible.
+
+This is an example of the codebase of Webvium Browser, it's a simple web browser that loads a website.
+
+```xml
+<!-- res/layout/activity_main.xml -->
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>
+```
+
+```java
+// src/main/java/com/mrepol742/Webvium/MainActivity.java
+package com.mrepol742.Webvium;
+
+import android.os.Bundle;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    WebView webView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        webView = findViewById(R.id.webView);
+
+        // Enable JavaScript (optional but often needed)
+        webView.getSettings().setJavaScriptEnabled(true);
+
+        // Open links inside WebView instead of browser
+        webView.setWebViewClient(new WebViewClient());
+
+        // Load a website
+        webView.loadUrl("https://www.melvinjonesrepol.com");
+    }
+
+    // Handle back button to go back in WebView history
+    @Override
+    public void onBackPressed() {
+        if (webView.canGoBack()) {
+            webView.goBack();
+        } else {
+            super.onBackPressed();
+        }
+    }
+}
+```
+
+```xml
+<!-- AndroidManifest.xml -->
+<uses-permission android:name="android.permission.INTERNET" />
+```
+
+Making an app in less than 1MB is a challenge, no it's a nightmare, no it is impossible, but I did it anyway. I study indepth how android works, the theme's and how to optimize the code to make it as efficient as possible.
+The first version of Webvium Browser was released sometime in Oct of 2018, and it was a simple web browser nothing more than that, but it's one step leap for me as a beginner developer. Searching google, navigating to the very deepest corner of stackoverflow,
+and reading the official documentation of Android SDK was my daily routine back then, no AI code assistant, no github copilot, just pure hard work and determination to learn and build something great.
+
+The first version was released with basic features like loading web pages, navigating back and forth, and bookmarking. All under 5MB, it's not something to be proud of so i initiate Deep Learning Strategy. It's where
+i deeply focused on optimizing the codebase and reducing the size of the app. I spent hours analyzing the code and finding ways to make it more efficient, which eventually led to a significant reduction in the app's size.
+I removed the dependencies, optimized the xml layout, and refactored the code to make it more efficient. After several iterations and optimizations, I was able to reduce the size of the app to under 500KB, which is a significant achievement for a web browser.
+
+## Webvium Browser Today
+
+Today, Webvium Browser has evolved into a powerful and feature-rich web browser that is still lightweight and fast. It includes features like ad-blocking, tracking protection, and a user-friendly interface. It is designed to provide an exceptional browsing experience on mobile devices while prioritizing user privacy and performance.
+With built-in debugging tools, user reporting, and regular updates, Webvium Browser continues to improve and adapt to the changing needs of users.
+
+It's no longer a simple web browser, but a full-fledged browser that can compete with the big players in the market. It has become a passion project for me, and I continue to add new features and improve the performance of the browser to provide the best possible experience for users 8 years later after the initial release.
+Showing a dedication to maintaining and improving the project over time, which is a testament to the commitment and passion for creating a great product. Webvium Browser is not just a web browser, but a symbol of perseverance and dedication to learning and growth as a developer.
+I give myself a pat on the back for this achievement, and I hope that Webvium Browser can provide a great browsing experience for users around the world. If you haven't tried it yet, I highly recommend giving it a try and experiencing the speed and performance of Webvium Browser for yourself!
+
+It's not available on Google Play Store due to i can't afford the $25 one time fee, but you can download it from this link: [Download Webvium Browser](https://www.melvinjonesrepol.com/Webvium-browser) or at UpToDown, and if you have any feedback or suggestions for improvement, please don't hesitate to reach out.
+I'm always looking for ways to make Webvium Browser better and more user-friendly. Thank you for your support!
+
+---
+
+All app's i made including this Webvium browser is signed with Webvium Signing Key under 'Melvin Jones Repol', which is a unique key that is used to sign the app and ensure that it is authentic and has not been tampered with. This key is important for security reasons, as it helps to prevent unauthorized access to the app and ensures that users can trust the app they are downloading and using.
