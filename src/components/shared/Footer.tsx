@@ -25,7 +25,10 @@ export default function Footer({
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <footer className="bg-gray-900 text-gray-200 py-10 border-t border-gray-800">
+    <footer
+      className="bg-gray-900 text-gray-200 py-10 border-t border-gray-800"
+      data-aos="fade-up"
+    >
       <nav aria-label="Footer Navigation" className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row md:justify-between md:items-start gap-8">
           {/* Logo & Description */}

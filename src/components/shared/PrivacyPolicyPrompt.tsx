@@ -23,7 +23,11 @@ export default function PrivacyPolicyPrompt() {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-4 z-[9999] px-3 md:px-6">
+    <div
+      className="fixed inset-x-0 bottom-4 z-[9999] px-3 md:px-6"
+      data-aos="fade-up"
+      data-aos-delay="1500"
+    >
       <div className="mx-auto max-w-4xl rounded-2xl border bg-gray-900 text-white backdrop-blur p-4 md:p-5 shadow-xl">
         <p className="text-sm leading-relaxed">
           We process certain technical and usage data to operate, secure, and

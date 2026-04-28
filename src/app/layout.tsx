@@ -19,6 +19,8 @@ import DevToolsDetector from "@/components/shared/DevToolsDetector";
 import Algolia from "@/components/shared/Algolia";
 import { getRecentPosts } from "@/lib/posts";
 import PrivacyPolicyPrompt from "@/components/shared/PrivacyPolicyPrompt";
+import DoorEffect from "@/components/shared/DoorEffect";
+import MouseProximityWrapper from "@/components/shared/MouseProximityWrapper";
 
 config.autoAddCss = false;
 
@@ -159,21 +161,31 @@ export default function RootLayout({
         <BreadcrumbJsonLd />
       </head>
       <body className="antialiased min-h-screen flex flex-col background-grid">
+        <DoorEffect />
+
         <div className="background-gloss">
           <div className="gloss-circle circle1"></div>
           <div className="gloss-circle circle2"></div>
           <div className="gloss-circle circle3"></div>
         </div>
+
         <Nav />
+
         <NextTopLoader showSpinner={false} />
+
         <div className="flex-1">
           <AOSWrapper />
-          <div className=" ">{children}</div>
+          {children}
         </div>
+
         <PrivacyPolicyPrompt />
+
         <ToastContainer />
+
         <ScrollTop />
+
         <Footer posts={posts} />
+
         {isProduction && (
           <>
             <GoogleAnalytics />

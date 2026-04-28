@@ -55,7 +55,7 @@ export default function EngineeringPhilosophySection() {
         {PhilosophySection.map((item, index) => (
           <div
             key={index}
-            className="group mt-8 md:mt-10 border border-gray-200 dark:border-gray-800 rounded-2xl px-6 py-5 md:px-7 md:py-6 bg-white/60 dark:bg-white/5 backdrop-blur-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+            className="group mt-8 md:mt-10 border border-gray-200 dark:border-gray-800 rounded-2xl px-6 py-5 md:px-7 md:py-6 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
             data-aos="fade-up"
             data-aos-delay={160 + index * 70}
           >
