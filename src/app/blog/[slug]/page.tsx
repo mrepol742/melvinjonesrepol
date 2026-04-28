@@ -91,6 +91,7 @@ export default async function BlogPost({
       <CodeBlock {...props} />
     ),
   };
+  const estimatedReadingTime = Math.ceil(content.split(" ").length / 200);
 
   return (
     <article className="prose bg-white max-w-none p-3 md:p-8">
@@ -105,12 +106,14 @@ export default async function BlogPost({
 
         <h1 className="text-2xl font-semibold">{data.title}</h1>
         <p>{data.excerpt}</p>
-        <p className="text-sm text-muted-foreground">{data.date}</p>
-        <div className="flex gap-2 my-4">
+        <p className="text-sm text-muted-foreground">
+          {data.date} • {estimatedReadingTime} min read
+        </p>
+        <div className="flex flex-wrap gap-2 my-4">
           {data.topics.map((topic: string, index: number) => (
             <span
               key={index}
-              className="inline-flex capitalize rounded-full border px-2.5 py-1 text-xs"
+              className="inline-flex capitalize rounded-full border px-2.5 py-1 text-xs text-nowrap"
             >
               {topic}
             </span>
