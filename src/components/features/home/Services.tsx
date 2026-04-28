@@ -77,7 +77,7 @@ function MarqueeRow({ reverse = false }) {
               key={index}
               className="flex-shrink-0 flex items-center gap-2 px-2 py-2 text-sm whitespace-nowrap"
             >
-              <i className={`${tech.icon} text-lg`} />
+              <i className={`${tech.icon} text-xl`} />
               {tech.name}
             </div>
           ))}

@@ -22,11 +22,27 @@ const PhilosophySection = [
       "Building with intention leads to more sustainable and impactful software.",
   },
   {
-    sub: "Philosophy",
+    sub: "Mindset",
     title: "Continuous Learning and Improvement",
     description:
       "I believe in the power of continuous learning and improvement. Staying curious, seeking feedback, and iterating on our work leads to better solutions and personal growth.",
     takeaway: "Great engineers are lifelong learners.",
+  },
+  {
+    sub: "Work Philosophy",
+    title: "Building in Private, Delivering at Scale",
+    description:
+      "I don’t publicly showcase client projects out of respect for confidentiality and professional agreements. Many of the systems I’ve worked on are business-critical, and protecting that trust is a priority. Instead of focusing on names or logos, I emphasize the engineering behind the work—how systems are designed, how problems are solved, and how reliability and scalability are achieved in production environments.",
+    takeaway:
+      "Focus on engineering depth, system design, and real-world reliability rather than public project visibility.",
+  },
+  {
+    sub: "Responsibility",
+    title: "Ownership Beyond Deployment",
+    description:
+      "Writing code is only one part of the job. Real engineering starts when systems are in production—handling edge cases, unexpected failures, scaling pressures, and real user behavior. I take responsibility for the systems I work on beyond initial delivery, ensuring they remain stable, observable, and maintainable over time.",
+    takeaway:
+      "True engineering is measured in how well systems hold up after they go live.",
   },
 ];
 // I ain't Socrates, but who am I to say that this isn't a philosophy?
