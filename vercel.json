@@ -74,6 +74,11 @@
       "source": "/my-team",
       "destination": "/teams",
       "permanent": true
+    },
+    {
+      "source": "/blogs",
+      "destination": "/blog",
+      "permanent": true
     }
   ]
 }

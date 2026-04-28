@@ -93,30 +93,32 @@ export default async function BlogPost({
   };
 
   return (
-    <article className="prose max-w-none my-18 p-3 md:p-8">
-      <Link
-        href="/blog"
-        className="inline-flex items-center gap-1 no-underline text-sm text-zinc-500 hover:text-orange-500 transition-colors mb-4"
-      >
-        <span aria-hidden>←</span>
-        Back to blogs
-      </Link>
+    <article className="prose bg-white max-w-none p-3 md:p-8">
+      <div className="py-18">
+        <Link
+          href="/blog"
+          className="inline-flex items-center gap-1 no-underline text-sm text-zinc-500 hover:text-orange-500 transition-colors mb-4"
+        >
+          <span aria-hidden>←</span>
+          Back to blogs
+        </Link>
 
-      <h1 className="text-2xl font-semibold">{data.title}</h1>
-      <p>{data.excerpt}</p>
-      <p className="text-sm text-muted-foreground">{data.date}</p>
-      <div className="flex gap-2 my-4">
-        {data.topics.map((topic: string, index: number) => (
-          <span
-            key={index}
-            className="inline-flex capitalize rounded-full border px-2.5 py-1 text-xs"
-          >
-            {topic}
-          </span>
-        ))}
+        <h1 className="text-2xl font-semibold">{data.title}</h1>
+        <p>{data.excerpt}</p>
+        <p className="text-sm text-muted-foreground">{data.date}</p>
+        <div className="flex gap-2 my-4">
+          {data.topics.map((topic: string, index: number) => (
+            <span
+              key={index}
+              className="inline-flex capitalize rounded-full border px-2.5 py-1 text-xs"
+            >
+              {topic}
+            </span>
+          ))}
+        </div>
+
+        <MDXRemote source={content} components={components} />
       </div>
-
-      <MDXRemote source={content} components={components} />
     </article>
   );
 }
