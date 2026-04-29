@@ -1,0 +1,110 @@
+---
+title: "Prevent ID Enumeration Attack"
+date: "2026-04-29"
+excerpt: "ID Enumeration Attack is a common attack vector in web applications where attackers try to guess or enumerate the IDs of resources. In this post, we'll discuss what ID Enumeration Attack is and how to prevent it."
+topics: ["security", "web development", "laravel", "best practices"]
+---
+
+## What is ID Enumeration Attack?
+
+ID Enumeration Attack is a type of attack where an attacker tries to guess or enumerate the IDs of resources in a system.
+This can be done by incrementing or decrementing the ID values, or by using common patterns to guess the IDs. The goal of this attack is to gain unauthorized access to resources or
+to gather information about the system. The use of sequential IDs for resources can make it easier for everyone to know the total number of resources in the system like
+the number of users, orders, carts, etc. and can also make it easier for attackers to guess valid IDs and access resources they shouldn't have access to.
+
+This is a common attack vector in web applications, especially those that use sequential IDs for resources.
+For example, if a web application uses sequential IDs for user accounts, an attacker could try to access other user accounts by incrementing or decrementing the ID values in the URL.
+
+```php
+Schema::table('users', function (Blueprint $table) {
+    $table->id();
+    $table->string('name');
+    $table->string('email')->unique();
+    $table->timestamps();
+});
+```
+
+```php
+// Example of ID Enumeration Attack
+// Assume we have a URL like this: https://example.com/user/123
+// An attacker might try to access https://example.com/user/124, https://example.com/user/125, etc.
+```
+
+## How to Prevent ID Enumeration Attack?
+
+To prevent ID Enumeration Attack, you can use the following strategies:
+
+1. **Use Non-Sequential IDs**: Instead of using sequential IDs, use UUIDs, ULIDs, slug, username or other non-sequential ID generation methods.
+2. **Implement Proper Authorization**: Ensure that users can only access resources they are authorized to view.
+3. **Rate Limiting**: Implement rate limiting to prevent automated attacks.
+4. **Input Validation**: Validate all input to ensure it is within expected ranges and formats.
+5. **Error Handling**: Provide generic error messages instead of revealing information about the system's internal structure.
+
+By implementing these strategies, you can significantly reduce the risk of ID Enumeration Attacks and protect your application from unauthorized access.
+
+## In Laravel
+
+You can use route model binding to automatically handle authorization and prevent ID enumeration. For example:
+
+```php
+// In your routes/web.php
+Route::get('/user/{user}', function (App\Models\User $user) {
+    // The $user variable will automatically be resolved to the User model instance
+    // You can also add authorization logic here to ensure the user has access to this resource
+    return view('user.profile', ['user' => $user]);
+});
+```
+
+By using route model binding, you can ensure that only valid IDs are processed and that users can only access resources they are authorized to view, thus preventing ID Enumeration Attacks.
+
+## Cart, Order ID Enumeration
+
+In e-commerce applications, it's common to use sequential IDs for carts and orders. To prevent ID enumeration in this context, you can use UUIDs or other non-sequential identifiers for carts and orders. This way, even if an attacker tries to guess the IDs, they won't be able to access other users' carts or orders.
+
+```php
+Schema::table('orders', function (Blueprint $table) {
+    $table->uuid('order_id')->primary();
+    $table->unsignedBigInteger('user_id');
+    $table->decimal('total_amount', 8, 2);
+    $table->timestamps();
+});
+```
+
+You can also use ID and UUID together for performance reasons, where the ID is used for internal references and the UUID is used for public-facing identifiers.
+
+```php
+Schema::table('orders', function (Blueprint $table) {
+    $table->id();
+    $table->uuid('order_uuid')->unique();
+    $table->unsignedBigInteger('user_id');
+    $table->decimal('total_amount', 8, 2);
+    $table->timestamps();
+});
+```
+
+Another option for UUID is to use the ULID package, which generates sortable UUIDs that can be used as primary keys in your database. This can provide better performance than traditional UUIDs while still preventing ID enumeration.
+
+```php
+Schema::table('orders', function (Blueprint $table) {
+    $table->ulid('order_id')->primary();
+    $table->unsignedBigInteger('user_id');
+    $table->decimal('total_amount', 8, 2);
+    $table->timestamps();
+});
+```
+
+Don't forget to hide the sequential ID from the public-facing API and only expose the UUID to users. This way, even if an attacker tries to guess the sequential ID, they won't be able to access any resources without the corresponding UUID.
+
+```php
+// in your base model
+protected $hidden = ['id'];
+```
+
+By using UUIDs for order IDs, you can prevent attackers from easily guessing valid order IDs and accessing other users' orders. Additionally,
+you should implement proper authorization checks to ensure that users can only access their own orders.
+
+---
+
+ID Enumeration Attack is a common attack vector that can lead to unauthorized access to resources in a web application.
+By using non-sequential IDs, implementing proper authorization, and following best practices for input validation and error handling,
+you can significantly reduce the risk of ID Enumeration Attacks and protect your application from unauthorized access.

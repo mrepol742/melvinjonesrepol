@@ -2,7 +2,7 @@ import { getAllPosts } from "@/lib/posts";
 import { Metadata } from "next";
 import Link from "next/link";
 
-const POSTS_PER_PAGE = 5;
+const POSTS_PER_PAGE = 12;
 
 export async function generateMetadata({
   searchParams,

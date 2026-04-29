@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faBlog,
   faBriefcase,
   faCertificate,
   faEnvelope,
@@ -101,6 +102,23 @@ export default function Nav() {
                 />
                 <span className="ml-1 overflow-hidden max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-200 whitespace-nowrap">
                   Projects
+                </span>
+              </Link>
+            </li>
+            <li className="hidden md:block">
+              <Link
+                href="/blog"
+                className="group flex items-center hover:text-orange-500"
+                aria-label="Blog - Melvin Jones Repol"
+                title="Blog"
+              >
+                <FontAwesomeIcon
+                  icon={faBlog}
+                  className="inline-block mr-1"
+                  size="1x"
+                />
+                <span className="ml-1 overflow-hidden max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-200 whitespace-nowrap">
+                  Blog
                 </span>
               </Link>
             </li>

@@ -7,7 +7,7 @@ export default function CertificateSection() {
   return (
     <>
       <div
-        className="overflow-x-auto scroll-smooth snap-x snap-mandatory flex gap-6 py-6 scrollbar-hide"
+        className="overflow-x-auto scroll-smooth snap-x snap-mandatory flex items-stretch gap-6 py-6 scrollbar-hide"
         style={{
           WebkitMaskImage:
             "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
@@ -20,9 +20,9 @@ export default function CertificateSection() {
           .map((certificate, idx) => (
             <article
               key={idx}
-              className="snap-start flex-shrink-0 w-60 md:w-76"
+              className="group snap-start flex-shrink-0 w-80 md:w-96 flex"
             >
-              <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 hover:scale-105 hover:backdrop-blur-xl transition-transform duration-300 shadow-lg/10">
+              <div className="p-6 border rounded-2xl shadow-sm max-w-sm mx-auto transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-[0.98]">
                 <h2 className="text-xl font-bold">{certificate.title}</h2>
 
                 <p className="mb-4 line-clamp-3">{certificate.description}</p>

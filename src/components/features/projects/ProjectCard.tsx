@@ -32,8 +32,8 @@ export default function ProjectCard({
   archived,
 }: ProjectCardProps) {
   return (
-    <div data-aos="fade-up">
-      <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg max-w-sm mx-auto group hover:shadow-2xl transition-shadow duration-300">
+    <div data-aos="fade-up" className="h-full flex">
+      <div className="group border rounded-2xl shadow-sm max-w-sm mx-auto transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-[0.98]">
         {cover && (
           <Link href={link || "#"}>
             <div className="relative w-full h-48 rounded-t-2xl overflow-hidden">
@@ -46,46 +46,47 @@ export default function ProjectCard({
             </div>
           </Link>
         )}
-
-        <div className="p-6 text-center">
-          {archived && (
-            <span className="inline-block px-3 py-1 text-sm font-medium text-gray-500 bg-gray-200 rounded-full">
-              Archived
-            </span>
-          )}
-
+        <div className="p-6 flex flex-col flex-1">
           <Link href={link || "#"}>
             <h5 className="mt-2 mb-4 text-xl font-semibold tracking-tight">
               {title}
             </h5>
           </Link>
 
-          <p className="mb-6 line-clamp-3">{description}</p>
+          <p className="mb-6 line-clamp-3 flex-1">{description}</p>
 
-          {technology && technology.length > 0 && (
-            <div className="flex flex-wrap gap-2 mb-6">
-              {technology.map((tech, idx) => (
+          <div className="flex flex-wrap gap-2 mb-6">
+            {archived && (
+              <span className="px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-sm bg-gray-500/20">
+                Archived
+              </span>
+            )}
+
+            {technology &&
+              technology.length > 0 &&
+              technology.map((tech, idx) => (
                 <span
                   key={idx}
-                  className="px-3 py-1 bg-indigo-500 text-white text-sm font-medium rounded-full"
+                  className="px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-sm bg-gray-500/20"
                 >
                   {tech}
                 </span>
               ))}
-            </div>
-          )}
+          </div>
 
-          <div className="flex justify-center items-center gap-3">
+          <div className="flex justify-end items-center gap-3 mt-auto">
             {repo && (
-              <Link href={repo} className="">
+              <Link href={repo}>
                 <FontAwesomeIcon icon={faGithub} size="lg" />
               </Link>
             )}
+
             {download && (
-              <Link href={download} className="">
+              <Link href={download}>
                 <FontAwesomeIcon icon={faDownload} size="lg" />
               </Link>
             )}
+
             {link && (
               <Link
                 href={link}

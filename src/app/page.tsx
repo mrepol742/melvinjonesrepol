@@ -177,53 +177,57 @@ export default function Home() {
           <GithubSection />
 
           <div className="relative py-14 md:py-28 overflow-hidden">
-            <div className="text-center">
-              <h4
-                className="text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3"
-                data-aos="fade-up"
-              >
-                Security
-              </h4>
-              <h2
-                className="text-3xl md:text-4xl font-bold mb-4"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                I Take Security Seriously
-              </h2>
-              <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
-                Security is built in my workflow from commit to release. Here
-                are some of the practices I use to keep code, dependencies, and
-                published packages trustworthy.
-              </p>
-            </div>
+            <div className="relative z-10 max-w-6xl mx-auto px-4">
+              <div className="text-center">
+                <h4
+                  className="text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3"
+                  data-aos="fade-up"
+                >
+                  Security
+                </h4>
+                <h2
+                  className="text-3xl md:text-4xl font-bold mb-4"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  I Take Security Seriously
+                </h2>
+                <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
+                  Security is built in my workflow from commit to release. Here
+                  are some of the practices I use to keep code, dependencies,
+                  and published packages trustworthy.
+                </p>
+              </div>
 
-            <SecurityPractices />
+              <SecurityPractices />
+            </div>
           </div>
 
           <div className="relative py-14 md:py-28 overflow-hidden">
-            <div className="text-center">
-              <h4
-                className="text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3"
-                data-aos="fade-up"
-              >
-                AI/ML in Development
-              </h4>
-              <h2
-                className="text-3xl md:text-4xl font-bold mb-4"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                Yes, I Use AI in My Workflow
-              </h2>
-              <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
-                AI is part of my day-to-day workflow to improve velocity,
-                clarity, and code quality while keeping human (like me) the
-                final decision-maker.
-              </p>
-            </div>
+            <div className="relative z-10 max-w-6xl mx-auto px-4">
+              <div className="text-center">
+                <h4
+                  className="text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3"
+                  data-aos="fade-up"
+                >
+                  AI/ML in Development
+                </h4>
+                <h2
+                  className="text-3xl md:text-4xl font-bold mb-4"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  Yes, I Use AI in My Workflow
+                </h2>
+                <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
+                  AI is part of my day-to-day workflow to improve velocity,
+                  clarity, and code quality while keeping human (like me) the
+                  final decision-maker.
+                </p>
+              </div>
 
-            <AI />
+              <AI />
+            </div>
           </div>
 
           <div className="relative py-14 md:py-28 overflow-hidden">

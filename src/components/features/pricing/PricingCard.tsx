@@ -14,28 +14,33 @@ export default function PricingCard({
   items: string[];
 }) {
   return (
-    <div data-aos="fade-up">
-      <div className="bg-black/10 backdrop-blur rounded p-6 hover:scale-98 transition-transform duration-300">
-        <h3 className="text-xl font-semibold mb-2">{title}</h3>
+    <div data-aos="fade-up" className="h-full">
+      <div className="h-full flex flex-col justify-between rounded-lg border p-6 transition-transform duration-300 hover:-translate-y-1">
+        <div className="space-y-2">
+          <h3 className="text-lg font-semibold tracking-tight">{title}</h3>
 
-        <p className="text-2xl font-bold mb-1">
-          <span className="text-sm font-medium text-gray-500 mr-1">
-            Starts at
-          </span>
-          {price}
-        </p>
+          <div className="flex items-end gap-2">
+            <span className="text-sm opacity-70">Starts at</span>
+            <span className="text-3xl font-semibold leading-none">{price}</span>
+          </div>
 
-        {subtitle && (
-          <p className="text-sm text-gray-500 mb-4">
-            {subtitle} {maintenancePrice && `${maintenancePrice}`}
-          </p>
-        )}
+          {(subtitle || maintenancePrice) && (
+            <p className="text-sm opacity-70">
+              {subtitle}
+              {maintenancePrice && (
+                <span className="block">{maintenancePrice}</span>
+              )}
+            </p>
+          )}
+        </div>
 
-        <ul className="space-y-2 text-sm">
+        <div className="my-6 border-t" />
+
+        <ul className="space-y-3 text-sm flex-1">
           {items.map((item, i) => (
-            <li key={i} className="flex gap-2">
-              <span>•</span>
-              <span>{item}</span>
+            <li key={i} className="flex items-start gap-3">
+              <span className="mt-1 text-xs">●</span>
+              <span className="leading-relaxed">{item}</span>
             </li>
           ))}
         </ul>

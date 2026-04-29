@@ -1,6 +1,6 @@
 "use client";
 
-import projects, { Templates } from "@/lib/project-list";
+import projects, { Templates } from "@/lib/projects";
 import SearchForm from "@/components/ui/SearchForm";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Button from "@/components/ui/Button";
@@ -42,17 +42,15 @@ export default async function ProjectSection({ query }: { query: string }) {
             <h2>No results found.</h2>
           </div>
         ) : (
-          <Masonry
-            breakpointCols={{ 2560: 5, 1440: 4, 1025: 3, 768: 2, 640: 1 }}
-            className="flex gap-6"
-            columnClassName="space-y-6"
+          <div
+            className="grid gap-6 mt-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5"
           >
             {filteredProjects.map((project, idx) => (
               <div key={idx}>
                 <ProjectCard {...project} />
               </div>
             ))}
-          </Masonry>
+          </div>
         )}
 
         <div className="my-6">

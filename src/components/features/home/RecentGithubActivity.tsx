@@ -196,7 +196,7 @@ export default async function RecentGithubActivity() {
                 {event.repo?.name || "unknown repo"}
               </div>
               <div className="text-xs text-gray-500">
-                {getTimeAgo(event.created_at)}
+                {event.created_at}
               </div>
             </div>
           </li>

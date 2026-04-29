@@ -1,4 +1,4 @@
-import projects from "@/lib/project-list";
+import projects from "@/lib/projects";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,7 +9,7 @@ export default function ProjectCarousel() {
   return (
     <>
       <div
-        className="overflow-x-auto scroll-smooth snap-x snap-mandatory flex gap-6 py-6 scrollbar-hide"
+        className="overflow-x-auto scroll-smooth snap-x snap-mandatory flex items-stretch gap-6 py-6 scrollbar-hide"
         style={{
           WebkitMaskImage:
             "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
@@ -22,9 +22,9 @@ export default function ProjectCarousel() {
           .map((project, idx) => (
             <article
               key={idx}
-              className="group snap-start flex-shrink-0 w-80 md:w-96"
+              className="group snap-start flex-shrink-0 w-80 md:w-96 flex"
             >
-              <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-lg/10">
+              <div className="p-6 border rounded-2xl shadow-sm max-w-sm mx-auto transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-[0.98]">
                 {project.cover && (
                   <Link href={project.link || "#"}>
                     <div className="relative w-full h-48 rounded-2xl overflow-hidden mb-4">

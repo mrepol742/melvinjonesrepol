@@ -69,7 +69,7 @@ export default function Pricing() {
             My Pricing for Full-Stack Development Services
           </h1>
           <select
-             disabled={isLoading}
+            disabled={isLoading}
             onChange={changeCurrency}
             className="bg-gray-700 text-white px-1 py-1 rounded shadow outline-none cursor-pointer hover:bg-gray-600 transition"
           >
@@ -149,6 +149,31 @@ export default function Pricing() {
           />
 
           <PricingCard
+            title="WordPress Development"
+            price={convertedPrice("35000")}
+            currency={currency}
+            items={[
+              "Plugin integration",
+              "SEO optimization",
+              "E-commerce setup",
+              "Ideal for blogs & small businesses",
+            ]}
+          />
+
+          <PricingCard
+            title="WordPress Pro Development"
+            price={convertedPrice("45000")}
+            currency={currency}
+            items={[
+              "Custom theme development",
+              "Advanced plugin integration",
+              "SEO optimization",
+              "E-commerce setup",
+              "Ideal for businesses needing a powerful WordPress site",
+            ]}
+          />
+
+          <PricingCard
             title="Website to Native App"
             price={convertedPrice("5000")}
             currency={currency}
@@ -178,59 +203,64 @@ export default function Pricing() {
           />
         </div>
 
-        <div className="flex gap-2 mb-3">
-          <Link href="/contact-me" data-aos="fade-right" data-aos-delay="350">
-            <Button className="bg-orange-400 before:bg-orange-600 after:bg-orange-600">
-              Contact
-            </Button>
-          </Link>
+        <div className="mt-16 max-w-5xl mx-auto space-y-10">
+          <div className="flex flex-wrap items-center gap-3">
+            <Link href="/contact-me" data-aos="fade-right">
+              <Button>Contact</Button>
+            </Link>
 
-          <Link
-            href="https://wa.me/+639283559507"
-            data-aos="fade-right"
-            data-aos-delay="350"
-          >
-            <Button className="bg-green-400 before:bg-green-600 after:bg-green-600">
-              WhatsApp
-            </Button>
-          </Link>
+            <Link href="https://wa.me/+639283559507" data-aos="fade-right">
+              <Button>WhatsApp</Button>
+            </Link>
+
+            <div className="ml-auto">
+              <Link
+                href="/legal/developer-client-agreement"
+                data-aos="fade-right"
+              >
+                <Button>Developer Client Agreement</Button>
+              </Link>
+            </div>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2 text-sm">
+            <section data-aos="fade-up" className="space-y-3">
+              <h3 className="font-semibold tracking-tight">Payment Terms</h3>
+
+              <p>
+                A <strong>20% non-refundable down payment</strong> is required
+                before work begins. This secures your project in our schedule
+                and covers initial setup costs.
+              </p>
+
+              <p>
+                Alternative payment terms can be discussed based on your needs.
+                We aim to find a structure that aligns with your budget and
+                project scope.
+              </p>
+
+              <p>
+                Final pricing may vary depending on scope, complexity, and
+                requirements. A detailed quote will be provided after full
+                discussion.
+              </p>
+            </section>
+
+            <section data-aos="fade-up" className="space-y-3">
+              <h3 className="font-semibold tracking-tight">Maintenance</h3>
+
+              <p>
+                Includes 1 week of free maintenance covering bugs and defects
+                only (unless otherwise specified).
+              </p>
+
+              <p>
+                New features, enhancements, or scope changes require a separate
+                agreement.
+              </p>
+            </section>
+          </div>
         </div>
-
-        <div className="text-sm">
-          <section data-aos="fade-up" className="mb-4">
-            <h3 className="font-semibold mb-2">Payment Terms</h3>
-            <p className="mb-2">
-              A <strong>20% non-refundable down payment</strong> is required
-              before work begins. This secures your project in our schedule and
-              covers initial setup costs.
-            </p>
-            <p>
-              We are committed to delivering high-quality work. You may request
-              alternative payment terms—please contact us to discuss your
-              specific needs, and we will work together to find a solution that
-              fits your budget and project requirements.
-            </p>
-          </section>
-
-          <section data-aos="fade-up">
-            <h3 className="font-semibold mb-2">Maintenance</h3>
-            <p>
-              1 week of free maintenance covers existing bugs and defects only
-              (unless otherwise specified). New features or scope changes
-              require a new agreement.
-            </p>
-          </section>
-        </div>
-
-        <Link
-          href="/legal/developer-client-agreement"
-          data-aos="fade-right"
-          data-aos-delay="350"
-        >
-          <Button className="bg-blue-400 before:bg-blue-600 after:bg-blue-600">
-            Developer Client Agreement
-          </Button>
-        </Link>
       </section>
     </main>
   );

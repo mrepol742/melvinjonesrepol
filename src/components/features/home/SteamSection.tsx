@@ -118,7 +118,7 @@ export default async function SteamSection() {
               key={index}
               className="group snap-start flex-shrink-0 w-80 md:w-96"
             >
-              <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-lg/10">
+              <div className="p-6 border rounded-2xl shadow-sm max-w-sm mx-auto transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-[0.98]">
                 <div className="relative w-full h-48 rounded-2xl overflow-hidden mb-4">
                   <Image
                     src={game.cover_url}
