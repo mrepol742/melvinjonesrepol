@@ -33,7 +33,7 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   return (
     <div data-aos="fade-up" className="h-full flex">
-      <div className="group border rounded-2xl shadow-sm max-w-sm mx-auto transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-[0.98]">
+      <div className="group border rounded-2xl shadow-sm w-full transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-[0.98]">
         {cover && (
           <Link href={link || "#"}>
             <div className="relative w-full h-48 rounded-t-2xl overflow-hidden">

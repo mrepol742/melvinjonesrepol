@@ -26,15 +26,24 @@ export async function YoutubeSection() {
         return (
           <article
             key={index}
-            className="snap-start flex-shrink-0 w-80 md:w-96"
+            className="group snap-start flex-shrink-0 w-80 md:w-96 flex"
           >
-            <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 hover:scale-105 hover:backdrop-blur-xl transition-transform duration-300 shadow-lg/10">
-              <iframe
-                src={`https://www.youtube.com/embed/${videoId}`}
-                title={video.snippet?.title || "YouTube video"}
-                className="w-full h-48 rounded-2xl"
-                allowFullScreen
-              />
+            <div className="p-6 border rounded-2xl shadow-sm max-w-sm mx-auto transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-[0.98]">
+              <div className="mb-4 relative w-full h-60 rounded-2xl overflow-hidden border shadow-sm">
+                <iframe
+                  src={`https://www.youtube.com/embed/${videoId}`}
+                  title={video.snippet?.title || "YouTube video"}
+                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                  allowFullScreen
+                />
+              </div>
+
+              <h2 className="text-3xl font-bold text-gray-400">
+                {String(index + 1).padStart(2, "0")}
+              </h2>
+              <h3 className="text-xl font-bold">{video.snippet?.title}</h3>
+
+              <p className="mb-4 line-clamp-3">{video.snippet?.description}</p>
             </div>
           </article>
         );
