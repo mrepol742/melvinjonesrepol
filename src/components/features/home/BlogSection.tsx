@@ -26,7 +26,9 @@ export default function BlogSection() {
               </span>
 
               <p className="mt-2 text-xl font-bold">{post.title}</p>
-              <p className="mb-4 line-clamp-3">{post.excerpt}</p>
+              <p className="mb-4 line-clamp-3" title={post.excerpt}>
+                {post.excerpt}
+              </p>
 
               <div className="flex flex-wrap gap-2 mb-4">
                 {post.topics.map((topic: string, index: number) => (

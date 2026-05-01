@@ -53,7 +53,9 @@ export default function ProjectCard({
             </h5>
           </Link>
 
-          <p className="mb-6 line-clamp-3 flex-1">{description}</p>
+          <p className="mb-6 line-clamp-3 flex-1" title={description}>
+            {description}
+          </p>
 
           <div className="flex flex-wrap gap-2 mb-6">
             {archived && (

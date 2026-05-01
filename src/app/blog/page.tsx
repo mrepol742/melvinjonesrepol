@@ -88,7 +88,10 @@ export default async function BlogPage({
                   {post.title}
                 </h2>
 
-                <p className="text-sm md:text-base line-clamp-3">
+                <p
+                  className="text-sm md:text-base line-clamp-3"
+                  title={post.excerpt}
+                >
                   {post.excerpt}
                 </p>
 

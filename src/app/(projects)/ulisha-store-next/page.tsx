@@ -168,6 +168,7 @@ export default function UlishaStore() {
           view_source_url:
             "https://github.com/ulisha-limited/ulisha-store-next",
           is_open_source: true,
+          is_no_longer_maintained: true,
           is_freeware: false,
           license: "Polyform Noncommercial License 1.0.0",
           preview_image: "/images/ulisha-store-1.png",
@@ -175,6 +176,11 @@ export default function UlishaStore() {
           features,
           images: Images,
           resources: [
+            {
+              title:
+                "Ulisha Store Laravel is the successor to Ulisha Store Next",
+              url: "/ulisha-store-laravel",
+            },
             {
               title: "View Source Code on Github",
               url: "https://github.com/ulisha-limited/ulisha-store-next",

@@ -161,7 +161,7 @@ export default function Footer({
                     href="/teams"
                     className="hover:text-orange-500 text-gray-400"
                   >
-                    My Team
+                    Teams
                   </Link>
                 </li>
                 <li>
@@ -261,10 +261,10 @@ export default function Footer({
               </li>
               <li>
                 <Link
-                  href="/webvium-launcher"
+                  href="/protocol-discussion-platform"
                   className="hover:text-orange-500 text-gray-400"
                 >
-                  Webvium Launcher
+                  Protocol Discussion Platform
                 </Link>
               </li>
               <li>
@@ -285,10 +285,10 @@ export default function Footer({
               </li>
               <li>
                 <Link
-                  href="https://www.ulishastore.com"
+                  href="/ulisha-store-laravel"
                   className="hover:text-orange-500 text-blue-400"
                 >
-                  Ulisha Store
+                  Ulisha Store Laravel
                 </Link>
               </li>
               <li>
@@ -297,14 +297,6 @@ export default function Footer({
                   className="hover:text-orange-500 text-gray-400"
                 >
                   Canis Chatbot
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://devpulse-waka.vercel.app"
-                  className="hover:text-indigo-500 text-gray-400"
-                >
-                  DevPulse
                 </Link>
               </li>
               <li>

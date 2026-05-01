@@ -56,7 +56,9 @@ export default function ProjectCarousel() {
                   ))}
                 </div>
 
-                <p className="mb-4 line-clamp-3">{project.description}</p>
+                <p className="mb-4 line-clamp-3" title={project.description}>
+                  {project.description}
+                </p>
 
                 <div className="flex justify-end items-center gap-4">
                   {project.repo && (

@@ -111,6 +111,7 @@ export default function OrionChatbot() {
             "Orion Chatbot is a powerful Facebook Messenger chatbot designed to provide users with a seamless and efficient messaging experience. With its lightning-fast response times and robust features, Orion Chatbot allows users to manage multiple accounts effortlessly. It boasts an impressive array of 271 commands, enabling users to perform a wide range of tasks and interactions within the Messenger platform. Whether you're looking to automate responses, manage conversations, or access various functionalities, Orion Chatbot is your go-to solution for enhancing your Messenger experience.",
           view_source_url: "https://github.com/mrepol742/project-orion",
           is_open_source: true,
+          is_no_longer_maintained: true,
           is_freeware: false,
           license: "GNU General Public License v3.0",
           preview_image: "/images/orion-1.jpg",
@@ -118,6 +119,10 @@ export default function OrionChatbot() {
           features,
           images: Images,
           resources: [
+            {
+              title: "Canis Chatbot is the successor to Orion Chatbot",
+              url: "/canis-chatbot",
+            },
             {
               title: "View Source Code on Github",
               url: "https://github.com/mrepol742/project-orion",

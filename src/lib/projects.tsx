@@ -120,7 +120,7 @@ const Projects = [
     link: "/point-of-sale",
     featured: true,
     technology: ["Laravel", "JavaScript", "React", "Bootstrap"],
-    cover: "/images/point-of-sale.png",
+    cover: "/images/point-of-sale-1.png",
   },
   {
     title: "Axleshift Freight Management",
