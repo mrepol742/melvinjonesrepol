@@ -193,6 +193,13 @@ export default function RootLayout({
             <BrowserCheck />
           </>
         )}
+
+        <script
+          src="https://app.livechatai.com/embed.js"
+          data-id="cmdmcvh4n0001jt0c03xemlxw"
+          async
+          defer
+        ></script>
       </body>
     </html>
   );

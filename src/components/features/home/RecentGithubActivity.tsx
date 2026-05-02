@@ -22,103 +22,42 @@ export default async function RecentGithubActivity() {
     switch (event) {
       // Common
       case "PushEvent":
-        return (
-          <FontAwesomeIcon
-            icon={faCodeCommit}
-            title="Push"
-          />
-        );
+        return <FontAwesomeIcon icon={faCodeCommit} title="Push" />;
       case "WatchEvent":
-        return (
-          <FontAwesomeIcon
-            icon={faStar}
-            title="Star"
-          />
-        );
+        return <FontAwesomeIcon icon={faStar} title="Star" />;
       case "PullRequestReviewEvent":
         return (
-          <FontAwesomeIcon
-            icon={faCodeCompare}
-            title="Pull Request Review"
-          />
+          <FontAwesomeIcon icon={faCodeCompare} title="Pull Request Review" />
         );
       case "PullRequestEvent":
         return (
-          <FontAwesomeIcon
-            icon={faCodePullRequest}
-            title="Pull Request"
-          />
+          <FontAwesomeIcon icon={faCodePullRequest} title="Pull Request" />
         );
       case "ForkEvent":
-        return (
-          <FontAwesomeIcon
-            icon={faCodeFork}
-            title="Fork"
-          />
-        );
+        return <FontAwesomeIcon icon={faCodeFork} title="Fork" />;
       case "IssuesEvent":
-        return (
-          <FontAwesomeIcon
-            icon={faExclamation}
-            title="Issues"
-          />
-        );
+        return <FontAwesomeIcon icon={faExclamation} title="Issues" />;
       case "PullRequestReviewCommentEvent":
       case "IssueCommentEvent":
-        return (
-          <FontAwesomeIcon
-            icon={faComment}
-            title="Issue Comment"
-          />
-        );
+        return <FontAwesomeIcon icon={faComment} title="Issue Comment" />;
 
       // occationally
       case "PublicEvent":
-        return (
-          <FontAwesomeIcon
-          icon={faEarthAsia}
-            title="Public"
-          />
-        );
+        return <FontAwesomeIcon icon={faEarthAsia} title="Public" />;
       case "DeleteEvent":
-        return (
-          <FontAwesomeIcon
-            icon={faTrash}
-            title="Delete"
-          />
-        );
+        return <FontAwesomeIcon icon={faTrash} title="Delete" />;
       case "CreateEvent":
-        return (
-          <FontAwesomeIcon
-            icon={faPlus}
-            title="Create"
-          />
-        );
+        return <FontAwesomeIcon icon={faPlus} title="Create" />;
 
       // rare
       case "ReleaseEvent":
-        return (
-          <FontAwesomeIcon
-            icon={faEarthAsia}
-            title="Release"
-          />
-        );
+        return <FontAwesomeIcon icon={faEarthAsia} title="Release" />;
       case "CommitCommentEvent":
-        return (
-          <FontAwesomeIcon
-            icon={faComment}
-            title="Commit Comment"
-          />
-        );
+        return <FontAwesomeIcon icon={faComment} title="Commit Comment" />;
 
       // thank you so much!
       case "SponsorshipEvent":
-        return (
-          <FontAwesomeIcon
-            icon={faHeart}
-            title="Sponsorship"
-          />
-        );
+        return <FontAwesomeIcon icon={faHeart} title="Sponsorship" />;
 
       default:
         return <span>{event}</span>;
@@ -196,7 +135,7 @@ export default async function RecentGithubActivity() {
                 {event.repo?.name || "unknown repo"}
               </div>
               <div className="text-xs text-gray-500">
-                {event.created_at}
+                {getTimeAgo(new Date("2026-05-02T11:59:11Z").getTime() / 1000)}
               </div>
             </div>
           </li>
