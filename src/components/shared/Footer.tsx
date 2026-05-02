@@ -22,8 +22,6 @@ export default function Footer({
 }: {
   posts: { slug: string; title: string }[];
 }) {
-  const { theme, toggleTheme } = useTheme();
-
   return (
     <footer
       className="bg-gray-900 text-gray-200 py-10 border-t border-gray-800"
@@ -43,7 +41,7 @@ export default function Footer({
             <small className="block mt-4 text-xs text-green-400 mb-3">
               This site is Open Source.{" "}
               <Link
-                href="https://github.com/mrepol742/melvinjonesrepol.com"
+                href="https://github.com/mrepol742/melvinjonesrepol"
                 target="_blank"
                 className="underline hover:text-green-300"
               >
@@ -432,13 +430,6 @@ export default function Footer({
               entity responsible for all services and content on this website.
             </p>
           </div>
-          <button onClick={toggleTheme}>
-            {theme === "dark" ? (
-              <FontAwesomeIcon icon={faSun} />
-            ) : (
-              <FontAwesomeIcon icon={faMoon} />
-            )}
-          </button>
         </div>
       </nav>
     </footer>
