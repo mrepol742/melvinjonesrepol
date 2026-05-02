@@ -209,6 +209,7 @@ export default function Nav() {
                 </span>
               </Link>
             </li>
+
             {showDesktopContact ? (
               <li className="bg-gray-700 hover:bg-orange-400 transition-all text-white rounded-full px-2 py-1">
                 <Link
@@ -239,23 +240,26 @@ export default function Nav() {
                 </Link>
               </li>
             )}
+
+            <li
+              onClick={toggleTheme}
+              className="hidden md:flex items-center bg-gray-700 hover:bg-orange-400 transition-all text-white rounded-full px-2 py-1"
+            >
+              <button
+                className="text-xs"
+                aria-label="Toggle Theme - Melvin Jones Repol"
+                title="Toggle Theme"
+              >
+                {theme === "dark" ? (
+                  <FontAwesomeIcon icon={faSun} />
+                ) : (
+                  <FontAwesomeIcon icon={faMoon} />
+                )}
+              </button>
+            </li>
           </ul>
         </div>
       </nav>
-
-      <button
-        onClick={toggleTheme}
-        className={`hidden md:flex fixed top-5 right-5 z-50 h-10 w-10 items-center justify-center rounded-full bg-gray-800 text-white shadow-lg transition-transform duration-300 hover:shadow-xl focus:outline-none ${
-          show ? "translate-y-0" : "-translate-y-full"
-        }`}
-        aria-label="Toggle Theme"
-      >
-        {theme === "dark" ? (
-          <FontAwesomeIcon icon={faSun} />
-        ) : (
-          <FontAwesomeIcon icon={faMoon} />
-        )}
-      </button>
     </div>
   );
 }

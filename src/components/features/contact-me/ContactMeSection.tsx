@@ -91,17 +91,17 @@ export default function ContactMe() {
       <section className="mx-auto">
         <div className="flex flex-col md:flex-row gap-10">
           <div className="md:w-2/3">
-            <h1 className="text-2xl font-semibold mb-2" data-aos="fade-up">
+            <h1 className="text-2xl font-semibold mb-2">
               Contact Me – Get in Touch
             </h1>
 
-            <p className="mb-6 max-w-md" data-aos="fade-up">
+            <p className="mb-6 max-w-md">
               Whether you have a question, a project idea, or just want to
               connect, fill out the form below and I will respond promptly.
             </p>
 
             <form onSubmit={handleSubmit}>
-              <div data-aos="fade-up" className="mb-4">
+              <div className="mb-4">
                 <Input
                   icon={faUser}
                   handleChange={handleChange}
@@ -114,7 +114,7 @@ export default function ContactMe() {
                 />
               </div>
 
-              <div data-aos="fade-up" className="mb-4">
+              <div className="mb-4">
                 <Input
                   icon={faAt}
                   handleChange={handleChange}
@@ -136,11 +136,7 @@ export default function ContactMe() {
                 />
               </div>
 
-              <div data-aos="fade-up">
-                <label className="block text-sm font-semibold mb-1">
-                  Message
-                </label>
-
+              <div className="mb-4">
                 <div
                   className="flex items-center gap-2 px-4 py-2 rounded-xl border
                          transition-all duration-300
@@ -156,9 +152,12 @@ export default function ContactMe() {
                     className="w-full outline-none bg-transparent text-sm placeholder:opacity-60"
                   />
                 </div>
+                <span className="text-xs text-muted">
+                  Your message must be between 20 and 500 words.
+                </span>
               </div>
 
-              <span className="text-sm" data-aos="fade-up">
+              <span className="text-sm">
                 By continuing, you agree to our{" "}
                 <Link
                   href="/legal/privacy-policy"
@@ -172,7 +171,7 @@ export default function ContactMe() {
               </span>
 
               <Button
-                data-aos="fade-up"
+
                 className="w-full bg-indigo-400 before:bg-indigo-600 after:bg-indigo-600"
               >
                 Send Message
@@ -180,16 +179,16 @@ export default function ContactMe() {
             </form>
           </div>
 
-          <div className="md:w-1/3 flex flex-col gap-6" data-aos="fade-up">
+          <div className="md:w-1/3 flex flex-col gap-6">
             <div>
-              <h2 className="text-lg font-semibold" data-aos="fade-up">
+              <h2 className="text-lg font-semibold">
                 Alternative Contact
               </h2>
               <div className="flex flex-col gap-2">
                 <Link
                   href="https://wa.me/+639283559507"
                   className="underline-offset-2 hover:underline"
-                  data-aos="fade-up"
+
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -198,7 +197,7 @@ export default function ContactMe() {
                 <Link
                   href="https://www.facebook.com/melvinjonesrepol"
                   className="underline-offset-2 hover:underline"
-                  data-aos="fade-up"
+
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -208,13 +207,13 @@ export default function ContactMe() {
             </div>
 
             <div>
-              <h2 className="text-lg font-semibold" data-aos="fade-up">
+              <h2 className="text-lg font-semibold">
                 Documents & Policies
               </h2>
               <Link
                 href="/legal/developer-client-agreement"
                 className="underline-offset-2 hover:underline"
-                data-aos="fade-up"
+
                 target="_blank"
                 rel="noopener noreferrer"
               >

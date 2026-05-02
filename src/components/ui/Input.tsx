@@ -37,7 +37,7 @@ export default function Input({
         onChange={handleChange}
         required={form.required || false}
         placeholder={form.placeholder || ""}
-        className="w-full outline-none bg-transparent text-sm placeholder:opacity-60"
+        className="w-full outline-none bg-transparent placeholder:opacity-60"
       />
 
       {clearSearch && (

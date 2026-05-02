@@ -76,14 +76,23 @@ export default function Home() {
         <section>
           <div className="h-screen flex flex-col justify-center items-center text-center snap-start px-3">
             <div className="inline-flex items-center px-4 py-1 mb-6 text-sm font-medium bg-indigo-100 text-indigo-700 rounded-full">
-              Software &amp; AI Engineer | Arch Linux Advocate
+              Software &amp; AI Engineer
             </div>
 
             <h1 className="text-3xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
               Building <span className="gradient-text">scalable digital</span>{" "}
               <br />
               solutions that drive <br />
-              <span className="gradient-text-sub">tangible impact.</span>
+              <span className="gradient-text-sub">
+                tangible{" "}
+                <ScrambleText
+                  as="span"
+                  text="impact"
+                  durationMs={2000}
+
+                />
+                .
+              </span>
             </h1>
 
             <p className="max-w-2xl mx-auto text-lg md:text-xl mb-10 leading-relaxed">

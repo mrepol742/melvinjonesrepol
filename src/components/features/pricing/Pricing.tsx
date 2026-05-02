@@ -57,6 +57,113 @@ export default function Pricing() {
     });
   };
 
+  const plans = [
+    {
+      title: "Per Project",
+      price: convertedPrice("45000"),
+      currency,
+      items: [
+        "Search Engine Optimization (SEO)",
+        "Full-stack development",
+        "Testing & optimization",
+        "Deployment support",
+        "1 week free bug fixes (original scope)",
+      ],
+    },
+    {
+      title: "Project + Maintenance",
+      price: convertedPrice("45000"),
+      maintenancePrice: convertedPrice("1000"),
+      currency,
+      subtitle: "Monthly maintenance starts at",
+      items: [
+        "Security vulnerability fixes",
+        "Performance monitoring",
+        "Dependency updates",
+        "Bug fixes (original scope)",
+        "Backups & system checks",
+      ],
+    },
+    {
+      title: "Long-Term Engagement",
+      price: convertedPrice("10000"),
+      maintenancePrice: convertedPrice("30000"),
+      currency,
+      subtitle: "Monthly development starts at",
+      items: [
+        "Ongoing development",
+        "Feature enhancements",
+        "System scaling",
+        "Priority support",
+        "Startup & product-focused",
+      ],
+    },
+    {
+      title: "Static Site Development",
+      price: convertedPrice("1999"),
+      currency,
+      subtitle: "One-time fee for 5 creative pages",
+      items: [
+        "Custom design",
+        "Responsive layout",
+        "SEO-friendly structure",
+        "Fast loading times",
+        "Ideal for portfolios & small businesses",
+        "3 Week of free maintenance for bug fixes, performance and seo optimizations",
+      ],
+    },
+    {
+      title: "WordPress Development",
+      price: convertedPrice("35000"),
+      currency,
+      items: [
+        "Plugin integration",
+        "SEO optimization",
+        "E-commerce setup",
+        "Ideal for blogs & small businesses",
+      ],
+    },
+    {
+      title: "WordPress Pro Development",
+      price: convertedPrice("45000"),
+      currency,
+      items: [
+        "Custom theme development",
+        "Advanced plugin integration",
+        "SEO optimization",
+        "E-commerce setup",
+        "Ideal for businesses needing a powerful WordPress site",
+      ],
+    },
+    {
+      title: "Website to Native App",
+      price: convertedPrice("5000"),
+      currency,
+      subtitle: "One-time fee for converting your website to a native app",
+      items: [
+        "Cross-platform compatibility",
+        "Optimized performance",
+        "Access to native features",
+        "Customizable UI/UX",
+        "Ideal for expanding your reach to mobile users",
+        "3 months of free maintenance for bug fixes and performance optimizations",
+      ],
+    },
+    {
+      title: "Website to APK",
+      price: convertedPrice("1999"),
+      currency,
+      subtitle: "One-time fee for converting your website to an Android APK",
+      items: [
+        "Optimized for Android devices",
+        "Access to native features",
+        "Customizable UI/UX",
+        "Ideal for reaching Android users",
+        "3 months of free maintenance for bug fixes and performance optimizations",
+      ],
+    },
+  ];
+
   return (
     <main className="my-18 p-3 md:p-8">
       <section>
@@ -89,118 +196,38 @@ export default function Pricing() {
           complexity, features, and timeline. Contact me for a detailed quote
           tailored to your project needs.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 mb-3">
-          <PricingCard
-            title="Per Project"
-            price={convertedPrice("45000")}
-            currency={currency}
-            items={[
-              "Search Engine Optimization (SEO)",
-              "Full-stack development",
-              "Testing & optimization",
-              "Deployment support",
-              "1 week free bug fixes (original scope)",
-            ]}
-          />
 
-          <PricingCard
-            title="Project + Maintenance"
-            price={convertedPrice("45000")}
-            maintenancePrice={convertedPrice("1000")}
-            currency={currency}
-            subtitle="Monthly maintenance starts at"
-            items={[
-              "Security vulnerability fixes",
-              "Performance monitoring",
-              "Dependency updates",
-              "Bug fixes (original scope)",
-              "Backups & system checks",
-            ]}
-          />
+        <div className="relative overflow-hidden">
+          <div
+            className="overflow-x-auto scroll-smooth snap-x snap-mandatory flex gap-6 py-6 scrollbar-hide"
+            style={{
+              WebkitMaskImage:
+                "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
+              WebkitMaskRepeat: "no-repeat",
+              WebkitMaskSize: "100% 100%",
+            }}
+          >
+            {plans.map((p, index) => {
+              return (
+                <div
+                  key={index}
+                  role="listitem"
+                  className="flex-shrink-0 w-72 sm:w-80 lg:w-72 transform transition-transform duration-200"
+                >
+                  <PricingCard
+                    title={p.title}
+                    price={p.price}
+                    maintenancePrice={(p as any).maintenancePrice}
+                    currency={p.currency}
+                    subtitle={(p as any).subtitle}
+                    items={p.items}
+                  />
+                </div>
+              );
+            })}
+          </div>
 
-          <PricingCard
-            title="Long-Term Engagement"
-            price={convertedPrice("10000")}
-            maintenancePrice={convertedPrice("30000")}
-            currency={currency}
-            subtitle="Monthly development starts at"
-            items={[
-              "Ongoing development",
-              "Feature enhancements",
-              "System scaling",
-              "Priority support",
-              "Startup & product-focused",
-            ]}
-          />
-
-          <PricingCard
-            title="Static Site Development"
-            price={convertedPrice("1999")}
-            currency={currency}
-            subtitle="One-time fee for 5 creative pages"
-            items={[
-              "Custom design",
-              "Responsive layout",
-              "SEO-friendly structure",
-              "Fast loading times",
-              "Ideal for portfolios & small businesses",
-              "3 Week of free maintenance for bug fixes, performance and seo optimizations",
-            ]}
-          />
-
-          <PricingCard
-            title="WordPress Development"
-            price={convertedPrice("35000")}
-            currency={currency}
-            items={[
-              "Plugin integration",
-              "SEO optimization",
-              "E-commerce setup",
-              "Ideal for blogs & small businesses",
-            ]}
-          />
-
-          <PricingCard
-            title="WordPress Pro Development"
-            price={convertedPrice("45000")}
-            currency={currency}
-            items={[
-              "Custom theme development",
-              "Advanced plugin integration",
-              "SEO optimization",
-              "E-commerce setup",
-              "Ideal for businesses needing a powerful WordPress site",
-            ]}
-          />
-
-          <PricingCard
-            title="Website to Native App"
-            price={convertedPrice("5000")}
-            currency={currency}
-            subtitle="One-time fee for converting your website to a native app"
-            items={[
-              "Cross-platform compatibility",
-              "Optimized performance",
-              "Access to native features",
-              "Customizable UI/UX",
-              "Ideal for expanding your reach to mobile users",
-              "3 months of free maintenance for bug fixes and performance optimizations",
-            ]}
-          />
-
-          <PricingCard
-            title="Website to APK"
-            price={convertedPrice("1999")}
-            currency={currency}
-            subtitle="One-time fee for converting your website to an Android APK"
-            items={[
-              "Optimized for Android devices",
-              "Access to native features",
-              "Customizable UI/UX",
-              "Ideal for reaching Android users",
-              "3 months of free maintenance for bug fixes and performance optimizations",
-            ]}
-          />
+          <span className="text-xs">Swipe left or right to see more...</span>
         </div>
 
         <div className="mt-16 max-w-5xl mx-auto space-y-10">
