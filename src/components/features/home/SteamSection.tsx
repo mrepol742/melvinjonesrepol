@@ -87,7 +87,7 @@ export default async function SteamSection() {
           data-aos-delay={100}
         >
           Last updated:{" "}
-          {steam.last_fetched
+          {steam && "last_fetched" in steam && steam.last_fetched
             ? new Date(steam.last_fetched).toUTCString()
             : "—"}
         </div>
