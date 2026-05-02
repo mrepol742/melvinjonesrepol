@@ -94,6 +94,17 @@ export async function GithubSection() {
           </article>
         ))}
       </div>
+
+      <div
+        className="text-sm text-muted"
+        data-aos="fade-up"
+        data-aos-delay={100}
+      >
+        Last updated:{" "}
+        {profile.last_fetched
+          ? new Date(profile.last_fetched).toUTCString()
+          : "—"}
+      </div>
     </section>
   );
 }

@@ -28,6 +28,7 @@ export interface Stat {
       total_seconds: number;
     };
   };
+  last_fetched: string;
 }
 
 export async function fetchCurrentStats(): Promise<Stat | undefined> {
@@ -47,7 +48,12 @@ export async function fetchCurrentStats(): Promise<Stat | undefined> {
       return undefined;
     }
 
-    return (await res.json()) as Stat;
+    const data: Stat = await res.json();
+
+    return {
+      ...data,
+      last_fetched: new Date().toUTCString(),
+    };
   } catch (err) {
     console.error(err);
     return undefined;

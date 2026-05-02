@@ -138,23 +138,13 @@ export async function WakatimeSection() {
         </div>
       </div>
 
-      <div className="mb-10 flex flex-wrap items-center gap-3">
-        <Link
-          href="https://cv.melvinjonesrepol.com"
-          data-aos="fade-right"
-          data-aos-delay="350"
-        >
-          <Button icon={faFile}>View CV</Button>
-        </Link>
-
-        <a
-          href="https://wakatime.melvinjonesrepol.com/"
-          className="text-sm underline-offset-4 hover:underline"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          More detailed stats &rarr;
-        </a>
+      <div
+        className="text-sm text-muted"
+        data-aos="fade-up"
+        data-aos-delay={100}
+      >
+        Last updated:{" "}
+        {stats.last_fetched ? new Date(stats.last_fetched).toUTCString() : "—"}
       </div>
     </section>
   );

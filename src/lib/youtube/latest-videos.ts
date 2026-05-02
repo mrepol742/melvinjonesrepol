@@ -25,7 +25,12 @@ export async function fetchYoutubeLatestVideos() {
       return [];
     }
 
-    return res.json();
+    const data = await res.json();
+
+    return {
+      ...data,
+      last_fetched: new Date().toUTCString(),
+    };
   } catch (err) {
     console.error(err);
     return [];

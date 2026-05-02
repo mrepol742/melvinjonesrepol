@@ -7,22 +7,24 @@ export async function fetchGithubProfile(username: string) {
       return [];
     }
 
-    const res = await fetch(
-      `https://api.github.com/users/${username}`,
-      {
-        headers: {
-          Authorization: `Bearer ${GITHUB_TOKEN}`,
-        },
-        next: { revalidate: 300 },
+    const res = await fetch(`https://api.github.com/users/${username}`, {
+      headers: {
+        Authorization: `Bearer ${GITHUB_TOKEN}`,
       },
-    );
+      next: { revalidate: 10800 }, // 3hours
+    });
 
     if (!res.ok) {
       console.error(`Failed to fetch GitHub profile: ${res.statusText}`);
       return [];
     }
 
-    return res.json();
+    const data = await res.json();
+
+    return {
+      ...data,
+      last_fetched: new Date().toUTCString(),
+    };
   } catch (err) {
     console.error(err);
     return [];

@@ -3,7 +3,11 @@ import { getTimeAgo, toHours } from "@/utils/date";
 import Image from "next/image";
 
 export default async function SteamSection() {
-  const steamActivities: GameType[] = await fetchSteamLibrary();
+  const steam: never[] | { games: GameType[]; last_fetched: string } =
+    await fetchSteamLibrary();
+  const steamActivities: GameType[] =
+    steam && "games" in steam ? steam.games : [];
+
   const mostPlayedGames = [...steamActivities].sort(
     (a, b) => b.playtime_forever - a.playtime_forever,
   );
@@ -77,10 +81,16 @@ export default async function SteamSection() {
           ))}
         </div>
 
-        <span className="text-xs">
-          I mainly play racing and strategy games—if you spot anything else, it
-          probably isn’t me.
-        </span>
+        <div
+          className="text-sm text-muted"
+          data-aos="fade-up"
+          data-aos-delay={100}
+        >
+          Last updated:{" "}
+          {steam.last_fetched
+            ? new Date(steam.last_fetched).toUTCString()
+            : "—"}
+        </div>
       </div>
 
       <div className="relative py-28 px-6 overflow-hidden">
