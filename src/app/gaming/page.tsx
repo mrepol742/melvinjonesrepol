@@ -57,7 +57,10 @@ export default async function Gaming({
   const query = Array.isArray(sParams.q)
     ? sParams.q.join(", ")
     : sParams.q || "";
-  const steamActivities: GameType[] = await fetchSteamLibrary();
+  const steam: never[] | { games: GameType[]; last_fetched: string } =
+    await fetchSteamLibrary();
+  const steamActivities: GameType[] =
+    steam && "games" in steam ? steam.games : [];
   const filteredGames: GameType[] = steamActivities.filter((game) =>
     game.name.toLowerCase().includes(query),
   );
