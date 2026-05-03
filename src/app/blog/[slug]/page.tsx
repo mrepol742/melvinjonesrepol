@@ -6,6 +6,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { CodeBlock } from "@/components/ui/CodeBlock";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { getAllPosts } from "@/lib/posts";
 
 type Heading = {
   level: number;
@@ -151,6 +152,7 @@ export default async function BlogPost({
   const { slug } = await params;
 
   const post = getPostBySlug(slug);
+  const posts = getAllPosts();
   if (!post) notFound();
 
   const { content, data } = post;
@@ -176,44 +178,91 @@ export default async function BlogPost({
   };
 
   return (
-    <div className="flex justify-center">
-      <div className="flex gap-10 w-full max-w-6xl">
-        <article className="prose bg-white max-w-none p-3 md:p-8 flex-1">
-          <div className="py-18">
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-1 text-sm text-zinc-500 hover:text-orange-500 transition-colors mb-4 no-underline"
-            >
-              <span>←</span> Back to blogs
-            </Link>
+    <>
+      <div className="flex justify-center">
+        <div className="flex gap-10 w-full max-w-6xl">
+          <article className="prose bg-white max-w-none p-3 md:p-8 flex-1">
+            <div className="py-18">
+              <Link
+                href="/blog"
+                className="inline-flex items-center gap-1 text-sm text-zinc-500 hover:text-orange-500 transition-colors mb-4 no-underline"
+              >
+                <span>←</span> Back to blogs
+              </Link>
 
-            <h1>{data.title}</h1>
+              <h1>{data.title}</h1>
 
-            {data.excerpt && <p>{data.excerpt}</p>}
+              {data.excerpt && <p>{data.excerpt}</p>}
 
-            <p className="text-sm text-muted-foreground">
-              {data.date} • {estimatedReadingTime} min read
-            </p>
+              <p className="text-sm text-muted-foreground">
+                {data.date} • {estimatedReadingTime} min read
+              </p>
 
-            {data.topics && data.topics.length > 0 && (
-              <div className="flex flex-wrap gap-2 my-4">
-                {data.topics.map((topic: string, i: number) => (
-                  <span
-                    key={i}
-                    className="inline-flex capitalize rounded-full border px-2.5 py-1 text-xs"
-                  >
-                    {topic}
-                  </span>
-                ))}
-              </div>
-            )}
+              {data.topics && data.topics.length > 0 && (
+                <div className="flex flex-wrap gap-2 my-4">
+                  {data.topics.map((topic: string, i: number) => (
+                    <span
+                      key={i}
+                      className="inline-flex capitalize rounded-full border px-2.5 py-1 text-xs"
+                    >
+                      {topic}
+                    </span>
+                  ))}
+                </div>
+              )}
 
-            <MDXRemote source={content} components={components} />
-          </div>
-        </article>
+              <MDXRemote source={content} components={components} />
+            </div>
+          </article>
 
-        <TableOfContents headings={headings} />
+          <TableOfContents headings={headings} />
+        </div>
       </div>
-    </div>
+
+      <div className="flex justify-center">
+        <div className="bg-white p-10 gap-10 pt-10 w-full max-w-6xl">
+          <h3 className="text-lg font-semibold mb-3 ">More posts</h3>
+
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            {posts
+              .filter((p) => p.slug !== slug)
+              .slice(0, 4)
+              .map((post) => (
+                <li key={post.slug}>
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="block h-full rounded-2xl border p-5 md:p-6 transition-transform duration-300 hover:-translate-y-0.5"
+                  >
+                    <div className="flex items-center justify-between gap-3 mb-3">
+                      <span className="inline-flex capitalize rounded-full border px-2.5 py-1 text-xs">
+                        {post.topics?.[0] ?? "general"}
+                      </span>
+                      <p className="text-xs md:text-sm">{post.date}</p>
+                    </div>
+
+                    <h2 className="text-lg md:text-xl font-semibold leading-snug mb-2 hover:text-orange-500 transition-colors">
+                      {post.title}
+                    </h2>
+
+                    <p
+                      className="text-sm md:text-base line-clamp-3"
+                      title={post.excerpt}
+                    >
+                      {post.excerpt}
+                    </p>
+
+                    <div className="mt-5 inline-flex items-center text-sm font-medium text-orange-600 dark:text-orange-400">
+                      Read article
+                      <span className="ml-1 transition-transform group-hover:translate-x-1">
+                        →
+                      </span>
+                    </div>
+                  </Link>
+                </li>
+              ))}
+          </ul>
+        </div>
+      </div>
+    </>
   );
 }
