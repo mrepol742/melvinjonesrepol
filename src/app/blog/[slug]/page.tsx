@@ -220,8 +220,10 @@ export default async function BlogPost({
       </div>
 
       <div className="flex justify-center">
-        <div className="bg-white p-10 gap-10 pt-10 w-full max-w-6xl">
-          <h3 className="text-lg font-semibold mb-3 ">More posts</h3>
+        <div className="bg-white p-10 gap-10 w-full max-w-6xl">
+          <h3 className="text-lg font-semibold mb-3 text-gray-800">
+            Related Articles
+          </h3>
 
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             {posts
@@ -231,7 +233,7 @@ export default async function BlogPost({
                 <li key={post.slug}>
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="block h-full rounded-2xl border p-5 md:p-6 transition-transform duration-300 hover:-translate-y-0.5"
+                    className="block h-full rounded-2xl text-gray-800 border p-5 md:p-6 transition-transform duration-300 hover:-translate-y-0.5"
                   >
                     <div className="flex items-center justify-between gap-3 mb-3">
                       <span className="inline-flex capitalize rounded-full border px-2.5 py-1 text-xs">
