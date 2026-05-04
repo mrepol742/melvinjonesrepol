@@ -1,5 +1,15 @@
 const Projects = [
   {
+    title: "Hall of Codes Next",
+    description:
+      "This new version of Hall of Codes website built with Next.js. To promote the community, share knowledge, showcase projects and other awesome things.",
+    link: "https://hallofcodes.vercel.app",
+    repo: "https://github.com/hallofcodes/hallofcodes",
+    featured: true,
+    technology: ["Next.js", "TypeScript", "Tailwind CSS"],
+    cover: "https://opengraph.githubassets.com/1/hallofcodes/hallofcodes",
+  },
+  {
     title: "[Redacted]",
     description: "[Redacted]",
     link: "https://dis.melvinjonesrepol.com",
@@ -189,6 +199,16 @@ const Projects = [
     technology: ["PHP"],
     cover: "https://opengraph.githubassets.com/1/mrepol742/Room-Rental-System",
     archived: true,
+  },
+  {
+    title: "Hall of Codes Vue",
+    description:
+      "This is Hall of Codes website built with Vue.js. To promote the community, share knowledge, showcase projects and other awesome things.",
+    repo: "https://github.com/hallofcodes/hallofcodes-vue",
+    link: "https://hallofcodes.github.io",
+    featured: false,
+    technology: ["Vue.js"],
+    cover: "https://opengraph.githubassets.com/1/hallofcodes/hallofcodes-vue",
   },
   {
     title: "Webvium VPN",
