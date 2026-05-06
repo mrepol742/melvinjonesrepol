@@ -25,7 +25,7 @@ export async function generateMetadata({
       locale: "en_US",
     },
     alternates: {
-      canonical: `https://www.melvinjonesrepol.com/blog?page=${page}`,
+      canonical: 'https://www.melvinjonesrepol.com/blog' + (page > 1 ? `?page=${page}` : ""),
     },
     twitter: {
       card: "summary_large_image",
