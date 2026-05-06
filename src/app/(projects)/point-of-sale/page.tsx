@@ -166,6 +166,10 @@ export default function PointOfSale() {
           images: Images,
           resources: [
             {
+              title: "Rebuilding the Point of Sale: Engineering for Reliability, Scale, and the Real World",
+              url: "/blog/rebuilding-the-point-of-sale-engineering-for-reliability-scale-and-the-real-world",
+            },
+            {
               title: "View Source Code on Github",
               url: "https://github.com/mrepol742/project-pos",
             },

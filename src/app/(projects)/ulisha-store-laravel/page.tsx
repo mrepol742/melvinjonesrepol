@@ -173,6 +173,10 @@ export default function UlishaStore() {
           images: Images,
           resources: [
             {
+              title: "Ulisha Store Next to Laravel: What Did Go Wrong?",
+              url: "/blog/ulisha-store-next-to-laravel-what-did-go-wrong",
+            },
+            {
               title: "Visit Live Store",
               url: "https://www.ulishastore.com",
             },
