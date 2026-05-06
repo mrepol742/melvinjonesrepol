@@ -6,6 +6,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { CodeBlock } from "@/components/ui/CodeBlock";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import remarkGfm from "remark-gfm";
 import { getAllPosts } from "@/lib/posts";
 
 type Heading = {
@@ -211,7 +212,11 @@ export default async function BlogPost({
                 </div>
               )}
 
-              <MDXRemote source={content} components={components} />
+              <MDXRemote
+                source={content}
+                components={components}
+                options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+              />
             </div>
           </article>
 
