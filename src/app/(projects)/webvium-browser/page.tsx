@@ -179,6 +179,10 @@ export default async function WebviumBrowser() {
           images: Images,
           resources: [
             {
+              title: "Introducing Webvium Browser for Android Devices",
+              url: "/blog/introducing-webvium-browser-for-android-devices",
+            },
+            {
               title: "Download Webvium Browser on Uptodown",
               url: "https://webvium.en.uptodown.com/android",
             },
