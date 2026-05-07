@@ -79,6 +79,51 @@
       "source": "/blogs",
       "destination": "/blog",
       "permanent": true
+    },
+    {
+      "source": "/privacy",
+      "destination": "/legal/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/terms",
+      "destination": "/legal/terms-of-service",
+      "permanent": true
+    },
+    {
+      "source": "/webvium-browser/privacy-policy",
+      "destination": "/legal/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/webvium-browser/terms-of-service",
+      "destination": "/legal/terms-of-service",
+      "permanent": true
+    },
+    {
+      "source": "/webvium/download",
+      "destination": "/webvium-browser",
+      "permanent": true
+    },
+    {
+      "source": "/webviumdev/download",
+      "destination": "/webvium-browser",
+      "permanent": true
+    },
+    {
+      "source": "/webviumbeta/download",
+      "destination": "/webvium-browser",
+      "permanent": true
+    },
+    {
+      "source": "/webviumvpn/download",
+      "destination": "/webvium-vpn",
+      "permanent": true
+    },
+    {
+      "source": "/pricing",
+      "destination": "/contact-me",
+      "permanent": true
     }
   ]
 }
