@@ -85,13 +85,7 @@ export default function Home() {
               solutions that drive <br />
               <span className="gradient-text-sub">
                 tangible{" "}
-                <ScrambleText
-                  as="span"
-                  text="impact"
-                  durationMs={2000}
-
-                />
-                .
+                <ScrambleText as="span" text="impact" durationMs={2000} />.
               </span>
             </h1>
 
@@ -345,44 +339,68 @@ export default function Home() {
           </div>
 
           <div className="relative py-14 md:py-28 overflow-hidden">
-            <div className="text-center">
-              <h4
-                className="text-sm font-semibold tracking-widest text-purple-500 uppercase mb-3"
+            <div className="mx-auto max-w-4xl text-center">
+              <div
+                className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold tracking-widest uppercase"
                 data-aos="fade-up"
               >
+                <span className="inline-block h-2 w-2 rounded-full border" />
                 Dev Community
-              </h4>
+              </div>
+
               <h2
-                className="text-3xl md:text-4xl font-bold mb-4"
+                className="mt-4 text-3xl md:text-4xl font-bold"
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
                 Hall of Codes
               </h2>
-              <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
+
+              <p className="max-w-2xl mx-auto mt-4" data-aos="fade-up">
                 A community for developers, creatives, and problem-solvers. It’s
                 where ideas turn into projects, and projects turn into
                 opportunities to learn and collaborate.
               </p>
 
-              <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
+              <p className="max-w-2xl mx-auto mt-4" data-aos="fade-up">
                 We believe in the power of shared knowledge and collective
                 growth. Join us to connect, collaborate, and create with
                 like-minded individuals who are passionate about coding and
                 innovation.
               </p>
 
-              <div className="flex flex-col md:flex-row justify-center gap-1 md:gap-4">
+              <div
+                className="mx-auto mt-6 grid max-w-2xl grid-cols-1 gap-3 text-sm md:grid-cols-3"
+                data-aos="fade-up"
+              >
+                <div className="rounded-lg border px-4 py-3">
+                  <div className="text-lg font-semibold">Open Source</div>
+                  <div className="text-xs uppercase tracking-wider">
+                    Projects & Collabs
+                  </div>
+                </div>
+                <div className="rounded-lg border px-4 py-3">
+                  <div className="text-lg font-semibold">Learning</div>
+                  <div className="text-xs uppercase tracking-wider">
+                    Mentors & Resources
+                  </div>
+                </div>
+                <div className="rounded-lg border px-4 py-3">
+                  <div className="text-lg font-semibold">Community</div>
+                  <div className="text-xs uppercase tracking-wider">
+                    Events & Networking
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 flex flex-col md:flex-row justify-center gap-2 md:gap-4">
                 <Link
-                  href="https://hallofcodes.github.io"
+                  href="https://hallofcodes.vercel.app"
                   data-aos="fade-up"
                   data-aos-delay="300"
                 >
-                  <Button
-                    icon={faCode}
-                    className="bg-purple-500 before:bg-purple-700 after:bg-purple-700"
-                  >
-                    Website
+                  <Button icon={faCode} className="border border-current">
+                    Join Us
                   </Button>
                 </Link>
                 <Link
@@ -390,10 +408,7 @@ export default function Home() {
                   data-aos="fade-up"
                   data-aos-delay="300"
                 >
-                  <Button
-                    icon={faGithub}
-                    className="bg-purple-500 before:bg-purple-700 after:bg-purple-700"
-                  >
+                  <Button icon={faGithub} className="border border-current">
                     Github
                   </Button>
                 </Link>
@@ -473,33 +488,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </section>
-
-          <section className="flex flex-wrap justify-center gap-4 mb-16">
-            <Link href="/pricing" data-aos="fade-up" data-aos-delay="300">
-              <Button
-                icon={faPesoSign}
-                className="text-white bg-gray-800 before:bg-gray-900 after:bg-gray-900"
-              >
-                Pricing
-              </Button>
-            </Link>
-            <Link href="/contact-me" data-aos="fade-up" data-aos-delay="300">
-              <Button
-                icon={faServer}
-                className="text-white bg-gray-800 before:bg-gray-900 after:bg-gray-900"
-              >
-                Contact
-              </Button>
-            </Link>
-            <Link href="/blog" data-aos="fade-up" data-aos-delay="300">
-              <Button
-                icon={faChartLine}
-                className="text-white bg-gray-800 before:bg-gray-900 after:bg-gray-900"
-              >
-                Blog
-              </Button>
-            </Link>
           </section>
 
           <div className="relative py-14 md:py-28 overflow-hidden">

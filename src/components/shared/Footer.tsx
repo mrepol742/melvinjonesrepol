@@ -1,21 +1,16 @@
 "use client";
 
-import { useTheme } from "@/hooks/theme";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faAndroid,
   faFacebook,
   faGithub,
   faLinkedin,
   faSteam,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import Script from "next/script";
 import Image from "next/image";
 import TrustPilotWidget from "./TrustPilotWidget";
-import { faDownload, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
-import { getRecentPosts } from "@/lib/posts";
 
 export default function Footer({
   posts,
@@ -34,21 +29,11 @@ export default function Footer({
             <span className="text-2xl font-bold bg-gradient-to-tr from-violet-500 via-yellow-300 to-green-400 bg-clip-text text-transparent animate-gradient-shift">
               Melvin Jones Repol
             </span>
-            <p className="mt-2 text-sm text-gray-400 max-w-xs">
+            <p className="my-2 text-sm text-gray-400 max-w-xs">
               Building modern software experiences with passion and precision.
               Striving for excellence, one project at a time.
             </p>
-            <small className="block mt-4 text-xs text-green-400 mb-3">
-              This site is Open Source.{" "}
-              <Link
-                href="https://github.com/mrepol742/melvinjonesrepol"
-                target="_blank"
-                className="underline hover:text-green-300"
-              >
-                View on GitHub
-              </Link>
-            </small>
-            <h4 className="text-sm font-semibold mb-2 text-white">Follow Us</h4>
+
             <div className="flex space-x-3 mb-4">
               <Link
                 href="https://facebook.com/melvinjonesrepol"
@@ -140,14 +125,6 @@ export default function Footer({
                 </li>
                 <li>
                   <Link
-                    href="/pricing"
-                    className="hover:text-orange-500 text-gray-400"
-                  >
-                    Pricing
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     href="/gaming"
                     className="hover:text-orange-500 text-blue-400"
                   >
@@ -192,14 +169,6 @@ export default function Footer({
                     className="hover:text-orange-500 text-gray-400"
                   >
                     Contact
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="https://cv.melvinjonesrepol.com"
-                    className="hover:text-orange-500 text-blue-400"
-                  >
-                    CV
                   </Link>
                 </li>
                 <li>
@@ -430,6 +399,16 @@ export default function Footer({
               entity responsible for all services and content on this website.
             </p>
           </div>
+
+          <small className="block mt-4 text-xs text-green-400 mb-3">
+            <Link
+              href="https://github.com/mrepol742/melvinjonesrepol"
+              target="_blank"
+              className="underline hover:text-green-300"
+            >
+              This site is Open Source.
+            </Link>
+          </small>
         </div>
       </nav>
     </footer>
