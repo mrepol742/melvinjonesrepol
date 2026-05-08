@@ -134,7 +134,7 @@ function TableOfContents({ headings }: { headings: Heading[] }) {
           >
             <a
               href={`#${h.id}`}
-              className=" hover:text-orange-500 transition-colors"
+              className=" hover:text-orange-500 transition-colors text-nowrap line-clamp-1"
             >
               • {h.text}
             </a>
@@ -182,7 +182,7 @@ export default async function BlogPost({
     <>
       <div className="flex justify-center">
         <div className="flex gap-10 w-full max-w-6xl">
-          <article className="prose bg-white max-w-none p-3 md:p-8 flex-1">
+          <article className="prose bg-white max-w-none p-3 md:p-8 flex-1 min-w-0">
             <div className="py-18">
               <Link
                 href="/blog"
