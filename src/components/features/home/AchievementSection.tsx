@@ -46,7 +46,7 @@ const achievements: Achievement[] = [
       "Led a cross-functional team through a complex project, fostering collaboration, managing timelines, and ensuring clear communication.",
     impact:
       "Delivered the project on time and within scope while maintaining high team morale and stakeholder satisfaction.",
-  }
+  },
 ];
 
 const deliveryStandards = [
@@ -77,22 +77,25 @@ export default function AchievementSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           {achievements.map((item, index) => (
             <article
-              key={item.title}
+              key={index}
               data-aos="fade-up"
-              data-aos-delay={index * 80}
-              className="group relative overflow-hidden rounded-2xl border p-5 md:p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
+              data-aos-delay={100 * (index + 1)}
             >
-              <h3 className="text-base md:text-lg font-semibold leading-snug mb-2">
-                {item.title}
-              </h3>
+              <div className="group relative overflow-hidden rounded-2xl border p-5 md:p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl">
+                <h3 className="text-base md:text-lg font-semibold leading-snug mb-2">
+                  {item.title}
+                </h3>
 
-              <p className="text-sm md:text-[15px] leading-relaxed">
-                {item.summary}
-              </p>
+                <p className="text-sm md:text-[15px] leading-relaxed">
+                  {item.summary}
+                </p>
 
-              <div className="mt-4 rounded-xl border p-3">
-                <p className="text-xs uppercase tracking-wide mb-1">Outcome</p>
-                <p className="text-sm">{item.impact}</p>
+                <div className="mt-4 rounded-xl border p-3">
+                  <p className="text-xs uppercase tracking-wide mb-1">
+                    Outcome
+                  </p>
+                  <p className="text-sm">{item.impact}</p>
+                </div>
               </div>
             </article>
           ))}

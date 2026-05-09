@@ -70,8 +70,6 @@ export async function POST(request: Request) {
       }
     }
 
-    recentMessages.set(hash, now);
-
     for (const [key, time] of recentMessages) {
       if (now - time > DUPLICATE_TIMEOUT) recentMessages.delete(key);
     }
@@ -103,6 +101,8 @@ export async function POST(request: Request) {
         -->
       `,
     });
+
+    recentMessages.set(hash, now);
 
     return NextResponse.json({ success: true });
   } catch (error) {

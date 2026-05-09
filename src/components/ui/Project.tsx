@@ -33,7 +33,7 @@ export default function Project({
 }) {
   return (
     <main className="bg-white text-zinc-900">
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-800 text-white">
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-800 text-white">
         <div className="absolute inset-0 opacity-40">
           <Image
             src={project.preview_image}

@@ -28,12 +28,12 @@ export default function RateLimiter(
   }
 
   const maxRequest = /api\/(contact|report)/.test(request.nextUrl.pathname)
-    ? 2
-    : 10;
+    ? 5
+    : 30;
 
   const window = /api\/(contact|report)/.test(request.nextUrl.pathname)
-    ? 60 * 60 * 1000
-    : 5 * 60 * 1000;
+    ? 60 * 60 * 1000 // 1 hour
+    : 30 * 60 * 1000; // 30 minutes
 
   const isAllowed = checkRateLimit(ip, maxRequest, window);
 

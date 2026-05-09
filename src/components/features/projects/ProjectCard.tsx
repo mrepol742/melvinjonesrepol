@@ -1,9 +1,14 @@
+"use client";
+
+import { useState } from "react";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import {
   faArrowRight,
   faCircleNotch,
   faDownload,
   faLink,
+  faWandMagicSparkles,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
@@ -12,6 +17,7 @@ import Link from "next/link";
 type ProjectCardProps = {
   title: string;
   description: string;
+  ai_description: string;
   delay?: number;
   repo?: string;
   link?: string;
@@ -24,6 +30,7 @@ type ProjectCardProps = {
 export default function ProjectCard({
   title,
   description,
+  ai_description,
   repo,
   link,
   download,
@@ -31,9 +38,28 @@ export default function ProjectCard({
   cover,
   archived,
 }: ProjectCardProps) {
+  const [showSummary, setShowSummary] = useState(false);
+
   return (
     <div data-aos="fade-up" className="h-full flex">
-      <div className="group border rounded-2xl shadow-sm w-full transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-[0.98]">
+      <div className="relative overflow-hidden group border rounded-2xl shadow-sm w-full transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-[0.98]">
+        {showSummary && (
+          <div className="absolute inset-0 z-50 p-6 flex flex-col backdrop-blur-xl bg-gray-900/95 text-white">
+            <div className="flex justify-between items-center mb-4">
+              <h5 className="text-lg font-semibold flex items-center gap-2">
+                <FontAwesomeIcon icon={faWandMagicSparkles} />
+                AI Summary
+              </h5>
+              <button onClick={() => setShowSummary(false)}>
+                <FontAwesomeIcon icon={faXmark} size="lg" />
+              </button>
+            </div>
+            <div className="flex-1 overflow-y-auto text-md leading-relaxed scrollbar-hide">
+              {ai_description}
+            </div>
+          </div>
+        )}
+
         {cover && (
           <Link href={link || "#"}>
             <div className="relative w-full h-48 rounded-t-2xl overflow-hidden">
@@ -77,6 +103,14 @@ export default function ProjectCard({
           </div>
 
           <div className="flex justify-end items-center gap-3 mt-auto">
+            <button
+              onClick={() => setShowSummary(true)}
+              title="Summarize with AI"
+              className="mr-auto text-purple-500 hover:text-purple-600 transition-colors"
+            >
+              <FontAwesomeIcon icon={faWandMagicSparkles} size="lg" />
+            </button>
+
             {repo && (
               <Link href={repo}>
                 <FontAwesomeIcon icon={faGithub} size="lg" />

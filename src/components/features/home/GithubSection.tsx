@@ -80,17 +80,21 @@ export async function GithubSection() {
         {stats.map((item, index) => (
           <article
             key={index}
-            className="rounded-2xl border p-4 shadow-sm transition-transform duration-200 hover:-translate-y-0.5"
             data-aos="fade-up"
             data-aos-delay={100 * (index + 1)}
           >
-            <p className="text-xs uppercase tracking-wide">{item.label}</p>
-            <ScrambleText
-              as="p"
-              text={item.value}
-              durationMs={1000}
-              className="mt-2 text-2xl font-semibold"
-            />
+            <div
+              key={index}
+              className="rounded-2xl border p-4 shadow-sm transition-transform duration-200 hover:-translate-y-0.5"
+            >
+              <p className="text-xs uppercase tracking-wide">{item.label}</p>
+              <ScrambleText
+                as="p"
+                text={item.value}
+                durationMs={1000}
+                className="mt-2 text-2xl font-semibold"
+              />
+            </div>
           </article>
         ))}
       </div>
