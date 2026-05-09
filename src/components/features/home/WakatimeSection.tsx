@@ -90,52 +90,48 @@ export async function WakatimeSection() {
         </article>
       </div>
 
-      <div className="rounded-2xl border p-4 md:p-6">
-        <div className="mb-4 flex items-center justify-between">
-          <p className="text-sm font-semibold uppercase tracking-wide">
-            Top Languages Breakdown
-          </p>
-          <p className="text-xs">By time spent (7d)</p>
-        </div>
+      <div className="mb-4 flex items-center justify-between">
+        <p className="text-sm font-semibold uppercase tracking-wide">
+          Top Languages Breakdown
+        </p>
+        <p className="text-xs">By time spent (7d)</p>
+      </div>
 
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
-          {topLanguages.slice(0, 8).map((lang, index) => (
-            <div
-              key={index}
-              data-aos="fade-up"
-              data-aos-delay={100 * (index + 1)}
-            >
-              <div className="rounded-xl border p-3 transition-transform duration-200 hover:-translate-y-0.5">
-                <div className="flex items-center gap-3">
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg border">
-                    {getLanguageIcon(lang.name, { style: { fontSize: 24 } })}
-                  </span>
-                  <div className="min-w-0">
-                    <p className="truncate text-sm font-semibold">
-                      {lang.name}
-                    </p>
-                    <p className="text-xs">
-                      {formatHours(lang.total_seconds)} hrs
-                    </p>
-                  </div>
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
+        {topLanguages.slice(0, 8).map((lang, index) => (
+          <div
+            key={index}
+            data-aos="fade-up"
+            data-aos-delay={100 * (index + 1)}
+          >
+            <div className="rounded-xl border p-3 transition-transform duration-200 hover:-translate-y-0.5">
+              <div className="flex items-center gap-3">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg border">
+                  {getLanguageIcon(lang.name, { style: { fontSize: 24 } })}
+                </span>
+                <div className="min-w-0">
+                  <p className="truncate text-sm font-semibold">{lang.name}</p>
+                  <p className="text-xs">
+                    {formatHours(lang.total_seconds)} hrs
+                  </p>
                 </div>
+              </div>
 
-                <div className="mt-3">
-                  <div className="mb-1 flex items-center justify-between text-xs">
-                    <span>Share</span>
-                    <span>{formatPct(lang.percent)}</span>
-                  </div>
-                  <div className="h-1.5 w-full overflow-hidden rounded-full border">
-                    <div
-                      className="h-full bg-cyan-500 rounded-full"
-                      style={{ width: formatPct(lang.percent) }}
-                    />
-                  </div>
+              <div className="mt-3">
+                <div className="mb-1 flex items-center justify-between text-xs">
+                  <span>Share</span>
+                  <span>{formatPct(lang.percent)}</span>
+                </div>
+                <div className="h-1.5 w-full overflow-hidden rounded-full border">
+                  <div
+                    className="h-full bg-cyan-500 rounded-full"
+                    style={{ width: formatPct(lang.percent) }}
+                  />
                 </div>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
 
       <div

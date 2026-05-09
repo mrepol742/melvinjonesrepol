@@ -1,9 +1,3 @@
-"use client";
-
-import { useState } from "react";
-import CertificateCard from "@/components/features/certificates/CertificateCard";
-import Link from "next/link";
-import Masonry from "react-masonry-css";
 import SearchForm from "@/components/ui/SearchForm";
 import certificates from "@/lib/certificates";
 
@@ -34,7 +28,11 @@ export default async function Certificates({
           Professional Certificates & Certifications
         </h1>
 
-        <p className="mt-2" data-aos="fade-up" data-aos-delay="100">
+        <p
+          className="mt-2 mb-10 opacity-90"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
           A collection of professional certificates I have earned from various
           online courses, training programs, and technical learning platforms.
           These certifications showcase my continuous learning in web
@@ -44,38 +42,49 @@ export default async function Certificates({
         <SearchForm initialQuery={query} />
 
         {filteredCertificates.length === 0 ? (
-          <div>
+          <div className="mt-8">
             <h2>No results found.</h2>
           </div>
         ) : (
-          <Masonry
-            breakpointCols={{ 2560: 5, 1440: 4, 1025: 3, 768: 2, 640: 1 }}
-            className="flex gap-6"
-            columnClassName="space-y-6"
-          >
-            {filteredCertificates
-              .filter(
-                (certificate) =>
-                  certificate.title
-                    .toLowerCase()
-                    .includes(query.toLowerCase()) ||
-                  certificate.description
-                    .toLowerCase()
-                    .includes(query.toLowerCase()),
-              )
-              .map((certificate, idx) => (
-                <div key={idx}>
-                  <Link
-                    href={certificate.link || "#"}
-                    className="no-underline"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <CertificateCard {...certificate} />
-                  </Link>
+          <div className="relative mt-12">
+            <div className="absolute top-4 left-1 w-full h-0.5 bg-gray-800 hidden md:block" />
+
+            <div className="flex flex-col md:flex-row gap-8 md:gap-12 md:overflow-x-auto pb-8 snap-x scrollbar-hide">
+              {filteredCertificates.map((certificate, index) => (
+                <div
+                  key={index}
+                  className="relative md:w-96 flex-shrink-0 snap-start"
+                  data-aos="fade-up"
+                  data-aos-delay={(index % 10) * 150} // Prevent massive delays on many certs
+                >
+                  <div className="mt-2 ms-1 hidden md:block absolute -top-1 left-0 w-6 h-6 rounded-full bg-[#7873f5] z-10 ring-2 ring-gray-800" />
+
+                  <div className="md:mt-10 border border-gray-800 md:border-none p-5 md:p-0 rounded-2xl md:rounded-none ">
+                    <span className="text-xs font-mono mb-2 block opacity-70">
+                      {certificate.date}
+                    </span>
+                    <h3 className="text-xl font-bold">{certificate.title}</h3>
+                    <p className="text-sm leading-relaxed opacity-90">
+                      {certificate.description}
+                    </p>
+
+                    {certificate.link && (
+                      <div className="mt-5">
+                        <a
+                          href={certificate.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs font-medium transition-colors flex items-center gap-1 underline underline-offset-2 hover:opacity-80"
+                        >
+                          View Certificate &rarr;
+                        </a>
+                      </div>
+                    )}
+                  </div>
                 </div>
               ))}
-          </Masonry>
+            </div>
+          </div>
         )}
       </section>
     </main>

@@ -83,10 +83,7 @@ export default function Home() {
               Building <span className="gradient-text">scalable digital</span>{" "}
               <br />
               solutions that drive <br />
-              <span className="gradient-text-sub">
-                tangible{" "}
-                <ScrambleText as="span" text="impact" durationMs={2000} />.
-              </span>
+              <span className="gradient-text-sub">tangible impact.</span>
             </h1>
 
             <p className="max-w-2xl mx-auto text-lg md:text-xl mb-10 leading-relaxed">
@@ -230,6 +227,43 @@ export default function Home() {
               </div>
 
               <AI />
+            </div>
+          </div>
+
+          <div className="relative py-14 md:py-28 overflow-hidden">
+            <div className="relative z-10 max-w-6xl mx-auto px-4">
+              <div className="text-center">
+                <h4
+                  className="text-sm font-semibold tracking-widest text-green-500 uppercase mb-3"
+                  data-aos="fade-up"
+                >
+                  Enjoy Working with Me?
+                </h4>
+                <h2
+                  className="text-3xl md:text-4xl font-bold mb-4"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  Your feedback helps build trust.
+                </h2>
+                <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
+                  If you’ve worked with me and enjoyed the experience, I’d
+                  really appreciate it if you could take a moment to share your
+                  feedback. Your testimonials not only help me grow but also
+                  build trust with future collaborators and clients.
+                </p>
+
+                <Link
+                  href="https://www.trustpilot.com/evaluate/www.melvinjonesrepol.com"
+                  target="_blank"
+                  rel="noopener"
+                  className="inline-flex items-center text-white bg-green-500 hover:bg-green-600 font-medium text-sm px-4 py-2 rounded-lg transition-all"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
+                  Leave a Review on Trustpilot
+                </Link>
+              </div>
             </div>
           </div>
 

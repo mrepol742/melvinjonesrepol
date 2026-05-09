@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Masonry from "react-masonry-css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,
@@ -97,7 +96,12 @@ export default function Gallery({ albums }: { albums: Album[] }) {
 
             <div className="mt-3">
               <h3 className="font-semibold">{album.title}</h3>
-              <p className="text-sm text-muted mt-1">{album.description}</p>
+              <p
+                className="text-sm text-muted mt-1 line-clamp-2"
+                title={album.description}
+              >
+                {album.description}
+              </p>
             </div>
           </button>
         ))}
@@ -124,11 +128,7 @@ export default function Gallery({ albums }: { albums: Album[] }) {
         </span>
       </div>
 
-      <Masonry
-        breakpointCols={{ 2560: 5, 1440: 4, 1025: 3, 768: 2, 640: 1 }}
-        className="flex gap-6"
-        columnClassName="space-y-6"
-      >
+      <div className="grid gap-6 mt-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
         {activeAlbum.items.map((item, idx) => (
           <div
             key={item.src + idx}
@@ -154,7 +154,7 @@ export default function Gallery({ albums }: { albums: Album[] }) {
             )}
           </div>
         ))}
-      </Masonry>
+      </div>
 
       {selectedMediaIndex !== null && (
         <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-50">

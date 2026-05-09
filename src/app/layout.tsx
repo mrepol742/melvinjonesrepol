@@ -20,6 +20,7 @@ import Algolia from "@/components/shared/Algolia";
 import { getRecentPosts } from "@/lib/posts";
 import PrivacyPolicyPrompt from "@/components/shared/PrivacyPolicyPrompt";
 import DoorEffect from "@/components/shared/DoorEffect";
+import MouseCodeTrail from "@/components/shared/MouseCodeTrail";
 
 config.autoAddCss = false;
 
@@ -151,6 +152,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${sourceCodePro.variable} ${mavenPro.variable}`}
+      data-scroll-behavior="smooth"
     >
       <head>
         <meta name="hostname" content="www.melvinjonesrepol.com" />
@@ -161,6 +163,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased min-h-screen flex flex-col background-grid">
         <DoorEffect />
+        <MouseCodeTrail />
 
         <div className="background-gloss">
           <div className="gloss-circle circle1"></div>
