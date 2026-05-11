@@ -1,0 +1,29 @@
+name: IndexNow
+
+on:
+  push:
+    branches: ["production"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Submit URLs
+        run: |
+          npx indexnow-notifier \
+            --site https://www.melvinjonesrepol.com \
+            --host melvinjonesrepol.com \
+            --key ${{ secrets.INDEXNOW_KEY }} \
+            --framework nextjs-app
