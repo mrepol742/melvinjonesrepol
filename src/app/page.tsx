@@ -1,30 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
-import {
-  faChartLine,
-  faCode,
-  faLaptopCode,
-  faMobileScreen,
-  faPesoSign,
-  faServer,
-} from "@fortawesome/free-solid-svg-icons";
-import SteamSection from "@/components/features/home/SteamSection";
-import { WakatimeSection } from "@/components/features/home/WakatimeSection";
-import ProjectSection from "@/components/features/home/ProjectSection";
-import RecentGithubActivityWrapper from "@/components/features/home/RecentGithubActivityWrapper";
-import RecentGithubActivity from "@/components/features/home/RecentGithubActivity";
-import { YoutubeSection } from "@/components/features/home/YoutubeSection";
-import Button from "@/components/ui/Button";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import ServicesCarousel from "@/components/features/home/Services";
-import SecurityPractices from "@/components/features/home/SecurityPractices";
-import AI from "@/components/features/home/AI";
-import ScrambleText from "@/components/ui/ScrambleText";
-import { GithubSection } from "@/components/features/home/GithubSection";
-import AchievementsSection from "@/components/features/home/AchievementSection";
-import BlogSection from "@/components/features/home/BlogSection";
-import CertificateSection from "@/components/features/home/CertificateSection";
-import EngineeringPhilosophySection from "@/components/features/home/EngineeringPhilosophySection";
+import ServicesCarousel from "@/components/features/home/Technologies";
+import Project from "@/components/features/home/Project";
+import ClientFeedback from "@/components/features/home/ClientFeedback";
 
 export default function Home() {
   const person = {
@@ -74,487 +51,204 @@ export default function Home() {
       />
       <main className="p-3 md:p-8">
         <section>
-          <div className="h-screen flex flex-col justify-center items-center text-center snap-start px-3">
-            <div className="inline-flex items-center px-4 py-1 mb-6 text-sm font-medium bg-indigo-100 text-indigo-700 rounded-full">
-              Software &amp; AI Engineer
+          <div className="h-screen flex flex-col justify-center items-center snap-start px-3">
+            <div className="relative w-full max-w-6xl mx-auto">
+              <div className="md:text-left md:max-w-2xl">
+                <div className="inline-flex px-4 py-1 mb-6 text-sm font-medium rounded-full border">
+                  Business-Focused Software Partner
+                </div>
+
+                <h1 className="text-3xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                  Reduce costs.{" "}
+                  <span className="gradient-text">Ship faster.</span> <br />
+                  Lower operational risk.
+                </h1>
+
+                <p className="max-w-2xl mx-auto md:mx-0 text-lg md:text-xl mb-10 leading-relaxed">
+                  I help teams deliver reliable software that saves time and
+                  money. From discovery to production support, my focus is
+                  output, stability, and ROI — not just code.
+                </p>
+              </div>
+
+              <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[300px]">
+                <div className="rounded-2xl border border-black/10 dark:border-white/10 backdrop-blur-xl p-5 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.35)]">
+                  <div className="flex items-center justify-between mb-4">
+                    <p className="text-xs uppercase tracking-widest">
+                      Business Impact
+                    </p>
+                    <span className="text-xs rounded-full border px-2 py-0.5">
+                      Enterprise-ready
+                    </span>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div>
+                      <p className="text-sm font-semibold">Cost Optimization</p>
+                      <p className="text-xs uppercase tracking-wider">
+                        Automate workflows, reduce waste
+                      </p>
+                    </div>
+
+                    <div className="h-px border-t border-black/10 dark:border-white/10" />
+
+                    <div>
+                      <p className="text-sm font-semibold">Faster Delivery</p>
+                      <p className="text-xs uppercase tracking-wider">
+                        Shorter cycles, clear milestones
+                      </p>
+                    </div>
+
+                    <div className="h-px border-t border-black/10 dark:border-white/10" />
+
+                    <div>
+                      <p className="text-sm font-semibold">Risk Reduction</p>
+                      <p className="text-xs uppercase tracking-wider">
+                        Stable systems, predictable releases
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
 
-            <h1 className="text-3xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-              Building <span className="gradient-text">scalable digital</span>{" "}
-              <br />
-              solutions that drive <br />
-              <span className="gradient-text-sub">tangible impact.</span>
-            </h1>
-
-            <p className="max-w-2xl mx-auto text-lg md:text-xl mb-10 leading-relaxed">
-              I design, build, and maintain scalable software systems, covering
-              planning, development, and production support to help businesses
-              grow and operate efficiently.
-            </p>
+          <div className="relative py-14 md:py-28 overflow-hidden">
+            <div className="text-center mb-10 md:mb-14">
+              <h4
+                className="text-sm font-semibold tracking-widest uppercase mb-3"
+                data-aos="fade-up"
+              >
+                How I Help
+              </h4>
+              <h2
+                className="text-3xl md:text-5xl font-bold leading-tight"
+                data-aos="fade-up"
+              >
+                Practical delivery that aligns with business goals.
+              </h2>
+              <p className="max-w-2xl mx-auto mt-4" data-aos="fade-up">
+                I work with owners and teams to remove bottlenecks, build
+                scalable systems, and deliver measurable outcomes.
+              </p>
+            </div>
 
             <ServicesCarousel />
           </div>
 
-          <div className="relative py-14 md:py-28 overflow-hidden">
-            <div className="relative z-10 max-w-6xl mx-auto px-4">
-              <div className="text-center mb-10 md:mb-14">
-                <h4
-                  className="text-sm font-semibold tracking-widest text-blue-500 uppercase mb-3"
-                  data-aos="fade-up"
-                >
-                  Engineering Philosophy
-                </h4>
-                <h2
-                  className="text-3xl md:text-5xl font-bold leading-tight"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                >
-                  Anyone can ship software.
-                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-violet-500">
-                    Not everyone ships quality.
-                  </span>
-                </h2>
-              </div>
-
-              <EngineeringPhilosophySection />
-            </div>
-          </div>
-
           <div className="relative py-14 md:py-28  overflow-hidden">
             <div className="text-center">
               <h4
-                className="text-sm font-semibold tracking-widest text-cyan-500 uppercase mb-3"
+                className="text-sm font-semibold tracking-widest uppercase mb-3"
                 data-aos="fade-up"
               >
-                Coding Activity
+                Results &amp; Case Studies
               </h4>
               <h2
                 className="text-3xl md:text-4xl font-bold mb-4"
                 data-aos="fade-up"
-                data-aos-delay="100"
               >
-                I Code, Therefore I Am
-              </h2>
-              <p
-                className="text-center max-w-2xl mx-auto mb-6"
-                data-aos="fade-up"
-              >
-                A snapshot of my coding activity across languages and tools.
-                Tracked automatically to reflect real development time and
-                habits.
-              </p>
-            </div>
-            <WakatimeSection />
-          </div>
-
-          <div className="relative py-14 md:py-28  overflow-hidden">
-            <div className="text-center">
-              <h4
-                className="text-sm font-semibold tracking-widest text-fuchsia-500 uppercase mb-3"
-                data-aos="fade-up"
-              >
-                Explore My Work
-              </h4>
-              <h2
-                className="text-3xl md:text-4xl font-bold mb-4"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                Featured Projects
+                Work that drives outcomes
               </h2>
               <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
-                A curated selection of personal projects that best represent my
-                skills and creativity. These are the ones I’m most proud of and
-                actively showcase.
+                A curated selection of projects focused on real-world impact:
+                improved operations, faster delivery, and tangible business
+                value.
               </p>
             </div>
 
-            <ProjectSection />
+            <Project />
 
             <span className="text-xs">Swipe left or right to see more...</span>
           </div>
 
-          <GithubSection />
-
-          <div className="relative py-14 md:py-28 overflow-hidden">
-            <div className="relative z-10 max-w-6xl mx-auto px-4">
-              <div className="text-center">
-                <h4
-                  className="text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3"
-                  data-aos="fade-up"
-                >
-                  Security
-                </h4>
-                <h2
-                  className="text-3xl md:text-4xl font-bold mb-4"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                >
-                  I Take Security Seriously
-                </h2>
-                <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
-                  Security is built in my workflow from commit to release. Here
-                  are some of the practices I use to keep code, dependencies,
-                  and published packages trustworthy.
-                </p>
-              </div>
-
-              <SecurityPractices />
-            </div>
-          </div>
-
-          <div className="relative py-14 md:py-28 overflow-hidden">
-            <div className="relative z-10 max-w-6xl mx-auto px-4">
-              <div className="text-center">
-                <h4
-                  className="text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3"
-                  data-aos="fade-up"
-                >
-                  AI/ML in Development
-                </h4>
-                <h2
-                  className="text-3xl md:text-4xl font-bold mb-4"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                >
-                  Yes, I Use AI in My Workflow
-                </h2>
-                <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
-                  AI is part of my day-to-day workflow to improve velocity,
-                  clarity, and code quality while keeping human (like me) the
-                  final decision-maker.
-                </p>
-              </div>
-
-              <AI />
-            </div>
-          </div>
-
-          <div className="relative py-14 md:py-28 overflow-hidden">
-            <div className="relative z-10 max-w-6xl mx-auto px-4">
-              <div className="text-center">
-                <h4
-                  className="text-sm font-semibold tracking-widest text-green-500 uppercase mb-3"
-                  data-aos="fade-up"
-                >
-                  Enjoy Working with Me?
-                </h4>
-                <h2
-                  className="text-3xl md:text-4xl font-bold mb-4"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                >
-                  Your feedback helps build trust.
-                </h2>
-                <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
-                  If you’ve worked with me and enjoyed the experience, I’d
-                  really appreciate it if you could take a moment to share your
-                  feedback. Your testimonials not only help me grow but also
-                  build trust with future collaborators and clients.
-                </p>
-
-                <Link
-                  href="https://www.trustpilot.com/evaluate/www.melvinjonesrepol.com"
-                  target="_blank"
-                  rel="noopener"
-                  className="inline-flex items-center text-white bg-green-500 hover:bg-green-600 font-medium text-sm px-4 py-2 rounded-lg transition-all"
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                >
-                  Leave a Review on Trustpilot
-                </Link>
-              </div>
-            </div>
-          </div>
-
           <div className="relative py-14 md:py-28 overflow-hidden">
             <div className="text-center">
               <h4
-                className="text-sm font-semibold tracking-widest text-green-500 uppercase mb-3"
+                className="text-sm font-semibold tracking-widest uppercase mb-3"
                 data-aos="fade-up"
               >
-                Achievements
+                Client Feedback
               </h4>
               <h2
                 className="text-3xl md:text-4xl font-bold mb-4"
                 data-aos="fade-up"
-                data-aos-delay="100"
               >
-                Feedback &amp; Testimonials
+                Trusted for delivery and reliability
               </h2>
               <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
-                A collection of feedback and testimonials from clients,
-                collaborators, and peers that highlight the impact of my work
-                and the value I bring to projects.
+                A collection of feedback and testimonials from clients and
+                collaborators highlighting results and execution quality.
               </p>
             </div>
 
-            <AchievementsSection />
-          </div>
-
-          <div className="relative py-14 md:py-28  overflow-hidden">
-            <div className="text-center">
-              <h4
-                className="text-sm font-semibold tracking-widest text-fuchsia-500 uppercase mb-3"
-                data-aos="fade-up"
-              >
-                Certifications
-              </h4>
-              <h2
-                className="text-3xl md:text-4xl font-bold mb-4"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                Featured Certifications
-              </h2>
-              <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
-                A collection of my featured certifications that highlight my
-                skills and expertise.
-              </p>
-            </div>
-
-            <CertificateSection />
-
-            <span className="text-xs">Swipe left or right to see more...</span>
-          </div>
-
-          <div className="relative py-14 md:py-28 overflow-hidden">
-            <div className="text-center">
-              <h4
-                className="text-sm font-semibold tracking-widest text-green-500 uppercase mb-3"
-                data-aos="fade-up"
-              >
-                Blog
-              </h4>
-              <h2
-                className="text-3xl md:text-4xl font-bold mb-4"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                Insights &amp; Experiences
-              </h2>
-              <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
-                A collection of my thoughts, insights, and experiences on
-                software development, technology trends, and personal growth in
-                the tech
-              </p>
-            </div>
-
-            <BlogSection />
-          </div>
-
-          <SteamSection />
-
-          <div className="relative py-14 md:py-28  overflow-hidden">
-            <div className="text-center">
-              <h4
-                className="text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3"
-                data-aos="fade-up"
-              >
-                YouTube Channel
-              </h4>
-              <h2
-                className="text-3xl md:text-4xl font-bold mb-4"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                Latest Videos
-              </h2>
-              <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
-                A glimpse into my latest video content, where I share insights,
-                tutorials, and behind-the-scenes looks at my projects and
-                gaming. Check out what I’ve been up to on YouTube!
-              </p>
-            </div>
-
-            <YoutubeSection />
-
-            <span className="text-xs">Swipe left or right to see more...</span>
+            <ClientFeedback />
           </div>
 
           <div className="relative py-14 md:py-28 overflow-hidden">
             <div className="mx-auto max-w-4xl text-center">
-              <div
-                className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold tracking-widest uppercase"
+              <p
+                className="text-xs uppercase tracking-widest mb-3"
                 data-aos="fade-up"
               >
-                <span className="inline-block h-2 w-2 rounded-full border" />
-                Dev Community
-              </div>
-
+                About
+              </p>
               <h2
-                className="mt-4 text-3xl md:text-4xl font-bold"
+                className="text-3xl md:text-4xl font-bold mb-4"
                 data-aos="fade-up"
-                data-aos-delay="100"
               >
-                Hall of Codes
+                The business partner behind the delivery
               </h2>
-
-              <p className="max-w-2xl mx-auto mt-4" data-aos="fade-up">
-                A community for developers, creatives, and problem-solvers. It’s
-                where ideas turn into projects, and projects turn into
-                opportunities to learn and collaborate.
+              <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
+                Beyond shipping software, I focus on reducing operational costs,
+                improving delivery speed, and helping teams operate with less
+                risk. If you want the full background and working style, it’s
+                here.
               </p>
 
-              <p className="max-w-2xl mx-auto mt-4" data-aos="fade-up">
-                We believe in the power of shared knowledge and collective
-                growth. Join us to connect, collaborate, and create with
-                like-minded individuals who are passionate about coding and
-                innovation.
-              </p>
-
-              <div
-                className="mx-auto mt-6 grid max-w-2xl grid-cols-1 gap-3 text-sm md:grid-cols-3"
+              <Link
+                href="/about"
                 data-aos="fade-up"
+                className="inline-flex items-center rounded-full border px-4 py-2 text-sm font-medium hover:shadow-sm transition"
               >
-                <div className="rounded-lg border px-4 py-3">
-                  <div className="text-lg font-semibold">Open Source</div>
-                  <div className="text-xs uppercase tracking-wider">
-                    Projects & Collabs
-                  </div>
-                </div>
-                <div className="rounded-lg border px-4 py-3">
-                  <div className="text-lg font-semibold">Learning</div>
-                  <div className="text-xs uppercase tracking-wider">
-                    Mentors & Resources
-                  </div>
-                </div>
-                <div className="rounded-lg border px-4 py-3">
-                  <div className="text-lg font-semibold">Community</div>
-                  <div className="text-xs uppercase tracking-wider">
-                    Events & Networking
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-6 flex flex-col md:flex-row justify-center gap-2 md:gap-4">
-                <Link
-                  href="https://hallofcodes.vercel.app"
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                >
-                  <Button icon={faCode} className="border border-current">
-                    Join Us
-                  </Button>
-                </Link>
-                <Link
-                  href="https://github.com/hallofcodes"
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                >
-                  <Button icon={faGithub} className="border border-current">
-                    Github
-                  </Button>
-                </Link>
-              </div>
+                Read the full story
+              </Link>
             </div>
           </div>
 
-          <section className="border-t border-gray-200 dark:border-gray-800 mb-5">
-            <div className="mx-auto px-6 py-16">
-              <div className="group mb-10 flex flex-col lg:flex-row items-center gap-6">
-                <div className="shrink-0 self-start">
-                  <Image
-                    src="/images/melvin-jones-repol-black.jpg"
-                    alt="Melvin Jones Repol"
-                    className="rounded-xl object-cover group-hover:scale-105 transition-transform duration-300"
-                    width={400}
-                    height={400}
-                  />
-                </div>
-
-                <div>
-                  <div>
-                    <p className="text-xs font-semibold tracking-widest uppercase mb-3">
-                      About
-                    </p>
-                    <h2 className="text-3xl md:text-4xl font-bold leading-tight">
-                      Melvin Jones Repol
-                    </h2>
-                  </div>
-                  <div className="grid md:grid-cols-3 gap-10">
-                    <div className="md:col-span-2">
-                      <p className="leading-relaxed text-base md:text-lg">
-                        Melvin Jones Repol is a freelance software engineer and
-                        full-stack web developer focused on building practical
-                        and scalable digital solutions. With years of experience
-                        in web development and software engineering, he
-                        specializes in developing efficient applications,
-                        automation tools, and modern web platforms.
-                      </p>
-
-                      <p className="mt-4 leading-relaxed text-base md:text-lg">
-                        His work integrates strong problem-solving skills,
-                        DevOps practices, and continuous exploration of emerging
-                        technologies. He actively builds projects, experiments
-                        with new tools, and shares his progress while
-                        consistently refining his expertise.
-                      </p>
-                    </div>
-
-                    <div className="space-y-6">
-                      <div>
-                        <p className="text-xs uppercase tracking-wide mb-1">
-                          Role
-                        </p>
-                        <p className="font-medium">
-                          Freelance Software Engineer
-                        </p>
-                      </div>
-
-                      <div>
-                        <p className="text-xs uppercase tracking-wide mb-1">
-                          Focus
-                        </p>
-                        <p className="font-medium">Full-Stack Development</p>
-                      </div>
-
-                      <div>
-                        <p className="text-xs uppercase tracking-wide mb-1">
-                          Expertise
-                        </p>
-                        <p className="font-medium">
-                          Android & Web Applications, Automation, DevOps
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <div className="relative py-14 md:py-28 overflow-hidden">
+          <div
+            className="relative py-14 md:py-28 overflow-hidden"
+            data-aos="slide-up"
+          >
             <div className="relative mx-auto max-w-4xl">
-              <div className="relative rounded-3xl border border-zinc-800/80  backdrop-blur-xl p-6 md:p-10 shadow-[0_10px_50px_-20px_rgba(0,0,0,0.35)]">
-                <div className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 mb-4">
-                  <span className="h-2 w-2 rounded-full bg-orange-500 animate-pulse" />
-                  <span className="text-xs font-medium tracking-wide text-orange-600 dark:text-orange-400 uppercase">
-                    End of Page
+              <div className="relative rounded-3xl border p-6 md:p-10 shadow-[0_10px_50px_-20px_rgba(0,0,0,0.15)]">
+                <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 mb-4">
+                  <span className="h-2 w-2 rounded-full border animate-pulse" />
+                  <span className="text-xs font-medium tracking-wide uppercase">
+                    Next Step
                   </span>
                 </div>
 
                 <h3 className="text-2xl md:text-3xl font-bold mb-4 leading-tight">
-                  You made it to the end — thanks for stopping by.
+                  Ready to cut costs or ship faster?
                 </h3>
 
                 <p className="text-sm md:text-base leading-relaxed">
-                  I appreciate you taking the time to explore my work. If you
-                  have questions, want to collaborate, or just want to say hi,
-                  feel free to reach out through any of the contact options
-                  above. I’m always open to connecting with fellow developers,
-                  teams, and people building interesting things.
+                  If you have a product to build, a system to stabilize, or a
+                  process to automate, I’m open to discussing how we can deliver
+                  measurable results together. Reach out through any of the
+                  contact options above.
                 </p>
 
                 <div className="mt-6 flex flex-wrap items-center gap-3">
                   <span className="text-xs md:text-sm rounded-full border px-3 py-1">
-                    Open to collaboration
+                    Outcome-driven
                   </span>
                   <span className="text-xs md:text-sm rounded-full border px-3 py-1">
-                    Freelance-friendly
+                    Business-focused
                   </span>
                   <span className="text-xs md:text-sm rounded-full border px-3 py-1">
-                    Let’s build something great
+                    Reliable delivery
                   </span>
                 </div>
               </div>
@@ -562,10 +256,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-
-      <RecentGithubActivityWrapper>
-        <RecentGithubActivity />
-      </RecentGithubActivityWrapper>
     </>
   );
 }

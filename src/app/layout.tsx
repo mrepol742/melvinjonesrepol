@@ -160,6 +160,11 @@ export default function RootLayout({
         <NortonSafeweb />
         <Algolia />
         <BreadcrumbJsonLd />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+        />
       </head>
       <body className="antialiased min-h-screen flex flex-col background-grid">
         <DoorEffect />
