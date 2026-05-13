@@ -33,20 +33,16 @@ export interface Stat {
 
 export async function fetchCurrentStats(): Promise<Stat | undefined> {
   try {
-    if (!WAKATIME_API_KEY) {
-      console.error("Missing WAKATIME_API_KEY in environment");
-      return undefined;
-    }
+    if (!WAKATIME_API_KEY)
+      throw new Error("Missing WAKATIME_API_KEY in environment");
 
     const res = await fetch(
       `https://wakatime.com/api/v1/users/current/stats/last_7_days?api_key=${WAKATIME_API_KEY}`,
       { next: { revalidate: 10800 } }, // 3hours
     );
 
-    if (!res.ok) {
-      console.error(`Failed to fetch wakatime stats: ${res.statusText}`);
-      return undefined;
-    }
+    if (!res.ok)
+      throw new Error(`Failed to fetch wakatime stats: ${res.statusText}`);
 
     const data: Stat = await res.json();
 
@@ -55,7 +51,7 @@ export async function fetchCurrentStats(): Promise<Stat | undefined> {
       last_fetched: new Date().toUTCString(),
     };
   } catch (err) {
-    console.error(err);
+    console.error("Error fetching wakatime stats:", err);
     return undefined;
   }
 }

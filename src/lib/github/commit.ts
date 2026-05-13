@@ -13,31 +13,39 @@ export async function fetchGitCommits({
 }: FetchGitCommitsParams): Promise<
   { date: string; commit: string }[] | undefined
 > {
-  const res = await fetch(
-    `https://api.github.com/repos/${owner}/${repo}/commits?per_page=${limit}`,
-    {
-      headers: {
-        Authorization: `Bearer ${GITHUB_TOKEN_WEBVIUM}`,
-      },
-      next: { revalidate: 300 },
-    },
-  );
+  try {
+    if (!GITHUB_TOKEN_WEBVIUM)
+      throw new Error("GITHUB_TOKEN_WEBVIUM is not set");
 
-  if (!res.ok) {
-    console.error(`Failed to fetch GitHub events: ${res.statusText}`);
+    const res = await fetch(
+      `https://api.github.com/repos/${owner}/${repo}/commits?per_page=${limit}`,
+      {
+        headers: {
+          Authorization: `Bearer ${GITHUB_TOKEN_WEBVIUM}`,
+        },
+        next: { revalidate: 300 },
+      },
+    );
+
+    if (!res.ok)
+      throw new Error(`Failed to fetch GitHub events: ${res.statusText}`);
+
+    const commits = await res.json();
+    if (commits.length == 0) return undefined;
+
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    const formatted = commits
+      .filter(
+        (commit: any) => !/merge pull request/i.test(commit.commit.message),
+      )
+      .map((commit: any) => ({
+        date: new Date(commit.commit.author.date).toISOString(),
+        commit: commit.commit.message,
+      }));
+
+    return formatted;
+  } catch (err) {
+    console.error("Error fetching GitHub commits:", err);
     return undefined;
   }
-
-  const commits = await res.json();
-  if (commits.length == 0) return undefined;
-
-  /* eslint-disable @typescript-eslint/no-explicit-any */
-  const formatted = commits
-    .filter((commit: any) => !/merge pull request/i.test(commit.commit.message))
-    .map((commit: any) => ({
-      date: new Date(commit.commit.author.date).toISOString(),
-      commit: commit.commit.message,
-    }));
-
-  return formatted;
 }

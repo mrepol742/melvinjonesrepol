@@ -6,28 +6,33 @@ let lastFetched: number | null = null;
 const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours in ms
 
 export async function isDisposableEmail(email: string): Promise<boolean> {
-  const domain = email.split("@").pop()?.toLowerCase();
-  if (!domain) return true;
+  try {
+    const domain = email.split("@").pop()?.toLowerCase();
+    if (!domain) return true;
 
-  const now = Date.now();
+    const now = Date.now();
 
-  if (!cachedDomains || !lastFetched || now - lastFetched > CACHE_TTL) {
-    const res = await fetch(BLOCKLIST_URL);
-    if (!res.ok) {
-      throw new Error(`Failed to fetch blocklist: ${res.statusText}`);
+    if (!cachedDomains || !lastFetched || now - lastFetched > CACHE_TTL) {
+      const res = await fetch(BLOCKLIST_URL);
+      if (!res.ok) {
+        throw new Error(`Failed to fetch blocklist: ${res.statusText}`);
+      }
+
+      const text = await res.text();
+      const domains = text
+        .split("\n")
+        .map((d) => d.trim().toLowerCase())
+        .filter(Boolean);
+
+      cachedDomains = new Set(domains);
+      lastFetched = now;
     }
 
-    const text = await res.text();
-    const domains = text
-      .split("\n")
-      .map((d) => d.trim().toLowerCase())
-      .filter(Boolean);
-
-    cachedDomains = new Set(domains);
-    lastFetched = now;
+    return cachedDomains.has(domain);
+  } catch (err) {
+    console.error("Failed to check disposable email", err);
+    return false;
   }
-
-  return cachedDomains.has(domain);
 }
 
 export function validateEmail(email: string) {
