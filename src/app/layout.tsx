@@ -1,26 +1,26 @@
 import type { Metadata } from "next";
 import { Source_Code_Pro, Maven_Pro } from "next/font/google";
 import { ToastContainer } from "react-toastify";
-import Nav from "../components/shared/Nav";
-import Footer from "../components/shared/Footer";
+import Nav from "../components/layout/Nav";
+import Footer from "../components/layout/Footer";
 import NextTopLoader from "nextjs-toploader";
-import AOSWrapper from "../components/shared/AOSWrapper";
+import AOSWrapper from "../components/common/AOSWrapper";
 import "./globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import BreadcrumbJsonLd from "@/components/ui/BreadcrumbJsonLd";
-import ServiceWorkerRegister from "@/components/shared/ServiceWorkerRegister";
+import ServiceWorkerRegister from "@/components/common/ServiceWorkerRegister";
 import ScrollTop from "@/components/ui/ScrollTop";
-import GoogleAnalytics from "@/components/shared/GoogleAnalytics";
-import GoogleAds from "@/components/shared/GoogleAdsense";
-import NortonSafeweb from "@/components/shared/NortonSafeweb";
-import BrowserCheck from "@/components/shared/BrowserCheck";
-import DevToolsDetector from "@/components/shared/DevToolsDetector";
-import Algolia from "@/components/shared/Algolia";
+import GoogleAnalytics from "@/components/common/GoogleAnalytics";
+import GoogleAds from "@/components/common/GoogleAdsense";
+import NortonSafeweb from "@/components/common/NortonSafeweb";
+import BrowserCheck from "@/components/common/BrowserCheck";
+import DevToolsDetector from "@/components/common/DevToolsDetector";
+import Algolia from "@/components/common/Algolia";
 import { getRecentPosts } from "@/lib/posts";
-import PrivacyPolicyPrompt from "@/components/shared/PrivacyPolicyPrompt";
-import DoorEffect from "@/components/shared/DoorEffect";
-import MouseCodeTrail from "@/components/shared/MouseCodeTrail";
+import PrivacyPolicyPrompt from "@/components/common/PrivacyPolicyPrompt";
+import DoorEffect from "@/components/common/DoorEffect";
+import MouseCodeTrail from "@/components/common/MouseCodeTrail";
 
 config.autoAddCss = false;
 
@@ -160,6 +160,11 @@ export default function RootLayout({
         <NortonSafeweb />
         <Algolia />
         <BreadcrumbJsonLd />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+        />
       </head>
       <body className="antialiased min-h-screen flex flex-col background-grid">
         <DoorEffect />
@@ -173,7 +178,7 @@ export default function RootLayout({
 
         <Nav />
 
-        <NextTopLoader showSpinner={false} />
+        <NextTopLoader showSpinner={false} color="#7873f5" />
 
         <div className="flex-1">
           <AOSWrapper />

@@ -20,20 +20,16 @@ export interface GameType {
 
 export async function fetchSteamLibrary() {
   try {
-    if (!STEAM_API_KEY || !STEAM_ID) {
-      console.error("Missing STEAM_API_KEY or STEAM_ID in environment");
-      return [];
-    }
+    if (!STEAM_API_KEY) throw new Error("Missing STEAM_API_KEY in environment");
+    if (!STEAM_ID) throw new Error("Missing STEAM_ID in environment");
 
     const res = await fetch(
       `https://api.steampowered.com/IPlayerService/GetOwnedGames/v1/?key=${STEAM_API_KEY}&steamid=${STEAM_ID}&include_appinfo=true&include_played_free_games=true`,
       { next: { revalidate: 10800 } }, // 3hours
     );
 
-    if (!res.ok) {
-      console.error(`Failed to fetch Steam library: ${res.statusText}`);
-      return [];
-    }
+    if (!res.ok)
+      throw new Error(`Failed to fetch Steam library: ${res.statusText}`);
 
     const data = await res.json();
 
@@ -45,7 +41,7 @@ export async function fetchSteamLibrary() {
       last_fetched: new Date().toUTCString(),
     };
   } catch (err) {
-    console.error(err);
+    console.error("Error fetching Steam library:", err);
     return [];
   }
 }

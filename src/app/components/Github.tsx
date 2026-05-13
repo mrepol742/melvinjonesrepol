@@ -12,7 +12,7 @@ function getYearsSince(dateString: string) {
   return Math.max(0, years);
 }
 
-export async function GithubSection() {
+export default async function Github() {
   const profile = await fetchGithubProfile("mrepol742");
 
   if (!profile) {

@@ -2,7 +2,7 @@ import { fetchSteamLibrary, GameType } from "@/lib/steam/library";
 import { getTimeAgo, toHours } from "@/utils/date";
 import Image from "next/image";
 
-export default async function SteamSection() {
+export default async function Steam() {
   const steam: never[] | { games: GameType[]; last_fetched: string } =
     await fetchSteamLibrary();
   const steamActivities: GameType[] =

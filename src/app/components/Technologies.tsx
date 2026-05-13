@@ -87,7 +87,7 @@ function MarqueeRow({ reverse = false }) {
   );
 }
 
-export default function TechStackPage() {
+export default function Technologies() {
   return (
     <div className="w-full max-w-full overflow-x-clip">
       <div className="w-full space-y-6">

@@ -5,28 +5,33 @@ import matter from "gray-matter";
 const postsDirectory = path.join(process.cwd(), "src/content/blog");
 
 export function getAllPosts() {
-  const files = fs.readdirSync(postsDirectory);
+  try {
+    const files = fs.readdirSync(postsDirectory);
 
-  const posts = files.map((filename) => {
-    const slug = filename.replace(".mdx", "");
-    const filePath = path.join(postsDirectory, filename);
-    const fileContent = fs.readFileSync(filePath, "utf-8");
+    const posts = files.map((filename) => {
+      const slug = filename.replace(".mdx", "");
+      const filePath = path.join(postsDirectory, filename);
+      const fileContent = fs.readFileSync(filePath, "utf-8");
 
-    const { data } = matter(fileContent);
+      const { data } = matter(fileContent);
 
-    return {
-      slug,
-      title: data.title,
-      excerpt: data.excerpt,
-      date: data.date,
-      topics: data.topics,
-    };
-  });
+      return {
+        slug,
+        title: data.title,
+        excerpt: data.excerpt,
+        date: data.date,
+        topics: data.topics,
+      };
+    });
 
-  // Sort newest → oldest
-  return posts.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
-  );
+    // Sort newest → oldest
+    return posts.sort(
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+    );
+  } catch (err) {
+    console.error("Failed to get all posts", err);
+    return [];
+  }
 }
 
 export function getRecentPosts(limit = 5) {

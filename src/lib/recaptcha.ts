@@ -11,7 +11,7 @@ const credentials = JSON.parse(
 const client = new RecaptchaEnterpriseServiceClient({ credentials });
 
 async function recaptcha(token: string, action: string): Promise<boolean> {
-  if (!token) return false;
+  if (!token || !action) return false;
 
   try {
     const [assessment] = await client.createAssessment({

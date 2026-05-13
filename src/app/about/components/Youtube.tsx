@@ -1,6 +1,6 @@
 import { fetchYoutubeLatestVideos } from "@/lib/youtube/latest-videos";
 
-export async function YoutubeSection() {
+export default async function Youtube() {
   const data = await fetchYoutubeLatestVideos();
 
   const videos = data.items ?? [];

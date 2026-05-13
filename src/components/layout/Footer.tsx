@@ -10,7 +10,7 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import Image from "next/image";
-import TrustPilotWidget from "./TrustPilotWidget";
+import TrustPilotWidget from "../common/TrustPilotWidget";
 
 export default function Footer({
   posts,
@@ -169,6 +169,14 @@ export default function Footer({
                     className="hover:text-orange-500 text-gray-400"
                   >
                     Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/about"
+                    className="hover:text-orange-500 text-gray-400"
+                  >
+                    About
                   </Link>
                 </li>
                 <li>

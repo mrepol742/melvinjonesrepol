@@ -47,6 +47,8 @@ const formatted =
 
 export async function getFootballPredictions(): Promise<Prediction[]> {
   try {
+    if (!API_TOKEN) throw new Error("FOOTBALL_DATA_API_KEY not set");
+
     const now = Date.now();
 
     if (cachedPredictions && lastFetched && now - lastFetched < CACHE_TTL) {
@@ -163,7 +165,8 @@ async function getLastFiveMatches(teamId: number): Promise<TeamForm[] | null> {
 
     const data: { matches: Match[] } = await response.json();
 
-    if (!response.ok) throw new Error("Failed to fetch team matches");
+    if (!response.ok)
+      throw new Error(`Failed to fetch team matches: ${response.statusText}`);
 
     return data.matches.map((match): TeamForm => {
       const isHome = match.homeTeam.id === teamId;

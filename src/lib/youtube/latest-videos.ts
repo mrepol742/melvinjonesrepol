@@ -3,15 +3,8 @@ const CHANNEL_ID = process.env.YOUTUBE_CHANNEL_ID;
 
 export async function fetchYoutubeLatestVideos() {
   try {
-    if (!API_KEY) {
-      console.error("Missing API_KEY in environment");
-      return [];
-    }
-
-    if (!CHANNEL_ID) {
-      console.error("Missing YOUTUBE_CHANNEL_ID in environment");
-      return [];
-    }
+    if (!API_KEY) throw new Error("Missing API_KEY in environment");
+    if (!CHANNEL_ID) throw new Error("Missing CHANNEL_ID in environment");
 
     const res = await fetch(
       `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANNEL_ID}&maxResults=6&order=date&type=video&key=${API_KEY}`,
@@ -20,10 +13,8 @@ export async function fetchYoutubeLatestVideos() {
       },
     );
 
-    if (!res.ok) {
-      console.error(`Failed to fetch Youtube videos: ${res.statusText}`);
-      return [];
-    }
+    if (!res.ok)
+      throw new Error(`Failed to fetch Youtube videos: ${res.statusText}`);
 
     const data = await res.json();
 
@@ -32,7 +23,7 @@ export async function fetchYoutubeLatestVideos() {
       last_fetched: new Date().toUTCString(),
     };
   } catch (err) {
-    console.error(err);
+    console.error("Error fetching Youtube videos", err);
     return [];
   }
 }

@@ -1,4 +1,4 @@
-import AlgoliaSearch from "@/components/shared/AlgoliaSearch";
+import AlgoliaSearch from "@/components/common/AlgoliaSearch";
 import Button from "@/components/ui/Button";
 import Link from "next/link";
 

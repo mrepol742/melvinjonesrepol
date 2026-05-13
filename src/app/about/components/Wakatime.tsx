@@ -1,10 +1,7 @@
 import { fetchCurrentStats } from "@/lib/wakatime/stat";
 import { faLinux } from "@fortawesome/free-brands-svg-icons";
-import { faEdit, faFile, faLaptop } from "@fortawesome/free-solid-svg-icons";
+import { faLaptop } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "devicon/devicon.min.css";
-import Link from "next/link";
-import Button from "@/components/ui/Button";
 
 function formatHours(seconds: number) {
   return (seconds / 3600).toFixed(1);
@@ -17,7 +14,7 @@ function formatPct(value?: number | string) {
   return `${n.toFixed(1)}%`;
 }
 
-export async function WakatimeSection() {
+export default async function Wakatime() {
   const stats = await fetchCurrentStats();
 
   if (!stats) return null;
