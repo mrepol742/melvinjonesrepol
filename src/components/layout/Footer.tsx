@@ -10,7 +10,7 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import Image from "next/image";
-import TrustPilotWidget from "./TrustPilotWidget";
+import TrustPilotWidget from "../common/TrustPilotWidget";
 
 export default function Footer({
   posts,

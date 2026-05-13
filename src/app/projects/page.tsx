@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import ProjectSection from "@/components/features/projects/ProjectSection";
+import Project from "@/app/projects/components/Project";
 
 export const metadata: Metadata = {
   title: "Projects - Melvin Jones Repol",
@@ -59,5 +59,5 @@ export default async function Projects({
     : sParams.q || "";
 
 
-  return <ProjectSection query={query} />;
+  return <Project query={query} />;
 }

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { fetchSteamLibrary, GameType } from "@/lib/steam/library";
 import SearchForm from "@/components/ui/SearchForm";
-import GameCard from "@/components/features/game/GameCard";
+import GameCard from "@/app/gaming/components/GameCard";
 
 export const metadata: Metadata = {
   title: "Gaming - Melvin Jones Repol",

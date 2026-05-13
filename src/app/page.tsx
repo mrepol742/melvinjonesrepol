@@ -1,7 +1,7 @@
 import Link from "next/link";
-import ServicesCarousel from "@/components/features/home/Technologies";
-import Project from "@/components/features/home/Project";
-import ClientFeedback from "@/components/features/home/ClientFeedback";
+import ServicesCarousel from "@/app/components/Technologies";
+import Project from "@/app/components/Project";
+import ClientFeedback from "@/app/components/ClientFeedback";
 
 export default function Home() {
   const person = {

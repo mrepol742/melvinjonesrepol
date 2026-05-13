@@ -2,10 +2,10 @@ import projects, { Templates } from "@/lib/projects";
 import SearchForm from "@/components/ui/SearchForm";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Button from "@/components/ui/Button";
-import ProjectCard from "@/components/features/projects/ProjectCard";
+import ProjectCard from "@/app/projects/components/ProjectCard";
 import Link from "next/link";
 
-export default async function ProjectSection({ query }: { query: string }) {
+export default async function Project({ query }: { query: string }) {
   const filteredProjects = projects.filter(
     (project) =>
       project.title.toLowerCase().includes(query) ||

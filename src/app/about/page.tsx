@@ -3,17 +3,17 @@ import Link from "next/link";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faCode as faCodeSolid } from "@fortawesome/free-solid-svg-icons";
 import Button from "@/components/ui/Button";
-import Steam from "@/components/features/about/Steam";
-import Wakatime from "@/components/features/about/Wakatime";
-import RecentGithubActivityWrapper from "@/components/features/about/RecentGithubActivityWrapper";
-import RecentGithubActivity from "@/components/features/about/RecentGithubActivity";
-import Youtube from "@/components/features/about/Youtube";
-import SecurityPractices from "@/components/features/about/SecurityPractices";
-import AI from "@/components/features/about/AI";
-import Blog from "@/components/features/about/Blog";
-import Certificate from "@/components/features/about/Certificate";
-import EngineeringPhilosophy from "@/components/features/about/EngineeringPhilosophy";
-import Github from "@/components/features/home/Github";
+import Steam from "@/app/about/components/Steam";
+import Wakatime from "@/app/about/components/Wakatime";
+import RecentGithubActivityWrapper from "@/app/about/components/RecentGithubActivityWrapper";
+import RecentGithubActivity from "@/app/about/components/RecentGithubActivity";
+import Youtube from "@/app/about/components/Youtube";
+import SecurityPractices from "@/app/about/components/SecurityPractices";
+import AI from "@/app/about/components/AI";
+import Blog from "@/app/about/components/Blog";
+import Certificate from "@/app/about/components/Certificate";
+import EngineeringPhilosophy from "@/app/about/components/EngineeringPhilosophy";
+import Github from "@/app/components/Github";
 
 export default function About() {
   return (
