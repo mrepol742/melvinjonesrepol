@@ -238,14 +238,26 @@ export default function Home() {
           <div className="relative py-10 md:py-16 overflow-hidden">
             <div className="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-6">
-                <div className="rounded-2xl border p-6 md:p-7">
-                  <p className="text-xs uppercase tracking-widest mb-3">
+                <div
+                  className="rounded-2xl border p-6 md:p-7"
+                  data-aos="fade-up"
+                >
+                  <p
+                    className="text-xs uppercase tracking-widest mb-3"
+                    data-aos="fade-up"
+                  >
                     Budget‑Aligned Delivery
                   </p>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-3">
+                  <h3
+                    className="text-2xl md:text-3xl font-bold mb-3"
+                    data-aos="fade-up"
+                  >
                     We match infrastructure to budget and demand.
                   </h3>
-                  <p className="text-sm md:text-base leading-relaxed">
+                  <p
+                    className="text-sm md:text-base leading-relaxed"
+                    data-aos="fade-up"
+                  >
                     I don’t force expensive stacks. I choose hosting and system
                     design based on your budget, expected traffic, and risk
                     tolerance — then define the stack that delivers the best
@@ -253,13 +265,22 @@ export default function Home() {
                   </p>
 
                   <div className="mt-5 flex flex-wrap gap-2">
-                    <span className="text-xs rounded-full border px-3 py-1">
+                    <span
+                      className="text-xs rounded-full border px-3 py-1"
+                      data-aos="fade-up"
+                    >
                       Cost‑first planning
                     </span>
-                    <span className="text-xs rounded-full border px-3 py-1">
+                    <span
+                      className="text-xs rounded-full border px-3 py-1"
+                      data-aos="fade-up"
+                    >
                       Performance‑aware
                     </span>
-                    <span className="text-xs rounded-full border px-3 py-1">
+                    <span
+                      className="text-xs rounded-full border px-3 py-1"
+                      data-aos="fade-up"
+                    >
                       Scales when needed
                     </span>
                   </div>
@@ -273,38 +294,61 @@ export default function Home() {
                   <div className="space-y-6">
                     <div className="pl-6 relative">
                       <span className="absolute -left-1 top-1 h-2.5 w-2.5 rounded-full border bg-white dark:bg-black" />
-                      <p className="text-sm font-semibold">Shared Hosting</p>
-                      <p className="text-xs uppercase tracking-wider">
+                      <p className="text-sm font-semibold" data-aos="fade-up">
+                        Shared Hosting
+                      </p>
+                      <p
+                        className="text-xs uppercase tracking-wider"
+                        data-aos="fade-up"
+                      >
                         Lean MVPs · Lowest overhead
                       </p>
                     </div>
 
                     <div className="pl-6 relative">
                       <span className="absolute -left-1 top-1 h-2.5 w-2.5 rounded-full border bg-white dark:bg-black" />
-                      <p className="text-sm font-semibold">VPS</p>
-                      <p className="text-xs uppercase tracking-wider">
+                      <p className="text-sm font-semibold" data-aos="fade-up">
+                        VPS
+                      </p>
+                      <p
+                        className="text-xs uppercase tracking-wider"
+                        data-aos="fade-up"
+                      >
                         Balance of cost and control
                       </p>
                     </div>
 
                     <div className="pl-6 relative">
                       <span className="absolute -left-1 top-1 h-2.5 w-2.5 rounded-full border bg-white dark:bg-black" />
-                      <p className="text-sm font-semibold">Dedicated Hosting</p>
-                      <p className="text-xs uppercase tracking-wider">
+                      <p className="text-sm font-semibold" data-aos="fade-up">
+                        Dedicated Hosting
+                      </p>
+                      <p
+                        className="text-xs uppercase tracking-wider"
+                        data-aos="fade-up"
+                      >
                         Full control, dedicated resources
                       </p>
                     </div>
 
                     <div className="pl-6 relative">
                       <span className="absolute -left-1 top-1 h-2.5 w-2.5 rounded-full border bg-white dark:bg-black" />
-                      <p className="text-sm font-semibold">Cloud</p>
-                      <p className="text-xs uppercase tracking-wider">
+                      <p className="text-sm font-semibold" data-aos="fade-up">
+                        Cloud
+                      </p>
+                      <p
+                        className="text-xs uppercase tracking-wider"
+                        data-aos="fade-up"
+                      >
                         Scale, reliability, enterprise needs
                       </p>
                     </div>
                   </div>
 
-                  <div className="mt-6 text-xs uppercase tracking-widest">
+                  <div
+                    className="mt-6 ms-10 text-xs uppercase tracking-widest"
+                    data-aos="fade-up"
+                  >
                     Decision based on budget + users + risk
                   </div>
                 </div>
