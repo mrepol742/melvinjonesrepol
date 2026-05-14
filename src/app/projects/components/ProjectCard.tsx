@@ -60,18 +60,15 @@ export default function ProjectCard({
           </div>
         )}
 
-        {cover && (
-          <Link href={link || "#"}>
-            <div className="relative w-full h-48 rounded-t-2xl overflow-hidden">
-              <Image
-                src={cover}
-                alt={title}
-                fill
-                className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-          </Link>
-        )}
+        <div className="relative w-full h-48 rounded-t-2xl overflow-hidden">
+          <Image
+            src={cover ?? "/images/melvinjonesrepol.cover.png"}
+            alt={title}
+            fill
+            className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+
         <div className="p-6 flex flex-col flex-1">
           <Link href={link || "#"}>
             <h5 className="mt-2 mb-4 text-xl font-semibold tracking-tight">

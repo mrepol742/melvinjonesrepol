@@ -6,14 +6,34 @@ import ProjectCard from "@/app/projects/components/ProjectCard";
 import Link from "next/link";
 
 export default async function Project({ query }: { query: string }) {
-  const filteredProjects = projects.filter(
-    (project) =>
-      project.title.toLowerCase().includes(query) ||
-      project.technology.some((tech) =>
-        tech.toLowerCase().includes(query.toLowerCase()),
-      ) ||
-      project.description.toLowerCase().includes(query),
-  );
+  const q = query.toLowerCase();
+
+  const filteredProjects = projects
+    .filter(
+      (project) =>
+        project.title.toLowerCase().includes(q) ||
+        project.technology.some((tech) => tech.toLowerCase().includes(q)) ||
+        project.description.toLowerCase().includes(q),
+    )
+    .sort((a, b) => {
+      // priority score system
+      const score = (p: any) => {
+        let s = 0;
+
+        // highest priority: featured
+        if (p.featured) s += 3;
+
+        // second priority: client type
+        if (p.type === "client") s += 2;
+
+        // third: venture (optional extra logic)
+        if (p.type === "venture") s += 1;
+
+        return s;
+      };
+
+      return score(b) - score(a);
+    });
 
   return (
     <main className="my-18 p-3 md:p-8">
