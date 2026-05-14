@@ -185,6 +185,83 @@ export default function Home() {
             <ClientFeedback />
           </div>
 
+          <div className="relative py-10 md:py-16 overflow-hidden">
+            <div className="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-6">
+                <div className="rounded-2xl border p-6 md:p-7">
+                  <p className="text-xs uppercase tracking-widest mb-3">
+                    Budget‑Aligned Delivery
+                  </p>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-3">
+                    We match infrastructure to budget and demand.
+                  </h3>
+                  <p className="text-sm md:text-base leading-relaxed">
+                    I don’t force expensive stacks. I choose hosting and system
+                    design based on your budget, expected traffic, and risk
+                    tolerance — then define the stack that delivers the best
+                    output for the least cost.
+                  </p>
+
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    <span className="text-xs rounded-full border px-3 py-1">
+                      Cost‑first planning
+                    </span>
+                    <span className="text-xs rounded-full border px-3 py-1">
+                      Performance‑aware
+                    </span>
+                    <span className="text-xs rounded-full border px-3 py-1">
+                      Scales when needed
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="lg:col-span-6">
+                <div className="relative p-6 md:p-7">
+                  <div className="absolute left-6 top-6 bottom-6 w-px border-l" />
+
+                  <div className="space-y-6">
+                    <div className="pl-6 relative">
+                      <span className="absolute -left-1 top-1 h-2.5 w-2.5 rounded-full border bg-white dark:bg-black" />
+                      <p className="text-sm font-semibold">Shared Hosting</p>
+                      <p className="text-xs uppercase tracking-wider">
+                        Lean MVPs · Lowest overhead
+                      </p>
+                    </div>
+
+                    <div className="pl-6 relative">
+                      <span className="absolute -left-1 top-1 h-2.5 w-2.5 rounded-full border bg-white dark:bg-black" />
+                      <p className="text-sm font-semibold">VPS</p>
+                      <p className="text-xs uppercase tracking-wider">
+                        Balance of cost and control
+                      </p>
+                    </div>
+
+                    <div className="pl-6 relative">
+                      <span className="absolute -left-1 top-1 h-2.5 w-2.5 rounded-full border bg-white dark:bg-black" />
+                      <p className="text-sm font-semibold">Dedicated Hosting</p>
+                      <p className="text-xs uppercase tracking-wider">
+                        Full control, dedicated resources
+                      </p>
+                    </div>
+
+                    <div className="pl-6 relative">
+                      <span className="absolute -left-1 top-1 h-2.5 w-2.5 rounded-full border bg-white dark:bg-black" />
+                      <p className="text-sm font-semibold">Cloud</p>
+                      <p className="text-xs uppercase tracking-wider">
+                        Scale, reliability, enterprise needs
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 text-xs uppercase tracking-widest">
+                    Decision based on budget + users + risk
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="relative py-14 md:py-28 overflow-hidden">
             <div className="mx-auto max-w-4xl text-center">
               <p
