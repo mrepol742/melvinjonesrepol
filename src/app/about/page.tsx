@@ -14,6 +14,44 @@ import Blog from "@/app/about/components/Blog";
 import Certificate from "@/app/about/components/Certificate";
 import EngineeringPhilosophy from "@/app/about/components/EngineeringPhilosophy";
 import Github from "@/app/components/Github";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About - Melvin Jones Repol",
+  description:
+    "I partner with teams to build practical, scalable software that improves delivery speed, reduces operational costs, and keeps systems stable in production.",
+  keywords: ["about", "melvin jones repol"],
+  alternates: {
+    canonical: "https://www.melvinjonesrepol.com/about",
+  },
+  openGraph: {
+    title: "About - Melvin Jones Repol",
+    description:
+      "I partner with teams to build practical, scalable software that improves delivery speed, reduces operational costs, and keeps systems stable in production.",
+    url: "https://www.melvinjonesrepol.com/about",
+    siteName: "Melvin Jones Repol",
+    images: [
+      {
+        url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+        width: 1200,
+        height: 630,
+        alt: "About Cover",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About - Melvin Jones Repol",
+    description:
+      "I partner with teams to build practical, scalable software that improves delivery speed, reduces operational costs, and keeps systems stable in production.",
+    images: [
+      "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+    ],
+    creator: "@mrepol742",
+  },
+};
 
 export default function About() {
   return (

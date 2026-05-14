@@ -1,26 +1,61 @@
 import AlgoliaSearch from "@/components/common/AlgoliaSearch";
-import Button from "@/components/ui/Button";
-import Link from "next/link";
+import { Metadata } from "next";
 
-const quotes = [
-  "The page you seek has been eaten by a bug.",
-  "404: Page not found. But at least the coffee machine still works.",
-  "Looks like this page rage-quit.",
-  "This page is on vacation. Try again later.",
-  "Oops. Even the best developers ship 404s.",
-  "The link you followed is more lost than my semicolons.",
-  "This page escaped into production.",
-  "404: The developer responsible has been notified (probably).",
-  "This page doesn't exist... yet.",
-  "Looks like you found a secret level. Unfortunately it's empty.",
-  "Error 404: Brain not found.",
-  "The page is missing, but the portfolio is still awesome.",
-  "This URL took a wrong turn at the router.",
-  "Even Google can't find this one.",
-  "The page you’re looking for has been refactored into oblivion.",
-];
+export const metadata: Metadata = {
+  title: "404 Not Found - Melvin Jones Repol",
+  description:
+    "The page you are looking for does not exist. But at least the coffee machine still works.",
+  keywords: [],
+  alternates: {
+    canonical: "https://www.melvinjonesrepol.com",
+  },
+  openGraph: {
+    title: "404 Not Found  - Melvin Jones Repol",
+    description:
+      "The page you are looking for does not exist. But at least the coffee machine still works.",
+    url: "https://www.melvinjonesrepol.com",
+    siteName: "Melvin Jones Repol",
+    images: [
+      {
+        url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+        width: 1200,
+        height: 630,
+        alt: "404 Not Found  Cover",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "404 Not Found  - Melvin Jones Repol",
+    description:
+      "The page you are looking for does not exist. But at least the coffee machine still works.",
+    images: [
+      "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+    ],
+    creator: "@mrepol742",
+  },
+};
 
 export default function NotFound() {
+  const quotes = [
+    "The page you seek has been eaten by a bug.",
+    "404: Page not found. But at least the coffee machine still works.",
+    "Looks like this page rage-quit.",
+    "This page is on vacation. Try again later.",
+    "Oops. Even the best developers ship 404s.",
+    "The link you followed is more lost than my semicolons.",
+    "This page escaped into production.",
+    "404: The developer responsible has been notified (probably).",
+    "This page doesn't exist... yet.",
+    "Looks like you found a secret level. Unfortunately it's empty.",
+    "Error 404: Brain not found.",
+    "The page is missing, but the portfolio is still awesome.",
+    "This URL took a wrong turn at the router.",
+    "Even Google can't find this one.",
+    "The page you’re looking for has been refactored into oblivion.",
+  ];
   const quote = quotes[Math.floor(Math.random() * quotes.length)];
 
   return (

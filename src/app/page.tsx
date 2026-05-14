@@ -2,6 +2,56 @@ import Link from "next/link";
 import ServicesCarousel from "@/app/components/Technologies";
 import Project from "@/app/components/Project";
 import ClientFeedback from "@/app/components/ClientFeedback";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home - Melvin Jones Repol",
+  description:
+    "I help teams deliver reliable software that saves time and money. From discovery to production support, my focus is output, stability, and ROI — not just code.",
+  keywords: [
+    "software development",
+    "web development",
+    "full-stack development",
+    "wordpress development",
+    "wix development",
+    "website migration",
+    "static site generation",
+    "landing page",
+    "portfolio",
+  ],
+  alternates: {
+    canonical: "https://www.melvinjonesrepol.com",
+  },
+  openGraph: {
+    title: "Home - Melvin Jones Repol",
+    description:
+      "I help teams deliver reliable software that saves time and money. From discovery to production support, my focus is output, stability, and ROI — not just code.",
+
+    url: "https://www.melvinjonesrepol.com",
+    siteName: "Melvin Jones Repol",
+    images: [
+      {
+        url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+        width: 1200,
+        height: 630,
+        alt: "Home Cover",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Home - Melvin Jones Repol",
+    description:
+      "I help teams deliver reliable software that saves time and money. From discovery to production support, my focus is output, stability, and ROI — not just code.",
+
+    images: [
+      "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+    ],
+    creator: "@mrepol742",
+  },
+};
 
 export default function Home() {
   const person = {
