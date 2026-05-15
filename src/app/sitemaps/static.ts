@@ -4,6 +4,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: "https://www.melvinjonesrepol.com",
+      changeFrequency: "weekly",
+      priority: 1.0,
     },
     {
       url: "https://go.melvinjonesrepol.com",
@@ -16,12 +18,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://wakatime.melvinjonesrepol.com",
+      changeFrequency: "daily",
     },
     {
       url: "https://www.melvinjonesrepol.com/blog",
+      changeFrequency: "weekly",
+    },
+    {
+      url: "https://www.melvinjonesrepol.com/llms.md",
+      changeFrequency: "weekly",
     },
     {
       url: "https://www.melvinjonesrepol.com/projects",
+      changeFrequency: "monthly",
     },
     {
       url: "https://www.melvinjonesrepol.com/ulisha-store-laravel",
@@ -67,6 +76,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://www.melvinjonesrepol.com/about",
+      changeFrequency: "daily",
     },
     {
       url: "https://www.melvinjonesrepol.com/certificates",
