@@ -1,8 +1,28 @@
 /* eslint-disable no-restricted-globals */
 
-const IMAGE_CACHE = "image-cache-v1";
-const FONT_CACHE = "font-cache-v1";
-const STATIC_CACHE = "static-cache-v1";
+const IMAGE_CACHE = "image-cache-v2";
+const FONT_CACHE = "font-cache-v2";
+const STATIC_CACHE = "static-cache-v2";
+
+const MAX_ENTRIES = 80;
+const NETWORK_TIMEOUT_MS = 2500;
+
+const CORE_ASSETS = [
+  "/",
+  "/favicon.ico",
+  "/favicon-16x16.png",
+  "/favicon-32x32.png",
+  "/apple-touch-icon.png",
+  "/android-chrome-192x192",
+  "/android-chrome-512x512",
+];
+
+self.addEventListener("install", (event) => {
+  event.waitUntil(
+    caches.open(STATIC_CACHE).then((cache) => cache.addAll(CORE_ASSETS)),
+  );
+  self.skipWaiting();
+});
 
 self.addEventListener("activate", (event) => {
   event.waitUntil(
@@ -27,7 +47,7 @@ self.addEventListener("fetch", (event) => {
     request.destination === "image" ||
     /\.(png|jpe?g|gif|webp|svg|avif)$/i.test(request.url)
   ) {
-    event.respondWith(cacheFirst(request, IMAGE_CACHE));
+    event.respondWith(staleWhileRevalidate(request, IMAGE_CACHE));
     return;
   }
 
@@ -35,24 +55,57 @@ self.addEventListener("fetch", (event) => {
     request.destination === "font" ||
     /\.(woff2?|ttf|otf)$/i.test(request.url)
   ) {
-    event.respondWith(cacheFirst(request, FONT_CACHE));
+    event.respondWith(staleWhileRevalidate(request, FONT_CACHE));
     return;
   }
 
   if (request.url.includes("/_next/static/")) {
-    event.respondWith(cacheFirst(request, STATIC_CACHE));
+    event.respondWith(staleWhileRevalidate(request, STATIC_CACHE));
     return;
   }
 });
 
-async function cacheFirst(request, cacheName) {
+async function staleWhileRevalidate(request, cacheName) {
   const cache = await caches.open(cacheName);
   const cached = await cache.match(request);
-  if (cached) return cached;
 
-  const response = await fetch(request);
-  if (response.ok) {
-    cache.put(request, response.clone());
-  }
-  return response;
+  const fetchPromise = fetchWithTimeout(request, NETWORK_TIMEOUT_MS)
+    .then((response) => {
+      if (response && response.ok) {
+        cache.put(request, response.clone());
+        trimCache(cacheName, MAX_ENTRIES);
+      }
+      return response;
+    })
+    .catch(() => cached);
+
+  return cached || fetchPromise;
+}
+
+async function fetchWithTimeout(request, timeoutMs) {
+  return new Promise((resolve, reject) => {
+    const timer = setTimeout(
+      () => reject(new Error("Network timeout")),
+      timeoutMs,
+    );
+
+    fetch(request)
+      .then((response) => {
+        clearTimeout(timer);
+        resolve(response);
+      })
+      .catch((err) => {
+        clearTimeout(timer);
+        reject(err);
+      });
+  });
+}
+
+async function trimCache(cacheName, maxEntries) {
+  const cache = await caches.open(cacheName);
+  const keys = await cache.keys();
+  if (keys.length <= maxEntries) return;
+
+  await cache.delete(keys[0]);
+  return trimCache(cacheName, maxEntries);
 }
