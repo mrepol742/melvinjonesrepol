@@ -23,6 +23,7 @@
     "disqus-react": "^1.1.7",
     "gray-matter": "^4.0.3",
     "next": "^16.2.3",
+    "next-intl": "^4.12.0",
     "next-mdx-remote": "^6.0.0",
     "nextjs-toploader": "^3.8.16",
     "nodemailer": "^8.0.5",

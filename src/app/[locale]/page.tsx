@@ -1,8 +1,9 @@
 import Link from "next/link";
-import ServicesCarousel from "@/app/components/Technologies";
-import Project from "@/app/components/Project";
-import ClientFeedback from "@/app/components/ClientFeedback";
+import ServicesCarousel from "@/app/[locale]/components/Technologies";
+import Project from "@/app/[locale]/components/Project";
+import ClientFeedback from "@/app/[locale]/components/ClientFeedback";
 import { Metadata } from "next";
+import { useTranslations } from "next-intl";
 
 export const metadata: Metadata = {
   title: "Home - Melvin Jones Repol",
@@ -54,6 +55,8 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const t = useTranslations("test");
+
   const person = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -106,6 +109,9 @@ export default function Home() {
               <div className="md:text-left md:max-w-2xl">
                 <div className="inline-flex px-4 py-1 mb-6 text-sm font-medium rounded-full border">
                   Business-Focused Software Partner
+                </div>
+                <div className="ms-3 inline-flex items-center gap-2 px-4 py-1 mb-6 text-sm font-medium rounded-full border">
+                  {t("hello_world")}
                 </div>
 
                 <h1 className="text-3xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">

@@ -1,4 +1,4 @@
-import UserAgentTool from "@/app/tools/components/UserAgent";
+import UserAgentTool from "@/app/[locale]/tools/components/UserAgent";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

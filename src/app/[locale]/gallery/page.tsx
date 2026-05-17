@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import GalleryComponent from "@/app/gallery/gallery/Gallery";
+import GalleryComponent from "@/app/[locale]/gallery/gallery/Gallery";
 
 export const metadata: Metadata = {
   title: "Gallery - Melvin Jones Repol",

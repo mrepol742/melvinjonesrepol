@@ -3,17 +3,17 @@ import Link from "next/link";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faCode as faCodeSolid } from "@fortawesome/free-solid-svg-icons";
 import Button from "@/components/ui/Button";
-import Steam from "@/app/about/components/Steam";
-import Wakatime from "@/app/about/components/Wakatime";
-import RecentGithubActivityWrapper from "@/app/about/components/RecentGithubActivityWrapper";
-import RecentGithubActivity from "@/app/about/components/RecentGithubActivity";
-import Youtube from "@/app/about/components/Youtube";
-import SecurityPractices from "@/app/about/components/SecurityPractices";
-import AI from "@/app/about/components/AI";
-import Blog from "@/app/about/components/Blog";
-import Certificate from "@/app/about/components/Certificate";
-import EngineeringPhilosophy from "@/app/about/components/EngineeringPhilosophy";
-import Github from "@/app/components/Github";
+import Steam from "@/app/[locale]/about/components/Steam";
+import Wakatime from "@/app/[locale]/about/components/Wakatime";
+import RecentGithubActivityWrapper from "@/app/[locale]/about/components/RecentGithubActivityWrapper";
+import RecentGithubActivity from "@/app/[locale]/about/components/RecentGithubActivity";
+import Youtube from "@/app/[locale]/about/components/Youtube";
+import SecurityPractices from "@/app/[locale]/about/components/SecurityPractices";
+import AI from "@/app/[locale]/about/components/AI";
+import Blog from "@/app/[locale]/about/components/Blog";
+import Certificate from "@/app/[locale]/about/components/Certificate";
+import EngineeringPhilosophy from "@/app/[locale]/about/components/EngineeringPhilosophy";
+import Github from "@/app/[locale]/components/Github";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

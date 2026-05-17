@@ -1,4 +1,4 @@
-import OpenGraphTool from "@/app/tools/components/OpenGraph";
+import OpenGraphTool from "@/app/[locale]/tools/components/OpenGraph";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

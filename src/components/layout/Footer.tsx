@@ -9,14 +9,56 @@ import {
   faSteam,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import Image from "next/image";
 import TrustPilotWidget from "../common/TrustPilotWidget";
+import { useLocale } from "next-intl";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Footer({
   posts,
 }: {
   posts: { slug: string; title: string }[];
 }) {
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const languages = [
+    { code: "en", label: "English", region: "Global", short: "EN" },
+    { code: "fil", label: "Filipino", region: "Philippines", short: "FIL" },
+    {
+      code: "cmn",
+      label: "中文 (Chinese)",
+      region: "China",
+      short: "ZH",
+    },
+    {
+      code: "es",
+      label: "Español (Spanish)",
+      region: "Latin America",
+      short: "ES",
+    },
+    {
+      code: "hi",
+      label: "हिंदी (Hindi)",
+      region: "India",
+      short: "HI",
+    },
+  ];
+
+  const handleLocaleChange = (nextLocale: string) => {
+    if (nextLocale === locale) return;
+
+    const normalizedPath = pathname.replace(
+      /^\/(en|fil|cmn|es|hi)(?=\/|$)/,
+      "",
+    );
+    const nextPath = `/${nextLocale}${normalizedPath || "/"}`;
+    console.log(nextPath)
+    // replace and refresh to ensure the new locale is applied immediately
+    router.replace(nextPath);
+    router.refresh();
+  };
+
   return (
     <footer
       className="bg-gray-900 text-gray-200 py-10 border-t border-gray-800"
@@ -374,34 +416,28 @@ export default function Footer({
               <p className="text-gray-400 text-sm">No recent posts.</p>
             )}
           </div>
-          {/* Socials */}
-          <div>
-            <h4 className="text-sm font-semibold mb-2 text-white">Sponsor</h4>
-            <iframe
-              src="https://github.com/sponsors/mrepol742/button"
-              title="Sponsor mrepol742"
-              height="32"
-              className="mb-2 transition-transform duration-200 hover:translate-x-1 hover:translate-y-1"
-              width="170"
-            ></iframe>
-            <Link href="https://ko-fi.com/F1F6EHA8F" target="_blank">
-              <Image
-                height="36"
-                width="170"
-                src="https://storage.ko-fi.com/cdn/kofi6.png?v=6"
-                className="mb-2 transition-transform duration-200 hover:translate-x-1 hover:translate-y-1"
-                alt="Buy Me a Coffee at ko-fi.com"
-              />
-            </Link>
-            <Link href="https://www.buymeacoffee.com/mrepol742">
-              <Image
-                alt="Buy me a coffee mrepol742"
-                height="36"
-                width="170"
-                className="transition-transform duration-200 hover:translate-x-1 hover:translate-y-1"
-                src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=mrepol742&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff"
-              />
-            </Link>
+
+          <div className="rounded-xl border border-gray-800/80 bg-gray-900/40 p-4">
+            <p className="text-xs uppercase tracking-widest text-gray-400 mb-3">
+              Language / Region
+            </p>
+            <div className="relative">
+              <select
+                value={locale}
+                onChange={(e) => handleLocaleChange(e.target.value)}
+                className="w-full appearance-none rounded-lg border border-gray-800 bg-gray-950/40 px-3 py-2 text-sm text-gray-200 focus:outline-none focus:ring-1 focus:ring-gray-500"
+                aria-label="Select language"
+              >
+                {languages.map((lang) => (
+                  <option key={lang.code} value={lang.code}>
+                    {lang.label} · {lang.region}
+                  </option>
+                ))}
+              </select>
+              <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-400">
+                ▼
+              </span>
+            </div>
           </div>
         </div>
         <div className="flex justify-between mt-10 border-t border-gray-800 pt-6 text-center text-xs text-gray-300">

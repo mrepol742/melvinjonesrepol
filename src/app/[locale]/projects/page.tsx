@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import Project from "@/app/projects/components/Project";
+import Project from "@/app/[locale]/projects/components/Project";
 
 export const metadata: Metadata = {
   title: "Projects - Melvin Jones Repol",
