@@ -71,5 +71,11 @@
       }
     },
     "view_certificate": "View Certificate"
+  },
+  "certificates": {
+    "title": "Professional Certificates",
+    "description": "A collection of professional certificates I have earned from various online courses, training programs, and technical learning platforms. These certifications showcase my continuous learning in web development, programming, and modern digital technologies.",
+    "no_results_found": "No results found.",
+    "view_certificate": "View Certificate"
   }
 }

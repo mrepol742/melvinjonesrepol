@@ -1,6 +1,7 @@
 import certificates from "@/lib/certificates";
 import { Metadata } from "next";
 import SearchForm from "@/components/ui/SearchForm";
+import { getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Certificates - Melvin Jones Repol",
@@ -58,6 +59,7 @@ export default async function CertificatesPage({
 }: {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
+  const t = await getTranslations("certificates");
   const sParams = await searchParams;
 
   const query = Array.isArray(sParams.q)
@@ -78,7 +80,7 @@ export default async function CertificatesPage({
           data-aos="fade-up"
           data-aos-delay="100"
         >
-          Professional Certificates & Certifications
+          {t("title")}
         </h1>
 
         <p
@@ -86,17 +88,14 @@ export default async function CertificatesPage({
           data-aos="fade-up"
           data-aos-delay="100"
         >
-          A collection of professional certificates I have earned from various
-          online courses, training programs, and technical learning platforms.
-          These certifications showcase my continuous learning in web
-          development, programming, and modern digital technologies.
+          {t("description")}
         </p>
 
         <SearchForm initialQuery={query} />
 
         {filteredCertificates.length === 0 ? (
           <div className="mt-8">
-            <h2>No results found.</h2>
+            <h2> {t("no_results_found")} </h2>
           </div>
         ) : (
           <div className="relative mt-12">
@@ -129,7 +128,7 @@ export default async function CertificatesPage({
                           rel="noopener noreferrer"
                           className="text-xs font-medium transition-colors flex items-center gap-1 underline underline-offset-2 hover:opacity-80"
                         >
-                          View Certificate &rarr;
+                          {t("view_certificate")}
                         </a>
                       </div>
                     )}
