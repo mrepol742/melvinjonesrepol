@@ -51,5 +51,25 @@
     "next_step_tag_outcome": "Outcome-driven",
     "next_step_tag_business": "Business-focused",
     "next_step_tag_reliable": "Reliable delivery"
+  },
+  "work_experience": {
+    "title": "Professional Work Experience",
+    "description": "A summary of my professional work experience, including the roles, responsibilities, and projects I have contributed to throughout my career in development and technology.",
+    "experience": {
+      "company_freelance": {
+        "company": "Freelance",
+        "title": "Software Engineer",
+        "date": "2021 - Present",
+        "description": "Delivered custom web and mobile applications for capstone students, business clients, and independent projects (public and private). Led the full software development lifecycle—from requirements gathering and system planning to design, development, and production deployment. Translated client needs into scalable, production-ready solutions and provided ongoing maintenance and improvements. Utilized technologies such as Laravel, React, Next.js, Node.js, Java and Kotlin to build efficient, user-focused applications aligned with business and project goals."
+      },
+      "company_apptrade": {
+        "company": "Apptrade Inc.",
+        "title": "IT Staff Intern",
+        "date": "April 2025 - June 2025 (250hrs)",
+        "description": "Incharge of maintaining the IT infrastructure, including hardware, software, and network. Responsible for troubleshooting technical issues, providing support to end-users, and ensuring the efficiency and reliability of the organization's IT system.",
+        "cert": "/certificates/internship-apptrade-inc.jpg"
+      }
+    },
+    "view_certificate": "View Certificate"
   }
 }

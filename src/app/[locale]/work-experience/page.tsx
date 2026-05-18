@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { useTranslations } from "next-intl";
 
 export const metadata: Metadata = {
   title: "Work Experience - Melvin Jones Repol",
@@ -51,21 +52,20 @@ export const metadata: Metadata = {
 };
 
 export default function WorkExperiencePage() {
+  const t = useTranslations("work_experience");
   const experiences = [
     {
-      company: "Freelance",
-      title: "Software Engineer",
-      date: "2021 - Present",
-      description:
-        "Delivered custom web and mobile applications for capstone students, business clients, and independent projects (public and private). Led the full software development lifecycle—from requirements gathering and system planning to design, development, and production deployment. Translated client needs into scalable, production-ready solutions and provided ongoing maintenance and improvements. Utilized technologies such as Laravel, React, Next.js, Node.js, Java and Kotlin to build efficient, user-focused applications aligned with business and project goals.",
+      company: t("experience.company_freelance.company"),
+      title: t("experience.company_freelance.title"),
+      date: t("experience.company_freelance.date"),
+      description: t("experience.company_freelance.description"),
     },
     {
-      company: "Apptrade Inc.",
-      title: "IT Staff Intern",
-      date: "April 2025 - June 2025 (250hrs)",
-      description:
-        "Incharge of maintaining the IT infrastructure, including hardware, software, and network. Responsible for troubleshooting technical issues, providing support to end-users, and ensuring the efficiency and reliability of the organization's IT system.",
-      cert: "/certificates/internship-apptrade-inc.jpg",
+      company: t("experience.company_apptrade.company"),
+      title: t("experience.company_apptrade.title"),
+      date: t("experience.company_apptrade.date"),
+      description: t("experience.company_apptrade.description"),
+      cert: t("experience.company_apptrade.cert"),
     },
   ];
 
@@ -73,16 +73,14 @@ export default function WorkExperiencePage() {
     <main className="my-18 p-3 md:p-8">
       <section>
         <h1 className="text-2xl font-semibold" data-aos="fade-up">
-          Professional Work Experience
+          {t("title")}
         </h1>
         <p
           className="mt-2 mb-10 opacity-90"
           data-aos="fade-up"
           data-aos-delay="100"
         >
-          A summary of my professional work experience, including the roles,
-          responsibilities, and projects I have contributed to throughout my
-          career in development and technology.
+          {t("description")}
         </p>
 
         <div className="relative mt-12">
@@ -118,7 +116,7 @@ export default function WorkExperiencePage() {
                         rel="noopener noreferrer"
                         className="text-xs font-medium transition-colors flex items-center gap-1 underline underline-offset-2 hover:opacity-80"
                       >
-                        View Certificate &rarr;
+                        {t("view_certificate")}
                       </a>
                     </div>
                   )}
