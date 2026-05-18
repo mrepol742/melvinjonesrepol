@@ -55,7 +55,7 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const t = useTranslations("test");
+  const t = useTranslations("home");
 
   const person = {
     "@context": "https://schema.org",
@@ -108,22 +108,20 @@ export default function Home() {
             <div className="relative w-full max-w-6xl mx-auto">
               <div className="md:text-left md:max-w-2xl">
                 <div className="inline-flex px-4 py-1 mb-6 text-sm font-medium rounded-full border">
-                  Business-Focused Software Partner
-                </div>
-                <div className="ms-3 inline-flex items-center gap-2 px-4 py-1 mb-6 text-sm font-medium rounded-full border">
-                  {t("hello_world")}
+                  {t("header_badge")}
                 </div>
 
                 <h1 className="text-3xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-                  Reduce costs.{" "}
-                  <span className="gradient-text">Ship faster.</span> <br />
-                  Lower operational risk.
+                  {t("header_title_reduce_costs")}
+                  <span className="gradient-text">
+                    {t("header_title_ship_faster")}
+                  </span>{" "}
+                  <br />
+                  {t("header_title_lower_risk")}
                 </h1>
 
                 <p className="max-w-2xl mx-auto md:mx-0 text-lg md:text-xl mb-10 leading-relaxed">
-                  I help teams deliver reliable software that saves time and
-                  money. From discovery to production support, my focus is
-                  output, stability, and ROI — not just code.
+                  {t("header_description")}
                 </p>
               </div>
 
@@ -131,36 +129,42 @@ export default function Home() {
                 <div className="rounded-2xl border border-black/10 dark:border-white/10 backdrop-blur-xl p-5 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.35)]">
                   <div className="flex items-center justify-between mb-4">
                     <p className="text-xs uppercase tracking-widest">
-                      Business Impact
+                      {t("business_impact")}
                     </p>
                     <span className="text-xs rounded-full border px-2 py-0.5">
-                      Enterprise-ready
+                      {t("enterprise_ready")}
                     </span>
                   </div>
 
                   <div className="space-y-4">
                     <div>
-                      <p className="text-sm font-semibold">Cost Optimization</p>
+                      <p className="text-sm font-semibold">
+                        {t("cost_optimization")}
+                      </p>
                       <p className="text-xs uppercase tracking-wider">
-                        Automate workflows, reduce waste
+                        {t("cost_optimization_description")}
                       </p>
                     </div>
 
                     <div className="h-px border-t border-black/10 dark:border-white/10" />
 
                     <div>
-                      <p className="text-sm font-semibold">Faster Delivery</p>
+                      <p className="text-sm font-semibold">
+                        {t("faster_delivery")}
+                      </p>
                       <p className="text-xs uppercase tracking-wider">
-                        Shorter cycles, clear milestones
+                        {t("faster_delivery_description")}
                       </p>
                     </div>
 
                     <div className="h-px border-t border-black/10 dark:border-white/10" />
 
                     <div>
-                      <p className="text-sm font-semibold">Risk Reduction</p>
+                      <p className="text-sm font-semibold">
+                        {t("risk_reduction")}
+                      </p>
                       <p className="text-xs uppercase tracking-wider">
-                        Stable systems, predictable releases
+                        {t("risk_reduction_description")}
                       </p>
                     </div>
                   </div>
@@ -175,17 +179,16 @@ export default function Home() {
                 className="text-sm font-semibold tracking-widest uppercase mb-3"
                 data-aos="fade-up"
               >
-                How I Help
+                {t("how_i_help")}
               </h4>
               <h2
                 className="text-3xl md:text-5xl font-bold leading-tight"
                 data-aos="fade-up"
               >
-                Practical delivery that aligns with business goals.
+                {t("how_i_help_title")}
               </h2>
               <p className="max-w-2xl mx-auto mt-4" data-aos="fade-up">
-                I work with owners and teams to remove bottlenecks, build
-                scalable systems, and deliver measurable outcomes.
+                {t("how_i_help_description")}{" "}
               </p>
             </div>
 
@@ -198,24 +201,24 @@ export default function Home() {
                 className="text-sm font-semibold tracking-widest uppercase mb-3"
                 data-aos="fade-up"
               >
-                Results &amp; Case Studies
+                {t("results_case_studies")}
               </h4>
               <h2
                 className="text-3xl md:text-4xl font-bold mb-4"
                 data-aos="fade-up"
               >
-                Work that drives outcomes
+                {t("work_that_drives_outcomes")}
               </h2>
               <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
-                A curated selection of projects focused on real-world impact:
-                improved operations, faster delivery, and tangible business
-                value.
+                {t("work_that_drives_outcomes_description")}
               </p>
             </div>
 
             <Project />
 
-            <span className="text-xs">Swipe left or right to see more...</span>
+            <span className="text-xs">
+              {t("swipe_left_or_right_to_see_more")}
+            </span>
           </div>
 
           <div className="relative py-14 md:py-28 overflow-hidden">
@@ -224,17 +227,16 @@ export default function Home() {
                 className="text-sm font-semibold tracking-widest uppercase mb-3"
                 data-aos="fade-up"
               >
-                Client Feedback
+                {t("client_feedback")}
               </h4>
               <h2
                 className="text-3xl md:text-4xl font-bold mb-4"
                 data-aos="fade-up"
               >
-                Trusted for delivery and reliability
+                {t("trusted_for_delivery_and_reliability")}
               </h2>
               <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
-                A collection of feedback and testimonials from clients and
-                collaborators highlighting results and execution quality.
+                {t("trusted_for_delivery_and_reliability_description")}
               </p>
             </div>
 
@@ -252,22 +254,19 @@ export default function Home() {
                     className="text-xs uppercase tracking-widest mb-3"
                     data-aos="fade-up"
                   >
-                    Budget‑Aligned Delivery
+                    {t("budget_aligned_delivery")}
                   </p>
                   <h3
                     className="text-2xl md:text-3xl font-bold mb-3"
                     data-aos="fade-up"
                   >
-                    We match infrastructure to budget and demand.
+                    {t("budget_title")}
                   </h3>
                   <p
                     className="text-sm md:text-base leading-relaxed"
                     data-aos="fade-up"
                   >
-                    I don’t force expensive stacks. I choose hosting and system
-                    design based on your budget, expected traffic, and risk
-                    tolerance — then define the stack that delivers the best
-                    output for the least cost.
+                    {t("budget_description")}
                   </p>
 
                   <div className="mt-5 flex flex-wrap gap-2">
@@ -275,19 +274,19 @@ export default function Home() {
                       className="text-xs rounded-full border px-3 py-1"
                       data-aos="fade-up"
                     >
-                      Cost‑first planning
+                      {t("budget_tag_cost_first")}
                     </span>
                     <span
                       className="text-xs rounded-full border px-3 py-1"
                       data-aos="fade-up"
                     >
-                      Performance‑aware
+                      {t("budget_tag_performance")}
                     </span>
                     <span
                       className="text-xs rounded-full border px-3 py-1"
                       data-aos="fade-up"
                     >
-                      Scales when needed
+                      {t("budget_tag_scales")}
                     </span>
                   </div>
                 </div>
@@ -301,52 +300,52 @@ export default function Home() {
                     <div className="pl-6 relative">
                       <span className="absolute -left-1 top-1 h-2.5 w-2.5 rounded-full border bg-white dark:bg-black" />
                       <p className="text-sm font-semibold" data-aos="fade-up">
-                        Shared Hosting
+                        {t("hosting_shared")}
                       </p>
                       <p
                         className="text-xs uppercase tracking-wider"
                         data-aos="fade-up"
                       >
-                        Lean MVPs · Lowest overhead
+                        {t("hosting_shared_desc")}
                       </p>
                     </div>
 
                     <div className="pl-6 relative">
                       <span className="absolute -left-1 top-1 h-2.5 w-2.5 rounded-full border bg-white dark:bg-black" />
                       <p className="text-sm font-semibold" data-aos="fade-up">
-                        VPS
+                        {t("hosting_vps")}
                       </p>
                       <p
                         className="text-xs uppercase tracking-wider"
                         data-aos="fade-up"
                       >
-                        Balance of cost and control
+                        {t("hosting_vps_desc")}
                       </p>
                     </div>
 
                     <div className="pl-6 relative">
                       <span className="absolute -left-1 top-1 h-2.5 w-2.5 rounded-full border bg-white dark:bg-black" />
                       <p className="text-sm font-semibold" data-aos="fade-up">
-                        Dedicated Hosting
+                        {t("hosting_dedicated")}
                       </p>
                       <p
                         className="text-xs uppercase tracking-wider"
                         data-aos="fade-up"
                       >
-                        Full control, dedicated resources
+                        {t("hosting_dedicated_desc")}
                       </p>
                     </div>
 
                     <div className="pl-6 relative">
                       <span className="absolute -left-1 top-1 h-2.5 w-2.5 rounded-full border bg-white dark:bg-black" />
                       <p className="text-sm font-semibold" data-aos="fade-up">
-                        Cloud
+                        {t("hosting_cloud")}
                       </p>
                       <p
                         className="text-xs uppercase tracking-wider"
                         data-aos="fade-up"
                       >
-                        Scale, reliability, enterprise needs
+                        {t("hosting_cloud_desc")}
                       </p>
                     </div>
                   </div>
@@ -355,7 +354,7 @@ export default function Home() {
                     className="mt-6 ms-10 text-xs uppercase tracking-widest"
                     data-aos="fade-up"
                   >
-                    Decision based on budget + users + risk
+                    {t("hosting_footer")}
                   </div>
                 </div>
               </div>
@@ -368,19 +367,16 @@ export default function Home() {
                 className="text-xs uppercase tracking-widest mb-3"
                 data-aos="fade-up"
               >
-                About
+                {t("about_label")}
               </p>
               <h2
                 className="text-3xl md:text-4xl font-bold mb-4"
                 data-aos="fade-up"
               >
-                The business partner behind the delivery
+                {t("about_title")}
               </h2>
               <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
-                Beyond shipping software, I focus on reducing operational costs,
-                improving delivery speed, and helping teams operate with less
-                risk. If you want the full background and working style, it’s
-                here.
+                {t("about_description")}
               </p>
 
               <Link
@@ -388,7 +384,7 @@ export default function Home() {
                 data-aos="fade-up"
                 className="inline-flex items-center rounded-full border px-4 py-2 text-sm font-medium hover:shadow-sm transition"
               >
-                Read the full story
+                {t("about_cta")}
               </Link>
             </div>
           </div>
@@ -402,30 +398,27 @@ export default function Home() {
                 <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 mb-4">
                   <span className="h-2 w-2 rounded-full border animate-pulse" />
                   <span className="text-xs font-medium tracking-wide uppercase">
-                    Next Step
+                    {t("next_step_label")}
                   </span>
                 </div>
 
                 <h3 className="text-2xl md:text-3xl font-bold mb-4 leading-tight">
-                  Ready to cut costs or ship faster?
+                  {t("next_step_title")}
                 </h3>
 
                 <p className="text-sm md:text-base leading-relaxed">
-                  If you have a product to build, a system to stabilize, or a
-                  process to automate, I’m open to discussing how we can deliver
-                  measurable results together. Reach out through any of the
-                  contact options above.
+                  {t("next_step_description")}
                 </p>
 
                 <div className="mt-6 flex flex-wrap items-center gap-3">
                   <span className="text-xs md:text-sm rounded-full border px-3 py-1">
-                    Outcome-driven
+                    {t("next_step_tag_outcome")}
                   </span>
                   <span className="text-xs md:text-sm rounded-full border px-3 py-1">
-                    Business-focused
+                    {t("next_step_tag_business")}
                   </span>
                   <span className="text-xs md:text-sm rounded-full border px-3 py-1">
-                    Reliable delivery
+                    {t("next_step_tag_reliable")}
                   </span>
                 </div>
               </div>

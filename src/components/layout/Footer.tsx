@@ -326,7 +326,7 @@ export default function Footer({
               </li>
               <li>
                 <Link
-                  href="https://hallofcodes.vercel.app"
+                  href="https://www.hallofcodes.org"
                   className="hover:text-orange-500 text-blue-400"
                 >
                   Hall of Codes
