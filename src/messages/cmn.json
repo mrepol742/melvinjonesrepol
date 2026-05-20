@@ -1,5 +1,81 @@
 {
   "test": {
-    "hello_world": "你好世界！"
+    "hello_world": "你好，世界！"
+  },
+  "home": {
+    "header_badge": "专注业务的软件合作伙伴",
+    "header_title_reduce_costs": "降低成本。",
+    "header_title_ship_faster": "更快交付。",
+    "header_title_lower_risk": "降低运营风险。",
+    "header_description": "我帮助团队交付可靠的软件，以节省时间和成本。从需求探索到生产支持，我关注的是成果、稳定性和投资回报，而不仅仅是代码。",
+    "business_impact": "业务影响",
+    "enterprise_ready": "企业级就绪",
+    "cost_optimization": "成本优化",
+    "cost_optimization_description": "自动化工作流程，减少浪费",
+    "faster_delivery": "更快交付",
+    "faster_delivery_description": "更短周期，明确里程碑",
+    "risk_reduction": "风险降低",
+    "risk_reduction_description": "稳定系统，可预测的发布",
+    "how_i_help": "我如何提供帮助",
+    "how_i_help_title": "与业务目标一致的务实交付。",
+    "how_i_help_description": "我与企业主和团队合作，消除瓶颈，构建可扩展系统，并交付可衡量的成果。",
+    "results_case_studies": "成果与案例研究",
+    "work_that_drives_outcomes": "推动成果的项目",
+    "work_that_drives_outcomes_description": "精选项目展示真实业务价值：改善运营、更快交付以及可见的业务成效。",
+    "swipe_left_or_right_to_see_more": "左右滑动查看更多...",
+    "client_feedback": "客户反馈",
+    "trusted_for_delivery_and_reliability": "因交付能力与可靠性而受到信赖",
+    "trusted_for_delivery_and_reliability_description": "来自客户与合作伙伴的反馈与评价，体现了成果与执行质量。",
+    "budget_aligned_delivery": "符合预算的交付",
+    "budget_title": "我们根据预算和需求匹配基础设施。",
+    "budget_description": "我不会强行使用昂贵的技术栈。我会根据您的预算、预期流量和风险承受能力选择托管与系统架构，并定义以最低成本实现最佳效果的技术方案。",
+    "budget_tag_cost_first": "成本优先规划",
+    "budget_tag_performance": "兼顾性能",
+    "budget_tag_scales": "按需扩展",
+    "hosting_shared": "共享主机",
+    "hosting_shared_desc": "精简 MVP · 最低成本",
+    "hosting_vps": "VPS",
+    "hosting_vps_desc": "成本与控制的平衡",
+    "hosting_dedicated": "独立服务器",
+    "hosting_dedicated_desc": "完全控制，专属资源",
+    "hosting_cloud": "云服务",
+    "hosting_cloud_desc": "可扩展性、可靠性、企业需求",
+    "hosting_footer": "根据预算 + 用户量 + 风险做出决策",
+    "about_label": "关于",
+    "about_title": "交付背后的业务合作伙伴",
+    "about_description": "除了交付软件，我还专注于降低运营成本、提升交付速度，并帮助团队以更低风险运作。如果您想了解完整背景与合作方式，都可以在这里查看。",
+    "about_cta": "阅读完整介绍",
+    "next_step_label": "下一步",
+    "next_step_title": "准备降低成本或加快交付了吗？",
+    "next_step_description": "如果您有产品需要开发、系统需要稳定，或流程需要自动化，我愿意讨论如何一起交付可衡量的成果。欢迎通过以上任意联系方式联系我。",
+    "next_step_tag_outcome": "结果导向",
+    "next_step_tag_business": "专注业务",
+    "next_step_tag_reliable": "可靠交付"
+  },
+  "work_experience": {
+    "title": "专业工作经历",
+    "description": "我的专业工作经历概述，包括我在开发与技术领域中担任的角色、职责以及参与的项目。",
+    "experience": {
+      "company_freelance": {
+        "company": "自由职业",
+        "title": "软件工程师",
+        "date": "2021年至今",
+        "description": "为毕业设计学生、企业客户以及独立项目（公开与私有）交付定制 Web 与移动应用。主导完整的软件开发生命周期——从需求收集、系统规划到设计、开发和生产部署。将客户需求转化为可扩展、可投入生产的解决方案，并提供持续维护与优化。使用 Laravel、React、Next.js、Node.js、Java 和 Kotlin 等技术，构建高效、以用户为中心并符合业务与项目目标的应用程序。"
+      },
+      "company_apptrade": {
+        "company": "Apptrade Inc.",
+        "title": "IT 实习员工",
+        "date": "2025年4月 - 2025年6月（250小时）",
+        "description": "负责维护 IT 基础设施，包括硬件、软件和网络。负责排查技术问题、为终端用户提供支持，并确保组织 IT 系统的效率与可靠性。",
+        "cert": "/certificates/internship-apptrade-inc.jpg"
+      }
+    },
+    "view_certificate": "查看证书"
+  },
+  "certificates": {
+    "title": "专业证书",
+    "description": "我从各类在线课程、培训项目和技术学习平台获得的专业证书合集。这些证书体现了我在 Web 开发、编程以及现代数字技术领域的持续学习。",
+    "no_results_found": "未找到结果。",
+    "view_certificate": "查看证书"
   }
 }

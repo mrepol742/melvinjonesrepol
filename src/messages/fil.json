@@ -1,5 +1,81 @@
 {
   "test": {
-    "hello_world": "Hello Mundo!"
+    "hello_world": "Kamusta, mundo!"
+  },
+  "home": {
+    "header_badge": "Kasosyong software na nakatuon sa negosyo",
+    "header_title_reduce_costs": "Bawasan ang gastos.",
+    "header_title_ship_faster": "Mas mabilis na pag-deliver.",
+    "header_title_lower_risk": "Bawasan ang panganib sa operasyon.",
+    "header_description": "Tinutulungan ko ang mga team na mag-deliver ng maaasahang software na nakakatipid ng oras at pera. Mula discovery hanggang production support, nakatuon ako sa resulta, stability, at ROI — hindi lang sa code.",
+    "business_impact": "Epekto sa Negosyo",
+    "enterprise_ready": "Handa para sa enterprise",
+    "cost_optimization": "Pag-optimize ng Gastos",
+    "cost_optimization_description": "I-automate ang mga workflow, bawasan ang sayang",
+    "faster_delivery": "Mas mabilis na delivery",
+    "faster_delivery_description": "Mas maiikling cycle, malinaw na milestones",
+    "risk_reduction": "Pagbawas ng Panganib",
+    "risk_reduction_description": "Matatag na sistema, inaasahang releases",
+    "how_i_help": "Paano Ako Tumulong",
+    "how_i_help_title": "Praktikal na delivery na nakaayon sa mga layunin ng negosyo.",
+    "how_i_help_description": "Nakikipagtulungan ako sa mga may-ari at team upang alisin ang mga bottleneck, bumuo ng scalable na mga sistema, at maghatid ng nasusukat na resulta.",
+    "results_case_studies": "Mga Resulta at Case Study",
+    "work_that_drives_outcomes": "Trabahong nagdadala ng resulta",
+    "work_that_drives_outcomes_description": "Isang piniling koleksyon ng mga proyekto na nakatuon sa totoong epekto: pinahusay na operasyon, mas mabilis na delivery, at tunay na halaga sa negosyo.",
+    "swipe_left_or_right_to_see_more": "Mag-swipe pakaliwa o pakanan para makakita pa...",
+    "client_feedback": "Feedback ng Kliyente",
+    "trusted_for_delivery_and_reliability": "Pinagkakatiwalaan sa delivery at pagiging maaasahan",
+    "trusted_for_delivery_and_reliability_description": "Isang koleksyon ng feedback at testimonial mula sa mga kliyente at katuwang na nagpapakita ng resulta at kalidad ng execution.",
+    "budget_aligned_delivery": "Delivery na nakaayon sa budget",
+    "budget_title": "Inaayon namin ang infrastructure sa budget at demand.",
+    "budget_description": "Hindi ako nagpapataw ng mamahaling stack. Pinipili ko ang hosting at system design batay sa iyong budget, inaasahang traffic, at risk tolerance — pagkatapos ay tinutukoy ang stack na nagbibigay ng pinakamahusay na resulta sa pinakamababang gastos.",
+    "budget_tag_cost_first": "Cost-first na pagpaplano",
+    "budget_tag_performance": "May pagtingin sa performance",
+    "budget_tag_scales": "Lumalaki kapag kinakailangan",
+    "hosting_shared": "Shared Hosting",
+    "hosting_shared_desc": "Lean MVPs · Pinakamababang overhead",
+    "hosting_vps": "VPS",
+    "hosting_vps_desc": "Balanse ng gastos at kontrol",
+    "hosting_dedicated": "Dedicated Hosting",
+    "hosting_dedicated_desc": "Buong kontrol, dedicated na resources",
+    "hosting_cloud": "Cloud",
+    "hosting_cloud_desc": "Scalability, reliability, at enterprise needs",
+    "hosting_footer": "Desisyon batay sa budget + users + risk",
+    "about_label": "Tungkol",
+    "about_title": "Ang business partner sa likod ng delivery",
+    "about_description": "Higit pa sa pag-deliver ng software, nakatuon ako sa pagbawas ng operational costs, pagpapabilis ng delivery, at pagtulong sa mga team na mag-operate nang mas mababa ang risk. Kung gusto mo ng buong background at paraan ng trabaho, nandito ito.",
+    "about_cta": "Basahin ang buong kwento",
+    "next_step_label": "Susunod na Hakbang",
+    "next_step_title": "Handa ka na bang magbawas ng gastos o magpabilis ng delivery?",
+    "next_step_description": "Kung may produkto kang bubuuin, sistemang kailangang patatagin, o prosesong kailangang i-automate, bukas akong makipag-usap kung paano tayo makakapaghatid ng nasusukat na resulta. Makipag-ugnayan sa pamamagitan ng alinmang contact option sa itaas.",
+    "next_step_tag_outcome": "Nakatuon sa resulta",
+    "next_step_tag_business": "Nakatuon sa negosyo",
+    "next_step_tag_reliable": "Maaasahang delivery"
+  },
+  "work_experience": {
+    "title": "Propesyonal na Karanasan sa Trabaho",
+    "description": "Isang buod ng aking propesyonal na karanasan sa trabaho, kabilang ang mga papel, responsibilidad, at proyektong aking nalahukan sa aking karera sa development at teknolohiya.",
+    "experience": {
+      "company_freelance": {
+        "company": "Freelance",
+        "title": "Software Engineer",
+        "date": "2021 - Kasalukuyan",
+        "description": "Naghatid ng custom na web at mobile applications para sa mga estudyante ng capstone, mga kliyenteng negosyo, at mga independent na proyekto (pampubliko at pribado). Pinangunahan ang buong software development lifecycle—mula sa pagkuha ng requirements at system planning hanggang sa design, development, at production deployment. Isinalin ang pangangailangan ng kliyente sa scalable at production-ready na mga solusyon at nagbigay ng tuloy-tuloy na maintenance at improvements. Gumamit ng mga teknolohiya tulad ng Laravel, React, Next.js, Node.js, Java, at Kotlin upang makabuo ng mahusay, user-focused na mga application na nakaayon sa layunin ng negosyo at proyekto."
+      },
+      "company_apptrade": {
+        "company": "Apptrade Inc.",
+        "title": "IT Intern",
+        "date": "Abril 2025 - Hunyo 2025 (250 oras)",
+        "description": "Responsable sa pagpapanatili ng IT infrastructure, kabilang ang hardware, software, at network. Tungkulin ang pag-troubleshoot ng technical issues, pagbibigay ng suporta sa end-users, at pagtiyak ng kahusayan at pagiging maaasahan ng IT system ng organisasyon.",
+        "cert": "/certificates/internship-apptrade-inc.jpg"
+      }
+    },
+    "view_certificate": "Tingnan ang Sertipiko"
+  },
+  "certificates": {
+    "title": "Mga Propesyonal na Sertipiko",
+    "description": "Isang koleksyon ng mga propesyonal na sertipiko na nakuha ko mula sa iba't ibang online courses, training programs, at technical learning platforms. Ipinapakita ng mga sertipikasyong ito ang aking patuloy na pag-aaral sa web development, programming, at modernong digital na teknolohiya.",
+    "no_results_found": "Walang nahanap na resulta.",
+    "view_certificate": "Tingnan ang Sertipiko"
   }
 }

@@ -1,5 +1,81 @@
 {
   "test": {
-    "hello_world": "¡Hola Mundo!"
+    "hello_world": "¡Hola, mundo!"
+  },
+  "home": {
+    "header_badge": "Socio de software enfocado en negocios",
+    "header_title_reduce_costs": "Reduce costos.",
+    "header_title_ship_faster": "Entrega más rápido.",
+    "header_title_lower_risk": "Reduce el riesgo operativo.",
+    "header_description": "Ayudo a los equipos a entregar software confiable que ahorra tiempo y dinero. Desde el descubrimiento hasta el soporte en producción, mi enfoque está en los resultados, la estabilidad y el ROI, no solo en el código.",
+    "business_impact": "Impacto Empresarial",
+    "enterprise_ready": "Listo para empresas",
+    "cost_optimization": "Optimización de costos",
+    "cost_optimization_description": "Automatiza flujos de trabajo, reduce desperdicios",
+    "faster_delivery": "Entrega más rápida",
+    "faster_delivery_description": "Ciclos más cortos, hitos claros",
+    "risk_reduction": "Reducción de riesgos",
+    "risk_reduction_description": "Sistemas estables, lanzamientos predecibles",
+    "how_i_help": "Cómo ayudo",
+    "how_i_help_title": "Entrega práctica alineada con los objetivos del negocio.",
+    "how_i_help_description": "Trabajo con propietarios y equipos para eliminar cuellos de botella, construir sistemas escalables y entregar resultados medibles.",
+    "results_case_studies": "Resultados y casos de estudio",
+    "work_that_drives_outcomes": "Trabajo que impulsa resultados",
+    "work_that_drives_outcomes_description": "Una selección curada de proyectos enfocados en impacto real: operaciones mejoradas, entregas más rápidas y valor empresarial tangible.",
+    "swipe_left_or_right_to_see_more": "Desliza a la izquierda o derecha para ver más...",
+    "client_feedback": "Comentarios de clientes",
+    "trusted_for_delivery_and_reliability": "Confiable por su entrega y fiabilidad",
+    "trusted_for_delivery_and_reliability_description": "Una colección de comentarios y testimonios de clientes y colaboradores que destacan resultados y calidad de ejecución.",
+    "budget_aligned_delivery": "Entrega alineada al presupuesto",
+    "budget_title": "Adaptamos la infraestructura al presupuesto y la demanda.",
+    "budget_description": "No impongo stacks costosos. Elijo el hosting y el diseño del sistema según tu presupuesto, el tráfico esperado y la tolerancia al riesgo, y luego defino la solución tecnológica que ofrece el mejor resultado al menor costo.",
+    "budget_tag_cost_first": "Planificación centrada en costos",
+    "budget_tag_performance": "Consciente del rendimiento",
+    "budget_tag_scales": "Escala cuando es necesario",
+    "hosting_shared": "Hosting Compartido",
+    "hosting_shared_desc": "MVPs ligeros · Menor costo operativo",
+    "hosting_vps": "VPS",
+    "hosting_vps_desc": "Equilibrio entre costo y control",
+    "hosting_dedicated": "Hosting Dedicado",
+    "hosting_dedicated_desc": "Control total, recursos dedicados",
+    "hosting_cloud": "Cloud",
+    "hosting_cloud_desc": "Escalabilidad, confiabilidad y necesidades empresariales",
+    "hosting_footer": "Decisión basada en presupuesto + usuarios + riesgo",
+    "about_label": "Acerca de",
+    "about_title": "El socio de negocio detrás de la entrega",
+    "about_description": "Más allá de entregar software, me enfoco en reducir costos operativos, mejorar la velocidad de entrega y ayudar a los equipos a operar con menos riesgo. Si quieres conocer la trayectoria completa y la forma de trabajo, está aquí.",
+    "about_cta": "Leer la historia completa",
+    "next_step_label": "Próximo paso",
+    "next_step_title": "¿Listo para reducir costos o entregar más rápido?",
+    "next_step_description": "Si tienes un producto para desarrollar, un sistema que estabilizar o un proceso que automatizar, estoy disponible para conversar sobre cómo podemos lograr resultados medibles juntos. Contáctame mediante cualquiera de las opciones anteriores.",
+    "next_step_tag_outcome": "Orientado a resultados",
+    "next_step_tag_business": "Enfocado en negocios",
+    "next_step_tag_reliable": "Entrega confiable"
+  },
+  "work_experience": {
+    "title": "Experiencia Profesional",
+    "description": "Un resumen de mi experiencia profesional, incluyendo los roles, responsabilidades y proyectos en los que he contribuido a lo largo de mi carrera en desarrollo y tecnología.",
+    "experience": {
+      "company_freelance": {
+        "company": "Freelance",
+        "title": "Ingeniero de Software",
+        "date": "2021 - Presente",
+        "description": "Desarrollé aplicaciones web y móviles personalizadas para estudiantes de proyectos de grado, clientes empresariales y proyectos independientes (públicos y privados). Lideré todo el ciclo de vida del desarrollo de software, desde la recopilación de requisitos y planificación del sistema hasta el diseño, desarrollo y despliegue en producción. Transformé las necesidades del cliente en soluciones escalables y listas para producción, además de proporcionar mantenimiento y mejoras continuas. Utilicé tecnologías como Laravel, React, Next.js, Node.js, Java y Kotlin para construir aplicaciones eficientes, centradas en el usuario y alineadas con los objetivos del negocio y del proyecto."
+      },
+      "company_apptrade": {
+        "company": "Apptrade Inc.",
+        "title": "Practicante de TI",
+        "date": "Abril 2025 - Junio 2025 (250 horas)",
+        "description": "Encargado de mantener la infraestructura de TI, incluyendo hardware, software y red. Responsable de resolver problemas técnicos, brindar soporte a los usuarios finales y garantizar la eficiencia y confiabilidad de los sistemas de TI de la organización.",
+        "cert": "/certificates/internship-apptrade-inc.jpg"
+      }
+    },
+    "view_certificate": "Ver certificado"
+  },
+  "certificates": {
+    "title": "Certificados Profesionales",
+    "description": "Una colección de certificados profesionales obtenidos a través de cursos en línea, programas de formación y plataformas de aprendizaje técnico. Estas certificaciones reflejan mi aprendizaje continuo en desarrollo web, programación y tecnologías digitales modernas.",
+    "no_results_found": "No se encontraron resultados.",
+    "view_certificate": "Ver certificado"
   }
 }
