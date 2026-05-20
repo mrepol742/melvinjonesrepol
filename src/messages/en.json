@@ -2,6 +2,26 @@
   "test": {
     "hello_world": "Hello World!"
   },
+  "components": {
+    "nav": {
+      "nav_main_sections": "Main",
+      "nav_other_sections": "Explore",
+      "nav_menu": "Menu",
+      "nav_home": "Home",
+      "nav_projects": "Projects",
+      "nav_blog": "Blog",
+      "nav_gaming": "Gaming",
+      "nav_teams": "Teams",
+      "nav_certificates": "Certificates",
+      "nav_work_experience": "Work Experience",
+      "nav_gallery": "Gallery",
+      "nav_about": "About",
+      "nav_contact_me": "Contact Me",
+      "nav_toggle_theme": "Toggle Theme",
+      "nav_theme": "Theme",
+      "nav_toggle_appearance": "Toggle Appearance"
+    }
+  },
   "home": {
     "header_badge": "Business-Focused Software Partner",
     "header_title_reduce_costs": "Reduce costs.",

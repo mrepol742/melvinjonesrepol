@@ -20,63 +20,68 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import { useTheme } from "@/hooks/theme";
-
-const navItems = [
-  { key: "projects", label: "Projects", href: "/projects", icon: faFolder },
-  {
-    key: "blog",
-    label: "Blog",
-    href: "/blog",
-    icon: faBlog,
-    desktopOnly: true,
-    mobileMenu: true,
-  },
-  {
-    key: "gaming",
-    label: "Gaming",
-    href: "/gaming",
-    icon: faGamepad,
-    desktopOnly: true,
-    mobileMenu: true,
-  },
-  {
-    key: "teams",
-    label: "Teams",
-    href: "/teams",
-    icon: faUser,
-    desktopOnly: true,
-    mobileMenu: true,
-  },
-  {
-    key: "certificates",
-    label: "Certificates",
-    href: "/certificates",
-    icon: faCertificate,
-  },
-  {
-    key: "work-experience",
-    label: "Work Experience",
-    href: "/work-experience",
-    icon: faBriefcase,
-  },
-  {
-    key: "gallery",
-    label: "Gallery",
-    href: "/gallery",
-    icon: faImages,
-    desktopOnly: true,
-    mobileMenu: true,
-  },
-  { key: "about", label: "About", href: "/about", icon: faCircleInfo },
-];
+import { useTranslations } from "next-intl";
 
 export default function Nav() {
+  const t = useTranslations("components.nav");
   const [show, setShow] = useState(true);
   const [showDesktopContact, setShowDesktopContact] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
-
   const { theme, toggleTheme } = useTheme();
+  const navItems = [
+    {
+      key: "projects",
+      label: t("nav_projects"),
+      href: "/projects",
+      icon: faFolder,
+    },
+    {
+      key: "blog",
+      label: t("nav_blog"),
+      href: "/blog",
+      icon: faBlog,
+      desktopOnly: true,
+      mobileMenu: true,
+    },
+    {
+      key: "gaming",
+      label: t("nav_gaming"),
+      href: "/gaming",
+      icon: faGamepad,
+      desktopOnly: true,
+      mobileMenu: true,
+    },
+    {
+      key: "teams",
+      label: t("nav_teams"),
+      href: "/teams",
+      icon: faUser,
+      desktopOnly: true,
+      mobileMenu: true,
+    },
+    {
+      key: "certificates",
+      label: t("nav_certificates"),
+      href: "/certificates",
+      icon: faCertificate,
+    },
+    {
+      key: "work-experience",
+      label: t("nav_work_experience"),
+      href: "/work-experience",
+      icon: faBriefcase,
+    },
+    {
+      key: "gallery",
+      label: t("nav_gallery"),
+      href: "/gallery",
+      icon: faImages,
+      desktopOnly: true,
+      mobileMenu: true,
+    },
+    { key: "about", label: t("nav_about"), href: "/about", icon: faCircleInfo },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -162,7 +167,7 @@ export default function Nav() {
       >
         <div className="mx-auto flex justify-center items-center">
           <ul className="flex gap-4 items-center">
-            <li aria-label="Home - Melvin Jones Repol" title="Home">
+            <li title={t("nav_home")}>
               <Link href="/" className={baseLinkClass}>
                 <Image
                   src="/favicon.ico"
@@ -178,7 +183,7 @@ export default function Nav() {
                   }}
                 />
 
-                <span className={hoverLabelClass}>Me</span>
+                <span className={hoverLabelClass}>{t("nav_home")}</span>
               </Link>
             </li>
 
@@ -189,17 +194,13 @@ export default function Nav() {
                 <Link
                   href="/contact-me"
                   className="flex items-center whitespace-nowrap text-xs"
-                  aria-label="Contact Me - Melvin Jones Repol"
-                  title="Contact Me"
+                  title={t("nav_contact_me")}
                 >
-                  Contact Me
+                  {t("nav_contact_me")}
                 </Link>
               </li>
             ) : (
-              <li
-                aria-label="Contact Me - Melvin Jones Repol"
-                title="Contact Me"
-              >
+              <li title={t("nav_contact_me")}>
                 <Link href="/contact-me" className={baseLinkClass}>
                   <FontAwesomeIcon
                     icon={faEnvelope}
@@ -207,7 +208,7 @@ export default function Nav() {
                     size="1x"
                   />
 
-                  <span className={hoverLabelClass}>Contact</span>
+                  <span className={hoverLabelClass}>{t("nav_contact_me")}</span>
                 </Link>
               </li>
             )}
@@ -215,8 +216,7 @@ export default function Nav() {
             <li
               onClick={toggleTheme}
               className="hidden md:flex items-center bg-gray-700 hover:bg-orange-400 transition-all text-white rounded-full px-2 py-1"
-              aria-label="Toggle Theme - Melvin Jones Repol"
-              title="Toggle Theme"
+              title={t("nav_toggle_theme")}
             >
               <button className="text-xs">
                 {theme === "dark" ? (
@@ -231,8 +231,7 @@ export default function Nav() {
               <button
                 onClick={() => setIsMobileMenuOpen((prev) => !prev)}
                 className={baseLinkClass}
-                aria-label="Menu - Melvin Jones Repol"
-                title="Menu"
+                title={t("nav_menu")}
               >
                 <span className="relative inline-block w-4 h-4 mr-1">
                   <FontAwesomeIcon
@@ -303,7 +302,7 @@ export default function Nav() {
           <div className="flex-1 overflow-y-auto p-4">
             <div className="mb-6">
               <p className="px-3 mb-2 text-xs font-semibold uppercase tracking-wider text-gray-400">
-                Main
+                {t("nav_main_sections")}
               </p>
 
               <ul className="space-y-1">
@@ -341,7 +340,7 @@ export default function Nav() {
 
             <div>
               <p className="px-3 mb-2 text-xs font-semibold uppercase tracking-wider text-gray-400">
-                Explore
+                {t("nav_other_sections")}
               </p>
 
               <ul className="space-y-1">
@@ -389,9 +388,11 @@ export default function Nav() {
                 </div>
 
                 <div className="text-left">
-                  <p className="text-sm text-white">Theme</p>
+                  <p className="text-sm text-white">{t("nav_theme")}</p>
 
-                  <p className="text-xs text-gray-400">Toggle appearance</p>
+                  <p className="text-xs text-gray-400">
+                    {t("nav_toggle_appearance")}
+                  </p>
                 </div>
               </div>
             </button>
@@ -407,7 +408,7 @@ export default function Nav() {
                 transition-all
               "
             >
-              Contact Me
+              {t("nav_contact_me")}
             </Link>
           </div>
         </aside>
