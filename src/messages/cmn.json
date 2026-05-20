@@ -59,6 +59,13 @@
       "footer_all_rights_reserved": "版权所有",
       "footer_copyright": "Melvin Jones Repol（亦称 Repol Systems）是负责本网站所有服务与内容的唯一法律实体。",
       "footer_open_source": "本网站为开源项目。"
+    },
+    "privacy_prompt": {
+      "description": "我们会处理某些技术和使用数据，以运行、安全保护并改进本网站。继续使用本网站即表示您同意此数据处理。",
+      "i_understand": "我明白"
+    },
+    "devtools_detector": {
+      "description": "为了获得最佳体验，请关闭开发者工具。本网站旨在无干扰地使用，开启开发者工具可能会影响某些视觉效果。"
     }
   },
   "home": {
