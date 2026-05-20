@@ -1,11 +1,13 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const STORAGE_KEY = "privacy_notice_ack_v1";
 
 export default function PrivacyPolicyPrompt() {
+  const t = useTranslations("components.privacy_prompt");
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -30,9 +32,7 @@ export default function PrivacyPolicyPrompt() {
     >
       <div className="mx-auto max-w-4xl rounded-2xl border bg-gray-900 text-white backdrop-blur p-4 md:p-5 shadow-xl">
         <p className="text-sm leading-relaxed">
-          We process certain technical and usage data to operate, secure, and
-          improve this website. By continuing to use the site, you acknowledge
-          this data processing. Please review the{" "}
+          {t("description")} Please review the{" "}
           <Link
             href="/legal/privacy-policy"
             className="underline underline-offset-4 hover:text-orange-500"
@@ -48,7 +48,7 @@ export default function PrivacyPolicyPrompt() {
             onClick={handleAcknowledge}
             className="rounded-full border px-4 py-2 text-sm hover:bg-orange-500 hover:border-gray-900 hover:text-gray-800 transition"
           >
-            I understand
+            {t("i_understand")}
           </button>
         </div>
       </div>
