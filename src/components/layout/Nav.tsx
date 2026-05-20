@@ -255,7 +255,7 @@ export default function Nav() {
                   />
                 </span>
 
-                <span className={hoverLabelClass}>Menu</span>
+                <span className={hoverLabelClass}>{t("nav_menu")}</span>
               </button>
             </li>
           </ul>

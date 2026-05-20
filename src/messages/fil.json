@@ -2,6 +2,26 @@
   "test": {
     "hello_world": "Kamusta, mundo!"
   },
+  "components": {
+    "nav": {
+      "nav_main_sections": "Pangunahing",
+      "nav_other_sections": "Tuklasin",
+      "nav_menu": "Menu",
+      "nav_home": "Home",
+      "nav_projects": "Mga Proyekto",
+      "nav_blog": "Blog",
+      "nav_gaming": "Gaming",
+      "nav_teams": "Mga Koponan",
+      "nav_certificates": "Mga Sertipiko",
+      "nav_work_experience": "Karanasan sa Trabaho",
+      "nav_gallery": "Gallery",
+      "nav_about": "Tungkol",
+      "nav_contact_me": "Makipag-ugnayan sa Akin",
+      "nav_toggle_theme": "Palitan ang Tema",
+      "nav_theme": "Tema",
+      "nav_toggle_appearance": "Palitan ang Hitsura"
+    }
+  },
   "home": {
     "header_badge": "Kasosyong software na nakatuon sa negosyo",
     "header_title_reduce_costs": "Bawasan ang gastos.",

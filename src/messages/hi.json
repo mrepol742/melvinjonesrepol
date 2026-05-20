@@ -2,6 +2,26 @@
   "test": {
     "hello_world": "नमस्ते, दुनिया!"
   },
+  "components": {
+    "nav": {
+      "nav_main_sections": "मुख्य",
+      "nav_other_sections": "अन्वेषण करें",
+      "nav_menu": "मेनू",
+      "nav_home": "होम",
+      "nav_projects": "प्रोजेक्ट्स",
+      "nav_blog": "ब्लॉग",
+      "nav_gaming": "गेमिंग",
+      "nav_teams": "टीम्स",
+      "nav_certificates": "प्रमाणपत्र",
+      "nav_work_experience": "कार्य अनुभव",
+      "nav_gallery": "गैलरी",
+      "nav_about": "परिचय",
+      "nav_contact_me": "मुझसे संपर्क करें",
+      "nav_toggle_theme": "थीम बदलें",
+      "nav_theme": "थीम",
+      "nav_toggle_appearance": "दिखावट बदलें"
+    }
+  },
   "home": {
     "header_badge": "व्यवसाय-केंद्रित सॉफ्टवेयर पार्टनर",
     "header_title_reduce_costs": "लागत कम करें।",

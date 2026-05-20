@@ -2,6 +2,26 @@
   "test": {
     "hello_world": "你好，世界！"
   },
+  "components": {
+    "nav": {
+      "nav_main_sections": "主要",
+      "nav_other_sections": "探索",
+      "nav_menu": "菜单",
+      "nav_home": "首页",
+      "nav_projects": "项目",
+      "nav_blog": "博客",
+      "nav_gaming": "游戏",
+      "nav_teams": "团队",
+      "nav_certificates": "证书",
+      "nav_work_experience": "工作经历",
+      "nav_gallery": "图库",
+      "nav_about": "关于",
+      "nav_contact_me": "联系我",
+      "nav_toggle_theme": "切换主题",
+      "nav_theme": "主题",
+      "nav_toggle_appearance": "切换外观"
+    }
+  },
   "home": {
     "header_badge": "专注业务的软件合作伙伴",
     "header_title_reduce_costs": "降低成本。",

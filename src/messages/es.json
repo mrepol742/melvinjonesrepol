@@ -2,6 +2,26 @@
   "test": {
     "hello_world": "¡Hola, mundo!"
   },
+  "components": {
+    "nav": {
+      "nav_main_sections": "Principal",
+      "nav_other_sections": "Explorar",
+      "nav_menu": "Menú",
+      "nav_home": "Inicio",
+      "nav_projects": "Proyectos",
+      "nav_blog": "Blog",
+      "nav_gaming": "Juegos",
+      "nav_teams": "Equipos",
+      "nav_certificates": "Certificados",
+      "nav_work_experience": "Experiencia laboral",
+      "nav_gallery": "Galería",
+      "nav_about": "Acerca de",
+      "nav_contact_me": "Contáctame",
+      "nav_toggle_theme": "Cambiar tema",
+      "nav_theme": "Tema",
+      "nav_toggle_appearance": "Cambiar apariencia"
+    }
+  },
   "home": {
     "header_badge": "Socio de software enfocado en negocios",
     "header_title_reduce_costs": "Reduce costos.",
