@@ -188,13 +188,14 @@ export default async function RootLayout({
           <ToastContainer />
           <ScrollTop />
           <Footer posts={posts} />
+
+          {isProduction && <DevToolsDetector />}
         </NextIntlClientProvider>
 
         {isProduction && (
           <>
             <GoogleAnalytics />
             <ServiceWorkerRegister />
-            <DevToolsDetector />
             <BrowserCheck />
           </>
         )}
