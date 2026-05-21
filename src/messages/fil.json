@@ -190,5 +190,26 @@
     "community_card3_desc": "Events at Networking",
     "community_cta_join": "Sumali",
     "community_cta_github": "Github"
+  },
+  "not_found": {
+    "quotes": [
+      "Kinain ng bug ang pahinang hinahanap mo.",
+      "404: Hindi mahanap ang page. Pero gumagana pa rin ang kape.",
+      "Mukhang nag-resign ang page na ito.",
+      "Nasa bakasyon ang page na ito. Subukan ulit mamaya.",
+      "Oops. Kahit ang pinakamahusay na developers ay nagkakamali rin ng 404.",
+      "Mas naliligaw pa ang link kaysa sa aking mga semicolon.",
+      "Tumakas ang page na ito papuntang production.",
+      "404: Naabisuhan na ang developer (siguro).",
+      "Wala pa ang page na ito... sa ngayon.",
+      "Parang nakahanap ka ng secret level. Wala naman pala laman.",
+      "Error 404: Walang nahanap na utak.",
+      "Nawala ang page, pero astig pa rin ang portfolio.",
+      "Maling liko ang tinahak ng URL na ito sa router.",
+      "Kahit Google, hindi ito mahanap.",
+      "Na-refactor nang tuluyan ang page na hinahanap mo."
+    ],
+    "description": "Ang page na hinahanap mo ay hindi umiiral o maaaring inilipat.",
+    "powered_by": "Huwag mag-alala, gumagana pa rin ang search kahit wala ang page! Powered by Algolia."
   }
 }

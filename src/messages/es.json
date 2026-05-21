@@ -190,5 +190,26 @@
     "community_card3_desc": "Eventos y networking",
     "community_cta_join": "Únete",
     "community_cta_github": "Github"
+  },
+  "not_found": {
+    "quotes": [
+      "La página que buscas ha sido devorada por un bug.",
+      "404: Página no encontrada. Pero al menos la cafetera sigue funcionando.",
+      "Parece que esta página renunció.",
+      "Esta página está de vacaciones. Intenta más tarde.",
+      "Ups. Incluso los mejores desarrolladores lanzan errores 404.",
+      "El enlace que seguiste está más perdido que mis punto y coma.",
+      "Esta página escapó a producción.",
+      "404: El desarrollador responsable ha sido notificado (probablemente).",
+      "Esta página no existe... todavía.",
+      "Parece que encontraste un nivel secreto. Lástima que está vacío.",
+      "Error 404: cerebro no encontrado.",
+      "La página desapareció, pero el portafolio sigue genial.",
+      "Esta URL tomó un giro equivocado en el router.",
+      "Incluso Google no puede encontrar esto.",
+      "La página que buscas ha sido refactorizada hasta desaparecer."
+    ],
+    "description": "La página que buscas no existe o ha sido movida.",
+    "powered_by": "No te preocupes, la búsqueda funciona incluso si la página no existe. ¡Impulsado por Algolia!"
   }
 }
