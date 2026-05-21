@@ -1,7 +1,7 @@
 import AlgoliaSearch from "@/components/common/AlgoliaSearch";
 import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { Metadata } from "next";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "404 Not Found - Melvin Jones Repol",
@@ -38,8 +38,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function NotFound() {
-  const t = useTranslations("not_found");
+export default async function NotFound() {
+  const t = await getTranslations("not_found");
   const quotes = t.raw("quotes") as string[];
   const quote = quotes[Math.floor(Math.random() * quotes.length)];
 

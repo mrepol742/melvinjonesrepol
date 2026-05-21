@@ -3,8 +3,8 @@ import ServicesCarousel from "@/app/[locale]/components/Technologies";
 import Project from "@/app/[locale]/components/Project";
 import ClientFeedback from "@/app/[locale]/components/ClientFeedback";
 import { Metadata } from "next";
-import { useTranslations } from "next-intl";
 import { getAlternates } from "@/components/common/metadata/Alternatives";
+import { getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Home - Melvin Jones Repol",
@@ -53,8 +53,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
-  const t = useTranslations("home");
+export default async function Home() {
+  const t = await getTranslations("home");
 
   const person = {
     "@context": "https://schema.org",

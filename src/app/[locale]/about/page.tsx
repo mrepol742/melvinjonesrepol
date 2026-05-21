@@ -15,8 +15,8 @@ import Certificate from "@/app/[locale]/about/components/Certificate";
 import EngineeringPhilosophy from "@/app/[locale]/about/components/EngineeringPhilosophy";
 import Github from "@/app/[locale]/components/Github";
 import { Metadata } from "next";
-import { useTranslations } from "next-intl";
 import { getAlternates } from "@/components/common/metadata/Alternatives";
+import { getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "About - Melvin Jones Repol",
@@ -53,8 +53,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function About() {
-  const t = useTranslations("about");
+export default async function About() {
+  const t = await getTranslations("about");
 
   return (
     <>
