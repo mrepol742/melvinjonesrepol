@@ -1,3 +1,4 @@
+import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
 
@@ -19,9 +20,7 @@ export const metadata: Metadata = {
     "Software Development",
     "IT Support",
   ],
-  alternates: {
-    canonical: "https://www.melvinjonesrepol.com/work-experience",
-  },
+  alternates: getAlternates("/work-experience"),
   openGraph: {
     title: "Work Experience - Melvin Jones Repol",
     description:

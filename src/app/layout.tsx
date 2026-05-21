@@ -11,18 +11,18 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import BreadcrumbJsonLd from "@/components/ui/BreadcrumbJsonLd";
 import ServiceWorkerRegister from "@/components/common/ServiceWorkerRegister";
 import ScrollTop from "@/components/ui/ScrollTop";
-import GoogleAnalytics from "@/components/common/GoogleAnalytics";
-import GoogleAds from "@/components/common/GoogleAdsense";
-import NortonSafeweb from "@/components/common/NortonSafeweb";
+import GoogleAnalytics from "@/components/common/metadata/GoogleAnalytics";
+import GoogleAds from "@/components/common/metadata/GoogleAdsense";
+import NortonSafeweb from "@/components/common/metadata/NortonSafeweb";
 import BrowserCheck from "@/components/common/BrowserCheck";
 import DevToolsDetector from "@/components/common/DevToolsDetector";
-import Algolia from "@/components/common/Algolia";
+import Algolia from "@/components/common/metadata/Algolia";
 import { getRecentPosts } from "@/lib/posts";
 import PrivacyPolicyPrompt from "@/components/common/PrivacyPolicyPrompt";
 import DoorEffect from "@/components/common/DoorEffect";
 import MouseCodeTrail from "@/components/common/MouseCodeTrail";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getMessages, setRequestLocale } from "next-intl/server";
 
 config.autoAddCss = false;
 
@@ -40,14 +40,112 @@ const mavenPro = Maven_Pro({
   variable: "--font-body",
 });
 
+export const metadata: Metadata = {
+  metadataBase: new URL("https://www.melvinjonesrepol.com"),
+  title: "Melvin Jones Repol - Software Engineer",
+  description:
+    "Building scalable systems from planning and design to development and production support, helping businesses grow efficiently.",
+  keywords: [
+    "Software Engineer",
+    "Software Developer",
+    "Systems Engineer",
+    "Backend Engineer",
+    "Full Stack Engineer",
+    "Application Engineer",
+    "Software Architect",
+    "System Designer",
+    "Scalable systems",
+    "Distributed systems",
+    "System design",
+    "Software architecture",
+    "API development",
+    "Microservices",
+    "Cloud computing",
+    "Backend development",
+    "Frontend development",
+    "Database design",
+    "Performance optimization",
+    "Production systems",
+    "DevOps practices",
+    "CI/CD pipelines",
+    "Software lifecycle management",
+    "End-to-end development",
+    "Planning and design",
+    "Deployment and production support",
+    "System maintenance",
+    "Feature development",
+    "Infrastructure design",
+    "Production reliability",
+    "System integration",
+    "Business scalability",
+    "High-performance systems",
+    "Digital transformation",
+    "Enterprise solutions",
+    "Business automation",
+    "Operational efficiency",
+    "Product scalability",
+    "Technical problem solving",
+  ],
+  authors: [
+    { name: "Melvin Jones Repol", url: "https://www.melvinjonesrepol.com" },
+  ],
+  alternates: {
+    canonical: "https://www.melvinjonesrepol.com",
+    types: {
+      "application/xml": "https://www.melvinjonesrepol.com/sitemap.xml",
+    },
+  },
+  creator: "Melvin Jones Repol",
+  openGraph: {
+    title: "Melvin Jones Repol - Software Engineer",
+    description:
+      "Building scalable systems from planning and design to development and production support, helping businesses grow efficiently.",
+    url: "https://www.melvinjonesrepol.com",
+    siteName: "Melvin Jones Repol",
+    images: [
+      {
+        url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+        width: 800,
+        height: 600,
+        alt: "Melvin Jones Repol",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Melvin Jones Repol - Software Engineer",
+    description:
+      "Building scalable systems from planning and design to development and production support, helping businesses grow efficiently.",
+    images: [
+      "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+    ],
+    creator: "@mrepol742",
+  },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+    other: [
+      {
+        rel: "icon",
+        url: "/favicon-32x32.png",
+        sizes: "32x32",
+      },
+      {
+        rel: "icon",
+        url: "/favicon-16x16.png",
+        sizes: "16x16",
+      },
+    ],
+  },
+};
+
 export default async function RootLayout({
   children,
-  params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: string | undefined }>;
 }) {
-  const { locale } = await params;
   const env = process.env.NEXT_PUBLIC_NODE_ENV || "production";
   const isProduction = env === "production";
   const posts = getRecentPosts(5);
@@ -55,7 +153,6 @@ export default async function RootLayout({
 
   return (
     <html
-      lang={locale}
       className={`${sourceCodePro.variable} ${mavenPro.variable}`}
       data-scroll-behavior="smooth"
     >
@@ -77,7 +174,7 @@ export default async function RootLayout({
           <div className="gloss-circle circle3"></div>
         </div>
 
-        <NextIntlClientProvider messages={messages} >
+        <NextIntlClientProvider messages={messages}>
           <Nav />
 
           <NextTopLoader showSpinner={false} color="#7873f5" />
@@ -101,7 +198,7 @@ export default async function RootLayout({
             <BrowserCheck />
           </>
         )}
-                 <ServiceWorkerRegister />
+        <ServiceWorkerRegister />
       </body>
     </html>
   );

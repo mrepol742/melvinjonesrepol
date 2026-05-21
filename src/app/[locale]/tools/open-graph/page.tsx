@@ -1,4 +1,5 @@
 import OpenGraphTool from "@/app/[locale]/tools/components/OpenGraph";
+import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -17,9 +18,7 @@ export const metadata: Metadata = {
     "OG Tag Testing Tool",
     "Open Graph Analysis Tool",
   ],
-  alternates: {
-    canonical: "https://www.melvinjonesrepol.com/tools/open-graph",
-  },
+  alternates: getAlternates("/tools/open-graph"),
   openGraph: {
     title: "Open Graph Checker - Melvin Jones Repol",
     description:

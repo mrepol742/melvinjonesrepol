@@ -2,6 +2,7 @@ import certificates from "@/lib/certificates";
 import { Metadata } from "next";
 import SearchForm from "@/components/ui/SearchForm";
 import { getTranslations } from "next-intl/server";
+import { getAlternates } from "@/components/common/metadata/Alternatives";
 
 export const metadata: Metadata = {
   title: "Certificates - Melvin Jones Repol",
@@ -22,9 +23,7 @@ export const metadata: Metadata = {
     "Laravel",
     "PHP",
   ],
-  alternates: {
-    canonical: "https://www.melvinjonesrepol.com/certificates",
-  },
+  alternates: getAlternates("/certificates"),
   openGraph: {
     title: "Certificates - Melvin Jones Repol",
     description:

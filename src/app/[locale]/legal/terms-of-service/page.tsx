@@ -1,11 +1,10 @@
+import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms of Service - Melvin Jones Repol",
   description: "Terms of Service for melvinjonesrepol.com and related projects",
-  alternates: {
-    canonical: "https://www.melvinjonesrepol.com/legal/terms-of-service",
-  },
+  alternates: getAlternates("/legal/terms-of-service"),
   openGraph: {
     title: "Terms of Service - Melvin Jones Repol",
     description:

@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Project from "@/app/[locale]/projects/components/Project";
+import { getAlternates } from "@/components/common/metadata/Alternatives";
 
 export const metadata: Metadata = {
   title: "Projects - Melvin Jones Repol",
@@ -16,9 +17,7 @@ export const metadata: Metadata = {
     "GitHub Projects",
     "Tech Portfolio",
   ],
-  alternates: {
-    canonical: "https://www.melvinjonesrepol.com/projects",
-  },
+  alternates: getAlternates("/projects"),
   openGraph: {
     title: "Projects - Melvin Jones Repol",
     description:

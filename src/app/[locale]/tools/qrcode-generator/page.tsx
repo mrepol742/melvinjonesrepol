@@ -1,4 +1,5 @@
 import QRCodeGeneratorTool from "@/app/[locale]/tools/components/QRCodeGenerator";
+import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,9 +14,7 @@ export const metadata: Metadata = {
     "Free QR Code Generator",
     "Online QR Code Generator",
   ],
-  alternates: {
-    canonical: "https://www.melvinjonesrepol.com/tools/qrcode-generator",
-  },
+  alternates: getAlternates("/tools/qrcode-generator"),
   openGraph: {
     title: "QR Code Generator - Melvin Jones Repol",
     description:

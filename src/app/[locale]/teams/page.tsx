@@ -1,3 +1,4 @@
+import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -19,9 +20,7 @@ export const metadata: Metadata = {
     "Software Engineers",
     "Developers",
   ],
-  alternates: {
-    canonical: "https://www.melvinjonesrepol.com/teams",
-  },
+  alternates: getAlternates("/teams"),
   openGraph: {
     title: "Teams - Melvin Jones Repol",
     description:

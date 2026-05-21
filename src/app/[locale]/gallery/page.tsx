@@ -1,14 +1,13 @@
 import { Metadata } from "next";
 import GalleryComponent from "@/app/[locale]/gallery/gallery/Gallery";
+import { getAlternates } from "@/components/common/metadata/Alternatives";
 
 export const metadata: Metadata = {
   title: "Gallery - Melvin Jones Repol",
   description:
     "Explore a collection of images showcasing my projects and designs.",
   keywords: ["Gallery", "Images", "Projects", "Designs", "Melvin Jones Repol"],
-  alternates: {
-    canonical: "https://www.melvinjonesrepol.com/gallery",
-  },
+  alternates: getAlternates("/gallery"),
   openGraph: {
     title: "Gallery - Melvin Jones Repol",
     description:

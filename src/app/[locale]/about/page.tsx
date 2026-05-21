@@ -16,15 +16,14 @@ import EngineeringPhilosophy from "@/app/[locale]/about/components/EngineeringPh
 import Github from "@/app/[locale]/components/Github";
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
+import { getAlternates } from "@/components/common/metadata/Alternatives";
 
 export const metadata: Metadata = {
   title: "About - Melvin Jones Repol",
   description:
     "I partner with teams to build practical, scalable software that improves delivery speed, reduces operational costs, and keeps systems stable in production.",
   keywords: ["about", "melvin jones repol"],
-  alternates: {
-    canonical: "https://www.melvinjonesrepol.com/about",
-  },
+  alternates: getAlternates("/about"),
   openGraph: {
     title: "About - Melvin Jones Repol",
     description:

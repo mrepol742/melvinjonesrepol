@@ -4,6 +4,7 @@ import Project from "@/app/[locale]/components/Project";
 import ClientFeedback from "@/app/[locale]/components/ClientFeedback";
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
+import { getAlternates } from "@/components/common/metadata/Alternatives";
 
 export const metadata: Metadata = {
   title: "Home - Melvin Jones Repol",
@@ -20,9 +21,7 @@ export const metadata: Metadata = {
     "landing page",
     "portfolio",
   ],
-  alternates: {
-    canonical: "https://www.melvinjonesrepol.com",
-  },
+  alternates: getAlternates(""),
   openGraph: {
     title: "Home - Melvin Jones Repol",
     description:

@@ -1,3 +1,4 @@
+import { getAlternates } from "@/components/common/metadata/Alternatives";
 import ContactMe from "./contact-me/ContactMe";
 import { Metadata } from "next";
 
@@ -19,9 +20,7 @@ export const metadata: Metadata = {
     "Email Me",
     "Professional Contact",
   ],
-  alternates: {
-    canonical: "https://www.melvinjonesrepol.com/contact-me",
-  },
+  alternates: getAlternates("/contact-me"),
   openGraph: {
     title: "Contact Me - Melvin Jones Repol",
     description:

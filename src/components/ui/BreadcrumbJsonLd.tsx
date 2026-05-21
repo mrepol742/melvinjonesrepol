@@ -1,16 +1,16 @@
 import Head from "next/head";
 import { headers } from "next/headers";
 
-const baseUrl = "https://www.melvinjonesrepol.com";
+const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://www.melvinjonesrepol.com"
+    : "http://localhost:3000";
 
 export default async function BreadcrumbJsonLd() {
   const h = await headers();
 
   const pathname =
-    h.get("x-invoke-path") ||
-    h.get("x-pathname") ||
-    h.get("next-url") ||
-    "/";
+    h.get("x-invoke-path") || h.get("x-pathname") || h.get("next-url") || "/";
 
   const pathParts = pathname.split("/").filter(Boolean);
 
@@ -39,11 +39,11 @@ export default async function BreadcrumbJsonLd() {
   };
 
   return (
-     <Head>
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
-     </Head>
+    <Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+    </Head>
   );
 }

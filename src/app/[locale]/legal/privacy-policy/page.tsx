@@ -1,12 +1,11 @@
+import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy - Melvin Jones Repol",
   description:
     "This Privacy Policy describes how Melvin Jones Repol handles information in connection with our portfolio website, Webvium Browser, Chrome extensions, and other projects.",
-  alternates: {
-    canonical: "https://www.melvinjonesrepol.com/legal/privacy-policy",
-  },
+  alternates: getAlternates("/legal/privacy-policy"),
   openGraph: {
     title: "Privacy Policy - Melvin Jones Repol",
     description:

@@ -1,3 +1,4 @@
+import { getAlternates } from "@/components/common/metadata/Alternatives";
 import Project from "@/components/ui/Project";
 import { Metadata } from "next";
 
@@ -15,9 +16,7 @@ export const metadata: Metadata = {
     "Reviews",
     "Voting",
   ],
-  alternates: {
-    canonical: "https://www.melvinjonesrepol.com/protocol-discussion-platform",
-  },
+  alternates: getAlternates("/protocol-discussion-platform"),
   openGraph: {
     title: "Protocol Discussion Platform - Melvin Jones Repol",
     description:

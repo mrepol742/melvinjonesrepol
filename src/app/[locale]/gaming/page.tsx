@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { fetchSteamLibrary, GameType } from "@/lib/steam/library";
 import SearchForm from "@/components/ui/SearchForm";
 import GameCard from "@/app/[locale]/gaming/components/GameCard";
+import { getAlternates } from "@/components/common/metadata/Alternatives";
 
 export const metadata: Metadata = {
   title: "Gaming - Melvin Jones Repol",
@@ -18,9 +19,7 @@ export const metadata: Metadata = {
     "Video Games",
     "PC Gaming",
   ],
-  alternates: {
-    canonical: "https://www.melvinjonesrepol.com/gaming",
-  },
+  alternates: getAlternates("/gaming"),
   openGraph: {
     title: "Gaming - Melvin Jones Repol",
     description: "Here are some of my gaming achievements and activities.",

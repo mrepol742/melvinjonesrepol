@@ -1,4 +1,5 @@
 import UserAgentTool from "@/app/[locale]/tools/components/UserAgent";
+import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,9 +15,7 @@ export const metadata: Metadata = {
     "User Agent Parser",
     "User Agent Analyzer",
   ],
-  alternates: {
-    canonical: "https://www.melvinjonesrepol.com/tools/user-agent",
-  },
+  alternates: getAlternates("/tools/user-agent"),
   openGraph: {
     title: "QR Code Generator - Melvin Jones Repol",
     description:

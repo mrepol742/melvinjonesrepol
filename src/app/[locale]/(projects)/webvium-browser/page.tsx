@@ -1,3 +1,4 @@
+import { getAlternates } from "@/components/common/metadata/Alternatives";
 import Project from "@/components/ui/Project";
 import { Metadata } from "next";
 
@@ -21,9 +22,7 @@ export const metadata: Metadata = {
     "Adblock",
     "Built-in browser adblock",
   ],
-  alternates: {
-    canonical: "https://www.melvinjonesrepol.com/webvium-browser",
-  },
+  alternates: getAlternates("/webvium-browser"),
   openGraph: {
     title: "Download Webvium Browser - Melvin Jones Repol",
     description:

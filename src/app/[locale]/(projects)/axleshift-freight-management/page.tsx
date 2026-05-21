@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Project from "@/components/ui/Project";
+import { getAlternates } from "@/components/common/metadata/Alternatives";
 
 export const metadata: Metadata = {
   title: "Axleshift Freight Management - Melvin Jones Repol",
@@ -17,9 +18,7 @@ export const metadata: Metadata = {
     "Logistics Software",
     "Business Platform",
   ],
-  alternates: {
-    canonical: "https://www.melvinjonesrepol.com/axleshift-freight-management",
-  },
+  alternates: getAlternates("/axleshift-freight-management"),
   openGraph: {
     title: "Axleshift Freight Management - Melvin Jones Repol",
     description:

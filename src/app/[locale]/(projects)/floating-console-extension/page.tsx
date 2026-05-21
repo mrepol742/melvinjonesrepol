@@ -1,14 +1,13 @@
 import { Metadata } from "next";
 import Project from "@/components/ui/Project";
+import { getAlternates } from "@/components/common/metadata/Alternatives";
 
 export const metadata: Metadata = {
   title: "Floating Console Extension - Melvin Jones Repol",
   description:
     "A Browser extension that provides a floating console for developers to easily access logs while browsing the web.",
   keywords: ["Floating Console Extension"],
-  alternates: {
-    canonical: "https://www.melvinjonesrepol.com/floating-console-extension",
-  },
+  alternates: getAlternates("/floating-console-extension"),
   openGraph: {
     title: "Floating Console Extension - Melvin Jones Repol",
     description:

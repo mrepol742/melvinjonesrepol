@@ -1,3 +1,4 @@
+import { getAlternates } from "@/components/common/metadata/Alternatives";
 import Project from "@/components/ui/Project";
 import { Metadata } from "next";
 
@@ -11,9 +12,7 @@ export const metadata: Metadata = {
     "Lightweight Launcher",
     "Fast Launcher",
   ],
-  alternates: {
-    canonical: "https://www.melvinjonesrepol.com/webvium-launcher",
-  },
+  alternates: getAlternates("/webvium-launcher"),
   openGraph: {
     title: "Download Webvium Launcher - Melvin Jones Repol",
     description:

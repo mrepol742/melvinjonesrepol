@@ -1,3 +1,4 @@
+import { getAlternates } from "@/components/common/metadata/Alternatives";
 import Project from "@/components/ui/Project";
 import { Metadata } from "next";
 
@@ -15,9 +16,7 @@ export const metadata: Metadata = {
     "AI Chatbot",
     "Orion Bot",
   ],
-  alternates: {
-    canonical: "https://www.melvinjonesrepol.com/orion-chatbot",
-  },
+  alternates: getAlternates("/orion-chatbot"),
   openGraph: {
     title: "Orion Chatbot - Melvin Jones Repol",
     description:

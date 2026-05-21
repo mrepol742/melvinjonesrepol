@@ -1,3 +1,4 @@
+import { getAlternates } from "@/components/common/metadata/Alternatives";
 import Button from "@/components/ui/Button";
 import { faShieldAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,9 +8,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Legal Documents - Melvin Jones Repol",
   description: "Review our legal documents and policies",
-  alternates: {
-    canonical: "https://www.melvinjonesrepol.com/legal",
-  },
+  alternates: getAlternates("/legal"),
   openGraph: {
     title: "Legal Documents - Melvin Jones Repol",
     description: "Review our legal documents and policies",

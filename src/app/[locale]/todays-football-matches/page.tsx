@@ -1,3 +1,4 @@
+import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { getFootballPredictions, Prediction } from "@/lib/football-predictions";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -7,9 +8,7 @@ export const metadata: Metadata = {
   description:
     "Football match predictions based on team performance, player statistics, injuries, and historical data. Explore common approaches to predicting football matches.",
   keywords: [],
-  alternates: {
-    canonical: "https://www.melvinjonesrepol.com/todays-football-matches",
-  },
+  alternates: getAlternates("/todays-football-matches"),
   openGraph: {
     title: "Today's Football Matches - Melvin Jones Repol",
     description:

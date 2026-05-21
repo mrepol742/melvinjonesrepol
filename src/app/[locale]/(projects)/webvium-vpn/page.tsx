@@ -1,3 +1,4 @@
+import { getAlternates } from "@/components/common/metadata/Alternatives";
 import Project from "@/components/ui/Project";
 import { Metadata } from "next";
 
@@ -17,9 +18,7 @@ export const metadata: Metadata = {
     "Internet Security",
     "Online Privacy",
   ],
-  alternates: {
-    canonical: "https://www.melvinjonesrepol.com/webvium-vpn",
-  },
+  alternates: getAlternates("/webvium-vpn"),
   openGraph: {
     title: "Download Webvium VPN - Melvin Jones Repol",
     description:

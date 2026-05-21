@@ -1,3 +1,4 @@
+import { getAlternates } from "@/components/common/metadata/Alternatives";
 import Project from "@/components/ui/Project";
 import { Metadata } from "next";
 
@@ -19,9 +20,7 @@ export const metadata: Metadata = {
     "Retail Software",
     "POS Software",
   ],
-  alternates: {
-    canonical: "https://www.melvinjonesrepol.com/point-of-sale",
-  },
+  alternates: getAlternates("/point-of-sale"),
   openGraph: {
     title: "Point of Sale - Melvin Jones Repol",
     description:

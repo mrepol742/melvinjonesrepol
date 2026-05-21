@@ -1,4 +1,5 @@
 import IPAddressTool from "@/app/[locale]/tools/components/IPAddress";
+import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,9 +15,7 @@ export const metadata: Metadata = {
     "IP Lookup",
     "IP Geolocation",
   ],
-  alternates: {
-    canonical: "https://www.melvinjonesrepol.com/tools/ip-address",
-  },
+  alternates: getAlternates("/tools/ip-address"),
   openGraph: {
     title: "Your IP Address - Melvin Jones Repol",
     description:

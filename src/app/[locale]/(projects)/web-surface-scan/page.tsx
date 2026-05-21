@@ -1,3 +1,4 @@
+import { getAlternates } from "@/components/common/metadata/Alternatives";
 import Project from "@/components/ui/Project";
 import { Metadata } from "next";
 
@@ -13,9 +14,7 @@ export const metadata: Metadata = {
     "Security Flaw Detection",
     "Website Inspection",
   ],
-  alternates: {
-    canonical: "https://www.melvinjonesrepol.com/web-surface-scan",
-  },
+  alternates: getAlternates("/web-surface-scan"),
   openGraph: {
     title: "Web Surface Scan - Melvin Jones Repol",
     description:

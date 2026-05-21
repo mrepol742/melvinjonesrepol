@@ -1,13 +1,11 @@
+import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Developer Client Agreement - Melvin Jones Repol",
   description:
     "Developer Client Agreement for services provided by Melvin Jones Repol / Repol Systems.",
-  alternates: {
-    canonical:
-      "https://www.melvinjonesrepol.com/legal/developer-client-agreement",
-  },
+  alternates: getAlternates("/legal/developer-client-agreement"),
   openGraph: {
     title: "Developer Client Agreement - Melvin Jones Repol",
     description:

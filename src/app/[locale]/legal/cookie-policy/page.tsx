@@ -1,12 +1,11 @@
+import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Cookie Policy - Melvin Jones Repol",
   description:
     "This Cookie Policy explains how Melvin Jones Repol uses cookies and similar technologies on our portfolio website, Webvium Browser, Chrome extensions, and other projects.",
-  alternates: {
-    canonical: "https://www.melvinjonesrepol.com/legal/cookie-policy",
-  },
+  alternates: getAlternates("/legal/cookie-policy"),
   openGraph: {
     title: "Cookie Policy - Melvin Jones Repol",
     description:

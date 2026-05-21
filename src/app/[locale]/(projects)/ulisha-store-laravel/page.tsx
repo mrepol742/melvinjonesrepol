@@ -1,3 +1,4 @@
+import { getAlternates } from "@/components/common/metadata/Alternatives";
 import Project from "@/components/ui/Project";
 import { Metadata } from "next";
 
@@ -18,9 +19,7 @@ export const metadata: Metadata = {
     "Laravel e-commerce solution",
     "Hybrid e-commerce platform",
   ],
-  alternates: {
-    canonical: "https://www.melvinjonesrepol.com/ulisha-store-laravel",
-  },
+  alternates: getAlternates("/ulisha-store-laravel"),
   openGraph: {
     title: "Ulisha Store Laravel - Melvin Jones Repol",
     description:
