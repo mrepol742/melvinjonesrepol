@@ -1,6 +1,6 @@
 import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { Metadata } from "next";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Work Experience - Melvin Jones Repol",
@@ -50,8 +50,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function WorkExperiencePage() {
-  const t = useTranslations("work_experience");
+export default async function WorkExperiencePage() {
+  const t = await getTranslations("work_experience");
   const experiences = [
     {
       company: t("experience.company_freelance.company"),

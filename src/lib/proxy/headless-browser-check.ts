@@ -14,10 +14,6 @@ const HEADLESS_PATTERNS = [
   "HeadlessEdge",
   "HeadlessOpera",
   "HeadlessBrowser",
-  "Headless",
-  "Bot",
-  "Crawler",
-  "Spider",
   "curl",
   "wget",
 ] as const;
