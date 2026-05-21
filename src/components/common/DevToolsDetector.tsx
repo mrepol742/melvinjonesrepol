@@ -3,8 +3,10 @@
 import { useEffect, useState } from "react";
 import { addListener, removeListener, launch } from "devtools-detector";
 import { useDoor } from "@/hooks/door";
+import { useTranslations } from "next-intl";
 
 export default function DevToolsDetector() {
+  const t = useTranslations("components.devtools_detector");
   const { openDoor, closeDoor } = useDoor();
   const [devtoolsOpen, setDevtoolsOpen] = useState(false);
 
@@ -44,11 +46,7 @@ export default function DevToolsDetector() {
       }`}
     >
       <div className="mx-auto max-w-4xl rounded-2xl border bg-gray-900 text-white backdrop-blur p-4 md:p-5 shadow-xl">
-        <p className="text-sm leading-relaxed">
-          For the best experience, please close your developer tools. This
-          website is designed to be enjoyed without distractions, and having the
-          dev tools open may interfere with certain visual effects.
-        </p>
+        <p className="text-sm leading-relaxed">{t("description")}</p>
       </div>
     </div>
   );

@@ -1,124 +1,58 @@
 import type { MetadataRoute } from "next";
 
+// the default locale is "" (empty string), so it is included first == english ==
+const locales = ["", "/cmn", "/es", "/fil", "/hi"];
+
+const routes = [
+  "",
+  "/blog",
+  "/projects",
+  "/ulisha-store-laravel",
+  "/ulisha-store-next",
+  "/protocol-discussion-platform",
+  "/web-surface-scan",
+  "/webvium-browser",
+  "/webvium-vpn",
+  "/canis-chatbot",
+  "/axleshift-freight-management",
+  "/point-of-sale",
+  "/webvium-launcher",
+  "/floating-console-extension",
+  "/teams",
+  "/about",
+  "/certificates",
+  "/work-experience",
+  "/gallery",
+  "/contact-me",
+  "/gaming",
+  "/tools/open-graph",
+  "/tools/ip-address",
+  "/tools/qrcode-generator",
+  "/tools/user-agent",
+  "/legal",
+  "/legal/privacy-policy",
+  "/legal/terms-of-service",
+  "/legal/cookie-policy",
+  "/legal/developer-client-agreement",
+];
+
+const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://www.melvinjonesrepol.com"
+    : "http://localhost:3000";
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: "https://www.melvinjonesrepol.com",
-      changeFrequency: "weekly",
-      priority: 1.0,
-    },
-    {
-      url: "https://go.melvinjonesrepol.com",
-    },
-    {
-      url: "https://ai.melvinjonesrepol.com",
-    },
-    {
-      url: "https://cv.melvinjonesrepol.com",
-    },
-    {
-      url: "https://wakatime.melvinjonesrepol.com",
-      changeFrequency: "daily",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/blog",
-      changeFrequency: "weekly",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/llms.md",
-      changeFrequency: "weekly",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/projects",
-      changeFrequency: "monthly",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/ulisha-store-laravel",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/ulisha-store-next",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/protocol-discussion-platform",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/web-surface-scan",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/webvium-browser",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/webvium-vpn",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/orion-chatbot",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/canis-chatbot",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/axleshift-freight-management",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/ulisha-store-next",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/point-of-sale",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/webvium-launcher",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/floating-console-extension",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/teams",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/about",
-      changeFrequency: "daily",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/certificates",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/work-experience",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/gallery",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/contact-me",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/gaming",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/tools/open-graph",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/tools/ip-address",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/tools/qrcode-generator",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/tools/user-agent",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/legal",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/legal/privacy-policy",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/legal/terms-of-service",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/legal/cookie-policy",
-    },
-    {
-      url: "https://www.melvinjonesrepol.com/legal/developer-client-agreement",
-    },
-  ];
+  const urls: MetadataRoute.Sitemap = [];
+
+  for (const locale of locales) {
+    for (const route of routes) {
+      urls.push({
+        url: `${baseUrl}${locale}${route}`,
+        changeFrequency: "weekly",
+        priority: route === "" ? 1 : 0.7,
+      });
+    }
+  }
+
+  return urls;
 }

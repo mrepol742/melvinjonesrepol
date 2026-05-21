@@ -11,16 +11,18 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import BreadcrumbJsonLd from "@/components/ui/BreadcrumbJsonLd";
 import ServiceWorkerRegister from "@/components/common/ServiceWorkerRegister";
 import ScrollTop from "@/components/ui/ScrollTop";
-import GoogleAnalytics from "@/components/common/GoogleAnalytics";
-import GoogleAds from "@/components/common/GoogleAdsense";
-import NortonSafeweb from "@/components/common/NortonSafeweb";
+import GoogleAnalytics from "@/components/common/metadata/GoogleAnalytics";
+import GoogleAds from "@/components/common/metadata/GoogleAdsense";
+import NortonSafeweb from "@/components/common/metadata/NortonSafeweb";
 import BrowserCheck from "@/components/common/BrowserCheck";
 import DevToolsDetector from "@/components/common/DevToolsDetector";
-import Algolia from "@/components/common/Algolia";
+import Algolia from "@/components/common/metadata/Algolia";
 import { getRecentPosts } from "@/lib/posts";
 import PrivacyPolicyPrompt from "@/components/common/PrivacyPolicyPrompt";
 import DoorEffect from "@/components/common/DoorEffect";
 import MouseCodeTrail from "@/components/common/MouseCodeTrail";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages, setRequestLocale } from "next-intl/server";
 
 config.autoAddCss = false;
 
@@ -139,18 +141,18 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   const env = process.env.NEXT_PUBLIC_NODE_ENV || "production";
   const isProduction = env === "production";
   const posts = getRecentPosts(5);
+  const messages = await getMessages();
 
   return (
     <html
-      lang="en"
       className={`${sourceCodePro.variable} ${mavenPro.variable}`}
       data-scroll-behavior="smooth"
     >
@@ -160,12 +162,8 @@ export default function RootLayout({
         <NortonSafeweb />
         <Algolia />
         <BreadcrumbJsonLd />
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-        />
       </head>
+
       <body className="antialiased min-h-screen flex flex-col background-grid">
         <DoorEffect />
         <MouseCodeTrail />
@@ -176,22 +174,21 @@ export default function RootLayout({
           <div className="gloss-circle circle3"></div>
         </div>
 
-        <Nav />
+        <NextIntlClientProvider messages={messages}>
+          <Nav />
 
-        <NextTopLoader showSpinner={false} color="#7873f5" />
+          <NextTopLoader showSpinner={false} color="#7873f5" />
 
-        <div className="flex-1">
-          <AOSWrapper />
-          {children}
-        </div>
+          <div className="flex-1">
+            <AOSWrapper />
+            {children}
+          </div>
 
-        <PrivacyPolicyPrompt />
-
-        <ToastContainer />
-
-        <ScrollTop />
-
-        <Footer posts={posts} />
+          <PrivacyPolicyPrompt />
+          <ToastContainer />
+          <ScrollTop />
+          <Footer posts={posts} />
+        </NextIntlClientProvider>
 
         {isProduction && (
           <>
@@ -201,13 +198,7 @@ export default function RootLayout({
             <BrowserCheck />
           </>
         )}
-
-        <script
-          src="https://app.livechatai.com/embed.js"
-          data-id="cmdmcvh4n0001jt0c03xemlxw"
-          async
-          defer
-        ></script>
+        <ServiceWorkerRegister />
       </body>
     </html>
   );

@@ -7,6 +7,19 @@ const HEADLESS_PATTERNS = [
   "Puppeteer",
   "Playwright",
   "Chrome-Lighthouse",
+  "Selenium",
+  "WebKitTestRunner",
+  "HeadlessFirefox",
+  "HeadlessSafari",
+  "HeadlessEdge",
+  "HeadlessOpera",
+  "HeadlessBrowser",
+  "Headless",
+  "Bot",
+  "Crawler",
+  "Spider",
+  "curl",
+  "wget",
 ] as const;
 
 // block bots, pass through real browsers
@@ -18,9 +31,11 @@ export default function HeadlessBrowserCheck(
     ua.toLowerCase().includes(p.toLowerCase()),
   );
 
-  if (isHeadless) {
+  if ((ua && ua.length == 0) || isHeadless) {
     return new NextResponse(
-      JSON.stringify({ error: "Automated browsers are not allowed" }),
+      JSON.stringify({
+        error: "Access denied: Headless browsers and bots are not allowed.",
+      }),
       {
         status: 403,
         headers: { "Content-Type": "application/json" },

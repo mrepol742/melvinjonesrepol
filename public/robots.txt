@@ -1,0 +1,11 @@
+# hello my dear crawlers
+
+User-Agent: *
+Allow: /
+Disallow: /.well-known/assetlinks.json
+Disallow: /api
+Disallow: /projects?
+Disallow: /gaming?
+
+Sitemap: https://www.melvinjonesrepol.com/sitemap.xml
+LLMS: https://www.melvinjonesrepol.com/llms.md

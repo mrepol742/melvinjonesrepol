@@ -9,14 +9,57 @@ import {
   faSteam,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import Image from "next/image";
 import TrustPilotWidget from "../common/TrustPilotWidget";
+import { useLocale, useTranslations } from "next-intl";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Footer({
   posts,
 }: {
   posts: { slug: string; title: string }[];
 }) {
+  const t = useTranslations("components.footer");
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const languages = [
+    { code: "en", label: "English", region: "Global", short: "EN" },
+    { code: "fil", label: "Filipino", region: "Philippines", short: "FIL" },
+    {
+      code: "cmn",
+      label: "中文 (Chinese)",
+      region: "China",
+      short: "ZH",
+    },
+    {
+      code: "es",
+      label: "Español (Spanish)",
+      region: "Latin America",
+      short: "ES",
+    },
+    {
+      code: "hi",
+      label: "हिंदी (Hindi)",
+      region: "India",
+      short: "HI",
+    },
+  ];
+
+  const handleLocaleChange = (nextLocale: string) => {
+    if (nextLocale === locale) return;
+
+    const normalizedPath = pathname.replace(
+      /^\/(en|fil|cmn|es|hi)(?=\/|$)/,
+      "",
+    );
+    const nextPath = `/${nextLocale}${normalizedPath || "/"}`;
+    console.log(nextPath);
+    // replace and refresh to ensure the new locale is applied immediately
+    router.replace(nextPath);
+    router.refresh();
+  };
+
   return (
     <footer
       className="bg-gray-900 text-gray-200 py-10 border-t border-gray-800"
@@ -30,8 +73,7 @@ export default function Footer({
               Melvin Jones Repol
             </span>
             <p className="my-2 text-sm text-gray-400 max-w-xs">
-              Building modern software experiences with passion and precision.
-              Striving for excellence, one project at a time.
+              {t("description")}
             </p>
 
             <div className="flex space-x-3 mb-4">
@@ -104,7 +146,7 @@ export default function Footer({
                     href="/"
                     className="hover:text-orange-500 text-gray-400"
                   >
-                    Home
+                    {t("footer_home")}
                   </Link>
                 </li>
                 <li>
@@ -112,7 +154,7 @@ export default function Footer({
                     href="/projects"
                     className="hover:text-orange-500 text-gray-400"
                   >
-                    Projects
+                    {t("footer_projects")}
                   </Link>
                 </li>
                 <li>
@@ -120,7 +162,7 @@ export default function Footer({
                     href="/blog"
                     className="hover:text-orange-500 text-gray-400"
                   >
-                    Blog
+                    {t("footer_blog")}
                   </Link>
                 </li>
                 <li>
@@ -128,7 +170,7 @@ export default function Footer({
                     href="/gaming"
                     className="hover:text-orange-500 text-blue-400"
                   >
-                    Gaming
+                    {t("footer_gaming")}
                   </Link>
                 </li>
                 <li>
@@ -136,7 +178,7 @@ export default function Footer({
                     href="/teams"
                     className="hover:text-orange-500 text-gray-400"
                   >
-                    Teams
+                    {t("footer_teams")}
                   </Link>
                 </li>
                 <li>
@@ -144,7 +186,7 @@ export default function Footer({
                     href="/certificates"
                     className="hover:text-orange-500 text-gray-400"
                   >
-                    Certificates
+                    {t("footer_certificates")}
                   </Link>
                 </li>
                 <li>
@@ -152,7 +194,7 @@ export default function Footer({
                     href="/work-experience"
                     className="hover:text-orange-500 text-gray-400"
                   >
-                    Work Experience
+                    {t("footer_work_experience")}
                   </Link>
                 </li>
                 <li>
@@ -160,7 +202,7 @@ export default function Footer({
                     href="/gallery"
                     className="hover:text-orange-500 text-gray-400"
                   >
-                    Gallery
+                    {t("footer_gallery")}
                   </Link>
                 </li>
                 <li>
@@ -168,7 +210,7 @@ export default function Footer({
                     href="/contact-me"
                     className="hover:text-orange-500 text-gray-400"
                   >
-                    Contact
+                    {t("footer_contact_me")}
                   </Link>
                 </li>
                 <li>
@@ -176,7 +218,7 @@ export default function Footer({
                     href="/about"
                     className="hover:text-orange-500 text-gray-400"
                   >
-                    About
+                    {t("footer_about")}
                   </Link>
                 </li>
                 <li>
@@ -184,7 +226,7 @@ export default function Footer({
                     href="/legal/terms-of-service"
                     className="hover:text-orange-500 text-gray-400"
                   >
-                    Terms of Service
+                    {t("footer_terms_of_service")}
                   </Link>
                 </li>
                 <li>
@@ -192,7 +234,7 @@ export default function Footer({
                     href="/legal/privacy-policy"
                     className="hover:text-orange-500 text-gray-400"
                   >
-                    Privacy Policy
+                    {t("footer_privacy_policy")}
                   </Link>
                 </li>
                 <li>
@@ -200,7 +242,7 @@ export default function Footer({
                     href="/legal/cookie-policy"
                     className="hover:text-orange-500 text-gray-400"
                   >
-                    Cookie Policy
+                    {t("footer_cookie_policy")}
                   </Link>
                 </li>
               </ul>
@@ -215,7 +257,7 @@ export default function Footer({
                   href="https://wakatime.melvinjonesrepol.com"
                   className="hover:text-orange-500 text-blue-400"
                 >
-                  Wakatime Stats
+                  {t("footer_wakatime_stats")}
                 </Link>
               </li>
               <li>
@@ -223,7 +265,7 @@ export default function Footer({
                   href="https://ai.melvinjonesrepol.com"
                   className="hover:text-orange-500 text-red-400"
                 >
-                  Melvin AI
+                  {t("footer_melvin_ai")}
                 </Link>
               </li>
               <li>
@@ -231,7 +273,7 @@ export default function Footer({
                   href="/webvium-browser"
                   className="hover:text-orange-500 text-blue-400"
                 >
-                  Webvium Browser
+                  {t("footer_webvium_browser")}
                 </Link>
               </li>
               <li>
@@ -239,7 +281,7 @@ export default function Footer({
                   href="/protocol-discussion-platform"
                   className="hover:text-orange-500 text-gray-400"
                 >
-                  Protocol Discussion Platform
+                  {t("footer_pdp")}
                 </Link>
               </li>
               <li>
@@ -247,7 +289,7 @@ export default function Footer({
                   href="/axleshift-freight-management"
                   className="hover:text-orange-500 text-gray-400"
                 >
-                  Axleshift Freight Management
+                  {t("footer_afm")}
                 </Link>
               </li>
               <li>
@@ -255,7 +297,7 @@ export default function Footer({
                   href="/point-of-sale"
                   className="hover:text-orange-500 text-gray-400"
                 >
-                  Point of Sale
+                  {t("footer_pos")}
                 </Link>
               </li>
               <li>
@@ -263,7 +305,7 @@ export default function Footer({
                   href="/ulisha-store-laravel"
                   className="hover:text-orange-500 text-blue-400"
                 >
-                  Ulisha Store Laravel
+                  {t("footer_usl")}
                 </Link>
               </li>
               <li>
@@ -271,7 +313,7 @@ export default function Footer({
                   href="/canis-chatbot"
                   className="hover:text-orange-500 text-gray-400"
                 >
-                  Canis Chatbot
+                  {t("footer_canis_chatbot")}
                 </Link>
               </li>
               <li>
@@ -279,15 +321,15 @@ export default function Footer({
                   href="https://keepandroidopen.org/"
                   className="hover:text-orange-500 text-red-400"
                 >
-                  Keep Android Open
+                  {t("footer_kao")}
                 </Link>
               </li>
               <li>
                 <Link
-                  href="https://hallofcodes.vercel.app"
+                  href="https://www.hallofcodes.org"
                   className="hover:text-orange-500 text-blue-400"
                 >
-                  Hall of Codes
+                  {t("footer_hoc")}
                 </Link>
               </li>
               <li>
@@ -295,7 +337,7 @@ export default function Footer({
                   href="/sitemap.xml"
                   className="hover:text-orange-500 text-gray-400"
                 >
-                  Sitemap
+                  {t("footer_sitemap")}
                 </Link>
               </li>
             </ul>
@@ -308,7 +350,7 @@ export default function Footer({
                   href="/floating-console-extension"
                   className="hover:text-orange-500 text-gray-400"
                 >
-                  Floating Console Extension
+                  {t("footer_fce")}
                 </Link>
               </li>
               <li>
@@ -316,7 +358,7 @@ export default function Footer({
                   href="/tools/open-graph"
                   className="hover:text-orange-500 text-gray-400"
                 >
-                  Open Graph Checker
+                  {t("footer_ogc")}
                 </Link>
               </li>
               <li>
@@ -324,7 +366,7 @@ export default function Footer({
                   href="/tools/ip-address"
                   className="hover:text-orange-500 text-gray-400"
                 >
-                  IP Address Tool
+                  {t("footer_iat")}
                 </Link>
               </li>
               <li>
@@ -332,7 +374,7 @@ export default function Footer({
                   href="/tools/qrcode-generator"
                   className="hover:text-orange-500 text-gray-400"
                 >
-                  QR Code Generator
+                  {t("footer_qcg")}
                 </Link>
               </li>
               <li>
@@ -340,7 +382,7 @@ export default function Footer({
                   href="/tools/user-agent"
                   className="hover:text-orange-500 text-gray-400"
                 >
-                  User Agent Parser
+                  {t("footer_uap")}
                 </Link>
               </li>
               <li>
@@ -348,13 +390,13 @@ export default function Footer({
                   href="https://go.melvinjonesrepol.com"
                   className="hover:text-orange-500 text-blue-400"
                 >
-                  Shortlink
+                  {t("footer_shortlink")}
                 </Link>
               </li>
             </ul>
 
             <h4 className="text-sm font-semibold my-2 text-white">
-              Recent Posts
+              {t("footer_recent_posts")}
             </h4>
             {posts.length > 0 ? (
               <ul className="space-y-1 text-sm">
@@ -371,48 +413,43 @@ export default function Footer({
                 ))}
               </ul>
             ) : (
-              <p className="text-gray-400 text-sm">No recent posts.</p>
+              <p className="text-gray-400 text-sm">
+                {t("footer_no_recent_posts")}
+              </p>
             )}
           </div>
-          {/* Socials */}
-          <div>
-            <h4 className="text-sm font-semibold mb-2 text-white">Sponsor</h4>
-            <iframe
-              src="https://github.com/sponsors/mrepol742/button"
-              title="Sponsor mrepol742"
-              height="32"
-              className="mb-2 transition-transform duration-200 hover:translate-x-1 hover:translate-y-1"
-              width="170"
-            ></iframe>
-            <Link href="https://ko-fi.com/F1F6EHA8F" target="_blank">
-              <Image
-                height="36"
-                width="170"
-                src="https://storage.ko-fi.com/cdn/kofi6.png?v=6"
-                className="mb-2 transition-transform duration-200 hover:translate-x-1 hover:translate-y-1"
-                alt="Buy Me a Coffee at ko-fi.com"
-              />
-            </Link>
-            <Link href="https://www.buymeacoffee.com/mrepol742">
-              <Image
-                alt="Buy me a coffee mrepol742"
-                height="36"
-                width="170"
-                className="transition-transform duration-200 hover:translate-x-1 hover:translate-y-1"
-                src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=mrepol742&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff"
-              />
-            </Link>
+
+          <div className="rounded-xl border border-gray-800/80 bg-gray-900/40 p-4">
+            <p className="text-xs uppercase tracking-widest text-gray-400 mb-3">
+              {t("footer_language_region")}
+            </p>
+            <div className="relative">
+              <select
+                value={locale}
+                onChange={(e) => handleLocaleChange(e.target.value)}
+                className="w-full appearance-none rounded-lg border border-gray-800 bg-gray-950/40 px-3 py-2 text-sm text-gray-200 focus:outline-none focus:ring-1 focus:ring-gray-500"
+                aria-label="Select language"
+              >
+                {languages.map((lang) => (
+                  <option key={lang.code} value={lang.code}>
+                    {lang.label} · {lang.region}
+                  </option>
+                ))}
+              </select>
+              <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-400">
+                ▼
+              </span>
+            </div>
           </div>
         </div>
         <div className="flex justify-between mt-10 border-t border-gray-800 pt-6 text-center text-xs text-gray-300">
           <div className="text-left">
             <span className="block">
-              © {new Date().getFullYear()} Melvin Jones Repol. All rights
-              reserved.
+              © {new Date().getFullYear()} Melvin Jones Repol.{" "}
+              {t("footer_all_rights_reserved")}
             </span>
             <p className="text-muted text-gray-400 max-w-sm me-5">
-              Melvin Jones Repol (also known as Repol Systems) is a single legal
-              entity responsible for all services and content on this website.
+              {t("footer_copyright")}
             </p>
           </div>
 
@@ -422,7 +459,7 @@ export default function Footer({
               target="_blank"
               className="underline hover:text-green-300"
             >
-              This site is Open Source.
+              {t("footer_open_source")}
             </Link>
           </small>
         </div>
