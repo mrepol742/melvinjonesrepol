@@ -32,6 +32,6 @@ export default async function proxy(request: NextRequest) {
 // excude static assets
 export const config = {
   matcher: [
-    "/((?!_next/static|_next/image|images|videos|sw\\.js|.*\\.json$|.*\\.pdf$|.*\\.xml$|.*\\.md$|.*\\.mp4$|.*\\.jpg$|.*\\.png$|.*\\.ico$|.*\\.svg$|.*\\.webp$|.*\\.txt$).*)",
+    "/((?!_next/static|_next/image|images|videos|sw\\.js|.*\\.json$|.*\\.pdf$|.*\\.xml$|.*\\.md$|.*\\.mp4$|.*\\.jpg$|.*\\.png$|.*\\.ico$|.*\\.svg$|.*\\.webp$|.*\\.txt$|.*\\.mkd$).*)",
   ],
 };
