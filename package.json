@@ -31,6 +31,7 @@
     "react-dom": "19.2.3",
     "react-toastify": "^11.0.5",
     "remark-gfm": "^4.0.1",
+    "rss": "^1.2.2",
     "shiki": "^4.0.2"
   },
   "devDependencies": {
@@ -41,6 +42,7 @@
     "@types/nodemailer": "^6.4.17",
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
+    "@types/rss": "^0.0.32",
     "autoprefixer": "^10.4.21",
     "baseline-browser-mapping": "^2.10.10",
     "eslint": "^9",
