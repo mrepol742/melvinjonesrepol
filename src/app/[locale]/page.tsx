@@ -7,7 +7,7 @@ import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
-  title: "Home - Melvin Jones Repol",
+  title: "Melvin Jones Repol - Software Engineer",
   description:
     "I help teams deliver reliable software that saves time and money. From discovery to production support, my focus is output, stability, and ROI — not just code.",
   keywords: [
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   ],
   alternates: getAlternates(""),
   openGraph: {
-    title: "Home - Melvin Jones Repol",
+    title: "Melvin Jones Repol - Software Engineer",
     description:
       "I help teams deliver reliable software that saves time and money. From discovery to production support, my focus is output, stability, and ROI — not just code.",
 
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Home - Melvin Jones Repol",
+    title: "Melvin Jones Repol - Software Engineer",
     description:
       "I help teams deliver reliable software that saves time and money. From discovery to production support, my focus is output, stability, and ROI — not just code.",
 
