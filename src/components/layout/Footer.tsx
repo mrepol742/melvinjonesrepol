@@ -54,7 +54,6 @@ export default function Footer({
       "",
     );
     const nextPath = `/${nextLocale}${normalizedPath || "/"}`;
-    console.log(nextPath);
     // replace and refresh to ensure the new locale is applied immediately
     router.replace(nextPath);
     router.refresh();
@@ -66,7 +65,7 @@ export default function Footer({
       data-aos="fade-up"
     >
       <nav aria-label="Footer Navigation" className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row md:justify-between md:items-start gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
           {/* Logo & Description */}
           <div className="mb-6 md:mb-0">
             <span className="text-2xl font-bold bg-gradient-to-tr from-violet-500 via-yellow-300 to-green-400 bg-clip-text text-transparent animate-gradient-shift">
@@ -419,10 +418,10 @@ export default function Footer({
             )}
           </div>
 
-          <div className="rounded-xl border border-gray-800/80 bg-gray-900/40 p-4">
-            <p className="text-xs uppercase tracking-widest text-gray-400 mb-3">
+          <div>
+            <h4 className="text-sm font-semibold mb-2 text-white">
               {t("footer_language_region")}
-            </p>
+            </h4>
             <div className="relative">
               <select
                 value={locale}

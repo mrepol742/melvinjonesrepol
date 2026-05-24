@@ -9,6 +9,8 @@ import { notFound } from "next/navigation";
 import remarkGfm from "remark-gfm";
 import { getAllPosts } from "@/lib/posts";
 
+export const dynamic = "force-static";
+
 type Heading = {
   level: number;
   text: string;
@@ -81,12 +83,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = getPostBySlug(slug);
 
-  if (!post) {
-    return {
-      title: "Blog Post Not Found",
-      description: "The requested blog post could not be found.",
-    };
-  }
+  if (!post) return notFound();
 
   return {
     title: post.data.title ?? "Blog Post",
