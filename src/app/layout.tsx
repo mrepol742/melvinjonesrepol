@@ -4,7 +4,6 @@ import "./globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "devicon/devicon.min.css";
-import BreadcrumbJsonLd from "@/components/ui/BreadcrumbJsonLd";
 import GoogleAds from "@/components/common/metadata/GoogleAdsense";
 import NortonSafeweb from "@/components/common/metadata/NortonSafeweb";
 import Algolia from "@/components/common/metadata/Algolia";
@@ -146,7 +145,6 @@ export default async function RootLayout({
         {isProduction && <GoogleAds />}
         <NortonSafeweb />
         <Algolia />
-        <BreadcrumbJsonLd />
       </head>
 
       <body className="antialiased min-h-screen flex flex-col background-grid">
