@@ -10,7 +10,7 @@ export async function fetchGithubEvents(username: string) {
         headers: {
           Authorization: `Bearer ${GITHUB_TOKEN}`,
         },
-        next: { revalidate: 300 },
+        next: { revalidate: 10800 }, // 3 hours
       },
     );
 

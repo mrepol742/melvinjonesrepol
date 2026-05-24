@@ -1,5 +1,3 @@
-"use client";
-
 const techStack = [
   { name: "Angular", icon: "devicon-angularjs-plain colored" },
   { name: "Laravel", icon: "devicon-laravel-plain colored" },
@@ -94,34 +92,6 @@ export default function Technologies() {
         <MarqueeRow />
         <MarqueeRow reverse />
       </div>
-
-      <style jsx global>{`
-        @keyframes scroll-left {
-          from {
-            transform: translateX(0);
-          }
-          to {
-            transform: translateX(-50%);
-          }
-        }
-
-        @keyframes scroll-right {
-          from {
-            transform: translateX(-50%);
-          }
-          to {
-            transform: translateX(0);
-          }
-        }
-
-        .animate-scroll-left {
-          animation: scroll-left 120s linear infinite;
-        }
-
-        .animate-scroll-right {
-          animation: scroll-right 120s linear infinite;
-        }
-      `}</style>
     </div>
   );
 }

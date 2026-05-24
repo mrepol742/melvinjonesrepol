@@ -1,28 +1,13 @@
 import type { Metadata } from "next";
 import { Source_Code_Pro, Maven_Pro } from "next/font/google";
-import { ToastContainer } from "react-toastify";
-import Nav from "../components/layout/Nav";
-import Footer from "../components/layout/Footer";
-import NextTopLoader from "nextjs-toploader";
-import AOSWrapper from "../components/common/AOSWrapper";
 import "./globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import "devicon/devicon.min.css";
 import BreadcrumbJsonLd from "@/components/ui/BreadcrumbJsonLd";
-import ServiceWorkerRegister from "@/components/common/ServiceWorkerRegister";
-import ScrollTop from "@/components/ui/ScrollTop";
-import GoogleAnalytics from "@/components/common/metadata/GoogleAnalytics";
 import GoogleAds from "@/components/common/metadata/GoogleAdsense";
 import NortonSafeweb from "@/components/common/metadata/NortonSafeweb";
-import BrowserCheck from "@/components/common/BrowserCheck";
-import DevToolsDetector from "@/components/common/DevToolsDetector";
 import Algolia from "@/components/common/metadata/Algolia";
-import { getRecentPosts } from "@/lib/posts";
-import PrivacyPolicyPrompt from "@/components/common/PrivacyPolicyPrompt";
-import DoorEffect from "@/components/common/DoorEffect";
-import MouseCodeTrail from "@/components/common/MouseCodeTrail";
-import { NextIntlClientProvider } from "next-intl";
-import { getMessages, setRequestLocale } from "next-intl/server";
 
 config.autoAddCss = false;
 
@@ -39,6 +24,8 @@ const mavenPro = Maven_Pro({
   display: "swap",
   variable: "--font-body",
 });
+
+export const revalidate = 43200; // 12 hours (in seconds)
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.melvinjonesrepol.com"),
@@ -148,8 +135,6 @@ export default async function RootLayout({
 }) {
   const env = process.env.NEXT_PUBLIC_NODE_ENV || "production";
   const isProduction = env === "production";
-  const posts = getRecentPosts(5);
-  const messages = await getMessages();
 
   return (
     <html
@@ -165,41 +150,7 @@ export default async function RootLayout({
       </head>
 
       <body className="antialiased min-h-screen flex flex-col background-grid">
-        <DoorEffect />
-        <MouseCodeTrail />
-
-        <div className="background-gloss">
-          <div className="gloss-circle circle1"></div>
-          <div className="gloss-circle circle2"></div>
-          <div className="gloss-circle circle3"></div>
-        </div>
-
-        <NextIntlClientProvider messages={messages}>
-          <Nav />
-
-          <NextTopLoader showSpinner={false} color="#7873f5" />
-
-          <div className="flex-1">
-            <AOSWrapper />
-            {children}
-          </div>
-
-          <PrivacyPolicyPrompt />
-          <ToastContainer />
-          <ScrollTop />
-          <Footer posts={posts} />
-
-          {isProduction && <DevToolsDetector />}
-        </NextIntlClientProvider>
-
-        {isProduction && (
-          <>
-            <GoogleAnalytics />
-            <ServiceWorkerRegister />
-            <BrowserCheck />
-          </>
-        )}
-        <ServiceWorkerRegister />
+        {children}
       </body>
     </html>
   );

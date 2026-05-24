@@ -49,46 +49,5 @@ export default function MouseCodeTrail() {
     };
   }, []);
 
-  // must not be in global styles to access CSS variables
-  // also ensures styles are only loaded when component is mounted
-  return (
-    <>
-      <style jsx global>{`
-        .code-popup {
-          position: fixed;
-          pointer-events: none;
-          z-index: 9999;
-
-          color: #00ff88;
-          font-family: monospace;
-          font-size: 12px;
-          white-space: nowrap;
-
-          text-shadow:
-            0 0 5px #00ff88,
-            0 0 12px #00ff88;
-
-          opacity: 1;
-
-          animation: floatFade 1.2s forwards;
-
-          will-change: transform, opacity;
-        }
-
-        @keyframes floatFade {
-          0% {
-            transform: translate(0px, 0px) scale(1);
-            opacity: 1;
-          }
-
-          100% {
-            transform: translate(calc(var(--dx) * 1px), calc(var(--dy) * 1px))
-              scale(0.75);
-
-            opacity: 0;
-          }
-        }
-      `}</style>
-    </>
-  );
+  return undefined;
 }
