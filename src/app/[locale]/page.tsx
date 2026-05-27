@@ -1,4 +1,19 @@
+import Image from "next/image";
 import Link from "next/link";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faCode as faCodeSolid } from "@fortawesome/free-solid-svg-icons";
+import Button from "@/components/ui/Button";
+import Steam from "@/app/[locale]/components/Steam";
+import Wakatime from "@/app/[locale]/components/Wakatime";
+import RecentGithubActivityWrapper from "@/app/[locale]/components/RecentGithubActivityWrapper";
+import RecentGithubActivity from "@/app/[locale]/components/RecentGithubActivity";
+import Youtube from "@/app/[locale]/components/Youtube";
+import SecurityPractices from "@/app/[locale]/components/SecurityPractices";
+import AI from "@/app/[locale]/components/AI";
+import Blog from "@/app/[locale]/components/Blog";
+import Certificate from "@/app/[locale]/components/Certificate";
+import EngineeringPhilosophy from "@/app/[locale]/components/EngineeringPhilosophy";
+import Github from "@/app/[locale]/components/Github";
 import ServicesCarousel from "@/app/[locale]/components/Technologies";
 import Project from "@/app/[locale]/components/Project";
 import ClientFeedback from "@/app/[locale]/components/ClientFeedback";
@@ -9,24 +24,20 @@ import { getTranslations } from "next-intl/server";
 export const metadata: Metadata = {
   title: "Melvin Jones Repol - Software Engineer",
   description:
-    "I help teams deliver reliable software that saves time and money. From discovery to production support, my focus is output, stability, and ROI — not just code.",
+    "I'm Melvin Jones Repol, a Software Engineer who builds practical, scalable software — full-stack web, Android apps, and DevOps. From planning to production.",
   keywords: [
-    "software development",
+    "Melvin Jones Repol",
+    "software engineer",
     "web development",
     "full-stack development",
-    "wordpress development",
-    "wix development",
-    "website migration",
-    "static site generation",
-    "landing page",
+    "android development",
     "portfolio",
   ],
   alternates: getAlternates(""),
   openGraph: {
     title: "Melvin Jones Repol - Software Engineer",
     description:
-      "I help teams deliver reliable software that saves time and money. From discovery to production support, my focus is output, stability, and ROI — not just code.",
-
+      "I'm Melvin Jones Repol, a Software Engineer who builds practical, scalable software — full-stack web, Android apps, and DevOps. From planning to production.",
     url: "https://www.melvinjonesrepol.com",
     siteName: "Melvin Jones Repol",
     images: [
@@ -34,18 +45,17 @@ export const metadata: Metadata = {
         url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
         width: 1200,
         height: 630,
-        alt: "Home Cover",
+        alt: "Melvin Jones Repol",
       },
     ],
     locale: "en_US",
-    type: "website",
+    type: "profile",
   },
   twitter: {
     card: "summary_large_image",
     title: "Melvin Jones Repol - Software Engineer",
     description:
-      "I help teams deliver reliable software that saves time and money. From discovery to production support, my focus is output, stability, and ROI — not just code.",
-
+      "I'm Melvin Jones Repol, a Software Engineer who builds practical, scalable software — full-stack web, Android apps, and DevOps. From planning to production.",
     images: [
       "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
     ],
@@ -55,6 +65,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const t = await getTranslations("home");
+  const ta = await getTranslations("about");
 
   const person = {
     "@context": "https://schema.org",
@@ -64,7 +75,7 @@ export default async function Home() {
     image:
       "https://www.melvinjonesrepol.com/images/melvin-jones-repol-black-circle.png",
     description:
-      "Building scalable systems from planning and design to development and production support, helping businesses grow efficiently.",
+      "Software Engineer building scalable web and Android applications — from planning and design to production.",
     jobTitle: "Software Engineer",
     mainEntityOfPage: "https://www.melvinjonesrepol.com",
     sameAs: [
@@ -85,7 +96,7 @@ export default async function Home() {
   const webSite = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Melvin Jones Repol - Software Engineer",
+    name: "Melvin Jones Repol",
     url: "https://www.melvinjonesrepol.com",
     inLanguage: "en",
   };
@@ -101,330 +112,450 @@ export default async function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(meMyselfI) }}
       />
-      <main className="p-3 md:p-8">
+      <main>
         <section>
-          <div className="h-screen flex flex-col justify-center items-center snap-start px-3">
-            <div className="relative w-full max-w-6xl mx-auto">
-              <div className="md:text-left md:max-w-2xl">
-                <div className="inline-flex px-4 py-1 mb-6 text-sm font-medium rounded-full border">
-                  {t("header_badge")}
-                </div>
+          <div className="relative min-h-screen overflow-hidden border-b mb-10">
+            {/* Full-height photo bleeding to the right edge — desktop only */}
+            <div className="hidden lg:block absolute right-0 top-0 h-full w-[42%]">
+              <Image
+                src="/images/melvin-jones-repol-black.jpg"
+                alt={ta("profile_alt")}
+                fill
+                priority
+                className="object-cover object-top"
+              />
+              {/* Fade left edge into background */}
+              <div className="absolute inset-y-0 left-0 w-48 bg-gradient-to-r from-white dark:from-black to-transparent" />
+              {/* Fade bottom edge */}
+              <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-white dark:from-black to-transparent" />
+            </div>
 
-                <h1 className="text-3xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-                  {t("header_title_reduce_costs")}
-                  <span className="gradient-text">
-                    {t("header_title_ship_faster")}
-                  </span>{" "}
+            {/* Content layer */}
+            <div className="relative z-10 min-h-screen flex flex-col px-6 md:px-12 xl:px-20 py-12">
+              {/* Top label */}
+              <div className="pt-4">
+                <span className="text-xs tracking-widest uppercase border px-3 py-1 rounded-full">
+                  {ta("label")}
+                </span>
+              </div>
+
+              {/* Middle: name + bio */}
+              <div className="my-auto py-14 lg:max-w-[60%] xl:max-w-[56%]">
+                <h1 className="text-[17vw] sm:text-[12vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8">
+                  Melvin
                   <br />
-                  {t("header_title_lower_risk")}
+                  <span className="opacity-40">Jones</span>
+                  <br />
+                  Repol
                 </h1>
 
-                <p className="max-w-2xl mx-auto md:mx-0 text-lg md:text-xl mb-10 leading-relaxed">
-                  {t("header_description")}
+                <p className="text-base md:text-xl leading-relaxed mb-6 max-w-lg">
+                  {ta("intro")}
+                </p>
+
+                <p className="text-sm leading-relaxed max-w-lg opacity-60">
+                  {ta("delivery_mindset")}
                 </p>
               </div>
 
-              <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[300px]">
-                <div className="rounded-2xl border border-black/10 dark:border-white/10 backdrop-blur-xl p-5 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.35)]">
-                  <div className="flex items-center justify-between mb-4">
-                    <p className="text-xs uppercase tracking-widest">
-                      {t("business_impact")}
-                    </p>
-                    <span className="text-xs rounded-full border px-2 py-0.5">
-                      {t("enterprise_ready")}
-                    </span>
-                  </div>
-
-                  <div className="space-y-4">
-                    <div>
-                      <p className="text-sm font-semibold">
-                        {t("cost_optimization")}
-                      </p>
-                      <p className="text-xs uppercase tracking-wider">
-                        {t("cost_optimization_description")}
-                      </p>
-                    </div>
-
-                    <div className="h-px border-t border-black/10 dark:border-white/10" />
-
-                    <div>
-                      <p className="text-sm font-semibold">
-                        {t("faster_delivery")}
-                      </p>
-                      <p className="text-xs uppercase tracking-wider">
-                        {t("faster_delivery_description")}
-                      </p>
-                    </div>
-
-                    <div className="h-px border-t border-black/10 dark:border-white/10" />
-
-                    <div>
-                      <p className="text-sm font-semibold">
-                        {t("risk_reduction")}
-                      </p>
-                      <p className="text-xs uppercase tracking-wider">
-                        {t("risk_reduction_description")}
-                      </p>
-                    </div>
-                  </div>
+              {/* Bottom info strip — newspaper footer style */}
+              <div className="border-t pt-6 grid grid-cols-1 sm:grid-cols-3 gap-6 lg:max-w-[60%] xl:max-w-[56%]">
+                <div>
+                  <p className="text-xs uppercase tracking-widest mb-1 opacity-50">
+                    {ta("role_label")}
+                  </p>
+                  <p className="font-semibold text-sm">{ta("role_value")}</p>
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-widest mb-1 opacity-50">
+                    {ta("focus_label")}
+                  </p>
+                  <p className="font-semibold text-sm">{ta("focus_value")}</p>
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-widest mb-1 opacity-50">
+                    {ta("expertise_label")}
+                  </p>
+                  <p className="font-semibold text-sm">
+                    {ta("expertise_value")}
+                  </p>
                 </div>
               </div>
             </div>
+
+            {/* Mobile photo below content */}
+            <div className="lg:hidden relative w-full aspect-[4/3]">
+              <Image
+                src="/images/melvin-jones-repol-black.jpg"
+                alt={ta("profile_alt")}
+                fill
+                priority
+                className="object-cover object-top"
+              />
+              <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white dark:from-black to-transparent" />
+            </div>
           </div>
 
-          <div className="relative py-14 md:py-28 overflow-hidden">
-            <div className="text-center mb-10 md:mb-14">
-              <h4
-                className="text-sm font-semibold tracking-widest uppercase mb-3"
-                data-aos="fade-up"
-              >
-                {t("how_i_help")}
-              </h4>
-              <h2
-                className="text-3xl md:text-5xl font-bold leading-tight"
-                data-aos="fade-up"
-              >
-                {t("how_i_help_title")}
-              </h2>
-              <p className="max-w-2xl mx-auto mt-4" data-aos="fade-up">
-                {t("how_i_help_description")}{" "}
-              </p>
+          <div className="p-3 md:px-8">
+            <div className="relative py-14 md:py-28 overflow-hidden">
+              <div className="relative z-10 max-w-6xl mx-auto px-4">
+                <div className="text-center mb-10 md:mb-14">
+                  <h4
+                    className="text-sm font-semibold tracking-widest text-blue-500 uppercase mb-3"
+                    data-aos="fade-up"
+                  >
+                    {ta("engineering_philosophy_label")}
+                  </h4>
+                  <h2
+                    className="text-3xl md:text-5xl font-bold leading-tight"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                  >
+                    {ta("engineering_philosophy_title_line1")}
+                    <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-violet-500">
+                      {ta("engineering_philosophy_title_line2")}
+                    </span>
+                  </h2>
+                </div>
+                <EngineeringPhilosophy />
+              </div>
             </div>
 
-            <ServicesCarousel />
-          </div>
-
-          <div className="relative py-14 md:py-28  overflow-hidden">
-            <div className="text-center">
-              <h4
-                className="text-sm font-semibold tracking-widest uppercase mb-3"
-                data-aos="fade-up"
-              >
-                {t("results_case_studies")}
-              </h4>
-              <h2
-                className="text-3xl md:text-4xl font-bold mb-4"
-                data-aos="fade-up"
-              >
-                {t("work_that_drives_outcomes")}
-              </h2>
-              <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
-                {t("work_that_drives_outcomes_description")}
-              </p>
-            </div>
-
-            <Project />
-
-            <span className="text-xs">
-              {t("swipe_left_or_right_to_see_more")}
-            </span>
-          </div>
-
-          <div className="relative py-14 md:py-28 overflow-hidden">
-            <div className="text-center">
-              <h4
-                className="text-sm font-semibold tracking-widest uppercase mb-3"
-                data-aos="fade-up"
-              >
-                {t("client_feedback")}
-              </h4>
-              <h2
-                className="text-3xl md:text-4xl font-bold mb-4"
-                data-aos="fade-up"
-              >
-                {t("trusted_for_delivery_and_reliability")}
-              </h2>
-              <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
-                {t("trusted_for_delivery_and_reliability_description")}
-              </p>
-            </div>
-
-            <ClientFeedback />
-          </div>
-
-          <div className="relative py-10 md:py-16 overflow-hidden">
-            <div className="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-6">
-                <div
-                  className="rounded-2xl border p-6 md:p-7"
+            <div className="relative py-14 md:py-28 overflow-hidden">
+              <div className="text-center mb-10 md:mb-14">
+                <h4
+                  className="text-sm font-semibold tracking-widest uppercase mb-3"
                   data-aos="fade-up"
                 >
-                  <p
-                    className="text-xs uppercase tracking-widest mb-3"
-                    data-aos="fade-up"
-                  >
-                    {t("budget_aligned_delivery")}
-                  </p>
-                  <h3
-                    className="text-2xl md:text-3xl font-bold mb-3"
-                    data-aos="fade-up"
-                  >
-                    {t("budget_title")}
-                  </h3>
-                  <p
-                    className="text-sm md:text-base leading-relaxed"
-                    data-aos="fade-up"
-                  >
-                    {t("budget_description")}
-                  </p>
-
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    <span
-                      className="text-xs rounded-full border px-3 py-1"
-                      data-aos="fade-up"
-                    >
-                      {t("budget_tag_cost_first")}
-                    </span>
-                    <span
-                      className="text-xs rounded-full border px-3 py-1"
-                      data-aos="fade-up"
-                    >
-                      {t("budget_tag_performance")}
-                    </span>
-                    <span
-                      className="text-xs rounded-full border px-3 py-1"
-                      data-aos="fade-up"
-                    >
-                      {t("budget_tag_scales")}
-                    </span>
-                  </div>
-                </div>
+                  {t("how_i_help")}
+                </h4>
+                <h2
+                  className="text-3xl md:text-5xl font-bold leading-tight"
+                  data-aos="fade-up"
+                >
+                  {t("how_i_help_title")}
+                </h2>
+                <p className="max-w-2xl mx-auto mt-4" data-aos="fade-up">
+                  {t("how_i_help_description")}
+                </p>
               </div>
+              <ServicesCarousel />
+            </div>
 
-              <div className="lg:col-span-6">
-                <div className="relative p-6 md:p-7">
-                  <div className="absolute left-6 top-6 bottom-6 w-px border-l" />
+            <div className="relative py-14 md:py-28 overflow-hidden">
+              <div className="text-center">
+                <h4
+                  className="text-sm font-semibold tracking-widest text-cyan-500 uppercase mb-3"
+                  data-aos="fade-up"
+                >
+                  {ta("coding_activity_label")}
+                </h4>
+                <h2
+                  className="text-3xl md:text-4xl font-bold mb-4"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  {ta("coding_activity_title")}
+                </h2>
+                <p
+                  className="text-center max-w-2xl mx-auto mb-6"
+                  data-aos="fade-up"
+                >
+                  {ta("coding_activity_description")}
+                </p>
+              </div>
+              <Wakatime />
+            </div>
 
-                  <div className="space-y-6">
-                    <div className="pl-6 relative">
-                      <span className="absolute -left-1 top-1 h-2.5 w-2.5 rounded-full border bg-white dark:bg-black" />
-                      <p className="text-sm font-semibold" data-aos="fade-up">
-                        {t("hosting_shared")}
-                      </p>
-                      <p
-                        className="text-xs uppercase tracking-wider"
-                        data-aos="fade-up"
-                      >
-                        {t("hosting_shared_desc")}
-                      </p>
-                    </div>
+            <Github />
 
-                    <div className="pl-6 relative">
-                      <span className="absolute -left-1 top-1 h-2.5 w-2.5 rounded-full border bg-white dark:bg-black" />
-                      <p className="text-sm font-semibold" data-aos="fade-up">
-                        {t("hosting_vps")}
-                      </p>
-                      <p
-                        className="text-xs uppercase tracking-wider"
-                        data-aos="fade-up"
-                      >
-                        {t("hosting_vps_desc")}
-                      </p>
-                    </div>
+            <div className="relative py-14 md:py-28 overflow-hidden">
+              <div className="text-center">
+                <h4
+                  className="text-sm font-semibold tracking-widest uppercase mb-3"
+                  data-aos="fade-up"
+                >
+                  {t("results_case_studies")}
+                </h4>
+                <h2
+                  className="text-3xl md:text-4xl font-bold mb-4"
+                  data-aos="fade-up"
+                >
+                  {t("work_that_drives_outcomes")}
+                </h2>
+                <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
+                  {t("work_that_drives_outcomes_description")}
+                </p>
+              </div>
+              <Project />
+              <span className="text-xs">
+                {t("swipe_left_or_right_to_see_more")}
+              </span>
+            </div>
 
-                    <div className="pl-6 relative">
-                      <span className="absolute -left-1 top-1 h-2.5 w-2.5 rounded-full border bg-white dark:bg-black" />
-                      <p className="text-sm font-semibold" data-aos="fade-up">
-                        {t("hosting_dedicated")}
-                      </p>
-                      <p
-                        className="text-xs uppercase tracking-wider"
-                        data-aos="fade-up"
-                      >
-                        {t("hosting_dedicated_desc")}
-                      </p>
-                    </div>
-
-                    <div className="pl-6 relative">
-                      <span className="absolute -left-1 top-1 h-2.5 w-2.5 rounded-full border bg-white dark:bg-black" />
-                      <p className="text-sm font-semibold" data-aos="fade-up">
-                        {t("hosting_cloud")}
-                      </p>
-                      <p
-                        className="text-xs uppercase tracking-wider"
-                        data-aos="fade-up"
-                      >
-                        {t("hosting_cloud_desc")}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div
-                    className="mt-6 ms-10 text-xs uppercase tracking-widest"
+            <div className="relative py-14 md:py-28 overflow-hidden">
+              <div className="relative z-10 max-w-6xl mx-auto px-4">
+                <div className="text-center">
+                  <h4
+                    className="text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3"
                     data-aos="fade-up"
                   >
-                    {t("hosting_footer")}
-                  </div>
+                    {ta("security_label")}
+                  </h4>
+                  <h2
+                    className="text-3xl md:text-4xl font-bold mb-4"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                  >
+                    {ta("security_title")}
+                  </h2>
+                  <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
+                    {ta("security_description")}
+                  </p>
                 </div>
+                <SecurityPractices />
               </div>
             </div>
-          </div>
 
-          <div className="relative py-14 md:py-28 overflow-hidden">
-            <div className="mx-auto max-w-4xl text-center">
-              <p
-                className="text-xs uppercase tracking-widest mb-3"
-                data-aos="fade-up"
-              >
-                {t("about_label")}
-              </p>
-              <h2
-                className="text-3xl md:text-4xl font-bold mb-4"
-                data-aos="fade-up"
-              >
-                {t("about_title")}
-              </h2>
-              <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
-                {t("about_description")}
-              </p>
-
-              <Link
-                href="/about"
-                data-aos="fade-up"
-                className="inline-flex items-center rounded-full border px-4 py-2 text-sm font-medium hover:shadow-sm transition"
-              >
-                {t("about_cta")}
-              </Link>
+            <div className="relative py-14 md:py-28 overflow-hidden">
+              <div className="relative z-10 max-w-6xl mx-auto px-4">
+                <div className="text-center">
+                  <h4
+                    className="text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3"
+                    data-aos="fade-up"
+                  >
+                    {ta("ai_label")}
+                  </h4>
+                  <h2
+                    className="text-3xl md:text-4xl font-bold mb-4"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                  >
+                    {ta("ai_title")}
+                  </h2>
+                  <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
+                    {ta("ai_description")}
+                  </p>
+                </div>
+                <AI />
+              </div>
             </div>
-          </div>
 
-          <div
-            className="relative py-14 md:py-28 overflow-hidden"
-            data-aos="slide-up"
-          >
-            <div className="relative mx-auto max-w-4xl">
-              <div className="relative rounded-3xl border p-6 md:p-10 shadow-[0_10px_50px_-20px_rgba(0,0,0,0.15)]">
-                <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 mb-4">
-                  <span className="h-2 w-2 rounded-full border animate-pulse" />
-                  <span className="text-xs font-medium tracking-wide uppercase">
-                    {t("next_step_label")}
-                  </span>
+            <div className="relative py-14 md:py-28 overflow-hidden">
+              <div className="text-center">
+                <h4
+                  className="text-sm font-semibold tracking-widest text-fuchsia-500 uppercase mb-3"
+                  data-aos="fade-up"
+                >
+                  {ta("certifications_label")}
+                </h4>
+                <h2
+                  className="text-3xl md:text-4xl font-bold mb-4"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  {ta("certifications_title")}
+                </h2>
+                <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
+                  {ta("certifications_description")}
+                </p>
+              </div>
+              <Certificate />
+              <span className="text-xs">{ta("swipe_left_or_right")}</span>
+            </div>
+
+            <div className="relative py-14 md:py-28 overflow-hidden">
+              <div className="text-center">
+                <h4
+                  className="text-sm font-semibold tracking-widest text-green-500 uppercase mb-3"
+                  data-aos="fade-up"
+                >
+                  {ta("blog_label")}
+                </h4>
+                <h2
+                  className="text-3xl md:text-4xl font-bold mb-4"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  {ta("blog_title")}
+                </h2>
+                <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
+                  {ta("blog_description")}
+                </p>
+              </div>
+              <Blog />
+            </div>
+
+            <div className="relative py-14 md:py-28 overflow-hidden">
+              <div className="text-center">
+                <h4
+                  className="text-sm font-semibold tracking-widest uppercase mb-3"
+                  data-aos="fade-up"
+                >
+                  {t("client_feedback")}
+                </h4>
+                <h2
+                  className="text-3xl md:text-4xl font-bold mb-4"
+                  data-aos="fade-up"
+                >
+                  {t("trusted_for_delivery_and_reliability")}
+                </h2>
+                <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
+                  {t("trusted_for_delivery_and_reliability_description")}
+                </p>
+              </div>
+              <ClientFeedback />
+            </div>
+
+            <Steam />
+
+            <div className="relative py-14 md:py-28 overflow-hidden">
+              <div className="text-center">
+                <h4
+                  className="text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3"
+                  data-aos="fade-up"
+                >
+                  {ta("youtube_label")}
+                </h4>
+                <h2
+                  className="text-3xl md:text-4xl font-bold mb-4"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  {ta("youtube_title")}
+                </h2>
+                <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
+                  {ta("youtube_description")}
+                </p>
+              </div>
+              <Youtube />
+              <span className="text-xs">{ta("swipe_left_or_right")}</span>
+            </div>
+
+            <div className="relative py-14 md:py-28 overflow-hidden">
+              <div className="mx-auto max-w-4xl text-center">
+                <div
+                  className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold tracking-widest uppercase"
+                  data-aos="fade-up"
+                >
+                  <span className="inline-block h-2 w-2 rounded-full border" />
+                  {ta("community_label")}
                 </div>
 
-                <h3 className="text-2xl md:text-3xl font-bold mb-4 leading-tight">
-                  {t("next_step_title")}
-                </h3>
+                <h2
+                  className="mt-4 text-3xl md:text-4xl font-bold"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  {ta("community_title")}
+                </h2>
 
-                <p className="text-sm md:text-base leading-relaxed">
-                  {t("next_step_description")}
+                <p className="max-w-2xl mx-auto mt-4" data-aos="fade-up">
+                  {ta("community_description_1")}
                 </p>
 
-                <div className="mt-6 flex flex-wrap items-center gap-3">
-                  <span className="text-xs md:text-sm rounded-full border px-3 py-1">
-                    {t("next_step_tag_outcome")}
-                  </span>
-                  <span className="text-xs md:text-sm rounded-full border px-3 py-1">
-                    {t("next_step_tag_business")}
-                  </span>
-                  <span className="text-xs md:text-sm rounded-full border px-3 py-1">
-                    {t("next_step_tag_reliable")}
-                  </span>
+                <p className="max-w-2xl mx-auto mt-4" data-aos="fade-up">
+                  {ta("community_description_2")}
+                </p>
+
+                <div
+                  className="mx-auto mt-6 grid max-w-2xl grid-cols-1 gap-3 text-sm md:grid-cols-3"
+                  data-aos="fade-up"
+                >
+                  <div className="rounded-lg border px-4 py-3">
+                    <div className="text-lg font-semibold">
+                      {ta("community_card1_title")}
+                    </div>
+                    <div className="text-xs uppercase tracking-wider">
+                      {ta("community_card1_desc")}
+                    </div>
+                  </div>
+                  <div className="rounded-lg border px-4 py-3">
+                    <div className="text-lg font-semibold">
+                      {ta("community_card2_title")}
+                    </div>
+                    <div className="text-xs uppercase tracking-wider">
+                      {ta("community_card2_desc")}
+                    </div>
+                  </div>
+                  <div className="rounded-lg border px-4 py-3">
+                    <div className="text-lg font-semibold">
+                      {ta("community_card3_title")}
+                    </div>
+                    <div className="text-xs uppercase tracking-wider">
+                      {ta("community_card3_desc")}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-6 flex flex-col md:flex-row justify-center gap-2 md:gap-4">
+                  <Link
+                    href="https://hallofcodes.vercel.app"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                  >
+                    <Button
+                      icon={faCodeSolid}
+                      className="border border-current"
+                    >
+                      {ta("community_cta_join")}
+                    </Button>
+                  </Link>
+                  <Link
+                    href="https://github.com/hallofcodes"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                  >
+                    <Button icon={faGithub} className="border border-current">
+                      {ta("community_cta_github")}
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div
+              className="relative py-14 md:py-28 overflow-hidden"
+              data-aos="slide-up"
+            >
+              <div className="relative mx-auto max-w-4xl">
+                <div className="relative rounded-3xl border p-6 md:p-10 shadow-[0_10px_50px_-20px_rgba(0,0,0,0.15)]">
+                  <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 mb-4">
+                    <span className="h-2 w-2 rounded-full border animate-pulse" />
+                    <span className="text-xs font-medium tracking-wide uppercase">
+                      {t("next_step_label")}
+                    </span>
+                  </div>
+
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4 leading-tight">
+                    {t("next_step_title")}
+                  </h3>
+
+                  <p className="text-sm md:text-base leading-relaxed">
+                    {t("next_step_description")}
+                  </p>
+
+                  <div className="mt-6 flex flex-wrap items-center gap-3">
+                    <span className="text-xs md:text-sm rounded-full border px-3 py-1">
+                      {t("next_step_tag_outcome")}
+                    </span>
+                    <span className="text-xs md:text-sm rounded-full border px-3 py-1">
+                      {t("next_step_tag_business")}
+                    </span>
+                    <span className="text-xs md:text-sm rounded-full border px-3 py-1">
+                      {t("next_step_tag_reliable")}
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
       </main>
+
+      <RecentGithubActivityWrapper>
+        <RecentGithubActivity />
+      </RecentGithubActivityWrapper>
     </>
   );
 }

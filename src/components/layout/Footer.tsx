@@ -214,14 +214,6 @@ export default function Footer({
                 </li>
                 <li>
                   <Link
-                    href="/about"
-                    className="hover:text-orange-500 text-gray-400"
-                  >
-                    {t("footer_about")}
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     href="/legal/terms-of-service"
                     className="hover:text-orange-500 text-gray-400"
                   >
@@ -441,18 +433,13 @@ export default function Footer({
             </div>
           </div>
         </div>
-        <div className="flex justify-between mt-10 border-t border-gray-800 pt-6 text-center text-xs text-gray-300">
-          <div className="text-left">
-            <span className="block">
-              © {new Date().getFullYear()} Melvin Jones Repol.{" "}
-              {t("footer_all_rights_reserved")}
-            </span>
-            <p className="text-muted text-gray-400 max-w-sm me-5">
-              {t("footer_copyright")}
-            </p>
-          </div>
+        <div className="block md:flex justify-between mt-10 border-t border-gray-800 pt-6 text-center text-xs text-gray-300">
+          <span className="block">
+            © {new Date().getFullYear()} Melvin Jones Repol.{" "}
+            {t("footer_all_rights_reserved")}
+          </span>
 
-          <small className="block mt-4 text-xs text-green-400 mb-3">
+          <small className="block text-xs text-green-400">
             <Link
               href="https://github.com/mrepol742/melvinjonesrepol"
               target="_blank"

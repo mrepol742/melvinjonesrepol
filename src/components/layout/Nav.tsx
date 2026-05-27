@@ -8,7 +8,6 @@ import {
   faBlog,
   faBriefcase,
   faCertificate,
-  faCircleInfo,
   faEnvelope,
   faFolder,
   faGamepad,
@@ -80,7 +79,6 @@ export default function Nav() {
       desktopOnly: true,
       mobileMenu: true,
     },
-    { key: "about", label: t("nav_about"), href: "/about", icon: faCircleInfo },
   ];
 
   useEffect(() => {

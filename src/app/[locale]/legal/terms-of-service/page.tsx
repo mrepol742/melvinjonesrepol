@@ -51,9 +51,8 @@ export default function Terms() {
         </p>
 
         <p>
-          Melvin Jones Repol and Repol Systems are operated by the same legal
-          entity. References to “we,” “us,” and “our” throughout these Terms
-          apply to both names collectively.
+          Melvin Jones Repol "we," "us," and "our" throughout these Terms apply
+          to both names collectively.
         </p>
 
         <h2 className="text-2xl font-semibold">1. Scope of Services</h2>
