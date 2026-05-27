@@ -19,7 +19,6 @@ const routes = [
   "/webvium-launcher",
   "/floating-console-extension",
   "/teams",
-  "/about",
   "/certificates",
   "/work-experience",
   "/gallery",

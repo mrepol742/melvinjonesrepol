@@ -36,7 +36,7 @@ Core focus areas:
 ### Home
 
 URL: https://www.melvinjonesrepol.com
-Summary: Business overview, featured projects and client feedback.
+Summary: Personal background, developer journey, real-time coding statistics, and technical philosophy.
 
 ### Projects
 
@@ -52,11 +52,6 @@ Summary: List of certifications and courses completed in software development an
 
 URL: https://www.melvinjonesrepol.com/work-experience
 Summary: Detailed work history with roles, responsibilities, and achievements.
-
-### About
-
-URL: https://www.melvinjonesrepol.com/about
-Summary: Personal background, developer journey, real-time coding statistics, and technical philosophy.
 
 ### Contact Me
 

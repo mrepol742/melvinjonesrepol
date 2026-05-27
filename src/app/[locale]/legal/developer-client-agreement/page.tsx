@@ -4,12 +4,12 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Developer Client Agreement - Melvin Jones Repol",
   description:
-    "Developer Client Agreement for services provided by Melvin Jones Repol / Repol Systems.",
+    "Developer Client Agreement for services provided by Melvin Jones Repol.",
   alternates: getAlternates("/legal/developer-client-agreement"),
   openGraph: {
     title: "Developer Client Agreement - Melvin Jones Repol",
     description:
-      "Developer Client Agreement for services provided by Melvin Jones Repol / Repol Systems.",
+      "Developer Client Agreement for services provided by Melvin Jones Repol.",
     url: "https://www.melvinjonesrepol.com/legal/developer-client-agreement",
     siteName: "Melvin Jones Repol",
     images: [
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Developer Client Agreement - Melvin Jones Repol",
     description:
-      "Developer Client Agreement for services provided by Melvin Jones Repol / Repol Systems.",
+      "Developer Client Agreement for services provided by Melvin Jones Repol.",
     images: [
       "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
     ],
@@ -45,9 +45,9 @@ export default function DeveloperClientAgreement() {
 
         <p>
           This Developer Client Agreement ("Agreement") governs the professional
-          services provided by Melvin Jones Repol / Repol Systems ("Developer",
-          "we", "us", or "our") to the individual or organization purchasing
-          development services ("Client").
+          services provided by Melvin Jones Repol ("Developer", "we", "us", or
+          "our") to the individual or organization purchasing development
+          services ("Client").
         </p>
 
         <p>

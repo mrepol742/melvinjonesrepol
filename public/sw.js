@@ -1,8 +1,8 @@
 /* eslint-disable no-restricted-globals */
 
-const IMAGE_CACHE = "image-cache-v2";
-const FONT_CACHE = "font-cache-v2";
-const STATIC_CACHE = "static-cache-v2";
+const IMAGE_CACHE = "image-cache-v2.1";
+const FONT_CACHE = "font-cache-v2.1";
+const STATIC_CACHE = "static-cache-v2.1";
 
 const MAX_ENTRIES = 80;
 const NETWORK_TIMEOUT_MS = 2500;
@@ -13,8 +13,8 @@ const CORE_ASSETS = [
   "/favicon-16x16.png",
   "/favicon-32x32.png",
   "/apple-touch-icon.png",
-  "/android-chrome-192x192",
-  "/android-chrome-512x512",
+  "/android-chrome-192x192.png",
+  "/android-chrome-512x512.png",
 ];
 
 self.addEventListener("install", (event) => {
