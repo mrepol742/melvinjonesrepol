@@ -74,7 +74,6 @@ export default async function LocaleLayout({
           <BrowserCheck />
         </>
       )}
-      <ServiceWorkerRegister />
     </NextIntlClientProvider>
   );
 }
