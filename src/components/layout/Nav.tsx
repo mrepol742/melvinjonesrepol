@@ -149,7 +149,7 @@ export default function Nav() {
   return (
     <>
       <nav
-        className={`rounded md:rounded-full fixed z-50 mt-5 top-0 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white p-3 shadow-lg hover:shadow-xl transition-all duration-300 ${
+        className={`rounded md:rounded-full fixed z-50 mt-5 top-0 left-1/2 transform -translate-x-1/2 bg-gray-800/60 text-white p-3 shadow-lg hover:shadow-xl transition-all duration-300 ${
           show ? "translate-y-0" : "-translate-y-full"
         }`}
         aria-label="Main Navigation"
@@ -264,7 +264,7 @@ export default function Nav() {
         />
 
         <aside
-          className={`absolute top-0 right-0 h-full w-[82%] max-w-sm bg-gray-800 border-l border-white/10 shadow-2xl transition-transform duration-300 ease-out flex flex-col ${
+          className={`absolute top-0 right-0 h-full w-[82%] max-w-sm bg-slate-950/40 border-l border-white/10 shadow-2xl transition-transform duration-300 ease-out flex flex-col ${
             isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
@@ -312,11 +312,11 @@ export default function Nav() {
                           group flex items-center gap-3
                           rounded-xl
                           px-3 py-3
-                          hover:bg-gray-700
-                          transition-all
+                          hover:bg-slate-800/40
+                          transition-all duration-200
                         "
                       >
-                        <div className="w-10 h-10 rounded-lg bg-gray-700 flex items-center justify-center text-white group-hover:text-orange-400 transition-colors">
+                        <div className="w-10 h-10 rounded-lg bg-gray-900 flex items-center justify-center text-white group-hover:text-orange-400 transition-colors">
                           <FontAwesomeIcon icon={item.icon} />
                         </div>
 
@@ -342,11 +342,11 @@ export default function Nav() {
                         group flex items-center gap-3
                         rounded-xl
                         px-3 py-3
-                        hover:bg-gray-700
-                        transition-all
+                        hover:bg-slate-800/40
+                        transition-all duration-200
                       "
                     >
-                      <div className="w-10 h-10 rounded-lg bg-gray-700 flex items-center justify-center text-white group-hover:text-orange-400 transition-colors">
+                      <div className="w-10 h-10 rounded-lg bg-gray-900 flex items-center justify-center text-white group-hover:text-orange-400 transition-colors">
                         <FontAwesomeIcon icon={item.icon} />
                       </div>
 
@@ -367,12 +367,12 @@ export default function Nav() {
               className="
                 w-full flex items-center justify-between
                 rounded-xl px-4 py-3
-                bg-gray-700 hover:bg-gray-600
+                bg-gray-900 hover:bg-gray-800
                 transition-all
               "
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center text-white">
+                <div className="w-10 h-10 rounded-lg bg-gray-900 flex items-center justify-center text-white">
                   <FontAwesomeIcon icon={theme === "dark" ? faSun : faMoon} />
                 </div>
 
@@ -392,7 +392,7 @@ export default function Nav() {
               className="
                 flex items-center justify-center
                 rounded-xl px-4 py-3
-                bg-gray-700 hover:bg-orange-400
+                bg-gray-900 hover:bg-orange-400
                 text-white
                 transition-all
               "

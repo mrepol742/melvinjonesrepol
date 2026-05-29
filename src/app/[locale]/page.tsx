@@ -133,14 +133,6 @@ export default async function Home() {
 
             {/* Content layer */}
             <div className="relative z-10 min-h-screen flex flex-col px-6 py-12 md:px-10">
-              {/* Top label */}
-              <div className="pt-4">
-                <span className="text-xs tracking-widest uppercase border px-3 py-1 rounded-full">
-                  {ta("label")}
-                </span>
-              </div>
-
-              {/* Middle: name + bio */}
               <div className="my-auto py-14 lg:max-w-[60%] xl:max-w-[56%]">
                 <h1
                   className="text-[17vw] sm:text-[12vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8"
