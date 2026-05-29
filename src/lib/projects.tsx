@@ -1,5 +1,15 @@
 const Projects = [
   {
+    title: "NPM Guard",
+    description:
+      "Due to the recent supply chain attacks, we developed NPM Guard to monitor and secure NPM package installations, ensuring the integrity and safety of your dependencies.",
+    ai_description:
+      "NPM Guard is an NPM package monitoring tool that scans your project's dependencies for vulnerabilities and ensures they are up-to-date and safe to use.",
+    type: "personal",
+    featured: true,
+    technology: ["Python"],
+  },
+  {
     title: "Subscription-Based Digital Music Platform",
     description:
       "A centralized digital music platform offering curated remix content through a subscription-based access model managed by administrators.",
@@ -70,7 +80,6 @@ const Projects = [
     repo: "https://github.com/hallofcodes/hallofcodes",
     featured: false,
     technology: ["Next.js", "TypeScript", "Tailwind CSS"],
-    cover: "https://opengraph.githubassets.com/1/hallofcodes/hallofcodes",
   },
   {
     title: "Ulisha Store Laravel",
@@ -108,7 +117,6 @@ const Projects = [
     repo: "https://github.com/mrepol742/web-surface-scan",
     featured: false,
     technology: ["Node.js", "TypeScript"],
-    cover: "https://opengraph.githubassets.com/1/mrepol742/web-surface-scan",
   },
   {
     title: "DJ Mixer Console",
@@ -121,7 +129,6 @@ const Projects = [
     repo: "https://github.com/mrepol742/dj-mixer-console",
     featured: false,
     technology: ["Angular", "TypeScript", "Web Audio API", "Tailwind CSS"],
-    cover: "https://opengraph.githubassets.com/1/mrepol742/dj-mixer-console",
   },
   {
     title: "Webvium Launcher",
@@ -134,7 +141,6 @@ const Projects = [
     repo: "https://github.com/webvium/webvium-launcher",
     featured: false,
     technology: ["Kotlin"],
-    cover: "https://opengraph.githubassets.com/1/webvium/webvium-launcher",
   },
   {
     title: "Web Appp",
@@ -146,7 +152,6 @@ const Projects = [
     repo: "https://github.com/mrepol742/web-appp",
     featured: false,
     technology: ["Kotlin"],
-    cover: "https://opengraph.githubassets.com/1/mrepol742/web-appp",
   },
   {
     title: "My Portfolio",
@@ -171,7 +176,6 @@ const Projects = [
     repo: "https://github.com/mrepol742/project-canis-tg",
     featured: false,
     technology: ["TypeScript"],
-    cover: "https://opengraph.githubassets.com/1/mrepol742/project-canis-tg",
   },
   {
     title: "Project Canis",
@@ -207,8 +211,6 @@ const Projects = [
     link: "https://github.com/mrepol742/devops-capstone-project",
     featured: false,
     technology: ["JavaScript"],
-    cover:
-      "https://opengraph.githubassets.com/1/mrepol742/devops-capstone-project",
     archived: true,
   },
   {
@@ -245,8 +247,6 @@ const Projects = [
     type: "personal",
     featured: false,
     technology: ["JavaScript"],
-    cover:
-      "https://opengraph.githubassets.com/1/mrepol742/secondchance-backend-nodejs-capstone",
     archived: true,
   },
   {
@@ -258,7 +258,6 @@ const Projects = [
     type: "personal",
     featured: false,
     technology: ["PHP"],
-    cover: "https://opengraph.githubassets.com/1/lgu-ms/lgu-ms",
     archived: true,
   },
   {
@@ -272,7 +271,6 @@ const Projects = [
     link: "https://projectdeep.vercel.app",
     featured: false,
     technology: ["JavaScript"],
-    cover: "https://opengraph.githubassets.com/1/mrepol742/project-deep",
   },
   {
     title: "Project Orion",
@@ -296,8 +294,6 @@ const Projects = [
     repo: "https://github.com/mrepol742/Online-Catering-System",
     featured: false,
     technology: ["PHP"],
-    cover:
-      "https://opengraph.githubassets.com/1/mrepol742/Online-Catering-System",
     archived: true,
   },
   {
@@ -309,7 +305,6 @@ const Projects = [
     repo: "https://github.com/mrepol742/Room-Rental-System",
     featured: false,
     technology: ["PHP"],
-    cover: "https://opengraph.githubassets.com/1/mrepol742/Room-Rental-System",
     archived: true,
   },
   {
@@ -323,7 +318,6 @@ const Projects = [
     link: "https://hallofcodes.github.io",
     featured: false,
     technology: ["Vue.js"],
-    cover: "https://opengraph.githubassets.com/1/hallofcodes/hallofcodes-vue",
   },
   {
     title: "Webvium VPN",

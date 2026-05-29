@@ -65,15 +65,21 @@ export default async function LocaleLayout({
       <ScrollTop />
       <Footer posts={posts} />
 
-      {isProduction && <DevToolsDetector />}
-
       {isProduction && (
         <>
           <GoogleAnalytics />
           <ServiceWorkerRegister />
           <BrowserCheck />
+          <DevToolsDetector />
         </>
       )}
+
+      <script
+        src="https://app.livechatai.com/embed.js"
+        data-id="cmdmcvh4n0001jt0c03xemlxw"
+        async
+        defer
+      ></script>
     </NextIntlClientProvider>
   );
 }
