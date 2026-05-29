@@ -36,23 +36,74 @@ export default async function Project({ query }: { query: string }) {
     });
 
   return (
-    <main className="my-18 p-3 md:p-8">
-      <section>
-        <h1
-          className="text-2xl font-semibold"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          Personal Projects Portfolio
-        </h1>
-        <p className="mt-2" data-aos="fade-up" data-aos-delay="100">
-          Explore a collection of my personal software development projects,
-          experiments, and tools I’ve built using modern technologies. These
-          projects showcase my skills in web development, problem solving, and
-          building real-world applications.
-        </p>
+    <main>
+      <section className="relative min-h-screen overflow-hidden border-b border-zinc-800">
+        <div className="relative flex min-h-screen flex-col px-6 py-12 md:px-10">
+          <div className="my-auto py-14">
+            <h1
+              className="text-[14vw] sm:text-[10vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              Building
+              <br />
+              <span className="opacity-40">modern</span>
+              <br />
+              products.
+            </h1>
 
-        <SearchForm initialQuery={query} />
+            <p
+              className="max-w-2xl text-lg leading-8 text-zinc-400 md:text-xl"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              Production-ready applications, SaaS platforms, AI integrations,
+              automation tools, and full-stack projects built with modern
+              technologies and solid engineering practices.
+            </p>
+          </div>
+
+          <div
+            className="border-t border-zinc-800 pt-6 grid grid-cols-2 sm:grid-cols-4 gap-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div>
+              <p className="text-4xl font-black">100+</p>
+              <p className="mt-1 text-sm text-zinc-400">Projects</p>
+            </div>
+            <div>
+              <p className="text-4xl font-black">9+</p>
+              <p className="mt-1 text-sm text-zinc-400">Years building</p>
+            </div>
+            <div className="col-span-2 flex flex-wrap items-center gap-2">
+              {[
+                "Full Stack",
+                "Next.js",
+                "AI Apps",
+                "Automation",
+                "SaaS",
+                "TypeScript",
+                "Laravel",
+                "Cloud",
+                "UI/UX",
+              ].map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-zinc-400 px-3 py-1 text-xs text-zinc-400"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" className="px-6 py-24 md:px-10">
+        <div className="mb-8 max-w-xl">
+          <SearchForm initialQuery={query} />
+        </div>
 
         {filteredProjects.length === 0 ? (
           <div>

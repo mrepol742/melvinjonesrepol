@@ -22,10 +22,16 @@ export default function SearchForm({ initialQuery = "" }: ProjectSearchProps) {
 
   useEffect(() => {
     const params = new URLSearchParams();
-    if (debouncedQuery) {
+
+    if (debouncedQuery.trim()) {
       params.set("q", debouncedQuery);
     }
-    router.replace(`?${params.toString()}`);
+
+    const nextUrl = `?${params.toString()}`;
+
+    router.replace(nextUrl, {
+      scroll: false,
+    });
   }, [debouncedQuery, router]);
 
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) =>

@@ -126,6 +126,11 @@
       "permanent": true
     },
     {
+      "source": "/teams",
+      "destination": "/contact-me",
+      "permanent": true
+    },
+    {
       "source": "/about",
       "destination": "/",
       "permanent": true

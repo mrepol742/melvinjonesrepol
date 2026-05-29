@@ -183,19 +183,66 @@ const albums = [
 ];
 
 export default function Gallery() {
+  const totalMedia = albums.reduce((sum, a) => sum + a.media.length, 0);
+
   return (
-    <main className="my-18 p-3 md:p-8">
-      <section>
-        <h1 className="text-2xl font-semibold" data-aos="fade-up">
-          Project & Design Gallery
-        </h1>
+    <main>
+      <section className="relative min-h-screen overflow-hidden border-b border-zinc-800">
+        <div className="relative flex min-h-screen flex-col px-6 py-12 md:px-10">
+          <div className="my-auto py-14">
+            <h1
+              className="text-[14vw] sm:text-[10vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              Visual
+              <br />
+              <span className="opacity-40">project</span>
+              <br />
+              portfolio.
+            </h1>
 
-        <p className="mt-2 mb-5" data-aos="fade-up" data-aos-delay="100">
-          Explore a curated collection of images highlighting my personal
-          projects, design work, and creative digital solutions. Each album
-          groups related images or videos so you can browse by project.
-        </p>
+            <p
+              className="max-w-2xl text-lg leading-8 text-zinc-400 md:text-xl"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              A curated collection of images highlighting my personal projects,
+              design work, and creative digital solutions. Each album groups
+              related images or videos so you can browse by project.
+            </p>
+          </div>
 
+          <div
+            className="border-t border-zinc-800 pt-6 grid grid-cols-2 sm:grid-cols-4 gap-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div>
+              <p className="text-4xl font-black">{albums.length}</p>
+              <p className="mt-1 text-sm text-zinc-400">Albums</p>
+            </div>
+            <div>
+              <p className="text-4xl font-black">{totalMedia}+</p>
+              <p className="mt-1 text-sm text-zinc-400">Media files</p>
+            </div>
+            <div className="col-span-2 flex flex-wrap items-center gap-2">
+              {["Web Apps", "Mobile", "Android", "UI/UX", "Portfolio"].map(
+                (item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-zinc-400 px-3 py-1 text-xs text-zinc-400"
+                  >
+                    {item}
+                  </span>
+                ),
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-24 md:px-10">
         <GalleryComponent albums={albums} />
       </section>
     </main>

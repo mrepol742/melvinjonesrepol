@@ -174,14 +174,6 @@ export default function Footer({
                 </li>
                 <li>
                   <Link
-                    href="/teams"
-                    className="hover:text-orange-500 text-gray-400"
-                  >
-                    {t("footer_teams")}
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     href="/certificates"
                     className="hover:text-orange-500 text-gray-400"
                   >

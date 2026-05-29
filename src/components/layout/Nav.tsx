@@ -14,7 +14,6 @@ import {
   faImages,
   faMoon,
   faSun,
-  faUser,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
@@ -48,14 +47,6 @@ export default function Nav() {
       label: t("nav_gaming"),
       href: "/gaming",
       icon: faGamepad,
-      desktopOnly: true,
-      mobileMenu: true,
-    },
-    {
-      key: "teams",
-      label: t("nav_teams"),
-      href: "/teams",
-      icon: faUser,
       desktopOnly: true,
       mobileMenu: true,
     },

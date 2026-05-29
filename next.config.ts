@@ -19,6 +19,8 @@ const ContentSecurityPolicy = `
     https://*.trustpilot.com
     https://cdn.trustpilot.net
     https://www.youtube.com
+    https://www.google.com
+    https://www.gstatic.com
     https://s.ytimg.com;
 
   style-src
@@ -35,6 +37,7 @@ const ContentSecurityPolicy = `
     https://*.g.doubleclick.net
     https://*.steamstatic.com
     https://cdn.cloudflare.steamstatic.com
+    https://opengraph.githubassets.com
     https://i.ytimg.com;
 
   font-src
@@ -55,6 +58,7 @@ const ContentSecurityPolicy = `
     https://*.trustpilot.com
     https://cdn.cloudflare.steamstatic.com
     https://*.steamstatic.com
+    https://opengraph.githubassets.com
     https://www.youtube.com;
 
   frame-src

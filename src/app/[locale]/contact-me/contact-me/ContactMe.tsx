@@ -2,9 +2,7 @@
 
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
-import { faAt, faPerson, faUser } from "@fortawesome/free-solid-svg-icons";
-import { faSearch } from "@fortawesome/free-solid-svg-icons/faSearch";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAt, faUser } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
@@ -18,6 +16,12 @@ export default function ContactMe() {
   });
 
   const [grecaptchaLoaded, setGrecaptchaLoaded] = useState(false);
+
+  const wordCount =
+    formData.message.trim() === ""
+      ? 0
+      : formData.message.trim().split(/\s+/).length;
+  const isValidWordCount = wordCount >= 20 && wordCount <= 500;
 
   useEffect(() => {
     const scriptId = "recaptcha-enterprise";
@@ -87,142 +91,208 @@ export default function ContactMe() {
   };
 
   return (
-    <main className="h-screen flex items-center p-3 md:p-8">
-      <section className="mx-auto">
-        <div className="flex flex-col md:flex-row gap-10">
-          <div className="md:w-2/3">
-            <h1 className="text-2xl font-semibold mb-2">
-              Contact Me – Get in Touch
-            </h1>
-
-            <p className="mb-6 max-w-md">
-              Whether you have a question, a project idea, or just want to
-              connect, fill out the form below and I will respond promptly.
-            </p>
-
-            <form onSubmit={handleSubmit}>
-              <div className="mb-4">
-                <Input
-                  icon={faUser}
-                  handleChange={handleChange}
-                  form={{
-                    name: "name",
-                    value: formData.name,
-                    placeholder: "Your Name",
-                    required: true,
-                  }}
-                />
-              </div>
-
-              <div className="mb-4">
-                <Input
-                  icon={faAt}
-                  handleChange={handleChange}
-                  form={{
-                    name: "email",
-                    value: formData.email,
-                    placeholder: "you@example.com",
-                    required: true,
-                  }}
-                />
-              </div>
-
-              <div className="absolute left-[-10000px] top-0 opacity-0">
-                <input
-                  type="text"
-                  name="username"
-                  value={formData.username}
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div className="mb-4">
-                <div
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl border
-                         transition-all duration-300
-                         focus-within:shadow-md focus-within:-translate-y-[1px]"
-                >
-                  <textarea
-                    rows={5}
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    placeholder="Type your message here..."
-                    className="w-full outline-none bg-transparent text-sm placeholder:opacity-60"
-                  />
-                </div>
-                <span className="text-xs text-muted">
-                  Your message must be between 20 and 500 words.
-                </span>
-              </div>
-
-              <span className="text-sm">
-                By continuing, you agree to our{" "}
-                <Link
-                  href="/legal/privacy-policy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 hover:underline"
-                >
-                  Privacy Policy
-                </Link>
-                .
-              </span>
-
-              <Button
-
-                className="w-full bg-indigo-400 before:bg-indigo-600 after:bg-indigo-600"
-              >
-                Send Message
-              </Button>
-            </form>
+    <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12">
+      <div className="lg:col-span-3">
+        <form onSubmit={handleSubmit} className="space-y-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <p className="text-xs uppercase tracking-widest mb-2 opacity-50">
+                Name
+              </p>
+              <Input
+                icon={faUser}
+                handleChange={handleChange}
+                form={{
+                  name: "name",
+                  value: formData.name,
+                  placeholder: "Your Name",
+                  required: true,
+                }}
+              />
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-widest mb-2 opacity-50">
+                Email
+              </p>
+              <Input
+                icon={faAt}
+                handleChange={handleChange}
+                form={{
+                  name: "email",
+                  value: formData.email,
+                  placeholder: "you@example.com",
+                  required: true,
+                }}
+              />
+            </div>
           </div>
 
-          <div className="md:w-1/3 flex flex-col gap-6">
-            <div>
-              <h2 className="text-lg font-semibold">
-                Alternative Contact
-              </h2>
-              <div className="flex flex-col gap-2">
-                <Link
-                  href="https://wa.me/+639283559507"
-                  className="underline-offset-2 hover:underline"
+          <div>
+            <p className="text-xs uppercase tracking-widest mb-2 opacity-50">
+              Username
+            </p>
+            <Input
+              icon={faUser}
+              handleChange={handleChange}
+              form={{
+                name: "username",
+                value: formData.username,
+                placeholder: "your-username",
+                required: true,
+              }}
+            />
+          </div>
 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  WhatsApp
-                </Link>
-                <Link
-                  href="https://www.facebook.com/melvinjonesrepol"
-                  className="underline-offset-2 hover:underline"
-
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Facebook
-                </Link>
-              </div>
+          <div>
+            <div className="flex items-center justify-between mb-2">
+              <p className="text-xs uppercase tracking-widest opacity-50">
+                Message
+              </p>
+              <span
+                className={`text-xs font-mono transition-colors ${
+                  wordCount === 0
+                    ? "opacity-30"
+                    : isValidWordCount
+                      ? "text-green-500"
+                      : wordCount > 500
+                        ? "text-red-500"
+                        : "text-amber-500"
+                }`}
+              >
+                {wordCount} / 500
+              </span>
             </div>
 
-            <div>
-              <h2 className="text-lg font-semibold">
-                Documents & Policies
-              </h2>
-              <Link
-                href="/legal/developer-client-agreement"
-                className="underline-offset-2 hover:underline"
+            <div className="rounded-xl border px-4 py-3 transition-all duration-200 focus-within:shadow-sm focus-within:-translate-y-px">
+              <textarea
+                rows={7}
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                placeholder="Type your message here..."
+                className="w-full outline-none bg-transparent text-sm placeholder:opacity-40 resize-none"
+              />
+            </div>
 
+            <div className="mt-1.5 flex items-center justify-between">
+              {wordCount > 0 && !isValidWordCount ? (
+                <p className="text-xs text-amber-500">
+                  {wordCount < 20
+                    ? `${20 - wordCount} more word${20 - wordCount === 1 ? "" : "s"} needed`
+                    : `${wordCount - 500} word${wordCount - 500 === 1 ? "" : "s"} over limit`}
+                </p>
+              ) : (
+                <span />
+              )}
+              <div className="flex gap-0.5">
+                {Array.from({ length: 10 }).map((_, i) => {
+                  const threshold = (i + 1) * 50;
+                  const filled = wordCount >= threshold;
+                  const partial =
+                    !filled && wordCount > i * 50 && wordCount < threshold;
+                  return (
+                    <div
+                      key={i}
+                      className={`h-1 w-4 rounded-full transition-all duration-200 ${
+                        filled
+                          ? wordCount > 500
+                            ? "bg-red-500"
+                            : "bg-green-500"
+                          : partial
+                            ? "bg-amber-400"
+                            : "opacity-10 border"
+                      }`}
+                    />
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
+          <div className="pt-2">
+            <p className="text-xs opacity-50 mb-4">
+              By continuing, you agree to our{" "}
+              <Link
+                href="/legal/privacy-policy"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="underline underline-offset-2 hover:opacity-80"
               >
-                Developer Client Agreement
+                Privacy Policy
               </Link>
-            </div>
+              .
+            </p>
+
+            <Button className="w-full bg-indigo-400 before:bg-indigo-600 after:bg-indigo-600">
+              Send Message
+            </Button>
+          </div>
+        </form>
+      </div>
+
+      <div className="lg:col-span-2 flex flex-col gap-4">
+        <div className="rounded-2xl border p-6">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="h-2 w-2 rounded-full bg-green-400 animate-pulse" />
+            <span className="text-xs uppercase tracking-widest">Available</span>
+          </div>
+          <p className="text-sm leading-relaxed opacity-60">
+            Currently open to new projects and collaborations. Typical response
+            time is within 24 hours.
+          </p>
+        </div>
+
+        <div className="rounded-2xl border p-6">
+          <p className="text-xs uppercase tracking-widest mb-4 opacity-50">
+            Reach out via
+          </p>
+          <div className="flex flex-col gap-3">
+            <Link
+              href="https://wa.me/+639283559507"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-between group"
+            >
+              <span className="text-sm font-medium">WhatsApp</span>
+              <span className="text-xs opacity-40 group-hover:opacity-70 transition-opacity">
+                →
+              </span>
+            </Link>
+            <div className="h-px border-t opacity-20" />
+            <Link
+              href="https://www.facebook.com/melvinjonesrepol"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-between group"
+            >
+              <span className="text-sm font-medium">Facebook</span>
+              <span className="text-xs opacity-40 group-hover:opacity-70 transition-opacity">
+                →
+              </span>
+            </Link>
           </div>
         </div>
-      </section>
-    </main>
+
+        <div className="rounded-2xl border p-6">
+          <p className="text-xs uppercase tracking-widest mb-4 opacity-50">
+            Before we start
+          </p>
+          <Link
+            href="/legal/developer-client-agreement"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-between group"
+          >
+            <span className="text-sm font-medium">
+              Developer Client Agreement
+            </span>
+            <span className="text-xs opacity-40 group-hover:opacity-70 transition-opacity">
+              →
+            </span>
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 }

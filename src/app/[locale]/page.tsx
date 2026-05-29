@@ -86,6 +86,7 @@ export default async function Home() {
       "https://www.youtube.com/@mrepol742",
       "https://g.dev/mrepol742",
       "https://steamcommunity.com/id/mrepol742",
+      "https://codeberg.org/mrepol742",
     ],
     worksFor: {
       "@type": "Organization",
@@ -131,7 +132,7 @@ export default async function Home() {
             </div>
 
             {/* Content layer */}
-            <div className="relative z-10 min-h-screen flex flex-col px-6 md:px-12 xl:px-20 py-12">
+            <div className="relative z-10 min-h-screen flex flex-col px-6 py-12 md:px-10">
               {/* Top label */}
               <div className="pt-4">
                 <span className="text-xs tracking-widest uppercase border px-3 py-1 rounded-full">
@@ -141,7 +142,11 @@ export default async function Home() {
 
               {/* Middle: name + bio */}
               <div className="my-auto py-14 lg:max-w-[60%] xl:max-w-[56%]">
-                <h1 className="text-[17vw] sm:text-[12vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8">
+                <h1
+                  className="text-[17vw] sm:text-[12vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
                   Melvin
                   <br />
                   <span className="opacity-40">Jones</span>
@@ -149,17 +154,29 @@ export default async function Home() {
                   Repol
                 </h1>
 
-                <p className="text-base md:text-xl leading-relaxed mb-6 max-w-lg">
+                <p
+                  className="text-base md:text-xl leading-relaxed mb-6 max-w-lg"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
                   {ta("intro")}
                 </p>
 
-                <p className="text-sm leading-relaxed max-w-lg opacity-60">
+                <p
+                  className="text-sm leading-relaxed max-w-lg opacity-60"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
                   {ta("delivery_mindset")}
                 </p>
               </div>
 
               {/* Bottom info strip — newspaper footer style */}
-              <div className="border-t pt-6 grid grid-cols-1 sm:grid-cols-3 gap-6 lg:max-w-[60%] xl:max-w-[56%]">
+              <div
+                className="border-t pt-6 grid grid-cols-1 sm:grid-cols-3 gap-6 lg:max-w-[60%] xl:max-w-[56%]"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
                 <div>
                   <p className="text-xs uppercase tracking-widest mb-1 opacity-50">
                     {ta("role_label")}

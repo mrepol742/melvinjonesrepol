@@ -72,29 +72,68 @@ export default async function CertificatesPage({
   );
 
   return (
-    <main className="my-18 p-3 md:p-8">
-      <section>
-        <h1
-          className="text-2xl font-semibold"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          {t("title")}
-        </h1>
+    <main>
+      <section className="relative min-h-screen overflow-hidden border-b border-zinc-800">
+        <div className="relative flex min-h-screen flex-col px-6 py-12 md:px-10">
+          <div className="my-auto py-14">
+            <h1
+              className="text-[14vw] sm:text-[10vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              Certified.
+              <br />
+              <span className="opacity-40">Always</span>
+              <br />
+              Learning.
+            </h1>
 
-        <p
-          className="mt-2 mb-10 opacity-90"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          {t("description")}
-        </p>
+            <p
+              className="max-w-2xl text-lg leading-8 text-zinc-400 md:text-xl"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              {t("description")}
+            </p>
+          </div>
 
-        <SearchForm initialQuery={query} />
+          <div
+            className="border-t border-zinc-800 pt-6 grid grid-cols-2 sm:grid-cols-4 gap-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div>
+              <p className="text-4xl font-black">{certificates.length}+</p>
+              <p className="mt-1 text-sm text-zinc-400">Certificates</p>
+            </div>
+            <div>
+              <p className="text-4xl font-black">5+</p>
+              <p className="mt-1 text-sm text-zinc-400">Platforms</p>
+            </div>
+            <div className="col-span-2 flex flex-wrap items-center gap-2">
+              {["Coursera", "Google", "IBM", "Sololearn", "Board Infinity"].map(
+                (item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-zinc-400 px-3 py-1 text-xs text-zinc-400"
+                  >
+                    {item}
+                  </span>
+                ),
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-24 md:px-10">
+        <div className="mb-8 max-w-xl">
+          <SearchForm initialQuery={query} />
+        </div>
 
         {filteredCertificates.length === 0 ? (
           <div className="mt-8">
-            <h2> {t("no_results_found")} </h2>
+            <h2>{t("no_results_found")}</h2>
           </div>
         ) : (
           <div className="relative mt-12">
@@ -106,11 +145,11 @@ export default async function CertificatesPage({
                   key={index}
                   className="relative md:w-96 flex-shrink-0 snap-start"
                   data-aos="fade-up"
-                  data-aos-delay={(index % 10) * 150} // Prevent massive delays on many certs
+                  data-aos-delay={(index % 10) * 150}
                 >
                   <div className="mt-2 ms-1 hidden md:block absolute -top-1 left-0 w-6 h-6 rounded-full bg-[#7873f5] z-10 ring-2 ring-gray-800" />
 
-                  <div className="md:mt-10 border border-gray-800 md:border-none p-5 md:p-0 rounded-2xl md:rounded-none ">
+                  <div className="md:mt-10 border border-gray-800 md:border-none p-5 md:p-0 rounded-2xl md:rounded-none">
                     <span className="text-xs font-mono mb-2 block opacity-70">
                       {certificate.date}
                     </span>
