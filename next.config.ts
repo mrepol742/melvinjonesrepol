@@ -10,6 +10,8 @@ const ContentSecurityPolicy = `
     'self'
     'unsafe-inline'
     'unsafe-eval'
+    https://ep2.adtrafficquality.google
+    https://fundingchoicesmessages.google.com
     https://www.googletagmanager.com
     https://www.google-analytics.com
     https://pagead2.googlesyndication.com
@@ -42,6 +44,11 @@ const ContentSecurityPolicy = `
 
   connect-src
     'self'
+    https://ep1.adtrafficquality.google
+    https://pagead2.googlesyndication.com
+    https://analytics.google.com
+    https://www.google.com
+    https://www.google.com.ph
     https://www.google-analytics.com
     https://region1.google-analytics.com
     https://stats.g.doubleclick.net
@@ -52,10 +59,14 @@ const ContentSecurityPolicy = `
 
   frame-src
     'self'
+    https://ep2.adtrafficquality.google
+    https://www.google.com
+    https://www.google.com.ph
     https://td.doubleclick.net
     https://googleads.g.doubleclick.net
     https://www.youtube.com
     https://www.youtube-nocookie.com
+    https://recaptcha.google.com
     https://*.trustpilot.com;
 
   worker-src 'self' blob:;
