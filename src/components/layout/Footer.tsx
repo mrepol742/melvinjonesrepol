@@ -12,6 +12,7 @@ import {
 import TrustPilotWidget from "../common/TrustPilotWidget";
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
+import { navLanguages } from "@/i18n/request";
 
 export default function Footer({
   posts,
@@ -22,29 +23,6 @@ export default function Footer({
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
-
-  const languages = [
-    { code: "en", label: "English", region: "Global", short: "EN" },
-    { code: "fil", label: "Filipino", region: "Philippines", short: "FIL" },
-    {
-      code: "cmn",
-      label: "中文 (Chinese)",
-      region: "China",
-      short: "ZH",
-    },
-    {
-      code: "es",
-      label: "Español (Spanish)",
-      region: "Latin America",
-      short: "ES",
-    },
-    {
-      code: "hi",
-      label: "हिंदी (Hindi)",
-      region: "India",
-      short: "HI",
-    },
-  ];
 
   const handleLocaleChange = (nextLocale: string) => {
     if (nextLocale === locale) return;
@@ -61,7 +39,7 @@ export default function Footer({
 
   return (
     <footer
-      className="bg-gray-900 text-gray-200 py-10 border-t border-gray-800"
+      className="bg-gray-900 text-gray-200 py-10 border-t border-gray-800 m-2 md:m-5 xl:m-8 rounded-xl"
       data-aos="fade-up"
     >
       <nav aria-label="Footer Navigation" className="container mx-auto px-4">
@@ -413,7 +391,7 @@ export default function Footer({
                 className="w-full appearance-none rounded-lg border border-gray-800 bg-gray-950/40 px-3 py-2 text-sm text-gray-200 focus:outline-none focus:ring-1 focus:ring-gray-500"
                 aria-label="Select language"
               >
-                {languages.map((lang) => (
+                {navLanguages.map((lang) => (
                   <option key={lang.code} value={lang.code}>
                     {lang.label} · {lang.region}
                   </option>

@@ -58,7 +58,7 @@ export default function EngineeringPhilosophySection() {
             data-aos="fade-up"
             data-aos-delay={100 * (index + 1)}
           >
-            <div className="group mt-8 md:mt-10 border border-gray-200 dark:border-gray-800 rounded-2xl px-6 py-5 md:px-7 md:py-6 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+            <div className="group border border-zinc-800 rounded-2xl px-6 py-5 md:px-7 md:py-6">
               <div className="mb-4">
                 <span className="text-xs uppercase tracking-wider text-gray-400">
                   {item.sub}

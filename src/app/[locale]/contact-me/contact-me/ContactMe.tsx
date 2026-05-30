@@ -163,7 +163,7 @@ export default function ContactMe() {
               </span>
             </div>
 
-            <div className="rounded-xl border px-4 py-3 transition-all duration-200 focus-within:shadow-sm focus-within:-translate-y-px">
+            <div className="rounded-xl border border-zinc-800 px-4 py-3 transition-all duration-200 focus-within:shadow-sm focus-within:-translate-y-px">
               <textarea
                 rows={7}
                 name="message"
@@ -232,7 +232,7 @@ export default function ContactMe() {
       </div>
 
       <div className="lg:col-span-2 flex flex-col gap-4">
-        <div className="rounded-2xl border p-6">
+        <div className="rounded-2xl border border-zinc-800 p-6">
           <div className="flex items-center gap-2 mb-3">
             <span className="h-2 w-2 rounded-full bg-green-400 animate-pulse" />
             <span className="text-xs uppercase tracking-widest">Available</span>
@@ -243,7 +243,7 @@ export default function ContactMe() {
           </p>
         </div>
 
-        <div className="rounded-2xl border p-6">
+        <div className="rounded-2xl border border-zinc-800 p-6">
           <p className="text-xs uppercase tracking-widest mb-4 opacity-50">
             Reach out via
           </p>
@@ -274,7 +274,7 @@ export default function ContactMe() {
           </div>
         </div>
 
-        <div className="rounded-2xl border p-6">
+        <div className="rounded-2xl border border-zinc-800 p-6">
           <p className="text-xs uppercase tracking-widest mb-4 opacity-50">
             Before we start
           </p>

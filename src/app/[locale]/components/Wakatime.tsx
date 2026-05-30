@@ -53,7 +53,7 @@ export default async function Wakatime() {
       </div>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
-        <article className="rounded-2xl border p-4 shadow-sm">
+        <article className="rounded-2xl border border-zinc-800 p-4 shadow-sm">
           <p className="text-xs uppercase tracking-wide">Top Language</p>
           <p className="mt-2 text-xl font-semibold">
             {topLanguages[0]?.name || "—"}
@@ -65,12 +65,12 @@ export default async function Wakatime() {
           </p>
         </article>
 
-        <article className="rounded-2xl border p-4 shadow-sm">
+        <article className="rounded-2xl border border-zinc-800 p-4 shadow-sm">
           <p className="text-xs uppercase tracking-wide">Editors</p>
           <p className="mt-2 font-medium leading-relaxed">{editors}</p>
         </article>
 
-        <article className="rounded-2xl border p-4 shadow-sm">
+        <article className="rounded-2xl border border-zinc-800 p-4 shadow-sm">
           <p className="text-xs uppercase tracking-wide">Operating Systems</p>
           <p className="mt-2 font-medium leading-relaxed">
             <FontAwesomeIcon icon={faLinux} className="mr-2" />
@@ -78,7 +78,7 @@ export default async function Wakatime() {
           </p>
         </article>
 
-        <article className="rounded-2xl border p-4 shadow-sm">
+        <article className="rounded-2xl border border-zinc-800 p-4 shadow-sm">
           <p className="text-xs uppercase tracking-wide">Machines</p>
           <p className="mt-2 font-medium leading-relaxed">
             <FontAwesomeIcon icon={faLaptop} className="mr-2" />
@@ -101,9 +101,9 @@ export default async function Wakatime() {
             data-aos="fade-up"
             data-aos-delay={100 * (index + 1)}
           >
-            <div className="rounded-xl border p-3 transition-transform duration-200 hover:-translate-y-0.5">
+            <div className="rounded-xl border border-zinc-800 p-3 transition-transform duration-200 hover:-translate-y-0.5">
               <div className="flex items-center gap-3">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg border">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg">
                   {getLanguageIcon(lang.name, { style: { fontSize: 24 } })}
                 </span>
                 <div className="min-w-0">
@@ -119,7 +119,7 @@ export default async function Wakatime() {
                   <span>Share</span>
                   <span>{formatPct(lang.percent)}</span>
                 </div>
-                <div className="h-1.5 w-full overflow-hidden rounded-full border">
+                <div className="h-1.5 w-full overflow-hidden rounded-full border border-zinc-800">
                   <div
                     className="h-full bg-cyan-500 rounded-full"
                     style={{ width: formatPct(lang.percent) }}

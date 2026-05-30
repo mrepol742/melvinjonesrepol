@@ -70,7 +70,7 @@ export default async function Steam() {
           </div>
         </div>
 
-        <div className="mt-6 grid grid-cols-3 md:grid-cols-5 xl:grid-cols-7 gap-3 mb-10">
+        <div className="mt-6 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-7 gap-3 mb-10">
           {sortedByPlaytime2Weeks.slice(0, 5).map((game, index) => (
             <article key={index} className="p-3" data-aos="fade-up">
               <p className="text-sm">{sanitizeGameName(game.name)}</p>
@@ -128,7 +128,7 @@ export default async function Steam() {
               key={index}
               className="group snap-start flex-shrink-0 w-80 md:w-96"
             >
-              <div className="p-6 border rounded-2xl shadow-sm max-w-sm mx-auto transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-[0.98]">
+              <div className="p-6 border border-zinc-800 rounded-2xl shadow-sm max-w-sm mx-auto transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-[0.98]">
                 <div className="relative w-full h-48 rounded-2xl overflow-hidden mb-4">
                   <Image
                     src={game.cover_url}

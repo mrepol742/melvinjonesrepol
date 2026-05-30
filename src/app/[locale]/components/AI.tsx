@@ -32,7 +32,7 @@ export default function AI() {
           data-aos="fade-up"
           data-aos-delay={100 * (index + 1)}
         >
-          <div className="h-full rounded-2xl border p-4 shadow-sm transition-transform duration-200 hover:-translate-y-0.5">
+          <div className="h-full rounded-2xl border border-zinc-800 p-4 shadow-sm transition-transform duration-200 hover:-translate-y-0.5">
             <h3 className="text-xs uppercase tracking-wide">{item.title}</h3>
             <ScrambleText
               as="p"

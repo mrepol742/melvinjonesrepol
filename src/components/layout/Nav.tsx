@@ -9,16 +9,20 @@ import {
   faBriefcase,
   faCertificate,
   faEnvelope,
+  faFileContract,
   faFolder,
   faGamepad,
   faImages,
   faMoon,
   faSun,
+  faTimes,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import { useTheme } from "@/hooks/theme";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { navLanguages } from "@/i18n/request";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Nav() {
   const t = useTranslations("components.nav");
@@ -27,6 +31,9 @@ export default function Nav() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const { theme, toggleTheme } = useTheme();
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
   const navItems = [
     {
       key: "projects",
@@ -70,7 +77,28 @@ export default function Nav() {
       desktopOnly: true,
       mobileMenu: true,
     },
+    {
+      key: "legal",
+      label: "Legal",
+      href: "/legal",
+      icon: faFileContract,
+      desktopOnly: true,
+      mobileMenu: true,
+    },
   ];
+
+  const handleLocaleChange = (nextLocale: string) => {
+    if (nextLocale === locale) return;
+
+    const normalizedPath = pathname.replace(
+      /^\/(en|fil|cmn|es|hi)(?=\/|$)/,
+      "",
+    );
+    const nextPath = `/${nextLocale}${normalizedPath || "/"}`;
+    // replace and refresh to ensure the new locale is applied immediately
+    router.replace(nextPath);
+    router.refresh();
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -149,7 +177,7 @@ export default function Nav() {
   return (
     <>
       <nav
-        className={`rounded md:rounded-full fixed z-50 mt-5 top-0 left-1/2 transform -translate-x-1/2 bg-gray-800/60 text-white p-3 shadow-lg hover:shadow-xl transition-all duration-300 ${
+        className={`rounded md:rounded-full fixed z-50 mt-5 top-0 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white p-3 shadow-lg hover:shadow-xl transition-all duration-300 ${
           show ? "translate-y-0" : "-translate-y-full"
         }`}
         aria-label="Main Navigation"
@@ -264,26 +292,43 @@ export default function Nav() {
         />
 
         <aside
-          className={`absolute top-0 right-0 h-full w-[82%] max-w-sm bg-slate-950/40 border-l border-white/10 shadow-2xl transition-transform duration-300 ease-out flex flex-col ${
+          className={`absolute top-0 right-0 h-full w-[82%] max-w-sm bg-gray-800 border-l border-white/10 shadow-2xl transition-transform duration-300 ease-out flex flex-col ${
             isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
           <div className="p-5 border-b border-white/10">
-            <div className="flex items-center gap-3">
-              <Image
-                src="/favicon.ico"
-                alt="Logo"
-                width={42}
-                height={42}
-                className="rounded-full"
-              />
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <Image
+                  src="/favicon.ico"
+                  alt="Logo"
+                  width={42}
+                  height={42}
+                  className="rounded-full"
+                />
 
-              <div>
-                <p className="text-white font-semibold">Melvin Jones Repol</p>
+                <div className="min-w-0">
+                  <p className="font-semibold text-white truncate">
+                    Melvin Jones Repol
+                  </p>
 
-                <p className="text-sm text-gray-400">
-                  support@melvinjonesrepol.com
-                </p>
+                  <p className="text-sm text-gray-400 truncate">
+                    support@melvinjonesrepol.com
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <FontAwesomeIcon
+                  className="text-white hover:text-orange-500 transition-colors duration-200"
+                  icon={theme === "dark" ? faSun : faMoon}
+                  onClick={() => toggleTheme()}
+                />
+                <FontAwesomeIcon
+                  icon={faTimes}
+                  className="text-white hover:text-orange-500 transition-colors duration-200"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                />
               </div>
             </div>
           </div>
@@ -300,8 +345,7 @@ export default function Nav() {
                     (item) =>
                       item.key === "projects" ||
                       item.key === "certificates" ||
-                      item.key === "work-experience" ||
-                      item.key === "about",
+                      item.key === "work-experience",
                   )
                   .map((item) => (
                     <li key={item.key}>
@@ -312,7 +356,7 @@ export default function Nav() {
                           group flex items-center gap-3
                           rounded-xl
                           px-3 py-3
-                          hover:bg-slate-800/40
+                          hover:bg-gray-950/20
                           transition-all duration-200
                         "
                       >
@@ -359,43 +403,31 @@ export default function Nav() {
           </div>
 
           <div className="border-t border-white/10 p-4 space-y-2">
-            <button
-              onClick={() => {
-                toggleTheme();
-                handleMobileLinkClick();
-              }}
-              className="
-                w-full flex items-center justify-between
-                rounded-xl px-4 py-3
-                bg-gray-900 hover:bg-gray-800
-                transition-all
-              "
-            >
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-gray-900 flex items-center justify-center text-white">
-                  <FontAwesomeIcon icon={theme === "dark" ? faSun : faMoon} />
-                </div>
-
-                <div className="text-left">
-                  <p className="text-sm text-white">{t("nav_theme")}</p>
-
-                  <p className="text-xs text-gray-400">
-                    {t("nav_toggle_appearance")}
-                  </p>
-                </div>
-              </div>
-            </button>
+            <h4 className="text-xs font-semibold mb-2 text-white">
+              Language / Region
+            </h4>
+            <div className="relative">
+              <select
+                value={locale}
+                onChange={(e) => handleLocaleChange(e.target.value)}
+                className="w-full appearance-none rounded-lg border border-gray-800 bg-gray-950/40 px-3 py-2 text-sm text-gray-200 focus:outline-none focus:ring-1 focus:ring-gray-500"
+                aria-label="Select language"
+              >
+                {navLanguages.map((lang) => (
+                  <option key={lang.code} value={lang.code}>
+                    {lang.label} · {lang.region}
+                  </option>
+                ))}
+              </select>
+              <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-400">
+                ▼
+              </span>
+            </div>
 
             <Link
               href="/contact-me"
               onClick={handleMobileLinkClick}
-              className="
-                flex items-center justify-center
-                rounded-xl px-4 py-3
-                bg-gray-900 hover:bg-orange-400
-                text-white
-                transition-all
-              "
+              className="flex items-center justify-center rounded-xl px-4 py-3 bg-gray-900 hover:bg-orange-400 text-white text-sm transition-all"
             >
               {t("nav_contact_me")}
             </Link>

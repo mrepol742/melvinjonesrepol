@@ -81,14 +81,14 @@ export default function ClientFeedback() {
     <section className="w-full">
       <div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-6">
         <aside className="lg:col-span-4">
-          <div className="rounded-2xl border p-5 sticky top-24">
+          <div className="rounded-2xl border border-zinc-800 p-5 sticky top-24">
             <p className="text-xs uppercase tracking-wider mb-3">
               Delivery Signals
             </p>
             <ul className="space-y-3">
               {deliverySignals.map((item) => (
                 <li key={item} className="text-sm flex items-start gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full border shrink-0" />
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full border border-zinc-800 shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -97,7 +97,7 @@ export default function ClientFeedback() {
         </aside>
 
         <div className="lg:col-span-8">
-          <ol className="relative space-y-6 border-l pl-6">
+          <ol className="relative space-y-6 border-l border-zinc-800 pl-6">
             {outcomes.map((item, index) => (
               <li
                 key={item.title}
@@ -105,15 +105,15 @@ export default function ClientFeedback() {
                 data-aos-delay={100 * (index + 1)}
                 className="relative"
               >
-                <span className="absolute -left-[30px] top-2 h-3 w-3 rounded-full border bg-white dark:bg-black" />
+                <span className="absolute -left-[30px] top-2 h-3 w-3 rounded-full bg-zinc-800" />
 
-                <div className="rounded-2xl border p-5 md:p-6">
+                <div className="rounded-2xl border border-zinc-800 p-5 md:p-6">
                   <div className="block md:flex items-center justify-between gap-4 mb-3">
                     <h3 className="text-base md:text-lg font-semibold leading-snug">
                       {item.title}
                     </h3>
                     {item.metric && (
-                      <span className="text-xs rounded-full border px-2 py-0.5 text-nowrap">
+                      <span className="text-xs rounded-full border border-zinc-800 px-2 py-0.5 text-nowrap">
                         {item.metric}
                       </span>
                     )}

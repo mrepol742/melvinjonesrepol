@@ -29,8 +29,8 @@ export default async function Youtube() {
               key={index}
               className="group snap-start flex-shrink-0 w-80 md:w-96 flex"
             >
-              <div className="p-6 border rounded-2xl shadow-sm max-w-sm mx-auto transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-[0.98]">
-                <div className="mb-4 relative w-full h-60 rounded-2xl overflow-hidden border shadow-sm">
+              <div className="p-6 border border-zinc-800 rounded-2xl shadow-sm max-w-sm mx-auto transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-[0.98]">
+                <div className="mb-4 relative w-full h-60 rounded-2xl overflow-hidden border border-zinc-800">
                   <iframe
                     src={`https://www.youtube.com/embed/${videoId}`}
                     title={video.snippet?.title || "YouTube video"}

@@ -115,7 +115,7 @@ export default async function Home() {
       />
       <main>
         <section>
-          <div className="relative min-h-screen overflow-hidden border-b mb-10">
+          <div className="relative min-h-screen overflow-hidden border-b border-zinc-800 mb-10">
             {/* Full-height photo bleeding to the right edge — desktop only */}
             <div className="hidden lg:block absolute right-0 top-0 h-full w-[42%]">
               <Image
@@ -165,7 +165,7 @@ export default async function Home() {
 
               {/* Bottom info strip — newspaper footer style */}
               <div
-                className="border-t pt-6 grid grid-cols-1 sm:grid-cols-3 gap-6 lg:max-w-[60%] xl:max-w-[56%]"
+                className="border-t border-zinc-800 pt-6 grid grid-cols-1 sm:grid-cols-3 gap-6 lg:max-w-[60%] xl:max-w-[56%]"
                 data-aos="fade-up"
                 data-aos-delay="400"
               >
@@ -442,83 +442,97 @@ export default async function Home() {
             </div>
 
             <div className="relative py-14 md:py-28 overflow-hidden">
-              <div className="mx-auto max-w-4xl text-center">
-                <div
-                  className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold tracking-widest uppercase"
-                  data-aos="fade-up"
-                >
-                  <span className="inline-block h-2 w-2 rounded-full border" />
-                  {ta("community_label")}
-                </div>
-
-                <h2
-                  className="mt-4 text-3xl md:text-4xl font-bold"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                >
-                  {ta("community_title")}
-                </h2>
-
-                <p className="max-w-2xl mx-auto mt-4" data-aos="fade-up">
-                  {ta("community_description_1")}
-                </p>
-
-                <p className="max-w-2xl mx-auto mt-4" data-aos="fade-up">
-                  {ta("community_description_2")}
-                </p>
-
-                <div
-                  className="mx-auto mt-6 grid max-w-2xl grid-cols-1 gap-3 text-sm md:grid-cols-3"
-                  data-aos="fade-up"
-                >
-                  <div className="rounded-lg border px-4 py-3">
-                    <div className="text-lg font-semibold">
-                      {ta("community_card1_title")}
-                    </div>
-                    <div className="text-xs uppercase tracking-wider">
-                      {ta("community_card1_desc")}
-                    </div>
-                  </div>
-                  <div className="rounded-lg border px-4 py-3">
-                    <div className="text-lg font-semibold">
-                      {ta("community_card2_title")}
-                    </div>
-                    <div className="text-xs uppercase tracking-wider">
-                      {ta("community_card2_desc")}
-                    </div>
-                  </div>
-                  <div className="rounded-lg border px-4 py-3">
-                    <div className="text-lg font-semibold">
-                      {ta("community_card3_title")}
-                    </div>
-                    <div className="text-xs uppercase tracking-wider">
-                      {ta("community_card3_desc")}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-6 flex flex-col md:flex-row justify-center gap-2 md:gap-4">
-                  <Link
-                    href="https://hallofcodes.vercel.app"
-                    data-aos="fade-up"
-                    data-aos-delay="300"
-                  >
-                    <Button
-                      icon={faCodeSolid}
-                      className="border border-current"
+              <div className="mx-auto max-w-6xl px-4 md:px-6">
+                <div className="grid gap-10 md:grid-cols-[1.2fr_1fr] items-start">
+                  {/* Left content rail */}
+                  <div>
+                    <div
+                      className="inline-flex items-center gap-2 rounded-full border border-zinc-800 px-3 py-1 text-xs font-semibold tracking-widest uppercase"
+                      data-aos="fade-up"
                     >
-                      {ta("community_cta_join")}
-                    </Button>
-                  </Link>
-                  <Link
-                    href="https://github.com/hallofcodes"
-                    data-aos="fade-up"
-                    data-aos-delay="300"
-                  >
-                    <Button icon={faGithub} className="border border-current">
-                      {ta("community_cta_github")}
-                    </Button>
-                  </Link>
+                      <span className="inline-block h-2 w-2 rounded-full border" />
+                      {ta("community_label")}
+                    </div>
+
+                    <h2
+                      className="mt-4 text-3xl md:text-4xl font-bold max-w-xl"
+                      data-aos="fade-up"
+                      data-aos-delay="100"
+                    >
+                      {ta("community_title")}
+                    </h2>
+
+                    <p
+                      className="mt-4 text-zinc-300 max-w-xl"
+                      data-aos="fade-up"
+                    >
+                      {ta("community_description_1")}
+                    </p>
+
+                    <p
+                      className="mt-4 text-zinc-300 max-w-xl"
+                      data-aos="fade-up"
+                    >
+                      {ta("community_description_2")}
+                    </p>
+
+                    <div className="mt-6 flex flex-wrap gap-2 md:gap-3">
+                      <Link
+                        href="https://www.hallofcodes.org"
+                        data-aos="fade-up"
+                        data-aos-delay="300"
+                      >
+                        <Button
+                          icon={faCodeSolid}
+                          className="border border-zinc-800"
+                        >
+                          {ta("community_cta_join")}
+                        </Button>
+                      </Link>
+                      <Link
+                        href="https://github.com/hallofcodes"
+                        data-aos="fade-up"
+                        data-aos-delay="300"
+                      >
+                        <Button
+                          icon={faGithub}
+                          className="border border-zinc-800"
+                        >
+                          {ta("community_cta_github")}
+                        </Button>
+                      </Link>
+                    </div>
+                  </div>
+
+                  {/* Right stacked cards */}
+                  <div className="relative">
+                    <div className="space-y-3">
+                      <div className="rounded-xl border border-zinc-800 px-4 py-3">
+                        <div className="text-lg font-semibold">
+                          {ta("community_card1_title")}
+                        </div>
+                        <div className="text-xs uppercase tracking-wider text-zinc-400">
+                          {ta("community_card1_desc")}
+                        </div>
+                      </div>
+                      <div className="rounded-xl border border-zinc-800 px-4 py-3">
+                        <div className="text-lg font-semibold">
+                          {ta("community_card2_title")}
+                        </div>
+                        <div className="text-xs uppercase tracking-wider text-zinc-400">
+                          {ta("community_card2_desc")}
+                        </div>
+                      </div>
+                      <div className="rounded-xl border border-zinc-800 px-4 py-3">
+                        <div className="text-lg font-semibold">
+                          {ta("community_card3_title")}
+                        </div>
+                        <div className="text-xs uppercase tracking-wider text-zinc-400">
+                          {ta("community_card3_desc")}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -528,9 +542,9 @@ export default async function Home() {
               data-aos="slide-up"
             >
               <div className="relative mx-auto max-w-4xl">
-                <div className="relative rounded-3xl border p-6 md:p-10 shadow-[0_10px_50px_-20px_rgba(0,0,0,0.15)]">
-                  <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 mb-4">
-                    <span className="h-2 w-2 rounded-full border animate-pulse" />
+                <div className="relative rounded-3xl border border-zinc-800 p-6 md:p-10 shadow-[0_10px_50px_-20px_rgba(0,0,0,0.15)]">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-zinc-800 px-3 py-1 mb-4">
+                    <span className="h-2 w-2 rounded-full border border-zinc-800 animate-pulse" />
                     <span className="text-xs font-medium tracking-wide uppercase">
                       {t("next_step_label")}
                     </span>
@@ -545,13 +559,13 @@ export default async function Home() {
                   </p>
 
                   <div className="mt-6 flex flex-wrap items-center gap-3">
-                    <span className="text-xs md:text-sm rounded-full border px-3 py-1">
+                    <span className="text-xs md:text-sm rounded-full border border-zinc-800 px-3 py-1">
                       {t("next_step_tag_outcome")}
                     </span>
-                    <span className="text-xs md:text-sm rounded-full border px-3 py-1">
+                    <span className="text-xs md:text-sm rounded-full border border-zinc-800 px-3 py-1">
                       {t("next_step_tag_business")}
                     </span>
-                    <span className="text-xs md:text-sm rounded-full border px-3 py-1">
+                    <span className="text-xs md:text-sm rounded-full border border-zinc-800 px-3 py-1">
                       {t("next_step_tag_reliable")}
                     </span>
                   </div>

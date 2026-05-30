@@ -37,7 +37,7 @@ export default function ProjectCarousel() {
                 key={project.title}
                 className="group snap-start flex-shrink-0 w-80 md:w-96 flex"
               >
-                <div className="p-6 border rounded-2xl shadow-sm max-w-sm mx-auto transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-[0.98]">
+                <div className="p-6 border border-zinc-800 rounded-2xl shadow-sm max-w-sm mx-auto transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-[0.98]">
                   <div className="relative w-full h-48 rounded-2xl overflow-hidden mb-4">
                     <Image
                       src={
