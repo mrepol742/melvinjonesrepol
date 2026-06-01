@@ -31,9 +31,16 @@ export default function Project({
     resources: ProjectResource[];
   };
 }) {
+  const status = project.is_no_longer_maintained ? "Deprecated" : "Active";
+  const chips = [
+    project.is_open_source ? "Open Source" : null,
+    project.is_freeware ? "Freeware" : null,
+    project.license,
+  ].filter(Boolean) as string[];
+
   return (
-    <main className="bg-white text-zinc-900">
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-800 text-white">
+    <main>
+      <section className="relative min-h-screen overflow-hidden border-b border-zinc-800">
         <div className="absolute inset-0 opacity-40">
           <Image
             src={project.preview_image}
@@ -43,23 +50,38 @@ export default function Project({
             priority
           />
         </div>
+        <div className="absolute inset-0 bg-black/90" />
 
-        <div className="absolute inset-0 bg-black/60" />
-
-        <div className="relative max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
-          <div>
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+        <div className="relative flex min-h-screen flex-col px-6 py-12 md:px-10 text-white">
+          <div className="my-auto py-14">
+            <h1
+              className="text-[14vw] sm:text-[10vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
               {project.title}
+              <br />
+              <span className="opacity-40">project</span>
+              <br />
+              overview.
             </h1>
 
-            <p className="mt-6 text-lg text-zinc-200 leading-relaxed">
+            <p
+              className="max-w-2xl text-lg leading-8 text-zinc-300 md:text-xl"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               {project.description}
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div
+              className="mt-8 flex flex-wrap gap-3"
+              data-aos="fade-up"
+              data-aos-delay="250"
+            >
               <a
-                href="#features"
-                className="px-6 py-3 rounded-full bg-white text-black font-semibold hover:scale-105 transition"
+                href="#about"
+                className="px-6 py-3 rounded-full bg-white text-black font-semibold hover:opacity-80 transition"
               >
                 Explore
               </a>
@@ -86,64 +108,154 @@ export default function Project({
             </div>
           </div>
 
-          <div className="hidden lg:block relative">
-            <div className="relative w-full h-[420px] rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-              <Image
-                src={project.preview_image}
-                alt={project.preview_image_alt}
-                fill
-                className="object-cover"
-              />
+          <div
+            className="border-t border-zinc-800 pt-6 grid grid-cols-2 sm:grid-cols-4 gap-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div>
+              <p className="text-4xl font-black">{project.features.length}</p>
+              <p className="mt-1 text-sm text-zinc-400">Features</p>
             </div>
-
-            {project.images?.[1] && (
-              <div className="absolute -bottom-10 -right-10 w-56 h-40 rounded-xl overflow-hidden border border-white/10 shadow-xl">
-                <Image
-                  src={project.images[1]}
-                  alt="preview"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            )}
+            <div>
+              <p className="text-4xl font-black">{project.resources.length}</p>
+              <p className="mt-1 text-sm text-zinc-400">Resources</p>
+            </div>
+            <div className="col-span-2 flex flex-wrap items-center gap-2">
+              {chips.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-zinc-400 px-3 py-1 text-xs text-zinc-300"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-6 py-24 grid lg:grid-cols-3 gap-12">
-        <div className="lg:col-span-2">
-          <h2 className="text-3xl font-bold mb-6">About the Product</h2>
-          <p className="text-zinc-600 leading-relaxed">
-            {project.description_long}
-          </p>
-        </div>
+      <section id="about" className="px-6 py-24 md:px-10">
+        <div className="max-w-5xl mx-auto">
+          <div className="hidden md:grid grid-cols-[3rem_1fr_auto] gap-x-8 px-6 pb-3 border-b border-zinc-800 mb-2">
+            <span className="text-xs uppercase tracking-widest opacity-40">
+              #
+            </span>
+            <span className="text-xs uppercase tracking-widest opacity-40">
+              Section
+            </span>
+            <span className="text-xs uppercase tracking-widest opacity-40">
+              Status
+            </span>
+          </div>
 
-        <aside className="space-y-4">
-          <div className="p-5 rounded-xl border bg-zinc-50">
-            <h3 className="font-semibold mb-3">Project Details</h3>
+          <div className="divide-y divide-zinc-800/60">
+            {[
+              {
+                title: "About the Product",
+                description: project.description_long,
+                tag: "Overview",
+              },
+              {
+                title: "Features",
+                description: `${project.features.length} feature${
+                  project.features.length !== 1 ? "s" : ""
+                } included.`,
+                tag: "Capabilities",
+                href: "#features",
+              },
+              {
+                title: "Resources",
+                description: `${project.resources.length} resource${
+                  project.resources.length !== 1 ? "s" : ""
+                } available.`,
+                tag: "Links",
+                href: "#resources",
+              },
+            ].map((item, index) => (
+              <a
+                key={item.title}
+                href={item.href ?? "#about"}
+                className="group grid grid-cols-1 md:grid-cols-[3rem_1fr_auto] gap-4 md:gap-x-8 items-start md:items-center px-6 py-7 transition-colors hover:bg-zinc-900/40 rounded-xl"
+                data-aos="fade-up"
+                data-aos-delay={index * 80}
+              >
+                <span className="hidden md:block text-xs font-mono opacity-30 group-hover:opacity-60 transition-opacity pt-0.5">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
 
-            <div className="space-y-2 text-sm text-zinc-600">
-              <p>License: {project.license}</p>
-              <p>
-                Status:{" "}
-                {project.is_no_longer_maintained ? "Deprecated" : "Active"}
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-wrap items-center gap-3 mb-1.5">
+                    <h2 className="text-base md:text-lg font-semibold leading-tight">
+                      {item.title}
+                    </h2>
+                    <span className="inline-flex items-center gap-1 text-[10px] uppercase tracking-widest text-green-400">
+                      <span className="h-1.5 w-1.5 rounded-full bg-green-400" />
+                      {status}
+                    </span>
+                  </div>
+                  <p className="text-sm leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+
+                <div className="flex md:flex-col items-center md:items-end gap-3 md:gap-2">
+                  <span className="text-xs border border-zinc-700 px-3 py-1 rounded-full">
+                    {item.tag}
+                  </span>
+                  <span className="text-xs font-medium flex items-center gap-1">
+                    Read
+                    <span className="transition-transform group-hover:translate-x-0.5">
+                      →
+                    </span>
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          <div className="mt-12 rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div>
+              <p className="text-xs uppercase tracking-widest opacity-50 mb-1">
+                License
               </p>
+              <p className="text-sm font-medium">{project.license}</p>
             </div>
-
-            <div className="flex flex-wrap gap-2 mt-4">
-              {project.is_open_source && (
-                <span className="text-xs px-3 py-1 bg-green-100 text-green-700 rounded-full">
-                  Open Source
-                </span>
-              )}
-              {project.is_freeware && (
-                <span className="text-xs px-3 py-1 bg-blue-100 text-blue-700 rounded-full">
-                  Freeware
-                </span>
-              )}
+            <div className="h-px sm:h-8 sm:w-px border-b sm:border-b-0 sm:border-r border-zinc-800 w-full sm:w-auto" />
+            <div>
+              <p className="text-xs uppercase tracking-widest opacity-50 mb-1">
+                Status
+              </p>
+              <p className="text-sm font-medium">{status}</p>
+            </div>
+            <div className="h-px sm:h-8 sm:w-px border-b sm:border-b-0 sm:border-r border-zinc-800 w-full sm:w-auto" />
+            <div>
+              <p className="text-xs uppercase tracking-widest opacity-50 mb-1">
+                Actions
+              </p>
+              <div className="flex gap-3">
+                {project.view_source_url && (
+                  <a
+                    href={project.view_source_url}
+                    target="_blank"
+                    className="text-sm font-medium underline underline-offset-2 hover:opacity-70 transition-opacity"
+                  >
+                    Source
+                  </a>
+                )}
+                {project.download_url && (
+                  <a
+                    href={project.download_url}
+                    target="_blank"
+                    className="text-sm font-medium underline underline-offset-2 hover:opacity-70 transition-opacity"
+                  >
+                    Download
+                  </a>
+                )}
+              </div>
             </div>
           </div>
-        </aside>
+        </div>
       </section>
 
       {project.images?.length ? (
@@ -170,7 +282,7 @@ export default function Project({
         </section>
       ) : null}
 
-      <section id="features" className="py-24 bg-white">
+      <section id="features" className="py-24">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl font-bold mb-12 text-center">Features</h2>
 
@@ -178,10 +290,10 @@ export default function Project({
             {project.features?.map((f, i) => (
               <div
                 key={i}
-                className="p-8 rounded-2xl border bg-white shadow-sm hover:-translate-y-1 transition"
+                className="p-8 rounded-2xl border border-zinc-800 shadow-sm hover:-translate-y-1 transition"
               >
                 <h3 className="text-xl font-semibold mb-3">{f.title}</h3>
-                <p className="text-zinc-600">{f.description}</p>
+                <p>{f.description}</p>
               </div>
             ))}
           </div>
@@ -194,7 +306,7 @@ export default function Project({
         </div>
       </section>
 
-      <section className="py-24 bg-zinc-950 text-white">
+      <section id="resources" className="py-24">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-10">Resources</h2>
 
@@ -204,7 +316,7 @@ export default function Project({
                 key={i}
                 href={r.url}
                 target="_blank"
-                className="px-6 py-3 rounded-full border border-white/30 hover:bg-white hover:text-black transition"
+                className="px-6 py-3 rounded-full border border-zinc-800 hover:bg-zinc-800 hover:text-white transition"
               >
                 {r.title}
               </a>

@@ -4,17 +4,9 @@ import { notFound } from "next/navigation";
 import { ToastContainer } from "react-toastify";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
-import NextTopLoader from "nextjs-toploader";
-import AOSWrapper from "@/components/common/AOSWrapper";
 import ScrollTop from "@/components/ui/ScrollTop";
-import GoogleAnalytics from "@/components/common/metadata/GoogleAnalytics";
-import ServiceWorkerRegister from "@/components/common/ServiceWorkerRegister";
-import BrowserCheck from "@/components/common/BrowserCheck";
-import DevToolsDetector from "@/components/common/DevToolsDetector";
 import { getRecentPosts } from "@/lib/posts";
 import PrivacyPolicyPrompt from "@/components/common/PrivacyPolicyPrompt";
-import DoorEffect from "@/components/common/DoorEffect";
-import MouseCodeTrail from "@/components/common/MouseCodeTrail";
 
 const locales = ["en", "fil", "hi", "es", "cmn"] as const;
 
@@ -35,51 +27,19 @@ export default async function LocaleLayout({
 
   setRequestLocale(locale);
 
-  const env = process.env.NEXT_PUBLIC_NODE_ENV || "production";
-  const isProduction = env === "production";
   const posts = getRecentPosts(5);
   const messages = await getMessages();
 
   return (
     <NextIntlClientProvider messages={messages}>
-      <DoorEffect />
-      <MouseCodeTrail />
-
-      <div className="background-gloss">
-        <div className="gloss-circle circle1"></div>
-        <div className="gloss-circle circle2"></div>
-        <div className="gloss-circle circle3"></div>
-      </div>
-
       <Nav />
 
-      <NextTopLoader showSpinner={false} color="#7873f5" />
-
-      <div className="flex-1">
-        <AOSWrapper />
-        {children}
-      </div>
+      <div className="flex-1">{children}</div>
 
       <PrivacyPolicyPrompt />
       <ToastContainer />
       <ScrollTop />
       <Footer posts={posts} />
-
-      {isProduction && (
-        <>
-          <GoogleAnalytics />
-          <ServiceWorkerRegister />
-          <BrowserCheck />
-          <DevToolsDetector />
-        </>
-      )}
-
-      <script
-        src="https://app.livechatai.com/embed.js"
-        data-id="cmdmcvh4n0001jt0c03xemlxw"
-        async
-        defer
-      ></script>
     </NextIntlClientProvider>
   );
 }

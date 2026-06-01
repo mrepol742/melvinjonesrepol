@@ -409,15 +409,22 @@ export default function Footer({
             {t("footer_all_rights_reserved")}
           </span>
 
-          <small className="block text-xs text-green-400">
+          <div className="text-xs flex gap-4">
+            <Link
+              href="/uptime"
+              target="_blank"
+              className="hover:text-green-300"
+            >
+              Uptime
+            </Link>
             <Link
               href="https://github.com/mrepol742/melvinjonesrepol"
               target="_blank"
-              className="underline hover:text-green-300"
+              className="text-green-400 hover:text-green-300"
             >
               {t("footer_open_source")}
             </Link>
-          </small>
+          </div>
         </div>
       </nav>
     </footer>

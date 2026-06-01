@@ -103,7 +103,7 @@ export default async function BlogPage({
               {allTopics.map((topic) => (
                 <span
                   key={topic}
-                  className="rounded-full border border-zinc-700 px-3 py-1 text-xs text-zinc-300 capitalize"
+                  className="rounded-full border border-zinc-700 px-3 py-1 text-xs capitalize"
                 >
                   {topic}
                 </span>
@@ -114,7 +114,7 @@ export default async function BlogPage({
       </section>
 
       <section className="px-6 py-24 md:px-10">
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+        <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 md:gap-6">
           {paginatedPosts.map((post, index) => (
             <li
               key={post.slug}

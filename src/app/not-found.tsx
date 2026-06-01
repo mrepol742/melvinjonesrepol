@@ -46,7 +46,7 @@ export default async function NotFound() {
   return (
     <div className="flex min-h-screen items-center justify-center px-6">
       <div className="w-full max-w-xl text-center">
-        <h1 className="text-8xl font-bold tracking-tight">
+        <h1 className="text-8xl font-bold tracking-tight animate-bounce">
           <span className="text-indigo-500">4</span>
           <span className="text-gray-500">0</span>
           <span className="text-indigo-500">4</span>

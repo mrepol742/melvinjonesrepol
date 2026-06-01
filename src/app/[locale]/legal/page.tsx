@@ -40,7 +40,7 @@ const legalLinks = [
     description:
       "Learn how we collect, use, and protect your information across our services.",
     category: "Data",
-    version: "v1.0",
+    version: "v1.2",
   },
   {
     href: "/legal/terms-of-service",
@@ -48,7 +48,7 @@ const legalLinks = [
     description:
       "Understand the rules and guidelines for using our website, apps, and extensions.",
     category: "Usage",
-    version: "v1.0",
+    version: "v1.2",
   },
   {
     href: "/legal/cookie-policy",
@@ -64,6 +64,27 @@ const legalLinks = [
     description:
       "Review the terms and conditions for our development services.",
     category: "Contract",
+    version: "v1.0",
+  },
+  {
+    href: "/legal/licenses/Apache-2.0.md",
+    title: "Apache-2.0",
+    description: "The Apache License, Version 2.0",
+    category: "License",
+    version: "v2.0",
+  },
+  {
+    href: "/legal/licenses/Polyform-Noncommercial-License-1.0.0.md",
+    title: "Polyform Noncommercial License 1.0.0",
+    description: "The Polyform Noncommercial License 1.0.0",
+    category: "License",
+    version: "v1.0",
+  },
+  {
+    href: "/legal/licenses/MIT.md",
+    title: "MIT",
+    description: "The MIT License",
+    category: "License",
     version: "v1.0",
   },
 ];
@@ -155,7 +176,7 @@ export default function Legal() {
 
                 <div className="flex-1 min-w-0">
                   <div className="flex flex-wrap items-center gap-3 mb-1.5">
-                    <h2 className="text-base md:text-lg font-semibold group-hover:text-white transition-colors leading-tight">
+                    <h2 className="text-base md:text-lg font-semibold leading-tight">
                       {link.title}
                     </h2>
                     <span className="text-[10px] font-mono border border-zinc-700 text-zinc-500 px-2 py-0.5 rounded">
@@ -166,16 +187,14 @@ export default function Legal() {
                       Active
                     </span>
                   </div>
-                  <p className="text-sm text-zinc-400 leading-relaxed">
-                    {link.description}
-                  </p>
+                  <p className="text-sm leading-relaxed">{link.description}</p>
                 </div>
 
                 <div className="flex md:flex-col items-center md:items-end gap-3 md:gap-2">
-                  <span className="text-xs border border-zinc-700 text-zinc-400 px-3 py-1 rounded-full">
+                  <span className="text-xs border border-zinc-700 px-3 py-1 rounded-full">
                     {link.category}
                   </span>
-                  <span className="text-xs text-zinc-500 group-hover:text-white transition-colors font-medium flex items-center gap-1">
+                  <span className="text-xs font-medium flex items-center gap-1">
                     Read
                     <span className="transition-transform group-hover:translate-x-0.5">
                       →
