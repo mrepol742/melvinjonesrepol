@@ -8,8 +8,9 @@ import ScrollTop from "@/components/ui/ScrollTop";
 import { getRecentPosts } from "@/lib/posts";
 import PrivacyPolicyPrompt from "@/components/common/PrivacyPolicyPrompt";
 
-const locales = ["en", "fil", "hi", "es", "cmn"] as const;
+const locales = ["fil", "hi", "es", "cmn"] as const;
 
+// en is ignore because it is the default locale
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
