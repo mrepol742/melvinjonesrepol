@@ -85,7 +85,7 @@ export default async function Github() {
           >
             <div
               key={index}
-              className="rounded-2xl border p-4 shadow-sm transition-transform duration-200 hover:-translate-y-0.5"
+              className="rounded-2xl border border-zinc-800 p-4 shadow-sm transition-transform duration-200 hover:-translate-y-0.5"
             >
               <p className="text-xs uppercase tracking-wide">{item.label}</p>
               <ScrambleText

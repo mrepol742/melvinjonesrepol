@@ -7,6 +7,14 @@ import "devicon/devicon.min.css";
 import GoogleAds from "@/components/common/metadata/GoogleAdsense";
 import NortonSafeweb from "@/components/common/metadata/NortonSafeweb";
 import Algolia from "@/components/common/metadata/Algolia";
+import DoorEffect from "@/components/common/DoorEffect";
+import MouseCodeTrail from "@/components/common/MouseCodeTrail";
+import AOSWrapper from "@/components/common/AOSWrapper";
+import NextTopLoader from "nextjs-toploader";
+import GoogleAnalytics from "@/components/common/metadata/GoogleAnalytics";
+import ServiceWorkerRegister from "@/components/common/ServiceWorkerRegister";
+import BrowserCheck from "@/components/common/BrowserCheck";
+import DevToolsDetector from "@/components/common/DevToolsDetector";
 
 config.autoAddCss = false;
 
@@ -148,7 +156,34 @@ export default async function RootLayout({
       </head>
 
       <body className="antialiased min-h-screen flex flex-col background-grid">
+        <DoorEffect />
+        <MouseCodeTrail />
+        <AOSWrapper />
+        <NextTopLoader showSpinner={false} color="#7873f5" />
+
+        <div className="background-gloss">
+          <div className="gloss-circle circle1"></div>
+          <div className="gloss-circle circle2"></div>
+          <div className="gloss-circle circle3"></div>
+        </div>
+
         {children}
+
+        {isProduction && (
+          <>
+            <GoogleAnalytics />
+            <ServiceWorkerRegister />
+            <BrowserCheck />
+            <DevToolsDetector />
+          </>
+        )}
+
+        <script
+          src="https://app.livechatai.com/embed.js"
+          data-id="cmdmcvh4n0001jt0c03xemlxw"
+          async
+          defer
+        ></script>
       </body>
     </html>
   );

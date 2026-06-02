@@ -23,7 +23,7 @@ export default function Input({
 }) {
   return (
     <div
-      className={`flex items-center gap-2 px-4 py-2 rounded-xl border
+      className={`flex items-center gap-2 px-4 py-2 rounded-xl border border-zinc-800
                  transition-all duration-300
                  focus-within:shadow-md focus-within:-translate-y-[1px] ${className}`}
     >

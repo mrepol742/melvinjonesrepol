@@ -116,35 +116,7 @@
     "next_step_description": "Whether it’s a product to build, a system to improve, or a problem to solve — feel free to reach out through any of the contact options available.",
     "next_step_tag_outcome": "Open to projects",
     "next_step_tag_business": "Freelance available",
-    "next_step_tag_reliable": "Reliable & responsive"
-  },
-  "work_experience": {
-    "title": "Professional Work Experience",
-    "description": "A summary of my professional work experience, including the roles, responsibilities, and projects I have contributed to throughout my career in development and technology.",
-    "experience": {
-      "company_freelance": {
-        "company": "Freelance",
-        "title": "Software Engineer",
-        "date": "2021 - Present",
-        "description": "Delivered custom web and mobile applications for capstone students, business clients, and independent projects (public and private). Led the full software development lifecycle—from requirements gathering and system planning to design, development, and production deployment. Translated client needs into scalable, production-ready solutions and provided ongoing maintenance and improvements. Utilized technologies such as Laravel, React, Next.js, Node.js, Java and Kotlin to build efficient, user-focused applications aligned with business and project goals."
-      },
-      "company_apptrade": {
-        "company": "Apptrade Inc.",
-        "title": "IT Staff Intern",
-        "date": "April 2025 - June 2025 (250hrs)",
-        "description": "Incharge of maintaining the IT infrastructure, including hardware, software, and network. Responsible for troubleshooting technical issues, providing support to end-users, and ensuring the efficiency and reliability of the organization's IT system.",
-        "cert": "/certificates/internship-apptrade-inc.jpg"
-      }
-    },
-    "view_certificate": "View Certificate"
-  },
-  "certificates": {
-    "title": "Professional Certificates",
-    "description": "A collection of professional certificates I have earned from various online courses, training programs, and technical learning platforms. These certifications showcase my continuous learning in web development, programming, and modern digital technologies.",
-    "no_results_found": "No results found.",
-    "view_certificate": "View Certificate"
-  },
-  "about": {
+    "next_step_tag_reliable": "Reliable & responsive",
     "label": "About",
     "name": "Melvin Jones Repol",
     "intro": "I partner with teams to build practical, scalable software that improves delivery speed, reduces operational costs, and keeps systems stable in production.",
@@ -190,6 +162,32 @@
     "community_card3_desc": "Events & Networking",
     "community_cta_join": "Join Us",
     "community_cta_github": "Github"
+  },
+  "work_experience": {
+    "title": "Professional Work Experience",
+    "description": "A summary of my professional work experience, including the roles, responsibilities, and projects I have contributed to throughout my career in development and technology.",
+    "experience": {
+      "company_freelance": {
+        "company": "Freelance",
+        "title": "Software Engineer",
+        "date": "2021 - Present",
+        "description": "Delivered custom web and mobile applications for capstone students, business clients, and independent projects (public and private). Led the full software development lifecycle—from requirements gathering and system planning to design, development, and production deployment. Translated client needs into scalable, production-ready solutions and provided ongoing maintenance and improvements. Utilized technologies such as Laravel, React, Next.js, Node.js, Java and Kotlin to build efficient, user-focused applications aligned with business and project goals."
+      },
+      "company_apptrade": {
+        "company": "Apptrade Inc.",
+        "title": "IT Staff Intern",
+        "date": "April 2025 - June 2025 (250hrs)",
+        "description": "Incharge of maintaining the IT infrastructure, including hardware, software, and network. Responsible for troubleshooting technical issues, providing support to end-users, and ensuring the efficiency and reliability of the organization's IT system.",
+        "cert": "/certificates/internship-apptrade-inc.jpg"
+      }
+    },
+    "view_certificate": "View Certificate"
+  },
+  "certificates": {
+    "title": "Professional Certificates",
+    "description": "A collection of professional certificates I have earned from various online courses, training programs, and technical learning platforms. These certifications showcase my continuous learning in web development, programming, and modern digital technologies.",
+    "no_results_found": "No results found.",
+    "view_certificate": "View Certificate"
   },
   "not_found": {
     "quotes": [

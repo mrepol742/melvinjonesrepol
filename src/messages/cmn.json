@@ -116,35 +116,7 @@
     "next_step_description": "无论是构建产品、改善系统还是解决问题——欢迎通过任意可用的联系方式与我取得联系。",
     "next_step_tag_outcome": "开放合作",
     "next_step_tag_business": "自由职业可接单",
-    "next_step_tag_reliable": "可靠且响应迅速"
-  },
-  "work_experience": {
-    "title": "专业工作经历",
-    "description": "我的专业工作经历概述，包括我在开发与技术领域中担任的角色、职责以及参与的项目。",
-    "experience": {
-      "company_freelance": {
-        "company": "自由职业",
-        "title": "软件工程师",
-        "date": "2021年至今",
-        "description": "为毕业设计学生、企业客户以及独立项目（公开与私有）交付定制 Web 与移动应用。主导完整的软件开发生命周期——从需求收集、系统规划到设计、开发和生产部署。将客户需求转化为可扩展、可投入生产的解决方案，并提供持续维护与优化。使用 Laravel、React、Next.js、Node.js、Java 和 Kotlin 等技术，构建高效、以用户为中心并符合业务与项目目标的应用程序。"
-      },
-      "company_apptrade": {
-        "company": "Apptrade Inc.",
-        "title": "IT 实习员工",
-        "date": "2025年4月 - 2025年6月（250小时）",
-        "description": "负责维护 IT 基础设施，包括硬件、软件和网络。负责排查技术问题、为终端用户提供支持，并确保组织 IT 系统的效率与可靠性。",
-        "cert": "/certificates/internship-apptrade-inc.jpg"
-      }
-    },
-    "view_certificate": "查看证书"
-  },
-  "certificates": {
-    "title": "专业证书",
-    "description": "我从各类在线课程、培训项目和技术学习平台获得的专业证书合集。这些证书体现了我在 Web 开发、编程以及现代数字技术领域的持续学习。",
-    "no_results_found": "未找到结果。",
-    "view_certificate": "查看证书"
-  },
-  "about": {
+    "next_step_tag_reliable": "可靠且响应迅速",
     "label": "关于",
     "name": "Melvin Jones Repol",
     "intro": "我与团队合作，构建实用且可扩展的软件，以提升交付速度、降低运营成本，并确保生产环境系统的稳定性。",
@@ -190,6 +162,32 @@
     "community_card3_desc": "活动与社交网络",
     "community_cta_join": "加入我们",
     "community_cta_github": "Github"
+  },
+  "work_experience": {
+    "title": "专业工作经历",
+    "description": "我的专业工作经历概述，包括我在开发与技术领域中担任的角色、职责以及参与的项目。",
+    "experience": {
+      "company_freelance": {
+        "company": "自由职业",
+        "title": "软件工程师",
+        "date": "2021年至今",
+        "description": "为毕业设计学生、企业客户以及独立项目（公开与私有）交付定制 Web 与移动应用。主导完整的软件开发生命周期——从需求收集、系统规划到设计、开发和生产部署。将客户需求转化为可扩展、可投入生产的解决方案，并提供持续维护与优化。使用 Laravel、React、Next.js、Node.js、Java 和 Kotlin 等技术，构建高效、以用户为中心并符合业务与项目目标的应用程序。"
+      },
+      "company_apptrade": {
+        "company": "Apptrade Inc.",
+        "title": "IT 实习员工",
+        "date": "2025年4月 - 2025年6月（250小时）",
+        "description": "负责维护 IT 基础设施，包括硬件、软件和网络。负责排查技术问题、为终端用户提供支持，并确保组织 IT 系统的效率与可靠性。",
+        "cert": "/certificates/internship-apptrade-inc.jpg"
+      }
+    },
+    "view_certificate": "查看证书"
+  },
+  "certificates": {
+    "title": "专业证书",
+    "description": "我从各类在线课程、培训项目和技术学习平台获得的专业证书合集。这些证书体现了我在 Web 开发、编程以及现代数字技术领域的持续学习。",
+    "no_results_found": "未找到结果。",
+    "view_certificate": "查看证书"
   },
   "not_found": {
     "quotes": [

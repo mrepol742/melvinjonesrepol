@@ -116,35 +116,7 @@
     "next_step_description": "Maging produkto man itong bubuuin, sistema na pahusayin, o problema na sosolusyunan — huwag mag-atubiling makipag-ugnayan sa pamamagitan ng alinmang contact option na makikita.",
     "next_step_tag_outcome": "Bukas sa mga proyekto",
     "next_step_tag_business": "Available bilang freelance",
-    "next_step_tag_reliable": "Maaasahan at mabilis sumagot"
-  },
-  "work_experience": {
-    "title": "Propesyonal na Karanasan sa Trabaho",
-    "description": "Isang buod ng aking propesyonal na karanasan sa trabaho, kabilang ang mga papel, responsibilidad, at proyektong aking nalahukan sa aking karera sa development at teknolohiya.",
-    "experience": {
-      "company_freelance": {
-        "company": "Freelance",
-        "title": "Software Engineer",
-        "date": "2021 - Kasalukuyan",
-        "description": "Naghatid ng custom na web at mobile applications para sa mga estudyante ng capstone, mga kliyenteng negosyo, at mga independent na proyekto (pampubliko at pribado). Pinangunahan ang buong software development lifecycle—mula sa pagkuha ng requirements at system planning hanggang sa design, development, at production deployment. Isinalin ang pangangailangan ng kliyente sa scalable at production-ready na mga solusyon at nagbigay ng tuloy-tuloy na maintenance at improvements. Gumamit ng mga teknolohiya tulad ng Laravel, React, Next.js, Node.js, Java, at Kotlin upang makabuo ng mahusay, user-focused na mga application na nakaayon sa layunin ng negosyo at proyekto."
-      },
-      "company_apptrade": {
-        "company": "Apptrade Inc.",
-        "title": "IT Intern",
-        "date": "Abril 2025 - Hunyo 2025 (250 oras)",
-        "description": "Responsable sa pagpapanatili ng IT infrastructure, kabilang ang hardware, software, at network. Tungkulin ang pag-troubleshoot ng technical issues, pagbibigay ng suporta sa end-users, at pagtiyak ng kahusayan at pagiging maaasahan ng IT system ng organisasyon.",
-        "cert": "/certificates/internship-apptrade-inc.jpg"
-      }
-    },
-    "view_certificate": "Tingnan ang Sertipiko"
-  },
-  "certificates": {
-    "title": "Mga Propesyonal na Sertipiko",
-    "description": "Isang koleksyon ng mga propesyonal na sertipiko na nakuha ko mula sa iba't ibang online courses, training programs, at technical learning platforms. Ipinapakita ng mga sertipikasyong ito ang aking patuloy na pag-aaral sa web development, programming, at modernong digital na teknolohiya.",
-    "no_results_found": "Walang nahanap na resulta.",
-    "view_certificate": "Tingnan ang Sertipiko"
-  },
-  "about": {
+    "next_step_tag_reliable": "Maaasahan at mabilis sumagot",
     "label": "Tungkol",
     "name": "Melvin Jones Repol",
     "intro": "Nakikipagtulungan ako sa mga team upang bumuo ng praktikal at scalable na software na nagpapabilis ng delivery, nagpapababa ng operational costs, at nagpapanatiling stable ang mga sistema sa production.",
@@ -190,6 +162,32 @@
     "community_card3_desc": "Events at Networking",
     "community_cta_join": "Sumali",
     "community_cta_github": "Github"
+  },
+  "work_experience": {
+    "title": "Propesyonal na Karanasan sa Trabaho",
+    "description": "Isang buod ng aking propesyonal na karanasan sa trabaho, kabilang ang mga papel, responsibilidad, at proyektong aking nalahukan sa aking karera sa development at teknolohiya.",
+    "experience": {
+      "company_freelance": {
+        "company": "Freelance",
+        "title": "Software Engineer",
+        "date": "2021 - Kasalukuyan",
+        "description": "Naghatid ng custom na web at mobile applications para sa mga estudyante ng capstone, mga kliyenteng negosyo, at mga independent na proyekto (pampubliko at pribado). Pinangunahan ang buong software development lifecycle—mula sa pagkuha ng requirements at system planning hanggang sa design, development, at production deployment. Isinalin ang pangangailangan ng kliyente sa scalable at production-ready na mga solusyon at nagbigay ng tuloy-tuloy na maintenance at improvements. Gumamit ng mga teknolohiya tulad ng Laravel, React, Next.js, Node.js, Java, at Kotlin upang makabuo ng mahusay, user-focused na mga application na nakaayon sa layunin ng negosyo at proyekto."
+      },
+      "company_apptrade": {
+        "company": "Apptrade Inc.",
+        "title": "IT Intern",
+        "date": "Abril 2025 - Hunyo 2025 (250 oras)",
+        "description": "Responsable sa pagpapanatili ng IT infrastructure, kabilang ang hardware, software, at network. Tungkulin ang pag-troubleshoot ng technical issues, pagbibigay ng suporta sa end-users, at pagtiyak ng kahusayan at pagiging maaasahan ng IT system ng organisasyon.",
+        "cert": "/certificates/internship-apptrade-inc.jpg"
+      }
+    },
+    "view_certificate": "Tingnan ang Sertipiko"
+  },
+  "certificates": {
+    "title": "Mga Propesyonal na Sertipiko",
+    "description": "Isang koleksyon ng mga propesyonal na sertipiko na nakuha ko mula sa iba't ibang online courses, training programs, at technical learning platforms. Ipinapakita ng mga sertipikasyong ito ang aking patuloy na pag-aaral sa web development, programming, at modernong digital na teknolohiya.",
+    "no_results_found": "Walang nahanap na resulta.",
+    "view_certificate": "Tingnan ang Sertipiko"
   },
   "not_found": {
     "quotes": [

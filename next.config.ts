@@ -3,7 +3,7 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  base-uri 'self';
+  base-uri 'self' https://stats.uptimerobot.com;
   object-src 'none';
 
   script-src
@@ -22,6 +22,7 @@ const ContentSecurityPolicy = `
     https://www.google.com
     https://www.gstatic.com
     https://app.livechatai.com
+    https://unpkg.com
     https://s.ytimg.com;
 
   style-src
@@ -60,6 +61,7 @@ const ContentSecurityPolicy = `
     https://*.steamstatic.com
     https://app.livechatai.com
     https://unpkg.com
+    https://cors.io
     https://www.youtube.com;
 
   frame-src
@@ -73,6 +75,7 @@ const ContentSecurityPolicy = `
     https://www.youtube-nocookie.com
     https://recaptcha.google.com
     https://app.livechatai.com
+    https://stats.uptimerobot.com
     https://*.trustpilot.com;
 
   worker-src 'self' blob:;

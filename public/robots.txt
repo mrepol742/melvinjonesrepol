@@ -4,8 +4,10 @@ User-Agent: *
 Allow: /
 Disallow: /.well-known/assetlinks.json
 Disallow: /api
+Disallow: /blog?page=1
 Disallow: /projects?
 Disallow: /gaming?
+Disallow: /uptime
 
 Sitemap: https://www.melvinjonesrepol.com/sitemap.xml
 RSS: https://www.melvinjonesrepol.com/rss.xml

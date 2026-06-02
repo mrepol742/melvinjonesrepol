@@ -8,58 +8,66 @@ export default function GameCard({ game }: { game: GameType }) {
     return explicitPatterns.some((pattern) => pattern.test(name));
   }
 
+  const isExplicit = isExplicitName(game.name);
+  const coverUrl = !isExplicit ? game.cover_url : "";
+
   return (
     <div
-      className="relative rounded-lg overflow-hidden shadow-lg h-48 flex items-end group"
-      style={{
-        backgroundImage: `url(${isExplicitName(game.name) ? "" : game.cover_url})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+      className="group h-48 rounded-lg border border-zinc-800 p-4 flex gap-4"
       data-aos="fade-up"
     >
-      <div
-        className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-gray-900/80 via-gray-900/90 to-transparent p-3
-                      transition-all duration-300 ease-in-out max-h-16 group-hover:max-h-full overflow-hidden"
-      >
-        <h2 className="text-white text-lg font-bold truncate">
-          {isExplicitName(game.name) ? "Private" : game.name}
+      <div className="h-full w-32 shrink-0 overflow-hidden rounded-md border border-zinc-800 flex items-center justify-center">
+        {coverUrl ? (
+          <img
+            src={coverUrl}
+            alt={isExplicit ? "Private" : game.name}
+            className="h-full w-full object-cover"
+          />
+        ) : (
+          <span className="text-xs text-zinc-400">Private</span>
+        )}
+      </div>
+
+      <div className="flex min-w-0 flex-1 flex-col">
+        <h2 className="text-zinc-100 text-lg font-semibold truncate">
+          {isExplicit ? "Private" : game.name}
         </h2>
-        <div className="flex flex-row gap-3">
-          <div className="text-gray-300 text-sm">
-            <span className="font-bold">Total:</span>{" "}
+
+        <div className="mt-1 flex flex-wrap gap-3 text-sm text-zinc-300">
+          <div>
+            <span className="font-semibold">Total:</span>{" "}
             {toHours(game.playtime_forever)}h
           </div>
           {game.playtime_2weeks && game.playtime_2weeks > 0 && (
-            <div className="text-gray-300 text-sm">
-              <span className="font-bold">2 Weeks:</span>{" "}
+            <div>
+              <span className="font-semibold">2 Weeks:</span>{" "}
               {toHours(game.playtime_2weeks)}h
             </div>
           )}
         </div>
 
-        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-2">
+        <div className="mt-2 grid gap-1 text-xs text-zinc-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           {game.playtime_mac_forever > 0 && (
-            <div className="text-gray-300 text-sm">
-              <span className="font-bold">Mac:</span>{" "}
+            <div>
+              <span className="font-semibold">Mac:</span>{" "}
               {toHours(game.playtime_mac_forever)}h
             </div>
           )}
           {game.playtime_linux_forever > 0 && (
-            <div className="text-gray-300 text-sm">
-              <span className="font-bold">Linux:</span>{" "}
+            <div>
+              <span className="font-semibold">Linux:</span>{" "}
               {toHours(game.playtime_linux_forever)}h
             </div>
           )}
           {game.playtime_deck_forever > 0 && (
-            <div className="text-gray-300 text-sm">
-              <span className="font-bold">Deck:</span>{" "}
+            <div>
+              <span className="font-semibold">Deck:</span>{" "}
               {toHours(game.playtime_deck_forever)}h
             </div>
           )}
           {game.rtime_last_played && game.rtime_last_played > 0 && (
-            <div className="text-gray-300 text-sm">
-              <span className="font-bold">Last Played:</span>{" "}
+            <div>
+              <span className="font-semibold">Last Played:</span>{" "}
               {getTimeAgo(game.rtime_last_played)}
             </div>
           )}

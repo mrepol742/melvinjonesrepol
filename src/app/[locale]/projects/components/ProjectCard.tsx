@@ -42,7 +42,7 @@ export default function ProjectCard({
 
   return (
     <div data-aos="fade-up" className="h-full flex">
-      <div className="relative overflow-hidden group border rounded-2xl shadow-sm w-full transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-[0.98]">
+      <div className="relative overflow-hidden group border border-zinc-800 rounded-2xl shadow-sm w-full transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-[0.98]">
         {showSummary && (
           <div className="absolute inset-0 z-50 p-6 flex flex-col backdrop-blur-xl bg-gray-900/95 text-white">
             <div className="flex justify-between items-center mb-4">

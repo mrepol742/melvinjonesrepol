@@ -103,7 +103,7 @@ export default async function BlogPage({
               {allTopics.map((topic) => (
                 <span
                   key={topic}
-                  className="rounded-full border border-zinc-700 px-3 py-1 text-xs text-zinc-300 capitalize"
+                  className="rounded-full border border-zinc-700 px-3 py-1 text-xs capitalize"
                 >
                   {topic}
                 </span>
@@ -114,7 +114,7 @@ export default async function BlogPage({
       </section>
 
       <section className="px-6 py-24 md:px-10">
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+        <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 md:gap-6">
           {paginatedPosts.map((post, index) => (
             <li
               key={post.slug}
@@ -124,10 +124,10 @@ export default async function BlogPage({
             >
               <Link
                 href={`/blog/${post.slug}`}
-                className="block h-full rounded-2xl border p-5 md:p-6 transition-transform duration-300 hover:-translate-y-0.5"
+                className="block h-full rounded-2xl border border-zinc-800 p-5 md:p-6 transition-transform duration-300 hover:-translate-y-0.5"
               >
                 <div className="flex items-center justify-between gap-3 mb-3">
-                  <span className="inline-flex capitalize rounded-full border px-2.5 py-1 text-xs">
+                  <span className="inline-flex capitalize rounded-full border border-zinc-800 px-2.5 py-1 text-xs">
                     {post.topics?.[0] ?? "general"}
                   </span>
                   <p className="text-xs md:text-sm">{post.date}</p>
