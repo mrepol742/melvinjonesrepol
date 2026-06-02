@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 import ScrollTop from "@/components/ui/ScrollTop";
 import { getRecentPosts } from "@/lib/posts";
 import PrivacyPolicyPrompt from "@/components/common/PrivacyPolicyPrompt";
+import DevToolsDetector from "@/components/common/DevToolsDetector";
 
 const locales = ["fil", "hi", "es", "cmn"] as const;
 
@@ -24,10 +25,12 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
 
-  if (!hasLocale(locales, locale)) return notFound();
+  if (!hasLocale(["en", ...locales], locale)) return notFound();
 
   setRequestLocale(locale);
 
+  const env = process.env.NEXT_PUBLIC_NODE_ENV || "production";
+  const isProduction = env === "production";
   const posts = getRecentPosts(5);
   const messages = await getMessages();
 
@@ -36,6 +39,12 @@ export default async function LocaleLayout({
       <Nav />
 
       <div className="flex-1">{children}</div>
+
+      {isProduction && (
+        <>
+          <DevToolsDetector />
+        </>
+      )}
 
       <PrivacyPolicyPrompt />
       <ToastContainer />

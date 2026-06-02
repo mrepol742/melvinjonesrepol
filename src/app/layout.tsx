@@ -14,7 +14,6 @@ import NextTopLoader from "nextjs-toploader";
 import GoogleAnalytics from "@/components/common/metadata/GoogleAnalytics";
 import ServiceWorkerRegister from "@/components/common/ServiceWorkerRegister";
 import BrowserCheck from "@/components/common/BrowserCheck";
-import DevToolsDetector from "@/components/common/DevToolsDetector";
 
 config.autoAddCss = false;
 
@@ -174,7 +173,6 @@ export default async function RootLayout({
             <GoogleAnalytics />
             <ServiceWorkerRegister />
             <BrowserCheck />
-            <DevToolsDetector />
           </>
         )}
 
