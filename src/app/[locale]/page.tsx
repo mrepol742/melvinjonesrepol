@@ -65,7 +65,6 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const t = await getTranslations("home");
-  const ta = await getTranslations("about");
 
   const person = {
     "@context": "https://schema.org",
@@ -76,7 +75,7 @@ export default async function Home() {
       "https://www.melvinjonesrepol.com/images/melvin-jones-repol-black-circle.png",
     description:
       "Software Engineer building scalable web and Android applications — from planning and design to production.",
-    jobTitle: "Software Engineer",
+    jobTitle: "Founder, CTO, Software Engineer",
     mainEntityOfPage: "https://www.melvinjonesrepol.com",
     sameAs: [
       "https://www.facebook.com/melvinjonesrepol",
@@ -88,10 +87,26 @@ export default async function Home() {
       "https://steamcommunity.com/id/mrepol742",
       "https://codeberg.org/mrepol742",
     ],
-    worksFor: {
-      "@type": "Organization",
-      name: "Self-Employed",
-    },
+    worksFor: [
+      {
+        "@type": "Organization",
+        name: "Hall of Codes",
+        url: "https://www.hallofcodes.com",
+        sameAs: [
+          "https://www.facebook.com/hallofcodes",
+          "https://github.com/hallofcodes",
+        ],
+      },
+      {
+        "@type": "Organization",
+        name: "Ulisha Limited",
+        url: "https://www.ulishalimited.com",
+      },
+      {
+        "@type": "Organization",
+        name: "Self-Employed",
+      },
+    ],
   };
 
   const webSite = {
@@ -120,7 +135,7 @@ export default async function Home() {
             <div className="hidden lg:block absolute right-0 top-0 h-full w-[42%]">
               <Image
                 src="/images/melvin-jones-repol-black.jpg"
-                alt={ta("profile_alt")}
+                alt={t("profile_alt")}
                 fill
                 priority
                 className="object-cover object-top"
@@ -151,7 +166,7 @@ export default async function Home() {
                   data-aos="fade-up"
                   data-aos-delay="200"
                 >
-                  {ta("intro")}
+                  {t("intro")}
                 </p>
 
                 <p
@@ -159,7 +174,7 @@ export default async function Home() {
                   data-aos="fade-up"
                   data-aos-delay="300"
                 >
-                  {ta("delivery_mindset")}
+                  {t("delivery_mindset")}
                 </p>
               </div>
 
@@ -171,22 +186,22 @@ export default async function Home() {
               >
                 <div>
                   <p className="text-xs uppercase tracking-widest mb-1 opacity-50">
-                    {ta("role_label")}
+                    {t("role_label")}
                   </p>
-                  <p className="font-semibold text-sm">{ta("role_value")}</p>
+                  <p className="font-semibold text-sm">{t("role_value")}</p>
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-widest mb-1 opacity-50">
-                    {ta("focus_label")}
+                    {t("focus_label")}
                   </p>
-                  <p className="font-semibold text-sm">{ta("focus_value")}</p>
+                  <p className="font-semibold text-sm">{t("focus_value")}</p>
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-widest mb-1 opacity-50">
-                    {ta("expertise_label")}
+                    {t("expertise_label")}
                   </p>
                   <p className="font-semibold text-sm">
-                    {ta("expertise_value")}
+                    {t("expertise_value")}
                   </p>
                 </div>
               </div>
@@ -196,7 +211,7 @@ export default async function Home() {
             <div className="lg:hidden relative w-full aspect-[4/3]">
               <Image
                 src="/images/melvin-jones-repol-black.jpg"
-                alt={ta("profile_alt")}
+                alt={t("profile_alt")}
                 fill
                 priority
                 className="object-cover object-top"
@@ -213,16 +228,16 @@ export default async function Home() {
                     className="text-sm font-semibold tracking-widest text-blue-500 uppercase mb-3"
                     data-aos="fade-up"
                   >
-                    {ta("engineering_philosophy_label")}
+                    {t("engineering_philosophy_label")}
                   </h4>
                   <h2
                     className="text-3xl md:text-5xl font-bold leading-tight"
                     data-aos="fade-up"
                     data-aos-delay="100"
                   >
-                    {ta("engineering_philosophy_title_line1")}
+                    {t("engineering_philosophy_title_line1")}
                     <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-violet-500">
-                      {ta("engineering_philosophy_title_line2")}
+                      {t("engineering_philosophy_title_line2")}
                     </span>
                   </h2>
                 </div>
@@ -257,20 +272,20 @@ export default async function Home() {
                   className="text-sm font-semibold tracking-widest text-cyan-500 uppercase mb-3"
                   data-aos="fade-up"
                 >
-                  {ta("coding_activity_label")}
+                  {t("coding_activity_label")}
                 </h4>
                 <h2
                   className="text-3xl md:text-4xl font-bold mb-4"
                   data-aos="fade-up"
                   data-aos-delay="100"
                 >
-                  {ta("coding_activity_title")}
+                  {t("coding_activity_title")}
                 </h2>
                 <p
                   className="text-center max-w-2xl mx-auto mb-6"
                   data-aos="fade-up"
                 >
-                  {ta("coding_activity_description")}
+                  {t("coding_activity_description")}
                 </p>
               </div>
               <Wakatime />
@@ -309,17 +324,17 @@ export default async function Home() {
                     className="text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3"
                     data-aos="fade-up"
                   >
-                    {ta("security_label")}
+                    {t("security_label")}
                   </h4>
                   <h2
                     className="text-3xl md:text-4xl font-bold mb-4"
                     data-aos="fade-up"
                     data-aos-delay="100"
                   >
-                    {ta("security_title")}
+                    {t("security_title")}
                   </h2>
                   <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
-                    {ta("security_description")}
+                    {t("security_description")}
                   </p>
                 </div>
                 <SecurityPractices />
@@ -333,17 +348,17 @@ export default async function Home() {
                     className="text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3"
                     data-aos="fade-up"
                   >
-                    {ta("ai_label")}
+                    {t("ai_label")}
                   </h4>
                   <h2
                     className="text-3xl md:text-4xl font-bold mb-4"
                     data-aos="fade-up"
                     data-aos-delay="100"
                   >
-                    {ta("ai_title")}
+                    {t("ai_title")}
                   </h2>
                   <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
-                    {ta("ai_description")}
+                    {t("ai_description")}
                   </p>
                 </div>
                 <AI />
@@ -356,21 +371,21 @@ export default async function Home() {
                   className="text-sm font-semibold tracking-widest text-fuchsia-500 uppercase mb-3"
                   data-aos="fade-up"
                 >
-                  {ta("certifications_label")}
+                  {t("certifications_label")}
                 </h4>
                 <h2
                   className="text-3xl md:text-4xl font-bold mb-4"
                   data-aos="fade-up"
                   data-aos-delay="100"
                 >
-                  {ta("certifications_title")}
+                  {t("certifications_title")}
                 </h2>
                 <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
-                  {ta("certifications_description")}
+                  {t("certifications_description")}
                 </p>
               </div>
               <Certificate />
-              <span className="text-xs">{ta("swipe_left_or_right")}</span>
+              <span className="text-xs">{t("swipe_left_or_right")}</span>
             </div>
 
             <div className="relative py-14 md:py-28 overflow-hidden">
@@ -379,17 +394,17 @@ export default async function Home() {
                   className="text-sm font-semibold tracking-widest text-green-500 uppercase mb-3"
                   data-aos="fade-up"
                 >
-                  {ta("blog_label")}
+                  {t("blog_label")}
                 </h4>
                 <h2
                   className="text-3xl md:text-4xl font-bold mb-4"
                   data-aos="fade-up"
                   data-aos-delay="100"
                 >
-                  {ta("blog_title")}
+                  {t("blog_title")}
                 </h2>
                 <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
-                  {ta("blog_description")}
+                  {t("blog_description")}
                 </p>
               </div>
               <Blog />
@@ -424,21 +439,21 @@ export default async function Home() {
                   className="text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3"
                   data-aos="fade-up"
                 >
-                  {ta("youtube_label")}
+                  {t("youtube_label")}
                 </h4>
                 <h2
                   className="text-3xl md:text-4xl font-bold mb-4"
                   data-aos="fade-up"
                   data-aos-delay="100"
                 >
-                  {ta("youtube_title")}
+                  {t("youtube_title")}
                 </h2>
                 <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
-                  {ta("youtube_description")}
+                  {t("youtube_description")}
                 </p>
               </div>
               <Youtube />
-              <span className="text-xs">{ta("swipe_left_or_right")}</span>
+              <span className="text-xs">{t("swipe_left_or_right")}</span>
             </div>
 
             <div className="relative py-14 md:py-28 overflow-hidden">
@@ -451,7 +466,7 @@ export default async function Home() {
                       data-aos="fade-up"
                     >
                       <span className="inline-block h-2 w-2 rounded-full border" />
-                      {ta("community_label")}
+                      {t("community_label")}
                     </div>
 
                     <h2
@@ -459,21 +474,21 @@ export default async function Home() {
                       data-aos="fade-up"
                       data-aos-delay="100"
                     >
-                      {ta("community_title")}
+                      {t("community_title")}
                     </h2>
 
                     <p
                       className="mt-4 text-zinc-300 max-w-xl"
                       data-aos="fade-up"
                     >
-                      {ta("community_description_1")}
+                      {t("community_description_1")}
                     </p>
 
                     <p
                       className="mt-4 text-zinc-300 max-w-xl"
                       data-aos="fade-up"
                     >
-                      {ta("community_description_2")}
+                      {t("community_description_2")}
                     </p>
 
                     <div className="mt-6 flex flex-wrap gap-2 md:gap-3">
@@ -486,7 +501,7 @@ export default async function Home() {
                           icon={faCodeSolid}
                           className="border border-zinc-800"
                         >
-                          {ta("community_cta_join")}
+                          {t("community_cta_join")}
                         </Button>
                       </Link>
                       <Link
@@ -498,7 +513,7 @@ export default async function Home() {
                           icon={faGithub}
                           className="border border-zinc-800"
                         >
-                          {ta("community_cta_github")}
+                          {t("community_cta_github")}
                         </Button>
                       </Link>
                     </div>
@@ -509,26 +524,26 @@ export default async function Home() {
                     <div className="space-y-3">
                       <div className="rounded-xl border border-zinc-800 px-4 py-3">
                         <div className="text-lg font-semibold">
-                          {ta("community_card1_title")}
+                          {t("community_card1_title")}
                         </div>
                         <div className="text-xs uppercase tracking-wider text-zinc-400">
-                          {ta("community_card1_desc")}
+                          {t("community_card1_desc")}
                         </div>
                       </div>
                       <div className="rounded-xl border border-zinc-800 px-4 py-3">
                         <div className="text-lg font-semibold">
-                          {ta("community_card2_title")}
+                          {t("community_card2_title")}
                         </div>
                         <div className="text-xs uppercase tracking-wider text-zinc-400">
-                          {ta("community_card2_desc")}
+                          {t("community_card2_desc")}
                         </div>
                       </div>
                       <div className="rounded-xl border border-zinc-800 px-4 py-3">
                         <div className="text-lg font-semibold">
-                          {ta("community_card3_title")}
+                          {t("community_card3_title")}
                         </div>
                         <div className="text-xs uppercase tracking-wider text-zinc-400">
-                          {ta("community_card3_desc")}
+                          {t("community_card3_desc")}
                         </div>
                       </div>
                     </div>

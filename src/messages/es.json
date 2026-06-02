@@ -116,35 +116,7 @@
     "next_step_description": "Ya sea un producto que construir, un sistema que mejorar o un problema que resolver — no dudes en contactarme a través de cualquiera de las opciones disponibles.",
     "next_step_tag_outcome": "Abierto a proyectos",
     "next_step_tag_business": "Freelance disponible",
-    "next_step_tag_reliable": "Confiable y receptivo"
-  },
-  "work_experience": {
-    "title": "Experiencia Profesional",
-    "description": "Un resumen de mi experiencia profesional, incluyendo los roles, responsabilidades y proyectos en los que he contribuido a lo largo de mi carrera en desarrollo y tecnología.",
-    "experience": {
-      "company_freelance": {
-        "company": "Freelance",
-        "title": "Ingeniero de Software",
-        "date": "2021 - Presente",
-        "description": "Desarrollé aplicaciones web y móviles personalizadas para estudiantes de proyectos de grado, clientes empresariales y proyectos independientes (públicos y privados). Lideré todo el ciclo de vida del desarrollo de software, desde la recopilación de requisitos y planificación del sistema hasta el diseño, desarrollo y despliegue en producción. Transformé las necesidades del cliente en soluciones escalables y listas para producción, además de proporcionar mantenimiento y mejoras continuas. Utilicé tecnologías como Laravel, React, Next.js, Node.js, Java y Kotlin para construir aplicaciones eficientes, centradas en el usuario y alineadas con los objetivos del negocio y del proyecto."
-      },
-      "company_apptrade": {
-        "company": "Apptrade Inc.",
-        "title": "Practicante de TI",
-        "date": "Abril 2025 - Junio 2025 (250 horas)",
-        "description": "Encargado de mantener la infraestructura de TI, incluyendo hardware, software y red. Responsable de resolver problemas técnicos, brindar soporte a los usuarios finales y garantizar la eficiencia y confiabilidad de los sistemas de TI de la organización.",
-        "cert": "/certificates/internship-apptrade-inc.jpg"
-      }
-    },
-    "view_certificate": "Ver certificado"
-  },
-  "certificates": {
-    "title": "Certificados Profesionales",
-    "description": "Una colección de certificados profesionales obtenidos a través de cursos en línea, programas de formación y plataformas de aprendizaje técnico. Estas certificaciones reflejan mi aprendizaje continuo en desarrollo web, programación y tecnologías digitales modernas.",
-    "no_results_found": "No se encontraron resultados.",
-    "view_certificate": "Ver certificado"
-  },
-  "about": {
+    "next_step_tag_reliable": "Confiable y receptivo",
     "label": "Acerca de",
     "name": "Melvin Jones Repol",
     "intro": "Colaboro con equipos para construir software práctico y escalable que mejora la velocidad de entrega, reduce los costos operativos y mantiene la estabilidad en producción.",
@@ -190,6 +162,32 @@
     "community_card3_desc": "Eventos y networking",
     "community_cta_join": "Únete",
     "community_cta_github": "Github"
+  },
+  "work_experience": {
+    "title": "Experiencia Profesional",
+    "description": "Un resumen de mi experiencia profesional, incluyendo los roles, responsabilidades y proyectos en los que he contribuido a lo largo de mi carrera en desarrollo y tecnología.",
+    "experience": {
+      "company_freelance": {
+        "company": "Freelance",
+        "title": "Ingeniero de Software",
+        "date": "2021 - Presente",
+        "description": "Desarrollé aplicaciones web y móviles personalizadas para estudiantes de proyectos de grado, clientes empresariales y proyectos independientes (públicos y privados). Lideré todo el ciclo de vida del desarrollo de software, desde la recopilación de requisitos y planificación del sistema hasta el diseño, desarrollo y despliegue en producción. Transformé las necesidades del cliente en soluciones escalables y listas para producción, además de proporcionar mantenimiento y mejoras continuas. Utilicé tecnologías como Laravel, React, Next.js, Node.js, Java y Kotlin para construir aplicaciones eficientes, centradas en el usuario y alineadas con los objetivos del negocio y del proyecto."
+      },
+      "company_apptrade": {
+        "company": "Apptrade Inc.",
+        "title": "Practicante de TI",
+        "date": "Abril 2025 - Junio 2025 (250 horas)",
+        "description": "Encargado de mantener la infraestructura de TI, incluyendo hardware, software y red. Responsable de resolver problemas técnicos, brindar soporte a los usuarios finales y garantizar la eficiencia y confiabilidad de los sistemas de TI de la organización.",
+        "cert": "/certificates/internship-apptrade-inc.jpg"
+      }
+    },
+    "view_certificate": "Ver certificado"
+  },
+  "certificates": {
+    "title": "Certificados Profesionales",
+    "description": "Una colección de certificados profesionales obtenidos a través de cursos en línea, programas de formación y plataformas de aprendizaje técnico. Estas certificaciones reflejan mi aprendizaje continuo en desarrollo web, programación y tecnologías digitales modernas.",
+    "no_results_found": "No se encontraron resultados.",
+    "view_certificate": "Ver certificado"
   },
   "not_found": {
     "quotes": [
