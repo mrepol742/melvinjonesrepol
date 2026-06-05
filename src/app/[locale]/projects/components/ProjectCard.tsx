@@ -105,7 +105,10 @@ export default function ProjectCard({
               title="Summarize with AI"
               className="mr-auto text-purple-500 hover:text-purple-600 transition-colors"
             >
-              <FontAwesomeIcon icon={faWandMagicSparkles} size="lg" />
+              <FontAwesomeIcon
+                icon={faWandMagicSparkles}
+                className="transition-all group-hover:text-2xl"
+              />
             </button>
 
             {repo && (
@@ -122,11 +125,14 @@ export default function ProjectCard({
 
             {link && (
               <Link
+                title="View Project"
                 href={link}
                 className="inline-flex items-center text-white bg-purple-500 hover:bg-purple-600 font-medium text-sm px-4 py-2 rounded-lg transition-all"
               >
-                Read more
-                <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
+                <FontAwesomeIcon
+                  icon={faArrowRight}
+                  className="transition-transform group-hover:translate-x-2"
+                />
               </Link>
             )}
           </div>

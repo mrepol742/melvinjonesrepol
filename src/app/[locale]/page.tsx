@@ -21,6 +21,9 @@ import { Metadata } from "next";
 import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { getTranslations } from "next-intl/server";
 
+import "devicon/devicon.min.css";
+import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
+
 export const metadata: Metadata = {
   title: "Melvin Jones Repol - Software Engineer",
   description:
@@ -134,7 +137,7 @@ export default async function Home() {
             {/* Full-height photo bleeding to the right edge — desktop only */}
             <div className="hidden lg:block absolute right-0 top-0 h-full w-[42%]">
               <Image
-                src="/images/melvin-jones-repol-black.jpg"
+                src="/images/melvin-jones-repol-black-412x408.jpg"
                 alt={t("profile_alt")}
                 fill
                 priority
@@ -149,11 +152,7 @@ export default async function Home() {
             {/* Content layer */}
             <div className="relative z-10 min-h-screen flex flex-col px-6 py-12 md:px-10">
               <div className="my-auto py-14 lg:max-w-[60%] xl:max-w-[56%]">
-                <h1
-                  className="text-[17vw] sm:text-[12vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                >
+                <h1 className="text-[17vw] sm:text-[12vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8">
                   Melvin
                   <br />
                   <span className="opacity-40">Jones</span>
@@ -224,12 +223,12 @@ export default async function Home() {
             <div className="relative py-14 md:py-28 overflow-hidden">
               <div className="relative z-10 max-w-6xl mx-auto px-4">
                 <div className="text-center mb-10 md:mb-14">
-                  <h4
+                  <span
                     className="text-sm font-semibold tracking-widest text-blue-500 uppercase mb-3"
                     data-aos="fade-up"
                   >
                     {t("engineering_philosophy_label")}
-                  </h4>
+                  </span>
                   <h2
                     className="text-3xl md:text-5xl font-bold leading-tight"
                     data-aos="fade-up"
@@ -247,12 +246,12 @@ export default async function Home() {
 
             <div className="relative py-14 md:py-28 overflow-hidden">
               <div className="text-center mb-10 md:mb-14">
-                <h4
+                <span
                   className="text-sm font-semibold tracking-widest uppercase mb-3"
                   data-aos="fade-up"
                 >
                   {t("how_i_help")}
-                </h4>
+                </span>
                 <h2
                   className="text-3xl md:text-5xl font-bold leading-tight"
                   data-aos="fade-up"
@@ -268,12 +267,12 @@ export default async function Home() {
 
             <div className="relative py-14 md:py-28 overflow-hidden">
               <div className="text-center">
-                <h4
+                <span
                   className="text-sm font-semibold tracking-widest text-cyan-500 uppercase mb-3"
                   data-aos="fade-up"
                 >
                   {t("coding_activity_label")}
-                </h4>
+                </span>
                 <h2
                   className="text-3xl md:text-4xl font-bold mb-4"
                   data-aos="fade-up"
@@ -295,12 +294,12 @@ export default async function Home() {
 
             <div className="relative py-14 md:py-28 overflow-hidden">
               <div className="text-center">
-                <h4
+                <span
                   className="text-sm font-semibold tracking-widest uppercase mb-3"
                   data-aos="fade-up"
                 >
                   {t("results_case_studies")}
-                </h4>
+                </span>
                 <h2
                   className="text-3xl md:text-4xl font-bold mb-4"
                   data-aos="fade-up"
@@ -320,12 +319,12 @@ export default async function Home() {
             <div className="relative py-14 md:py-28 overflow-hidden">
               <div className="relative z-10 max-w-6xl mx-auto px-4">
                 <div className="text-center">
-                  <h4
+                  <span
                     className="text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3"
                     data-aos="fade-up"
                   >
                     {t("security_label")}
-                  </h4>
+                  </span>
                   <h2
                     className="text-3xl md:text-4xl font-bold mb-4"
                     data-aos="fade-up"
@@ -344,12 +343,12 @@ export default async function Home() {
             <div className="relative py-14 md:py-28 overflow-hidden">
               <div className="relative z-10 max-w-6xl mx-auto px-4">
                 <div className="text-center">
-                  <h4
+                  <span
                     className="text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3"
                     data-aos="fade-up"
                   >
                     {t("ai_label")}
-                  </h4>
+                  </span>
                   <h2
                     className="text-3xl md:text-4xl font-bold mb-4"
                     data-aos="fade-up"
@@ -367,12 +366,12 @@ export default async function Home() {
 
             <div className="relative py-14 md:py-28 overflow-hidden">
               <div className="text-center">
-                <h4
+                <span
                   className="text-sm font-semibold tracking-widest text-fuchsia-500 uppercase mb-3"
                   data-aos="fade-up"
                 >
                   {t("certifications_label")}
-                </h4>
+                </span>
                 <h2
                   className="text-3xl md:text-4xl font-bold mb-4"
                   data-aos="fade-up"
@@ -390,12 +389,12 @@ export default async function Home() {
 
             <div className="relative py-14 md:py-28 overflow-hidden">
               <div className="text-center">
-                <h4
+                <span
                   className="text-sm font-semibold tracking-widest text-green-500 uppercase mb-3"
                   data-aos="fade-up"
                 >
                   {t("blog_label")}
-                </h4>
+                </span>
                 <h2
                   className="text-3xl md:text-4xl font-bold mb-4"
                   data-aos="fade-up"
@@ -412,12 +411,12 @@ export default async function Home() {
 
             <div className="relative py-14 md:py-28 overflow-hidden">
               <div className="text-center">
-                <h4
+                <span
                   className="text-sm font-semibold tracking-widest uppercase mb-3"
                   data-aos="fade-up"
                 >
                   {t("client_feedback")}
-                </h4>
+                </span>
                 <h2
                   className="text-3xl md:text-4xl font-bold mb-4"
                   data-aos="fade-up"
@@ -435,12 +434,12 @@ export default async function Home() {
 
             <div className="relative py-14 md:py-28 overflow-hidden">
               <div className="text-center">
-                <h4
+                <span
                   className="text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3"
                   data-aos="fade-up"
                 >
                   {t("youtube_label")}
-                </h4>
+                </span>
                 <h2
                   className="text-3xl md:text-4xl font-bold mb-4"
                   data-aos="fade-up"

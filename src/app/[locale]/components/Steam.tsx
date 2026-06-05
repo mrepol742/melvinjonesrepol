@@ -38,12 +38,12 @@ export default async function Steam() {
     <>
       <div className="relative py-28 px-6 overflow-hidden">
         <div className="text-center">
-          <h4
+          <span
             className="text-sm font-semibold tracking-widest text-green-500 uppercase mb-3"
             data-aos="fade-up"
           >
             Gaming Activity
-          </h4>
+          </span>
           <h2
             className="text-3xl md:text-4xl font-bold mb-4"
             data-aos="fade-up"
@@ -95,12 +95,12 @@ export default async function Steam() {
 
       <div className="relative py-28 px-6 overflow-hidden">
         <div className="text-center">
-          <h4
+          <span
             className="text-sm font-semibold tracking-widest text-indigo-500 uppercase mb-3"
             data-aos="fade-up"
           >
             Top Games
-          </h4>
+          </span>
           <h2
             className="text-3xl md:text-4xl font-bold mb-4"
             data-aos="fade-up"

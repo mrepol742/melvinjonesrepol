@@ -9,10 +9,10 @@ import {
   faSteam,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import TrustPilotWidget from "../common/TrustPilotWidget";
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 import { navLanguages } from "@/i18n/request";
+import dynamic from "next/dynamic";
 
 export default function Footer({
   posts,
@@ -36,6 +36,13 @@ export default function Footer({
     router.replace(nextPath);
     router.refresh();
   };
+
+  const TrustpilotWidget = dynamic(
+    () => import("../common/TrustPilotWidget"),
+    {
+      ssr: false,
+    }
+  );
 
   return (
     <footer
@@ -111,7 +118,7 @@ export default function Footer({
               </Link>
             </div>
 
-            <TrustPilotWidget />
+            <TrustpilotWidget />
           </div>
           {/* Links */}
           <div>

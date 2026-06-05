@@ -59,6 +59,7 @@ const techStack = [
   { name: "Material Design", icon: "devicon-materialdesign-plain colored" },
   { name: "Material Icons", icon: "devicon-materialicons-plain colored" },
   { name: "Google Fonts", icon: "devicon-google-plain colored" },
+  { name: "Atlassian Jira", icon: "devicon-jira-plain colored" },
 ];
 
 function MarqueeRow({ reverse = false }) {

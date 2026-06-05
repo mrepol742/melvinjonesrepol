@@ -10,5 +10,3 @@ Disallow: /gaming?
 Disallow: /uptime
 
 Sitemap: https://www.melvinjonesrepol.com/sitemap.xml
-RSS: https://www.melvinjonesrepol.com/rss.xml
-LLMS: https://www.melvinjonesrepol.com/llms.md
