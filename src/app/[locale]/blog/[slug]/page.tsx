@@ -237,10 +237,10 @@ export default async function BlogPost({
                 <li key={post.slug}>
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="group block h-full rounded-2xl border p-5 md:p-6 transition-transform duration-300 hover:-translate-y-0.5"
+                    className="group block h-full rounded-2xl border border-zinc-800 p-5 md:p-6 transition-transform duration-300 hover:-translate-y-0.5"
                   >
                     <div className="flex items-center justify-between gap-3 mb-3">
-                      <span className="inline-flex capitalize rounded-full border px-2.5 py-1 text-xs">
+                      <span className="inline-flex capitalize rounded-full border border-zinc-800 px-2.5 py-1 text-xs">
                         {post.topics?.[0] ?? "general"}
                       </span>
                       <p className="text-xs md:text-sm">{post.date}</p>
