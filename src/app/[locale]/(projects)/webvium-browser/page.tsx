@@ -168,7 +168,7 @@ export default async function WebviumBrowser() {
           description_long:
             "I built Webvium on 2018 with the vision of creating the lightest, fastest, most secure, private and full-featured android web browser. Programmed and design from Scratch. Webvium is built with speed and simplicity in mind. It installs in seconds, loads instantly, and runs smoother than ever. Experience faster browsing, quicker downloads, and effortless sharing—all in one ultra-light package.",
           download_url:
-            "https://released.melvinjonesrepol.com/android/webvium-browser.apk",
+            "https://webvium.melvinjonesrepol.com/downloads/thank-you",
           is_open_source: false,
           is_freeware: true,
           license: "Proprietary Software",
