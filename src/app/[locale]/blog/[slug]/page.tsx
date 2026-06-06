@@ -118,8 +118,13 @@ function TableOfContents({ headings }: { headings: Heading[] }) {
   if (!headings.length) return null;
 
   return (
-    <aside className="hidden lg:block w-64 sticky top-24 self-start">
-      <div className="text-sm font-semibold mb-3">On this page</div>
+    <aside className="hidden xl:block w-64 sticky top-24 self-start">
+      <div className="flex items-center gap-4 text-sm font-semibold mb-3">
+        <h3 className="text-lg font-semibold whitespace-nowrap">
+          On this page
+        </h3>
+        <div className="h-px flex-1 bg-gray-400" />
+      </div>
 
       <ul className="space-y-1 text-sm">
         {headings.map((h, i) => (
@@ -129,12 +134,13 @@ function TableOfContents({ headings }: { headings: Heading[] }) {
               paddingLeft: `${(h.level - 1) * 12}px`,
             }}
           >
-            <a
+            <Link
               href={`#${h.id}`}
-              className=" hover:text-orange-500 transition-colors text-nowrap line-clamp-1"
+              title={h.text}
+              className=" hover:text-orange-500 transition-colors line-clamp-1 truncate"
             >
               • {h.text}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
@@ -179,15 +185,8 @@ export default async function BlogPost({
     <>
       <div className="flex justify-center">
         <div className="flex gap-10 w-full max-w-6xl">
-          <article className="prose bg-white max-w-none p-3 md:p-8 flex-1 min-w-0">
+          <article className="prose max-w-none p-3 md:p-8 flex-1 min-w-0">
             <div className="py-18">
-              <Link
-                href="/blog"
-                className="inline-flex items-center gap-1 text-sm text-zinc-500 hover:text-orange-500 transition-colors mb-4 no-underline"
-              >
-                <span>←</span> Back to blogs
-              </Link>
-
               <h1>{data.title}</h1>
 
               {data.excerpt && <p>{data.excerpt}</p>}
@@ -222,20 +221,23 @@ export default async function BlogPost({
       </div>
 
       <div className="flex justify-center">
-        <div className="bg-white p-10 gap-10 w-full max-w-6xl">
-          <h3 className="text-lg font-semibold mb-3 text-gray-800">
-            Related Articles
-          </h3>
+        <div className="p-10 gap-10 w-full max-w-6xl">
+          <div className="flex items-center gap-4 mb-3">
+            <h3 className="text-lg font-semibold whitespace-nowrap">
+              Related Articles
+            </h3>
+            <div className="h-px flex-1 bg-gray-400" />
+          </div>
 
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             {posts
               .filter((p) => p.slug !== slug)
-              .slice(0, 4)
+              .slice(0, 8)
               .map((post) => (
                 <li key={post.slug}>
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="block h-full rounded-2xl text-gray-800 border p-5 md:p-6 transition-transform duration-300 hover:-translate-y-0.5"
+                    className="group block h-full rounded-2xl border p-5 md:p-6 transition-transform duration-300 hover:-translate-y-0.5"
                   >
                     <div className="flex items-center justify-between gap-3 mb-3">
                       <span className="inline-flex capitalize rounded-full border px-2.5 py-1 text-xs">

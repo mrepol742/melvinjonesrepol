@@ -1,3 +1,4 @@
+import YoutubeVideo from "@/components/ui/YoutubeVideo";
 import { fetchYoutubeLatestVideos } from "@/lib/youtube/latest-videos";
 
 export default async function Youtube() {
@@ -30,19 +31,17 @@ export default async function Youtube() {
               className="group snap-start flex-shrink-0 w-80 md:w-96 flex"
             >
               <div className="p-6 border border-zinc-800 rounded-2xl shadow-sm max-w-sm mx-auto transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-[0.98]">
-                <div className="mb-4 relative w-full h-60 rounded-2xl overflow-hidden border border-zinc-800">
-                  <iframe
-                    src={`https://www.youtube.com/embed/${videoId}`}
+                <div className="mb-4 relative rounded-2xl overflow-hidden">
+                  <YoutubeVideo
+                    videoId={videoId}
                     title={video.snippet?.title || "YouTube video"}
-                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
-                    allowFullScreen
                   />
                 </div>
 
                 <h2 className="text-3xl font-bold text-gray-400">
                   {String(index + 1).padStart(2, "0")}
                 </h2>
-                <h3 className="text-xl font-bold">{video.snippet?.title}</h3>
+                <h3 className="font-bold">{video.snippet?.title}</h3>
 
                 <p className="mb-4 line-clamp-3">
                   {video.snippet?.description}

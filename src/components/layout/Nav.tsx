@@ -187,7 +187,7 @@ export default function Nav() {
             <li title={t("nav_home")}>
               <Link href="/" className={baseLinkClass}>
                 <Image
-                  src="/favicon.ico"
+                  src="/favicon-38x38.png"
                   alt="Logo"
                   width={25}
                   height={25}
@@ -198,6 +198,7 @@ export default function Nav() {
                     width: 25,
                     height: 25,
                   }}
+                  fetchPriority="high"
                 />
 
                 <span className={hoverLabelClass}>{t("nav_home")}</span>

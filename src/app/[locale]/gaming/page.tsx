@@ -66,7 +66,8 @@ export default async function Gaming({
     appid: 0,
     name: "Minecraft",
     img_icon_url: "",
-    cover_url: "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Vanilla_bundle_1.png",
+    cover_url:
+      "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Vanilla_bundle_1.png",
     playtime_2weeks: undefined,
     playtime_forever: 0,
     playtime_windows_forever: 0,
@@ -88,11 +89,7 @@ export default async function Gaming({
       <section className="relative min-h-screen overflow-hidden border-b border-zinc-800">
         <div className="relative flex min-h-screen flex-col px-6 py-12 md:px-10">
           <div className="my-auto py-14">
-            <h1
-              className="text-[14vw] sm:text-[10vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
+            <h1 className="text-[14vw] sm:text-[10vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8">
               Play.
               <br />
               <span className="opacity-40">compete.</span>

@@ -3,7 +3,6 @@ import { Source_Code_Pro, Maven_Pro } from "next/font/google";
 import "./globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import "devicon/devicon.min.css";
 import GoogleAds from "@/components/common/metadata/GoogleAdsense";
 import NortonSafeweb from "@/components/common/metadata/NortonSafeweb";
 import Algolia from "@/components/common/metadata/Algolia";
@@ -19,14 +18,14 @@ config.autoAddCss = false;
 
 const sourceCodePro = Source_Code_Pro({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400"],
   display: "swap",
   variable: "--font-heading",
 });
 
 const mavenPro = Maven_Pro({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400"],
   display: "swap",
   variable: "--font-body",
 });
@@ -146,6 +145,7 @@ export default async function RootLayout({
     <html
       className={`${sourceCodePro.variable} ${mavenPro.variable}`}
       data-scroll-behavior="smooth"
+      lang="en"
     >
       <head>
         <meta name="hostname" content="www.melvinjonesrepol.com" />

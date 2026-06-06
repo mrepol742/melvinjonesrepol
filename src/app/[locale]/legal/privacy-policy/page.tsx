@@ -42,11 +42,7 @@ export default function Privacy() {
       <section className="relative min-h-screen overflow-hidden border-b border-zinc-800">
         <div className="relative flex min-h-screen flex-col px-6 py-12 md:px-10">
           <div className="my-auto py-14">
-            <h1
-              className="text-[14vw] sm:text-[10vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
+            <h1 className="text-[14vw] sm:text-[10vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8">
               Privacy
               <br />
               <span className="opacity-40">policy</span>
@@ -109,9 +105,7 @@ export default function Privacy() {
             </p>
 
             <div>
-              <h2 className="text-2xl font-semibold">
-                Quick Summary
-              </h2>
+              <h2 className="text-2xl font-semibold">Quick Summary</h2>
               <ul className="list-disc list-inside ml-4 mt-3 space-y-1">
                 <li>We do not sell or rent personal data.</li>
                 <li>
@@ -130,9 +124,7 @@ export default function Privacy() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-semibold">
-                Services Covered
-              </h2>
+              <h2 className="text-2xl font-semibold">Services Covered</h2>
               <ul className="list-disc list-inside ml-4 mt-3 space-y-1">
                 <li>
                   <Link href="#website">
@@ -190,9 +182,7 @@ export default function Privacy() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-semibold">
-                1. Who We Are
-              </h2>
+              <h2 className="text-2xl font-semibold">1. Who We Are</h2>
               <p className="mt-3">
                 Melvin Jones Repol and Webvium are operated by the same person.
                 For privacy purposes, “Melvin Jones Repol / Webvium” is the data
@@ -454,9 +444,7 @@ export default function Privacy() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-semibold">
-                5. Data Retention
-              </h2>
+              <h2 className="text-2xl font-semibold">5. Data Retention</h2>
               <p className="mt-3">
                 Contact form submissions are retained only as long as needed to
                 respond to your request. Website logs and analytics data are
@@ -490,9 +478,7 @@ export default function Privacy() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-semibold">
-                8. Other Projects
-              </h2>
+              <h2 className="text-2xl font-semibold">8. Other Projects</h2>
               <p className="mt-3">
                 Other projects may be open-source or distributed for a fee and
                 may have their own terms and privacy practices. Please review

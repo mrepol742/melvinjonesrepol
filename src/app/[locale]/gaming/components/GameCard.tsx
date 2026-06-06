@@ -29,7 +29,7 @@ export default function GameCard({ game }: { game: GameType }) {
       </div>
 
       <div className="flex min-w-0 flex-1 flex-col">
-        <h2 className="text-zinc-100 text-lg font-semibold truncate">
+        <h2 className="text-lg font-semibold truncate">
           {isExplicit ? "Private" : game.name}
         </h2>
 

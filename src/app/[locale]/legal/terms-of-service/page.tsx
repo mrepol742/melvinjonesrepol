@@ -41,11 +41,7 @@ export default function Terms() {
       <section className="relative min-h-screen overflow-hidden border-b border-zinc-800">
         <div className="relative flex min-h-screen flex-col px-6 py-12 md:px-10">
           <div className="my-auto py-14">
-            <h1
-              className="text-[14vw] sm:text-[10vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
+            <h1 className="text-[14vw] sm:text-[10vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8">
               Terms
               <br />
               <span className="opacity-40">of</span>
@@ -111,9 +107,7 @@ export default function Terms() {
 
             <div className="space-y-6">
               <div>
-                <h2 className="text-2xl font-semibold">
-                  1. Services Covered
-                </h2>
+                <h2 className="text-2xl font-semibold">1. Services Covered</h2>
                 <ul className="list-disc list-inside ml-4 mt-3 space-y-1">
                   <li>Website (www.melvinjonesrepol.com)</li>
                   <li>Shortlink (go.melvinjonesrepol.com)</li>
@@ -260,9 +254,7 @@ export default function Terms() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-semibold">
-                  11. Contact
-                </h2>
+                <h2 className="text-2xl font-semibold">11. Contact</h2>
                 <p className="mt-3">
                   Questions about these Terms of Service can be sent via the{" "}
                   <Link

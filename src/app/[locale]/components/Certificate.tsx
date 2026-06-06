@@ -22,23 +22,27 @@ export default function CertificateSection() {
               key={idx}
               className="group snap-start flex-shrink-0 w-80 md:w-96 flex"
             >
-              <div className="p-6 border border-zinc-800 rounded-2xl shadow-sm max-w-sm mx-auto transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-[0.98]">
-                <h2 className="text-xl font-bold">{certificate.title}</h2>
+              <Link href={certificate.link || "#"}>
+                <div className="p-6 border border-zinc-800 rounded-2xl shadow-sm max-w-sm mx-auto transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-[0.98]">
+                  <h2 className="font-bold">{certificate.title}</h2>
 
-                <p className="mb-4 line-clamp-3">{certificate.description}</p>
+                  <p className="mb-4 line-clamp-3">{certificate.description}</p>
 
-                <div className="flex justify-end items-center gap-4">
-                  {certificate.link && (
-                    <Link
-                      href={certificate.link}
-                      className="inline-flex items-center text-white bg-purple-500 hover:bg-purple-600 font-medium text-sm px-4 py-2 rounded-lg transition-all"
-                    >
-                      Read more
-                      <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
-                    </Link>
-                  )}
+                  <div className="flex justify-end items-center gap-4">
+                    {certificate.link && (
+                      <button
+                        title="View Certificate"
+                        className="inline-flex items-center text-white bg-purple-500 hover:bg-purple-600 font-medium text-sm px-4 py-2 rounded-lg transition-all"
+                      >
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="transition-transform group-hover:translate-x-1"
+                        />
+                      </button>
+                    )}
+                  </div>
                 </div>
-              </div>
+              </Link>
             </article>
           ))}
       </div>

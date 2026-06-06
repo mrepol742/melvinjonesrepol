@@ -54,11 +54,7 @@ export default function Project({
 
         <div className="relative flex min-h-screen flex-col px-6 py-12 md:px-10 text-white">
           <div className="my-auto py-14">
-            <h1
-              className="text-[14vw] sm:text-[10vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
+            <h1 className="text-[14vw] sm:text-[10vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8">
               {project.title}
               <br />
               <span className="opacity-40">project</span>
@@ -194,9 +190,7 @@ export default function Project({
                       {status}
                     </span>
                   </div>
-                  <p className="text-sm leading-relaxed">
-                    {item.description}
-                  </p>
+                  <p className="text-sm leading-relaxed">{item.description}</p>
                 </div>
 
                 <div className="flex md:flex-col items-center md:items-end gap-3 md:gap-2">
