@@ -79,6 +79,24 @@ h6 {
     letter-spacing: -0.05em;
 }
 
+.prose {
+    color: var(--foreground);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.05em;
+    color: var(--foreground);
+}
+
 .background-gloss {
     position: fixed;
     width: 100%;
