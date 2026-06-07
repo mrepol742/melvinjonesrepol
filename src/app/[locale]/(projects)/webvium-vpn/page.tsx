@@ -141,7 +141,7 @@ export default function WebviumVPN() {
           description_long:
             "Webvium VPN is a project inspired from Webvium Browser, aims to be the lightest, fastest, secured, private and full-featured android VPN app.",
           download_url:
-            "https://released.melvinjonesrepol.com/android/webvium-vpn.apk",
+            "https://webvium.melvinjonesrepol.com/downloads/thank-you?utm_source=webvium-vpn",
           is_open_source: false,
           is_no_longer_maintained: true,
           is_freeware: true,
