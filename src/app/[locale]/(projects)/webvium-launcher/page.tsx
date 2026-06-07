@@ -79,7 +79,7 @@ export default async function WebviumLauncher() {
           description_long:
             "Webvium Launcher is an Android launcher designed to provide users with a fast, efficient, and customizable home screen experience. It focuses on simplicity and performance, making it ideal for users who want a clutter-free interface without sacrificing functionality. With its lightweight design, Webvium Launcher ensures quick load times and smooth navigation, even on devices with limited resources. Key features include customizable app icons, gesture controls, and a minimalist aesthetic that enhances user productivity.",
           download_url:
-            "https://released.melvinjonesrepol.com/android/webvium-launcher.apk",
+            "https://webvium.melvinjonesrepol.com/downloads/thank-you?utm_source=webvium-launcher",
           is_open_source: true,
           is_freeware: false,
           license: "Apache License 2.0",
