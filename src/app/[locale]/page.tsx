@@ -551,7 +551,76 @@ export default async function Home() {
               </div>
             </div>
 
-            <div
+            <div className="relative py-14 md:py-28 overflow-hidden">
+              <div className="mx-auto max-w-6xl px-4 md:px-6">
+                <div className="rounded-3xl border border-zinc-800 overflow-hidden">
+                  <div className="grid lg:grid-cols-2">
+                    {/* Product Side */}
+                    <div className="p-8 md:p-12">
+                      <div className="inline-flex items-center gap-2 rounded-full border border-zinc-800 px-3 py-1 text-xs font-semibold uppercase">
+                        <span className="h-2 w-2 rounded-full bg-green-500" />
+                        Webvium Ecosystem
+                      </div>
+
+                      <h2 className="mt-5 text-4xl font-bold">
+                        Lightweight Software Built For Speed
+                      </h2>
+
+                      <p className="mt-4 text-zinc-400">
+                        From Android browsers to developer tools and browser
+                        extensions, Webvium focuses on performance, privacy,
+                        simplicity and practical software.
+                      </p>
+
+                      <div className="mt-8 flex flex-wrap gap-3">
+                        <Link href="https://webvium.melvinjonesrepol.com">
+                          <Button>Explore Webvium</Button>
+                        </Link>
+
+                        <Link href="https://github.com/webvium">
+                          <Button className="border border-zinc-800">
+                            GitHub
+                          </Button>
+                        </Link>
+                      </div>
+                    </div>
+
+                    {/* Stats Side */}
+                    <div className="border-t lg:border-t-0 lg:border-l border-zinc-800 p-8 md:p-12">
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="rounded-xl border border-zinc-800 p-5">
+                          <div className="text-3xl font-bold">15+</div>
+                          <div className="text-sm text-zinc-400">
+                            Repositories
+                          </div>
+                        </div>
+
+                        <div className="rounded-xl border border-zinc-800 p-5">
+                          <div className="text-3xl font-bold">6+</div>
+                          <div className="text-sm text-zinc-400">
+                            Browser Tools
+                          </div>
+                        </div>
+
+                        <div className="rounded-xl border border-zinc-800 p-5">
+                          <div className="text-3xl font-bold">2018</div>
+                          <div className="text-sm text-zinc-400">Started</div>
+                        </div>
+
+                        <div className="rounded-xl border border-zinc-800 p-5">
+                          <div className="text-3xl font-bold">375KB</div>
+                          <div className="text-sm text-zinc-400">
+                            The lightest web browser for Android ever!
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/*<div
               className="relative py-14 md:py-28 overflow-hidden"
               data-aos="slide-up"
             >
@@ -585,7 +654,7 @@ export default async function Home() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div>*/}
           </div>
         </section>
       </main>
