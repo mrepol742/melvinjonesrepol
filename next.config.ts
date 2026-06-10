@@ -62,7 +62,8 @@ const ContentSecurityPolicy = `
     https://app.livechatai.com
     https://unpkg.com
     https://cors.io
-    https://www.youtube.com;
+    https://www.youtube.com
+    https://ipapi.co;
 
   frame-src
     'self'
@@ -111,10 +112,11 @@ const nextConfig: NextConfig = {
           key: "Cross-Origin-Opener-Policy",
           value: "same-origin",
         },
-        {
-          key: "Cross-Origin-Embedder-Policy",
-          value: "credentialless",
-        },
+        // disabled causing issues on iframed content youtube embed, trustpilot etc...
+        // {
+        //   key: "Cross-Origin-Embedder-Policy",
+        //   value: "credentialless",
+        // },
         {
           key: "Cross-Origin-Resource-Policy",
           value: "same-origin",

@@ -66,6 +66,20 @@ export default async function WorkExperiencePage() {
       description: t("experience.company_apptrade.description"),
       cert: t("experience.company_apptrade.cert"),
     },
+    {
+      company: "UP-TO-DATE WebDesign",
+      title: "Mid Level Full Stack Developer",
+      date: "May 2026 - Present",
+      description:
+        "Develop and maintain web applications, implement new features, support system migrations, optimize performance, and collaborate with stakeholders to deliver scalable software solutions.",
+    },
+    {
+      company: "Independent Software Consultant",
+      title: "Part Time",
+      date: "Mar 2026 - Present",
+      description:
+        "Support and maintain client software systems while providing technical consulting on new features, system improvements, infrastructure, and long-term product strategy. Ensure applications remain stable, secure, and capable of supporting ongoing business operations and revenue generation.",
+    },
   ];
 
   return (
@@ -99,7 +113,7 @@ export default async function WorkExperiencePage() {
               <p className="mt-1 text-sm text-zinc-400">Roles</p>
             </div>
             <div>
-              <p className="text-4xl font-black">4+</p>
+              <p className="text-4xl font-black">6+</p>
               <p className="mt-1 text-sm text-zinc-400">Years</p>
             </div>
             <div className="col-span-2 flex flex-wrap items-center gap-2">

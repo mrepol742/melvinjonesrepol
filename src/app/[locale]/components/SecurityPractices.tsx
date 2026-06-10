@@ -31,6 +31,16 @@ const securityPractices = [
     description:
       "Static analysis and repository-level security checks are run continuously to catch issues early in development.",
   },
+  {
+    title: "Validated by Security Headers",
+    description:
+      "Security headers are configured to enforce best practices and protect against common web vulnerabilities.",
+  },
+  {
+    title: "Lighthouse Audits",
+    description:
+      "Lighthouse audits are performed to ensure the site meets performance and security best practices.",
+  },
 ];
 
 export default function SecurityPractices() {
