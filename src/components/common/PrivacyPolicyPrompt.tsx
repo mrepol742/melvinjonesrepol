@@ -1,54 +1,175 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useConsent } from "@/context/consent";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const STORAGE_KEY = "privacy_notice_ack_v1";
+const STORAGE_KEY = "cookie_consent_v1";
 
-export default function PrivacyPolicyPrompt() {
-  const t = useTranslations("components.privacy_prompt");
+type ConsentPreferences = {
+  necessary: true;
+  analytics: boolean;
+  functional: boolean;
+  advertising: boolean;
+};
+
+const defaultConsent: ConsentPreferences = {
+  necessary: true,
+  analytics: false,
+  functional: false,
+  advertising: false,
+};
+
+export default function CookieBanner() {
+  const { updateConsent } = useConsent();
   const [open, setOpen] = useState(false);
+  const [showPreferences, setShowPreferences] = useState(false);
+
+  const [preferences, setPreferences] =
+    useState<ConsentPreferences>(defaultConsent);
 
   useEffect(() => {
-    const acknowledged = localStorage.getItem(STORAGE_KEY);
-    if (!acknowledged) {
+    const consent = localStorage.getItem(STORAGE_KEY);
+
+    if (!consent) {
       setOpen(true);
     }
   }, []);
 
-  const handleAcknowledge = () => {
-    localStorage.setItem(STORAGE_KEY, "true");
+  const saveConsent = (consent: ConsentPreferences) => {
+    updateConsent(consent);
     setOpen(false);
+  };
+
+  const acceptAll = () => {
+    saveConsent({
+      necessary: true,
+      analytics: true,
+      functional: true,
+      advertising: true,
+    });
+  };
+
+  const rejectOptional = () => {
+    saveConsent({
+      necessary: true,
+      analytics: false,
+      functional: false,
+      advertising: false,
+    });
   };
 
   if (!open) return null;
 
   return (
-    <div
-      className="fixed inset-x-0 bottom-4 z-[9999] px-3 md:px-6"
-      data-aos="fade-up"
-      data-aos-delay="1500"
-    >
-      <div className="mx-auto max-w-4xl rounded-2xl border bg-gray-900 text-white backdrop-blur p-4 md:p-5 shadow-xl">
-        <p className="text-sm leading-relaxed">
-          {t("description")} Please review the{" "}
+    <div className="fixed inset-x-0 bottom-4 z-[9999] px-3 md:px-6">
+      <div className="mx-auto max-w-4xl rounded-2xl border bg-gray-900 text-white p-4 md:p-5 shadow-xl">
+        <h3 className="font-semibold">Cookie Preferences</h3>
+
+        <p className="mt-2 text-sm leading-relaxed">
+          We use cookies and similar technologies to improve site functionality,
+          measure traffic, display personalized advertising, and provide
+          third-party services. You can accept all cookies, reject optional
+          cookies, or customize your preferences.
+        </p>
+
+        <p className="mt-2 text-sm">
+          Read our{" "}
           <Link
             href="/legal/privacy-policy"
             className="underline underline-offset-4 hover:text-orange-500"
           >
             Privacy Policy
           </Link>{" "}
-          for details.
+          for more information.
         </p>
 
-        <div className="mt-3 flex items-center justify-end gap-2">
+        {showPreferences && (
+          <div className="mt-4 space-y-3 border-t border-gray-700 pt-4">
+            <label className="flex items-center justify-between">
+              <span>Necessary Cookies</span>
+
+              <input type="checkbox" checked disabled />
+            </label>
+
+            <label className="flex items-center justify-between">
+              <span>Analytics Cookies</span>
+
+              <input
+                type="checkbox"
+                checked={preferences.analytics}
+                onChange={(e) =>
+                  setPreferences({
+                    ...preferences,
+                    analytics: e.target.checked,
+                  })
+                }
+              />
+            </label>
+
+            <label className="flex items-center justify-between">
+              <span>Functional Cookies</span>
+
+              <input
+                type="checkbox"
+                checked={preferences.functional}
+                onChange={(e) =>
+                  setPreferences({
+                    ...preferences,
+                    functional: e.target.checked,
+                  })
+                }
+              />
+            </label>
+
+            <label className="flex items-center justify-between">
+              <span>Advertising Cookies</span>
+
+              <input
+                type="checkbox"
+                checked={preferences.advertising}
+                onChange={(e) =>
+                  setPreferences({
+                    ...preferences,
+                    advertising: e.target.checked,
+                  })
+                }
+              />
+            </label>
+
+            <button
+              type="button"
+              onClick={() => saveConsent(preferences)}
+              className="mt-2 rounded-full bg-orange-500 px-4 py-2 text-sm font-medium text-gray-900"
+            >
+              Save Preferences
+            </button>
+          </div>
+        )}
+
+        <div className="mt-4 flex flex-wrap justify-end gap-2">
           <button
             type="button"
-            onClick={handleAcknowledge}
-            className="rounded-full border px-4 py-2 text-sm hover:bg-orange-500 hover:border-gray-900 hover:text-gray-800 transition"
+            onClick={() => setShowPreferences((prev) => !prev)}
+            className="rounded-full border px-4 py-2 text-sm"
           >
-            {t("i_understand")}
+            Manage Preferences
+          </button>
+
+          <button
+            type="button"
+            onClick={rejectOptional}
+            className="rounded-full border px-4 py-2 text-sm"
+          >
+            Reject Optional
+          </button>
+
+          <button
+            type="button"
+            onClick={acceptAll}
+            className="rounded-full bg-orange-500 px-4 py-2 text-sm font-medium text-gray-900"
+          >
+            Accept All
           </button>
         </div>
       </div>

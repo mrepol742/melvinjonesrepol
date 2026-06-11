@@ -1,5 +1,6 @@
 "use client";
 
+import { useConsent } from "@/context/consent";
 import { faSearch, faX } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState, useEffect, useRef } from "react";
@@ -16,12 +17,15 @@ type Hit = {
 };
 
 export default function AlgoliaSearch() {
+  const { consent } = useConsent();
   const [query, setQuery] = useState("");
   const [hits, setHits] = useState<Hit[]>([]);
   const [showDropdown, setShowDropdown] = useState(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   const search = async (q: string) => {
+    if (!consent?.functional) return;
+
     if (!q) {
       setHits([]);
       return;
@@ -34,6 +38,8 @@ export default function AlgoliaSearch() {
   };
 
   useEffect(() => {
+    if (!consent?.functional) return;
+
     const timeout = setTimeout(() => {
       search(query);
     }, 300);
@@ -42,6 +48,8 @@ export default function AlgoliaSearch() {
   }, [query]);
 
   useEffect(() => {
+    if (!consent?.functional) return;
+
     const handleClickOutside = (e: MouseEvent) => {
       const container = containerRef.current;
 
@@ -70,6 +78,7 @@ export default function AlgoliaSearch() {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         onFocus={() => hits.length && setShowDropdown(true)}
+        disabled={!consent?.functional}
         placeholder="Search anything..."
         className="w-full pl-10 pr-10 py-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-gray-700 transition-all duration-300"
       />

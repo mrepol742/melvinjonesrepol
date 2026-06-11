@@ -60,10 +60,6 @@
       "footer_copyright": "Melvin Jones Repol (también conocido como Repol Systems) es una entidad legal única responsable de todos los servicios y contenido de este sitio web.",
       "footer_open_source": "Este sitio es de código abierto."
     },
-    "privacy_prompt": {
-      "description": "Procesamos ciertos datos técnicos y de uso para operar, asegurar y mejorar este sitio web. Al continuar usando el sitio, usted reconoce este procesamiento de datos.",
-      "i_understand": "Entiendo"
-    },
     "devtools_detector": {
       "description": "Para una mejor experiencia, por favor cierre las herramientas de desarrollo. Este sitio está diseñado para disfrutarse sin distracciones, y tener las herramientas de desarrollo abiertas puede interferir con ciertos efectos visuales."
     }
