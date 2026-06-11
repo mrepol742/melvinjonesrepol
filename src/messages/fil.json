@@ -60,10 +60,6 @@
       "footer_copyright": "Ang Melvin Jones Repol (kilala rin bilang Repol Systems) ay isang solong legal na entidad na responsable para sa lahat ng serbisyo at nilalaman ng website na ito.",
       "footer_open_source": "Ang site na ito ay open source."
     },
-    "privacy_prompt": {
-      "description": "Pinoproseso namin ang ilang teknikal at paggamit na datos upang mapatakbo, maprotektahan, at mapahusay ang website na ito. Sa pagpapatuloy ng paggamit sa site, kinikilala mo ang pagproseso ng datos na ito.",
-      "i_understand": "Naiintindihan Ko"
-    },
     "devtools_detector": {
       "description": "Para sa pinakamahusay na karanasan, pakisara ang iyong developer tools. Idinisenyo ang website na ito upang ma-enjoy nang walang distraksyon, at ang pagbukas ng dev tools ay maaaring makaapekto sa ilang visual effects."
     }

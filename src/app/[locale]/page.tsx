@@ -477,14 +477,14 @@ export default async function Home() {
                     </h2>
 
                     <p
-                      className="mt-4 text-zinc-300 max-w-xl"
+                      className="mt-4 max-w-xl"
                       data-aos="fade-up"
                     >
                       {t("community_description_1")}
                     </p>
 
                     <p
-                      className="mt-4 text-zinc-300 max-w-xl"
+                      className="mt-4 max-w-xl"
                       data-aos="fade-up"
                     >
                       {t("community_description_2")}
@@ -566,7 +566,7 @@ export default async function Home() {
                         Lightweight Software Built For Speed
                       </h2>
 
-                      <p className="mt-4 text-zinc-400">
+                      <p className="mt-4">
                         From Android browsers to developer tools and browser
                         extensions, Webvium focuses on performance, privacy,
                         simplicity and practical software.
@@ -587,7 +587,7 @@ export default async function Home() {
 
                     {/* Stats Side */}
                     <div className="border-t lg:border-t-0 lg:border-l border-zinc-800 p-8 md:p-12">
-                      <div className="grid grid-cols-2 gap-4">
+                      <div className="grid sm:grid-cols-2 gap-4">
                         <div className="rounded-xl border border-zinc-800 p-5">
                           <div className="text-3xl font-bold">15+</div>
                           <div className="text-sm text-zinc-400">

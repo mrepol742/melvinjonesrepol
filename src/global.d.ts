@@ -8,7 +8,10 @@ interface Window {
       ready: (callback: () => void) => void;
     };
   };
-  gtag: {
-    (command: string, trackingId: string, config?: Record<string, any>): void;
+  dataLayer: unknown[];
+  gtag?: (...args: unknown[]) => void;
+  adsbygoogle?: unknown[];
+  Trustpilot?: {
+    loadFromElement: (element: HTMLElement, forceReload?: boolean) => void;
   };
 }

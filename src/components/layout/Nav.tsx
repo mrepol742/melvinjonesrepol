@@ -74,8 +74,7 @@ export default function Nav() {
       label: t("nav_gallery"),
       href: "/gallery",
       icon: faImages,
-      desktopOnly: true,
-      mobileMenu: true,
+      mobileMenu: true, // make sure its visible on mobile
     },
     {
       key: "legal",

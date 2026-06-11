@@ -13,6 +13,8 @@ import NextTopLoader from "nextjs-toploader";
 import GoogleAnalytics from "@/components/common/metadata/GoogleAnalytics";
 import ServiceWorkerRegister from "@/components/common/ServiceWorkerRegister";
 import BrowserCheck from "@/components/common/BrowserCheck";
+import { ConsentProvider, useConsent } from "@/context/consent";
+import LivechatAI from "@/components/common/LivechatAI";
 
 config.autoAddCss = false;
 
@@ -155,33 +157,30 @@ export default async function RootLayout({
       </head>
 
       <body className="antialiased min-h-screen flex flex-col background-grid">
-        <DoorEffect />
-        <MouseCodeTrail />
-        <AOSWrapper />
-        <NextTopLoader showSpinner={false} color="#7873f5" />
+        <ConsentProvider>
+          <DoorEffect />
+          <MouseCodeTrail />
+          <AOSWrapper />
+          <NextTopLoader showSpinner={false} color="#7873f5" />
 
-        <div className="background-gloss">
-          <div className="gloss-circle circle1"></div>
-          <div className="gloss-circle circle2"></div>
-          <div className="gloss-circle circle3"></div>
-        </div>
+          <div className="background-gloss">
+            <div className="gloss-circle circle1"></div>
+            <div className="gloss-circle circle2"></div>
+            <div className="gloss-circle circle3"></div>
+          </div>
 
-        {children}
+          {children}
 
-        {isProduction && (
-          <>
-            <GoogleAnalytics />
-            <ServiceWorkerRegister />
-            <BrowserCheck />
-          </>
-        )}
+          {isProduction && (
+            <>
+              <GoogleAnalytics />
+              <ServiceWorkerRegister />
+              <BrowserCheck />
+            </>
+          )}
 
-        <script
-          src="https://app.livechatai.com/embed.js"
-          data-id="cmdmcvh4n0001jt0c03xemlxw"
-          async
-          defer
-        ></script>
+          <LivechatAI />
+        </ConsentProvider>
       </body>
     </html>
   );
