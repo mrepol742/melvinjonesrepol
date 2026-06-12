@@ -1,44 +1,47 @@
-"use client";
+import { Metadata } from "next";
+import SystemStatus from "./components/SystemStatus";
+import { getAlternates } from "@/components/common/metadata/Alternatives";
 
-import { useEffect } from "react";
-
-const UPTIME_URL = "https://stats.uptimerobot.com/IZwUI4mLcR";
+export const metadata: Metadata = {
+  title: "Uptime - Melvin Jones Repol",
+  description: "System uptime and incident monitoring for Melvin Jones Repol.",
+  keywords: [
+    "uptime",
+    "incident",
+    "monitoring",
+    "system",
+    "melvin jones repol",
+  ],
+  alternates: getAlternates("/uptime"),
+  openGraph: {
+    title: "Uptime - Melvin Jones Repol",
+    description:
+      "System uptime and incident monitoring for Melvin Jones Repol.",
+    url: "https://www.melvinjonesrepol.com/uptime",
+    siteName: "Melvin Jones Repol",
+    images: [
+      {
+        url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+        width: 1200,
+        height: 630,
+        alt: "Uptime Cover",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Uptime - Melvin Jones Repol",
+    description:
+      "System uptime and incident monitoring for Melvin Jones Repol.",
+    images: [
+      "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+    ],
+    creator: "@mrepol742",
+  },
+};
 
 export default function Uptime() {
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      window.location.assign(UPTIME_URL);
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  return (
-    <main className="min-h-screen flex items-center justify-center bg-zinc-950 text-white px-6">
-      <div className="w-full max-w-md text-center">
-        <p className="text-sm uppercase tracking-widest text-zinc-400 mb-3">
-          Redirecting
-        </p>
-        <h1 className="text-2xl font-semibold mb-4">Opening Uptime Status</h1>
-        <p className="text-sm text-zinc-400 mb-6">
-          You’re being redirected to our UptimeRobot status page.
-        </p>
-
-        <div className="h-2 w-full bg-zinc-800 rounded-full overflow-hidden">
-          <div className="h-full w-1/2 bg-green-400 animate-pulse" />
-        </div>
-
-        <p className="mt-4 text-xs text-zinc-500">
-          If you are not redirected,{" "}
-          <a
-            href={UPTIME_URL}
-            className="underline underline-offset-2 hover:text-white"
-          >
-            click here
-          </a>
-          .
-        </p>
-      </div>
-    </main>
-  );
+  return <SystemStatus />;
 }
