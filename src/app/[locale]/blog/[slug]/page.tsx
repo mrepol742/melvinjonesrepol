@@ -10,6 +10,8 @@ import remarkGfm from "remark-gfm";
 import { getAllPosts } from "@/lib/posts";
 
 export const dynamic = "force-static";
+export const dynamicParams = false;
+export const revalidate = false;
 
 type Heading = {
   level: number;
@@ -73,6 +75,10 @@ function getPostBySlug(slug: string): Post | null {
   } catch {
     return null;
   }
+}
+
+export function generateStaticParams() {
+  return getAllPosts().map(({ slug }) => ({ slug }));
 }
 
 export async function generateMetadata({

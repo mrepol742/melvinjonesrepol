@@ -140,7 +140,7 @@ export default function CookieBanner() {
             <button
               type="button"
               onClick={() => saveConsent(preferences)}
-              className="mt-2 rounded-full bg-orange-500 px-4 py-2 text-sm font-medium text-gray-900"
+              className="mt-2 rounded-full bg-orange-500 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-orange-600 transition-all transition-duration-300"
             >
               Save Preferences
             </button>
@@ -151,7 +151,7 @@ export default function CookieBanner() {
           <button
             type="button"
             onClick={() => setShowPreferences((prev) => !prev)}
-            className="rounded-full border px-4 py-2 text-sm"
+            className="rounded-full border px-4 py-2 text-sm hover:bg-gray-100 transition-all transition-duration-300 hover:text-gray-700"
           >
             Manage Preferences
           </button>
@@ -159,7 +159,7 @@ export default function CookieBanner() {
           <button
             type="button"
             onClick={rejectOptional}
-            className="rounded-full border px-4 py-2 text-sm"
+            className="rounded-full border px-4 py-2 text-sm hover:bg-gray-100 transition-all transition-duration-300 hover:text-gray-700"
           >
             Reject Optional
           </button>
@@ -167,7 +167,7 @@ export default function CookieBanner() {
           <button
             type="button"
             onClick={acceptAll}
-            className="rounded-full bg-orange-500 px-4 py-2 text-sm font-medium text-gray-900"
+            className="rounded-full bg-orange-500 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-orange-600 transition-all transition-duration-300"
           >
             Accept All
           </button>
