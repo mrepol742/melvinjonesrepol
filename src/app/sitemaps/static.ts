@@ -5,6 +5,7 @@ const locales = ["", "/cmn", "/es", "/fil", "/hi"];
 
 const routes = [
   "",
+  "/uptime",
   "/blog",
   "/projects",
   "/ulisha-store-laravel",

@@ -63,7 +63,8 @@ const ContentSecurityPolicy = `
     https://unpkg.com
     https://cors.io
     https://www.youtube.com
-    https://ipapi.co;
+    https://ipapi.co
+    https://stats.uptimerobot.com;
 
   frame-src
     'self'
