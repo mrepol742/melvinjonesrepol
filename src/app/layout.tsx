@@ -151,7 +151,6 @@ export default async function RootLayout({
     >
       <head>
         <meta name="hostname" content="www.melvinjonesrepol.com" />
-        {isProduction && <GoogleAds />}
         <NortonSafeweb />
         <Algolia />
       </head>
@@ -173,6 +172,7 @@ export default async function RootLayout({
 
           {isProduction && (
             <>
+              <GoogleAds />
               <GoogleAnalytics />
               <ServiceWorkerRegister />
               <BrowserCheck />
