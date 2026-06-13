@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import GalleryComponent from "@/app/[locale]/gallery/gallery/Gallery";
+import GalleryComponent from "@/app/[locale]/gallery/components/Gallery";
 import { getAlternates } from "@/components/common/metadata/Alternatives";
 
 export const metadata: Metadata = {

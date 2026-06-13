@@ -248,29 +248,35 @@ export default function ContactMe() {
             Reach out via
           </p>
           <div className="flex flex-col gap-3">
-            <Link
-              href="https://wa.me/+639283559507"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-between group"
-            >
-              <span className="text-sm font-medium">WhatsApp</span>
-              <span className="text-xs opacity-40 group-hover:opacity-70 transition-opacity">
-                →
-              </span>
-            </Link>
-            <div className="h-px border-t opacity-20" />
-            <Link
-              href="https://www.facebook.com/melvinjonesrepol"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-between group"
-            >
-              <span className="text-sm font-medium">Facebook</span>
-              <span className="text-xs opacity-40 group-hover:opacity-70 transition-opacity">
-                →
-              </span>
-            </Link>
+            {[
+              { name: "WhatsApp", href: "https://wa.me/+639283559507" },
+              {
+                name: "Facebook",
+                href: "https://www.facebook.com/melvinjonesrepol",
+              },
+              { name: "Email", href: "mailto:me@melvinjonesrepol.com" },
+              {
+                name: "LinkedIn",
+                href: "https://www.linkedin.com/in/mrepol742",
+              },
+            ].map((item, index) => (
+              <>
+                {index !== 0 && <div className="h-px border-t opacity-20" />}
+
+                <Link
+                  key={index}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between group"
+                >
+                  <span className="text-sm font-medium">{item.name}</span>
+                  <span className="text-xs opacity-40 group-hover:opacity-70 transition-opacity">
+                    →
+                  </span>
+                </Link>
+              </>
+            ))}
           </div>
         </div>
 

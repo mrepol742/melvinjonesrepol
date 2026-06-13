@@ -191,7 +191,7 @@ export default function SystemStatus() {
                 key={monitor.monitorId}
                 className="rounded-3xl border border-zinc-800 p-6 backdrop-blur"
               >
-                <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+                <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
                   <div>
                     <h3 className="text-xl font-semibold">{monitor.name}</h3>
 
@@ -213,7 +213,7 @@ export default function SystemStatus() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-3 gap-6 mt-8">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-8">
                   <div>
                     <p className="text-xs text-zinc-500">Current</p>
 
@@ -238,7 +238,6 @@ export default function SystemStatus() {
                 </div>
 
                 {/* History */}
-
                 <div className="mt-8">
                   <p className="text-sm text-zinc-400 mb-3">90 Day History</p>
 
@@ -262,7 +261,6 @@ export default function SystemStatus() {
                 </div>
 
                 {/* Incident */}
-
                 {monitor.lastDowntime && (
                   <div className="mt-6 rounded-2xl border border-red-500/10 bg-red-500/5 p-4">
                     <div className="flex items-center gap-2 text-red-400">
@@ -271,7 +269,7 @@ export default function SystemStatus() {
                       <span className="font-medium">Last Incident</span>
                     </div>
 
-                    <p className="mt-2 text-sm text-zinc-300">
+                    <p className="mt-2 text-xs">
                       {monitor.lastDowntime.date}
                     </p>
 
