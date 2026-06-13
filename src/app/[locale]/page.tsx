@@ -24,6 +24,9 @@ import { getTranslations } from "next-intl/server";
 import "devicon/devicon.min.css";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 
+export const revalidate = 10800;
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
   title: "Melvin Jones Repol - Software Engineer",
   description:

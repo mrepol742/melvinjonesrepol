@@ -174,6 +174,8 @@ export default async function WorkExperiencePage() {
               </div>
             ))}
           </div>
+
+          <span className="text-xs">Swipe left or right to view more...</span>
         </div>
       </section>
     </main>

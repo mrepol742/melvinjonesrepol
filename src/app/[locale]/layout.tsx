@@ -9,7 +9,7 @@ import { getRecentPosts } from "@/lib/posts";
 import PrivacyPolicyPrompt from "@/components/common/PrivacyPolicyPrompt";
 import DevToolsDetector from "@/components/common/DevToolsDetector";
 
-const locales = ["fil", "hi", "es", "cmn"] as const;
+const locales = ["en", "fil", "hi", "es", "cmn"] as const;
 
 // en is ignore because it is the default locale
 export function generateStaticParams() {

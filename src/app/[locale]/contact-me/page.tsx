@@ -1,5 +1,5 @@
 import { getAlternates } from "@/components/common/metadata/Alternatives";
-import ContactMe from "./contact-me/ContactMe";
+import ContactMe from "./components/ContactMe";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

@@ -172,6 +172,8 @@ export default async function CertificatesPage({
             </div>
           </div>
         )}
+
+        <span className="text-xs">Swipe left or right to view more...</span>
       </section>
     </main>
   );
