@@ -1,5 +1,17 @@
 const Projects = [
   {
+    title: "Clearflow",
+    description:
+      "A modern community water billing and management system built with Expo (React Native) and Laravel.",
+    ai_description:
+      "Clearflow is a modern community water billing and management system built with Expo (React Native) and Laravel.",
+    type: "personal",
+    featured: true,
+    repo: "https://github.com/mrepol742/clearflow-community-water-billing",
+    technology: ["Laravel", "Expo (React Native)"],
+    cover: "/images/clearflow.png",
+  },
+  {
     title: "NPM Guard",
     description:
       "Due to the recent supply chain attacks, we developed NPM Guard to monitor and secure NPM package installations, ensuring the integrity and safety of your dependencies.",
@@ -7,6 +19,7 @@ const Projects = [
       "NPM Guard is an NPM package monitoring tool that scans your project's dependencies for vulnerabilities and ensures they are up-to-date and safe to use.",
     type: "personal",
     featured: true,
+    repo: "https://github.com/mrepol742/npm-guard",
     technology: ["Python"],
   },
   {
