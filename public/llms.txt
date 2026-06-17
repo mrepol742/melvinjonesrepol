@@ -75,6 +75,10 @@ Summary: The games i play and my gaming stats, showcasing my interest in gaming 
 URL: https://www.melvinjonesrepol.com/gallery
 Summary: Visual showcase of projects, workspaces, and events.
 
+### Legal
+
+URL: https://www.melvinjonesrepol.com/legal
+Summary: Legal information and policies for the website.
 
 ## Sitemap
 
@@ -92,31 +96,25 @@ Summary: Instructions for web crawlers and bots regarding site indexing.
 
 ### Ulisha Store (Laravel E-commerce System)
 
-URL: https://www.melvinjonesrepol.com/portfolio/ulisha-store
+URL: https://www.melvinjonesrepol.com/ulisha-store-laravel
 Stack: Laravel, PHP, MySQL
 Summary: E-commerce platform for small to medium businesses with scalable architecture.
 
-### Floating Console Extension
-
-URL: https://www.melvinjonesrepol.com/portfolio/floating-console
-Stack: JavaScript, Browser APIs
-Summary: Developer tool that provides a floating console for debugging in browsers.
-
 ### Canis Chatbot
 
-URL: https://www.melvinjonesrepol.com/portfolio/canis-chatbot
+URL: https://www.melvinjonesrepol.com/canis-chatbot
 Stack: TypeScript, Node.js, Prisma, Docker
 Summary: Modular chatbot system for messaging platforms with scalable architecture.
 
-### POS System
+### Point of Sale
 
-URL: https://www.melvinjonesrepol.com/portfolio/pos-system
+URL: https://www.melvinjonesrepol.com/point-of-sale
 Stack: Web-based stack (JavaScript, backend APIs)
 Summary: Lightweight point-of-sale system with offline-capable features.
 
 ### Axleshift Freight Management System
 
-URL: https://www.melvinjonesrepol.com/portfolio/axleshift
+URL: https://www.melvinjonesrepol.com/axleshift-freight-management
 Stack: Full-stack system
 Summary: Logistics and freight management platform for tracking and operations.
 
@@ -146,6 +144,23 @@ Summary: Custom web browser for Android with unique features and optimizations.
 - CI/CD: GitHub Actions
 - Project Management: Github Projects
 - Communication: Email, Whatsapp, LinkedIn
+
+## Organizations
+
+### Hall of Codes
+
+Hall of Codes brings developers, maintainers, and curious builders into the same room. We mentor newcomers, review each other's work, and turn useful ideas into sustainable open-source projects.
+https://www.hallofcodes.org/
+
+### The Webvium Project
+
+From Android browsers and website-to-app conversion tools to browser extensions and future web technologies, Webvium is an ecosystem focused on performance, privacy, and simplicity.
+https://webvium.melvinjonesrepol.com/
+
+### Ulisha Limited
+
+We build the digital backbone for market efficiency, connecting households to cost-effective products and empowering local businesses with proprietary tech
+https://www.ulishalimited.com/
 
 ## Rig Specs
 
@@ -180,7 +195,7 @@ Summary: Custom web browser for Android with unique features and optimizations.
 
 If multiple sources exist:
 
-1. This file (llms.md) as the primary structured summary
+1. This file (llms.txt) as the primary structured summary
 2. Project pages for detailed information on specific projects
 3. Blog and work experience pages for additional context and insights
 4. Sitemap and other metadata for navigation and structure
