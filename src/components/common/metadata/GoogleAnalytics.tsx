@@ -1,56 +1,46 @@
 "use client";
 
-import { useEffect } from "react";
 import Script from "next/script";
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 import { useConsent } from "@/context/consent";
 
-const NEXT_PUBLIC_GOOGLE_ANALYTICS_STREAM_ID =
-  process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_STREAM_ID || "";
+const GA_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_STREAM_ID ?? "";
 
 export default function GoogleAnalytics() {
+  const pathname = usePathname();
   const { consent } = useConsent();
 
   useEffect(() => {
     if (!consent?.analytics) return;
+    if (!window.gtag) return;
 
-    const handlePopState = (event: PopStateEvent) => {
-      window.gtag?.("config", NEXT_PUBLIC_GOOGLE_ANALYTICS_STREAM_ID, {
-        page_path: window.location.pathname,
-      });
-    };
-
-    window.addEventListener("popstate", handlePopState);
-    return () => {
-      window.removeEventListener("popstate", handlePopState);
-    };
-  }, []);
+    window.gtag("config", GA_ID, {
+      page_path: pathname,
+    });
+  }, [pathname, consent?.analytics]);
 
   if (!consent?.analytics) return null;
 
   return (
     <>
       <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
         strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${NEXT_PUBLIC_GOOGLE_ANALYTICS_STREAM_ID}`}
       />
       <Script
         id="ga-init"
         strategy="afterInteractive"
-        onReady={() => {
-          window.dataLayer = window.dataLayer || [];
-
-          window.gtag = function (...args) {
-            window.dataLayer.push(args);
-          };
-
-          window.gtag("js", new Date());
-          window.gtag("config", NEXT_PUBLIC_GOOGLE_ANALYTICS_STREAM_ID, {
-            page_path: window.location.pathname,
-          });
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');
+          `,
         }}
-      >
-        {""}
-      </Script>
+      />
     </>
   );
 }

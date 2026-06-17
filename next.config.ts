@@ -23,7 +23,7 @@ const ContentSecurityPolicy = `
     https://www.gstatic.com
     https://app.livechatai.com
     https://unpkg.com
-    https://s.ytimg.com;
+    https://*.ytimg.com;
 
   style-src
     'self'
@@ -39,7 +39,7 @@ const ContentSecurityPolicy = `
     https://*.g.doubleclick.net
     https://*.steamstatic.com
     https://cdn.cloudflare.steamstatic.com
-    https://i.ytimg.com;
+    https://*.ytimg.com;
 
   font-src
     'self'
@@ -64,7 +64,8 @@ const ContentSecurityPolicy = `
     https://cors.io
     https://www.youtube.com
     https://ipapi.co
-    https://stats.uptimerobot.com;
+    https://stats.uptimerobot.com
+    https://*.ytimg.com;
 
   frame-src
     'self'
