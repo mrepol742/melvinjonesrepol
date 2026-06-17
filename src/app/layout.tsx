@@ -3,7 +3,6 @@ import { Source_Code_Pro, Maven_Pro } from "next/font/google";
 import "./globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import GoogleAds from "@/components/common/metadata/GoogleAdsense";
 import NortonSafeweb from "@/components/common/metadata/NortonSafeweb";
 import Algolia from "@/components/common/metadata/Algolia";
 import DoorEffect from "@/components/common/DoorEffect";
@@ -172,7 +171,6 @@ export default async function RootLayout({
 
           {isProduction && (
             <>
-              <GoogleAds />
               <GoogleAnalytics />
               <ServiceWorkerRegister />
               <BrowserCheck />

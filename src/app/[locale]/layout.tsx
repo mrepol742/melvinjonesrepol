@@ -39,11 +39,11 @@ export default async function LocaleLayout({
 
       <div className="flex-1">{children}</div>
 
-      {isProduction && (
+      {/*{isProduction && (
         <>
           <DevToolsDetector />
         </>
-      )}
+      )}*/}
 
       <PrivacyPolicyPrompt />
       <ToastContainer />

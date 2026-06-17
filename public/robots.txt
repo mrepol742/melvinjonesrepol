@@ -7,6 +7,5 @@ Disallow: /api
 Disallow: /blog?page=1
 Disallow: /projects?
 Disallow: /gaming?
-Disallow: /uptime
 
 Sitemap: https://www.melvinjonesrepol.com/sitemap.xml
