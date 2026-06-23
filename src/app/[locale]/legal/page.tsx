@@ -1,6 +1,7 @@
 import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { Metadata } from "next";
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Legal Documents - Melvin Jones Repol",
@@ -89,18 +90,19 @@ const legalLinks = [
   },
 ];
 
-export default function Legal() {
+export default async function Legal() {
+  const t = await getTranslations("legal");
   return (
     <main>
       <section className="relative min-h-screen overflow-hidden border-b border-zinc-800">
         <div className="relative flex min-h-screen flex-col px-6 py-12 md:px-10">
           <div className="my-auto py-14">
             <h1 className="text-[14vw] sm:text-[10vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8">
-              Policies
+              {t("title_line1")}
               <br />
-              <span className="opacity-40">&</span>
+              <span className="opacity-40">{t("title_line2")}</span>
               <br />
-              documents.
+              {t("title_line3")}
             </h1>
 
             <p
@@ -108,9 +110,7 @@ export default function Legal() {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              Transparency and trust are important. Review the policies and
-              legal documents to understand how this site operates and protects
-              your data.
+              {t("hero_description")}
             </p>
           </div>
 
@@ -121,11 +121,11 @@ export default function Legal() {
           >
             <div>
               <p className="text-4xl font-black">{legalLinks.length}</p>
-              <p className="mt-1 text-sm text-zinc-400">Documents</p>
+              <p className="mt-1 text-sm text-zinc-400">{t("documents_label")}</p>
             </div>
             <div>
               <p className="text-4xl font-black">Open</p>
-              <p className="mt-1 text-sm text-zinc-400">Transparent policy</p>
+              <p className="mt-1 text-sm text-zinc-400">{t("transparent_policy")}</p>
             </div>
             <div className="col-span-2 flex flex-wrap items-center gap-2">
               {["Privacy", "Terms", "Cookies", "Developer Agreement"].map(
@@ -147,13 +147,13 @@ export default function Legal() {
         <div className="max-w-5xl mx-auto">
           <div className="hidden md:grid grid-cols-[3rem_1fr_auto] gap-x-8 px-6 pb-3 border-b border-zinc-800 mb-2">
             <span className="text-xs uppercase tracking-widest opacity-40">
-              #
+              {t("table_col_number")}
             </span>
             <span className="text-xs uppercase tracking-widest opacity-40">
-              Document
+              {t("table_col_document")}
             </span>
             <span className="text-xs uppercase tracking-widest opacity-40">
-              Category
+              {t("table_col_category")}
             </span>
           </div>
 
@@ -180,7 +180,7 @@ export default function Legal() {
                     </span>
                     <span className="inline-flex items-center gap-1 text-[10px] uppercase tracking-widest text-green-400">
                       <span className="h-1.5 w-1.5 rounded-full bg-green-400" />
-                      Active
+                      {t("badge_active")}
                     </span>
                   </div>
                   <p className="text-sm leading-relaxed">{link.description}</p>
@@ -191,7 +191,7 @@ export default function Legal() {
                     {link.category}
                   </span>
                   <span className="text-xs font-medium flex items-center gap-1">
-                    Read
+                    {t("read_link")}
                     <span className="transition-transform group-hover:translate-x-0.5">
                       →
                     </span>
@@ -204,27 +204,27 @@ export default function Legal() {
           <div className="mt-12 rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
               <p className="text-xs uppercase tracking-widest opacity-50 mb-1">
-                Last reviewed
+                {t("last_reviewed_label")}
               </p>
-              <p className="text-sm font-medium">May 2026</p>
+              <p className="text-sm font-medium">{t("last_reviewed_value")}</p>
             </div>
             <div className="h-px sm:h-8 sm:w-px border-b sm:border-b-0 sm:border-r border-zinc-800 w-full sm:w-auto" />
             <div>
               <p className="text-xs uppercase tracking-widest opacity-50 mb-1">
-                Jurisdiction
+                {t("jurisdiction_label")}
               </p>
-              <p className="text-sm font-medium">Philippines</p>
+              <p className="text-sm font-medium">{t("jurisdiction_value")}</p>
             </div>
             <div className="h-px sm:h-8 sm:w-px border-b sm:border-b-0 sm:border-r border-zinc-800 w-full sm:w-auto" />
             <div>
               <p className="text-xs uppercase tracking-widest opacity-50 mb-1">
-                Questions?
+                {t("questions_label")}
               </p>
               <Link
                 href="/contact-me"
                 className="text-sm font-medium underline underline-offset-2 hover:opacity-70 transition-opacity"
               >
-                Contact us
+                {t("contact_us")}
               </Link>
             </div>
           </div>

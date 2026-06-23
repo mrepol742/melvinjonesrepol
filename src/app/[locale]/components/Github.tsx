@@ -1,5 +1,6 @@
 import ScrambleText from "@/components/ui/ScrambleText";
 import { fetchGithubProfile } from "@/lib/github/profile";
+import { getTranslations } from "next-intl/server";
 
 function formatNumber(value: number) {
   return new Intl.NumberFormat("en-US", { notation: "compact" }).format(value);
@@ -13,10 +14,11 @@ function getYearsSince(dateString: string) {
 }
 
 export default async function Github() {
+  const t = await getTranslations("github");
   const profile = await fetchGithubProfile("mrepol742");
 
   if (!profile) {
-    return <p>Unable to load GitHub profile.</p>;
+    return <p>{t("error_message")}</p>;
   }
 
   const accountAgeYears = getYearsSince(profile.created_at);
@@ -32,26 +34,26 @@ export default async function Github() {
       : profile.followers;
 
   const stats = [
-    { label: "Public Repos", value: formatNumber(profile.public_repos) },
-    { label: "Public Gists", value: formatNumber(profile.public_gists) },
-    { label: "Followers", value: formatNumber(profile.followers) },
-    { label: "Following", value: formatNumber(profile.following) },
-    { label: "Account Age", value: `${accountAgeYears.toFixed(1)}y` },
-    { label: "GitHub ID", value: formatNumber(profile.id) },
+    { label: t("stat_public_repos"), value: formatNumber(profile.public_repos) },
+    { label: t("stat_public_gists"), value: formatNumber(profile.public_gists) },
+    { label: t("stat_followers"), value: formatNumber(profile.followers) },
+    { label: t("stat_following"), value: formatNumber(profile.following) },
+    { label: t("stat_account_age"), value: `${accountAgeYears.toFixed(1)}y` },
+    { label: t("stat_github_id"), value: formatNumber(profile.id) },
     {
-      label: "Avg Followers / Repo",
+      label: t("stat_avg_followers_per_repo"),
       value: avgFollowersPerRepo.toFixed(2),
     },
     {
-      label: "Repo / Gist Ratio",
+      label: t("stat_repo_gist_ratio"),
       value: repoToGistRatio.toFixed(2),
     },
     {
-      label: "Follow Ratio",
+      label: t("stat_follow_ratio"),
       value: followRatio.toFixed(2),
     },
     {
-      label: "Last Updated",
+      label: t("stat_last_updated"),
       value: new Date(profile.updated_at).toLocaleDateString(),
     },
   ];
@@ -61,14 +63,14 @@ export default async function Github() {
       <div className="flex items-end justify-between gap-4">
         <div>
           <p className="text-xs uppercase tracking-[0.2em]" data-aos="fade-up">
-            GitHub Analytics
+            {t("section_label")}
           </p>
           <h2
             className="text-2xl font-semibold tracking-tight"
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            Developer Activity Snapshot
+            {t("section_title")}
           </h2>
         </div>
         <div className="text-xs" data-aos="fade-up" data-aos-delay="100">
@@ -104,7 +106,7 @@ export default async function Github() {
         data-aos="fade-up"
         data-aos-delay={100}
       >
-        Last updated:{" "}
+        {t("last_updated_label")}{" "}
         {profile.last_fetched
           ? new Date(profile.last_fetched).toUTCString()
           : "—"}

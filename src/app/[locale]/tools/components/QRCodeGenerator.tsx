@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 export default function QRCodeGeneratorTool() {
+  const t = useTranslations("tools_qrcode_generator");
   const [input, setInput] = useState("");
   const [qrUrl, setQrUrl] = useState("");
 
@@ -21,10 +23,10 @@ export default function QRCodeGeneratorTool() {
     <main className="mt-18 p-3 md:p-8">
       <section className="max-w-md mx-auto bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 md:p-10">
         <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
-          QR Code Generator
+          {t("title")}
         </h1>
         <p className="mt-2 text-gray-600 dark:text-gray-300">
-          This tool will allow you to generate QR codes for any URL or text.
+          {t("description")}
         </p>
 
         <form
@@ -33,7 +35,7 @@ export default function QRCodeGeneratorTool() {
         >
           <input
             type="text"
-            placeholder="Enter URL or text"
+            placeholder={t("input_placeholder")}
             value={input}
             onChange={(e) => setInput(e.target.value)}
             className="flex-1 px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:text-white"
@@ -42,14 +44,14 @@ export default function QRCodeGeneratorTool() {
             type="submit"
             className="px-6 py-3 bg-blue-500 text-white rounded-xl shadow-md hover:bg-blue-600 transition duration-200"
           >
-            Generate
+            {t("generate_button")}
           </button>
         </form>
 
         {qrUrl && (
           <div className="mt-8 flex flex-col items-center">
             <h3 className="text-lg font-semibold mb-3 text-gray-800 dark:text-gray-100">
-              Your QR Code:
+              {t("result_label")}
             </h3>
             <div className="p-4 bg-gray-100 dark:bg-gray-700 rounded-2xl shadow-inner">
               <Image

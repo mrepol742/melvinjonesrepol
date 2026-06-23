@@ -6,8 +6,10 @@ import { faAt, faUser } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import { useTranslations } from "next-intl";
 
 export default function ContactMe() {
+  const t = useTranslations("contact_me");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -47,7 +49,7 @@ export default function ContactMe() {
     e.preventDefault();
 
     if (!grecaptchaLoaded || !window.grecaptcha?.enterprise) {
-      toast.error("reCAPTCHA is not loaded. Please try again later.");
+      toast.error(t("recaptcha_error"));
       return;
     }
 
@@ -79,12 +81,12 @@ export default function ContactMe() {
     });
 
     toast.promise(resolveAfter3Sec, {
-      pending: "Sending your message...",
-      success: "Message sent successfully!",
+      pending: t("toast_pending"),
+      success: t("toast_success"),
       error: {
         render({ data }) {
           const err = data as Error;
-          return err?.message || "Failed to send message. Please try again.";
+          return err?.message || t("toast_error");
         },
       },
     });
@@ -97,7 +99,7 @@ export default function ContactMe() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <p className="text-xs uppercase tracking-widest mb-2 opacity-50">
-                Name
+                {t("form_name_label")}
               </p>
               <Input
                 icon={faUser}
@@ -105,14 +107,14 @@ export default function ContactMe() {
                 form={{
                   name: "name",
                   value: formData.name,
-                  placeholder: "Your Name",
+                  placeholder: t("form_name_placeholder"),
                   required: true,
                 }}
               />
             </div>
             <div>
               <p className="text-xs uppercase tracking-widest mb-2 opacity-50">
-                Email
+                {t("form_email_label")}
               </p>
               <Input
                 icon={faAt}
@@ -120,7 +122,7 @@ export default function ContactMe() {
                 form={{
                   name: "email",
                   value: formData.email,
-                  placeholder: "you@example.com",
+                  placeholder: t("form_email_placeholder"),
                   required: true,
                 }}
               />
@@ -129,7 +131,7 @@ export default function ContactMe() {
 
           <div>
             <p className="text-xs uppercase tracking-widest mb-2 opacity-50">
-              Username
+              {t("form_username_label")}
             </p>
             <Input
               icon={faUser}
@@ -137,7 +139,7 @@ export default function ContactMe() {
               form={{
                 name: "username",
                 value: formData.username,
-                placeholder: "your-username",
+                placeholder: t("form_username_placeholder"),
                 required: true,
               }}
             />
@@ -146,7 +148,7 @@ export default function ContactMe() {
           <div>
             <div className="flex items-center justify-between mb-2">
               <p className="text-xs uppercase tracking-widest opacity-50">
-                Message
+                {t("form_message_label")}
               </p>
               <span
                 className={`text-xs font-mono transition-colors ${
@@ -170,7 +172,7 @@ export default function ContactMe() {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                placeholder="Type your message here..."
+                placeholder={t("form_message_placeholder")}
                 className="w-full outline-none bg-transparent text-sm placeholder:opacity-40 resize-none"
               />
             </div>
@@ -212,20 +214,20 @@ export default function ContactMe() {
 
           <div className="pt-2">
             <p className="text-xs opacity-50 mb-4">
-              By continuing, you agree to our{" "}
+              {t("form_privacy_prefix")}{" "}
               <Link
                 href="/legal/privacy-policy"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline underline-offset-2 hover:opacity-80"
               >
-                Privacy Policy
+                {t("form_privacy_link")}
               </Link>
               .
             </p>
 
             <Button className="w-full bg-indigo-400 before:bg-indigo-600 after:bg-indigo-600">
-              Send Message
+              {t("form_submit")}
             </Button>
           </div>
         </form>
@@ -235,17 +237,16 @@ export default function ContactMe() {
         <div className="rounded-2xl border border-zinc-800 p-6">
           <div className="flex items-center gap-2 mb-3">
             <span className="h-2 w-2 rounded-full bg-green-400 animate-pulse" />
-            <span className="text-xs uppercase tracking-widest">Available</span>
+            <span className="text-xs uppercase tracking-widest">{t("sidebar_status")}</span>
           </div>
           <p className="text-sm leading-relaxed opacity-60">
-            Currently open to new projects and collaborations. Typical response
-            time is within 24 hours.
+            {t("sidebar_status_description")}
           </p>
         </div>
 
         <div className="rounded-2xl border border-zinc-800 p-6">
           <p className="text-xs uppercase tracking-widest mb-4 opacity-50">
-            Reach out via
+            {t("sidebar_reach_out")}
           </p>
           <div className="flex flex-col gap-3">
             {[
@@ -282,7 +283,7 @@ export default function ContactMe() {
 
         <div className="rounded-2xl border border-zinc-800 p-6">
           <p className="text-xs uppercase tracking-widest mb-4 opacity-50">
-            Before we start
+            {t("sidebar_before_start")}
           </p>
           <Link
             href="/legal/developer-client-agreement"
@@ -291,7 +292,7 @@ export default function ContactMe() {
             className="flex items-center justify-between group"
           >
             <span className="text-sm font-medium">
-              Developer Client Agreement
+              {t("sidebar_dca")}
             </span>
             <span className="text-xs opacity-40 group-hover:opacity-70 transition-opacity">
               →

@@ -567,27 +567,25 @@ export default async function Home({
                     <div className="p-8 md:p-12">
                       <div className="inline-flex items-center gap-2 rounded-full border border-zinc-800 px-3 py-1 text-xs font-semibold uppercase">
                         <span className="h-2 w-2 rounded-full bg-green-500" />
-                        Webvium Ecosystem
+                        {t("webvium_badge")}
                       </div>
 
                       <h2 className="mt-5 text-4xl font-bold">
-                        Lightweight Software Built For Speed
+                        {t("webvium_title")}
                       </h2>
 
                       <p className="mt-4">
-                        From Android browsers to developer tools and browser
-                        extensions, Webvium focuses on performance, privacy,
-                        simplicity and practical software.
+                        {t("webvium_description")}
                       </p>
 
                       <div className="mt-8 flex flex-wrap gap-3">
                         <Link href="https://webvium.melvinjonesrepol.com">
-                          <Button>Explore Webvium</Button>
+                          <Button>{t("webvium_cta_explore")}</Button>
                         </Link>
 
                         <Link href="https://github.com/webvium">
                           <Button className="border border-zinc-800">
-                            GitHub
+                            {t("webvium_cta_github")}
                           </Button>
                         </Link>
                       </div>
@@ -599,26 +597,26 @@ export default async function Home({
                         <div className="rounded-xl border border-zinc-800 p-5">
                           <div className="text-3xl font-bold">15+</div>
                           <div className="text-sm text-zinc-400">
-                            Repositories
+                            {t("webvium_stat_repositories")}
                           </div>
                         </div>
 
                         <div className="rounded-xl border border-zinc-800 p-5">
                           <div className="text-3xl font-bold">6+</div>
                           <div className="text-sm text-zinc-400">
-                            Browser Tools
+                            {t("webvium_stat_browser_tools")}
                           </div>
                         </div>
 
                         <div className="rounded-xl border border-zinc-800 p-5">
                           <div className="text-3xl font-bold">2018</div>
-                          <div className="text-sm text-zinc-400">Started</div>
+                          <div className="text-sm text-zinc-400">{t("webvium_stat_started")}</div>
                         </div>
 
                         <div className="rounded-xl border border-zinc-800 p-5">
                           <div className="text-3xl font-bold">375KB</div>
                           <div className="text-sm text-zinc-400">
-                            The lightest web browser for Android ever!
+                            {t("webvium_stat_lightest")}
                           </div>
                         </div>
                       </div>

@@ -1,13 +1,15 @@
 import YoutubeVideo from "@/components/ui/YoutubeVideo";
 import { fetchYoutubeLatestVideos } from "@/lib/youtube/latest-videos";
+import { getTranslations } from "next-intl/server";
 
 export default async function Youtube() {
+  const t = await getTranslations("youtube");
   const data = await fetchYoutubeLatestVideos();
 
   const videos = data.items ?? [];
 
   if (!videos.length) {
-    return <div>No videos found</div>;
+    return <div>{t("no_videos_found")}</div>;
   }
 
   return (
@@ -53,7 +55,7 @@ export default async function Youtube() {
       </div>
 
       <div className="text-sm text-muted">
-        Last updated:{" "}
+        {t("last_updated_label")}{" "}
         {data.last_fetched ? new Date(data.last_fetched).toUTCString() : "—"}
       </div>
     </>

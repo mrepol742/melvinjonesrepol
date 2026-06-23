@@ -7,8 +7,10 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function ProjectCarousel() {
+  const tc = useTranslations("projects_content");
   const [aiOpen, setAiOpen] = useState<Record<number, boolean>>({});
 
   function toggleSummary(index: number) {
@@ -31,6 +33,9 @@ export default function ProjectCarousel() {
           .map((project, idx) => {
             const isAi = !!aiOpen[idx];
             const hasAi = Boolean(project.ai_description);
+            const description = project.key
+              ? tc(`${project.key}_description` as any)
+              : project.description;
 
             return (
               <article
@@ -85,9 +90,9 @@ export default function ProjectCarousel() {
 
                   <p
                     className="mb-4 max-h-30 overflow-y-auto leading-6"
-                    title={isAi ? project.ai_description : project.description}
+                    title={isAi ? project.ai_description : description}
                   >
-                    {isAi ? project.ai_description : project.description}
+                    {isAi ? project.ai_description : description}
                   </p>
 
                   <div className="flex justify-end items-center gap-4">

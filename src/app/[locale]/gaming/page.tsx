@@ -4,6 +4,7 @@ import { fetchSteamLibrary, GameType } from "@/lib/steam/library";
 import SearchForm from "@/components/ui/SearchForm";
 import GameCard from "@/app/[locale]/gaming/components/GameCard";
 import { getAlternates } from "@/components/common/metadata/Alternatives";
+import { getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Gaming - Melvin Jones Repol",
@@ -52,6 +53,7 @@ export default async function Gaming({
 }: {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
+  const t = await getTranslations("gaming");
   const sParams = await searchParams;
   const query = Array.isArray(sParams.q)
     ? sParams.q.join(", ")
@@ -90,11 +92,11 @@ export default async function Gaming({
         <div className="relative flex min-h-screen flex-col px-6 py-12 md:px-10">
           <div className="my-auto py-14">
             <h1 className="text-[14vw] sm:text-[10vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8">
-              Play.
+              {t("title_line1")}
               <br />
-              <span className="opacity-40">compete.</span>
+              <span className="opacity-40">{t("title_line2")}</span>
               <br />
-              explore.
+              {t("title_line3")}
             </h1>
 
             <p
@@ -102,8 +104,7 @@ export default async function Gaming({
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              Gaming achievements, high scores, and activities from my Steam
-              library. Strategy, action, and everything in between.
+              {t("hero_description")}
             </p>
           </div>
 
@@ -114,11 +115,11 @@ export default async function Gaming({
           >
             <div>
               <p className="text-4xl font-black">{steamActivities.length}+</p>
-              <p className="mt-1 text-sm text-zinc-400">Games</p>
+              <p className="mt-1 text-sm text-zinc-400">{t("games_label")}</p>
             </div>
             <div>
               <p className="text-4xl font-black">Steam</p>
-              <p className="mt-1 text-sm text-zinc-400">Platform</p>
+              <p className="mt-1 text-sm text-zinc-400">{t("platform_label")}</p>
             </div>
             <div className="col-span-2 flex flex-wrap items-center gap-2">
               {[
@@ -150,7 +151,7 @@ export default async function Gaming({
 
         {filteredGames.length === 0 ? (
           <div>
-            <h2>No results found.</h2>
+            <h2>{t("no_results_found")}</h2>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-6">
@@ -162,7 +163,7 @@ export default async function Gaming({
 
         <div className="my-6">
           <p data-aos="fade-up" data-aos-delay="200">
-            You can find more of my gaming activities on my steam profile.
+            {t("steam_profile_text")}
           </p>
           <Link
             href="https://steamcommunity.com/id/mrepol742"
@@ -175,15 +176,15 @@ export default async function Gaming({
                           after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:bg-orange-600 after:rounded-r-lg"
               style={{ boxShadow: "1px 1px 0 0 #ea580c" }}
             >
-              Steam Profile
+              {t("steam_profile_button")}
             </button>
           </Link>
         </div>
 
         <span className="ml-auto text-xs text-gray-400">
-          Data fetched from Steam API.
+          {t("data_source_note")}
           <br />
-          All Titles/Covers are properties of their respective owners.
+          {t("titles_disclaimer")}
         </span>
       </section>
     </main>

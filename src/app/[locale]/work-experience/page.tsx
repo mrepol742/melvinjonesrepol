@@ -67,18 +67,16 @@ export default async function WorkExperiencePage() {
       cert: t("experience.company_apptrade.cert"),
     },
     {
-      company: "UP-TO-DATE WebDesign",
-      title: "Mid Level Full Stack Developer",
-      date: "May 2026 - Present",
-      description:
-        "Develop and maintain web applications, implement new features, support system migrations, optimize performance, and collaborate with stakeholders to deliver scalable software solutions.",
+      company: t("experience.company_uptodatewebdesign.company"),
+      title: t("experience.company_uptodatewebdesign.title"),
+      date: t("experience.company_uptodatewebdesign.date"),
+      description: t("experience.company_uptodatewebdesign.description"),
     },
     {
-      company: "Independent Software Consultant",
-      title: "Part Time",
-      date: "Mar 2026 - Present",
-      description:
-        "Support and maintain client software systems while providing technical consulting on new features, system improvements, infrastructure, and long-term product strategy. Ensure applications remain stable, secure, and capable of supporting ongoing business operations and revenue generation.",
+      company: t("experience.company_independent_consultant.company"),
+      title: t("experience.company_independent_consultant.title"),
+      date: t("experience.company_independent_consultant.date"),
+      description: t("experience.company_independent_consultant.description"),
     },
   ];
 
@@ -110,11 +108,11 @@ export default async function WorkExperiencePage() {
           >
             <div>
               <p className="text-4xl font-black">{experiences.length}</p>
-              <p className="mt-1 text-sm text-zinc-400">Roles</p>
+              <p className="mt-1 text-sm text-zinc-400">{t("roles_label")}</p>
             </div>
             <div>
               <p className="text-4xl font-black">6+</p>
-              <p className="mt-1 text-sm text-zinc-400">Years</p>
+              <p className="mt-1 text-sm text-zinc-400">{t("years_label")}</p>
             </div>
             <div className="col-span-2 flex flex-wrap items-center gap-2">
               {["Freelance", "IT Intern", "Full-Stack", "DevOps"].map(
@@ -175,7 +173,7 @@ export default async function WorkExperiencePage() {
             ))}
           </div>
 
-          <span className="text-xs">Swipe left or right to view more...</span>
+          <span className="text-xs">{t("swipe_hint")}</span>
         </div>
       </section>
     </main>

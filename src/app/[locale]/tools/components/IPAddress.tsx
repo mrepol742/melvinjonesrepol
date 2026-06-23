@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import { useTranslations } from "next-intl";
 
 interface IPInfo {
   ip: string;
@@ -13,6 +14,7 @@ interface IPInfo {
 }
 
 export default function IPAddressTool() {
+  const t = useTranslations("tools_ip_address");
   const [ipInfo, setIpInfo] = useState<IPInfo | null>(null);
 
   useEffect(() => {
@@ -35,7 +37,7 @@ export default function IPAddressTool() {
       } catch (err) {
         console.error("Error fetching IP info:", err);
         toast.error(
-          err instanceof Error ? err.message : "Failed to fetch IP information",
+          err instanceof Error ? err.message : t("failed_fetch_error"),
         );
       }
     };
@@ -47,11 +49,10 @@ export default function IPAddressTool() {
     <main className="mt-18 p-3 md:p-8">
       <section className="max-w-md mx-auto bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 md:p-10 text-center">
         <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
-          IP Address
+          {t("title")}
         </h1>
         <p className="mt-2 text-gray-600 dark:text-gray-300 mb-6">
-          This tool will allow you to check your IP address and related
-          information.
+          {t("description")}
         </p>
 
         {ipInfo ? (
@@ -69,7 +70,7 @@ export default function IPAddressTool() {
               <div className="bg-gray-50 dark:bg-gray-700 rounded-xl p-4 shadow-inner text-left">
                 <p>
                   <span className="font-semibold text-gray-800 dark:text-gray-100">
-                    ISP:
+                    {t("isp_label")}
                   </span>{" "}
                   <span className="mt-1 text-gray-500 dark:text-gray-300">
                     {" "}
@@ -78,7 +79,7 @@ export default function IPAddressTool() {
                 </p>
                 <p>
                   <span className="font-semibold text-gray-800 dark:text-gray-100">
-                    Location:
+                    {t("location_label")}
                   </span>{" "}
                   <span className="mt-1 text-gray-500 dark:text-gray-300">
                     {ipInfo.city}, {ipInfo.region}, {ipInfo.country}
@@ -89,7 +90,7 @@ export default function IPAddressTool() {
           </div>
         ) : (
           <p className="mt-6 text-gray-500 dark:text-gray-300">
-            Fetching your IP information...
+            {t("fetching")}
           </p>
         )}
       </section>

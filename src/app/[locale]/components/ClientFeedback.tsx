@@ -1,3 +1,5 @@
+import { getTranslations } from "next-intl/server";
+
 type Outcome = {
   title: string;
   situation: string;
@@ -6,84 +8,28 @@ type Outcome = {
   metric?: string;
 };
 
-const outcomes: Outcome[] = [
-  {
-    title: "Cut delivery time on a critical release",
-    situation:
-      "A product team was missing deadlines due to unclear scope and late QA cycles.",
-    action:
-      "Introduced milestone-based delivery, tighter acceptance criteria, and CI/CD checks.",
-    result:
-      "Releases became predictable with fewer regressions and smoother handoffs.",
-    metric: "Cycle time reduced by ~30%",
-  },
-  {
-    title: "Modernized a legacy platform for stability",
-    situation:
-      "A web platform struggled with slow performance and brittle deployments.",
-    action:
-      "Refactored key modules, improved observability, and reduced deployment risk.",
-    result:
-      "Improved uptime and unlocked faster feature delivery.",
-    metric: "Performance improved by ~40%",
-  },
-  {
-    title: "Migrated infrastructure with zero downtime",
-    situation:
-      "Production workloads needed a hosting transition without service interruption.",
-    action:
-      "Designed phased migration, environment parity checks, and rollback playbooks.",
-    result:
-      "Smooth transition with minimal risk and improved reliability.",
-    metric: "0 critical incidents during cutover",
-  },
-  {
-    title: "Enabled a subscription revenue stream",
-    situation:
-      "A product needed billing and lifecycle flows for recurring revenue.",
-    action:
-      "Designed subscription flow, billing‑ready data model, and onboarding funnels.",
-    result:
-      "Monetization path launched with clear user lifecycle tracking.",
-    metric: "Recurring revenue channel activated",
-  },
-  {
-    title: "Delivered an idea into production",
-    situation:
-      "A concept needed validation with real users under tight timelines.",
-    action:
-      "Shipped MVP fast, iterated with user feedback, and stabilized the release.",
-    result:
-      "The product moved from concept to measurable user engagement.",
-    metric: "MVP shipped in weeks, not months",
-  },
-  {
-    title: "Led cross‑functional project execution",
-    situation:
-      "Multiple stakeholders needed alignment on scope, timing, and deliverables.",
-    action:
-      "Managed priorities, clarified requirements, and coordinated delivery.",
-    result:
-      "Project shipped on time with stakeholder satisfaction.",
-    metric: "On‑time delivery with clear scope",
-  },
-];
+export default async function ClientFeedback() {
+  const t = await getTranslations("client_feedback");
 
-const deliverySignals = [
-  "Outcome‑driven planning with measurable checkpoints",
-  "Risk‑managed releases and rollback strategies",
-  "Automated testing and CI/CD for predictable deployments",
-  "Security and quality gates before production rollout",
-];
+  const outcomes: Outcome[] = Array.from({ length: 6 }, (_, i) => ({
+    title: t(`outcome_${i}_title` as any),
+    situation: t(`outcome_${i}_situation` as any),
+    action: t(`outcome_${i}_action` as any),
+    result: t(`outcome_${i}_result` as any),
+    metric: t(`outcome_${i}_metric` as any),
+  }));
 
-export default function ClientFeedback() {
+  const deliverySignals = Array.from({ length: 4 }, (_, i) =>
+    t(`signal_${i}` as any),
+  );
+
   return (
     <section className="w-full">
       <div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-6">
         <aside className="lg:col-span-4">
           <div className="rounded-2xl border border-zinc-800 p-5 sticky top-24">
             <p className="text-xs uppercase tracking-wider mb-3">
-              Delivery Signals
+              {t("section_label")}
             </p>
             <ul className="space-y-3">
               {deliverySignals.map((item) => (
@@ -122,19 +68,19 @@ export default function ClientFeedback() {
                   <div className="grid gap-3 text-sm md:text-[15px] leading-relaxed">
                     <p>
                       <span className="text-xs uppercase tracking-wide block mb-1">
-                        Situation
+                        {t("situation_label")}
                       </span>
                       {item.situation}
                     </p>
                     <p>
                       <span className="text-xs uppercase tracking-wide block mb-1">
-                        Action
+                        {t("action_label")}
                       </span>
                       {item.action}
                     </p>
                     <p>
                       <span className="text-xs uppercase tracking-wide block mb-1">
-                        Result
+                        {t("result_label")}
                       </span>
                       {item.result}
                     </p>

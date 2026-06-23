@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
 interface UserAgentInfo {
   ua: string;
@@ -10,6 +11,7 @@ interface UserAgentInfo {
 }
 
 export default function UserAgentTool() {
+  const t = useTranslations("tools_user_agent");
   const [uaInfo, setUaInfo] = useState<UserAgentInfo | null>(null);
 
   useEffect(() => {
@@ -37,18 +39,17 @@ export default function UserAgentTool() {
     <main className="mt-18 p-3 md:p-8">
       <section className="max-w-md mx-auto bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 md:p-10">
         <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
-          User Agent Info
+          {t("title")}
         </h1>
         <p className="mt-2 text-gray-600 dark:text-gray-300 mb-6">
-          This tool detects your browser, operating system, and device
-          information from your user agent string.
+          {t("description")}
         </p>
 
         {uaInfo ? (
           <div className="space-y-4">
             <div className="bg-gray-100 dark:bg-gray-700 rounded-2xl p-6 shadow-inner">
               <h2 className="font-bold text-lg mb-2 text-gray-800 dark:text-gray-100">
-                User Agent String
+                {t("ua_string_label")}
               </h2>
               <p className="text-gray-700 dark:text-gray-200 break-all">
                 {uaInfo.ua}
@@ -58,7 +59,7 @@ export default function UserAgentTool() {
             <div className="bg-gray-50 dark:bg-gray-700 rounded-xl p-4 shadow-inner space-y-2 text-left">
               <p>
                 <span className="font-semibold text-gray-800 dark:text-gray-100">
-                  Browser:
+                  {t("browser_label")}
                 </span>{" "}
                 <span className="text-gray-700 dark:text-gray-200 ">
                   {uaInfo.browser}
@@ -66,7 +67,7 @@ export default function UserAgentTool() {
               </p>
               <p>
                 <span className="font-semibold text-gray-800 dark:text-gray-100">
-                  Operating System:
+                  {t("os_label")}
                 </span>{" "}
                 <span className="text-gray-700 dark:text-gray-200 ">
                   {uaInfo.os}
@@ -74,7 +75,7 @@ export default function UserAgentTool() {
               </p>
               <p>
                 <span className="font-semibold text-gray-800 dark:text-gray-100">
-                  Device:
+                  {t("device_label")}
                 </span>{" "}
                 <span className="text-gray-700 dark:text-gray-200 ">
                   {uaInfo.device}
@@ -84,7 +85,7 @@ export default function UserAgentTool() {
           </div>
         ) : (
           <p className="mt-6 text-gray-500 dark:text-gray-300">
-            Detecting your user agent...
+            {t("detecting")}
           </p>
         )}
       </section>

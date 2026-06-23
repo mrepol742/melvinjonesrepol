@@ -2,10 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import { useTranslations } from "next-intl";
 
 type OpenGraphMeta = Record<string, string>;
 
 export default function OpenGraphTool() {
+  const t = useTranslations("tools_open_graph");
   const [formData, setFormData] = useState({
     username: "",
     url: "",
@@ -30,7 +32,7 @@ export default function OpenGraphTool() {
   const fetchOG = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!grecaptchaLoaded || !window.grecaptcha?.enterprise) {
-      toast.error("reCAPTCHA is not loaded. Please try again later.");
+      toast.error(t("recaptcha_error"));
       return;
     }
 
@@ -59,12 +61,12 @@ export default function OpenGraphTool() {
     });
 
     toast.promise(resolveAfter3Sec, {
-      pending: "Fetching Open Graph metadata...",
-      success: "Metadata fetched successfully!",
+      pending: t("toast_pending"),
+      success: t("toast_success"),
       error: {
         render({ data }) {
           const err = data as Error;
-          return err?.message || "An error occurred while fetching metadata.";
+          return err?.message || t("toast_error");
         },
       },
     });
@@ -80,10 +82,10 @@ export default function OpenGraphTool() {
     <main className="mt-18 p-3 md:p-8">
       <section className="max-w-md mx-auto bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 md:p-10">
         <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
-          Open Graph Checker
+          {t("title")}
         </h1>
         <p className="mt-2 text-gray-600 dark:text-gray-300 mb-6">
-          Enter a website URL to fetch its Open Graph metadata.
+          {t("description")}
         </p>
 
         <form
@@ -110,7 +112,7 @@ export default function OpenGraphTool() {
           <input
             type="text"
             name="url"
-            placeholder="Enter website URL"
+            placeholder={t("url_placeholder")}
             value={formData.url}
             onChange={handleChange}
             className="flex-1 px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:text-white"
@@ -119,14 +121,14 @@ export default function OpenGraphTool() {
             type="submit"
             className="px-6 py-3 bg-blue-500 text-white rounded-xl shadow-md hover:bg-blue-600 transition duration-200"
           >
-            Fetch Metadata
+            {t("fetch_button")}
           </button>
         </form>
 
         {meta && (
           <div className="space-y-4">
             <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-100">
-              Open Graph Metadata
+              {t("result_title")}
             </h2>
             <div className="bg-gray-50 dark:bg-gray-700 rounded-xl p-4 shadow-inner space-y-2">
               {Object.entries(meta).map(([key, value]) => (
