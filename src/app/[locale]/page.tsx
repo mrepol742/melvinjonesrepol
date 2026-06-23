@@ -19,13 +19,12 @@ import Project from "@/app/[locale]/components/Project";
 import ClientFeedback from "@/app/[locale]/components/ClientFeedback";
 import { Metadata } from "next";
 import { getAlternates } from "@/components/common/metadata/Alternatives";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import "devicon/devicon.min.css";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 
 export const revalidate = 10800;
-export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title: "Melvin Jones Repol - Software Engineer",
@@ -69,7 +68,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("home");
 
   const person = {

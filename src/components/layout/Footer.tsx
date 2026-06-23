@@ -34,7 +34,6 @@ export default function Footer({
     const nextPath = `/${nextLocale}${normalizedPath || "/"}`;
     // replace and refresh to ensure the new locale is applied immediately
     router.replace(nextPath);
-    router.refresh();
   };
 
   const TrustpilotWidget = dynamic(

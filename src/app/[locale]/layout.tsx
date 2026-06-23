@@ -24,8 +24,7 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
 
-  if (!hasLocale(["en", ...locales], locale)) return notFound();
-
+  if (!hasLocale(locales, locale)) return notFound();
   setRequestLocale(locale);
 
   const env = process.env.NEXT_PUBLIC_NODE_ENV || "production";
@@ -34,7 +33,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <NextIntlClientProvider messages={messages}>
+    <NextIntlClientProvider locale={locale.length === 0 ? "en" : locale} messages={messages}>
       <Nav />
 
       <div className="flex-1">{children}</div>
