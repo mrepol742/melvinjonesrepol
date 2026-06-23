@@ -14,6 +14,7 @@ import ServiceWorkerRegister from "@/components/common/ServiceWorkerRegister";
 import BrowserCheck from "@/components/common/BrowserCheck";
 import { ConsentProvider, useConsent } from "@/context/consent";
 import LivechatAI from "@/components/common/LivechatAI";
+import GoogleAdsense from "@/components/common/metadata/GoogleAdsense";
 
 config.autoAddCss = false;
 
@@ -152,6 +153,7 @@ export default async function RootLayout({
         <meta name="hostname" content="www.melvinjonesrepol.com" />
         <NortonSafeweb />
         <Algolia />
+        <GoogleAdsense />
       </head>
 
       <body className="antialiased min-h-screen flex flex-col background-grid">
