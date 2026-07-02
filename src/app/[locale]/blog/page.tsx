@@ -3,6 +3,9 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 const POSTS_PER_PAGE = 12;
+const SITE_URL = "https://www.melvinjonesrepol.com";
+const SITE_NAME = "Melvin Jones Repol";
+const DEFAULT_OG_IMAGE = `${SITE_URL}/og/blog.png`;
 
 export async function generateMetadata({
   searchParams,
@@ -10,30 +13,58 @@ export async function generateMetadata({
   searchParams: Promise<{ page?: string }>;
 }): Promise<Metadata> {
   const sp = await searchParams;
-  const rawPage = Number(sp?.page ?? "1");
-  const page = Number.isFinite(rawPage) && rawPage > 0 ? rawPage : 1;
+
+  // Stricter parsing: reject decimals/garbage, clamp to a sane integer
+  const rawPage = Number(sp?.page);
+  const page = Number.isInteger(rawPage) && rawPage > 0 ? rawPage : 1;
+
+  const isFirstPage = page === 1;
+  const title = isFirstPage
+    ? `Blog - ${SITE_NAME}`
+    : `Blog - Page ${page} - ${SITE_NAME}`;
+
+  const description = isFirstPage
+    ? "Browse my blog posts, insights, and experiences on software development, technology trends, and personal growth in the tech industry."
+    : `Page ${page} of my blog posts covering software development, technology trends, and personal growth in the tech industry.`;
+
+  const canonicalPath = isFirstPage ? "/blog" : `/blog?page=${page}`;
+  const canonicalUrl = `${SITE_URL}${canonicalPath}`;
 
   return {
-    title: `Blog - Page ${page}`,
-    description: `Browse my blog posts, insights, and experiences on software development, technology trends, and personal growth in the tech industry. Page ${page}.`,
-    keywords: ["blog", "software development", "technology", "personal growth"],
-    openGraph: {
-      title: `Blog - Page ${page}`,
-      description: `Browse my blog posts, insights, and experiences on software development, technology trends, and personal growth in the tech industry. Page ${page}.`,
-      type: "website",
-      siteName: "Melvin Jones Repol",
-      locale: "en_US",
-    },
+    title,
+    description,
+    keywords: [
+      "blog",
+      "software development",
+      "technology",
+      "personal growth",
+      "web development",
+    ],
     alternates: {
-      canonical:
-        "https://www.melvinjonesrepol.com/blog" +
-        (page > 1 ? `?page=${page}` : ""),
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      url: canonicalUrl,
+      siteName: SITE_NAME,
+      locale: "en_US",
+      images: [
+        {
+          url: DEFAULT_OG_IMAGE,
+          width: 1200,
+          height: 630,
+          alt: `${SITE_NAME} Blog`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
-      title: `Blog - Page ${page}`,
-      description: `Browse my blog posts, insights, and experiences on software development, technology trends, and personal growth in the tech industry. Page ${page}.`,
+      title,
+      description,
       creator: "@mrepol742",
+      images: [DEFAULT_OG_IMAGE],
     },
   };
 }
