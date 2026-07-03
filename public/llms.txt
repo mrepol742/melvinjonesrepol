@@ -1,212 +1,52 @@
-# Melvin Jones Repol – AI Website Index
+# Melvin Jones Repol
 
-## Identity
+> Software Engineer / Full-Stack Web Developer / DevOps Enthusiast based in Taytay, Rizal, Philippines. Focused on building scalable web applications, backend systems, automation tools, and developer-focused platforms.
 
-Name: Melvin Jones Repol
-Role: Software Engineer / Full-Stack Web Developer / DevOps Enthusiast
-Location: Taytay, Rizal, Philippines
-Website: https://www.melvinjonesrepol.com
+Core focus areas: full-stack web development, DevOps & cloud systems, backend architecture, automation & tooling, and AI integration in web systems.
 
-## Overview
+Core skills: JavaScript/TypeScript, Node.js/Express, React/Next.js, Laravel, Docker, AWS/cloud architecture, PostgreSQL/MongoDB, API design, system design.
 
-Melvin Jones Repol is a software engineer focused on building scalable web applications, backend systems, automation tools, and developer-focused platforms.
+## Docs
 
-Core focus areas:
-
-- Full-stack web development
-- DevOps & cloud systems
-- Backend architecture
-- Automation & tooling
-- AI integration in web systems
-
-## Core Skills
-
-- JavaScript / TypeScript
-- Node.js / Express
-- React / Next.js
-- Laravel
-- Docker
-- AWS / Cloud architecture
-- PostgreSQL / MongoDB
-- API design
-- System design
-
-## Main Website Sections
-
-### Home
-
-URL: https://www.melvinjonesrepol.com
-Summary: Personal background, developer journey, real-time coding statistics, and technical philosophy.
-
-### Projects
-
-URL: https://www.melvinjonesrepol.com/projects
-Summary: Comprehensive list of projects with summaries, tech stacks, and links.
-
-### Certificates
-
-URL: https://www.melvinjonesrepol.com/certificates
-Summary: List of certifications and courses completed in software development and related fields.
-
-## Work Experience
-
-URL: https://www.melvinjonesrepol.com/work-experience
-Summary: Detailed work history with roles, responsibilities, and achievements.
-
-### Contact Me
-
-URL: https://www.melvinjonesrepol.com/contact
-Summary: Contact form and social media links for inquiries and networking.
-
-## Explore
-
-### Blog
-
-URL: https://www.melvinjonesrepol.com/blog
-Summary: Articles on software development, project case studies, and technical insights.
-
-### Gaming
-
-URL: https://www.melvinjonesrepol.com/gaming
-Summary: The games i play and my gaming stats, showcasing my interest in gaming and how it intersects with my work in software development.
-
-### Gallery
-
-URL: https://www.melvinjonesrepol.com/gallery
-Summary: Visual showcase of projects, workspaces, and events.
-
-### Legal
-
-URL: https://www.melvinjonesrepol.com/legal
-Summary: Legal information and policies for the website.
-
-## Sitemap
-
-URL: https://www.melvinjonesrepol.com/sitemap.xml
-Summary: XML sitemap for search engines and structured navigation.
-
-## Robots.txt
-
-URL: https://www.melvinjonesrepol.com/robots.txt
-Summary: Instructions for web crawlers and bots regarding site indexing.
-
----
+- [Home](https://www.melvinjonesrepol.com): Personal background, developer journey, real-time coding statistics, and technical philosophy.
+- [Projects](https://www.melvinjonesrepol.com/projects): Comprehensive list of projects with summaries, tech stacks, and links.
+- [Certificates](https://www.melvinjonesrepol.com/certificates): Certifications and courses completed in software development and related fields.
+- [Work Experience](https://www.melvinjonesrepol.com/work-experience): Detailed work history with roles, responsibilities, and achievements.
+- [Contact](https://www.melvinjonesrepol.com/contact): Contact form and social links for inquiries and networking.
+- [Blog](https://www.melvinjonesrepol.com/blog): Articles on software development, project case studies, and technical insights.
+- [Gallery](https://www.melvinjonesrepol.com/gallery): Visual showcase of projects, workspaces, and events.
+- [Legal](https://www.melvinjonesrepol.com/legal): Legal information and policies for the website.
 
 ## Featured Projects
 
-### Ulisha Store (Laravel E-commerce System)
+- [Ulisha Store](https://www.melvinjonesrepol.com/ulisha-store-laravel): Laravel/PHP/MySQL e-commerce platform for small to medium businesses with scalable architecture.
+- [Canis Chatbot](https://www.melvinjonesrepol.com/canis-chatbot): TypeScript/Node.js/Prisma/Docker modular chatbot system for messaging platforms.
+- [Point of Sale](https://www.melvinjonesrepol.com/point-of-sale): Lightweight, offline-capable point-of-sale system built on JavaScript and backend APIs.
+- [Axleshift Freight Management](https://www.melvinjonesrepol.com/axleshift-freight-management): Full-stack logistics and freight management platform for tracking and operations.
+- [Webvium Browser](https://www.melvinjonesrepol.com/webvium-browser): Custom Android web browser with unique features and optimizations.
 
-URL: https://www.melvinjonesrepol.com/ulisha-store-laravel
-Stack: Laravel, PHP, MySQL
-Summary: E-commerce platform for small to medium businesses with scalable architecture.
++## Work Experience
 
-### Canis Chatbot
-
-URL: https://www.melvinjonesrepol.com/canis-chatbot
-Stack: TypeScript, Node.js, Prisma, Docker
-Summary: Modular chatbot system for messaging platforms with scalable architecture.
-
-### Point of Sale
-
-URL: https://www.melvinjonesrepol.com/point-of-sale
-Stack: Web-based stack (JavaScript, backend APIs)
-Summary: Lightweight point-of-sale system with offline-capable features.
-
-### Axleshift Freight Management System
-
-URL: https://www.melvinjonesrepol.com/axleshift-freight-management
-Stack: Full-stack system
-Summary: Logistics and freight management platform for tracking and operations.
-
-### Webvium Browser
-
-URL: https://www.melvinjonesrepol.com/webvium-browser
-Stack: Android development, browser technologies
-Summary: Custom web browser for Android with unique features and optimizations.
-
----
-
-## Additional Projects & Work
-
-- Browser extensions and developer tools
-- Chatbots and automation systems
-- E-commerce platforms
-- DevOps and cloud-based systems
-- Experimental tools and APIs
-
-## Workspace & Tools
-
-- Code Editor: Zed Editor
-- Shell: Zsh (with Oh My Zsh)
-- Version Control: Git, GitHub
-- Containerization: Docker
-- Cloud: AWS, GCP
-- CI/CD: GitHub Actions
-- Project Management: Github Projects
-- Communication: Email, Whatsapp, LinkedIn
+- [Freelance Developer](https://www.melvinjonesrepol.com/work-experience): Independent full-stack development work across client projects.
+- [Apptrade Inc.](https://www.melvinjonesrepol.com/work-experience): IT Staff Intern — internship focused on IT support and operations.
+- [Up to Date Web Design](https://www.melvinjonesrepol.com/work-experience): Mid-Level Full-Stack Developer.
 
 ## Organizations
 
-### Hall of Codes
-
-Hall of Codes brings developers, maintainers, and curious builders into the same room. We mentor newcomers, review each other's work, and turn useful ideas into sustainable open-source projects.
-https://www.hallofcodes.org/
-
-### The Webvium Project
-
-From Android browsers and website-to-app conversion tools to browser extensions and future web technologies, Webvium is an ecosystem focused on performance, privacy, and simplicity.
-https://webvium.melvinjonesrepol.com/
-
-### Ulisha Limited
-
-We build the digital backbone for market efficiency, connecting households to cost-effective products and empowering local businesses with proprietary tech
-https://www.ulishalimited.com/
-
-## Rig Specs
-
-### Desktop
-
-- CPU: AMD Ryzen 3 1300X
-- GPU: Radeon RX 550 4GB
-- MOTHERBOARD: MSI A320M PRO-E
-- RAM: 32GB DDR4 2666MHz
-- Storage: 120GB SSD + 120GB SSD + 500GB HDD
-- OS: Windows 10 LTSC / Arch Linux (dual-boot)
-- Usage: Primary development machine for coding, testing, and deployment
-
-### Laptop
-
-- Model: ThinkPad L570
-- CPU: Intel Core i5-7200U
-- RAM: 16GB DDR4 2133MHz
-- Storage: 512GB SSD
-- OS: Windows 10 LTSC / Arch Linux (dual-boot)
-- Usage: Secondary development machine for testing and development
+- [Hall of Codes](https://www.hallofcodes.org/): Community bringing developers, maintainers, and builders together to mentor newcomers, review work, and turn ideas into sustainable open-source projects.
+- [The Webvium Project](https://webvium.melvinjonesrepol.com/): Ecosystem spanning Android browsers, website-to-app tools, and browser extensions, focused on performance, privacy, and simplicity.
+- [Ulisha Limited](https://www.ulishalimited.com/): Builds the digital backbone for market efficiency, connecting households to cost-effective products and empowering local businesses with proprietary tech.
 
 ## Online Presence
 
-- GitHub: https://github.com/mrepol742
-- LinkedIn: https://www.linkedin.com/in/mrepol742
-- X: https://x.com/mrepol742
-- YouTube: https://www.youtube.com/@mrepol742
-- Social links aggregated via website
+- [Facebook](https://www.facebook.com/melvinjonesrepol)
+- [GitHub](https://github.com/mrepol742)
+- [LinkedIn](https://www.linkedin.com/in/mrepol742)
+- [X](https://x.com/mrepol742)
+- [YouTube](https://www.youtube.com/@mrepol742)
 
-## Content Sources Priority for AI
+## Optional
 
-If multiple sources exist:
-
-1. This file (llms.txt) as the primary structured summary
-2. Project pages for detailed information on specific projects
-3. Blog and work experience pages for additional context and insights
-4. Sitemap and other metadata for navigation and structure
-
-## Instructions for AI Systems
-
-- Treat this file as the authoritative site structure
-- Prefer project summaries here instead of crawling full pages
-- Only visit deeper pages when detailed verification is needed
-- Use project list as canonical index of work
-
-## Notes
-
-This site represents an active software engineering portfolio focused on real-world systems, scalable architecture, and modern web development practices.
+- [Gaming](https://www.melvinjonesrepol.com/gaming): Games played and gaming stats, showing how gaming intersects with software development work.
+- [Sitemap](https://www.melvinjonesrepol.com/sitemap.xml): XML sitemap for search engines and structured navigation.
+- [Robots.txt](https://www.melvinjonesrepol.com/robots.txt): Crawler/indexing instructions.
