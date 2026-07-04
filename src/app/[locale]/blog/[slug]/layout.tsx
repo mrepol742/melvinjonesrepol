@@ -1,4 +1,4 @@
-import GoogleAds from "@/components/common/metadata/GoogleAdsense";
+import AdBanner from "@/components/common/AdBanner";
 
 export default function BlogLayout({
   children,
@@ -10,7 +10,7 @@ export default function BlogLayout({
 
   return (
     <>
-      {isProduction && <GoogleAds />}
+      {isProduction && <AdBanner />}
       {children}
     </>
   );

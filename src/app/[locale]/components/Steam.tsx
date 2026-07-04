@@ -1,8 +1,10 @@
 import { fetchSteamLibrary, GameType } from "@/lib/steam/library";
 import { getTimeAgo, toHours } from "@/utils/date";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 
 export default async function Steam() {
+  const t = await getTranslations("steam");
   const steam: never[] | { games: GameType[]; last_fetched: string } =
     await fetchSteamLibrary();
   const steamActivities: GameType[] =
@@ -31,7 +33,7 @@ export default async function Steam() {
 
   function sanitizeGameName(name: string) {
     const isExplicit = explicitPatterns.some((pattern) => pattern.test(name));
-    return isExplicit ? "Private" : name;
+    return isExplicit ? t("private_game") : name;
   }
 
   return (
@@ -42,18 +44,17 @@ export default async function Steam() {
             className="text-sm font-semibold tracking-widest text-green-500 uppercase mb-3"
             data-aos="fade-up"
           >
-            Gaming Activity
+            {t("gaming_activity_label")}
           </span>
           <h2
             className="text-3xl md:text-4xl font-bold mb-4"
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            I do play games, you know?
+            {t("gaming_activity_title")}
           </h2>
           <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
-            A snapshot of my gaming activity across various genres and titles.
-            Tracked automatically to reflect real gaming time and habits.
+            {t("gaming_activity_description")}
           </p>
         </div>
 
@@ -62,10 +63,10 @@ export default async function Steam() {
             <p className="text-3xl font-bold">
               {toHours(totalPlaytime2Weeks)} hrs
             </p>
-            <p className="text-sm">in the last 14 days</p>
+            <p className="text-sm">{t("last_14_days")}</p>
           </div>
           <div className="text-right">
-            <p className="text-sm">Top game</p>
+            <p className="text-sm">{t("top_game_label")}</p>
             <p className="font-medium">{gameWithHighestPlaytime.name}</p>
           </div>
         </div>
@@ -86,7 +87,7 @@ export default async function Steam() {
           data-aos="fade-up"
           data-aos-delay={100}
         >
-          Last updated:{" "}
+          {t("last_updated_label")}{" "}
           {steam && "last_fetched" in steam && steam.last_fetched
             ? new Date(steam.last_fetched).toUTCString()
             : "—"}
@@ -99,18 +100,17 @@ export default async function Steam() {
             className="text-sm font-semibold tracking-widest text-indigo-500 uppercase mb-3"
             data-aos="fade-up"
           >
-            Top Games
+            {t("top_games_label")}
           </span>
           <h2
             className="text-3xl md:text-4xl font-bold mb-4"
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            My All-Time Favorites
+            {t("all_time_favorites_title")}
           </h2>
           <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
-            Games I’ve spent the most time playing and enjoying. A mix of
-            favorites that reflect my taste and playstyle over time.
+            {t("all_time_favorites_description")}
           </p>
         </div>
 
@@ -147,39 +147,39 @@ export default async function Steam() {
 
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className="px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-sm bg-gray-500/20">
-                    {toHours(game.playtime_forever)} Total Hours
+                    {toHours(game.playtime_forever)} {t("total_hours_label")}
                   </span>
                 </div>
 
                 <div className="flex flex-row gap-3">
                   {game.playtime_2weeks && game.playtime_2weeks > 0 && (
                     <div className="text-sm">
-                      <span className="font-bold">2 Weeks:</span>{" "}
+                      <span className="font-bold">{t("two_weeks_label")}</span>{" "}
                       {toHours(game.playtime_2weeks)}h
                     </div>
                   )}
 
                   {game.playtime_mac_forever > 0 && (
                     <div className="text-sm">
-                      <span className="font-bold">Mac:</span>{" "}
+                      <span className="font-bold">{t("mac_label")}</span>{" "}
                       {toHours(game.playtime_mac_forever)}h
                     </div>
                   )}
                   {game.playtime_linux_forever > 0 && (
                     <div className="text-sm">
-                      <span className="font-bold">Linux:</span>{" "}
+                      <span className="font-bold">{t("linux_label")}</span>{" "}
                       {toHours(game.playtime_linux_forever)}h
                     </div>
                   )}
                   {game.playtime_deck_forever > 0 && (
                     <div className="text-sm">
-                      <span className="font-bold">Deck:</span>{" "}
+                      <span className="font-bold">{t("deck_label")}</span>{" "}
                       {toHours(game.playtime_deck_forever)}h
                     </div>
                   )}
                   {game.rtime_last_played && game.rtime_last_played > 0 && (
                     <div className="text-sm">
-                      <span className="font-bold">Last Played:</span>{" "}
+                      <span className="font-bold">{t("last_played_label")}</span>{" "}
                       {getTimeAgo(game.rtime_last_played)}
                     </div>
                   )}
@@ -189,7 +189,7 @@ export default async function Steam() {
           ))}
         </div>
 
-        <span className="text-xs">Swipe left or right to see more...</span>
+        <span className="text-xs">{t("swipe_hint")}</span>
       </div>
     </>
   );

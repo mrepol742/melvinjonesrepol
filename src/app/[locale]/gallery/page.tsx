@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import GalleryComponent from "@/app/[locale]/gallery/components/Gallery";
 import { getAlternates } from "@/components/common/metadata/Alternatives";
+import { getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Gallery - Melvin Jones Repol",
@@ -182,7 +183,8 @@ const albums = [
   },
 ];
 
-export default function Gallery() {
+export default async function Gallery() {
+  const t = await getTranslations("gallery");
   const totalMedia = albums.reduce((sum, a) => sum + a.media.length, 0);
 
   return (
@@ -191,11 +193,11 @@ export default function Gallery() {
         <div className="relative flex min-h-screen flex-col px-6 py-12 md:px-10">
           <div className="my-auto py-14">
             <h1 className="text-[14vw] sm:text-[10vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8">
-              Visual
+              {t("title_line1")}
               <br />
-              <span className="opacity-40">project</span>
+              <span className="opacity-40">{t("title_line2")}</span>
               <br />
-              portfolio.
+              {t("title_line3")}
             </h1>
 
             <p
@@ -203,9 +205,7 @@ export default function Gallery() {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              A curated collection of images highlighting my personal projects,
-              design work, and creative digital solutions. Each album groups
-              related images or videos so you can browse by project.
+              {t("hero_description")}
             </p>
           </div>
 
@@ -216,11 +216,11 @@ export default function Gallery() {
           >
             <div>
               <p className="text-4xl font-black">{albums.length}</p>
-              <p className="mt-1 text-sm text-zinc-400">Albums</p>
+              <p className="mt-1 text-sm text-zinc-400">{t("albums_label")}</p>
             </div>
             <div>
               <p className="text-4xl font-black">{totalMedia}+</p>
-              <p className="mt-1 text-sm text-zinc-400">Media files</p>
+              <p className="mt-1 text-sm text-zinc-400">{t("media_files_label")}</p>
             </div>
             <div className="col-span-2 flex flex-wrap items-center gap-2">
               {["Web Apps", "Mobile", "Android", "UI/UX", "Portfolio"].map(

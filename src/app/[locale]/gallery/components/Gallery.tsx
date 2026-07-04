@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useTranslations } from "next-intl";
 import {
   faChevronLeft,
   faChevronRight,
@@ -23,6 +24,7 @@ type Album = {
 };
 
 export default function Gallery({ albums }: { albums: Album[] }) {
+  const t = useTranslations("gallery");
   const normalizedAlbums: (Album & { items: MediaItem[] })[] = albums.map(
     (a) => ({
       ...a,
@@ -89,7 +91,7 @@ export default function Gallery({ albums }: { albums: Album[] }) {
               />
               <div className="absolute left-3 bottom-3">
                 <span className="inline-block px-2 py-1 text-sm font-semibold text-muted rounded">
-                  {album.items.length} items
+                  {album.items.length} {t("items_count")}
                 </span>
               </div>
             </div>
@@ -118,13 +120,13 @@ export default function Gallery({ albums }: { albums: Album[] }) {
         className="text-sm text-muted hover:underline"
         aria-label="Back to albums"
       >
-        <span>←</span> Back to albums
+        <span>←</span> {t("back_to_albums")}
       </button>
 
       <div className="mb-6 flex items-center gap-4">
         <h2 className="text-lg font-semibold">{activeAlbum.title}</h2>
         <span className="ml-auto text-sm text-muted">
-          {activeAlbum.items.length} items
+          {activeAlbum.items.length} {t("items_count")}
         </span>
       </div>
 

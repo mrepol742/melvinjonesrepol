@@ -1,5 +1,6 @@
 import { fetchGithubEvents } from "@/lib/github/event";
 import { getTimeAgo } from "@/utils/date";
+import { getTranslations } from "next-intl/server";
 import {
   faCodeCommit,
   faCodeCompare,
@@ -16,6 +17,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default async function RecentGithubActivity() {
+  const t = await getTranslations("github_activity");
   const events = await fetchGithubEvents("mrepol742");
 
   function getEventType(event: string) {
@@ -69,25 +71,24 @@ export default async function RecentGithubActivity() {
   }
   function getEventDescription(event: any): string {
     const payload = event.payload;
-    const actor = event.actor;
 
     switch (event.type) {
       case "PushEvent":
-        return `Made a commit #${payload.head.slice(0, 7)} `;
+        return t("event_push", { hash: payload.head.slice(0, 7) });
       case "PublicEvent":
-        return `Marked this repo as public`;
+        return t("event_public");
       case "WatchEvent":
-        return `Starred this repo`;
+        return t("event_watch");
       case "ForkEvent":
-        return `Forked this repo`;
+        return t("event_fork");
       case "CreateEvent":
         return payload.description;
       case "PullRequestEvent":
-        return `${payload.action} #${payload.number}`;
+        return t("event_pr", { action: payload.action, number: payload.number });
       case "DeleteEvent":
-        return `Deleted ${payload.ref.split("/")[2]} ${payload.ref_type}`;
+        return t("event_delete", { ref: payload.ref.split("/")[2], ref_type: payload.ref_type });
       case "PullRequestReviewEvent":
-        return `Requested a review on this repo`;
+        return t("event_review");
       default:
         return "";
     }
@@ -132,7 +133,7 @@ export default async function RecentGithubActivity() {
                 {getEventDescription(event)}
               </a>
               <div className="text-xs text-gray-600 break-words">
-                {event.repo?.name || "unknown repo"}
+                {event.repo?.name || t("unknown_repo")}
               </div>
               <div className="text-xs text-gray-500">
                 {getTimeAgo(new Date("2026-05-02T11:59:11Z").getTime() / 1000)}

@@ -8,6 +8,7 @@ import {
   faServer,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useTranslations } from "next-intl";
 
 const API_URL = "https://stats.uptimerobot.com/api/getMonitorList/IZwUI4mLcR";
 
@@ -45,6 +46,7 @@ type Monitor = {
 };
 
 export default function SystemStatus() {
+  const t = useTranslations("uptime");
   const [monitors, setMonitors] = useState<Monitor[]>([]);
   const [loading, setLoading] = useState(true);
   const [lastUpdated, setLastUpdated] = useState<Date>();
@@ -88,15 +90,15 @@ export default function SystemStatus() {
         <div className="mb-10">
           <div className="inline-flex items-center gap-2 rounded-full border border-zinc-800 px-4 py-2 text-sm">
             <FontAwesomeIcon icon={faServer} />
-            Status Page
+            {t("status_page_badge")}
           </div>
 
           <h1 className="mt-5 text-5xl font-bold tracking-tight">
-            System Status
+            {t("title")}
           </h1>
 
           <p className="mt-3 text-zinc-400">
-            Live monitoring and uptime history
+            {t("subtitle")}
           </p>
         </div>
 
@@ -118,12 +120,12 @@ export default function SystemStatus() {
             <div>
               <h2 className="text-3xl font-bold">
                 {allOperational
-                  ? "All Systems Operational"
-                  : "Service Disruption Detected"}
+                  ? t("all_systems_operational")
+                  : t("service_disruption")}
               </h2>
 
               <p className="text-zinc-400 mt-1">
-                {onlineCount} of {monitors.length} services operational
+                {t("services_operational", { online: onlineCount, total: monitors.length })}
               </p>
             </div>
           </div>
@@ -132,19 +134,19 @@ export default function SystemStatus() {
         {/* Stats */}
         <div className="grid gap-4 md:grid-cols-3 mb-10">
           <div className="rounded-3xl border border-zinc-800 p-6">
-            <p className="text-zinc-500 text-sm">Total Services</p>
+            <p className="text-zinc-500 text-sm">{t("total_services")}</p>
 
             <h3 className="text-3xl font-bold mt-2">{monitors.length}</h3>
           </div>
 
           <div className="rounded-3xl border border-emerald-500 p-6">
-            <p className="text-emerald-400 text-sm">Operational</p>
+            <p className="text-emerald-400 text-sm">{t("operational")}</p>
 
             <h3 className="text-3xl font-bold mt-2">{onlineCount}</h3>
           </div>
 
           <div className="rounded-3xl border border-zinc-800 p-6">
-            <p className="text-zinc-500 text-sm">Last Refresh</p>
+            <p className="text-zinc-500 text-sm">{t("last_refresh")}</p>
 
             <h3 className="text-lg font-medium mt-2">
               {lastUpdated ? lastUpdated.toLocaleTimeString() : "--"}
@@ -156,22 +158,22 @@ export default function SystemStatus() {
         <div className="flex flex-wrap gap-5 text-xs text-zinc-400 mb-8">
           <div className="flex items-center gap-2">
             <div className="h-3 w-3 rounded bg-emerald-500" />
-            Excellent
+            {t("legend_excellent")}
           </div>
 
           <div className="flex items-center gap-2">
             <div className="h-3 w-3 rounded bg-sky-500" />
-            Good
+            {t("legend_good")}
           </div>
 
           <div className="flex items-center gap-2">
             <div className="h-3 w-3 rounded bg-red-500" />
-            Poor
+            {t("legend_poor")}
           </div>
 
           <div className="flex items-center gap-2">
             <div className="h-3 w-3 rounded bg-zinc-700" />
-            No Data
+            {t("legend_no_data")}
           </div>
         </div>
 
@@ -202,12 +204,12 @@ export default function SystemStatus() {
                     {monitor.statusClass === "success" ? (
                       <span className="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-4 py-2 text-sm text-emerald-400">
                         <FontAwesomeIcon icon={faCircleCheck} />
-                        Operational
+                        {t("status_operational")}
                       </span>
                     ) : (
                       <span className="inline-flex items-center gap-2 rounded-full bg-red-500/10 px-4 py-2 text-sm text-red-400">
                         <FontAwesomeIcon icon={faTriangleExclamation} />
-                        Incident
+                        {t("status_incident")}
                       </span>
                     )}
                   </div>
@@ -215,13 +217,13 @@ export default function SystemStatus() {
 
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-8">
                   <div>
-                    <p className="text-xs text-zinc-500">Current</p>
+                    <p className="text-xs text-zinc-500">{t("current_uptime")}</p>
 
                     <p className="text-2xl font-bold">{monitor.ratio.ratio}%</p>
                   </div>
 
                   <div>
-                    <p className="text-xs text-zinc-500">30 Days</p>
+                    <p className="text-xs text-zinc-500">{t("days_30")}</p>
 
                     <p className="text-2xl font-bold">
                       {monitor["30dRatio"].ratio}%
@@ -229,7 +231,7 @@ export default function SystemStatus() {
                   </div>
 
                   <div>
-                    <p className="text-xs text-zinc-500">90 Days</p>
+                    <p className="text-xs text-zinc-500">{t("days_90")}</p>
 
                     <p className="text-2xl font-bold">
                       {monitor["90dRatio"].ratio}%
@@ -239,7 +241,7 @@ export default function SystemStatus() {
 
                 {/* History */}
                 <div className="mt-8">
-                  <p className="text-sm text-zinc-400 mb-3">90 Day History</p>
+                  <p className="text-sm text-zinc-400 mb-3">{t("history_90_days")}</p>
 
                   <div className="flex gap-[2px]">
                     {monitor.dailyRatios.slice(-90).map((day, index) => (
@@ -266,7 +268,7 @@ export default function SystemStatus() {
                     <div className="flex items-center gap-2 text-red-400">
                       <FontAwesomeIcon icon={faClockRotateLeft} />
 
-                      <span className="font-medium">Last Incident</span>
+                      <span className="font-medium">{t("last_incident")}</span>
                     </div>
 
                     <p className="mt-2 text-xs">
@@ -274,12 +276,12 @@ export default function SystemStatus() {
                     </p>
 
                     <p className="text-sm text-zinc-500">
-                      Duration: {Math.round(monitor.lastDowntime.duration / 60)}{" "}
-                      minutes
+                      {t("duration_label")} {Math.round(monitor.lastDowntime.duration / 60)}{" "}
+                      {t("duration_minutes")}
                     </p>
 
                     <p className="text-sm text-zinc-500">
-                      Reason: {monitor.lastDowntime.reason}
+                      {t("reason_label")} {monitor.lastDowntime.reason}
                     </p>
                   </div>
                 )}

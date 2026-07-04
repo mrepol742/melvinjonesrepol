@@ -77,11 +77,11 @@ export default async function CertificatesPage({
         <div className="relative flex min-h-screen flex-col px-6 py-12 md:px-10">
           <div className="my-auto py-14">
             <h1 className="text-[14vw] sm:text-[10vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8">
-              Certified.
+              {t("title_line1")}
               <br />
-              <span className="opacity-40">Always</span>
+              <span className="opacity-40">{t("title_line2")}</span>
               <br />
-              Learning.
+              {t("title_line3")}
             </h1>
 
             <p
@@ -100,11 +100,11 @@ export default async function CertificatesPage({
           >
             <div>
               <p className="text-4xl font-black">{certificates.length}+</p>
-              <p className="mt-1 text-sm text-zinc-400">Certificates</p>
+              <p className="mt-1 text-sm text-zinc-400">{t("count_label")}</p>
             </div>
             <div>
               <p className="text-4xl font-black">5+</p>
-              <p className="mt-1 text-sm text-zinc-400">Platforms</p>
+              <p className="mt-1 text-sm text-zinc-400">{t("platforms_label")}</p>
             </div>
             <div className="col-span-2 flex flex-wrap items-center gap-2">
               {["Coursera", "Google", "IBM", "Sololearn", "Board Infinity"].map(
@@ -173,7 +173,7 @@ export default async function CertificatesPage({
           </div>
         )}
 
-        <span className="text-xs">Swipe left or right to view more...</span>
+        <span className="text-xs">{t("swipe_hint")}</span>
       </section>
     </main>
   );

@@ -92,11 +92,11 @@ export async function generateMetadata({
   if (!post) return notFound();
 
   return {
-    title: post.data.title ?? "Blog Post",
+    title: (post.data.title ?? "Blog Post") + " - Melvin Jones Repol",
     description: post.data.excerpt ?? "Read this blog post.",
     keywords: post.data.topics,
     openGraph: {
-      title: post.data.title,
+      title: (post.data.title ?? "Blog Post") + " - Melvin Jones Repol",
       description: post.data.excerpt,
       type: "article",
       siteName: "Melvin Jones Repol",
@@ -107,7 +107,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: post.data.title,
+      title: (post.data.title ?? "Blog Post") + " - Melvin Jones Repol",
       description: post.data.excerpt,
       creator: "@mrepol742",
     },

@@ -34,15 +34,11 @@ export default function Footer({
     const nextPath = `/${nextLocale}${normalizedPath || "/"}`;
     // replace and refresh to ensure the new locale is applied immediately
     router.replace(nextPath);
-    router.refresh();
   };
 
-  const TrustpilotWidget = dynamic(
-    () => import("../common/TrustPilotWidget"),
-    {
-      ssr: false,
-    }
-  );
+  const TrustpilotWidget = dynamic(() => import("../common/TrustPilotWidget"), {
+    ssr: false,
+  });
 
   return (
     <footer
@@ -220,6 +216,14 @@ export default function Footer({
           <div>
             <h4 className="text-sm font-semibold mb-2 text-white">Resources</h4>
             <ul className="space-y-1 text-sm">
+              <li>
+                <Link
+                  href="https://web-designs.melvinjonesrepol.com"
+                  className="hover:text-orange-500 text-blue-400"
+                >
+                  Web Design
+                </Link>
+              </li>
               <li>
                 <Link
                   href="https://wakatime.melvinjonesrepol.com"

@@ -1,6 +1,7 @@
 const Projects = [
   {
     title: "Clearflow",
+    key: "clearflow",
     description:
       "A modern community water billing and management system built with Expo (React Native) and Laravel.",
     ai_description:
@@ -13,6 +14,7 @@ const Projects = [
   },
   {
     title: "NPM Guard",
+    key: "npm_guard",
     description:
       "Due to the recent supply chain attacks, we developed NPM Guard to monitor and secure NPM package installations, ensuring the integrity and safety of your dependencies.",
     ai_description:
@@ -24,6 +26,7 @@ const Projects = [
   },
   {
     title: "Subscription-Based Digital Music Platform",
+    key: "digital_music_platform",
     description:
       "A centralized digital music platform offering curated remix content through a subscription-based access model managed by administrators.",
     ai_description:
@@ -34,6 +37,7 @@ const Projects = [
   },
   {
     title: "Enterprise Asset Management System",
+    key: "enterprise_ams",
     description:
       "An in-progress enterprise asset management platform with role-based access control, asset tracking, and assignment workflows, integrated with AWS Cognito for authentication and SSO.",
     ai_description:
@@ -44,6 +48,7 @@ const Projects = [
   },
   {
     title: "Digital Music Marketplace",
+    key: "digital_music_marketplace",
     description:
       "A web-based e-commerce platform that enables creators and vendors to distribute digital music content while allowing users to discover trending remixes and featured tracks.",
     ai_description:
@@ -54,6 +59,7 @@ const Projects = [
   },
   {
     title: "Payment & Order Management Integration",
+    key: "payment_order_management",
     description:
       "A client-focused backend integration project involving payment processing implementation and structured database architecture for order management workflows.",
     ai_description:
@@ -64,6 +70,7 @@ const Projects = [
   },
   {
     title: "Restaurant Ordering Platform",
+    key: "restaurant_ordering",
     description:
       "An Android-based restaurant ordering application connected to a centralized backend system for streamlined menu management and customer order processing.",
     ai_description:
@@ -74,6 +81,7 @@ const Projects = [
   },
   {
     title: "Learning & Creative Platform",
+    key: "learning_creative_platform",
     description:
       "An Android educational application designed to help users learn creative crafting techniques through guided tutorials, video lessons, project tracking, and interactive note-taking features.",
     ai_description:
@@ -84,6 +92,7 @@ const Projects = [
   },
   {
     title: "Hall of Codes Next",
+    key: "hall_of_codes_next",
     description:
       "This new version of Hall of Codes website built with Next.js. To promote the community, share knowledge, showcase projects and other awesome things.",
     ai_description:
@@ -96,6 +105,7 @@ const Projects = [
   },
   {
     title: "Ulisha Store Laravel",
+    key: "ulisha_store_laravel",
     description:
       "A modern and efficient e-commerce solutions tailored for small to medium-sized businesses specifically built with Laravel, enabling seamless setup and cost effective web hosting.",
     ai_description:
@@ -108,6 +118,7 @@ const Projects = [
   },
   {
     title: "Protocol Discussion Platform",
+    key: "protocol_discussion_platform",
     description:
       "A content-first discussion platform where users can post structured protocols, create discussion threads, and engage through comments, reviews, and voting — with intelligent search and filtering powered by Typesense.",
     ai_description:
@@ -121,8 +132,9 @@ const Projects = [
   },
   {
     title: "Web Surface Scan",
+    key: "web_surface_scan",
     description:
-      "A lightweight developer-focused tool for analyzing a website’s technology stack, integrations, and potential security flaws using automated browser inspection.",
+      "A lightweight developer-focused tool for analyzing a website's technology stack, integrations, and potential security flaws using automated browser inspection.",
     ai_description:
       "Web Surface Scan is a specialized Node.js utility designed for security researchers and developers. It performs automated, deep browser inspections to extract technology footprints, analyze third-party integrations, and flag potential client-side security vulnerabilities, all through a clean TypeScript-driven architecture.",
     type: "personal",
@@ -133,6 +145,7 @@ const Projects = [
   },
   {
     title: "DJ Mixer Console",
+    key: "dj_mixer_console",
     description:
       "A simple, lightweight and fully offline capable mixer console that showcase Web Audio API capabilities in handling audio streams and real time audio manipulation.",
     ai_description:
@@ -145,6 +158,7 @@ const Projects = [
   },
   {
     title: "Webvium Launcher",
+    key: "webvium_launcher",
     description:
       "Lightweight, modern and lightning-fast Android launcher thats currently in development. Built with speed, simplicity and customization in mind.",
     ai_description:
@@ -157,6 +171,7 @@ const Projects = [
   },
   {
     title: "Web Appp",
+    key: "web_appp",
     description:
       "A simple yet powerful template that lets you convert any website into a functional Android APK with minimal effort. This project makes it easy to package your web app for mobile distribution without requiring deep Android development knowledge.",
     ai_description:
@@ -168,10 +183,11 @@ const Projects = [
   },
   {
     title: "My Portfolio",
+    key: "my_portfolio",
     description:
       "A modern, responsive personal portfolio built with Next.js to showcase projects, skills, and achievements. Designed with performance and clean UI in mind, it highlights professional work in a sleek and interactive way.",
     ai_description:
-      "My personal portfolio serves as the digital nexus of my professional identity. Engineered with Next.js App Router and Tailwind CSS, it achieves perfect Lighthouse scores while delivering a fluid, interactive user experience. It features dynamic content rendering, custom UI components, and a robust architecture that easily scales as my career progresses.",
+      "My personal portfolio serves as the digital nexus of my professional identity. Engineered with Next.js App Router and Tailwind CSS, it achieves perfect Lighthouse scores while delivering a fluid, interactive user experience. It features dynamic content rendering, custom UI components, and a robust architecture that easily scales as my career evolves.",
     type: "personal",
     link: "https://www.melvinjonesrepol.com",
     repo: "https://github.com/mrepol742/melvinjonesrepol",
@@ -181,6 +197,7 @@ const Projects = [
   },
   {
     title: "Project Canis TG",
+    key: "project_canis_tg",
     description:
       "An extension of the Canis project adapted specifically for Telegram, bringing its features into the chat platform.",
     ai_description:
@@ -192,6 +209,7 @@ const Projects = [
   },
   {
     title: "Project Canis",
+    key: "project_canis",
     description:
       "A scalable, modular WhatsApp chatbot built in TypeScript. It leverages modern best practices, lean architecture, Prisma ORM, Dockerization, and environment-based configuration to deliver a robust, flexible successor to Orion.",
     ai_description:
@@ -204,6 +222,7 @@ const Projects = [
   },
   {
     title: "Ulisha Store Next",
+    key: "ulisha_store_next",
     description:
       "A modern and efficient e-commerce solution tailored for startups, enabling seamless setup and free hosting on Vercel and Supabase Cloud.",
     ai_description:
@@ -216,6 +235,7 @@ const Projects = [
   },
   {
     title: "Devops Capstone Project",
+    key: "devops_capstone",
     description:
       "Completed as part of the IBM Devops Capstone Project on Coursera.",
     ai_description:
@@ -228,6 +248,7 @@ const Projects = [
   },
   {
     title: "Point of Sale",
+    key: "point_of_sale",
     description:
       "A lightweight, web-based and offline-capable POS system built for flawless performance, supporting multi-department roles and full functionality.",
     ai_description:
@@ -240,6 +261,7 @@ const Projects = [
   },
   {
     title: "Axleshift Freight Management",
+    key: "axleshift_freight",
     description:
       "A freight management services. Providing Businesses with cutting-edge platform, security, and reliability.",
     ai_description:
@@ -252,6 +274,7 @@ const Projects = [
   },
   {
     title: "Second Chance Backend Nodejs Capstone",
+    key: "second_chance_capstone",
     description:
       "Completed as part of the IBM JavaScript Back-End Capstone Project on Coursera.",
     ai_description:
@@ -264,6 +287,7 @@ const Projects = [
   },
   {
     title: "LGU Management System",
+    key: "lgu_ms",
     description: "A Project for Project Management class.",
     ai_description:
       "Developed as an academic project, the LGU Management System is a PHP-based application designed to digitalize and streamline the administrative processes of Local Government Units. It emphasizes structured data management and user-friendly interfaces for government personnel.",
@@ -275,6 +299,7 @@ const Projects = [
   },
   {
     title: "Project Deep",
+    key: "project_deep",
     description:
       "A open-source collaboration! If you're eager to share your insights, tips, or experiences with a broader audience, contributing to Deep Repository is a fantastic opportunity.",
     ai_description:
@@ -287,6 +312,7 @@ const Projects = [
   },
   {
     title: "Project Orion",
+    key: "project_orion",
     description:
       "Meet the lightning-fast Facebook Messenger chatbot, seamlessly managing multiple accounts with access to 271 commands.",
     ai_description:
@@ -300,6 +326,7 @@ const Projects = [
   },
   {
     title: "Online Catering System",
+    key: "online_catering",
     description: "A Project for HCI Subject.",
     ai_description:
       "This Online Catering System was developed to explore the principles of Human-Computer Interaction (HCI). Built with PHP, the project focuses heavily on user experience (UX) design, ensuring that the process of booking catering services is intuitive, accessible, and visually cohesive.",
@@ -311,6 +338,7 @@ const Projects = [
   },
   {
     title: "Room Rental System",
+    key: "room_rental",
     description: "A Project for Web Dev Subject.",
     ai_description:
       "The Room Rental System is a foundational PHP web application designed to facilitate the listing and booking of rental properties. It demonstrates core web development skills including database schema design, session management, and server-side rendering.",
@@ -322,6 +350,7 @@ const Projects = [
   },
   {
     title: "Hall of Codes Vue",
+    key: "hall_of_codes_vue",
     description:
       "This is Hall of Codes website built with Vue.js. To promote the community, share knowledge, showcase projects and other awesome things.",
     ai_description:
@@ -334,6 +363,7 @@ const Projects = [
   },
   {
     title: "Webvium VPN",
+    key: "webvium_vpn",
     description:
       "Inspired from Webvium, Webvium VPN is a lightweight android VPN app focuses in speed, simplicity, security and privacy.",
     ai_description:
@@ -347,6 +377,7 @@ const Projects = [
   },
   {
     title: "mrepol742.github.io",
+    key: "mrepol742_github_io",
     description:
       "This is where i showcase my projects, landing pages, tools and other awesome things.",
     ai_description:
@@ -360,6 +391,7 @@ const Projects = [
   },
   {
     title: "Webvium Browser",
+    key: "webvium_browser",
     description:
       "A lightweight, fast, and privacy-focused Android web browser built entirely from scratch to deliver a secure and efficient browsing experience. Designed to balance speed, security, and functionality, it aims to provide all the essential features of modern browsers while staying minimal and resource-friendly.",
     ai_description:
@@ -374,6 +406,7 @@ const Projects = [
 export const Templates = [
   {
     title: "Laravel GraphQL",
+    key: "template_laravel_graphql",
     description:
       "A boilerplate template for building GraphQL APIs with Laravel, providing a solid foundation for rapid development and efficient API design.",
     ai_description:
@@ -382,6 +415,7 @@ export const Templates = [
   },
   {
     title: "Laravel React",
+    key: "template_laravel_react",
     description:
       "A boilerplate template for building React applications with Laravel, providing a solid foundation for rapid development and efficient API design.",
     ai_description:
@@ -390,6 +424,7 @@ export const Templates = [
   },
   {
     title: "Laravel React TypeScript",
+    key: "template_laravel_react_ts",
     description:
       "A boilerplate template for building React applications with Laravel and TypeScript, providing a solid foundation for rapid development and efficient API design.",
     ai_description:
@@ -398,6 +433,7 @@ export const Templates = [
   },
   {
     title: "Angular",
+    key: "template_angular",
     description:
       "A boilerplate template for building Angular applications, providing a solid foundation for rapid development and efficient API design.",
     ai_description:
@@ -406,6 +442,7 @@ export const Templates = [
   },
   {
     title: "Responsive Views",
+    key: "template_responsive_views",
     description:
       "An Android template using Fragments, bottom navbar, navigation drawer and floating action buttons.",
     ai_description:
@@ -414,6 +451,7 @@ export const Templates = [
   },
   {
     title: "Read CV",
+    key: "template_read_cv",
     description: "A simple CV template exported from read.cv.",
     ai_description:
       "A lightweight, heavily styled HTML/CSS template derived from modern CV aesthetics. It provides a clean, highly readable format for professionals looking to host their resumes statically.",

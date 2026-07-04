@@ -1,54 +1,18 @@
-const PhilosophySection = [
-  {
-    sub: "Mindset",
-    title: "Fire-and-Forget Culture",
-    description:
-      "A lot of developers rush to launch, then abandon the project and move on to the next one. Fast output feels good, but neglected software quickly becomes fragile, slow, and hard to maintain.",
-    takeaway: "Shipping is only the beginning — not the finish line.",
-  },
-  {
-    sub: "Approach",
-    title: "Build for Long-Term Quality",
-    description:
-      "I focus on clean architecture, maintainable code, and continuous improvement after release. Great products aren't just launched — they are cared for, refined, and scaled over time.",
-    takeaway: "Quality is a long-term commitment, not a one-time effort.",
-  },
-  {
-    sub: "Principle",
-    title: "We Don't Build Out of Convenience or Hype",
-    description:
-      "I build with purpose, not just to follow trends or use popular tools. I choose technologies and architectures that best fit the project’s needs and long-term goals, rather than what’s trendy or convenient at the moment.",
-    takeaway:
-      "Building with intention leads to more sustainable and impactful software.",
-  },
-  {
-    sub: "Mindset",
-    title: "Continuous Learning and Improvement",
-    description:
-      "I believe in the power of continuous learning and improvement. Staying curious, seeking feedback, and iterating on our work leads to better solutions and personal growth.",
-    takeaway: "Great engineers are lifelong learners.",
-  },
-  {
-    sub: "Work Philosophy",
-    title: "Building in Private, Delivering at Scale",
-    description:
-      "I don’t publicly showcase client projects out of respect for confidentiality and professional agreements. Many of the systems I’ve worked on are business-critical, and protecting that trust is a priority. Instead of focusing on names or logos, I emphasize the engineering behind the work—how systems are designed, how problems are solved, and how reliability and scalability are achieved in production environments.",
-    takeaway:
-      "Focus on engineering depth, system design, and real-world reliability rather than public project visibility.",
-  },
-  {
-    sub: "Responsibility",
-    title: "Ownership Beyond Deployment",
-    description:
-      "Writing code is only one part of the job. Real engineering starts when systems are in production—handling edge cases, unexpected failures, scaling pressures, and real user behavior. I take responsibility for the systems I work on beyond initial delivery, ensuring they remain stable, observable, and maintainable over time.",
-    takeaway:
-      "True engineering is measured in how well systems hold up after they go live.",
-  },
-];
-// I ain't Socrates, but who am I to say that this isn't a philosophy?
-// I just know that it's the one I live by when it comes to software development.
-// If you share these values, then we're probably on the same wavelength when it comes to building great software.
-export default function EngineeringPhilosophySection() {
+import { getTranslations } from "next-intl/server";
+
+// I ain’t Socrates, but who am I to say that this isn’t a philosophy?
+// I just know that it’s the one I live by when it comes to software development.
+// If you share these values, then we’re probably on the same wavelength when it comes to building great software.
+export default async function EngineeringPhilosophySection() {
+  const t = await getTranslations("engineering_philosophy");
+
+  const PhilosophySection = Array.from({ length: 6 }, (_, i) => ({
+    sub: t(`item_${i}_sub` as any),
+    title: t(`item_${i}_title` as any),
+    description: t(`item_${i}_description` as any),
+    takeaway: t(`item_${i}_takeaway` as any),
+  }));
+
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -86,11 +50,10 @@ export default function EngineeringPhilosophySection() {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div className="max-w-xl">
             <p className="text-sm uppercase tracking-widest font-semibold text-gray-500">
-              Great software is not built once — it is improved, maintained, and
-              trusted over time.
+              {t("signature")}
             </p>
             <p className="mt-2 text-sm md:text-base leading-relaxed font-medium">
-              Melvin Jones Repol
+              {t("author")}
             </p>
           </div>
         </div>

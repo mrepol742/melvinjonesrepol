@@ -1,4 +1,5 @@
 import { fetchCurrentStats } from "@/lib/wakatime/stat";
+import { getTranslations } from "next-intl/server";
 import { faLinux } from "@fortawesome/free-brands-svg-icons";
 import { faLaptop } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -15,6 +16,7 @@ function formatPct(value?: number | string) {
 }
 
 export default async function Wakatime() {
+  const t = await getTranslations("wakatime");
   const stats = await fetchCurrentStats();
 
   if (!stats) return null;
@@ -40,21 +42,21 @@ export default async function Wakatime() {
     <section className="w-full space-y-8">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <p className="text-xs uppercase tracking-[0.2em]">WakaTime</p>
+          <p className="text-xs uppercase tracking-[0.2em]">{t("section_label")}</p>
           <h2 className="text-2xl font-semibold tracking-tight">
-            Weekly Coding Analytics
+            {t("section_title")}
           </h2>
         </div>
 
         <div className="text-right">
           <p className="text-3xl font-bold leading-none">{totalHours} hrs</p>
-          <p className="text-sm">in the last 7 days</p>
+          <p className="text-sm">{t("last_7_days")}</p>
         </div>
       </div>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
         <article className="rounded-2xl border border-zinc-800 p-4 shadow-sm">
-          <p className="text-xs uppercase tracking-wide">Top Language</p>
+          <p className="text-xs uppercase tracking-wide">{t("top_language_label")}</p>
           <p className="mt-2 text-xl font-semibold">
             {topLanguages[0]?.name || "—"}
           </p>
@@ -66,12 +68,12 @@ export default async function Wakatime() {
         </article>
 
         <article className="rounded-2xl border border-zinc-800 p-4 shadow-sm">
-          <p className="text-xs uppercase tracking-wide">Editors</p>
+          <p className="text-xs uppercase tracking-wide">{t("editors_label")}</p>
           <p className="mt-2 font-medium leading-relaxed">{editors}</p>
         </article>
 
         <article className="rounded-2xl border border-zinc-800 p-4 shadow-sm">
-          <p className="text-xs uppercase tracking-wide">Operating Systems</p>
+          <p className="text-xs uppercase tracking-wide">{t("os_label")}</p>
           <p className="mt-2 font-medium leading-relaxed">
             <FontAwesomeIcon icon={faLinux} className="mr-2" />
             {operatingSystems}
@@ -79,7 +81,7 @@ export default async function Wakatime() {
         </article>
 
         <article className="rounded-2xl border border-zinc-800 p-4 shadow-sm">
-          <p className="text-xs uppercase tracking-wide">Machines</p>
+          <p className="text-xs uppercase tracking-wide">{t("machines_label")}</p>
           <p className="mt-2 font-medium leading-relaxed">
             <FontAwesomeIcon icon={faLaptop} className="mr-2" />
             {machines}
@@ -89,9 +91,9 @@ export default async function Wakatime() {
 
       <div className="mb-4 flex items-center justify-between">
         <p className="text-sm font-semibold uppercase tracking-wide">
-          Top Languages Breakdown
+          {t("breakdown_title")}
         </p>
-        <p className="text-xs">By time spent (7d)</p>
+        <p className="text-xs">{t("breakdown_subtitle")}</p>
       </div>
 
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
@@ -116,7 +118,7 @@ export default async function Wakatime() {
 
               <div className="mt-3">
                 <div className="mb-1 flex items-center justify-between text-xs">
-                  <span>Share</span>
+                  <span>{t("share_label")}</span>
                   <span>{formatPct(lang.percent)}</span>
                 </div>
                 <div className="h-1.5 w-full overflow-hidden rounded-full border border-zinc-800">
@@ -136,7 +138,7 @@ export default async function Wakatime() {
         data-aos="fade-up"
         data-aos-delay={100}
       >
-        Last updated:{" "}
+        {t("last_updated_label")}{" "}
         {stats.last_fetched ? new Date(stats.last_fetched).toUTCString() : "—"}
       </div>
     </section>
