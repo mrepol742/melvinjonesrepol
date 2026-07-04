@@ -39,7 +39,7 @@ export default async function LocaleLayout({
 
   const env = process.env.NEXT_PUBLIC_NODE_ENV || "production";
   const isProduction = env === "production";
-  const posts = getRecentPosts(5);
+  const posts = getRecentPosts(5, locale);
   const messages = await getMessages();
 
   return (

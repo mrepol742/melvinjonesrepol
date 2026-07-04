@@ -1,0 +1,219 @@
+---
+title: "The Most Dangerous Assumption in Software: Users Will Behave Normally"
+date: "2026-05-25"
+excerpt: "Most systems do not collapse because users are evil. They collapse because developers quietly assume everyone will behave correctly forever."
+topics: ["software-engineering", "security", "backend", "infrastructure"]
+---
+
+One of the weirdest things about software engineering is how often systems are built around imaginary perfect users. The ideal user uploads the correct file, clicks buttons slowly, types valid input, refreshes responsibly, never abuses APIs, and somehow understands undocumented edge cases through telepathy. Real users, meanwhile, are out here uploading 8GB TIFF files renamed to '.png', opening 37 tabs at once, rage-clicking payment buttons, and pasting entire novels into username fields because “it let me.” At some point every developer discovers the painful truth that software is not tested against ideal behavior. It is tested against chaos disguised as normal human activity.
+
+The scary part is that malicious users are not even the main problem most of the time. Regular users already generate enough unpredictable behavior to stress systems in creative ways nobody planned for.
+
+## The Lie Hidden Inside "Happy Path" Development
+
+Most applications start with happy path logic.
+
+User signs up.
+User logs in.
+User uploads file.
+Everything works.
+Everybody celebrates.
+
+Then reality arrives carrying a flamethrower.
+
+The problem is not that developers are careless. It is that normal behavior is impossible to define consistently. What seems obvious during development becomes dangerously incomplete once actual humans touch the product.
+
+A user might:
+
+- upload corrupted files
+- refresh requests repeatedly
+- submit forms twice
+- use terrible internet connections
+- open multiple sessions simultaneously
+- send malformed API requests accidentally
+- trigger race conditions without knowing it
+- copy-paste Unicode characters from another galaxy
+
+None of these actions are particularly malicious.
+
+But systems still break because they were designed around optimism instead of resilience.
+
+## Why "Nobody Would Ever Do That" Is Famous Last Words
+
+Every engineering team eventually says the phrase:
+
+> "Nobody would ever do that."
+
+That sentence has probably caused more outages than bad code.
+
+Because somebody always does it.
+
+Sometimes intentionally.
+Usually accidentally.
+
+I once watched a user upload the same file repeatedly because the progress bar froze for three seconds. The backend interpreted every retry as a fresh processing task. Within minutes the queue system looked like it had entered a psychological crisis.
+
+The user was not attacking the platform.
+
+They were just impatient.
+
+From their perspective, the button looked broken.
+
+## APIs Are Basically Public Escape Rooms
+
+One thing that changes your perspective fast is exposing an API publicly.
+
+Internal systems feel predictable because the environment is controlled. Public APIs are completely different. The second something becomes accessible on the internet, people begin interacting with it in ways that feel statistically impossible.
+
+Some examples:
+
+- requests with negative pagination
+- 10,000-character search queries
+- invalid JSON structures
+- timestamps from the year 1970
+- duplicated payloads sent 40 times per second
+- missing headers
+- impossible enum values
+- random mobile clients from outdated app versions
+
+The backend eventually becomes less about handling valid requests and more about surviving creative misuse.
+
+That sounds cynical, but honestly it is just reality.
+
+## Performance Problems Usually Start as Trust Problems
+
+A lot of performance issues are actually trust issues in disguise.
+
+For example:
+
+- trusting uploads without limits
+- trusting clients to throttle requests
+- trusting frontend validation
+- trusting users to submit forms once
+- trusting external services to respond quickly
+- trusting cache sizes to remain reasonable
+
+Systems fail because they assume cooperation.
+
+One project I worked on had image processing without strict size validation because “most users upload normal photos.” That worked perfectly until somebody uploaded an ultra-high-resolution image directly exported from professional editing software.
+
+The server did not crash immediately.
+
+It suffered first.
+
+There is a difference.
+
+## Tiny Edge Cases Become Massive Problems
+
+Developers love dismissing edge cases early because shipping matters.
+
+That makes sense.
+Until the edge case quietly becomes infrastructure lore.
+
+Some of the worst production issues come from tiny assumptions:
+
+- assuming IDs are always numeric
+- assuming arrays stay small
+- assuming requests arrive in order
+- assuming clocks stay synchronized
+- assuming retries are harmless
+- assuming users read instructions
+- assuming uploads are honest
+- assuming inputs remain human-sized
+
+One of my favorite bugs involved a username field that technically accepted unlimited characters because nobody added database constraints yet.
+
+Somebody pasted an entire cooking recipe into it.
+
+That field later appeared inside logs, notifications, and admin dashboards.
+
+Suddenly every internal tool looked deeply invested in lasagna.
+
+## Security Problems Rarely Look Dramatic at First
+
+Movies trained people to think security attacks are loud and cinematic.
+
+Real security problems usually begin quietly.
+
+A missing limit here.
+A forgotten validation there.
+A timeout nobody configured.
+An assumption nobody questioned.
+
+Then one day a harmless-looking request consumes all available memory because the application trusted input size too much.
+
+Or somebody uploads a compressed file that expands into absurd storage usage.
+
+Or retries accidentally become denial-of-service traffic.
+
+None of these failures require genius attackers.
+
+They just require systems designed around unrealistic behavior assumptions.
+
+## The Best Defensive Programming Feels Slightly Paranoid
+
+Good defensive engineering sometimes feels rude while building it.
+
+Rate limiting feels unnecessary until traffic spikes.
+Strict validation feels annoying until malformed data spreads everywhere.
+Timeouts feel pessimistic until dependencies start hanging forever.
+
+But systems survive because developers planned for bad behavior instead of hoping for good behavior.
+
+The most reliable systems I have seen all share similar traits:
+
+- strict input validation
+- hard resource limits
+- defensive defaults
+- isolated workloads
+- retry protection
+- graceful degradation
+- observability everywhere
+- distrust of user-controlled data
+
+Not because engineers hate users.
+
+Because engineers have met users.
+
+## Small Development Decisions Quietly Shape Stability
+
+A lot of resilience comes from boring implementation details nobody talks about during launch announcements.
+
+Things like:
+
+- limiting upload sizes
+- bounding recursion depth
+- adding database constraints
+- expiring sessions correctly
+- rejecting malformed payloads early
+- validating decompressed file sizes
+- preventing duplicate jobs
+- handling retries safely
+
+These decisions are not glamorous.
+
+Nobody posts screenshots of “successful input sanitization.”
+
+But these tiny details are usually the reason infrastructure survives weird traffic instead of becoming a cautionary conference talk six months later.
+
+## Building Safer Systems Means Accepting Weirdness
+
+One mindset shift helped me more than any framework or security checklist:
+
+Users are not predictable.
+
+Sometimes they are confused.
+Sometimes impatient.
+Sometimes creative.
+Sometimes exhausted.
+Sometimes accidentally destructive.
+
+And occasionally they are all five simultaneously.
+
+Software becomes more reliable once you stop designing around ideal behavior and start designing around realistic behavior.
+
+Because eventually somebody will upload the wrong file, double-click the dangerous button, spam refresh during a timeout, or accidentally discover a catastrophic edge case while trying to reset their password on airport Wi-Fi.
+
+And honestly, they probably will not even realize they almost took production down.
+
+That is what makes it dangerous.

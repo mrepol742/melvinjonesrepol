@@ -8,10 +8,13 @@ const SITE_NAME = "Melvin Jones Repol";
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og/blog.png`;
 
 export async function generateMetadata({
+  params,
   searchParams,
 }: {
+  params: Promise<{ locale: string }>;
   searchParams: Promise<{ page?: string }>;
 }): Promise<Metadata> {
+  const { locale } = await params;
   const sp = await searchParams;
 
   // Stricter parsing: reject decimals/garbage, clamp to a sane integer
@@ -27,7 +30,14 @@ export async function generateMetadata({
     ? "Browse my blog posts, insights, and experiences on software development, technology trends, and personal growth in the tech industry."
     : `Page ${page} of my blog posts covering software development, technology trends, and personal growth in the tech industry.`;
 
-  const canonicalPath = isFirstPage ? "/blog" : `/blog?page=${page}`;
+  const canonicalPath =
+    locale === "en"
+      ? isFirstPage
+        ? "/blog"
+        : `/blog?page=${page}`
+      : isFirstPage
+        ? `/${locale}/blog`
+        : `/${locale}/blog?page=${page}`;
   const canonicalUrl = `${SITE_URL}${canonicalPath}`;
 
   return {
@@ -70,15 +80,18 @@ export async function generateMetadata({
 }
 
 export default async function BlogPage({
+  params,
   searchParams,
 }: {
+  params: Promise<{ locale: string }>;
   searchParams: Promise<{ page?: string }>;
 }) {
+  const { locale } = await params;
   const sp = await searchParams;
   const rawPage = Number(sp?.page ?? "1");
   const page = Number.isFinite(rawPage) && rawPage > 0 ? rawPage : 1;
 
-  const posts = getAllPosts();
+  const posts = getAllPosts(locale);
   const totalPages = Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE));
 
   const safePage = Math.min(page, totalPages);
@@ -150,7 +163,11 @@ export default async function BlogPage({
               data-aos-delay={120 + index * 80}
             >
               <Link
-                href={`/blog/${post.slug}`}
+                href={
+                  locale === "en"
+                    ? `/blog/${post.slug}`
+                    : `/${locale}/blog/${post.slug}`
+                }
                 className="block h-full rounded-2xl border border-zinc-800 p-5 md:p-6 transition-transform duration-300 hover:-translate-y-0.5"
               >
                 <div className="flex items-center justify-between gap-3 mb-3">
@@ -184,10 +201,26 @@ export default async function BlogPage({
 
         <div className="flex gap-4 mt-6">
           {safePage > 1 && (
-            <Link href={`/blog?page=${safePage - 1}`}>← Prev</Link>
+            <Link
+              href={
+                locale === "en"
+                  ? `/blog?page=${safePage - 1}`
+                  : `/${locale}/blog?page=${safePage - 1}`
+              }
+            >
+              ← Prev
+            </Link>
           )}
           {safePage < totalPages && (
-            <Link href={`/blog?page=${safePage + 1}`}>Next →</Link>
+            <Link
+              href={
+                locale === "en"
+                  ? `/blog?page=${safePage + 1}`
+                  : `/${locale}/blog?page=${safePage + 1}`
+              }
+            >
+              Next →
+            </Link>
           )}
         </div>
       </section>
