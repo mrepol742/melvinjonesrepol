@@ -5,11 +5,26 @@ const baseUrl =
     ? "https://www.melvinjonesrepol.com"
     : "http://localhost:3000";
 
-export function getAlternates(path: string) {
+function withLocalePrefix(path: string, locale?: string) {
+  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+
+  if (!locale || locale === "en") {
+    return normalizedPath;
+  }
+
+  return `/${locale}${normalizedPath}`;
+}
+
+export function getAlternates(path: string, locale?: string) {
+  const canonicalPath = withLocalePrefix(path, locale);
+
   return {
-    canonical: `${baseUrl}/${path}`,
+    canonical: `${baseUrl}${canonicalPath}`,
     languages: Object.fromEntries(
-      supportedLocales.map((l) => [l, `${baseUrl}/${l}${path}`]),
+      ["en", ...supportedLocales].map((l) => [
+        l,
+        `${baseUrl}${withLocalePrefix(path, l)}`,
+      ]),
     ),
     types: {
       "application/xml": `${baseUrl}/sitemap.xml`,

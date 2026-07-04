@@ -2,11 +2,18 @@ import QRCodeGeneratorTool from "@/app/[locale]/tools/components/QRCodeGenerator
 import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "QR Code Generator - Melvin Jones Repol",
-  description:
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
+    title: "QR Code Generator - Melvin Jones Repol",
+    description:
     "Generate QR codes for URLs, text, and more with our easy-to-use QR Code Generator tool. Create custom QR codes for your business, events, or personal use in seconds.",
-  keywords: [
+    keywords: [
     "QR Code Generator",
     "Generate QR Codes",
     "QR Code Creator",
@@ -14,8 +21,8 @@ export const metadata: Metadata = {
     "Free QR Code Generator",
     "Online QR Code Generator",
   ],
-  alternates: getAlternates("/tools/qrcode-generator"),
-  openGraph: {
+    alternates: getAlternates("/tools/qrcode-generator", locale),
+    openGraph: {
     title: "QR Code Generator - Melvin Jones Repol",
     description:
       "Generate QR codes for URLs, text, and more with our easy-to-use QR Code Generator tool. Create custom QR codes for your business, events, or personal use in seconds.",
@@ -32,7 +39,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-  twitter: {
+    twitter: {
     card: "summary_large_image",
     title: "QR Code Generator - Melvin Jones Repol",
     description:
@@ -40,7 +47,8 @@ export const metadata: Metadata = {
     images: ["https://www.melvinjonesrepol.com/images/melvinjonesrepol.png"],
     creator: "@mrepol742",
   },
-};
+  };
+}
 
 export default function QRCodeGenerator() {
   return <QRCodeGeneratorTool />;

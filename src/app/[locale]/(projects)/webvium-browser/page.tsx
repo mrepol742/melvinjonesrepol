@@ -2,11 +2,18 @@ import { getAlternates } from "@/components/common/metadata/Alternatives";
 import Project from "@/components/ui/Project";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Download Webvium Browser - Melvin Jones Repol",
-  description:
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
+    title: "Download Webvium Browser - Melvin Jones Repol",
+    description:
     "A lightweight, lightning-fast, ad-blocker and beautifully designed web browser for Android.",
-  keywords: [
+    keywords: [
     "Webvium Browser",
     "Android Browser",
     "Lightweight Browser",
@@ -22,8 +29,8 @@ export const metadata: Metadata = {
     "Adblock",
     "Built-in browser adblock",
   ],
-  alternates: getAlternates("/webvium-browser"),
-  openGraph: {
+    alternates: getAlternates("/webvium-browser", locale),
+    openGraph: {
     title: "Download Webvium Browser - Melvin Jones Repol",
     description:
       "A lightweight, lightning-fast, ad-blocker and beautifully designed web browser for Android.",
@@ -40,7 +47,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-  twitter: {
+    twitter: {
     card: "summary_large_image",
     title: "Download Webvium Browser - Melvin Jones Repol",
     description:
@@ -48,7 +55,8 @@ export const metadata: Metadata = {
     images: ["https://www.melvinjonesrepol.com/images/webvium-banner.png"],
     creator: "@mrepol742",
   },
-};
+  };
+}
 
 const Images = [
   "/images/webvium-1.jpg",

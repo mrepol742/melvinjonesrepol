@@ -2,11 +2,18 @@ import { getAlternates } from "@/components/common/metadata/Alternatives";
 import Project from "@/components/ui/Project";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Orion Chatbot - Melvin Jones Repol",
-  description:
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
+    title: "Orion Chatbot - Melvin Jones Repol",
+    description:
     "Meet the lightning-fast Facebook Messenger chatbot, seamlessly managing multiple accounts with access to 271 commands.",
-  keywords: [
+    keywords: [
     "Orion Chatbot",
     "Facebook Messenger Bot",
     "Chatbot",
@@ -16,8 +23,8 @@ export const metadata: Metadata = {
     "AI Chatbot",
     "Orion Bot",
   ],
-  alternates: getAlternates("/orion-chatbot"),
-  openGraph: {
+    alternates: getAlternates("/orion-chatbot", locale),
+    openGraph: {
     title: "Orion Chatbot - Melvin Jones Repol",
     description:
       "Meet the lightning-fast Facebook Messenger chatbot, seamlessly managing multiple accounts with access to 271 commands.",
@@ -34,7 +41,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-  twitter: {
+    twitter: {
     card: "summary_large_image",
     title: "Orion Chatbot - Melvin Jones Repol",
     description:
@@ -42,7 +49,8 @@ export const metadata: Metadata = {
     images: ["https://opengraph.githubassets.com/1/mrepol742/project-orion"],
     creator: "@mrepol742",
   },
-};
+  };
+}
 
 const Images = [
   "/images/orion-1.jpg",
@@ -60,7 +68,7 @@ const SoftwareApplication = {
   operatingSystem: "CrossPlatform",
   applicationCategory: "Chatbot",
   applicationSubCategory: "MessagingApplication",
-  description:
+    description:
     "Meet the lightning-fast Facebook Messenger chatbot, seamlessly managing multiple accounts with access to 271 commands.",
   creator: {
     "@type": "Person",

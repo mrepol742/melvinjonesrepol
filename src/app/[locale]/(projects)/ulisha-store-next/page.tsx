@@ -2,48 +2,56 @@ import { getAlternates } from "@/components/common/metadata/Alternatives";
 import Project from "@/components/ui/Project";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Ulisha Store Next - Melvin Jones Repol",
-  description:
-    "A modern and efficient e-commerce solution tailored for startups, enabling seamless setup and free hosting on Vercel and Supabase Cloud.",
-  keywords: [
-    "Ulisha Store Next",
-    "Online Shopping",
-    "E-commerce",
-    "Shopping",
-    "Retail",
-    "E-commerce Platform",
-    "E-commerce",
-    "E-commerce startup",
-    "New e-commerce platform for startups",
-  ],
-  alternates: getAlternates("/ulisha-store-next"),
-  openGraph: {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
     title: "Ulisha Store Next - Melvin Jones Repol",
     description:
       "A modern and efficient e-commerce solution tailored for startups, enabling seamless setup and free hosting on Vercel and Supabase Cloud.",
-    url: "https://www.melvinjonesrepol.com/ulisha-store-next",
-    siteName: "Melvin Jones Repol",
-    images: [
-      {
-        url: "https://www.melvinjonesrepol.com/images/ulisha-store-1.png",
-        width: 800,
-        height: 600,
-        alt: "Ulisha Store Screenshot",
-      },
+    keywords: [
+      "Ulisha Store Next",
+      "Online Shopping",
+      "E-commerce",
+      "Shopping",
+      "Retail",
+      "E-commerce Platform",
+      "E-commerce",
+      "E-commerce startup",
+      "New e-commerce platform for startups",
     ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Ulisha Store Next - Melvin Jones Repol",
-    description:
-      "A modern and efficient e-commerce solution tailored for startups, enabling seamless setup and free hosting on Vercel and Supabase Cloud.",
-    images: ["https://www.melvinjonesrepol.com/images/ulisha-store-1.png"],
-    creator: "@mrepol742",
-  },
-};
+    alternates: getAlternates("/ulisha-store-next", locale),
+    openGraph: {
+      title: "Ulisha Store Next - Melvin Jones Repol",
+      description:
+        "A modern and efficient e-commerce solution tailored for startups, enabling seamless setup and free hosting on Vercel and Supabase Cloud.",
+      url: "https://www.melvinjonesrepol.com/ulisha-store-next",
+      siteName: "Melvin Jones Repol",
+      images: [
+        {
+          url: "https://www.melvinjonesrepol.com/images/ulisha-store-1.png",
+          width: 800,
+          height: 600,
+          alt: "Ulisha Store Screenshot",
+        },
+      ],
+      locale: "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Ulisha Store Next - Melvin Jones Repol",
+      description:
+        "A modern and efficient e-commerce solution tailored for startups, enabling seamless setup and free hosting on Vercel and Supabase Cloud.",
+      images: ["https://www.melvinjonesrepol.com/images/ulisha-store-1.png"],
+      creator: "@mrepol742",
+    },
+  };
+}
 
 const Images = [
   "/images/ulisha-store-1.png",

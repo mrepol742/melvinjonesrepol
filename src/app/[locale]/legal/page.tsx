@@ -3,11 +3,18 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Legal Documents - Melvin Jones Repol",
-  description: "Review our legal documents and policies",
-  alternates: getAlternates("/legal"),
-  openGraph: {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
+    title: "Legal Documents - Melvin Jones Repol",
+    description: "Review our legal documents and policies",
+    alternates: getAlternates("/legal", locale),
+    openGraph: {
     title: "Legal Documents - Melvin Jones Repol",
     description: "Review our legal documents and policies",
     url: "https://www.melvinjonesrepol.com/legal",
@@ -23,7 +30,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-  twitter: {
+    twitter: {
     card: "summary_large_image",
     title: "Legal Documents - Melvin Jones Repol",
     description: "Review our legal documents and policies",
@@ -32,7 +39,8 @@ export const metadata: Metadata = {
     ],
     creator: "@mrepol742",
   },
-};
+  };
+}
 
 const legalLinks = [
   {

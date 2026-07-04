@@ -4,11 +4,18 @@ import SearchForm from "@/components/ui/SearchForm";
 import { getTranslations } from "next-intl/server";
 import { getAlternates } from "@/components/common/metadata/Alternatives";
 
-export const metadata: Metadata = {
-  title: "Certificates - Melvin Jones Repol",
-  description:
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
+    title: "Certificates - Melvin Jones Repol",
+    description:
     "A collection of certificates I have earned through various courses and programs, showcasing my commitment to continuous learning and professional development in software engineering and DevOps.",
-  keywords: [
+    keywords: [
     "Certificates",
     "Coursera",
     "Google",
@@ -23,8 +30,8 @@ export const metadata: Metadata = {
     "Laravel",
     "PHP",
   ],
-  alternates: getAlternates("/certificates"),
-  openGraph: {
+    alternates: getAlternates("/certificates", locale),
+    openGraph: {
     title: "Certificates - Melvin Jones Repol",
     description:
       "A collection of certificates I have earned through various courses and programs, showcasing my commitment to continuous learning and professional development in software engineering and DevOps.",
@@ -41,7 +48,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-  twitter: {
+    twitter: {
     card: "summary_large_image",
     title: "Certificates - Melvin Jones Repol",
     description:
@@ -51,7 +58,8 @@ export const metadata: Metadata = {
     ],
     creator: "@mrepol742",
   },
-};
+  };
+}
 
 export default async function CertificatesPage({
   searchParams,

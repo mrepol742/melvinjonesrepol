@@ -2,12 +2,19 @@ import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Developer Client Agreement - Melvin Jones Repol",
-  description:
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
+    title: "Developer Client Agreement - Melvin Jones Repol",
+    description:
     "Developer Client Agreement for services provided by Melvin Jones Repol.",
-  alternates: getAlternates("/legal/developer-client-agreement"),
-  openGraph: {
+    alternates: getAlternates("/legal/developer-client-agreement", locale),
+    openGraph: {
     title: "Developer Client Agreement - Melvin Jones Repol",
     description:
       "Developer Client Agreement for services provided by Melvin Jones Repol.",
@@ -24,7 +31,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-  twitter: {
+    twitter: {
     card: "summary_large_image",
     title: "Developer Client Agreement - Melvin Jones Repol",
     description:
@@ -34,7 +41,8 @@ export const metadata: Metadata = {
     ],
     creator: "@mrepol742",
   },
-};
+  };
+}
 
 export default function DeveloperClientAgreement() {
   return (

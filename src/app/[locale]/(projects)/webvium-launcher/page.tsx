@@ -2,18 +2,25 @@ import { getAlternates } from "@/components/common/metadata/Alternatives";
 import Project from "@/components/ui/Project";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Download Webvium Launcher - Melvin Jones Repol",
-  description:
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
+    title: "Download Webvium Launcher - Melvin Jones Repol",
+    description:
     "Lightweight, modern and lightning-fast Android launcher thats currently in development. Built with speed, simplicity and customization in mind.",
-  keywords: [
+    keywords: [
     "Webvium Launcher",
     "Android Launcher",
     "Lightweight Launcher",
     "Fast Launcher",
   ],
-  alternates: getAlternates("/webvium-launcher"),
-  openGraph: {
+    alternates: getAlternates("/webvium-launcher", locale),
+    openGraph: {
     title: "Download Webvium Launcher - Melvin Jones Repol",
     description:
       "Lightweight, modern and lightning-fast Android launcher thats currently in development. Built with speed, simplicity and customization in mind.",
@@ -23,14 +30,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-  twitter: {
+    twitter: {
     card: "summary_large_image",
     title: "Download Webvium Launcher - Melvin Jones Repol",
     description:
       "Lightweight, modern and lightning-fast Android launcher thats currently in development. Built with speed, simplicity and customization in mind.",
     creator: "@mrepol742",
   },
-};
+  };
+}
 
 export default async function WebviumLauncher() {
   const softwareApplication = {

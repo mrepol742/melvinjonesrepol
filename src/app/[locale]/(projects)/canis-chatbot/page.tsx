@@ -2,45 +2,53 @@ import { Metadata } from "next";
 import Project from "@/components/ui/Project";
 import { getAlternates } from "@/components/common/metadata/Alternatives";
 
-export const metadata: Metadata = {
-  title: "Canis Chatbot - Melvin Jones Repol",
-  description:
-    "A scalable, modular WhatsApp chatbot built in TypeScript. It leverages modern best practices, lean architecture, Prisma ORM, Dockerization, and environment-based configuration to deliver a robust, flexible successor to Orion.",
-  keywords: [
-    "Canis Chatbot",
-    "WhatsApp Bot",
-    "Chatbot",
-    "WhatsApp Automation",
-    "AI Chatbot",
-    "Canis Bot",
-  ],
-  alternates: getAlternates("/canis-chatbot"),
-  openGraph: {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
     title: "Canis Chatbot - Melvin Jones Repol",
     description:
       "A scalable, modular WhatsApp chatbot built in TypeScript. It leverages modern best practices, lean architecture, Prisma ORM, Dockerization, and environment-based configuration to deliver a robust, flexible successor to Orion.",
-    url: "https://www.melvinjonesrepol.com/canis-chatbot",
-    siteName: "Melvin Jones Repol",
-    images: [
-      {
-        url: "https://opengraph.githubassets.com/1/mrepol742/project-canis",
-        width: 800,
-        height: 600,
-        alt: "Canis Chatbot Screenshot",
-      },
+    keywords: [
+      "Canis Chatbot",
+      "WhatsApp Bot",
+      "Chatbot",
+      "WhatsApp Automation",
+      "AI Chatbot",
+      "Canis Bot",
     ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Canis Chatbot - Melvin Jones Repol",
-    description:
-      "A scalable, modular WhatsApp chatbot built in TypeScript. It leverages modern best practices, lean architecture, Prisma ORM, Dockerization, and environment-based configuration to deliver a robust, flexible successor to Orion.",
-    images: ["https://opengraph.githubassets.com/1/mrepol742/project-canis"],
-    creator: "@mrepol742",
-  },
-};
+    alternates: getAlternates("/canis-chatbot", locale),
+    openGraph: {
+      title: "Canis Chatbot - Melvin Jones Repol",
+      description:
+        "A scalable, modular WhatsApp chatbot built in TypeScript. It leverages modern best practices, lean architecture, Prisma ORM, Dockerization, and environment-based configuration to deliver a robust, flexible successor to Orion.",
+      url: "https://www.melvinjonesrepol.com/canis-chatbot",
+      siteName: "Melvin Jones Repol",
+      images: [
+        {
+          url: "https://opengraph.githubassets.com/1/mrepol742/project-canis",
+          width: 800,
+          height: 600,
+          alt: "Canis Chatbot Screenshot",
+        },
+      ],
+      locale: "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Canis Chatbot - Melvin Jones Repol",
+      description:
+        "A scalable, modular WhatsApp chatbot built in TypeScript. It leverages modern best practices, lean architecture, Prisma ORM, Dockerization, and environment-based configuration to deliver a robust, flexible successor to Orion.",
+      images: ["https://opengraph.githubassets.com/1/mrepol742/project-canis"],
+      creator: "@mrepol742",
+    },
+  };
+}
 
 const Images = [
   "/images/canis-1.png",

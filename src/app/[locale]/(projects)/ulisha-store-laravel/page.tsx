@@ -2,52 +2,60 @@ import { getAlternates } from "@/components/common/metadata/Alternatives";
 import Project from "@/components/ui/Project";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Ulisha Store Laravel - Melvin Jones Repol",
-  description:
-    "A modern and efficient e-commerce solutions tailored for small to medium-sized businesses specifically built with Laravel, enabling seamless setup and cost effective web hosting.",
-  keywords: [
-    "Ulisha Store Laravel",
-    "Online Shopping",
-    "E-commerce",
-    "Shopping",
-    "Retail",
-    "E-commerce Platform",
-    "E-commerce",
-    "E-commerce startup",
-    "New e-commerce platform for startups",
-    "Laravel e-commerce solution",
-    "Hybrid e-commerce platform",
-  ],
-  alternates: getAlternates("/ulisha-store-laravel"),
-  openGraph: {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
     title: "Ulisha Store Laravel - Melvin Jones Repol",
     description:
       "A modern and efficient e-commerce solutions tailored for small to medium-sized businesses specifically built with Laravel, enabling seamless setup and cost effective web hosting.",
-    url: "https://www.melvinjonesrepol.com/ulisha-store-laravel",
-    siteName: "Melvin Jones Repol",
-    images: [
-      {
-        url: "https://www.melvinjonesrepol.com/images/ulisha-store-laravel.png",
-        width: 800,
-        height: 600,
-        alt: "Ulisha Store Screenshot",
-      },
+    keywords: [
+      "Ulisha Store Laravel",
+      "Online Shopping",
+      "E-commerce",
+      "Shopping",
+      "Retail",
+      "E-commerce Platform",
+      "E-commerce",
+      "E-commerce startup",
+      "New e-commerce platform for startups",
+      "Laravel e-commerce solution",
+      "Hybrid e-commerce platform",
     ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Ulisha Store Laravel - Melvin Jones Repol",
-    description:
-      "A modern and efficient e-commerce solutions tailored for small to medium-sized businesses specifically built with Laravel, enabling seamless setup and cost effective web hosting.",
-    images: [
-      "https://www.melvinjonesrepol.com/images/ulisha-store-laravel.png",
-    ],
-    creator: "@mrepol742",
-  },
-};
+    alternates: getAlternates("/ulisha-store-laravel", locale),
+    openGraph: {
+      title: "Ulisha Store Laravel - Melvin Jones Repol",
+      description:
+        "A modern and efficient e-commerce solutions tailored for small to medium-sized businesses specifically built with Laravel, enabling seamless setup and cost effective web hosting.",
+      url: "https://www.melvinjonesrepol.com/ulisha-store-laravel",
+      siteName: "Melvin Jones Repol",
+      images: [
+        {
+          url: "https://www.melvinjonesrepol.com/images/ulisha-store-laravel.png",
+          width: 800,
+          height: 600,
+          alt: "Ulisha Store Screenshot",
+        },
+      ],
+      locale: "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Ulisha Store Laravel - Melvin Jones Repol",
+      description:
+        "A modern and efficient e-commerce solutions tailored for small to medium-sized businesses specifically built with Laravel, enabling seamless setup and cost effective web hosting.",
+      images: [
+        "https://www.melvinjonesrepol.com/images/ulisha-store-laravel.png",
+      ],
+      creator: "@mrepol742",
+    },
+  };
+}
 
 const Images = [
   "/images/ulisha-store-laravel.png",

@@ -26,47 +26,55 @@ import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 
 export const revalidate = 10800;
 
-export const metadata: Metadata = {
-  title: "Melvin Jones Repol - Software Engineer",
-  description:
-    "I'm Melvin Jones Repol, a Software Engineer who builds practical, scalable software — full-stack web, Android apps, and DevOps. From planning to production.",
-  keywords: [
-    "Melvin Jones Repol",
-    "software engineer",
-    "web development",
-    "full-stack development",
-    "android development",
-    "portfolio",
-  ],
-  alternates: getAlternates(""),
-  openGraph: {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
     title: "Melvin Jones Repol - Software Engineer",
     description:
       "I'm Melvin Jones Repol, a Software Engineer who builds practical, scalable software — full-stack web, Android apps, and DevOps. From planning to production.",
-    url: "https://www.melvinjonesrepol.com",
-    siteName: "Melvin Jones Repol",
-    images: [
-      {
-        url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
-        width: 1200,
-        height: 630,
-        alt: "Melvin Jones Repol",
-      },
+    keywords: [
+      "Melvin Jones Repol",
+      "software engineer",
+      "web development",
+      "full-stack development",
+      "android development",
+      "portfolio",
     ],
-    locale: "en_US",
-    type: "profile",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Melvin Jones Repol - Software Engineer",
-    description:
-      "I'm Melvin Jones Repol, a Software Engineer who builds practical, scalable software — full-stack web, Android apps, and DevOps. From planning to production.",
-    images: [
-      "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
-    ],
-    creator: "@mrepol742",
-  },
-};
+    alternates: getAlternates("", locale),
+    openGraph: {
+      title: "Melvin Jones Repol - Software Engineer",
+      description:
+        "I'm Melvin Jones Repol, a Software Engineer who builds practical, scalable software — full-stack web, Android apps, and DevOps. From planning to production.",
+      url: "https://www.melvinjonesrepol.com",
+      siteName: "Melvin Jones Repol",
+      images: [
+        {
+          url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+          width: 1200,
+          height: 630,
+          alt: "Melvin Jones Repol",
+        },
+      ],
+      locale: "en_US",
+      type: "profile",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Melvin Jones Repol - Software Engineer",
+      description:
+        "I'm Melvin Jones Repol, a Software Engineer who builds practical, scalable software — full-stack web, Android apps, and DevOps. From planning to production.",
+      images: [
+        "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+      ],
+      creator: "@mrepol742",
+    },
+  };
+}
 
 export default async function Home({
   params,

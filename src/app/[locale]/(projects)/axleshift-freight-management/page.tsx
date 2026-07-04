@@ -2,49 +2,57 @@ import { Metadata } from "next";
 import Project from "@/components/ui/Project";
 import { getAlternates } from "@/components/common/metadata/Alternatives";
 
-export const metadata: Metadata = {
-  title: "Axleshift Freight Management - Melvin Jones Repol",
-  description:
-    "A freight management services. Providing Businesses with cutting-edge platform, security, and reliability.",
-  keywords: [
-    "Axleshift Freight Management",
-    "Freight Management",
-    "Logistics",
-    "Business Solutions",
-    "Supply Chain",
-    "Transportation",
-    "Cargo Services",
-    "Fleet Management",
-    "Logistics Software",
-    "Business Platform",
-  ],
-  alternates: getAlternates("/axleshift-freight-management"),
-  openGraph: {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
     title: "Axleshift Freight Management - Melvin Jones Repol",
     description:
       "A freight management services. Providing Businesses with cutting-edge platform, security, and reliability.",
-    url: "https://www.melvinjonesrepol.com/axleshift-freight-management",
-    siteName: "Melvin Jones Repol",
-    images: [
-      {
-        url: "https://www.melvinjonesrepol.com/images/axleshift-1.png",
-        width: 800,
-        height: 600,
-        alt: "Axleshift Freight Management Screenshot",
-      },
+    keywords: [
+      "Axleshift Freight Management",
+      "Freight Management",
+      "Logistics",
+      "Business Solutions",
+      "Supply Chain",
+      "Transportation",
+      "Cargo Services",
+      "Fleet Management",
+      "Logistics Software",
+      "Business Platform",
     ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Axleshift Freight Management - Melvin Jones Repol",
-    description:
-      "A freight management services. Providing Businesses with cutting-edge platform, security, and reliability.",
-    images: ["https://www.melvinjonesrepol.com/images/axleshift-1.png"],
-    creator: "@mrepol742",
-  },
-};
+    alternates: getAlternates("/axleshift-freight-management", locale),
+    openGraph: {
+      title: "Axleshift Freight Management - Melvin Jones Repol",
+      description:
+        "A freight management services. Providing Businesses with cutting-edge platform, security, and reliability.",
+      url: "https://www.melvinjonesrepol.com/axleshift-freight-management",
+      siteName: "Melvin Jones Repol",
+      images: [
+        {
+          url: "https://www.melvinjonesrepol.com/images/axleshift-1.png",
+          width: 800,
+          height: 600,
+          alt: "Axleshift Freight Management Screenshot",
+        },
+      ],
+      locale: "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Axleshift Freight Management - Melvin Jones Repol",
+      description:
+        "A freight management services. Providing Businesses with cutting-edge platform, security, and reliability.",
+      images: ["https://www.melvinjonesrepol.com/images/axleshift-1.png"],
+      creator: "@mrepol742",
+    },
+  };
+}
 
 const Images = [
   "/images/axleshift-1.png",

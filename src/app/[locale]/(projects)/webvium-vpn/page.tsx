@@ -2,11 +2,18 @@ import { getAlternates } from "@/components/common/metadata/Alternatives";
 import Project from "@/components/ui/Project";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Download Webvium VPN - Melvin Jones Repol",
-  description:
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
+    title: "Download Webvium VPN - Melvin Jones Repol",
+    description:
     "Anonymous, Secured, Private and the fastest Virtual Private Network.",
-  keywords: [
+    keywords: [
     "Webvium VPN",
     "Virtual Private Network",
     "VPN",
@@ -18,8 +25,8 @@ export const metadata: Metadata = {
     "Internet Security",
     "Online Privacy",
   ],
-  alternates: getAlternates("/webvium-vpn"),
-  openGraph: {
+    alternates: getAlternates("/webvium-vpn", locale),
+    openGraph: {
     title: "Download Webvium VPN - Melvin Jones Repol",
     description:
       "Anonymous, Secured, Private and the fastest Virtual Private Network.",
@@ -36,7 +43,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-  twitter: {
+    twitter: {
     card: "summary_large_image",
     title: "Download Webvium VPN - Melvin Jones Repol",
     description:
@@ -44,7 +51,8 @@ export const metadata: Metadata = {
     images: ["https://www.melvinjonesrepol.com/images/webviumvpn-banner.png"],
     creator: "@mrepol742",
   },
-};
+  };
+}
 
 const Images = [
   "/images/webviumvpn-1.jpg",
