@@ -1,15 +1,17 @@
 import { codeToHtml } from "shiki";
 
-export async function CodeBlock(props: React.HTMLAttributes<HTMLElement>) {
-  const raw = String(props.children ?? "");
+export async function CodeBlock({
+  className,
+  children,
+}: React.HTMLAttributes<HTMLElement>) {
+  // Inline code
+  if (!className) {
+    return <code className="rounded bg-amber-200 px-1 py-0.5">{children}</code>;
+  }
 
-  // Extract language from className
-  const className = props.className || "";
-  const match = className.match(/language-(\w+)/);
+  const lang = className.match(/language-(\w+)/)?.[1] ?? "text";
 
-  const lang = match?.[1] || "text";
-
-  const html = await codeToHtml(raw, {
+  const html = await codeToHtml(String(children ?? ""), {
     lang,
     theme: "github-dark",
   });

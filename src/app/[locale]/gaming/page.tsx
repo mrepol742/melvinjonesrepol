@@ -6,10 +6,17 @@ import GameCard from "@/app/[locale]/gaming/components/GameCard";
 import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Gaming - Melvin Jones Repol",
-  description: "Here are some of my gaming achievements and activities.",
-  keywords: [
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
+    title: "Gaming - Melvin Jones Repol",
+    description: "Here are some of my gaming achievements and activities.",
+    keywords: [
     "Gaming",
     "Melvin Jones Repol",
     "Steam Games",
@@ -20,8 +27,8 @@ export const metadata: Metadata = {
     "Video Games",
     "PC Gaming",
   ],
-  alternates: getAlternates("/gaming"),
-  openGraph: {
+    alternates: getAlternates("/gaming", locale),
+    openGraph: {
     title: "Gaming - Melvin Jones Repol",
     description: "Here are some of my gaming achievements and activities.",
     url: "https://www.melvinjonesrepol.com/gaming",
@@ -37,7 +44,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-  twitter: {
+    twitter: {
     card: "summary_large_image",
     title: "Gaming - Melvin Jones Repol",
     description: "Here are some of my gaming achievements and activities.",
@@ -46,7 +53,8 @@ export const metadata: Metadata = {
     ],
     creator: "@mrepol742",
   },
-};
+  };
+}
 
 export default async function Gaming({
   searchParams,

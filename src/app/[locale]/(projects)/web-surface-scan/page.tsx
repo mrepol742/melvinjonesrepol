@@ -2,11 +2,18 @@ import { getAlternates } from "@/components/common/metadata/Alternatives";
 import Project from "@/components/ui/Project";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Web Surface Scan - Melvin Jones Repol",
-  description:
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
+    title: "Web Surface Scan - Melvin Jones Repol",
+    description:
     "A lightweight developer-focused tool for analyzing a website’s technology stack, integrations, and potential security flaws using automated browser inspection.",
-  keywords: [
+    keywords: [
     "Web Surface Scan",
     "Website Analysis Tool",
     "Technology Stack Analysis",
@@ -14,8 +21,8 @@ export const metadata: Metadata = {
     "Security Flaw Detection",
     "Website Inspection",
   ],
-  alternates: getAlternates("/web-surface-scan"),
-  openGraph: {
+    alternates: getAlternates("/web-surface-scan", locale),
+    openGraph: {
     title: "Web Surface Scan - Melvin Jones Repol",
     description:
       "A lightweight developer-focused tool for analyzing a website’s technology stack, integrations, and potential security flaws using automated browser inspection.",
@@ -32,7 +39,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-  twitter: {
+    twitter: {
     card: "summary_large_image",
     title: "Web Surface Scan - Melvin Jones Repol",
     description:
@@ -42,7 +49,8 @@ export const metadata: Metadata = {
     ],
     creator: "@mrepol742",
   },
-};
+  };
+}
 
 const features = [
   {

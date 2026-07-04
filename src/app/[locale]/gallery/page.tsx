@@ -3,40 +3,48 @@ import GalleryComponent from "@/app/[locale]/gallery/components/Gallery";
 import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Gallery - Melvin Jones Repol",
-  description:
-    "Explore a collection of images showcasing my projects and designs.",
-  keywords: ["Gallery", "Images", "Projects", "Designs", "Melvin Jones Repol"],
-  alternates: getAlternates("/gallery"),
-  openGraph: {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
     title: "Gallery - Melvin Jones Repol",
     description:
       "Explore a collection of images showcasing my projects and designs.",
-    url: "https://www.melvinjonesrepol.com/gallery",
-    siteName: "Melvin Jones Repol",
-    images: [
-      {
-        url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
-        width: 1200,
-        height: 630,
-        alt: "Gallery Cover",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Gallery - Melvin Jones Repol",
-    description:
-      "Explore a collection of images showcasing my projects and designs.",
-    images: [
-      "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
-    ],
-    creator: "@mrepol742",
-  },
-};
+    keywords: ["Gallery", "Images", "Projects", "Designs", "Melvin Jones Repol"],
+    alternates: getAlternates("/gallery", locale),
+    openGraph: {
+      title: "Gallery - Melvin Jones Repol",
+      description:
+        "Explore a collection of images showcasing my projects and designs.",
+      url: "https://www.melvinjonesrepol.com/gallery",
+      siteName: "Melvin Jones Repol",
+      images: [
+        {
+          url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+          width: 1200,
+          height: 630,
+          alt: "Gallery Cover",
+        },
+      ],
+      locale: "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Gallery - Melvin Jones Repol",
+      description:
+        "Explore a collection of images showcasing my projects and designs.",
+      images: [
+        "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+      ],
+      creator: "@mrepol742",
+    },
+  };
+}
 
 const albums = [
   {

@@ -2,11 +2,18 @@ import { getAlternates } from "@/components/common/metadata/Alternatives";
 import Project from "@/components/ui/Project";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Protocol Discussion Platform - Melvin Jones Repol",
-  description:
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
+    title: "Protocol Discussion Platform - Melvin Jones Repol",
+    description:
     "A content-first discussion platform where users can post structured protocols, create discussion threads, and engage through comments, reviews, and voting.",
-  keywords: [
+    keywords: [
     "Protocol Discussion Platform",
     "Discussion Platform",
     "Content-First Discussion",
@@ -16,8 +23,8 @@ export const metadata: Metadata = {
     "Reviews",
     "Voting",
   ],
-  alternates: getAlternates("/protocol-discussion-platform"),
-  openGraph: {
+    alternates: getAlternates("/protocol-discussion-platform", locale),
+    openGraph: {
     title: "Protocol Discussion Platform - Melvin Jones Repol",
     description:
       "A content-first discussion platform where users can post structured protocols, create discussion threads, and engage through comments, reviews, and voting.",
@@ -34,7 +41,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-  twitter: {
+    twitter: {
     card: "summary_large_image",
     title: "Protocol Discussion Platform - Melvin Jones Repol",
     description:
@@ -44,7 +51,8 @@ export const metadata: Metadata = {
     ],
     creator: "@mrepol742",
   },
-};
+  };
+}
 
 const Images = [
   "/images/protocol-discussion-platform.png",

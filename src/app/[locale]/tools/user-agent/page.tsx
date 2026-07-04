@@ -2,11 +2,18 @@ import UserAgentTool from "@/app/[locale]/tools/components/UserAgent";
 import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Your User Agent  - Melvin Jones Repol",
-  description:
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
+    title: "Your User Agent  - Melvin Jones Repol",
+    description:
     "Discover your browser and device information with our User Agent Tool. Get insights into your operating system, browser version, and more. Perfect for developers and curious users alike.",
-  keywords: [
+    keywords: [
     "User Agent",
     "User Agent Tool",
     "Browser Information",
@@ -15,8 +22,8 @@ export const metadata: Metadata = {
     "User Agent Parser",
     "User Agent Analyzer",
   ],
-  alternates: getAlternates("/tools/user-agent"),
-  openGraph: {
+    alternates: getAlternates("/tools/user-agent", locale),
+    openGraph: {
     title: "QR Code Generator - Melvin Jones Repol",
     description:
       "Discover your browser and device information with our User Agent Tool. Get insights into your operating system, browser version, and more. Perfect for developers and curious users alike.",
@@ -33,7 +40,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-  twitter: {
+    twitter: {
     card: "summary_large_image",
     title: "Your User Agent - Melvin Jones Repol",
     description:
@@ -41,7 +48,8 @@ export const metadata: Metadata = {
     images: ["https://www.melvinjonesrepol.com/images/melvinjonesrepol.png"],
     creator: "@mrepol742",
   },
-};
+  };
+}
 
 export default function UserAgent() {
   return <UserAgentTool />;

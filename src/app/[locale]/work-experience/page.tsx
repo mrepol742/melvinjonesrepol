@@ -2,11 +2,18 @@ import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Work Experience - Melvin Jones Repol",
-  description:
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
+    title: "Work Experience - Melvin Jones Repol",
+    description:
     "A summary of my professional work experience, including the roles, responsibilities, and projects I have contributed to throughout my career in development and technology.",
-  keywords: [
+    keywords: [
     "Work Experience",
     "Melvin Jones Repol",
     "Software Engineer",
@@ -20,8 +27,8 @@ export const metadata: Metadata = {
     "Software Development",
     "IT Support",
   ],
-  alternates: getAlternates("/work-experience"),
-  openGraph: {
+    alternates: getAlternates("/work-experience", locale),
+    openGraph: {
     title: "Work Experience - Melvin Jones Repol",
     description:
       "A summary of my professional work experience, including the roles, responsibilities, and projects I have contributed to throughout my career in development and technology.",
@@ -38,7 +45,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-  twitter: {
+    twitter: {
     card: "summary_large_image",
     title: "Work Experience - Melvin Jones Repol",
     description:
@@ -48,7 +55,8 @@ export const metadata: Metadata = {
     ],
     creator: "@mrepol742",
   },
-};
+  };
+}
 
 export default async function WorkExperiencePage() {
   const t = await getTranslations("work_experience");

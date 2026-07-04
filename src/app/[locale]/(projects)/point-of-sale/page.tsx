@@ -2,51 +2,59 @@ import { getAlternates } from "@/components/common/metadata/Alternatives";
 import Project from "@/components/ui/Project";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Point of Sale - Melvin Jones Repol",
-  description:
-    "A lightweight, web-based and offline-capable POS system built for flawless performance, supporting multi-department roles and full functionality.",
-  keywords: [
-    "Point of Sale",
-    "POS System",
-    "Web-based POS",
-    "Offline-capable POS",
-    "Multi-department POS",
-    "Retail Management",
-    "Sales System",
-    "Inventory Management",
-    "Business Solutions",
-    "Sales Management",
-    "Retail Software",
-    "POS Software",
-  ],
-  alternates: getAlternates("/point-of-sale"),
-  openGraph: {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
     title: "Point of Sale - Melvin Jones Repol",
     description:
       "A lightweight, web-based and offline-capable POS system built for flawless performance, supporting multi-department roles and full functionality.",
-    url: "https://www.melvinjonesrepol.com/point-of-sale",
-    siteName: "Melvin Jones Repol",
-    images: [
-      {
-        url: "https://www.melvinjonesrepol.com/images/point-of-sale.png",
-        width: 800,
-        height: 600,
-        alt: "Point of Sale Screenshot",
-      },
+    keywords: [
+      "Point of Sale",
+      "POS System",
+      "Web-based POS",
+      "Offline-capable POS",
+      "Multi-department POS",
+      "Retail Management",
+      "Sales System",
+      "Inventory Management",
+      "Business Solutions",
+      "Sales Management",
+      "Retail Software",
+      "POS Software",
     ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Point of Sale - Melvin Jones Repol",
-    description:
-      "A lightweight, web-based and offline-capable POS system built for flawless performance, supporting multi-department roles and full functionality.",
-    images: ["https://www.melvinjonesrepol.com/images/point-of-sale.png"],
-    creator: "@mrepol742",
-  },
-};
+    alternates: getAlternates("/point-of-sale", locale),
+    openGraph: {
+      title: "Point of Sale - Melvin Jones Repol",
+      description:
+        "A lightweight, web-based and offline-capable POS system built for flawless performance, supporting multi-department roles and full functionality.",
+      url: "https://www.melvinjonesrepol.com/point-of-sale",
+      siteName: "Melvin Jones Repol",
+      images: [
+        {
+          url: "https://www.melvinjonesrepol.com/images/point-of-sale.png",
+          width: 800,
+          height: 600,
+          alt: "Point of Sale Screenshot",
+        },
+      ],
+      locale: "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Point of Sale - Melvin Jones Repol",
+      description:
+        "A lightweight, web-based and offline-capable POS system built for flawless performance, supporting multi-department roles and full functionality.",
+      images: ["https://www.melvinjonesrepol.com/images/point-of-sale.png"],
+      creator: "@mrepol742",
+    },
+  };
+}
 
 const Images = [
   "/images/point-of-sale.png",
@@ -165,7 +173,8 @@ export default function PointOfSale() {
           images: Images,
           resources: [
             {
-              title: "Rebuilding the Point of Sale: Engineering for Reliability, Scale, and the Real World",
+              title:
+                "Rebuilding the Point of Sale: Engineering for Reliability, Scale, and the Real World",
               url: "/blog/rebuilding-the-point-of-sale-engineering-for-reliability-scale-and-the-real-world",
             },
             {

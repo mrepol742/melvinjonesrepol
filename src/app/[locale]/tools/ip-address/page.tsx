@@ -2,11 +2,18 @@ import IPAddressTool from "@/app/[locale]/tools/components/IPAddress";
 import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Your IP Address - Melvin Jones Repol",
-  description:
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
+    title: "Your IP Address - Melvin Jones Repol",
+    description:
     "Check your IP address and related information with our IP Address tool. Get insights into your network details and other privacy-related information.",
-  keywords: [
+    keywords: [
     "IP Address",
     "Check IP Address",
     "IP Information",
@@ -15,8 +22,8 @@ export const metadata: Metadata = {
     "IP Lookup",
     "IP Geolocation",
   ],
-  alternates: getAlternates("/tools/ip-address"),
-  openGraph: {
+    alternates: getAlternates("/tools/ip-address", locale),
+    openGraph: {
     title: "Your IP Address - Melvin Jones Repol",
     description:
       "Check your IP address and related information with our IP Address tool. Get insights into your network details and other privacy-related information.",
@@ -33,7 +40,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-  twitter: {
+    twitter: {
     card: "summary_large_image",
     title: "Your IP Address - Melvin Jones Repol",
     description:
@@ -41,7 +48,8 @@ export const metadata: Metadata = {
     images: ["https://www.melvinjonesrepol.com/images/melvinjonesrepol.png"],
     creator: "@mrepol742",
   },
-};
+  };
+}
 
 export default function IPAddress() {
   return <IPAddressTool />;

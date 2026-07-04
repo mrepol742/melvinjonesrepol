@@ -2,11 +2,18 @@ import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Terms of Service - Melvin Jones Repol",
-  description: "Terms of Service for melvinjonesrepol.com and related projects",
-  alternates: getAlternates("/legal/terms-of-service"),
-  openGraph: {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
+    title: "Terms of Service - Melvin Jones Repol",
+    description: "Terms of Service for melvinjonesrepol.com and related projects",
+    alternates: getAlternates("/legal/terms-of-service", locale),
+    openGraph: {
     title: "Terms of Service - Melvin Jones Repol",
     description:
       "Terms of Service for melvinjonesrepol.com and related projects",
@@ -23,7 +30,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-  twitter: {
+    twitter: {
     card: "summary_large_image",
     title: "Terms of Service - Melvin Jones Repol",
     description:
@@ -33,7 +40,8 @@ export const metadata: Metadata = {
     ],
     creator: "@mrepol742",
   },
-};
+  };
+}
 
 export default function Terms() {
   return (

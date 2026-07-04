@@ -2,12 +2,19 @@ import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Cookie Policy - Melvin Jones Repol",
-  description:
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
+    title: "Cookie Policy - Melvin Jones Repol",
+    description:
     "This Cookie Policy explains how Melvin Jones Repol uses cookies and similar technologies on our portfolio website, Webvium Browser, Chrome extensions, and other projects.",
-  alternates: getAlternates("/legal/cookie-policy"),
-  openGraph: {
+    alternates: getAlternates("/legal/cookie-policy", locale),
+    openGraph: {
     title: "Cookie Policy - Melvin Jones Repol",
     description:
       "This Cookie Policy explains how Melvin Jones Repol uses cookies and similar technologies on our portfolio website, Webvium Browser, Chrome extensions, and other projects.",
@@ -24,7 +31,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-  twitter: {
+    twitter: {
     card: "summary_large_image",
     title: "Cookie Policy - Melvin Jones Repol",
     description:
@@ -34,7 +41,8 @@ export const metadata: Metadata = {
     ],
     creator: "@mrepol742",
   },
-};
+  };
+}
 
 export default function CookiePolicy() {
   return (

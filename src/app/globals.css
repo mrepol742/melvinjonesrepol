@@ -349,3 +349,15 @@ h6 {
         }
     }
 }
+
+/* override default code block styles with `code` elements */
+.prose
+    :where(code):not(
+        :where([class~="not-prose"], [class~="not-prose"] *)
+    ):before,
+.prose
+    :where(code):not(
+        :where([class~="not-prose"], [class~="not-prose"] *)
+    ):after {
+    content: "";
+}
