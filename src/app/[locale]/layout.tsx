@@ -9,7 +9,17 @@ import { getRecentPosts } from "@/lib/posts";
 import PrivacyPolicyPrompt from "@/components/common/PrivacyPolicyPrompt";
 import DevToolsDetector from "@/components/common/DevToolsDetector";
 
-const locales = ["en", "fil", "hi", "es", "cmn"] as const;
+const locales = [
+  "en",
+  "fil",
+  "hi",
+  "es",
+  "cmn",
+  "nl",
+  "fr",
+  "ru",
+  "ar",
+] as const;
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -33,7 +43,10 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <NextIntlClientProvider locale={locale.length === 0 ? "en" : locale} messages={messages}>
+    <NextIntlClientProvider
+      locale={locale.length === 0 ? "en" : locale}
+      messages={messages}
+    >
       <Nav />
 
       <div className="flex-1">{children}</div>

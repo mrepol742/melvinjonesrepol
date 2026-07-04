@@ -19,7 +19,7 @@ export default async function proxy(request: NextRequest) {
     return new NextResponse("Hello World", { status: 200 });
 
   const handleI18nRouting = createMiddleware({
-    locales: ["en", "fil", "hi", "es", "cmn"],
+    locales: ["en", "fil", "hi", "es", "cmn", "nl", "fr", "ru", "ar"],
     defaultLocale: "en",
     localePrefix: "as-needed",
   });
