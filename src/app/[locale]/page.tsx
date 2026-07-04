@@ -422,7 +422,7 @@ export default async function Home({
                   {t("blog_description")}
                 </p>
               </div>
-              <Blog />
+              <Blog locale={locale} />
             </div>
 
             <div className="relative py-14 md:py-28 overflow-hidden">

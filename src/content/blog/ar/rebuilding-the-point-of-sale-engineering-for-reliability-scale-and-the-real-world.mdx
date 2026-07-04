@@ -1,0 +1,154 @@
+---
+title: "Rebuilding the Point of Sale: Engineering for Reliability, Scale, and the Real World"
+date: "2026-05-06"
+excerpt: "A deep dive into why I built a modern POS system from scratch, passionately focused on reliability, performance, and long-term sustainability for real-world business operations."
+topics:
+  [
+    "software engineering",
+    "point-of-sale",
+    "systems design",
+    "internship",
+    "projects",
+  ]
+---
+
+## The Beginning
+
+During my internship, I was given the opportunity to observe and work closely with a company's existing Point of Sale (POS) system. What started as a simple task quickly turned into something much deeper: identifying critical operational weaknesses and imagining a better foundation.
+
+The existing system worked, albeit only under ideal conditions. And that was the problem.
+
+## The Problems I Saw
+
+The company's POS system had several issues that directly affected business continuity:
+
+- **Performance bottlenecks:** Even with a relatively small dataset (~5,000 products), the system lagged significantly.
+- **Internet dependency:** The moment the internet went down, operations stopped entirely.
+- **No centralized file sharing:** Employees relied on third-party services or personal accounts, making it a spectacular mess of inefficiency and insecurity.
+- **Windows OS limitations:** Mandatory system updates, unexpected crashes, and application failures possessed an uncanny knack for pausing operations without a moment's notice.
+
+In short, the system wasn’t resilient. It worked flawlessly, right up until it spectacularly didn’t.
+
+## Building a Better Foundation
+
+Instead of patching problems one by one, I decided to approach it differently: rebuild the POS system from the ground up with long-term reliability in mind.
+
+This wasn’t just about fixing bugs; it was about completely rethinking how a POS system should operate in real-world conditions.
+
+### Key Design Decisions
+
+- **Linux LTS Server Deployment**
+  By running the system on a Long-Term Support (LTS) Linux server, we drastically reduce unexpected downtime. No forced updates, fewer crashes, and more control over the environment.
+
+- **Web-Based Architecture**
+  The POS runs in the browser, meaning:
+  - No need to install software on every machine
+  - Faster updates and deployment
+  - Accessible across the local network instantly
+
+- **Centralized System Design**
+  A single server handles:
+  - User roles and permissions
+  - Data storage
+  - File sharing
+  - Analytics
+
+  This eliminates fragmentation and improves security.
+
+- **Offline-Resilient Thinking**
+  The system is designed with the cheerful assumption that things _will_ fail, particularly the internet. Operations should continue regardless.
+
+## Beyond Just a POS
+
+I didn’t just want to recreate what already exists; instead, I wanted to radically expand what a POS system could actually accomplish:
+
+- **Built-in File Sharing**
+  No need for third-party tools or personal accounts.
+
+- **Advanced Store Analytics**
+  Deeper insights into sales, trends, and performance.
+
+- **Data Portability**
+  Easy import/export and reliable backup systems.
+
+- **User Management**
+  Fine-grained control over roles and access.
+
+- **Mobile Support (Planned)**
+  Access the system anytime, anywhere.
+
+## Performance at Scale
+
+One of the biggest motivations behind this project was performance.
+
+If a system struggles with 5,000 products, how can it handle real growth?
+
+This new POS is engineered with scalability in mind:
+
+- Optimized data handling
+- Efficient queries
+- Modern web performance practices
+
+Could it handle a million products? A billion transactions?
+
+That’s the goal.
+
+## The Reality
+
+I wasn’t able to fully deploy this system within the company. My internship came to an end before I could push it into production.
+
+But I didn’t stop there.
+
+Before leaving, I forked the project and continued it independently, adopting a new direction and license, focused on:
+
+- Long-term support (LTS mindset)
+- Better UI/UX
+- Stronger security
+- High performance
+- Cross-platform and mobile accessibility
+
+## “Why Build Another POS?”
+
+There are already countless POS systems out there.
+
+So why build another one?
+
+Because most systems are built for ideal conditions.
+
+This one is built for reality.
+
+- When the internet goes down
+- When systems fail
+- When businesses scale
+- When reliability matters most
+
+This isn’t just another POS.
+
+It’s an attempt to engineer a system that _keeps businesses running no matter what_.
+
+## What’s Next
+
+This project is still evolving. The foundation is there, but the vision goes further:
+
+- Full mobile ecosystem
+- Smarter analytics
+- Even stronger offline capabilities
+- Continuous performance improvements
+- AI Integration for predictive insights and automation
+
+## Final Thoughts
+
+This started as an internship proposal.
+
+It blossomed into something much bigger: a personal mission to rethink how critical systems like POS should be designed.
+
+Because at the end of the day, a POS system isn’t just software.
+
+It’s the heartbeat of a business.
+
+---
+
+You can explore more about the project here:
+
+- [https://www.melvinjonesrepol.com/point-of-sale](https://www.melvinjonesrepol.com/point-of-sale)
+- [https://github.com/mrepol742/point-of-sale](https://github.com/mrepol742/point-of-sale)

@@ -90,7 +90,7 @@ export default function Nav() {
     if (nextLocale === locale) return;
 
     const normalizedPath = pathname.replace(
-      /^\/(en|fil|cmn|es|hi)(?=\/|$)/,
+      /^\/(en|fil|cmn|es|hi|nl|fr|ru|ar)(?=\/|$)/,
       "",
     );
     const nextPath = `/${nextLocale}${normalizedPath || "/"}`;

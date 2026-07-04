@@ -15,7 +15,10 @@ export async function generateRssFeed() {
 
   // sort newest first
   const latestPosts = posts
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .sort(
+      (a, b) =>
+        new Date(b.date ?? 0).getTime() - new Date(a.date ?? 0).getTime(),
+    )
     .slice(0, 20); // TOP 10 NEW CHANGES
 
   latestPosts.forEach((post) => {
@@ -23,7 +26,7 @@ export async function generateRssFeed() {
       title: post.title,
       description: post.excerpt ?? "",
       url: `${site_url}/blog/${post.slug}`,
-      date: post.date,
+      date: post.date ?? new Date().toISOString(),
     });
   });
 

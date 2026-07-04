@@ -1,13 +1,10 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
 import type { Metadata } from "next";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { CodeBlock } from "@/components/ui/CodeBlock";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import remarkGfm from "remark-gfm";
-import { getAllPosts } from "@/lib/posts";
+import { getAllPosts, getPostBySlug } from "@/lib/posts";
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -17,16 +14,6 @@ type Heading = {
   level: number;
   text: string;
   id: string;
-};
-
-type Post = {
-  content: string;
-  data: {
-    title: string;
-    excerpt?: string;
-    date?: string;
-    topics?: string[];
-  };
 };
 
 function slugify(text: string) {
@@ -56,38 +43,21 @@ function extractHeadings(content: string): Heading[] {
   return headings;
 }
 
-function getPostBySlug(slug: string): Post | null {
-  try {
-    if (!slug || slug.includes("/") || slug.includes("\\")) return null;
-
-    const filePath = path.join(
-      process.cwd(),
-      "src/content/blog",
-      `${slug}.mdx`,
-    );
-
-    if (!fs.existsSync(filePath)) return null;
-
-    const source = fs.readFileSync(filePath, "utf-8");
-    const { content, data } = matter(source);
-
-    return { content, data: data as Post["data"] };
-  } catch {
-    return null;
-  }
-}
-
 export function generateStaticParams() {
-  return getAllPosts().map(({ slug }) => ({ slug }));
+  const locales = ["en", "fil", "hi", "es", "cmn", "nl", "fr", "ru", "ar"];
+
+  return locales.flatMap((locale) =>
+    getAllPosts(locale).map(({ slug }) => ({ locale, slug })),
+  );
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
-  const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const { locale, slug } = await params;
+  const post = getPostBySlug(slug, locale);
 
   if (!post) return notFound();
 
@@ -100,10 +70,10 @@ export async function generateMetadata({
       description: post.data.excerpt,
       type: "article",
       siteName: "Melvin Jones Repol",
-      locale: "en_US",
+      locale: locale === "en" ? "en_US" : `${locale}_${locale.toUpperCase()}`,
     },
     alternates: {
-      canonical: `https://www.melvinjonesrepol.com/blog/${slug}`,
+      canonical: `https://www.melvinjonesrepol.com${locale === "en" ? "" : `/${locale}`}/blog/${slug}`,
     },
     twitter: {
       card: "summary_large_image",
@@ -157,12 +127,12 @@ function TableOfContents({ headings }: { headings: Heading[] }) {
 export default async function BlogPost({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { slug } = await params;
+  const { locale, slug } = await params;
 
-  const post = getPostBySlug(slug);
-  const posts = getAllPosts();
+  const post = getPostBySlug(slug, locale);
+  const posts = getAllPosts(locale);
   if (!post) notFound();
 
   const { content, data } = post;
@@ -242,7 +212,11 @@ export default async function BlogPost({
               .map((post) => (
                 <li key={post.slug}>
                   <Link
-                    href={`/blog/${post.slug}`}
+                    href={
+                      locale === "en"
+                        ? `/blog/${post.slug}`
+                        : `/${locale}/blog/${post.slug}`
+                    }
                     className="group block h-full rounded-2xl border border-zinc-800 p-5 md:p-6 transition-transform duration-300 hover:-translate-y-0.5"
                   >
                     <div className="flex items-center justify-between gap-3 mb-3">

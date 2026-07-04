@@ -4,6 +4,7 @@ import HeadlessBrowserCheck from "./lib/proxy/headless-browser-check";
 import RateLimiter from "./lib/proxy/rate-limiter";
 
 const env = process.env.NODE_ENV;
+const locales = ["en", "fil", "hi", "es", "cmn", "nl", "fr", "ru", "ar"];
 
 export default async function proxy(request: NextRequest) {
   const headlessResponse = HeadlessBrowserCheck(request);
@@ -19,7 +20,7 @@ export default async function proxy(request: NextRequest) {
     return new NextResponse("Hello World", { status: 200 });
 
   const handleI18nRouting = createMiddleware({
-    locales: ["en", "fil", "hi", "es", "cmn"],
+    locales,
     defaultLocale: "en",
     localePrefix: "as-needed",
   });
@@ -32,6 +33,6 @@ export default async function proxy(request: NextRequest) {
 // excude static assets
 export const config = {
   matcher: [
-    "/((?!_next/static|_next/image|images|videos|sw\\.js|.*\\.json$|.*\\.pdf$|.*\\.xml$|.*\\.md$|.*\\.mp4$|.*\\.jpg$|.*\\.png$|.*\\.ico$|.*\\.svg$|.*\\.webp$|.*\\.txt$|.*\\.mkd$).*)",
+    "/((?!api|_next/static|_next/image|images|videos|sw\\.js|.*\\.json$|.*\\.pdf$|.*\\.xml$|.*\\.md$|.*\\.mp4$|.*\\.jpg$|.*\\.png$|.*\\.ico$|.*\\.svg$|.*\\.webp$|.*\\.txt$|.*\\.mkd$).*)",
   ],
 };

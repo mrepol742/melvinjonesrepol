@@ -1,0 +1,108 @@
+---
+title: "The Arch Linux Debugging Session That Turned Out to Be a Dirty RAM Slot"
+date: "2026-06-24"
+excerpt: "A real PC troubleshooting story involving Arch Linux boot issues, Windows sanity checks, BSODs, CPU swaps, GPU testing, RAM slot experiments, and one boring fix that actually worked."
+topics: ["arch-linux", "pc-troubleshooting", "hardware", "ram"]
+---
+
+Yesterday, I left my computer on like nothing strange was going to happen, which is usually when strange things quietly start lining up. This morning, I turned it off, removed a Bluetooth USB dongle while it was shutting down, and did not think much about it. Later in the afternoon, I tried turning it back on and suddenly my setup was not behaving anymore. Since I mainly switch back and forth between Arch Linux and Windows, my first instinct was to debug it from the Arch side. Windows was not really the thing I was trying to fix, I was mostly checking whether it could still boot so I could confirm if the whole machine was unstable or if Arch was the one having a bad day. Then the recovery environment also started throwing BSODs, which made the situation feel less like a normal OS issue and more like the PC was trying to make me earn my uptime.
+
+The annoying part was that the symptoms did not point cleanly in one direction. It looked like software, then hardware, then maybe bootloader weirdness, then maybe RAM. Classic desktop troubleshooting, basically.
+
+## Starting With Arch Linux
+
+Since Arch is the system I was actually debugging, I started there. When something breaks on an Arch setup, there are plenty of possible suspects. Kernel update? Driver issue? Bootloader problem? Filesystem problem? Something weird with hardware detection? The list gets long fast.
+
+I was not immediately convinced it was hardware. The timing made it easy to blame the Bluetooth USB dongle because I removed it while the system was shutting down. That felt suspicious enough to become the first fake villain of the story.
+
+So I treated it like a software or boot issue at first. I checked whether Arch would boot properly, watched how far it got, and tried to reason from there. But the behavior was weird enough that I needed another reference point.
+
+## Using Windows as a Sanity Check
+
+Windows was mostly there for confirmation.
+
+I was not really debugging Windows itself. I just wanted to know if it would boot, because that would tell me whether the issue was isolated to Arch or if the whole machine had become unstable. If Windows booted fine, maybe I could focus on Arch, drivers, the bootloader, or something specific to that environment.
+
+But Windows also did not feel fully trustworthy in that moment. It could boot sometimes, but that did not mean the machine was stable. Booting once is not the same as being healthy.
+
+Then I tried recovery, and even that started hitting BSODs.
+
+That changed the whole direction of the debugging session. If a recovery disk is also crashing, it becomes harder to keep blaming the installed operating system. At that point, the problem started looking more like hardware instability pretending to be an OS problem.
+
+## The Hardware Rabbit Hole
+
+Once software stopped being the obvious explanation, I moved into hardware troubleshooting.
+
+First, I replaced the CPU with my old one. Same issue.
+
+That was annoying, but useful. It made the new CPU look less guilty. Of course, useful information during troubleshooting still feels mildly insulting when the computer keeps refusing to cooperate.
+
+Then I removed the GPU while the old CPU was installed. Still no real improvement.
+
+So I put the new CPU back, reinstalled the GPU, and continued testing. By that point, the desk was slowly turning into a repair bench, and the machine had successfully made me question almost every component inside it.
+
+## Then RAM Started Looking Suspicious
+
+Eventually, I started experimenting with the RAM slots.
+
+I removed one stick, tested again, and suddenly things worked.
+
+That was the first clue that actually felt solid. The RAM sticks themselves did not seem dead, because each stick worked when tested separately. But one slot was failing, or at least acting like it was failing.
+
+So I tested every RAM slot and every stick. One slot kept causing problems, but the RAM itself was fine.
+
+That pointed toward the motherboard slot, dirty contacts, dust, or maybe a bad seating issue. It was not the dramatic failure I expected after CPU swaps and GPU tests. It was just RAM contact drama.
+
+## Cleaning Was the Fix
+
+At that point, cleaning was the only practical solution left.
+
+I cleaned the RAM contacts and the slot, reseated everything carefully, and tested again.
+
+Both RAM slots worked.
+
+That was it.
+
+After all the Arch debugging, Windows boot checks, recovery BSODs, CPU swapping, GPU removal, and RAM testing, the actual fix was cleaning and reseating the memory properly. It is funny in the most annoying way possible. The solution was simple, but only after the PC made me walk through the entire troubleshooting side quest.
+
+## Why the Symptoms Were So Misleading
+
+The symptoms made this harder than it needed to be.
+
+Because I was working from Arch first, it was easy to suspect something in the Linux setup. Since Windows was also involved, even just as a boot check, it added another layer of confusion. Then the recovery disk crashing made everything feel more serious.
+
+But unstable RAM contact can look like almost anything.
+
+It can cause random boot failures, BSODs, recovery crashes, OS instability, and weird behavior that does not clearly say "hey, clean your RAM slot." Instead, the computer just fails in different ways and lets you become a detective with no proper clues.
+
+## What I Should Have Checked Earlier
+
+The boring physical checks should have happened sooner.
+
+Reseat the RAM. Test one stick at a time. Test each slot. Clean the contacts. Remove unnecessary USB devices. Make sure everything is properly seated.
+
+It sounds too simple when you are staring at boot failures and BSODs, but those simple checks can save hours. I jumped into CPU and GPU testing because the symptoms looked serious, but RAM should probably have been one of the first things I checked.
+
+Also, timing can lie. The issue showed up after I removed the Bluetooth USB during shutdown, but that was probably just a coincidence. It looked related because it happened right before the failure, but the real issue was physical contact in the RAM slot.
+
+## The Lesson I Am Keeping
+
+Next time I see Arch acting broken while Windows is only being used as a boot sanity check, I will try not to get tunnel vision. If multiple environments are acting unstable, especially recovery tools, I will check the hardware earlier.
+
+The order should probably be:
+
+1. Remove unnecessary USB devices.
+2. Boot with one RAM stick.
+3. Test each RAM stick.
+4. Test each RAM slot.
+5. Clean and reseat the RAM.
+6. Check GPU seating.
+7. Only then start blaming deeper OS or hardware problems.
+
+It is not the most exciting checklist, but it is a better use of time than emotionally accusing every component in the case.
+
+## Back to Working, Slightly Wiser
+
+The PC works now, both RAM slots are alive again, and Arch is no longer the main suspect. Windows did its job as a sanity check, even if the BSODs made the situation more dramatic than necessary.
+
+The funny part is that the fix was not a reinstall, not a kernel parameter, not a driver rollback, and not a new part. It was just cleaning the RAM slot and reseating things properly. Sometimes debugging Linux reminds you that computers are still physical machines, and sometimes the bug is literally dust.

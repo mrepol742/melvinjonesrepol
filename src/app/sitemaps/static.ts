@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 // the default locale is "" (empty string), so it is included first == english ==
-const locales = ["", "/cmn", "/es", "/fil", "/hi"];
+const locales = ["", "/cmn", "/es", "/fil", "/hi", "/nl", "/fr", "/ru", "/ar"];
 
 const routes = [
   "",

@@ -3,7 +3,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
-export default function BlogSection() {
+export default function BlogSection({ locale = "en" }: { locale?: string }) {
   return (
     <div
       className="overflow-x-auto scroll-smooth snap-x snap-mandatory flex items-stretch gap-6 py-6 scrollbar-hide"
@@ -14,13 +14,19 @@ export default function BlogSection() {
         WebkitMaskSize: "100% 100%",
       }}
     >
-      {getRecentPosts(10).map((post: any, index: number) => {
+      {getRecentPosts(10, locale).map((post: any, index: number) => {
         return (
           <article
             key={index}
             className="group snap-start flex-shrink-0 w-80 md:w-96 flex"
           >
-            <Link href={`/blog/${post.slug}`}>
+            <Link
+              href={
+                locale === "en"
+                  ? `/blog/${post.slug}`
+                  : `/${locale}/blog/${post.slug}`
+              }
+            >
               <div className="p-6 border border-zinc-800 rounded-2xl shadow-sm max-w-sm mx-auto transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-[0.98]">
                 <span className="text-3xl font-bold text-gray-400">
                   {String(index + 1).padStart(2, "0")}
