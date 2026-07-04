@@ -1,38 +1,38 @@
 ---
-title: "The Zip File That Teaches Infrastructure Lessons: Why Q/A Is Not Enough!"
+title: "ملف ZIP الذي يعلّم دروسًا في البنية التحتية: لماذا QA وحده لا يكفي!"
 date: "2026-05-25"
-excerpt: "A weird little experiment about compression, infrastructure pain, and why security culture matters more than checklists."
+excerpt: "تجربة صغيرة غريبة عن الضغط، وألم البنية التحتية، ولماذا تهم ثقافة الأمان أكثر من قوائم التحقق."
 topics: ["zip-bombs", "security", "infrastructure", "performance"]
 ---
 
-A few months ago I stumbled across one of those ridiculous security rabbit holes that sounds fake until you actually test it. Somebody mentioned a tiny compressed file that could explode into petabytes of data once extracted. At first I assumed it was internet folklore, right next to “my regex crashed production” stories and ancient PHP horror screenshots. Then I downloaded one, looked at the file size, and realized the zip itself was only 42KB. Tiny. Smaller than most SVG logos. Meanwhile, the extracted size ballooned into something absurdly large, somewhere around 4.5 petabytes. That is the kind of number that makes infrastructure engineers stare at dashboards in silence while fans inside the server rack start sounding emotionally distressed.
+قبل بضعة أشهر صادفت أحد تلك المسارات الأمنية العبثية التي تبدو مزيفة حتى تجربها فعلًا. ذكر أحدهم ملفًا مضغوطًا صغيرًا يمكن أن ينفجر إلى petabytes من البيانات بعد فك ضغطه. في البداية افترضت أنه من فولكلور الإنترنت، بجانب قصص "الـ regex سبب انهيار الإنتاج" ولقطات الرعب القديمة من PHP. ثم نزّلت واحدًا، ونظرت إلى حجم الملف، وأدركت أن الـ zip نفسه لا يتجاوز 42KB. صغير جدًا. أصغر من معظم شعارات SVG. وفي المقابل، كان الحجم بعد الفك يتضخم إلى شيء عبثي، نحو 4.5 petabytes. هذا رقم يجعل مهندسي البنية التحتية يحدقون في لوحات التحكم بصمت بينما تبدأ مراوح رفوف الخوادم في إصدار أصوات كأنها متأثرة نفسيًا.
 
-The funny part is that nothing about it felt sophisticated. No zero-day exploit. No movie hacker scene. Just compression being used in the worst possible way. That was the moment the project idea clicked into place.
+الجزء المضحك أن شيئًا فيه لم يكن معقدًا. لا exploit من نوع zero-day. ولا مشهد hacker سينمائي. فقط استخدام الضغط بأسوأ طريقة ممكنة. كانت تلك اللحظة التي استقر فيها تصور المشروع في ذهني.
 
-## Why I Started Building Around It
+## لماذا بدأت أبني حوله
 
-The original goal was honestly pretty simple. I wanted a small demo project that explained zip bombs in a way normal developers could immediately understand without reading a security whitepaper written like a legal contract.
+كان الهدف الأصلي ببساطة أنني أردت demo صغيرًا يشرح zip bombs بطريقة يفهمها المطورون العاديون فورًا من دون قراءة whitepaper أمني مكتوب كعقد قانوني.
 
-A lot of security discussions accidentally become abstract. People say things like “resource exhaustion attack vectors” while everybody else quietly opens another browser tab hoping for a diagram.
+كثير من نقاشات الأمان تصبح مجردة بالخطأ. يقول الناس أشياء مثل "resource exhaustion attack vectors" بينما يفتح الجميع تبويبًا آخر بهدوء على أمل العثور على رسم.
 
-But watching a 42KB file threaten storage systems is extremely concrete.
+لكن مشاهدة ملف 42KB يهدد أنظمة التخزين أمر ملموس جدًا.
 
-You immediately understand the problem.
+تدرك المشكلة فورًا.
 
-The more I explored it, the more obvious it became that the real issue was not just security. It was culture. Teams love saying security is important right up until upload validation becomes “future sprint work.” Performance gets treated the same way. Monitoring gets delayed. Limits are added later. Then eventually somebody uploads something cursed into production and suddenly everyone becomes very interested in infrastructure again.
+كلما استكشفت الأمر أكثر، أصبح واضحًا أن المشكلة الحقيقية لم تكن الأمن فقط. بل كانت الثقافة. تحب الفرق أن تقول إن الأمان مهم حتى تتحول upload validation إلى "عمل sprint قادم". ويُعامل الأداء بالطريقة نفسها. تُؤجل المراقبة. وتُضاف الحدود لاحقًا. ثم يرفع أحدهم في النهاية شيئًا ملعونًا إلى الإنتاج، وفجأة يصبح الجميع مهتمًا جدًا بالبنية التحتية مرة أخرى.
 
-## What This Tiny File Actually Does
+## ما الذي يفعله هذا الملف الصغير فعلًا
 
-A zip bomb abuses recursive or extremely high-ratio compression.
+تستغل zip bomb الضغط التكراري أو ذي النسبة العالية جدًا.
 
-The archive itself stays tiny because compressed data can reference repeated patterns incredibly efficiently. Once extraction starts, though, the decompression process expands the content into a ridiculous amount of data.
+يبقى الأرشيف نفسه صغيرًا لأن البيانات المضغوطة يمكنها الإشارة إلى أنماط متكررة بكفاءة مذهلة. لكن بمجرد بدء الفك، تقوم عملية decompression بتوسيع المحتوى إلى كمية مضحكة من البيانات.
 
-In this case:
+في هذه الحالة:
 
 - 42KB compressed
 - roughly 4.5PB uncompressed
 
-That number is hard to visualize, so here is the practical version:
+يصعب تخيل هذا الرقم، لذا هذه هي الصورة العملية:
 
 - storage fills up
 - extraction processes hang
@@ -42,39 +42,39 @@ That number is hard to visualize, so here is the practical version:
 - containers can crash
 - monitoring systems suddenly earn their salary
 
-What makes this interesting is that many systems still trust compressed files too much. Developers often validate upload size while forgetting extraction size entirely.
+ما يجعل هذا مثيرًا هو أن كثيرًا من الأنظمة لا تزال تثق بالملفات المضغوطة أكثر من اللازم. غالبًا ما يتحقق المطورون من حجم الرفع وينسون حجم الفك بالكامل.
 
-That works fine until somebody uploads a compressed singularity.
+وهذا يعمل جيدًا حتى يرفع أحدهم singularity مضغوطة.
 
-## The Weird Thing About Infrastructure
+## الشيء الغريب في البنية التحتية
 
-Infrastructure usually fails in boring ways.
+البنية التحتية تفشل عادةً بطرق مملة.
 
-A database slowly runs out of memory.
-A queue backs up.
-A caching layer silently dies at 2AM.
+تنفد ذاكرة قاعدة البيانات ببطء.
+يتراكم صف الانتظار.
+تموت طبقة التخزين المؤقت بصمت عند الثانية صباحًا.
 
-Zip bombs are different because they fail dramatically while looking harmless at first glance.
+الـ zip bombs مختلفة لأنها تفشل بشكل درامي بينما تبدو غير مؤذية للوهلة الأولى.
 
-I tested one inside a disposable environment just to watch the behavior. The extraction process started normally. CPU usage climbed. Disk usage exploded faster than expected. Then the container became completely unresponsive while the host machine looked increasingly concerned.
+اختبرت واحدة داخل بيئة disposable فقط لمراقبة السلوك. بدأت عملية الفك بشكل طبيعي. ارتفع استخدام CPU. وانفجر استخدام القرص أسرع من المتوقع. ثم أصبحت الحاوية غير مستجيبة تمامًا بينما بدا الجهاز المضيف أكثر قلقًا.
 
-The logs were honestly funny.
+كانت السجلات مضحكة بصراحة.
 
-One process kept retrying operations as if persistence alone could defeat mathematics.
+استمرت عملية في إعادة المحاولة كما لو أن الإصرار وحده يمكن أن يهزم الرياضيات.
 
-## Why Security and Performance Became the Same Conversation
+## لماذا أصبح الأمن والأداء حديثًا واحدًا
 
-One thing I kept noticing while building the demo was how tightly security and performance overlap.
+أمر واحد ظللت ألاحظه أثناء بناء الـ demo هو مدى تداخل الأمن والأداء.
 
-People separate them into different departments, different meetings, different dashboards.
+يفصلها الناس إلى أقسام مختلفة، واجتماعات مختلفة، ولوحات بيانات مختلفة.
 
-But a badly handled compressed file can become both a security issue and a performance disaster at the same time.
+لكن ملفًا مضغوطًا أسيء التعامل معه يمكن أن يصبح مشكلة أمنية وكارثة أداء في الوقت نفسه.
 
-That changed how I approached the project. Instead of treating the zip bomb like a gimmick, I started framing it as an infrastructure stress story.
+غيّر ذلك الطريقة التي تعاملت بها مع المشروع. بدلًا من معاملة zip bomb كحيلة، بدأت أقدّمها كقصة إجهاد للبنية التحتية.
 
-The dangerous part is rarely the file itself.
+الجزء الخطير نادرًا ما يكون الملف نفسه.
 
-The dangerous part is:
+الجزء الخطير هو:
 
 - unlimited extraction
 - weak validation
@@ -84,68 +84,68 @@ The dangerous part is:
 - no decompression limits
 - “we’ll add it later” engineering
 
-Most incidents are not caused by evil genius attackers. They happen because [systems quietly assume users will behave normally forever](./the-most-dangerous-assumption-in-software-is-trusting-users-will-behave-normally).
+معظم الحوادث لا يسببها مهاجمون عباقرة شريرون. إنها تحدث لأن [الأنظمة تفترض بهدوء أن المستخدمين سيتصرفون بشكل طبيعي إلى الأبد](./the-most-dangerous-assumption-in-software-is-trusting-users-will-behave-normally).
 
-That assumption eventually expires.
+هذا الافتراض تنتهي صلاحيته في النهاية.
 
-## Small Details That Ended Up Mattering
+## التفاصيل الصغيرة التي انتهى بها الأمر لتصبح مهمة
 
-One surprisingly important detail was extraction depth limits.
+تفصيل واحد مهم بشكل مفاجئ كان حدود عمق الفك.
 
-A lot of archive bombs rely on recursive nesting. Zip inside zip inside zip inside existential crisis.
+تعتمد كثير من archive bombs على nesting تكراري. zip داخل zip داخل zip داخل أزمة وجودية.
 
-Adding recursion limits immediately reduced the blast radius.
+أدى إضافة حدود recursion إلى تقليل blast radius فورًا.
 
-The second useful protection was checking estimated decompressed size before extraction even starts. Sounds obvious, but many implementations still skip this because the “happy path” works fine during development.
+كانت الحماية المفيدة الثانية هي التحقق من الحجم المقدر بعد الفك قبل أن تبدأ extraction أصلًا. يبدو بديهيًا، لكن كثيرًا من التطبيقات تتخطى ذلك لأن "المسار السعيد" يعمل جيدًا أثناء التطوير.
 
-I also added aggressive timeout handling during testing because decompression processes love pretending they are still making progress.
+أضفت أيضًا معالجة timeout صارمة أثناء الاختبار لأن عمليات decompression تحب التظاهر بأنها ما زالت تتقدم.
 
-Another thing I learned is that observability matters way more than people think. If your monitoring only tells you the server died after it dies, congratulations, your monitoring system is basically a historian.
+أمر آخر تعلمته هو أن observability مهمة أكثر بكثير مما يظن الناس. إذا كانت المراقبة تخبرك فقط أن الخادم مات بعد موته، فمبروك، نظام المراقبة لديك مؤرخ تقريبًا.
 
-## Things That Surprisingly Worked
+## أشياء نجحت بشكل مفاجئ
 
-Sandboxing helped a lot.
+ساعد العزل sandboxing كثيرًا.
 
-Running extraction in isolated containers with strict quotas immediately turned catastrophic failures into manageable failures. Instead of destroying the environment, the process simply hit limits and died politely.
+أدى تشغيل الفك في حاويات معزولة بحصص صارمة إلى تحويل الإخفاقات الكارثية فورًا إلى إخفاقات قابلة للإدارة. بدلًا من تدمير البيئة، كانت العملية ببساطة تصطدم بالحدود وتموت بأدب.
 
-Well, mostly politely.
+حسنًا، بأدب في الغالب.
 
-Rate limiting also helped more than expected. A single malicious archive is bad enough. Multiple simultaneous extractions become infrastructure speedrunning.
+كما أن تحديد معدل الطلبات ساعد أكثر من المتوقع. أرشيف خبيث واحد سيئ بما يكفي. أما عمليات الفك المتزامنة المتعددة فتصبح speedrunning للبنية التحتية.
 
-One unexpected win was intentionally slowing parts of the extraction pipeline. Developers usually optimize everything instinctively, but controlled bottlenecks can actually protect systems from sudden resource spikes.
+انتصار غير متوقع كان إبطاء أجزاء من خط الفك عمدًا. المطورون عادةً يحسنون كل شيء غريزيًا، لكن bottlenecks المضبوطة يمكنها فعلًا حماية الأنظمة من الارتفاعات المفاجئة في الموارد.
 
-It felt wrong at first.
+بدا ذلك خطأ في البداية.
 
-Then it felt very correct.
+ثم بدا صحيحًا جدًا.
 
-## What I Learned From Building It
+## ما تعلمته من بنائه
 
-The biggest takeaway was that security practices are fragile when they only exist as checklist items.
+أكبر خلاصة كانت أن ممارسات الأمان هشة عندما توجد فقط كبنود في checklist.
 
-Teams say things like:
+تقول الفرق أشياء مثل:
 
 - “we validate uploads”
 - “we scan files”
 - “we monitor resources”
 
-But the implementation details matter more than the sentence itself.
+لكن تفاصيل التنفيذ أهم من الجملة نفسها.
 
-A 42KB archive turning into 4.5 petabytes sounds ridiculous because it is ridiculous. Yet systems still break from problems exactly like this because performance, infrastructure, and security are often treated as separate concerns.
+تحول أرشيف 42KB إلى 4.5 petabytes يبدو سخيفًا لأنه سخيف فعلًا. ومع ذلك، تنهار الأنظمة بسبب مشكلات من هذا النوع بالضبط لأن الأداء والبنية التحتية والأمان غالبًا ما تُعامل كأمور منفصلة.
 
-They are really the same conversation wearing different hoodies.
+لكنها في الحقيقة الحديث نفسه يرتدي hoodies مختلفة.
 
-And honestly, this project made me rethink “small” bugs in general. Tiny inputs can create absurd consequences when systems trust them too much.
+وبصراحة، جعلني هذا المشروع أعيد التفكير في "الأخطاء الصغيرة" عمومًا. المدخلات الصغيرة يمكن أن تخلق عواقب عبثية عندما تثق بها الأنظمة أكثر من اللازم.
 
-Sometimes the most dangerous thing in infrastructure is not complexity.
+أحيانًا أكثر شيء خطير في البنية التحتية ليس التعقيد.
 
-It is optimism.
+بل التفاؤل.
 
-I still think the funniest part is explaining the file size to people. Watching someone hear “42KB” and then immediately hear “4.5PB” produces the exact same facial expression every time.
+ما زلت أعتقد أن أطرف جزء هو شرح حجم الملف للناس. مشاهدة شخص يسمع "42KB" ثم يسمع مباشرة "4.5PB" تعطي دائمًا التعبير نفسه على الوجه.
 
-Pure operational fear.
+خوف تشغيلي خالص.
 
-You can explore more about the project here:
+يمكنك الاطلاع على مزيد من المعلومات عن المشروع هنا:
 
-- [42.zip](https://www.melvinjonesrepol.com/resources/42.zip) - obviously do not extract this on a production machine and the password is '42' incase you want to test it yourself in a safe environment!
+- [42.zip](https://www.melvinjonesrepol.com/resources/42.zip) - من الواضح لا تفك ضغطه على جهاز إنتاج، وكلمة المرور هي `42` إذا أردت اختباره بنفسك في بيئة آمنة!
 - [ZIP Bomb Research](https://en.wikipedia.org/wiki/Zip_bomb)
 - [OWASP File Upload Guidance](https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload)

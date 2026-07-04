@@ -1,72 +1,72 @@
 ---
 title: "indexnow-notifier Initial NPM Release"
 date: "2026-05-12"
-excerpt: "A simple CLI tool that automates IndexNow notifications for Next.js projects and CI/CD pipelines."
+excerpt: "أداة CLI بسيطة تؤتمت إشعارات IndexNow لمشاريع Next.js وخطوط CI/CD."
 topics: ['seo', 'cicd', 'automation', 'npm', 'nextjs']
 ---
 
-# indexnow-notifier Initial NPM Release
+# الإصدار الأول من `indexnow-notifier` على NPM
 
-Today I’m releasing **indexnow-notifier**, a small CLI tool that solves a very specific problem that kept bothering me during deployments.
+اليوم أطلق **indexnow-notifier**، وهي أداة CLI صغيرة تحل مشكلة محددة جدًا كانت تزعجني أثناء النشر.
 
-When pages get updated, search engines should know about it immediately.  
-Not tomorrow.  
-Not after waiting for a crawler to “eventually” visit your site again.
+عندما تتحدث الصفحات، يجب أن تعرف محركات البحث بذلك فورًا.  
+ليس غدًا.  
+وليس بعد انتظار الزاحف لزيارة موقعك "في النهاية".
 
-That’s where IndexNow comes in.
+وهنا يأتي دور IndexNow.
 
-And honestly, manually notifying IndexNow every deployment feels like the kind of task developers promise themselves they’ll automate “later”. We all know how that story ends.
+وبصراحة، إرسال إشعارات IndexNow يدويًا في كل عملية نشر يبدو من نوع المهام التي يعد المطورون أنفسهم بأتمتتها "لاحقًا". ونعرف جميعًا كيف تنتهي هذه القصة.
 
-So I built **indexnow-notifier**.
+لذلك بنيت **indexnow-notifier**.
 
-## What is indexnow-notifier?
+## ما هو `indexnow-notifier`؟
 
-`indexnow-notifier` is a lightweight CLI utility designed for CI/CD pipelines that automatically sends updated URLs to IndexNow services after deployment.
+`indexnow-notifier` أداة CLI خفيفة مصممة لخطوط CI/CD ترسل تلقائيًا عناوين URL المحدثة إلى خدمات IndexNow بعد النشر.
 
-Right now it supports:
+يدعم حاليًا:
 
 - Next.js Pages Router
 - Next.js App Router
 
-Future support is planned for:
+ويجري التخطيط لدعم:
 
 - React Router
 - Laravel
 - Angular
 
-The goal is simple.
+الهدف بسيط.
 
-Deploy your app.  
-Notify IndexNow automatically.  
-Go drink coffee while bots do their thing.
+انشر تطبيقك.  
+أرسل إشعارًا إلى IndexNow تلقائيًا.  
+اذهب واشرب قهوتك بينما تقوم الروبوتات بما يلزم.
 
-## Why I Built It
+## لماذا بنيته
 
-I wanted something straightforward for deployment pipelines.
+كنت أريد شيئًا مباشرًا لخطوط النشر.
 
-No complicated setup.  
-No giant framework.  
-No “enterprise solution” that somehow needs 14 configuration files and a consultant.
+لا إعداد معقد.  
+لا إطار ضخم.  
+لا "حل مؤسسي" يحتاج بطريقة ما إلى 14 ملف إعداد ومستشار.
 
-Just a simple command that can run inside GitHub Actions, GitLab CI, Jenkins, or whatever machine currently holds your deployment hostage.
+فقط أمر بسيط يمكن تشغيله داخل GitHub Actions أو GitLab CI أو Jenkins أو أي آلة تحتجز عملية النشر لديك.
 
-This tool exists because SEO automation should feel boring in the best possible way.
+هذه الأداة موجودة لأن أتمتة SEO ينبغي أن تبدو مملة بأفضل معنى ممكن.
 
-## Installation
+## التثبيت
 
-You can install it globally using npm:
+يمكنك تثبيته عالميًا باستخدام npm:
 
 ```bash
 npm i -g indexnow-notifier
 ```
 
-Or run it directly with npx:
+أو تشغيله مباشرة عبر npx:
 
 ```bash
 npx indexnow-notifier
 ```
 
-You can also clone the repository and install it manually:
+يمكنك أيضًا استنساخ المستودع وتثبيته يدويًا:
 
 ```bash
 git clone https://github.com/mrepol742/indexnow-notifier
@@ -74,66 +74,66 @@ cd indexnow-notifier
 npm i -g .
 ```
 
-For Linux users, you may need sudo when installing globally:
+لمستخدمي Linux، قد تحتاج إلى `sudo` عند التثبيت العالمي:
 
 ```bash
 sudo npm i -g indexnow-notifier
 ```
 
-Because Linux likes reminding us who’s boss.
+لأن Linux يحب أن يذكرنا من هو صاحب الكلمة.
 
-## Built for CI/CD Pipelines
+## مصمم لخطوط CI/CD
 
-The main use case is deployment automation. After your application deploys, `indexnow-notifier` can notify IndexNow services about updated pages immediately.
+حالة الاستخدام الأساسية هي أتمتة النشر. بعد نشر تطبيقك، يمكن لـ `indexnow-notifier` إبلاغ خدمات IndexNow بالصفحات المحدثة فورًا.
 
-This helps search engines discover fresh content faster without waiting for crawlers to revisit your site naturally.
+هذا يساعد محركات البحث على اكتشاف المحتوى الجديد بسرعة أكبر من دون انتظار عودة الزواحف إلى موقعك بشكل طبيعي.
 
-Especially useful for:
+مفيد خصوصًا لـ:
 
-- Frequently updated websites
-- Blogs
-- Documentation sites
-- Ecommerce pages
-- News content
-- SEO focused projects
+- المواقع التي تتحدث كثيرًا
+- المدونات
+- مواقع الوثائق
+- صفحات التجارة الإلكترونية
+- المحتوى الإخباري
+- المشاريع التي تركز على SEO
 
-Basically, if your pages change often, this tool helps search engines keep up.
+باختصار، إذا كانت صفحاتك تتغير كثيرًا، فهذه الأداة تساعد محركات البحث على مواكبة ذلك.
 
-## Current Focus
+## التركيز الحالي
 
-I intentionally started with Next.js support first because that’s what I use most in production.
+بدأت عمدًا بدعم Next.js أولًا لأنه ما أستخدمه أكثر في الإنتاج.
 
-Supporting both the Pages Router and App Router was important since many projects are currently living in that awkward “half migrated” state.
+كان دعم كل من Pages Router وApp Router مهمًا لأن كثيرًا من المشاريع تعيش حاليًا في تلك الحالة المحرجة "نصف المهاجرة".
 
-## What’s Coming Next
+## ما التالي
 
-I’m currently working on expanding framework support.
+أعمل حاليًا على توسيع دعم الأطر.
 
-Planned integrations include:
+التكاملات المخطط لها تشمل:
 
 - React Router
 - Laravel
 - Angular
 
-The long term goal is to make `indexnow-notifier` framework friendly while keeping the setup minimal.
+الهدف طويل الأمد هو جعل `indexnow-notifier` صديقًا للأطر مع الحفاظ على الإعدادات في الحد الأدنى.
 
-I want developers to spend less time configuring SEO notifications and more time building actual features.
+أريد للمطورين أن يقضوا وقتًا أقل في إعداد إشعارات SEO ووقتًا أكثر في بناء ميزات حقيقية.
 
-Or fixing CSS.
+أو إصلاح CSS.
 
-Probably fixing CSS.
+على الأرجح إصلاح CSS.
 
 ---
 
-This is the initial NPM release, so there’s still plenty to improve, polish, and expand.
+هذا هو الإصدار الأول على NPM، لذلك ما يزال هناك الكثير لتحسينه وصقله وتوسيعه.
 
-But even in its current state, it already saves repetitive deployment work and makes IndexNow integration much easier for Next.js projects.
+لكن حتى في حالته الحالية، فإنه يوفر بالفعل عمل النشر المتكرر ويجعل دمج IndexNow أسهل بكثير لمشاريع Next.js.
 
-If you try it out and have suggestions, feedback, or feature requests, feel free to open an issue or contribute to the repository.
+إذا جربته وكانت لديك اقتراحات أو ملاحظات أو طلبات ميزات، فلا تتردد في فتح issue أو المساهمة في المستودع.
 
-Automation should remove friction, not create more of it.
+ينبغي للأتمتة أن تزيل الاحتكاك، لا أن تضيف المزيد منه.
 
-You can explore more about the project here:
+يمكنك معرفة المزيد عن المشروع هنا:
 
 - [https://github.com/mrepol742/indexnow-notifier](https://github.com/mrepol742/indexnow-notifier)
 - [https://www.npmjs.com/package/indexnow-notifier](https://www.npmjs.com/package/indexnow-notifier)

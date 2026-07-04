@@ -1,57 +1,57 @@
 ---
 title: "Why Input Validation Matters More Than Most Developers Think"
 date: "2026-05-23"
-excerpt: "A chaotic WhatsApp group, two autonomous bots, a token bomb, and a reminder that unvalidated systems eventually become someone else's problem."
+excerpt: "مجموعة WhatsApp فوضوية، وروبوتان مستقلان، وقنبلة token، وتذكير بأن الأنظمة غير المتحققة تتحول في النهاية إلى مشكلة شخص آخر."
 topics: ["security", "validation", "whatsapp", "automation", "developer-story"]
 ---
 
-I clocked out from work around 11PM Philippine time and did the usual routine: open WhatsApp, check group chats, ignore half of them, maybe reply to one message if my social battery allows it. Instead, I opened a group that somehow had 255 new messages in barely a few minutes. The weird part was that nobody was actually talking. It was just two autonomous bots arguing with each other like exhausted NPCs trapped inside a broken simulation. Then there were two bot owners occasionally dropping messages that honestly made the entire situation even worse. Nobody seemed to understand spam limits, rate limiting, or basic community guidelines. The group turned into a self-inflicted denial-of-service attack powered entirely by bad automation decisions and zero supervision.
+أنهيت العمل قرابة الساعة 11 مساءً بتوقيت الفلبين، وقمت بالروتين المعتاد: فتح WhatsApp، تفقد المجموعات، تجاهل نصفها، وربما الرد على رسالة واحدة إذا سمحت لي طاقتي الاجتماعية. بدلًا من ذلك، فتحت مجموعة كان فيها بطريقة ما 255 رسالة جديدة خلال بضع دقائق فقط. الغريب أن لا أحد كان يتحدث فعلًا. كان هناك فقط روبوتان مستقلان يتجادلان مع بعضهما مثل NPCs مرهقين محاصرين داخل محاكاة معطلة. ثم كان هناك مالكا الروبوتين يرسلان رسائل بين الحين والآخر، وهو ما زاد الوضع سوءًا. لم يكن يبدو أن أحدًا يفهم حدود الرسائل المزعجة أو تحديد المعدل أو إرشادات المجتمع الأساسية. تحولت المجموعة إلى هجوم حجب خدمة من صنع ذاتي، مدفوع بالكامل بقرارات أتمتة سيئة ومن دون أي إشراف.
 
-At first it was funny. Then my phone started heating up. Web WhatsApp became sluggish. Notifications were arriving faster than the UI could render them. That was the moment I realized this wasn't just "annoying bot spam" anymore. It was a pretty decent example of what happens when systems accept too much input without enough validation or defensive controls.
+في البداية كان الأمر مضحكًا. ثم بدأ هاتفي يسخن. أصبح Web WhatsApp بطيئًا. وكانت الإشعارات تصل أسرع مما تستطيع الواجهة عرضه. عندها أدركت أن المسألة لم تعد مجرد "رسائل مزعجة من الروبوتات". بل كانت مثالًا جيدًا على ما يحدث عندما تقبل الأنظمة قدرًا كبيرًا من الإدخال من دون تحقق كافٍ أو ضوابط دفاعية.
 
-## The Problem Wasn't Actually The Bots
+## المشكلة لم تكن الروبوتات فعلًا
 
-People love blaming bots because they're visible.
+الناس يحبون إلقاء اللوم على الروبوتات لأنها ظاهرة.
 
-The real issue is almost always infrastructure design.
+لكن المشكلة الحقيقية غالبًا ما تكون في تصميم البنية التحتية.
 
-Those bots were able to continuously send large chunks of text, trigger each other endlessly, and flood multiple clients without meaningful interruption. Somewhere along the pipeline, validation either didn't exist or wasn't strict enough. The system kept accepting payloads because technically the requests were valid enough to process.
+تمكنت تلك الروبوتات من إرسال كتل نصية كبيرة باستمرار، وتشغيل بعضها البعض بلا نهاية، وإغراق عدة عملاء من دون انقطاع فعلي. في مكان ما ضمن خط المعالجة، لم يكن التحقق موجودًا أو لم يكن صارمًا بما يكفي. استمر النظام في قبول الحمولة لأن الطلبات كانت، من الناحية التقنية، صالحة بما يكفي للمعالجة.
 
 That distinction matters a lot.
 
-A system can accept technically valid input while still allowing behavior that completely destroys usability.
+يمكن للنظام أن يقبل إدخالًا صحيحًا تقنيًا ومع ذلك يسمح بسلوك يدمّر قابلية الاستخدام بالكامل.
 
-Spam prevention isn't only about blocking bad words or detecting malicious links. Sometimes it's literally just stopping users or bots from sending absurd payloads repeatedly until clients start struggling to render messages.
+منع الرسائل المزعجة لا يتعلق فقط بحظر الكلمات السيئة أو اكتشاف الروابط الخبيثة. أحيانًا يكون الأمر ببساطة إيقاف المستخدمين أو الروبوتات عن إرسال حمولات عبثية مرارًا وتكرارًا حتى تبدأ التطبيقات في مواجهة صعوبة في عرض الرسائل.
 
-## The Token Bomb Situation
+## قصة قنبلة الـ Token
 
-The funniest part is that the only thing that stopped the loop was another payload.
+أطرف جزء أن الشيء الوحيد الذي أوقف الحلقة كان حمولة أخرى.
 
-Specifically, a massive prompt-injection style token bomb that overloaded the bots hard enough to interrupt their flow. The payload looked something like this:
+وبالتحديد، قنبلة token ضخمة بأسلوب prompt injection أرهقت الروبوتات بما يكفي لتعطيل تدفقها. وكانت الحمولة تبدو تقريبًا هكذا:
 
 ```txt
 https://www.melvinjonesrepol.com/resources/TOKEN80M8.mkd
 ```
 
-That file is basically a giant token-heavy text payload designed to overwhelm context processing systems. Not magic. Not hacking movie nonsense. Just computational abuse through scale.
+ذلك الملف هو في الأساس حمولة نصية ضخمة وغنية بالـ tokens صُممت لإرهاق أنظمة معالجة السياق. لا سحر هنا. ولا هراء أفلام الاختراق. فقط إساءة استخدام حسابية عبر الحجم.
 
-A lot of autonomous bots today blindly ingest incoming messages into memory or context windows without enough filtering. If the system continuously appends massive text blobs into conversation memory, things start falling apart pretty quickly.
+كثير من الروبوتات المستقلة اليوم تبتلع الرسائل الواردة بشكل أعمى داخل الذاكرة أو نوافذ السياق من دون ترشيح كافٍ. إذا استمر النظام في إلحاق كتل نصية ضخمة بذاكرة المحادثة، تبدأ الأمور بالانهيار بسرعة.
 
-Some bots crash.
+بعض الروبوتات تتعطل.
 
-Some freeze.
+بعضها يتجمد.
 
-Some enter retry loops.
+بعضها يدخل في حلقات إعادة المحاولة.
 
-Some consume ridiculous amounts of RAM because developers assumed users would behave normally.
+وبعضها يستهلك كميات سخيفة من الذاكرة لأن المطورين افترضوا أن المستخدمين سيتصرفون بشكل طبيعي.
 
-That assumption never survives production.
+هذا الافتراض لا يصمد أبدًا في الإنتاج.
 
-## Why Web WhatsApp Started Choking
+## لماذا بدأ Web WhatsApp يختنق
 
-This part was honestly more interesting than the bots themselves.
+هذا الجزء كان بصراحة أكثر إثارة للاهتمام من الروبوتات نفسها.
 
-Web WhatsApp isn't just displaying plain text. The browser has to continuously:
+Web WhatsApp لا يعرض نصًا عاديًا فقط. على المتصفح أن يقوم باستمرار بـ:
 
 - render messages
 - store conversation state
@@ -74,19 +74,19 @@ This is especially noticeable when:
 
 People sometimes think memory exhaustion attacks need sophisticated exploits. Sometimes all you need is a poorly validated messaging pipeline and users willing to abuse it.
 
-## Why Validation Quietly Saves Entire Platforms
+## لماذا ينقذ التحقق المنصات بهدوء
 
-Validation sounds boring until you see what happens without it.
+التحقق يبدو مملًا إلى أن ترى ما يحدث بدونه.
 
-Most developers think of validation as:
+يفكر معظم المطورين في التحقق على أنه:
 
 - checking email format
 - sanitizing forms
 - limiting file types
 
-But real-world validation is also behavioral.
+لكن التحقق في العالم الحقيقي سلوكي أيضًا.
 
-Questions like:
+أسئلة مثل:
 
 - How often can this client send messages?
 - How large can payloads become?
@@ -96,27 +96,27 @@ Questions like:
 
 Those decisions matter more than people realize.
 
-A lot of modern AI tooling accidentally recreates old internet mistakes with new branding attached. Infinite context ingestion, autonomous loops, unrestricted automation, no rate limiting, and zero supervision somehow became acceptable again because the word "AI" got attached to it.
+كثير من أدوات الذكاء الاصطناعي الحديثة يعيد عن طريق الخطأ إنتاج أخطاء الإنترنت القديمة مع علامة تجارية جديدة. إدخال سياق لا نهائي، حلقات مستقلة، أتمتة غير مقيدة، وعدم وجود تحديد معدل، وصفر إشراف، أصبح مقبولًا مرة أخرى بطريقة ما فقط لأن كلمة "AI" أُلصقت به.
 
-Turns out spam is still spam even when a language model writes it.
+اتضح أن الرسائل المزعجة تبقى رسائل مزعجة حتى عندما يكتبها نموذج لغوي.
 
-## Weird Thing I Noticed During The Spam Loop
+## شيء غريب لاحظته أثناء حلقة الرسائل المزعجة
 
-The human operators were actually making the situation worse.
+كان المشغّلون البشريون يزيدون الوضع سوءًا فعلًا.
 
-The bots would've probably stopped eventually if nobody interacted with them. But the owners kept replying, tweaking prompts, restarting loops, and feeding more context into already unstable conversations.
+كانت الروبوتات ستتوقف على الأرجح في النهاية لو لم يتفاعل معها أحد. لكن المالكين استمروا في الرد، وتعديل الـ prompts، وإعادة تشغيل الحلقات، وإطعام المزيد من السياق لمحادثات غير مستقرة أصلًا.
 
-Classic developer behavior honestly.
+سلوك مطورين كلاسيكي بصراحة.
 
-Instead of turning the thing off, we poke it with a stick to "see what happens."
+بدلًا من إيقاف الشيء، نقوم بإزعاجه بعصا "لنرى ماذا سيحدث".
 
-I would've done the same thing.
+كنت سأفعل الشيء نفسه.
 
-## Small Details That Matter More Than Fancy Architecture
+## التفاصيل الصغيرة أهم من البنية المعمارية اللامعة
 
-The best anti-abuse systems are usually boring.
+أفضل أنظمة مكافحة الإساءة عادةً تكون مملة.
 
-Things like:
+أشياء مثل:
 
 - payload size limits
 - message cooldowns
@@ -126,32 +126,32 @@ Things like:
 - memory caps
 - frontend virtualization
 
-None of these sound impressive on a conference slide.
+ولا واحدة من هذه تبدو مبهرة على شريحة عرض في مؤتمر.
 
-But they prevent stupid situations from becoming infrastructure problems.
+لكنها تمنع المواقف السخيفة من التحول إلى مشاكل بنية تحتية.
 
-One of the most underrated engineering skills is designing systems that survive users being chaotic. Because eventually someone *will* do something ridiculous, intentionally or not.
+من أكثر مهارات الهندسة التي لا تُقدَّر حق قدرها تصميم أنظمة تصمد أمام فوضوية المستخدمين. لأن شخصًا ما *سيقوم* في النهاية بشيء سخيف، عمدًا أو عن غير عمد.
 
-Usually at 11PM.
+غالبًا في الساعة 11 مساءً.
 
-## What I Took Away From That Night
+## ما خرجت به من تلك الليلة
 
-That WhatsApp group accidentally became a perfect demonstration of modern automation problems.
+تحولت تلك المجموعة في WhatsApp بالصدفة إلى عرض مثالي لمشكلات الأتمتة الحديثة.
 
-People are rushing to build autonomous systems without putting enough effort into guardrails. Everybody wants agents, bots, auto-replies, self-running workflows, and infinite memory until the entire thing collapses because nobody implemented basic operational boundaries.
+الناس يسرعون لبناء أنظمة مستقلة من دون بذل جهد كافٍ في وضع الضوابط. الجميع يريد الوكلاء والروبوتات والردود التلقائية وسير العمل الذاتي والذاكرة اللانهائية، إلى أن ينهار كل شيء لأن أحدًا لم يضع حدودًا تشغيلية أساسية.
 
-Validation isn't glamorous work.
+التحقق ليس عملًا لامعًا.
 
-But the developers who obsess over constraints, limits, and defensive design are usually the reason platforms survive real-world usage.
+لكن المطورين الذين يركزون على القيود والحدود والتصميم الدفاعي هم غالبًا سبب بقاء المنصات عند الاستخدام الحقيقي.
 
-Sometimes good engineering is just preventing users from accidentally creating a tiny digital apocalypse inside a group chat.
+أحيانًا تكون الهندسة الجيدة مجرد منع المستخدمين من خلق نهاية عالم رقمية صغيرة داخل دردشة جماعية عن طريق الخطأ.
 
 ---
 
 Thank you for surviving this unnecessarily long rant.
 
-I originally wanted to send this article through a newsletter, but after fighting with Zoho's free tier limitations and trying very hard not to accidentally violate Google's SMTP policies, I decided my sanity was worth more than automated email delivery.
+كنت في الأصل أريد إرسال هذه المقالة عبر نشرة بريدية، لكن بعد المعاناة مع قيود الخطة المجانية في Zoho ومحاولتي الجادة ألا أخالف سياسات SMTP الخاصة بـ Google عن غير قصد، قررت أن سلامتي العقلية تستحق أكثر من التسليم الآلي للبريد.
 
-So for now, the article simply exists here.
+لذلك، في الوقت الحالي، هذه المقالة موجودة هنا فقط.
 
 Probably for the better honestly.

@@ -1,7 +1,7 @@
 ---
-title: "The Next Cyberattack Probably Won't Look Like a Hacker in a Hoodie"
+title: "الهجوم السيبراني القادم على الأغلب لن يبدو كهاكر يرتدي هودي"
 date: "2026-06-26"
-excerpt: "Cybersecurity is changing fast because attackers now have AI too. Here's why modern defense is becoming an engineering problem instead of just an IT responsibility."
+excerpt: "الأمن السيبراني يتغير بسرعة لأن المهاجمين يملكون الذكاء الاصطناعي أيضًا. لهذا أصبح الدفاع الحديث مشكلة هندسية أكثر من كونه مجرد مسؤولية IT."
 topics:
   [
     "cybersecurity",
@@ -11,25 +11,25 @@ topics:
   ]
 ---
 
-Most people still imagine cybersecurity as someone frantically typing green text across multiple monitors while dramatic music plays in the background. Real security incidents are much less cinematic. They're usually a forgotten API key, an over-permissioned cloud account, a leaked environment file, or a developer accidentally exposing something that looked harmless during testing. None of those mistakes are exciting, yet they cause some of the biggest security incidents every year. What makes things even more interesting is that attackers now have access to the same AI tools developers use every day.
+لا يزال معظم الناس يتخيلون الأمن السيبراني كشخص يكتب نصًا أخضر بعصبية عبر عدة شاشات بينما تعزف موسيقى درامية في الخلفية. حوادث الأمان الحقيقية أقل سينمائية بكثير. فهي عادةً مفتاح API منسي، أو حساب سحابي بصلاحيات زائدة، أو ملف بيئة مسرب، أو مطور كشف عن شيء بدا غير ضار أثناء الاختبار بالخطأ. لا شيء من هذه الأخطاء مثير، لكنها تسبب بعضًا من أكبر حوادث الأمان كل عام. والأكثر إثارة أن المهاجمين الآن لديهم وصول إلى نفس أدوات الذكاء الاصطناعي التي يستخدمها المطورون كل يوم.
 
-Security has quietly shifted from protecting servers to protecting software development itself.
+انتقل الأمن بهدوء من حماية الخوادم إلى حماية عملية تطوير البرمجيات نفسها.
 
-## Attackers Are Automating Too
+## المهاجمون يؤتمتون أيضًا
 
-AI isn't exclusive to defenders.
+الذكاء الاصطناعي ليس حكرًا على المدافعين.
 
-Attackers use automation to generate convincing phishing emails, scan for vulnerable services, identify exposed credentials, and adapt attacks faster than traditional scripts ever could.
+يستخدم المهاجمون الأتمتة لتوليد رسائل تصيد مقنعة، وفحص الخدمات الضعيفة، وتحديد الاعتمادات المكشوفة، وتكييف الهجمات أسرع مما يمكن للبرامج النصية التقليدية فعله.
 
-The scary part isn't that AI invented new attacks.
+الجزء المخيف ليس أن الذكاء الاصطناعي اخترع هجمات جديدة.
 
-It's that existing attacks became dramatically cheaper and easier to execute at scale.
+بل أن الهجمات الموجودة أصبحت أرخص وأسهل بشكل كبير للتنفيذ على نطاق واسع.
 
-A task that once required hours of manual work can now happen in minutes.
+مهمة كانت تتطلب ساعات من العمل اليدوي يمكن الآن إنجازها في دقائق.
 
-## The Weakest Link Usually Isn't the Firewall
+## الحلقة الأضعف غالبًا ليست الجدار الناري
 
-When developers think about security, infrastructure often gets most of the attention.
+عندما يفكر المطورون في الأمان، غالبًا ما تحصل البنية التحتية على معظم الاهتمام.
 
 Firewalls.
 
@@ -39,15 +39,15 @@ Encrypted databases.
 
 Network policies.
 
-Those are important, but modern applications rely on dozens of external services, cloud providers, CI pipelines, third-party packages, and APIs.
+تلك أمور مهمة، لكن التطبيقات الحديثة تعتمد على عشرات الخدمات الخارجية، ومزودي السحابة، وخطوط CI، وحزم الطرف الثالث، وAPIs.
 
-Every integration introduces another possible entry point.
+كل تكامل يضيف نقطة دخول محتملة أخرى.
 
-Security today is largely about reducing unnecessary trust.
+الأمان اليوم يتعلق إلى حد كبير بتقليل الثقة غير الضرورية.
 
-## Secrets Have a Funny Way of Escaping
+## الأسرار تجد طريقها إلى الخارج بطريقة غريبة
 
-Every developer has probably committed something they shouldn't have at least once.
+على الأرجح قام كل مطور بعمل commit لشيء لم يكن ينبغي له فعلًا مرة واحدة على الأقل.
 
 An API key.
 
@@ -59,33 +59,33 @@ Sometimes it's fixed within minutes.
 
 Sometimes it sits unnoticed inside a repository for months.
 
-Modern secret scanning tools help, but prevention works even better.
+تساعد أدوات secret scanning الحديثة، لكن المنع يعمل بشكل أفضل.
 
-Using short-lived credentials, proper secret management, and automated repository scanning removes entire categories of mistakes before they become incidents.
+استخدام credentials قصيرة العمر، وإدارة أسرار مناسبة، وفحص المستودع تلقائيًا يزيل فئات كاملة من الأخطاء قبل أن تتحول إلى حوادث.
 
-Developers make fewer mistakes when secure workflows are also the easiest workflows.
+يرتكب المطورون أخطاء أقل عندما تكون سير العمل الآمنة هي الأسهل أيضًا.
 
-## Why Observability Matters for Security
+## لماذا تهم القابلية للملاحظة في الأمان
 
-Good monitoring isn't just about uptime anymore.
+المراقبة الجيدة لم تعد تتعلق بزمن التشغيل فقط.
 
 If a service suddenly starts making unusual outbound requests, downloads unexpected data, or authenticates from an unfamiliar location, those signals matter long before customers notice anything wrong.
 
-Logs become evidence.
+تصبح السجلات أدلة.
 
-Metrics become context.
+وتصبح المقاييس سياقًا.
 
-Traces become timelines.
+وتصبح traces جداول زمنية.
 
-The organizations that recover fastest usually aren't the ones with perfect security.
+المنظمات التي تتعافى بسرعة ليست عادةً تلك التي تملك أمانًا مثاليًا.
 
-They're the ones that know exactly what happened.
+بل تلك التي تعرف بالضبط ما الذي حدث.
 
-## Security Starts During Development
+## يبدأ الأمان أثناء التطوير
 
-One habit that changed my perspective was treating security reviews like code reviews.
+عادة واحدة غيّرت منظوري كانت التعامل مع مراجعات الأمان كما نتعامل مع code reviews.
 
-Instead of asking whether the feature works, I started asking different questions.
+بدلًا من السؤال عما إذا كانت الميزة تعمل، بدأت أطرح أسئلة مختلفة.
 
 What happens if this API receives unexpected input?
 
@@ -95,36 +95,36 @@ Can this permission be narrowed?
 
 Would rotating credentials break anything?
 
-Those conversations catch surprising problems while changes are still inexpensive.
+تلتقط تلك المحادثات مشاكل مفاجئة بينما ما تزال التغييرات رخيصة.
 
-## AI Will Help Defenders More Than It Replaces Them
+## سيساعد الذكاء الاصطناعي المدافعين أكثر مما سيستبدلهم
 
-Security teams already process enormous amounts of alerts.
+فرق الأمن تعالج بالفعل كميات هائلة من التنبيهات.
 
 Most of them are harmless.
 
-AI is becoming surprisingly useful for prioritizing incidents, correlating suspicious events, summarizing investigations, and identifying unusual behavior across massive datasets.
+أصبح الذكاء الاصطناعي مفيدًا بشكل مفاجئ في ترتيب الأولويات للحوادث، وربط الأحداث المشبوهة، وتلخيص التحقيقات، وتحديد السلوك غير المعتاد عبر مجموعات بيانات ضخمة.
 
-That's valuable because humans are good at judgment.
+وهذا مفيد لأن البشر جيدون في الحكم.
 
-Machines are good at filtering noise.
+والآلات جيدة في تنقية الضجيج.
 
-Combining both produces better outcomes than either working alone.
+والجمع بينهما ينتج نتائج أفضل من عمل أي منهما وحده.
 
-## Security Is Becoming Part of Good Engineering
+## يصبح الأمن جزءًا من الهندسة الجيدة
 
-Years ago, security often felt like the final approval before deployment.
+قبل سنوات، كان الأمان يبدو غالبًا وكأنه الموافقة النهائية قبل النشر.
 
-Today it's becoming another quality metric alongside performance, reliability, and maintainability.
+اليوم أصبح مقياس جودة آخر بجانب الأداء والاعتمادية وقابلية الصيانة.
 
-The best security improvements aren't dramatic.
+أفضل تحسينات الأمان ليست درامية.
 
-They're small engineering decisions repeated consistently across every project.
+بل قرارات هندسية صغيرة تُكرّر باستمرار عبر كل مشروع.
 
-A properly configured permission.
+A permission مضبوط بشكل صحيح.
 
-A shorter credential lifetime.
+وعمر credential أقصر.
 
-A dependency updated before anyone notices.
+واعتمادية تُحدث قبل أن يلاحظ أحد.
 
-Those choices rarely make headlines, which is probably the best outcome security can have.
+نادراً ما تصنع تلك الاختيارات العناوين، وربما هذا أفضل مآل يمكن أن يحصل عليه الأمان.

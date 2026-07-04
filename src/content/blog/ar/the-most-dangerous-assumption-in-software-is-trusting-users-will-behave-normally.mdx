@@ -1,17 +1,17 @@
 ---
-title: "The Most Dangerous Assumption in Software: Users Will Behave Normally"
+title: "أخطر افتراض في البرمجيات: أن المستخدمين سيتصرفون بشكل طبيعي"
 date: "2026-05-25"
-excerpt: "Most systems do not collapse because users are evil. They collapse because developers quietly assume everyone will behave correctly forever."
+excerpt: "معظم الأنظمة لا تنهار لأن المستخدمين أشرار. إنها تنهار لأن المطورين يفترضون بهدوء أن الجميع سيتصرف بشكل صحيح إلى الأبد."
 topics: ["software-engineering", "security", "backend", "infrastructure"]
 ---
 
-One of the weirdest things about software engineering is how often systems are built around imaginary perfect users. The ideal user uploads the correct file, clicks buttons slowly, types valid input, refreshes responsibly, never abuses APIs, and somehow understands undocumented edge cases through telepathy. Real users, meanwhile, are out here uploading 8GB TIFF files renamed to '.png', opening 37 tabs at once, rage-clicking payment buttons, and pasting entire novels into username fields because “it let me.” At some point every developer discovers the painful truth that software is not tested against ideal behavior. It is tested against chaos disguised as normal human activity.
+أحد أغرب الأشياء في هندسة البرمجيات هو كم مرة تُبنى الأنظمة حول مستخدمين مثاليين متخيلين. المستخدم المثالي يرفع الملف الصحيح، ينقر الأزرار ببطء، يكتب إدخالًا صالحًا، ينعش الصفحة بمسؤولية، لا يسيء استخدام الـ APIs أبدًا، ويفهم somehow الحالات الحدية غير الموثقة عبر التخاطر. أما المستخدمون الحقيقيون، فهم يرفعون ملفات TIFF بحجم 8GB معاد تسميتها إلى '.png'، ويفتحون 37 تبويبًا دفعة واحدة، وينقرون أزرار الدفع بعصبية، ويلصقون روايات كاملة في حقول أسماء المستخدمين لأن "الموقع سمح لي". في مرحلة ما يكتشف كل مطور الحقيقة المؤلمة: البرمجيات لا تُختبر ضد السلوك المثالي. إنها تُختبر ضد الفوضى المتخفية كسلوك إنساني عادي.
 
-The scary part is that malicious users are not even the main problem most of the time. Regular users already generate enough unpredictable behavior to stress systems in creative ways nobody planned for.
+الجزء المخيف أن المستخدمين الخبثاء ليسوا حتى المشكلة الرئيسية في معظم الأحيان. المستخدمون العاديون ينتجون بالفعل سلوكًا غير متوقع بما يكفي لإرهاق الأنظمة بطرق مبتكرة لم يخطط لها أحد.
 
-## The Lie Hidden Inside "Happy Path" Development
+## الكذبة المختبئة داخل تطوير "المسار السعيد"
 
-Most applications start with happy path logic.
+معظم التطبيقات تبدأ بمنطق المسار السعيد.
 
 User signs up.
 User logs in.
@@ -19,9 +19,9 @@ User uploads file.
 Everything works.
 Everybody celebrates.
 
-Then reality arrives carrying a flamethrower.
+ثم تصل الحقيقة وهي تحمل قاذف لهب.
 
-The problem is not that developers are careless. It is that normal behavior is impossible to define consistently. What seems obvious during development becomes dangerously incomplete once actual humans touch the product.
+المشكلة ليست أن المطورين مهملون. بل إن السلوك الطبيعي يستحيل تعريفه بشكل متسق. ما يبدو بديهيًا أثناء التطوير يصبح ناقصًا بشكل خطير عندما يلمس المنتج بشر حقيقيون.
 
 A user might:
 
@@ -38,32 +38,32 @@ None of these actions are particularly malicious.
 
 But systems still break because they were designed around optimism instead of resilience.
 
-## Why "Nobody Would Ever Do That" Is Famous Last Words
+## لماذا عبارة "لا أحد سيفعل ذلك" من أشهر الكلمات الأخيرة
 
-Every engineering team eventually says the phrase:
+كل فريق هندسي يقول هذه العبارة في النهاية:
 
 > "Nobody would ever do that."
 
-That sentence has probably caused more outages than bad code.
+من المحتمل أن تكون هذه الجملة قد سببت outages أكثر من الكود السيئ.
 
-Because somebody always does it.
+لأن أحدهم يفعل ذلك دائمًا.
 
-Sometimes intentionally.
-Usually accidentally.
+أحيانًا عمدًا.
+وغالبًا عن غير قصد.
 
-I once watched a user upload the same file repeatedly because the progress bar froze for three seconds. The backend interpreted every retry as a fresh processing task. Within minutes the queue system looked like it had entered a psychological crisis.
+شاهدت مرة مستخدمًا يرفع الملف نفسه مرارًا وتكرارًا لأن شريط التقدم تجمد لثلاث ثوانٍ. فسرّت الخلفية كل محاولة إعادة كأنها مهمة معالجة جديدة. وخلال دقائق بدا نظام الطوابير وكأنه دخل في أزمة نفسية.
 
-The user was not attacking the platform.
+لم يكن المستخدم يهاجم المنصة.
 
-They were just impatient.
+كان فقط غير صبور.
 
-From their perspective, the button looked broken.
+من وجهة نظره، بدا الزر معطلاً.
 
-## APIs Are Basically Public Escape Rooms
+## الـ APIs هي تقريبًا غرف هروب عامة
 
-One thing that changes your perspective fast is exposing an API publicly.
+شيء واحد يغير منظورك بسرعة هو إتاحة API للعامة.
 
-Internal systems feel predictable because the environment is controlled. Public APIs are completely different. The second something becomes accessible on the internet, people begin interacting with it in ways that feel statistically impossible.
+الأنظمة الداخلية تبدو متوقعة لأن البيئة مضبوطة. أما الـ APIs العامة فهي مختلفة تمامًا. في اللحظة التي يصبح فيها شيء ما متاحًا على الإنترنت، يبدأ الناس في التفاعل معه بطرق تبدو إحصائيًا مستحيلة.
 
 Some examples:
 
@@ -76,13 +76,13 @@ Some examples:
 - impossible enum values
 - random mobile clients from outdated app versions
 
-The backend eventually becomes less about handling valid requests and more about surviving creative misuse.
+تصبح الخلفية في النهاية أقل عن التعامل مع الطلبات الصالحة وأكثر عن البقاء أمام إساءة الاستخدام المبتكرة.
 
-That sounds cynical, but honestly it is just reality.
+قد يبدو ذلك متشائمًا، لكنه ببساطة الواقع.
 
-## Performance Problems Usually Start as Trust Problems
+## مشاكل الأداء تبدأ غالبًا كمشاكل ثقة
 
-A lot of performance issues are actually trust issues in disguise.
+كثير من مشكلات الأداء هي في الحقيقة مشكلات ثقة متنكرة.
 
 For example:
 
@@ -93,22 +93,22 @@ For example:
 - trusting external services to respond quickly
 - trusting cache sizes to remain reasonable
 
-Systems fail because they assume cooperation.
+تفشل الأنظمة لأنها تفترض التعاون.
 
-One project I worked on had image processing without strict size validation because “most users upload normal photos.” That worked perfectly until somebody uploaded an ultra-high-resolution image directly exported from professional editing software.
+أحد المشاريع التي عملت عليها كان فيه معالجة صور من دون تحقق صارم من الحجم لأن "معظم المستخدمين يرفعون صورًا عادية". كان ذلك يعمل بشكل مثالي حتى رفع أحدهم صورة بدقة فائقة صُدرت مباشرة من برنامج تحرير احترافي.
 
-The server did not crash immediately.
+الخادم لم ينهَر فورًا.
 
-It suffered first.
+لكنه عانى أولًا.
 
-There is a difference.
+وهناك فرق.
 
-## Tiny Edge Cases Become Massive Problems
+## الحالات الحدية الصغيرة تتحول إلى مشاكل ضخمة
 
-Developers love dismissing edge cases early because shipping matters.
+يحب المطورون تجاهل الحالات الحدية مبكرًا لأن الشحن مهم.
 
-That makes sense.
-Until the edge case quietly becomes infrastructure lore.
+وهذا منطقي.
+حتى تتحول الحالة الحدية بهدوء إلى folklore للبنية التحتية.
 
 Some of the worst production issues come from tiny assumptions:
 
@@ -121,46 +121,46 @@ Some of the worst production issues come from tiny assumptions:
 - assuming uploads are honest
 - assuming inputs remain human-sized
 
-One of my favorite bugs involved a username field that technically accepted unlimited characters because nobody added database constraints yet.
+أحد أخطاءي المفضلة كان حقل اسم مستخدم يقبل نظريًا عددًا غير محدود من الأحرف لأن أحدًا لم يضف قيود قاعدة البيانات بعد.
 
-Somebody pasted an entire cooking recipe into it.
+لصق أحدهم وصفة طبخ كاملة داخله.
 
-That field later appeared inside logs, notifications, and admin dashboards.
+ظهر ذلك الحقل لاحقًا داخل السجلات والإشعارات ولوحات الإدارة.
 
-Suddenly every internal tool looked deeply invested in lasagna.
+فجأة بدت كل الأداة الداخلية وكأنها مهتمة باللازانيا بشكل عميق.
 
-## Security Problems Rarely Look Dramatic at First
+## مشكلات الأمان نادرًا ما تبدو درامية في البداية
 
-Movies trained people to think security attacks are loud and cinematic.
+علّمت الأفلام الناس أن هجمات الأمان صاخبة وسينمائية.
 
-Real security problems usually begin quietly.
+أما مشكلات الأمان الحقيقية فغالبًا تبدأ بهدوء.
 
-A missing limit here.
-A forgotten validation there.
-A timeout nobody configured.
+حد مفقود هنا.
+وتحقق منسي هناك.
+ومهلة لم يضبطها أحد.
 An assumption nobody questioned.
 
-Then one day a harmless-looking request consumes all available memory because the application trusted input size too much.
+ثم في يوم ما يستهلك طلب يبدو غير ضار كل الذاكرة المتاحة لأن التطبيق وثق في حجم المدخلات أكثر مما ينبغي.
 
-Or somebody uploads a compressed file that expands into absurd storage usage.
+أو يرفع أحدهم ملفًا مضغوطًا يتوسع إلى استخدام تخزين عبثي.
 
-Or retries accidentally become denial-of-service traffic.
+أو تتحول المحاولات المتكررة بالخطأ إلى حركة حجب خدمة.
 
-None of these failures require genius attackers.
+ولا واحد من هذه الإخفاقات يتطلب مهاجمين عباقرة.
 
-They just require systems designed around unrealistic behavior assumptions.
+إنها فقط تتطلب أنظمة صُممت حول افتراضات سلوكية غير واقعية.
 
-## The Best Defensive Programming Feels Slightly Paranoid
+## أفضل البرمجة الدفاعية تبدو مهووسة قليلًا
 
-Good defensive engineering sometimes feels rude while building it.
+الهندسة الدفاعية الجيدة تبدو أحيانًا وقحة أثناء بنائها.
 
 Rate limiting feels unnecessary until traffic spikes.
 Strict validation feels annoying until malformed data spreads everywhere.
 Timeouts feel pessimistic until dependencies start hanging forever.
 
-But systems survive because developers planned for bad behavior instead of hoping for good behavior.
+لكن الأنظمة تصمد لأن المطورين خططوا للسلوك السيئ بدلًا من الأمل في السلوك الجيد.
 
-The most reliable systems I have seen all share similar traits:
+أكثر الأنظمة موثوقية التي رأيتها تشترك كلها في خصائص متشابهة:
 
 - strict input validation
 - hard resource limits
@@ -171,13 +171,13 @@ The most reliable systems I have seen all share similar traits:
 - observability everywhere
 - distrust of user-controlled data
 
-Not because engineers hate users.
+ليس لأن المهندسين يكرهون المستخدمين.
 
-Because engineers have met users.
+بل لأن المهندسين قد قابلوا المستخدمين.
 
-## Small Development Decisions Quietly Shape Stability
+## القرارات التطويرية الصغيرة تشكل الاستقرار بهدوء
 
-A lot of resilience comes from boring implementation details nobody talks about during launch announcements.
+جزء كبير من المرونة يأتي من تفاصيل تنفيذ مملة لا يتحدث عنها أحد أثناء إعلانات الإطلاق.
 
 Things like:
 
@@ -190,30 +190,30 @@ Things like:
 - preventing duplicate jobs
 - handling retries safely
 
-These decisions are not glamorous.
+هذه القرارات ليست لامعة.
 
-Nobody posts screenshots of “successful input sanitization.”
+لا أحد ينشر لقطات شاشة لـ "نجاح تعقيم المدخلات".
 
-But these tiny details are usually the reason infrastructure survives weird traffic instead of becoming a cautionary conference talk six months later.
+لكن هذه التفاصيل الصغيرة هي غالبًا السبب في أن البنية التحتية تنجو من حركة المرور الغريبة بدلًا من أن تصبح حديثًا تحذيريًا في مؤتمر بعد ستة أشهر.
 
-## Building Safer Systems Means Accepting Weirdness
+## بناء أنظمة أكثر أمانًا يعني قبول الغرابة
 
 One mindset shift helped me more than any framework or security checklist:
 
-Users are not predictable.
+المستخدمون غير متوقعين.
 
-Sometimes they are confused.
-Sometimes impatient.
-Sometimes creative.
-Sometimes exhausted.
-Sometimes accidentally destructive.
+أحيانًا يكونون مرتبكين.
+وأحيانًا غير صبورين.
+وأحيانًا مبدعين.
+وأحيانًا مرهقين.
+وأحيانًا مدمرين عن غير قصد.
 
-And occasionally they are all five simultaneously.
+وأحيانًا يجمعون الخمس كلها في الوقت نفسه.
 
-Software becomes more reliable once you stop designing around ideal behavior and start designing around realistic behavior.
+تصبح البرمجيات أكثر موثوقية عندما تتوقف عن التصميم حول السلوك المثالي وتبدأ في التصميم حول السلوك الواقعي.
 
-Because eventually somebody will upload the wrong file, double-click the dangerous button, spam refresh during a timeout, or accidentally discover a catastrophic edge case while trying to reset their password on airport Wi-Fi.
+لأن أحدهم في النهاية سيرفع الملف الخطأ، أو ينقر نقرًا مزدوجًا على الزر الخطير، أو يرسل refresh spam أثناء timeout، أو يكتشف بالخطأ حالة حدية كارثية وهو يحاول إعادة تعيين كلمة مروره على Wi-Fi في المطار.
 
-And honestly, they probably will not even realize they almost took production down.
+وبصراحة، على الأرجح لن يدركوا حتى أنهم كادوا يوقفون الإنتاج.
 
-That is what makes it dangerous.
+وهذا ما يجعله خطيرًا.

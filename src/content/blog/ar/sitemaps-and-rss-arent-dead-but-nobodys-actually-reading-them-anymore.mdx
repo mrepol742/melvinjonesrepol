@@ -1,39 +1,39 @@
 ---
 title: "Sitemaps and RSS Aren't Dead, But Nobody's Actually Reading Them Anymore"
 date: "2026-07-03"
-excerpt: "I went digging through my server logs expecting to find bots hammering my sitemap.xml and RSS feed. What I found instead explains a lot about where discovery is actually headed."
+excerpt: "ذهبت أبحث في سجلات الخادم متوقعًا العثور على روبوتات تضرب sitemap.xml وخلاصة RSS. ما وجدته بدلًا من ذلك يفسر الكثير عن الاتجاه الذي يسير إليه الاكتشاف فعليًا."
 topics: ["sitemap", "rss", "web-standards", "ai-search"]
 ---
 
-I went spelunking through six months of server logs last week for a completely unrelated reason, mostly trying to figure out why a caching rule wasn't behaving, and I stumbled onto something that stopped me mid-scroll. My sitemap.xml, the file I dutifully regenerate on every deploy like it's still 2012, was getting hit maybe a dozen times a month. My RSS feed, which I actually put real effort into keeping clean, had even less traffic than that. Meanwhile my llms.txt file, which I added almost as an afterthought a couple months back, was getting requested daily by half a dozen different AI crawlers. I sat there for a solid minute just staring at the numbers, because these were files I'd been told my entire career were non-negotiable infrastructure, and apparently almost nothing was reading them anymore except the tools I'd never designed them for.
+قضيت الأسبوع الماضي أتفقد ستة أشهر من سجلات الخادم لسبب لا علاقة له بالأمر، في الغالب لمحاولة معرفة سبب عدم تصرف قاعدة caching كما ينبغي، وصادفت شيئًا أوقفني أثناء التمرير. ملف sitemap.xml الخاص بي، الذي أعيد توليده بأمانة في كل نشر كما لو أننا ما زلنا في 2012، كان يتلقى ربما عشر زيارات في الشهر. أما خلاصة RSS الخاصة بي، التي بذلت جهدًا حقيقيًا لإبقائها نظيفة، فكان معدلها أقل من ذلك. وفي المقابل، كان ملف llms.txt الذي أضفته تقريبًا كفكرة لاحقة قبل شهرين يتلقى طلبات يومية من نصف دزينة من AI crawlers مختلفة. جلست هناك دقيقة كاملة أحدق في الأرقام، لأن هذه الملفات قيل لي طوال مسيرتي إنها بنية تحتية غير قابلة للتفاوض، ويبدو أن تقريبًا لا شيء كان يقرأها بعد الآن باستثناء الأدوات التي لم أصممها لها أصلًا.
 
-That log dive turned into a genuine rabbit hole, and I want to walk through what I found, because I don't think sitemaps and RSS are "dead" in the dramatic sense people like to declare things dead on social media. They're just quietly being replaced as the primary discovery mechanism, and understanding why says a lot about where the web is actually headed.
+تحولت تلك الغوصة في السجلات إلى جحر أرنب حقيقي، وأريد أن أمر على ما وجدته، لأنني لا أعتقد أن sitemaps وRSS "ميتتان" بالمعنى الدرامي الذي يحب الناس إعلان موت الأشياء به على وسائل التواصل. إنهما فقط يُستبدلان بهدوء كآلية الاكتشاف الأساسية، وفهم السبب يقول الكثير عن الاتجاه الذي يسير إليه الويب فعلًا.
 
-## What Sitemaps and RSS Were Actually For
+## ما الذي كانت sitemaps وRSS مخصصتين له فعلًا
 
-Worth rewinding for a second, because it's easy to forget these formats solved real, specific problems for their era. Sitemap.xml exists because search engine crawlers in the early 2000s were bad at discovering deep pages on a site through links alone, especially on large sites with content buried behind search bars or pagination. You handed Googlebot a flat list of every URL you wanted indexed, plus some metadata about how often it changed, and that made crawling dramatically more efficient.
+يجدر التراجع خطوة للوراء، لأنه من السهل نسيان أن هذه التنسيقات حلت مشكلات حقيقية ومحددة في عصرها. وُجد sitemap.xml لأن crawlers محركات البحث في أوائل الألفينات كانت سيئة في اكتشاف الصفحات العميقة في الموقع عبر الروابط وحدها، خصوصًا في المواقع الكبيرة ذات المحتوى المدفون خلف search bars أو pagination. كنت تسلم Googlebot قائمة مسطحة بكل URL تريد فهرسته، مع بعض metadata حول مدى تغيره، وهذا جعل الزحف أكثر كفاءة بشكل كبير.
 
-RSS solved a different but related problem: how do you know when a site you care about publishes something new, without manually checking it every day? You subscribed to a feed, your reader polled it periodically, and new content showed up automatically. For a solid decade, this was genuinely how a huge chunk of the internet consumed blogs and news. Google Reader was basically the front page of the internet for a certain kind of person.
+RSS حل مشكلة مختلفة لكنها مرتبطة: كيف تعرف متى ينشر موقع تهتم به شيئًا جديدًا من دون أن تراجعه يدويًا كل يوم؟ كنت تشترك في feed، ويقوم reader بإجراء poll له دوريًا، ويظهر المحتوى الجديد تلقائيًا. لمدة عقد كامل، كان هذا هو فعلًا كيف يستهلك جزء ضخم من الإنترنت المدونات والأخبار. كان Google Reader عمليًا الصفحة الأولى للإنترنت لنوع معين من الناس.
 
-Both formats assumed the same underlying model: a crawler or a reader periodically pulls a structured list of URLs, then a human or a search algorithm decides what to do with them. That assumption held up fine for a very long time.
+كلا التنسيقين افترضا النموذج نفسه في الخلفية: crawler أو reader يسحب دوريًا قائمة structured من URLs، ثم يقرر الإنسان أو خوارزمية البحث ما الذي ينبغي فعله بها. وقد صمد هذا الافتراض جيدًا لفترة طويلة جدًا.
 
-## Where It Started Breaking Down
+## أين بدأ الانهيار
 
-The first crack wasn't AI, honestly, it was just the slow death of the RSS reader itself. Google Reader shutting down in 2013 is the moment most people point to, and it really did gut casual RSS usage almost overnight. Feed consumption never fully recovered because social platforms and algorithmic feeds ate the "show me what's new" job that RSS used to do. Why subscribe to fifteen blogs individually when a timeline just surfaces things for you, badly ranked but effortlessly delivered.
+أول صدع لم يكن الذكاء الاصطناعي، بصراحة، بل الموت البطيء لـ RSS reader نفسه. إغلاق Google Reader في 2013 هو اللحظة التي يشير إليها معظم الناس، وقد قضى فعلًا على الاستخدام العابر لـ RSS تقريبًا بين ليلة وضحاها. لم يتعاف استهلاك feeds بالكامل أبدًا لأن المنصات الاجتماعية وfeeds الخوارزمية أكلت وظيفة "أرني الجديد" التي كان RSS يؤديها. لماذا تشترك في خمسة عشر مدونة على حدة بينما timeline واحد يعرض لك الأشياء، حتى لو بترتيب سيئ، لكنه يسلّمها لك من دون عناء.
 
-Sitemaps held on longer because they kept doing their actual job well, feeding search engine crawlers. But even there, modern crawlers got dramatically better at discovering content through link graphs, internal linking, and JS rendering, which quietly reduced how load-bearing your sitemap actually was for a lot of sites. It didn't stop mattering entirely, but it stopped being the make-or-break file it once was for anyone with reasonably well-structured internal links.
+صمدت sitemaps فترة أطول لأنها استمرت في أداء وظيفتها الفعلية جيدًا: تغذية crawlers محركات البحث. لكن حتى هناك، أصبحت crawlers الحديثة أفضل بشكل كبير في اكتشاف المحتوى عبر link graphs والربط الداخلي وJS rendering، مما قلل بهدوء من مدى اعتماد كثير من المواقع على sitemap. لم تتوقف عن الأهمية تمامًا، لكنها توقفت عن كونها الملف الحاسم الذي كانت عليه لأي موقع يملك روابط داخلية منظمة بشكل معقول.
 
 Then AI crawlers showed up and changed the equation again, in a way neither format was built to handle at all.
 
-## Why AI Crawlers Don't Care About Either
+## لماذا لا يهتم AI crawlers بأي منهما
 
-Here's the part that actually surprised me once I looked closer. AI systems like the ones behind ChatGPT, Perplexity, and Claude aren't trying to index every URL on your site the way Googlebot historically did. They're trying to answer a specific question well, using the smallest, cleanest slice of content that gets the job done. A sitemap gives them a flat list of a thousand URLs with zero context about which ten actually matter. That's close to useless for a system operating under a token budget and trying to decide what's worth ingesting.
+هذا هو الجزء الذي فاجأني فعلًا عندما نظرت عن قرب. أنظمة الذكاء الاصطناعي مثل تلك التي تقف وراء ChatGPT وPerplexity وClaude لا تحاول فهرسة كل URL في موقعك بالطريقة التي كان يفعلها Googlebot تاريخيًا. إنها تحاول الإجابة عن سؤال محدد جيدًا باستخدام أصغر وأنظف جزء من المحتوى ينجز المهمة. تعطيها sitemap قائمة مسطحة بألف URL من دون أي سياق حول أي عشرة منها مهمة فعلًا. وهذا يكاد يكون عديم الفائدة لنظام يعمل تحت token budget ويحاول أن يقرر ما الذي يستحق الإدخال.
 
-RSS has an even weirder mismatch. It's built around chronology, what's newest, in a strict reverse order feed. But AI systems mostly don't care what's newest, they care what's most relevant and most authoritative for a specific question. A five year old, well written explainer is often more useful to a model than something published yesterday. RSS structurally can't express that kind of relevance at all, it only knows how to say "this came after that."
+RSS لديه عدم تطابق أغرب. فهو مبني حول التسلسل الزمني: ما هو الأحدث، في feed بترتيب عكسي صارم. لكن أنظمة الذكاء الاصطناعي غالبًا لا تهتم بما هو الأحدث، بل بما هو الأكثر صلة والأكثر موثوقية لسؤال معين. شرح جيد كُتب قبل خمس سنوات غالبًا يكون أكثر فائدة للنموذج من شيء نُشر أمس. RSS ببنيته لا يستطيع التعبير عن هذا النوع من الصلة أبدًا، فهو لا يعرف سوى أن يقول "هذا جاء بعد ذاك".
 
 So you end up with two formats that were built to answer questions nobody's really asking anymore. "What's every URL on this site" and "what's the newest thing published" just aren't the questions driving discovery in an AI-mediated web. The actual question is closer to "what on this site would actually help answer this specific query," and neither sitemap.xml nor RSS was ever designed to express that.
 
-## What's Quietly Replacing Them
+## ما الذي يحل محلها بهدوء
 
 This is where llms.txt and similar structured formats come in, and it's worth being honest about what they're actually doing differently. Instead of a flat exhaustive list, llms.txt is a curated, human-written summary pointing at the pages that actually matter, with plain language context about why. It's the difference between handing someone a phone book and handing them a short note that says "here's what we do, here are the five pages that explain it best."
 

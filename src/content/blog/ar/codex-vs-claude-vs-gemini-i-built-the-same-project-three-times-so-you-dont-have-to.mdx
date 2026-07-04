@@ -1,43 +1,43 @@
 ---
 title: "Codex vs Claude vs Gemini: I Built the Same Project Three Times So You Don't Have To"
 date: "2026-06-26"
-excerpt: "Every AI coding assistant claims to make developers faster. I spent time building with Codex, Claude, and Gemini to find out where each one actually shines and where they quietly get in the way."
+excerpt: "كل مساعد برمجي بالذكاء الاصطناعي يدّعي أنه يجعل المطورين أسرع. قضيت وقتًا أبني باستخدام Codex وClaude وGemini لأعرف أين يتألق كل واحد فعلًا وأين يعيقك بهدوء."
 topics: ["ai-coding", "codex", "claude", "gemini", "developer-tools"]
 ---
 
-Choosing an AI coding assistant has somehow become harder than choosing a JavaScript framework. Every week there's another benchmark, another leaderboard, and another viral post claiming one model completely destroyed the competition. Then you actually use them for real work and realize benchmarks don't explain why one assistant keeps misunderstanding your architecture while another somehow fixes three unrelated bugs in a single conversation. After spending several weeks switching between Codex, Claude, and Gemini on actual projects instead of toy examples, I stopped asking which model was "the smartest." The better question became which one I'd trust with different parts of my workflow.
+اختيار مساعد برمجي بالذكاء الاصطناعي أصبح بطريقة ما أصعب من اختيار JavaScript framework. كل أسبوع هناك benchmark جديد، ولوحة ترتيب جديدة، ومنشور فيروسي جديد يدّعي أن نموذجًا ما سحق المنافسة بالكامل. ثم تستخدمها فعلًا في عمل حقيقي وتدرك أن الـ benchmarks لا تشرح لماذا يفهم مساعد سياقك المعماري بشكل خاطئ بينما يتمكن آخر بطريقة ما من إصلاح ثلاثة أخطاء غير مرتبطة في محادثة واحدة. بعد عدة أسابيع من التنقل بين Codex وClaude وGemini في مشاريع حقيقية بدلًا من أمثلة سطحية، توقفت عن السؤال عن "الأذكى". أصبح السؤال الأفضل: أيها أثق به في أجزاء مختلفة من سير عملي؟
 
-The answer wasn't as obvious as I expected, and surprisingly, there isn't a single winner.
+الجواب لم يكن واضحًا كما توقعت، والمفاجأة أنه لا يوجد فائز واحد.
 
-## The Experiment
+## التجربة
 
-Rather than comparing coding benchmarks or asking each model to reverse a binary tree for the thousandth time, I gave all three assistants the same responsibilities.
+بدلًا من مقارنة coding benchmarks أو مطالبة كل نموذج بعكس binary tree للمرة الألف، منحت المساعدين الثلاثة المسؤوليات نفسها.
 
-The project wasn't particularly glamorous.
+لم يكن المشروع مهيبًا بشكل خاص.
 
-A full-stack application with authentication, REST APIs, database migrations, Docker configuration, CI pipelines, and enough bugs to make things interesting.
+تطبيق full-stack فيه مصادقة وREST APIs وترحيلات قاعدة بيانات وDocker configuration وخطوط CI، ومع ما يكفي من الأخطاء لجعل الأمور ممتعة.
 
-The goal wasn't to see who could generate the most code.
+لم يكن الهدف معرفة من يكتب أكبر قدر من الكود.
 
-It was to see who could help finish the project.
+بل معرفة من يمكنه مساعدتي في إنهاء المشروع.
 
-## Codex Feels Like Pair Programming With an Engineer
+## Codex يشبه البرمجة الثنائية مع مهندس
 
-Codex surprised me the most.
+Codex فاجأني أكثر من غيره.
 
-Instead of constantly explaining what every line of code does, it tends to focus on solving the problem directly. It feels comfortable navigating an existing codebase, modifying multiple files, and understanding how changes affect the rest of the project.
+بدلًا من شرح ما تفعله كل سطر من الكود باستمرار، يميل إلى التركيز على حل المشكلة مباشرة. يبدو مرتاحًا في التنقل داخل codebase موجود، وتعديل ملفات متعددة، وفهم كيف تؤثر التغييرات في بقية المشروع.
 
-What stood out wasn't raw intelligence.
+الذي لفت انتباهي لم يكن الذكاء الخام.
 
-It was confidence while working inside real repositories.
+بل الثقة أثناء العمل داخل مستودعات حقيقية.
 
-When I asked it to refactor authentication middleware, update related unit tests, and adjust routing logic, it rarely treated those as separate requests. It understood they belonged together.
+عندما طلبت منه إعادة هيكلة authentication middleware، وتحديث unit tests ذات الصلة، وضبط routing logic، نادرًا ما تعامل معها كطلبات منفصلة. فهم أنها تنتمي معًا.
 
-That made it feel less like an assistant and more like another engineer working beside me.
+وهذا جعله يبدو أقل كمساعد وأكثر كمهندس آخر يعمل بجانبي.
 
-### Where Codex shines
+### أين يتألق Codex
 
-- Repository-wide refactoring
+- إعادة هيكلة على مستوى المستودع
 - Understanding project structure
 - Multi-file code changes
 - Software engineering workflows

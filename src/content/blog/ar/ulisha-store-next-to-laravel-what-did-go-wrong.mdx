@@ -1,46 +1,45 @@
 ---
-title: "Ulisha Store Next to Laravel: What Did Go Wrong?"
+title: "Ulisha Store Next إلى Laravel: ماذا حدث خطأً؟"
 date: "2026-04-17"
-excerpt: "Ulisha Store is an e-commerce platform that started with Next.js and Supabase but faced challenges as it scaled. We eventually migrated to Laravel for better performance and scalability. In this post, we discuss the reasons behind the migration and the benefits of using Laravel for our project."
+excerpt: "Ulisha Store منصة تجارة إلكترونية بدأت بـ Next.js وSupabase لكنها واجهت تحديات مع التوسع. انتهى بنا الأمر إلى الانتقال إلى Laravel لأداء أفضل وقابلية توسع أعلى. في هذه التدوينة نناقش أسباب الانتقال وفوائد استخدام Laravel لمشروعنا."
 topics: ["ulisha store", "laravel", "web development", "personal"]
 ---
 
-## What is Ulisha Store?
+## ما هو Ulisha Store؟
 
-It's a project Elisha Paul Okai and I started. We wanted to create an e-commerce platform that was easy to use, flexible and cost effective. We start with
-Vanilla React with Supabase to achieved our goal. We wanted to create a platform that could be used by small businesses and entrepreneurs to sell their products online without the need for complex setups or high costs.
-But problems starts piling up as we try to add more features and scale the application. We faced issues with performance, scalability, and maintainability. We also struggled with the complexity of the codebase and the lack of clear documentation.
+هو مشروع بدأه Elisha Paul Okai وأنا. أردنا إنشاء منصة تجارة إلكترونية سهلة الاستخدام ومرنة وفعّالة من حيث التكلفة. بدأنا بـ Vanilla React مع Supabase لتحقيق هدفنا. أردنا منصة يمكن أن تستخدمها الشركات الصغيرة ورواد الأعمال لبيع منتجاتهم عبر الإنترنت من دون الحاجة إلى إعدادات معقدة أو تكاليف عالية.
+لكن المشكلات بدأت تتراكم بينما نحاول إضافة المزيد من الميزات وتوسيع التطبيق. واجهنا مشاكل في الأداء وقابلية التوسع وقابلية الصيانة. كما عانينا من تعقيد قاعدة الكود وغياب التوثيق الواضح.
 
-We decided to migrate to Next.js to solve some of these issues, but we still faced challenges even if there architectural improvements. We had to deal with issues related to server-side rendering, routing, and state management.
-The positive side of using Next.js or React partner with Supabase is that we were able to leverage the benefits of both technologies. Next.js provided us with a powerful framework for building server-rendered React applications, while Supabase offered a robust backend solution for our e-commerce platform.
-Vercel & Supabase Cloud provided free hosting and authentication services, which helped us to focus on building our application without worrying about infrastructure costs. We also used GitHub for version control and collaboration, which made it easier for us to work together and manage our codebase.
+قررنا الانتقال إلى Next.js لحل بعض هذه المشكلات، لكننا ما زلنا نواجه تحديات حتى مع التحسينات المعمارية. كان علينا التعامل مع مشكلات تتعلق بـ server-side rendering وrouting وstate management.
+الجانب الإيجابي من استخدام Next.js أو React مع Supabase هو أننا تمكنا من الاستفادة من مزايا التقنيتين. قدم لنا Next.js إطارًا قويًا لبناء تطبيقات React معروضة من الخادم، بينما قدمت Supabase حلًا خلفيًا متينًا لمنصة التجارة الإلكترونية الخاصة بنا.
+وفرت Vercel وSupabase Cloud استضافة مجانية وخدمات مصادقة، مما ساعدنا على التركيز على بناء التطبيق من دون القلق بشأن تكاليف البنية التحتية. كما استخدمنا GitHub للتحكم في الإصدارات والتعاون، مما سهّل علينا العمل معًا وإدارة قاعدة الكود.
 
-But in the end, the production cost when deploying to Verce and Supabase Cloud is not sustainable for us as we scale and that is the major issues for small-medium businesses.
-We had to make a tough decision to migrate to Laravel, which is a more traditional web framework that offers better performance and scalability for our needs.
+لكن في النهاية، كانت تكلفة الإنتاج عند النشر على Vercel وSupabase Cloud غير مستدامة لنا مع توسعنا، وهذه هي المشكلة الكبرى للشركات الصغيرة والمتوسطة.
+اضطررنا إلى اتخاذ قرار صعب بالانتقال إلى Laravel، وهو إطار ويب أكثر تقليدية يقدم أداءً وقابلية توسع أفضل لاحتياجاتنا.
 
-## The Migration to Laravel
+## الانتقال إلى Laravel
 
-The shared hosting of Laravel or PHP based web applications is more cost effective than the serverless hosting of Next.js and Supabase Cloud. This is because shared hosting providers typically charge a fixed monthly fee for hosting, which can be more affordable for small businesses and entrepreneurs who are just starting out.
-In contrast, serverless hosting providers like Vercel and Supabase Cloud often charge based on usage, which can become expensive as the application scales and attracts more traffic.
-Laravel already solved the major issues but also give us the flexibility of SEO/GEO targeting and better performance. We can also leverage the large ecosystem of Laravel packages and tools to enhance our application and add new features more easily.
+الاستضافة المشتركة لتطبيقات Laravel أو التطبيقات المبنية على PHP أكثر فعالية من حيث التكلفة من الاستضافة serverless لـ Next.js وSupabase Cloud. وذلك لأن مزودي shared hosting عادةً ما يفرضون رسومًا شهرية ثابتة، ما قد يكون أكثر ملاءمة للشركات الصغيرة ورواد الأعمال في بداياتهم.
+في المقابل، غالبًا ما يفرض مزودو الاستضافة serverless مثل Vercel وSupabase Cloud رسومًا بناءً على الاستخدام، ما قد يصبح مكلفًا مع توسع التطبيق وزيادة حركة المرور.
+حلّ Laravel بالفعل المشكلات الرئيسية، لكنه منحنا أيضًا مرونة في استهداف SEO/GEO وأداءً أفضل. كما يمكننا الاستفادة من المنظومة الكبيرة لحزم وأدوات Laravel لتحسين تطبيقنا وإضافة ميزات جديدة بسهولة أكبر.
 
-## Worth the Migration?
+## هل كان الانتقال يستحق؟
 
-While the migration to Laravel was a difficult decision, it was ultimately the right choice for our project. We were able to achieve better performance, scalability, and maintainability with Laravel, which has allowed us to grow our application and serve our customers more effectively.
-We just didn't migrate we re-engineered the entire application to be more efficient and scalable. We also took the opportunity to improve our codebase and implement best practices for web development, which has helped us to create a more robust and reliable application.
-UI/UX improvements is also a major focus for us, and we have been able to leverage the flexibility of Laravel to create a more user-friendly and intuitive interface for our customers.
+على الرغم من أن الانتقال إلى Laravel كان قرارًا صعبًا، فقد كان في النهاية القرار الصحيح لمشروعنا. تمكنا من تحقيق أداء أفضل وقابلية توسع وصيانة أسهل مع Laravel، مما سمح لنا بتنمية تطبيقنا وخدمة عملائنا بفعالية أكبر.
+لم نقم بمجرد الانتقال، بل أعدنا هندسة التطبيق بالكامل ليصبح أكثر كفاءة وقابلية للتوسع. كما انتهزنا الفرصة لتحسين قاعدة الكود وتطبيق أفضل ممارسات تطوير الويب، مما ساعدنا على إنشاء تطبيق أكثر متانة وموثوقية.
+وكان تحسين UI/UX أيضًا محورًا رئيسيًا لنا، واستطعنا الاستفادة من مرونة Laravel لإنشاء واجهة أكثر سهولة وبديهية لعملائنا.
 
-## Larave Hybrid Setup
+## إعداد Laravel الهجين
 
-We also implemented a hybrid setup where we use Laravel Blade for storefront and React for the user dashboard and admin panel. This allows us to leverage the benefits of both technologies and create a more seamless user experience for our customers.
-The storefront is built using Laravel Blade, which allows us to create a fast and responsive user interface for our customers. The user dashboard and admin panel are built using React, which provides a more dynamic and interactive experience for our users.
-This hybrid setup has allowed us to create a more efficient and scalable application while still providing a great user experience for our customers. We can leverage the strengths of both technologies to create a more robust and reliable e-commerce platform that meets the needs of our users.
+كما طبقنا إعدادًا هجينًا نستخدم فيه Laravel Blade لواجهة المتجر وReact لواجهة المستخدم ولوحة الإدارة. يتيح لنا هذا الاستفادة من مزايا التقنيتين وإنشاء تجربة مستخدم أكثر سلاسة لعملائنا.
+واجهة المتجر مبنية باستخدام Laravel Blade، مما يسمح لنا بإنشاء واجهة سريعة وسريعة الاستجابة لعملائنا. أما لوحة المستخدم ولوحة الإدارة فمبنيتان باستخدام React، ما يوفر تجربة أكثر ديناميكية وتفاعلية لمستخدمينا.
+سمح لنا هذا الإعداد الهجين بإنشاء تطبيق أكثر كفاءة وقابلية للتوسع مع الاستمرار في تقديم تجربة مستخدم رائعة لعملائنا. ويمكننا الاستفادة من نقاط قوة التقنيتين لإنشاء منصة تجارة إلكترونية أكثر متانة وموثوقية تلبي احتياجات المستخدمين.
 
 ---
 
-Thank you for reading! If you have any questions or want to learn more about our migration to Laravel, feel free to reach out. We’re always happy to share our experiences and insights with the community.
+شكرًا لقراءتك! إذا كانت لديك أي أسئلة أو أردت معرفة المزيد عن انتقالنا إلى Laravel، فلا تتردد في التواصل. نحن دائمًا سعداء بمشاركة تجاربنا ورؤانا مع المجتمع.
 
-Here is the link to the project: 
+إليك رابط المشروع:
 - [https://ulishastore.com](https://ulishastore.com) (Production)
 - [https://github.com/ulisha-limited/ulisha-store-next](https://github.com/ulisha-limited/ulisha-store-next)
 - [https://github.com/ulisha-limited/ulisha-store-laravel](https://github.com/ulisha-limited/ulisha-store-laravel)

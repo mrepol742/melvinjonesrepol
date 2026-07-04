@@ -1,110 +1,110 @@
 ---
 title: "Sometimes the Best Fix Is Starting Over: A WordPress Project That Became a Laravel Application"
 date: "2026-07-04"
-excerpt: "A client asked me to fix a struggling WordPress website, but the real solution wasn't another patch. It was rebuilding the application with Laravel."
+excerpt: "طلب مني عميل إصلاح موقع WordPress يعاني، لكن الحل الحقيقي لم يكن ترقيعًا آخر. بل إعادة بناء التطبيق باستخدام Laravel."
 topics: ["laravel", "wordpress", "php", "software-development"]
 ---
 
-One of the most interesting conversations I've had with a client started with a simple question: "Can you fix my WordPress website?" At first, that sounded like a normal maintenance job. Then I opened the site. Pages took forever to load, the admin dashboard barely responded, random plugins were throwing errors, and security warnings kept popping up. Every small task felt like pulling on a loose thread that could unravel something else. It wasn't just one bug. The entire website had become difficult to maintain.
+بدأت إحدى أكثر المحادثات إثارة للاهتمام مع عميل بسؤال بسيط: "هل يمكنك إصلاح موقع WordPress الخاص بي؟" في البداية بدا ذلك كعمل صيانة عادي. ثم فتحت الموقع. الصفحات تستغرق وقتًا طويلًا جدًا للتحميل، ولوحة الإدارة بالكاد تستجيب، وإضافات عشوائية كانت ترمي بالأخطاء، وتحذيرات الأمان لا تتوقف عن الظهور. كل مهمة صغيرة بدت كأنها سحب خيط مرتخٍ قد يفكك شيئًا آخر. لم تكن مشكلة واحدة فقط. بل أصبح الموقع بأكمله صعب الصيانة.
 
-The client expected me to clean everything up, but after looking through the project, I realized fixing it would only delay the same problems from coming back.
+كان العميل يتوقع أن أنظف كل شيء، لكن بعد النظر في المشروع أدركت أن الإصلاح لن يفعل سوى تأجيل عودة المشكلات نفسها.
 
-## The Website Wasn't Just Slow
+## الموقع لم يكن بطيئًا فقط
 
-The first thing I noticed was the loading speed.
+أول ما لاحظته كان سرعة التحميل.
 
-Every page request loaded dozens of plugins, many of which weren't even necessary anymore. Some plugins had overlapping features, others hadn't been updated in years, and a few were clearly abandoned by their developers.
+كان كل طلب صفحة يحمّل عشرات الإضافات، وكثير منها لم يعد ضروريًا أصلًا. بعض الإضافات كانت تملك ميزات متداخلة، وأخرى لم تُحدَّث منذ سنوات، وبعضها كان مهجورًا بوضوح من مطوريه.
 
-The database was also full of leftover data from plugins that had already been removed. Even simple admin actions took several seconds to complete.
+كانت قاعدة البيانات أيضًا مليئة ببيانات متبقية من إضافات أزيلت بالفعل. حتى الإجراءات البسيطة في لوحة الإدارة كانت تستغرق عدة ثوانٍ.
 
-The slow loading wasn't caused by one issue. It was the result of years of small decisions stacking on top of each other.
+لم يكن البطء بسبب مشكلة واحدة. بل كان نتيجة سنوات من القرارات الصغيرة المتراكمة فوق بعضها.
 
-## Security Was Becoming a Bigger Problem
+## الأمان كان يصبح مشكلة أكبر
 
-Performance wasn't the only concern.
+الأداء لم يكن القلق الوحيد.
 
-The website depended on several third-party plugins that no longer received updates. That immediately increases the attack surface of a WordPress installation.
+كان الموقع يعتمد على عدة إضافات من طرف ثالث لم تعد تتلقى تحديثات. وهذا يزيد فورًا من surface attack لتثبيت WordPress.
 
-Even if WordPress itself is updated regularly, outdated plugins and themes remain one of the most common ways websites get compromised.
+حتى لو كان WordPress نفسه يُحدّث بانتظام، فإن الإضافات والقوالب القديمة تظل من أكثر الطرق شيوعًا لاختراق المواقع.
 
-I could replace some plugins, update others, and remove a few unnecessary ones, but there was no guarantee another compatibility issue wouldn't appear after the next update.
+كان بإمكاني استبدال بعض الإضافات، وتحديث أخرى، وإزالة بعض غير الضرورية، لكن لم يكن هناك أي ضمان ألا تظهر مشكلة توافق أخرى بعد التحديث التالي.
 
-Instead of solving the root problem, I'd simply be playing maintenance every few months.
+بدلًا من حل المشكلة الجذرية، كنت سأمارس الصيانة كل بضعة أشهر فقط.
 
-## Why I Said No
+## لماذا قلت لا
 
-I surprised the client by saying I didn't want to fix the WordPress site.
+فاجأت العميل عندما قلت إنني لا أريد إصلاح موقع WordPress.
 
-That probably sounds strange coming from a developer, but I wasn't interested in charging someone to keep patching a system that was already working against them.
+قد يبدو ذلك غريبًا من مطور، لكنني لم أكن مهتمًا بأخذ المال من شخص فقط لأواصل ترقيع نظام يعمل ضده أصلًا.
 
-Technically, I could have spent days optimizing the database, replacing plugins, updating themes, fixing security issues, and improving caching.
+تقنيًا، كان بإمكاني قضاء أيام في تحسين قاعدة البيانات، واستبدال الإضافات، وتحديث القوالب، وإصلاح مشاكل الأمان، وتحسين caching.
 
-The website would probably perform better for a while.
+ربما كان الموقع سيؤدي بشكل أفضل لفترة.
 
-Then another plugin update would arrive.
+ثم سيصل تحديث آخر لإضافة.
 
-Another compatibility issue would appear.
+وتظهر مشكلة توافق أخرى.
 
-Another security advisory would be published.
+ويصدر تنبيه أمني آخر.
 
-We'd be back where we started.
+ونعود إلى نقطة البداية.
 
-I didn't want to sell a temporary improvement and call it a long-term solution.
+لم أرد بيع تحسين مؤقت وتسميته حلًا طويل الأمد.
 
-## Rebuilding Made More Sense
+## إعادة البناء كانت أكثر منطقية
 
-Instead, I suggested something different.
+بدلًا من ذلك، اقترحت شيئًا مختلفًا.
 
-I recommended rebuilding the project as a custom Laravel application.
+اقترحت إعادة بناء المشروع كتطبيق Laravel مخصص.
 
-At first, the client thought rebuilding sounded more expensive than repairing the existing website.
+في البداية، ظن العميل أن إعادة البناء تبدو أغلى من إصلاح الموقع الحالي.
 
-In reality, continuing to repair the WordPress installation meant paying for the same category of problems over and over again.
+في الواقع، الاستمرار في إصلاح تثبيت WordPress كان يعني دفع ثمن نفس فئة المشاكل مرارًا وتكرارًا.
 
-A custom Laravel application would only include features the business actually needed.
+تطبيق Laravel مخصص سيحتوي فقط على الميزات التي يحتاجها العمل فعلًا.
 
-No unnecessary plugins.
+لا إضافات غير ضرورية.
 
-No page builders.
+لا page builders.
 
-No dozens of extensions trying to modify the same request.
+ولا عشرات الإضافات التي تحاول تعديل الطلب نفسه.
 
-Everything would be designed specifically around the client's workflow instead of adapting a generic CMS to behave like custom software.
+كل شيء سيُصمم خصيصًا حول سير عمل العميل بدلًا من تكييف CMS عام ليتصرف كبرنامج مخصص.
 
-## Building Only What Was Needed
+## بناء ما هو مطلوب فقط
 
-One thing I like about Laravel is that every feature has a reason to exist.
+أحد الأشياء التي أحبها في Laravel أن لكل ميزة سببًا لوجودها.
 
-Authentication exists because the project needs users.
+المصادقة موجودة لأن المشروع يحتاج مستخدمين.
 
-Permissions exist because different staff members have different responsibilities.
+والصلاحيات موجودة لأن الموظفين المختلفين لهم مسؤوليات مختلفة.
 
-Reports exist because the client actually uses them.
+والتقارير موجودة لأن العميل يستخدمها فعلًا.
 
-There isn't an extra plugin loaded "just in case."
+لا توجد إضافة إضافية محملة "احتياطًا".
 
-That also makes debugging much easier.
+وهذا يجعل التصحيح أسهل بكثير.
 
-When something goes wrong, I know exactly where the logic lives because I wrote it.
+عندما يحدث خطأ، أعرف بالضبط أين يوجد المنطق لأنني كتبته.
 
-I'm not tracing requests through five different plugins created by five different developers.
+لست أتتبع الطلبات عبر خمس إضافات مختلفة أنشأها خمسة مطورين مختلفين.
 
-## A Better Investment
+## استثمار أفضل
 
-Many people compare the initial development cost without thinking about maintenance.
+كثير من الناس يقارنون تكلفة التطوير الأولية من دون التفكير في الصيانة.
 
-A custom application may take longer to build, but it often costs less over several years because you're maintaining your own code instead of constantly adapting to third-party updates.
+قد يستغرق التطبيق المخصص وقتًا أطول في البناء، لكنه غالبًا يكلف أقل على مدى عدة سنوات لأنك تصون كودك أنت بدلًا من التكيف باستمرار مع تحديثات الطرف الثالث.
 
-The client wasn't paying for another website.
+العميل لم يكن يدفع مقابل موقع آخر.
 
-They were investing in software built specifically for their business.
+كان يستثمر في برمجيات بُنيت خصيصًا لعمله.
 
-That changes the conversation completely.
+وهذا يغيّر الحوار بالكامل.
 
 ---
 
-This experience reminded me that not every broken system should be repaired.
+ذكرتني هذه التجربة أن ليس كل نظام معطل يجب إصلاحه.
 
-Sometimes the codebase has accumulated so much technical debt that every fix creates another workaround somewhere else. You can spend weeks improving performance, tightening security, and replacing outdated components, but if the foundation hasn't changed, the same issues eventually return.
+أحيانًا تكون قاعدة الكود قد تراكم فيها من technical debt ما يجعل كل إصلاح ينتج workaround آخر في مكان ما. يمكنك قضاء أسابيع في تحسين الأداء وتشديد الأمان واستبدال المكونات القديمة، لكن إذا لم يتغير الأساس، فإن المشكلات نفسها ستعود في النهاية.
 
-Turning down the repair wasn't about avoiding the work. It was about recommending the solution I genuinely believed would help the client years from now instead of just getting them through the next plugin update. Sometimes rebuilding isn't the expensive option. Sometimes it's the cheaper one in the long run.
+رفض الإصلاح لم يكن عن تجنب العمل. بل عن التوصية بالحل الذي كنت أؤمن فعلًا أنه سيساعد العميل بعد سنوات، لا مجرد إبقائه حتى تحديث الإضافة التالي. أحيانًا لا تكون إعادة البناء هي الخيار الأغلى. أحيانًا تكون هي الأرخص على المدى الطويل.

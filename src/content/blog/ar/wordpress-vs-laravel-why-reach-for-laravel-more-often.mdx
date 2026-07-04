@@ -5,151 +5,151 @@ excerpt: "A practical comparison between WordPress and Laravel, why they solve d
 topics: ["wordpress", "laravel", "php", "web-development"]
 ---
 
-There was a time when I thought every website could be solved with WordPress. Install a theme, grab a handful of plugins, tweak a few settings, and you're done. That worked surprisingly well until projects started asking for features that didn't fit neatly into a plugin or page builder. Suddenly I was spending more time fighting the platform than actually building the product. Every update felt like a small gamble, and debugging plugin conflicts became part of the weekly routine. At some point I realized the problem wasn't WordPress itself. It was that I was asking it to be something it wasn't designed to be.
+كانت هناك فترة كنت أظن فيها أن WordPress يمكنه حل كل موقع. ثبّت قالبًا، خذ عددًا من الإضافات، عدّل بعض الإعدادات، وانتهى الأمر. كان ذلك يعمل بشكل مدهش إلى أن بدأت المشاريع تطلب ميزات لا تنسجم بسهولة داخل إضافة أو page builder. فجأة صرت أقضي وقتًا أطول في محاربة المنصة بدلًا من بناء المنتج. كان كل تحديث يبدو كأنه مقامرة صغيرة، وأصبح تصحيح تعارضات الإضافات جزءًا من الروتين الأسبوعي. في مرحلة ما أدركت أن المشكلة لم تكن في WordPress نفسه. المشكلة أنني كنت أطلب منه أن يكون شيئًا لم يُصمم ليكونه.
 
-Laravel completely changed how I approached custom web applications. Instead of bending a CMS into an application framework, I started building exactly what the project needed from the beginning.
+غيّر Laravel تمامًا الطريقة التي أتعامل بها مع تطبيقات الويب المخصصة. بدلًا من ليّ CMS ليصبح إطار تطبيقات، بدأت أبني بالضبط ما يحتاجه المشروع من البداية.
 
-## WordPress and Laravel Solve Different Problems
+## WordPress وLaravel يحلان مشكلتين مختلفتين
 
-One of the biggest mistakes developers make is comparing WordPress and Laravel as if they're direct competitors. They really are not.
+أحد أكبر الأخطاء التي يرتكبها المطورون هو مقارنة WordPress وLaravel كما لو أنهما منافسان مباشران. هما في الحقيقة ليسا كذلك.
 
-WordPress is a content management system. Its biggest strength is letting people publish content with almost no technical knowledge. Blogs, company websites, portfolios, landing pages, and small online stores can often be launched quickly without writing much custom code.
+WordPress هو نظام إدارة محتوى. أكبر نقاط قوته هي تمكين الناس من نشر المحتوى من دون معرفة تقنية تقريبًا. يمكن إطلاق المدونات ومواقع الشركات والمعارض الشخصية وصفحات الهبوط والمتاجر الصغيرة بسرعة غالبًا من دون كتابة الكثير من الكود المخصص.
 
-Laravel, on the other hand, is a PHP framework. It provides the building blocks for creating completely custom applications. There is no admin dashboard waiting for you after installation because you're expected to build the parts your application actually needs.
+أما Laravel فهو إطار PHP. يوفّر اللبنات الأساسية لإنشاء تطبيقات مخصصة بالكامل. لا توجد لوحة تحكم جاهزة تنتظرك بعد التثبيت، لأن المطلوب هو أن تبني الأجزاء التي يحتاجها تطبيقك فعلًا.
 
-That difference alone changes almost every design decision throughout a project.
+هذا الفرق وحده يغيّر تقريبًا كل قرار تصميم خلال المشروع.
 
-## Why I Prefer Laravel
+## لماذا أفضّل Laravel
 
-For projects that go beyond a simple content website, Laravel usually feels like the better long-term choice.
+في المشاريع التي تتجاوز موقع محتوى بسيطًا، يبدو Laravel غالبًا الخيار الأفضل على المدى الطويل.
 
-### Cleaner Project Structure
+### بنية مشروع أنظف
 
-Laravel encourages a consistent architecture from the beginning.
+يشجع Laravel على معمارية متسقة منذ البداية.
 
-Instead of scattering functionality across plugins, theme files, and snippets, the code has a clear place. Controllers handle requests, models manage data, services contain business logic, middleware manages security, and routes remain easy to understand.
+بدلًا من تشتيت الوظائف عبر الإضافات وملفات القالب والمقتطفات، يكون للكود مكان واضح. تتعامل controllers مع الطلبات، وتدير models البيانات، وتحتوي services على منطق الأعمال، ويدير middleware الأمان، وتبقى routes سهلة الفهم.
 
-A few months later, opening the project still feels familiar instead of confusing.
+بعد بضعة أشهر، يظل فتح المشروع يبدو مألوفًا بدلًا من أن يكون مربكًا.
 
-### Complete Control
+### تحكم كامل
 
-One thing I appreciate about Laravel is that nothing is hidden.
+أحد الأشياء التي أقدّرها في Laravel هو أن لا شيء مخفي.
 
-If I need a custom authentication system, I can build it.
+إذا احتجت نظام مصادقة مخصصًا، أستطيع بناءه.
 
-If I need a complex approval workflow, I can build it.
+إذا احتجت سير موافقات معقدًا، أستطيع بناءه.
 
-If I need an API that integrates with several external services, I can build exactly what the project requires instead of searching for yet another plugin that almost does the job.
+إذا احتجت API يتكامل مع عدة خدمات خارجية، أستطيع بناء ما يتطلبه المشروع بالضبط بدلًا من البحث عن إضافة أخرى تكاد تقوم بالمهمة.
 
-The application behaves the way I designed it, not the way a plugin developer expected everyone to use it.
+يتصرف التطبيق بالطريقة التي صممتها، لا بالطريقة التي توقع مطور إضافة أن يستخدمه بها الجميع.
 
-## Plugin Hunting Gets Old
+## مطاردة الإضافات تصبح مملة
 
-WordPress has an enormous ecosystem.
+يملك WordPress منظومة ضخمة.
 
-That is both its biggest strength and one of its biggest weaknesses.
+وهذا هو في الوقت نفسه أكبر نقاط قوته وأحد أكبر مواطن ضعفه.
 
-A fairly simple feature request can quickly turn into something like this:
+يمكن لطلب ميزة بسيط نسبيًا أن يتحول بسرعة إلى شيء كهذا:
 
-- Install Plugin A
-- Install Plugin B because Plugin A is missing one feature
-- Install Plugin C to connect A and B
-- Add custom code because none of them work together exactly right
+- ثبّت الإضافة A
+- ثبّت الإضافة B لأن A تفتقد ميزة واحدة
+- ثبّت الإضافة C لربط A وB
+- أضف كودًا مخصصًا لأن أيًا منها لا يعمل مع الآخر بشكل صحيح تمامًا
 
-Everything works until one plugin receives an update that changes an API, removes a feature, or conflicts with another extension.
+كل شيء يعمل إلى أن تتلقى إحدى الإضافات تحديثًا يغيّر API أو يزيل ميزة أو يتعارض مع إضافة أخرى.
 
-Sometimes the actual feature takes an hour to build, while finding compatible plugins takes an entire afternoon.
+أحيانًا تستغرق الميزة نفسها ساعة واحدة للبناء، بينما يستغرق العثور على إضافات متوافقة ظهيرة كاملة.
 
-Laravel avoids this cycle because most features become part of your own application rather than external dependencies.
+يتجنب Laravel هذه الدورة لأن معظم الميزات تصبح جزءًا من تطبيقك بدلًا من أن تكون اعتماديات خارجية.
 
-## Performance Feels More Predictable
+## الأداء يبدو أكثر قابلية للتنبؤ
 
-Laravel applications only contain the features you intentionally add.
+تحتوي تطبيقات Laravel فقط على الميزات التي تضيفها عمدًا.
 
-WordPress installations often accumulate plugins over time. Even when some plugins are inactive, many projects slowly become heavier than necessary.
+غالبًا ما تتراكم الإضافات في تثبيتات WordPress مع الوقت. وحتى عندما تكون بعض الإضافات غير مفعلة، تصبح كثير من المشاريع أثقل ببطء من اللازم.
 
-Extra database queries, additional scripts, larger CSS bundles, and multiple background processes all add up.
+تتراكم استعلامات قاعدة البيانات الإضافية، والسكريبتات الإضافية، وحزم CSS الأكبر، والعمليات الخلفية المتعددة.
 
-A carefully built Laravel application tends to stay lean because every component has a purpose.
+يميل تطبيق Laravel المبني بعناية إلى البقاء خفيفًا لأن لكل مكوّن غرضًا.
 
-Performance still depends on good development practices, but there are fewer surprises hiding underneath.
+لا يزال الأداء يعتمد على ممارسات تطوير جيدة، لكن هناك مفاجآت أقل مختبئة في الأسفل.
 
-## Security Feels Easier to Manage
+## الأمان أسهل في الإدارة
 
-Security is never automatic.
+الأمان ليس تلقائيًا أبدًا.
 
-WordPress itself is maintained very well, but many security problems come from outdated plugins or abandoned themes.
+WordPress نفسه يُحافَظ عليه جيدًا، لكن كثيرًا من مشكلات الأمان تأتي من إضافات قديمة أو قوالب مهجورة.
 
-Every additional plugin introduces another dependency that needs maintenance.
+كل إضافة إضافية تدخل اعتمادًا جديدًا يحتاج إلى صيانة.
 
-Laravel reduces that risk because fewer third-party packages are usually required. Since you're writing most of the business logic yourself, you know exactly how authentication, authorization, validation, and permissions work.
+يقلل Laravel هذا الخطر لأن عدد الحزم الخارجية المطلوبة عادة أقل. وبما أنك تكتب معظم منطق الأعمال بنفسك، فأنت تعرف بالضبط كيف تعمل المصادقة والتفويض والتحقق والصلاحيات.
 
-That transparency makes security reviews much simpler.
+تلك الشفافية تجعل مراجعات الأمان أبسط بكثير.
 
-## Development Is More Enjoyable
+## التطوير أكثر متعة
 
-This is probably the least technical reason, but it matters.
+هذا ربما أقل الأسباب تقنية، لكنه مهم.
 
-Laravel simply feels pleasant to work with.
+Laravel ببساطة مريح في العمل معه.
 
-Routing is straightforward.
+التوجيه مباشر.
 
-Database migrations keep schema changes organized.
+تُبقي migrations تغييرات المخطط منظمة.
 
-The ORM makes database interactions readable.
+يجعل ORM التفاعل مع قاعدة البيانات قابلاً للقراءة.
 
-Queues, caching, validation, notifications, scheduled tasks, testing, and APIs all feel like they belong together instead of being bolted onto the project.
+تبدو queues وcaching وvalidation وnotifications والمهام المجدولة والاختبارات وAPIs وكأنها تنتمي معًا بدلًا من أن تكون ملحقة بالمشروع.
 
-The framework removes a lot of repetitive work without getting in the way.
+يزيل الإطار الكثير من العمل المتكرر من دون أن يعيقك.
 
-## Where WordPress Still Wins
+## أين لا يزال WordPress يفوز
 
-Despite preferring Laravel, I still recommend WordPress for plenty of projects.
+رغم تفضيلي لـ Laravel، ما زلت أوصي بـ WordPress في كثير من المشاريع.
 
-If someone needs:
+إذا احتاج أحدهم إلى:
 
-- a blog
-- a company website
-- a news site
-- a marketing website
-- a portfolio
-- a simple WooCommerce store
+- مدونة
+- موقع شركة
+- موقع أخبار
+- موقع تسويقي
+- معرض أعمال
+- متجر WooCommerce بسيط
 
-WordPress is difficult to beat.
+فمن الصعب التفوق على WordPress.
 
-Clients can edit pages without developer assistance, publish articles easily, install themes, and manage content through a polished admin interface.
+يمكن للعملاء تعديل الصفحات من دون مساعدة مطور، ونشر المقالات بسهولة، وتثبيت القوالب، وإدارة المحتوى عبر واجهة إدارية مصقولة.
 
-Not every project needs a custom framework.
+ليس كل مشروع يحتاج إطارًا مخصصًا.
 
-Sometimes launching this week is more important than building the perfect architecture.
+أحيانًا يكون الإطلاق هذا الأسبوع أهم من بناء معمارية مثالية.
 
-## When Laravel Makes More Sense
+## متى يصبح Laravel منطقيًا أكثر
 
-Laravel becomes the better option when the project starts looking more like software than a website.
+يصبح Laravel الخيار الأفضل عندما يبدأ المشروع يشبه برمجية أكثر من كونه موقعًا.
 
-Examples include:
+تشمل الأمثلة:
 
-- SaaS platforms
-- CRM systems
-- inventory management
-- booking systems
-- ERP software
-- custom dashboards
-- internal company tools
-- marketplaces
-- learning management systems
-- API-first applications
+- منصات SaaS
+- أنظمة CRM
+- إدارة المخزون
+- أنظمة الحجز
+- برمجيات ERP
+- لوحات تحكم مخصصة
+- أدوات داخلية للشركات
+- الأسواق الإلكترونية
+- أنظمة إدارة التعلم
+- تطبيقات تركّز على الـ API أولًا
 
-These projects usually have unique business rules that don't fit neatly inside a CMS.
+هذه المشاريع عادةً تملك قواعد أعمال فريدة لا تنسجم بسهولة داخل CMS.
 
-Instead of working around platform limitations, Laravel lets those requirements shape the application.
+بدلًا من الالتفاف حول قيود المنصة، يسمح Laravel لهذه المتطلبات أن تشكّل التطبيق.
 
 ---
 
-The question is not whether WordPress is better than Laravel or the other way around.
+السؤال ليس ما إذا كان WordPress أفضل من Laravel أو العكس.
 
-The better question is whether you're building a website or building software.
+السؤال الأفضل هو: هل تبني موقعًا أم تبني برمجية؟
 
-If content management is the primary goal, WordPress saves a tremendous amount of time. If the project revolves around custom workflows, business logic, integrations, and long-term scalability, Laravel usually provides a much cleaner foundation.
+إذا كانت إدارة المحتوى هي الهدف الأساسي، فـ WordPress يوفر وقتًا هائلًا. أما إذا كان المشروع يدور حول سير عمل مخصصة، ومنطق أعمال، وتكاملات، وقابلية توسع طويلة الأمد، فـ Laravel يوفر عادةً أساسًا أنظف بكثير.
 
-These days I still use WordPress when it makes sense, and I have no problem recommending it. But when a project starts growing into a real application, Laravel almost always becomes the tool I trust the most. It lets me spend more time solving business problems and less time convincing plugins to cooperate, which is a trade I'll happily make every time.
+هذه الأيام ما زلت أستخدم WordPress عندما يكون منطقيًا، ولا أواجه مشكلة في التوصية به. لكن عندما يبدأ المشروع بالنمو ليصبح تطبيقًا حقيقيًا، يصبح Laravel تقريبًا دائمًا الأداة التي أثق بها أكثر. فهو يتيح لي قضاء وقت أطول في حل مشاكل الأعمال ووقت أقل في إقناع الإضافات بالتعاون، وهي مقايضة أقبلها بكل سرور في كل مرة.

@@ -1,19 +1,19 @@
 ---
-title: "Prevent ID Enumeration Attack"
+title: "منع هجوم استكشاف المعرفات"
 date: "2026-04-29"
-excerpt: "ID Enumeration Attack is a common attack vector in web applications where attackers try to guess or enumerate the IDs of resources. In this post, we'll discuss what ID Enumeration Attack is and how to prevent it."
+excerpt: "هجوم استكشاف المعرفات هو أحد مسارات الهجوم الشائعة في تطبيقات الويب، حيث يحاول المهاجمون تخمين معرفات الموارد أو تعدادها. في هذه التدوينة سنشرح ما هو هذا الهجوم وكيف يمكن منعه."
 topics: ["security", "web development", "laravel", "best practices"]
 ---
 
-## What is ID Enumeration Attack?
+## ما هو هجوم استكشاف المعرفات؟
 
-ID Enumeration Attack is a type of attack where an attacker tries to guess or enumerate the IDs of resources in a system.
-This can be done by incrementing or decrementing the ID values, or by using common patterns to guess the IDs. The goal of this attack is to gain unauthorized access to resources or
-to gather information about the system. The use of sequential IDs for resources can make it easier for everyone to know the total number of resources in the system like
-the number of users, orders, carts, etc. and can also make it easier for attackers to guess valid IDs and access resources they shouldn't have access to.
+هجوم استكشاف المعرفات هو نوع من الهجمات يحاول فيه المهاجم تخمين معرفات الموارد في النظام أو تعدادها.
+يمكن أن يتم ذلك بزيادة قيم المعرفات أو إنقاصها، أو باستخدام أنماط شائعة لتخمينها. الهدف من هذا الهجوم هو الوصول غير المصرح به إلى الموارد أو
+جمع معلومات عن النظام. كما أن استخدام معرفات متسلسلة للموارد يجعل من السهل معرفة العدد الإجمالي للموارد في النظام مثل
+عدد المستخدمين والطلبات وسلال التسوق وغيرها، كما يسهل على المهاجمين تخمين المعرفات الصحيحة والوصول إلى موارد لا ينبغي لهم الوصول إليها.
 
-This is a common attack vector in web applications, especially those that use sequential IDs for resources.
-For example, if a web application uses sequential IDs for user accounts, an attacker could try to access other user accounts by incrementing or decrementing the ID values in the URL.
+هذا مسار هجوم شائع في تطبيقات الويب، خصوصًا تلك التي تستخدم معرفات متسلسلة للموارد.
+على سبيل المثال، إذا كان تطبيق ويب يستخدم معرفات متسلسلة لحسابات المستخدمين، فقد يحاول المهاجم الوصول إلى حسابات أخرى عبر زيادة أو إنقاص قيمة المعرف في الرابط.
 
 ```php
 Schema::table('users', function (Blueprint $table) {
@@ -25,26 +25,26 @@ Schema::table('users', function (Blueprint $table) {
 ```
 
 ```php
-// Example of ID Enumeration Attack
-// Assume we have a URL like this: https://example.com/user/123
-// An attacker might try to access https://example.com/user/124, https://example.com/user/125, etc.
+// مثال على هجوم استكشاف المعرفات
+// لنفترض أن لدينا رابطًا مثل هذا: https://example.com/user/123
+// قد يحاول المهاجم الوصول إلى https://example.com/user/124 وhttps://example.com/user/125 وما إلى ذلك
 ```
 
-## How to Prevent ID Enumeration Attack?
+## كيف نمنع هجوم استكشاف المعرفات؟
 
-To prevent ID Enumeration Attack, you can use the following strategies:
+لمنع هجوم استكشاف المعرفات، يمكنك استخدام الاستراتيجيات التالية:
 
-1. **Use Non-Sequential IDs**: Instead of using sequential IDs, use UUIDs, ULIDs, slug, username or other non-sequential ID generation methods.
-2. **Implement Proper Authorization**: Ensure that users can only access resources they are authorized to view.
-3. **Rate Limiting**: Implement rate limiting to prevent automated attacks.
-4. **Input Validation**: Validate all input to ensure it is within expected ranges and formats.
-5. **Error Handling**: Provide generic error messages instead of revealing information about the system's internal structure.
+1. **استخدم معرفات غير متسلسلة**: بدلًا من استخدام معرفات متسلسلة، استخدم UUIDs أو ULIDs أو slug أو اسم المستخدم أو أي أسلوب آخر غير متسلسل.
+2. **نفّذ تفويضًا صحيحًا**: تأكد من أن المستخدمين لا يصلون إلا إلى الموارد التي يملكون صلاحية عرضها.
+3. **تحديد المعدل**: نفّذ rate limiting لمنع الهجمات الآلية.
+4. **التحقق من المدخلات**: تحقّق من كل المدخلات للتأكد من أنها ضمن النطاقات والصيغ المتوقعة.
+5. **معالجة الأخطاء**: قدّم رسائل خطأ عامة بدلًا من كشف معلومات عن البنية الداخلية للنظام.
 
-By implementing these strategies, you can significantly reduce the risk of ID Enumeration Attacks and protect your application from unauthorized access.
+بتطبيق هذه الاستراتيجيات، يمكنك تقليل خطر هجمات استكشاف المعرفات بشكل كبير وحماية تطبيقك من الوصول غير المصرح به.
 
-## In Laravel
+## في Laravel
 
-You can use route model binding to automatically handle authorization and prevent ID enumeration. For example:
+يمكنك استخدام route model binding للتعامل مع التفويض تلقائيًا ومنع استكشاف المعرفات. على سبيل المثال:
 
 ```php
 // In your routes/web.php
@@ -55,11 +55,11 @@ Route::get('/user/{user}', function (App\Models\User $user) {
 });
 ```
 
-By using route model binding, you can ensure that only valid IDs are processed and that users can only access resources they are authorized to view, thus preventing ID Enumeration Attacks.
+باستخدام route model binding، يمكنك التأكد من معالجة المعرفات الصحيحة فقط، وأن المستخدمين لا يصلون إلا إلى الموارد المسموح لهم بعرضها، وبذلك تمنع هجمات استكشاف المعرفات.
 
-## Cart, Order ID Enumeration
+## استكشاف معرفات السلة والطلب
 
-In e-commerce applications, it's common to use sequential IDs for carts and orders. To prevent ID enumeration in this context, you can use UUIDs or other non-sequential identifiers for carts and orders. This way, even if an attacker tries to guess the IDs, they won't be able to access other users' carts or orders.
+في تطبيقات التجارة الإلكترونية، من الشائع استخدام معرفات متسلسلة للسلال والطلبات. لمنع استكشاف المعرفات في هذا السياق، يمكنك استخدام UUIDs أو معرفات أخرى غير متسلسلة للسلال والطلبات. بهذه الطريقة، حتى لو حاول المهاجم تخمين المعرفات، فلن يتمكن من الوصول إلى سلال أو طلبات المستخدمين الآخرين.
 
 ```php
 Schema::table('orders', function (Blueprint $table) {
@@ -70,7 +70,7 @@ Schema::table('orders', function (Blueprint $table) {
 });
 ```
 
-You can also use ID and UUID together for performance reasons, where the ID is used for internal references and the UUID is used for public-facing identifiers.
+يمكنك أيضًا استخدام المعرف وUUID معًا لأسباب تتعلق بالأداء، بحيث يُستخدم المعرف للإشارات الداخلية ويُستخدم UUID للمعرفات الظاهرة للعامة.
 
 ```php
 Schema::table('orders', function (Blueprint $table) {
@@ -82,7 +82,7 @@ Schema::table('orders', function (Blueprint $table) {
 });
 ```
 
-Another option for UUID is to use the ULID package, which generates sortable UUIDs that can be used as primary keys in your database. This can provide better performance than traditional UUIDs while still preventing ID enumeration.
+خيار آخر بدل UUID هو استخدام حزمة ULID، التي تولّد معرفات قابلة للترتيب يمكن استخدامها كمفاتيح أساسية في قاعدة البيانات. هذا قد يوفر أداءً أفضل من UUID التقليدي مع الاستمرار في منع استكشاف المعرفات.
 
 ```php
 Schema::table('orders', function (Blueprint $table) {
@@ -93,18 +93,18 @@ Schema::table('orders', function (Blueprint $table) {
 });
 ```
 
-Don't forget to hide the sequential ID from the public-facing API and only expose the UUID to users. This way, even if an attacker tries to guess the sequential ID, they won't be able to access any resources without the corresponding UUID.
+لا تنسَ إخفاء المعرف المتسلسل عن الـ API الظاهر للعامة، وإظهار UUID فقط للمستخدمين. بهذه الطريقة، حتى لو حاول المهاجم تخمين المعرف المتسلسل، فلن يتمكن من الوصول إلى أي موارد من دون UUID المقابل.
 
 ```php
-// in your base model
+// في النموذج الأساسي
 protected $hidden = ['id'];
 ```
 
-By using UUIDs for order IDs, you can prevent attackers from easily guessing valid order IDs and accessing other users' orders. Additionally,
-you should implement proper authorization checks to ensure that users can only access their own orders.
+باستخدام UUIDs لمعرفات الطلبات، يمكنك منع المهاجمين من تخمين معرفات الطلبات الصحيحة والوصول بسهولة إلى طلبات المستخدمين الآخرين. بالإضافة إلى ذلك،
+يجب أن تطبق فحوصات تفويض صحيحة للتأكد من أن المستخدمين لا يصلون إلا إلى طلباتهم الخاصة.
 
 ---
 
-ID Enumeration Attack is a common attack vector that can lead to unauthorized access to resources in a web application.
-By using non-sequential IDs, implementing proper authorization, and following best practices for input validation and error handling,
-you can significantly reduce the risk of ID Enumeration Attacks and protect your application from unauthorized access.
+هجوم استكشاف المعرفات هو مسار هجوم شائع قد يؤدي إلى الوصول غير المصرح به إلى الموارد داخل تطبيق ويب.
+وباستخدام معرفات غير متسلسلة، وتطبيق تفويض صحيح، واتباع أفضل الممارسات في التحقق من المدخلات ومعالجة الأخطاء،
+يمكنك تقليل خطر هذا الهجوم بشكل كبير وحماية تطبيقك من الوصول غير المصرح به.
