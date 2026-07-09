@@ -1,43 +1,43 @@
 ---
 title: "Claude Fable 5 vs GPT-5.5 vs Gemini 3.1 Pro: Which One Actually Earns Its Keep"
 date: "2026-07-03"
-excerpt: "A developer's honest breakdown of Anthropic's Claude Fable 5, OpenAI's GPT-5.5, and Google's Gemini 3.1 Pro, comparing coding skill, tool use, pricing, and where each one quietly falls apart."
+excerpt: "تفكيك صريح من مطور لـ Claude Fable 5 من Anthropic وGPT-5.5 من OpenAI وGemini 3.1 Pro من Google، مع مقارنة مهارة البرمجة واستخدام الأدوات والتسعير وأين يفشل كل واحد بهدوء."
 topics: ["claude-fable-5", "gpt-5.5", "gemini-3.1-pro", "llm-comparison"]
 ---
 
-I spent way too many hours this month juggling three different API tabs, three different pricing pages, and three different Slack threads with coworkers arguing about which model to route our agent pipeline through. If you've ever tried to pick a "best" frontier model in 2026, you already know the problem: every vendor ships a benchmark chart where they conveniently win, and every blog post comparing them reads like it was written by whichever company paid for the placement. I wanted something less biased, so I actually burned credits testing all three on real tasks instead of trusting marketing copy. What started as "let me just check pricing real quick" turned into a full weekend of side-by-side testing, refund emails to myself for wasted tokens, and a spreadsheet I'm mildly proud of.
+قضيت ساعات كثيرة جدًا هذا الشهر أتنقل بين ثلاث تبويبات API مختلفة، وثلاث صفحات تسعير مختلفة، وثلاث سلاسل Slack مختلفة مع زملاء العمل الذين يتجادلون حول النموذج الذي ينبغي أن يمر عبره agent pipeline. إذا كنت حاولت يومًا اختيار "أفضل" frontier model في 2026، فأنت تعرف المشكلة بالفعل: كل مزود يرسل جدول benchmark يفوز فيه ببساطة، وكل تدوينة مقارنة تبدو وكأنها كُتبت بواسطة الشركة التي دفعت مقابل الظهور. أردت شيئًا أقل تحيزًا، لذلك أحرقت credits فعلًا وأنا أختبر الثلاثة على مهام حقيقية بدلًا من الثقة في النص التسويقي. ما بدأ كـ "دعني فقط أتحقق من التسعير بسرعة" تحول إلى عطلة نهاية أسبوع كاملة من الاختبار جنبًا إلى جنب، ورسائل استرداد لنفسي مقابل tokens المهدرة، وspreadsheet أفخر به قليلًا.
 
-This post is that spreadsheet, turned into words. I'm not going to tell you one model wins across the board, because that's not how it played out. Each of these three has a spot where it's genuinely the best tool for the job, and each has a spot where it embarrassed itself.
+هذه التدوينة هي ذلك الـ spreadsheet بعد تحويله إلى كلمات. لن أقول إن نموذجًا واحدًا يفوز في كل شيء، لأن هذا ليس ما حدث. لكل واحد من هؤلاء الثلاثة مكان يكون فيه أفضل أداة فعلًا للمهمة، ولكل واحد مكان يحرج فيه نفسه.
 
-## The Contenders, Quickly
+## المرشحون باختصار
 
-Claude Fable 5 is Anthropic's Mythos-class model, currently their most capable generally available release. It runs a 1M token context window, 128K max output, and is priced at $10 per million input tokens and $50 per million output tokens through the Claude API. It also ships with safety classifiers that can quietly reroute cybersecurity, biology, or chemistry-adjacent requests to Claude Opus 4.8 instead of answering directly, something worth knowing before you build an integration around it.
+Claude Fable 5 هو نموذج Mythos-class من Anthropic، وهو حاليًا أكثر إصداراتهم العامة قدرة. يعمل بنافذة سياق 1M token، و128K كحد أقصى للإخراج، ويبلغ سعره 10 دولارات لكل مليون input token و50 دولارًا لكل مليون output token عبر Claude API. كما يأتي مع safety classifiers يمكنها تحويل طلبات الأمن السيبراني أو الأحياء أو الكيمياء بهدوء إلى Claude Opus 4.8 بدلًا من الرد مباشرة، وهو شيء يستحق معرفته قبل بناء integration حوله.
 
-GPT-5.5 is OpenAI's current frontier model, sitting at $5 per million input tokens and $30 per million output tokens, with a context window just over 1M tokens and 128K max output. There's also a GPT-5.5 Pro variant for the truly hard stuff, priced six times higher, aimed at research-grade math and retrieval work.
+GPT-5.5 هو frontier model الحالي من OpenAI، وسعره 5 دولارات لكل مليون input token و30 دولارًا لكل مليون output token، مع نافذة سياق تزيد قليلًا عن 1M token و128K كحد أقصى للإخراج. توجد أيضًا نسخة GPT-5.5 Pro للأشياء الصعبة جدًا، بسعر أعلى بست مرات، وموجهة للرياضيات على مستوى البحث وأعمال retrieval.
 
-Gemini 3.1 Pro is Google's flagship reasoning model, priced at $2 per million input and $12 per million output under 200K tokens (it steps up to $4/$18 above that threshold). Depending on which surface you access it through, the context window is quoted anywhere from 1M to 2M tokens, and native multimodal input covers text, images, audio, and video in one pass rather than bolted-on extensions.
+Gemini 3.1 Pro هو نموذج الاستدلال الرئيسي من Google، وسعره 2 دولار لكل مليون input و12 دولارًا لكل مليون output تحت 200K token (ويرتفع إلى 4/18 دولارًا فوق ذلك). وبحسب الواجهة التي تصل إليه منها، تُذكر نافذة السياق ما بين 1M و2M token، ويدعم multimodal input أصيلًا يشمل النصوص والصور والصوت والفيديو في تمريرة واحدة بدلًا من إضافات ملحقة.
 
-## Coding and Agentic Work
+## البرمجة والعمل الوكيلي
 
-This is where I actually spend my time, so it's where I looked hardest.
+هذا هو المكان الذي أقضي فيه وقتي فعلًا، لذلك نظرت إليه بأكبر قدر من التدقيق.
 
-Fable 5 was built with agentic operation as a first-class citizen, not a feature added later. Anthropic's own numbers put it at the top of FrontierBench, and in my own testing it handled a genuinely nasty multi-file refactor without losing track of what it had already touched two hundred messages earlier. The thing that impressed me most wasn't raw output, it was that at higher reasoning effort it seems to actually check its own work before handing it back. Fewer "looks done" moments that turn out to be half-done.
+تم بناء Fable 5 مع agentic operation كعنصر أساسي من الدرجة الأولى، لا كميزة أضيفت لاحقًا. أرقام Anthropic نفسها تضعه في الصدارة على FrontierBench، وفي اختباري الشخصي تعامل مع multi-file refactor سيئ فعلًا من دون أن يفقد تتبع ما لمسه قبل مئتي رسالة. أكثر ما أعجبني لم يكن المخرجات الخام، بل أنه مع effort أعلى يبدو وكأنه يفحص عمله قبل إعادته. لحظات "يبدو مكتملًا" التي يتضح لاحقًا أنها نصف مكتملة أقل بكثير.
 
-GPT-5.5 leans hard into agentic coding too, and it shows. It scores 82.7% on Terminal-Bench 2.0 and matches GPT-5.4's per-token latency despite being noticeably smarter, which is not a small engineering feat. If your workflow lives inside Codex or anything that leans on native computer use (clicking around actual interfaces, not just writing code), GPT-5.5 currently has the more mature story there. I had it navigate a staging admin panel and fill out a form based on a screenshot, and it just did it, no scaffolding required on my end.
+GPT-5.5 يميل بقوة أيضًا إلى agentic coding، ويظهر ذلك بوضوح. يسجل 82.7% على Terminal-Bench 2.0 ويطابق GPT-5.4 في latency لكل token رغم أنه أذكى بشكل ملحوظ، وهذا ليس إنجازًا هندسيًا صغيرًا. إذا كان سير عملك يعيش داخل Codex أو أي شيء يعتمد على computer use أصيل (النقر حول واجهات فعلية، لا مجرد كتابة الكود)، فـ GPT-5.5 لديه القصة الأكثر نضجًا هنا. جعلته يتنقل في لوحة إدارة staging ويملأ نموذجًا بناءً على screenshot، وفعل ذلك ببساطة من دون أي scaffolding مني.
 
-Gemini 3.1 Pro is the one that surprised me. It's not chasing the same agentic-coding crown, but its SWE-bench numbers and grounded, low-hallucination behavior on long documents made it my pick for anything involving a huge pile of source files I needed summarized or cross-referenced accurately. Where it stumbled was structured visual output, ask it to generate or manipulate an SVG diagram and the results were noticeably weaker than either competitor. I ended up routing those specific tasks elsewhere.
+Gemini 3.1 Pro هو الذي فاجأني. هو لا يطارد نفس تاج agentic coding، لكن أرقامه على SWE-bench وسلوكه المتمسك بالأرض وقلة hallucination في المستندات الطويلة جعلته خياري لأي شيء يتضمن كومة ضخمة من ملفات المصدر أحتاج تلخيصها أو الربط بينها بدقة. المكان الذي تعثر فيه كان المخرجات البصرية المنظمة: اطلب منه إنشاء أو تعديل SVG diagram وستكون النتائج أضعف بوضوح من المنافسين. انتهى بي الأمر إلى توجيه تلك المهام المحددة إلى مكان آخر.
 
-None of these are "the best at coding" in some absolute sense. They're the best at different flavors of coding, and pretending otherwise is how you end up over-optimizing for a benchmark instead of your actual job.
+ولا واحد من هؤلاء "الأفضل في البرمجة" بمعنى مطلق. إنهم الأفضل في أنواع مختلفة من البرمجة، والتظاهر بغير ذلك هو كيف تنتهي بالمبالغة في تحسين benchmark بدلًا من عملك الفعلي.
 
-## Tool Use and Ecosystem
+## استخدام الأدوات والمنظومة
 
-Fable 5 is designed to run inside agent harnesses like Claude Code for days at a time, planning across stages and delegating to sub-agents without much hand-holding. That's a genuinely different use case than "answer my question well." If you want a model that disappears into a background job and comes back with a finished PR, this is the strongest option I tested, assuming your task doesn't trip its cybersecurity or biology classifiers, because then you're quietly talking to Opus 4.8 instead and might not even notice unless you're watching for it.
+تم تصميم Fable 5 ليعمل داخل agent harnesses مثل Claude Code لأيام متواصلة، يخطط عبر المراحل ويفوض إلى sub-agents من دون كثير من التوجيه. هذه حالة استخدام مختلفة فعلًا عن "أجب عن سؤالي جيدًا". إذا كنت تريد نموذجًا يختفي في job خلفي ويعود بـ PR مكتمل، فهذه أقوى خيار اختبرته، بشرط ألا تصطدم مهمتك بـ cybersecurity أو biology classifiers، لأنك حينها تتحدث بهدوء مع Opus 4.8 بدلًا من ذلك وقد لا تلاحظ إلا إذا كنت تراقب.
 
-GPT-5.5's advantage is breadth. It's plugged into the widest surface area of tools, computer use, search, code execution, and the Codex ecosystem specifically has been adopted internally at OpenAI in a way that suggests real dogfooding rather than a demo. If your stack already leans on OpenAI's tool suite, switching feels frictionless.
+ميزة GPT-5.5 هي الاتساع. إنه متصل بأوسع مساحة من الأدوات، وcomputer use، والبحث، وتنفيذ الكود، كما أن منظومة Codex نفسها تم تبنيها داخليًا في OpenAI بطريقة توحي dogfooding حقيقيًا لا مجرد demo. إذا كان stack لديك يعتمد أصلًا على مجموعة أدوات OpenAI، فالتبديل يبدو بلا احتكاك.
 
-Gemini's edge is native multimodality. It doesn't stitch together separate models for video and audio understanding, it processes them in one pass. That mattered a lot on a project where I needed a model to watch a screen-recording bug report and reason about both the visual glitch and the console audio cue at the same time. Neither of the other two handled that combination as cleanly.
+ميزة Gemini هي multimodality الأصيلة. فهو لا يرقع نماذج منفصلة لفهم الفيديو والصوت، بل يعالجها في تمريرة واحدة. وكان هذا مهمًا جدًا في مشروع احتجت فيه إلى نموذج يشاهد bug report مسجلًا على الشاشة ويفكر في الخلل البصري والإشارة الصوتية في الـ console في الوقت نفسه. لم يتعامل أي من الاثنين الآخرين مع هذا المزيج بنفس النظافة.
 
-## Cost, Which Is Where Things Get Ugly
+## التكلفة، وهنا تصبح الأمور قبيحة
 
 Let's just put the numbers next to each other, because pricing pages love to bury this.
 

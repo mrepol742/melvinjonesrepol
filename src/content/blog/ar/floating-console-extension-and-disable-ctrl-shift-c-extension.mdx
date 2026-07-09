@@ -1,7 +1,7 @@
 ---
-title: "Floating Console Extension and Disable Ctrl Shift C Extension"
+title: "Floating Console Extension وDisable Ctrl Shift C Extension"
 date: "2026-05-13"
-excerpt: "Two small browser tools built to solve surprisingly annoying developer problems."
+excerpt: "أداتان صغيرتان للمتصفح بُنيتا لحل مشكلات مزعجة بشكل مفاجئ للمطورين."
 topics:
   [
     "browser-extension",
@@ -12,136 +12,136 @@ topics:
   ]
 ---
 
-# Floating Console Extension and Disable Ctrl Shift C Extension
+# Floating Console Extension وDisable Ctrl Shift C Extension
 
-Sometimes the best developer tools are not the giant frameworks or complicated platforms.
+أحيانًا أفضل أدوات المطورين ليست الأطر الضخمة أو المنصات المعقدة.
 
-Sometimes it is just fixing one annoying thing that interrupts your workflow fifty times a day.
+أحيانًا يكون الأمر مجرد إصلاح شيء مزعج يقطع سير عملك خمسين مرة في اليوم.
 
-That is basically how these two browser extensions were born.
+هكذا تقريبًا وُلدت هاتان الإضافتان للمتصفح.
 
-One keeps your console visible while browsing.  
-The other saves terminal users from accidentally opening DevTools every few minutes.
+إحداهما تبقي الـ console مرئيًا أثناء التصفح.  
+والأخرى تنقذ مستخدمي الطرفية من فتح DevTools بالخطأ كل بضع دقائق.
 
-Tiny problems. Surprisingly huge relief.
+مشكلات صغيرة. وراحة كبيرة بشكل مفاجئ.
 
 ## Floating Console Extension
 
-The idea behind the Floating Console Extension was simple.
+كانت الفكرة وراء Floating Console Extension بسيطة.
 
-Why should developers keep opening and closing DevTools just to check logs?
+لماذا ينبغي على المطورين الاستمرار في فتح وإغلاق DevTools فقط لفحص السجلات؟
 
-Especially on smaller screens, opening DevTools feels like sacrificing half your browser window to the debugging gods.
+خصوصًا على الشاشات الصغيرة، يبدو فتح DevTools وكأنك تضحي بنصف نافذة المتصفح لآلهة التصحيح.
 
-So I built a lightweight extension that gives developers a floating console directly on the page.
+لذلك بنيت إضافة خفيفة تمنح المطورين console عائمًا مباشرة على الصفحة.
 
-A console that stays accessible while browsing without constantly resizing windows or switching tabs.
+Console يبقى متاحًا أثناء التصفح من دون إعادة تحجيم النوافذ أو تبديل الألسنة باستمرار.
 
-Because debugging should not feel like rearranging furniture every five minutes.
+لأن التصحيح لا ينبغي أن يبدو كإعادة ترتيب الأثاث كل خمس دقائق.
 
-## Why I Built It
+## لماذا بنيته
 
-During development, I constantly found myself:
+أثناء التطوير، كنت أجد نفسي باستمرار:
 
-- Opening DevTools
-- Checking logs
-- Closing DevTools
-- Reopening DevTools two seconds later
-- Repeating the cycle until questioning my life choices
+- أفتح DevTools
+- أفحص السجلات
+- أغلق DevTools
+- أعيد فتح DevTools بعد ثانيتين
+- أكرر الدورة حتى أشك في اختياراتي الحياتية
 
-The Floating Console Extension removes that friction by keeping logs visible in a much more convenient way.
+تزيل Floating Console Extension هذا الاحتكاك عبر إبقاء السجلات مرئية بطريقة أكثر راحة بكثير.
 
-It is especially useful for:
+وهي مفيدة بشكل خاص لـ:
 
-- Frontend debugging
-- Monitoring logs while testing UI
-- Small screen setups
-- Multi monitor workflows
-- Developers who already have 37 tabs open and refuse to close any of them
+- تصحيح الواجهة الأمامية
+- مراقبة السجلات أثناء اختبار واجهة المستخدم
+- الإعدادات ذات الشاشة الصغيرة
+- سير العمل متعدد الشاشات
+- المطورين الذين لديهم بالفعل 37 تبويبًا مفتوحًا ويرفضون إغلاق أي منها
 
-Which is basically all of us.
+وهو تقريبًا نحن جميعًا.
 
-## Features
+## الميزات
 
-Current functionality includes:
+تشمل الوظائف الحالية:
 
-- Floating in browser overlay
-- Easy console visibility
-- Lightweight design
-- Quick debugging access
-- Minimal interruption to workflow
+- floating overlay داخل المتصفح
+- رؤية سهلة للـ console
+- تصميم خفيف
+- وصول سريع للتصحيح
+- أقل قدر من الإعاقة لسير العمل
 
-The goal was to keep it simple and useful instead of turning it into another bloated “developer suite”.
+كان الهدف إبقاء الأمر بسيطًا ومفيدًا بدلًا من تحويله إلى "developer suite" مترهل آخر.
 
-Sometimes less really is more.
+أحيانًا القليل هو الكثير فعلًا.
 
 ## Disable Ctrl Shift C Extension
 
-If you use Linux terminals regularly, you already know this pain.
+إذا كنت تستخدم terminals Linux بانتظام، فأنت تعرف هذا الألم بالفعل.
 
-You press:
+تضغط:
 
 ```bash
 Ctrl + Shift + C
 ```
 
-expecting to copy text from a terminal inside the browser...
+متوقعًا نسخ نص من terminal داخل المتصفح...
 
-and suddenly DevTools opens like an uninvited guest.
+ثم يفتح DevTools فجأة كضيف غير مدعو.
 
-Again.
+مرة أخرى.
 
-And again.
+ومرة أخرى.
 
-And again.
+ومرة أخرى.
 
-This shortcut conflict has annoyed developers for years across browsers. :contentReference[oaicite:2]{index=2}
+هذا التعارض في الاختصار أزعج المطورين لسنوات عبر المتصفحات. :contentReference[oaicite:2]{index=2}
 
-So instead of accepting defeat, I built a browser extension specifically to disable the `Ctrl + Shift + C` DevTools shortcut.
+لذا بدلًا من الاستسلام، بنيت إضافة متصفح خصيصًا لتعطيل اختصار DevTools `Ctrl + Shift + C`.
 
-Simple problem. Simple fix.
+مشكلة بسيطة. حل بسيط.
 
-Honestly, this extension exists because muscle memory is stronger than browser defaults.
+بصراحة، هذه الإضافة موجودة لأن الذاكرة العضلية أقوى من الإعدادات الافتراضية للمتصفح.
 
-## Why This Matters
+## لماذا هذا مهم
 
-For developers using:
+للمطورين الذين يستخدمون:
 
-- Browser terminals
+- browser terminals
 - Cloud IDEs
-- SSH sessions
-- Linux workflows
+- جلسات SSH
+- workflows Linux
 - Docker web terminals
-- Remote servers
+- خوادم بعيدة
 
-`Ctrl + Shift + C` is commonly used for copy operations.
+يُستخدم `Ctrl + Shift + C` عادةً لعمليات النسخ.
 
-Unfortunately, browsers love assigning the same shortcut to DevTools inspection.
+لكن المتصفحات تحب تخصيص الاختصار نفسه لفحص DevTools.
 
-That creates an endless cycle of accidental DevTools openings during normal work. Mozilla users have been complaining about this behavior for years.
+وهذا يخلق دورة لا تنتهي من فتح DevTools بالخطأ أثناء العمل العادي. وقد اشتكى مستخدمو Mozilla من هذا السلوك لسنوات.
 
-This extension fixes that annoyance directly.
+تصلح هذه الإضافة هذا الإزعاج مباشرة.
 
-No complicated setup.  
-No rebuilding browsers from source code.  
-No weird hacks hidden inside configuration files.
+لا إعداد معقد.  
+لا إعادة بناء المتصفحات من المصدر.  
+لا حيل غريبة مخبأة داخل ملفات الإعداد.
 
-Just install it and stop fighting your keyboard shortcuts.
+فقط ثبّتها وتوقف عن محاربة اختصارات لوحة المفاتيح.
 
-## Building Small Tools That Solve Real Problems
+## بناء أدوات صغيرة تحل مشاكل حقيقية
 
-Both of these extensions were built from the same mindset.
+بُنيت هاتان الإضافتان من العقلية نفسها.
 
-Developer experience matters.
+تجربة المطور مهمة.
 
-Even tiny interruptions become exhausting when repeated hundreds of times every week.
+حتى المقاطعات الصغيرة تصبح مرهقة عندما تتكرر مئات المرات كل أسبوع.
 
-The best tools are often not the flashy ones.  
-They are the tools that quietly remove friction and let developers focus on actual work.
+أفضل الأدوات ليست دائمًا الأكثر بهرجة.  
+بل تلك التي تزيل الاحتكاك بهدوء وتسمح للمطورين بالتركيز على العمل الحقيقي.
 
-Or at least reduce the number of times we accidentally open DevTools while trying to copy text.
+أو على الأقل تقلل عدد المرات التي نفتَح فيها DevTools عن طريق الخطأ ونحن نحاول نسخ نص.
 
-That alone already feels like progress.
+هذا وحده يبدو تقدمًا بالفعل.
 
 ---
 

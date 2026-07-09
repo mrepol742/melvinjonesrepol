@@ -1,17 +1,17 @@
 ---
 title: "Security Isn't a Feature. It Isn't a Role. It's a Practice."
 date: "2026-06-29"
-excerpt: "Nobody ships a ticket called 'add security to checkout flow.' But the bugs that burned production last quarter? Half of them were security issues disguised as normal bugs. Here's the code that keeps getting written wrong."
+excerpt: "لا أحد يطلق تذكرة بعنوان 'أضف الأمان إلى مسار الدفع'. لكن الأخطاء التي أحرقت الإنتاج في الربع الماضي؟ نصفها كان مشكلات أمنية متنكرة على شكل أخطاء عادية. هذا هو الكود الذي يستمر الناس في كتابته بشكل خاطئ."
 topics: ["security", "best-practices", "memory-leaks", "web-development"]
 ---
 
-There's this quiet assumption in a lot of teams that security is someone else's problem. Maybe it's the one person with "security" in their job title. Maybe it's a quarterly audit. Maybe it's that Jira board you haven't looked at since onboarding. The problem is that by the time security becomes a meeting agenda item, the code that will cause the incident has already been written, reviewed, merged, and deployed. The code looked fine. It passed review. It worked. And it was still quietly wrong in a way that matters a lot when someone motivated decides to poke at it. This post isn't about policy. It's about the specific patterns developers write every single day that introduce vulnerabilities, memory leaks, and data exposure. Not because they're bad developers. Because nobody told them this was the thing to watch for.
+هناك افتراض هادئ في كثير من الفرق أن الأمان مشكلة شخص آخر. ربما هو الشخص الوحيد الذي يحمل كلمة "security" في مسمى وظيفته. ربما هو تدقيق ربع سنوي. ربما هي لوحة Jira التي لم تنظر إليها منذ onboarding. المشكلة أن الوقت الذي يصبح فيه الأمان بندًا في الاجتماع يكون الكود الذي سيسبب الحادثة قد كُتب أصلًا، ورُوجع، ودُمج، ونُشر. بدا الكود جيدًا. اجتاز المراجعة. وعمل. لكنه كان ما يزال خطأً بهدوء بطريقة مهمة جدًا عندما يقرر شخص لديه دافع أن يعبث به. هذه التدوينة ليست عن السياسات. إنها عن الأنماط المحددة التي يكتبها المطورون كل يوم وتدخل عبرها الثغرات وتسريبات الذاكرة والتعرض للبيانات. ليس لأنهم مطورون سيئون. بل لأن أحدًا لم يخبرهم أن هذا هو الشيء الذي يجب مراقبته.
 
-Let's go through the list.
+لنمر على القائمة.
 
-## Storing Secrets in the Codebase
+## تخزين الأسرار داخل قاعدة الكود
 
-This one feels obvious until you watch it happen in a real pull request from a competent engineer.
+هذا يبدو بديهيًا إلى أن تراه يحدث في pull request حقيقي من مهندس كفء.
 
 ```python
 # BAD: seen in actual production codebases, more than once
@@ -20,7 +20,7 @@ API_KEY = "sk-live-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 STRIPE_SECRET = "sk_live_xxxxxxxxxxxxxxxxxxxxxxxx"
 ```
 
-It usually starts as a "temporary" thing during local development. Then someone commits it "just to test something." Then it gets merged because the reviewer was focused on the logic, not the string on line 14. Then it lives in git history forever, because even if you remove it in the next commit, it's still in the log. GitHub's secret scanning catches some of it, but not custom tokens, internal service keys, or things that don't match known patterns.
+عادةً يبدأ كشيء "مؤقت" أثناء التطوير المحلي. ثم يقوم أحدهم بعمل commit "فقط لتجربة شيء". ثم يُدمج لأن المراجع كان يركز على المنطق لا على السلسلة النصية في السطر 14. ثم يعيش في سجل git إلى الأبد، لأنه حتى لو حذفته في commit التالي، يبقى في السجل. يلتقط secret scanning في GitHub بعض ذلك، لكن ليس الرموز المخصصة أو مفاتيح الخدمات الداخلية أو الأشياء التي لا تطابق أنماطًا معروفة.
 
 ```python
 # GOOD: use environment variables and a secrets manager
@@ -31,11 +31,11 @@ DB_PASSWORD = os.environ["DB_PASSWORD"]
 API_KEY = get_secret("prod/api-key")
 ```
 
-Use `.env` files locally, never commit them, and use a proper secrets manager in production (AWS Secrets Manager, HashiCorp Vault, Doppler, whatever fits your stack). Add your `.env` to `.gitignore` before you write a single line of real code in a project.
+استخدم ملفات `.env` محليًا، ولا تضعها في commit أبدًا، واستخدم secret manager مناسبًا في الإنتاج (AWS Secrets Manager أو HashiCorp Vault أو Doppler أو أي شيء يناسب stack الخاص بك). أضف `.env` إلى `.gitignore` قبل أن تكتب سطرًا واحدًا من الكود الحقيقي في أي مشروع.
 
-## SQL Injection via String Concatenation
+## SQL Injection عبر دمج السلاسل
 
-This vulnerability is from 1998 and it is still being introduced today. Every week. Somewhere.
+هذه الثغرة من عام 1998 وما تزال تُضاف حتى اليوم. كل أسبوع. في مكان ما.
 
 ```python
 # BAD: classic injection surface
@@ -48,7 +48,7 @@ def get_user(username):
 # Congratulations, you just returned every user in the database.
 ```
 
-The fix is parameterized queries. Not sanitizing the input manually. Not escaping quotes. Parameterized queries.
+الحل هو parameterized queries. ليس تنظيف المدخلات يدويًا. وليس escape للاقتباسات. parameterized queries.
 
 ```python
 # GOOD: parameterized query, input never touches the query structure
@@ -56,11 +56,11 @@ def get_user(username):
     return db.execute("SELECT * FROM users WHERE username = ?", (username,))
 ```
 
-ORMs help too, but using an ORM doesn't automatically make you immune. Raw query escape hatches in every major ORM (`.raw()`, `text()`, `execute()`) are injection surfaces if you concatenate user input into them. The rule is simple: never interpolate user-controlled data into a query string.
+تساعد ORM أيضًا، لكن استخدامها لا يجعلك محصنًا تلقائيًا. منافذ raw query في كل ORM رئيسي (`.raw()`, `text()`, `execute()`) هي أسطح حقن إذا دمجت فيها إدخال المستخدم. القاعدة بسيطة: لا تدرج أبدًا بيانات يتحكم بها المستخدم داخل سلسلة query.
 
-## Unvalidated and Untrusted Input Everywhere
+## مدخلات غير متحققة وغير موثوقة في كل مكان
 
-This is broader than SQL injection. Any place your application accepts data from outside and acts on it without validation is a problem waiting to become an incident.
+هذا أوسع من SQL injection. أي مكان يقبل فيه تطبيقك بيانات من الخارج ويتصرف بناءً عليها من دون تحقق هو مشكلة تنتظر أن تتحول إلى حادثة.
 
 ```javascript
 // BAD: trusting the client to send the right user ID
@@ -74,7 +74,7 @@ app.post("/api/orders", async (req, res) => {
 });
 ```
 
-Client-side validation is for user experience. Server-side validation is for security. They are not the same thing and one does not replace the other. Anyone with curl or Burp Suite can send whatever they want to your endpoint, bypassing every form validation you wrote.
+التحقق في جهة العميل لتحسين تجربة المستخدم. والتحقق في جهة الخادم للأمان. ليسا الشيء نفسه ولا أحدهما يستبدل الآخر. أي شخص لديه curl أو Burp Suite يمكنه إرسال ما يشاء إلى endpoint الخاص بك متجاوزًا كل تحقق نماذج كتبته.
 
 ```javascript
 // GOOD: validate everything on the server, explicitly
@@ -101,11 +101,11 @@ app.post("/api/orders", authenticate, async (req, res) => {
 });
 ```
 
-Note that `userId` comes from the authenticated session, not the request body. This is not a small detail.
+لاحظ أن `userId` يأتي من الجلسة المصادق عليها، لا من body الطلب. هذا ليس تفصيلًا صغيرًا.
 
-## Broken Access Control
+## التحكم المكسور في الوصول
 
-Authentication checks who you are. Authorization checks what you're allowed to do. Most apps do the first one and forget the second.
+المصادقة تتحقق من هويتك. التفويض يتحقق مما يُسمح لك بفعله. معظم التطبيقات تقوم بالأولى وتنسى الثانية.
 
 ```javascript
 // BAD: checks if you're logged in, not if this document belongs to you
@@ -115,7 +115,7 @@ app.get("/api/documents/:id", authenticate, async (req, res) => {
 });
 ```
 
-If your document IDs are sequential integers (another issue on its own), an authenticated user can just increment the ID and read everyone else's documents. This is called an Insecure Direct Object Reference (IDOR) and it's one of the most common vulnerabilities in web apps.
+إذا كانت معرفات المستندات أعدادًا صحيحة متسلسلة (وهذه مشكلة أخرى بحد ذاتها)، فيمكن للمستخدم المصادق عليه ببساطة زيادة الرقم وقراءة مستندات الآخرين. يسمى هذا Insecure Direct Object Reference (IDOR) وهو من أكثر الثغرات شيوعًا في تطبيقات الويب.
 
 ```javascript
 // GOOD: verify ownership, not just authentication
@@ -129,11 +129,11 @@ app.get("/api/documents/:id", authenticate, async (req, res) => {
 });
 ```
 
-Returning 404 instead of 403 is intentional. You don't want to confirm whether a resource exists to someone who shouldn't see it.
+إرجاع 404 بدلًا من 403 مقصود. لا تريد تأكيد وجود مورد لشخص لا ينبغي أن يراه.
 
-## Memory Leaks: Event Listeners That Never Get Removed
+## تسريبات الذاكرة: مستمعات أحداث لا تتم إزالتها أبدًا
 
-Memory leaks in JavaScript are usually not dramatic. The app doesn't crash immediately. It just gets slower over time until something falls over or a user complains.
+تسريبات الذاكرة في JavaScript لا تكون عادة درامية. لا ينهار التطبيق فورًا. بل يصبح أبطأ مع الوقت حتى يسقط شيء ما أو يشتكي مستخدم.
 
 ```javascript
 // BAD: adding a listener on every render with no cleanup
@@ -145,7 +145,7 @@ function Dashboard() {
 }
 ```
 
-Every time this component mounts and unmounts, a new listener gets added. On a single-page app where navigation is frequent, you can end up with dozens of the same listener active simultaneously, all running on every resize event, all holding references that prevent garbage collection.
+في كل مرة يتم فيها mount وunmount لهذا المكوّن، تتم إضافة مستمع جديد. في تطبيق صفحة واحدة يكون فيه التنقل متكررًا، قد ينتهي بك الأمر إلى عشرات المستمعات نفسها نشطة في الوقت نفسه، كلها تعمل عند كل resize، وكلها تحتفظ بمراجع تمنع garbage collection.
 
 ```javascript
 // GOOD: always return a cleanup function
@@ -157,11 +157,11 @@ function Dashboard() {
 }
 ```
 
-The same pattern applies to WebSocket connections, intervals, timeouts, and subscriptions. If you open it, close it. If you subscribe, unsubscribe. Make the cleanup function the first thing you write after the setup.
+النمط نفسه ينطبق على اتصالات WebSocket، والفترات الزمنية، والمهلات، والاشتراكات. إذا فتحته فأغلقه. إذا اشتركت فألغِ الاشتراك. اجعل دالة التنظيف أول شيء تكتبه بعد الإعداد.
 
-## Memory Leaks: Forgetting to Close Database Connections
+## تسريبات الذاكرة: نسيان إغلاق اتصالات قاعدة البيانات
 
-This one bites backend developers hard, especially early in a project when connection pooling hasn't been thought through.
+هذه تضرب مطوري الخلفية بقوة، خصوصًا في بداية المشروع عندما لم يُفكر جيدًا في connection pooling.
 
 ```python
 # BAD: connection opened, but what happens if an exception is thrown?
@@ -173,7 +173,7 @@ def save_record(data):
     conn.close()  # never reached if execute() throws
 ```
 
-If `cursor.execute()` raises an exception, `conn.close()` is never called. Do this enough times and you exhaust your connection pool, which means your entire application starts hanging on database calls.
+إذا أثار `cursor.execute()` استثناءً، فلن يتم استدعاء `conn.close()` أبدًا. افعل ذلك مرات كافية وستستنزف connection pool، ما يعني أن تطبيقك كله سيبدأ بالتعليق عند استدعاءات قاعدة البيانات.
 
 ```python
 # GOOD: use context managers so cleanup is guaranteed
@@ -184,11 +184,11 @@ def save_record(data):
     # connection is always closed here, exception or not
 ```
 
-In languages without context managers, use try/finally blocks. The pattern is the same: resource cleanup should be unconditional, not dependent on the happy path completing successfully.
+في اللغات التي لا تحتوي على context managers، استخدم try/finally. النمط نفسه: يجب أن يكون تنظيف الموارد غير مشروط، لا معتمدًا على اكتمال المسار السعيد بنجاح.
 
-## Cross-Site Scripting (XSS) via Unescaped Output
+## Cross-Site Scripting (XSS) عبر مخرجات غير مهربة
 
-Rendering user-provided content directly into HTML is how you let strangers execute JavaScript in your users' browsers.
+عرض المحتوى الذي يقدمه المستخدم مباشرة داخل HTML هو كيف تسمح للغرباء بتنفيذ JavaScript داخل متصفحات مستخدميك.
 
 ```javascript
 // BAD: directly inserting user content into the DOM
@@ -200,7 +200,7 @@ function renderComment(comment) {
 // Every visitor who loads that page sends their session cookie to an attacker.
 ```
 
-Modern frameworks mostly protect you from this by default (React escapes output, Vue does too), but there are escape hatches that developers use without thinking about the consequences.
+الأطر الحديثة تحميك من هذا في الغالب افتراضيًا (React يهرب المخرجات وVue يفعل ذلك أيضًا)، لكن هناك منافذ bypass يستخدمها المطورون من دون التفكير في العواقب.
 
 ```jsx
 // BAD in React: dangerouslySetInnerHTML without sanitization
@@ -222,11 +222,11 @@ function Comment({ text }) {
 }
 ```
 
-The name `dangerouslySetInnerHTML` is not subtle. It's a hint. Read the hint.
+اسم `dangerouslySetInnerHTML` ليس لطيفًا. إنه تلميح. اقرأ التلميح.
 
-## Insecure Password Storage
+## تخزين غير آمن لكلمات المرور
 
-Storing passwords in plain text is bad. Storing them with MD5 or SHA-1 is almost equally bad. These hash algorithms are not designed for passwords and can be cracked at billions of hashes per second with modern GPU hardware.
+تخزين كلمات المرور كنص عادي سيئ. وتخزينها باستخدام MD5 أو SHA-1 سيئ تقريبًا بنفس الدرجة. خوارزميات hash هذه ليست مصممة لكلمات المرور ويمكن كسرها بمليارات التجزئات في الثانية باستخدام عتاد GPU الحديث.
 
 ```python
 # BAD: using a fast hash. MD5 and SHA-1 are especially bad.
@@ -240,7 +240,7 @@ def store_password(password):
 hashed = hashlib.sha256(password.encode()).hexdigest()
 ```
 
-Password hashing requires algorithms specifically designed to be slow and resistant to GPU acceleration: bcrypt, scrypt, or Argon2. These algorithms are intentionally expensive to compute, which means an attacker who gets your database can't just throw a GPU at it and crack everything in a day.
+تجزئة كلمات المرور تتطلب خوارزميات صممت تحديدًا لتكون بطيئة ومقاومة لتسريع GPU: bcrypt أو scrypt أو Argon2. هذه الخوارزميات مكلفة عمدًا في الحساب، ما يعني أن المهاجم إذا حصل على قاعدة بياناتك لا يستطيع ببساطة توجيه GPU إليها وكسر كل شيء في يوم واحد.
 
 ```python
 # GOOD: use bcrypt or Argon2
@@ -255,7 +255,7 @@ def verify_password(password, hashed):
     return bcrypt.checkpw(password.encode(), hashed)
 ```
 
-The `rounds` parameter is the work factor. Higher means slower to compute, which is good for defense. 12 is a reasonable default in 2026, but you should adjust it based on your hardware so that checking a password takes roughly 100-300ms.
+المعامل `rounds` هو عامل العمل. كلما زاد صار الحساب أبطأ، وهذا جيد للدفاع. القيمة 12 هي افتراضية معقولة في 2026، لكن يجب تعديلها بناءً على عتادك بحيث يستغرق التحقق من كلمة المرور نحو 100-300ms.
 
 ## Verbose Error Messages in Production
 

@@ -1,52 +1,27 @@
 ---
-title: "Arch vs Ubuntu vs Mint: Picking the Linux That Won't Drive You Insane"
+title: "Arch vs Ubuntu vs Mint: اختيار توزيعة Linux لا تذهب بك إلى الجنون"
 date: "2026-06-29"
-excerpt: "Three distros, three philosophies, one goal: actually getting things done on Linux without losing your mind first."
+excerpt: "ثلاث توزيعات، ثلاث فلسفات، وهدف واحد: إنجاز الأمور على Linux دون فقدان عقلك أولًا."
 topics: ["linux", "arch-linux", "ubuntu", "linux-mint"]
 ---
 
-I've run all three of these on real hardware, not just inside a VM I fired up once
-and never touched again. At some point I had Arch on my main workstation, Ubuntu on
-a secondary machine, and Linux Mint on an old laptop I handed to a family member who
-responds to "just restart it" with genuine panic. Each one taught me something
-different, and not always the lesson I expected. The Linux community loves to argue
-about distros like it's a personality trait, but after living with all three, I think
-the real answer is boring: it depends entirely on what you're trying to do and how
-much friction you're willing to accept.
+جرّبت هذه الثلاثة جميعًا على عتاد حقيقي، لا داخل VM شغّلته مرة واحدة ثم لم ألمسه مرة أخرى. في وقت ما كان لدي Arch على محطة العمل الرئيسية، وUbuntu على جهاز ثانوي، وLinux Mint على لابتوب قديم أعطيته لأحد أفراد العائلة الذي يرد على عبارة "أعد تشغيله فقط" بذعر حقيقي. كل واحدة علّمتني شيئًا مختلفًا، وليس دائمًا الدرس الذي توقعت. يحب مجتمع Linux الجدال حول التوزيعات كما لو كان ذلك صفة شخصية، لكن بعد العيش مع الثلاثة، أظن أن الجواب الحقيقي ممل: يعتمد كليًا على ما تحاول فعله وكم الاحتكاك الذي أنت مستعد لتحمله.
 
-This isn't a benchmarking post. It's more like field notes from someone who's broken
-their system at 11pm and had to figure out why.
+هذه ليست تدوينة benchmark. إنها أشبه بملاحظات ميدانية من شخص كسر نظامه في الساعة 11 مساءً واضطر لمعرفة السبب.
 
-## The Philosophy Gap Is Real
+## فجوة الفلسفة حقيقية
 
-Before getting into specifics, it's worth understanding that these three distros aren't
-just different flavors of the same thing. They represent genuinely different ideas about
-what Linux should be.
+قبل الدخول في التفاصيل، من المهم فهم أن هذه التوزيعات الثلاث ليست مجرد نكهات مختلفة لنفس الشيء. إنها تمثل أفكارًا مختلفة فعلًا حول ما ينبغي أن يكون عليه Linux.
 
-Arch is built around the idea that you, the user, should understand your system. Not in
-a hazing-ritual way, though it can feel that way sometimes. In a "you make the decisions
-and you own the consequences" way. There's no installer that makes choices for you. You
-partition your own disk, you choose your own bootloader, you install only what you need.
-The payoff is a system where you know exactly what's running and why. The cost is that
-getting there takes a weekend.
+تم بناء Arch حول فكرة أن عليك، أنت المستخدم، أن تفهم نظامك. ليس بأسلوب ritual تعذيب، رغم أنه قد يبدو كذلك أحيانًا. بل بأسلوب "أنت تتخذ القرارات وتتحمل العواقب". لا يوجد installer يتخذ القرارات بدلًا منك. أنت تقسّم القرص بنفسك، وتختار bootloader بنفسك، وتثبت فقط ما تحتاجه. العائد هو نظام تعرف فيه بالضبط ما الذي يعمل ولماذا. والثمن أن الوصول إلى ذلك يستغرق عطلة نهاية أسبوع.
 
-Ubuntu's philosophy is closer to "just works." Canonical makes a lot of decisions for
-you, ships a ton of software out of the box, and has historically focused on making Linux
-accessible to people who don't want to read documentation for fun. It's also deeply
-commercial in ways that have annoyed parts of the community over the years (Snap packages
-being the most recent flashpoint), but it's stable, widely supported, and when you Google
-a Linux problem, there's probably an Ubuntu-flavored answer on the first page.
+فلسفة Ubuntu أقرب إلى "يعمل فقط". تتخذ Canonical الكثير من القرارات بدلًا منك، وتأتي بكميات كبيرة من البرمجيات جاهزة، وركّزت تاريخيًا على جعل Linux متاحًا لمن لا يريدون قراءة التوثيق للمتعة. كما أنه تجاري بعمق بطرق أزعجت أجزاء من المجتمع عبر السنوات (وحزم Snap كانت أحدث نقطة اشتعال)، لكنه مستقر وواسع الدعم، وعندما تبحث عن مشكلة Linux في Google فغالبًا ستجد إجابة بنكهة Ubuntu في الصفحة الأولى.
 
-Mint sits somewhere interesting. It's built on Ubuntu, so it gets all that broad
-compatibility and package availability, but the Mint team actively pushes back on some of
-Ubuntu's decisions. No forced Snaps by default, a more traditional desktop experience, and
-a genuine focus on not changing things just to change them. For a lot of people, Mint ends
-up feeling like what Ubuntu used to be before Canonical started having bigger ambitions.
+تقع Mint في مكان مثير للاهتمام. فهي مبنية على Ubuntu، لذا تحصل على تلك التوافقية الواسعة وتوفر الحزم، لكن فريق Mint يعارض بنشاط بعض قرارات Ubuntu. لا توجد Snaps قسرية افتراضيًا، وتجربة سطح مكتب أكثر تقليدية، وتركيز حقيقي على عدم تغيير الأشياء لمجرد التغيير. بالنسبة لكثير من الناس، تنتهي Mint بالشعور وكأنها ما كان Ubuntu عليه قبل أن تبدأ Canonical في امتلاك طموحات أكبر.
 
-## Head-to-Head Comparison
+## مقارنة مباشرة
 
-The interactive widget above covers the detailed breakdown, but here's the quick version
-in plain text for anyone reading this as a static export.
+الـ widget التفاعلي أعلاه يغطي التفاصيل، لكن هذه النسخة السريعة بنص عادي لمن يقرأها كتصدير ثابت.
 
 | Category           | Arch                  | Ubuntu                   | Linux Mint           |
 | ------------------ | --------------------- | ------------------------ | -------------------- |
@@ -61,198 +36,92 @@ in plain text for anyone reading this as a static export.
 | Documentation      | Arch Wiki (legendary) | Massive community        | Good forums          |
 | Best for           | Power users, devs     | Devs, servers, new users | Beginners, stability |
 
-That table doesn't tell the whole story though. Numbers and categories flatten nuance that
-actually matters when you're using one of these every day. So let's dig in.
+لكن الجدول لا يحكي القصة كاملة. الأرقام والفئات تسطح الفروق الدقيقة التي تهم فعلًا عندما تستخدم واحدة منها كل يوم. فلنغص في التفاصيل.
 
-## What Arch Actually Gets Right
+## ما الذي ينجح فيه Arch فعلًا
 
-The reputation Arch has is a bit unfair at this point. The installer is genuinely complex
-if you've never touched it, but it's not magic. You follow the wiki, you learn what each
-step does, and by the end you've got a system that's exactly as minimal or as loaded as
-you made it. I've installed Arch probably eight or nine times across different machines
-and the process is meditative now.
+سمعة Arch فيها شيء من الظلم الآن. الـ installer معقد فعلًا إذا لم تلمسه من قبل، لكنه ليس سحرًا. تتبع الـ wiki، وتتعلم ما الذي تفعله كل خطوة، وفي النهاية تحصل على نظام minimal أو loaded بالقدر الذي صنعته أنت. لقد ثبّت Arch ربما ثماني أو تسع مرات عبر أجهزة مختلفة، وأصبحت العملية الآن تأملية تقريبًا.
 
-What nobody talks about enough is the AUR. The Arch User Repository is legitimately one
-of the best things in the Linux ecosystem. If a piece of software exists and runs on
-Linux, there's probably an AUR package for it. Maintained by community members, built
-from source, and installed with a helper like `yay` or `paru` in one command. Proprietary
-tools, obscure utilities, bleeding-edge packages that won't hit Ubuntu repos for another
-six months. It's spoiling in the best way.
+ما لا يتحدث عنه الناس بما يكفي هو AUR. Arch User Repository هو فعلًا أحد أفضل الأشياء في منظومة Linux. إذا كان هناك برنامج يعمل على Linux، فغالبًا توجد له حزمة AUR. يُحافَظ عليها من أعضاء المجتمع، وتُبنى من المصدر، وتُثبت بأمر واحد باستخدام أداة مثل `yay` أو `paru`. أدوات مملوكة، وأدوات غريبة، وحزم متقدمة لن تصل إلى مستودعات Ubuntu لمدة ستة أشهر أخرى. إنه تدليل بأفضل شكل.
 
-Rolling releases are the other thing. On Arch you're always running current software. No
-waiting for the next major Ubuntu cycle to get a newer kernel or updated GNOME. Updates
-come continuously, which is great until it isn't, because sometimes a rolling update does
-something unfortunate and you're debugging a broken display server on a Monday morning.
-The saving grace is that the Arch community is fast, the wiki is exceptional, and most
-breakage gets documented and resolved quickly. You will eventually need to look something
-up, and the Arch wiki is so thorough that it helps you even when you're not on Arch.
+الـ rolling releases هي الشيء الآخر. على Arch أنت دائمًا تشغّل برمجيات حديثة. لا انتظار للدورة الكبرى القادمة في Ubuntu للحصول على kernel أحدث أو GNOME محدث. تأتي التحديثات باستمرار، وهو أمر رائع حتى لا يكون كذلك، لأن التحديث المتدحرج أحيانًا يفعل شيئًا غير مرغوب فيه وتجد نفسك تصحح display server معطلًا صباح الإثنين. ما ينقذك هو أن مجتمع Arch سريع، والـ wiki استثنائية، ومعظم الأعطال تُوثق وتُحل بسرعة. ستحتاج في النهاية إلى البحث عن شيء ما، والـ wiki في Arch شاملة لدرجة أنها تساعدك حتى عندما لا تكون على Arch.
 
-The honest downside of Arch is time investment. Not just installation time, but ongoing
-time. When something breaks, and something will eventually break, you need to care enough
-to fix it yourself. If you treat Arch as a set-and-forget system, it will eventually
-surprise you.
+العيب الصريح في Arch هو استثمار الوقت. ليس وقت التثبيت فقط، بل الوقت المستمر. عندما يتعطل شيء ما، وسيحدث ذلك في النهاية، يجب أن تهتم بما يكفي لإصلاحه بنفسك. إذا تعاملت مع Arch كنظام set-and-forget، فسيفاجئك في النهاية.
 
-## Where Ubuntu Earns Its Place
+## أين يكسب Ubuntu مكانته
 
-Ubuntu takes criticism from Linux enthusiasts in a way that sometimes feels
-disproportionate. Yes, Snap packages have their problems. Yes, some Ubuntu decisions feel
-driven more by Canonical's business interests than by pure technical merit. But Ubuntu is
-also the reason a huge number of people use Linux at all, and that's not nothing.
+يتلقى Ubuntu انتقادات من متحمسي Linux بطريقة تبدو أحيانًا غير متناسبة. نعم، لحزم Snap مشاكلها. نعم، بعض قرارات Ubuntu تبدو مدفوعة أكثر بمصالح Canonical التجارية من القيمة التقنية الصرفة. لكن Ubuntu أيضًا هو سبب استخدام عدد هائل من الناس لـ Linux أصلًا، وهذا ليس أمرًا هينًا.
 
-Driver support on Ubuntu is genuinely good. NVIDIA drivers, Wi-Fi chipsets, printers,
-Bluetooth headphones that behave strangely on other distros. Ubuntu tends to handle all
-of this with less friction than most alternatives. If you're setting up a machine for
-development work and you want to spend your time actually developing rather than chasing
-a Wi-Fi driver, Ubuntu is still one of the safest picks.
+دعم التعريفات في Ubuntu جيد فعلًا. تعريفات NVIDIA، وشرائح Wi-Fi، والطابعات، وسماعات Bluetooth التي تتصرف بغرابة على توزيعات أخرى. يميل Ubuntu إلى التعامل مع كل ذلك باحتكاك أقل من معظم البدائل. إذا كنت تجهز جهازًا للعمل التطويري وتريد قضاء وقتك في التطوير فعليًا بدلًا من مطاردة تعريف Wi-Fi، فلا يزال Ubuntu من أكثر الخيارات أمانًا.
 
-The LTS releases are a specific strength. Ubuntu 24.04 LTS gets five years of security
-updates. For servers, for work machines, for systems where stability matters more than
-having the newest version of anything, LTS releases are a solid foundation. Most of the
-cloud and DevOps world runs on Ubuntu precisely because it's predictable. If you've ever
-deployed to a VPS or looked at a production Docker base image, you've almost certainly
-been in Ubuntu territory.
+إصدارات LTS نقطة قوة محددة. يحصل Ubuntu 24.04 LTS على خمس سنوات من تحديثات الأمان. للخوادم، وأجهزة العمل، والأنظمة التي تهم فيها الاستقرار أكثر من أحدث إصدار لأي شيء، تعد إصدارات LTS أساسًا متينًا. معظم عالم cloud وDevOps يعمل على Ubuntu تحديدًا لأنه متوقع. إذا سبق لك أن نشرت على VPS أو نظرت إلى base image في Docker للإنتاج، فغالبًا كنت داخل أراضي Ubuntu.
 
-The Snap situation is real though. Some packages are Snap-only on Ubuntu now, and Snaps
-are slow to start, stored weirdly, and feel bolted on compared to native packages. It's
-not a dealbreaker but it's a genuine annoyance that Mint specifically addressed by
-blocking Snap installation by default, which is one of the reasons Mint users tend to be
-pretty happy about that particular decision.
+لكن قصة Snap حقيقية. بعض الحزم أصبحت Snap-only في Ubuntu الآن، وSnaps بطيئة عند الإقلاع، ومخزنة بشكل غريب، وتبدو ملحقة مقارنة بالحزم الأصلية. هذا ليس سببًا لرفض التوزيعة، لكنه إزعاج حقيقي عالجته Mint تحديدًا بمنع تثبيت Snap افتراضيًا، وهو أحد الأسباب التي تجعل مستخدمي Mint سعداء جدًا بذلك القرار.
 
-## Linux Mint Is Underrated and It's Not Even Close
+## Linux Mint أقل من قيمته الحقيقية ولا مجال للمقارنة
 
-I gave my old laptop running Mint to a family member with basically zero Linux experience.
-That was two years ago. I have received zero support calls about it. That tells you
-almost everything.
+أعطيت لابتوبي القديم الذي يعمل بـ Mint لأحد أفراد العائلة الذي لا يملك تقريبًا أي خبرة في Linux. كان ذلك قبل عامين. لم أتلقَّ أي مكالمات دعم بخصوصه. وهذا يخبرك تقريبًا بكل شيء.
 
-Mint defaults to Cinnamon desktop, which is a traditional, sensible desktop environment.
-Panel at the bottom, application menu in the corner, taskbar, system tray. If someone is
-coming from Windows, there's barely a learning curve on the desktop itself. Files are
-where you expect them, the software manager is clean, and the update manager is
-conservative in a good way. It prioritizes security updates first and kernel updates can
-be managed manually if you want more control.
+تأتي Mint افتراضيًا مع Cinnamon، وهي بيئة سطح مكتب تقليدية ومعقولة. شريط في الأسفل، وقائمة التطبيقات في الزاوية، وشريط مهام، ومنطقة system tray. إذا كان الشخص قادمًا من Windows، فهناك بالكاد منحنى تعلم على سطح المكتب نفسه. الملفات في المكان المتوقع، ومدير البرمجيات نظيف، ومدير التحديثات محافظ بمعنى جيد. يعطي الأولوية لتحديثات الأمان أولًا، ويمكن إدارة تحديثات kernel يدويًا إذا أردت مزيدًا من التحكم.
 
-The team behind Mint is small but focused. They ship less than Ubuntu, they change less,
-and they communicate clearly when something is experimental. There's something refreshing
-about a project that isn't trying to be everything. The Mint forums are also genuinely
-helpful and not nearly as hostile as some corners of the Linux community can get toward
-beginners.
+الفريق وراء Mint صغير لكنه مركز. يطرحون أقل من Ubuntu، ويغيرون أقل، ويتواصلون بوضوح عندما يكون شيء ما تجريبيًا. هناك شيء منعش في مشروع لا يحاول أن يكون كل شيء. كما أن منتديات Mint مفيدة فعلًا وليست عدائية تقريبًا كما يمكن لبعض زوايا مجتمع Linux أن تكون تجاه المبتدئين.
 
-Where Mint struggles is on very new hardware. Since it follows Ubuntu LTS releases, the
-kernel it ships with can be older, and sometimes brand new hardware needs a newer kernel
-to work properly. There are ways around this (the HWE stack, manually installing a newer
-kernel), but it adds steps that undercut some of Mint's "it just works" appeal if you're
-on a machine that came out in the last year.
+تكمن معاناة Mint مع العتاد الجديد جدًا. بما أنها تتبع إصدارات Ubuntu LTS، فقد يكون الـ kernel الذي تأتي به أقدم، وأحيانًا يحتاج العتاد الجديد إلى kernel أحدث ليعمل بشكل صحيح. توجد طرق للتغلب على ذلك (stack HWE أو تثبيت kernel أحدث يدويًا)، لكنها تضيف خطوات تقلل من جاذبية "يعمل فقط" إذا كنت على جهاز صدر خلال العام الماضي.
 
-## The Package Manager Question
+## سؤال مدير الحزم
 
-This is where the Debian/Ubuntu side and the Arch side live in genuinely different worlds.
+هنا يختلف عالم Debian/Ubuntu وعالم Arch فعلًا.
 
-`apt` is stable, well understood, and has been around forever. The package selection in
-the Ubuntu/Mint repos is large but not exhaustive, and packages are often a version or
-two behind upstream. For most software this doesn't matter. For newer libraries or tools
-under active development, it sometimes does.
+`apt` مستقر ومفهوم جيدًا، وقد كان موجودًا منذ زمن طويل. اختيار الحزم في مستودعات Ubuntu/Mint واسع لكنه ليس شاملًا، وغالبًا ما تكون الحزم متأخرة نسخة أو نسختين عن المصدر الأصلي. في معظم البرمجيات لا يهم هذا. لكن مع المكتبات أو الأدوات الأحدث تحت التطوير النشط، قد يهم.
 
-`pacman` on Arch is fast and clean. Combined with an AUR helper, it's hard to beat for
-sheer availability. The tradeoff is that you're sometimes installing things that are more
-cutting edge than you strictly need, and the occasional package conflict or update that
-breaks something is the price of admission.
+`pacman` في Arch سريع ونظيف. ومع أداة مساعدة لـ AUR يصعب التفوق عليه من ناحية التوفر. المقابل هو أنك أحيانًا تثبّت أشياء أحدث مما تحتاجه تمامًا، وأي تعارض حزم أو تحديث يكسر شيئًا ما هو ثمن الدخول.
 
-Neither is objectively better. But if you've ever needed a specific version of a tool for
-a project and spent an hour trying to wrangle `apt` into giving it to you, the AUR starts
-to look very attractive.
+ولا واحد أفضل بشكل مطلق. لكن إذا احتجت يومًا نسخة محددة من أداة لمشروع ما وقضيت ساعة تحاول إجبار `apt` على إعطائها لك، فستبدأ AUR تبدو مغرية جدًا.
 
-## Weird Issues I Actually Ran Into
+## مشاكل غريبة واجهتها فعلًا
 
-On Arch, I once had a GNOME update change how fractional scaling worked, which made my
-4K monitor look wrong overnight. Took me about forty minutes of forum reading to fix.
-Annoying? Yes. But the fix was documented, the thread was recent, and I understood what
-had changed afterward. That's the Arch experience in miniature.
+على Arch، حدث لي مرة أن تحديثًا لـ GNOME غيّر طريقة عمل fractional scaling، فصار شاشتي 4K تبدو خاطئة بين ليلة وضحاها. استغرقني الأمر نحو أربعين دقيقة من قراءة المنتديات لإصلاحه. مزعج؟ نعم. لكن الإصلاح كان موثقًا، والنقاش حديثًا، وفهمت ما الذي تغير بعد ذلك. هذه هي تجربة Arch في صورة مصغرة.
 
-On Ubuntu, I fought with the Firefox Snap for longer than I'd like to admit. It's slow to
-open, it doesn't integrate with system themes the same way, and trying to replace it with
-the non-Snap version requires a bit of terminal work that shouldn't be necessary for a
-default browser. I ended up just installing a different browser and moving on, which is
-probably what Canonical expects people to do, which is fine but slightly irritating.
+على Ubuntu، تشاجرت مع Firefox Snap لفترة أطول مما أود الاعتراف به. فهو بطيء عند الفتح، ولا يندمج مع سمات النظام بالطريقة نفسها، ومحاولة استبداله بالنسخة غير الـ Snap تتطلب بعض العمل في الطرفية، وهو أمر لا ينبغي أن يكون مطلوبًا لمتصفح افتراضي. انتهى بي الأمر فقط إلى تثبيت متصفح مختلف والمضي قدمًا، وهو على الأغلب ما تتوقعه Canonical من الناس، وهذا مقبول لكنه مزعج قليلًا.
 
-On Mint, the only real issue I hit was audio on a slightly older Realtek chip that needed
-a config file tweak. Five minutes of research, one file edit, rebooted, done. That was
-genuinely representative of the Mint experience: occasionally something small needs
-fixing, but it's never dramatic.
+على Mint، المشكلة الحقيقية الوحيدة التي واجهتها كانت الصوت على شريحة Realtek أقدم قليلًا احتاجت تعديلًا في ملف إعدادات. خمس دقائق بحث، تعديل ملف واحد، إعادة تشغيل، وانتهى الأمر. كانت هذه تجربة Mint فعلًا: أحيانًا يحتاج شيء صغير إلى إصلاح، لكنه لا يكون دراميًا أبدًا.
 
-## Gaming: A Quick Note
+## الألعاب: ملاحظة سريعة
 
-This used to be a non-discussion. Now it matters. Gaming on Linux is actually good in
-2026, and which distro you're on affects the experience more than you'd think.
+كان هذا سابقًا موضوعًا غير مطروح. الآن أصبح مهمًا. الألعاب على Linux جيدة فعلًا في 2026، والتوزيعة التي تستخدمها تؤثر على التجربة أكثر مما تتوقع.
 
-Arch wins here purely on recency. The latest Mesa drivers, the latest Proton versions,
-the latest kernel patches for Wayland compatibility. If you're chasing game compatibility
-on Proton and want every edge, Arch is where that happens first. You also have the option
-to install more niche tools from the AUR without hassle.
+Arch يفوز هنا ببساطة بسبب الحداثة. أحدث تعريفات Mesa، وأحدث إصدارات Proton، وأحدث تصحيحات kernel للتوافق مع Wayland. إذا كنت تطارد توافق الألعاب على Proton وتريد كل أفضلية ممكنة، فـ Arch هو المكان الذي يحدث فيه ذلك أولًا. كما لديك خيار تثبيت أدوات أكثر تخصصًا من AUR من دون عناء.
 
-Ubuntu is fine for gaming, but occasionally a game that requires a newer version of a
-library has you jumping through hoops. The Firefox-Snap situation has an analog in
-gaming: some things just aren't as seamless as they should be. That said, Ubuntu with the
-latest NVIDIA drivers properly installed is a completely workable gaming setup. Most Steam
-games run well.
+Ubuntu جيد للألعاب، لكن أحيانًا لعبة تتطلب نسخة أحدث من مكتبة ما فتجد نفسك تقوم ببعض الخطوات الإضافية. حالة Firefox Snap لها نظير في الألعاب: بعض الأشياء ليست سلسة كما ينبغي. ومع ذلك، فإن Ubuntu مع أحدث تعريفات NVIDIA المثبتة بشكل صحيح هو إعداد ألعاب قابل للاستخدام تمامًا. معظم ألعاب Steam تعمل جيدًا.
 
-Mint is good for older titles and anything that doesn't need cutting-edge GPU features.
-Cinnamon is lighter than GNOME, so it gives your GPU more headroom. But if you're on a
-new RTX card and want the very latest drivers, you're going to be doing a bit more manual
-work than on the other two.
+Mint جيد للألعاب القديمة وأي شيء لا يحتاج ميزات GPU متقدمة جدًا. Cinnamon أخف من GNOME، لذا يترك مساحة أكبر للبطاقة الرسومية. لكن إذا كنت على بطاقة RTX جديدة وتريد أحدث التعريفات، فستحتاج إلى عمل يدوي أكثر قليلًا من التوزيعتين الأخريين.
 
-## Disk Space and Resource Usage
+## مساحة القرص واستخدام الموارد
 
-This rarely gets discussed but it matters on older hardware.
+نادراً ما يُناقش هذا، لكنه مهم على العتاد القديم.
 
-A minimal Arch install is around 800MB to 2GB depending on what you add. A full desktop
-installation with GNOME is around 4-6GB but you put every byte there yourself. RAM usage
-after boot varies hugely based on your desktop choice, but a lightweight window manager
-on Arch can idle at under 200MB.
+تثبيت Arch الأساسي يكون تقريبًا بين 800 ميجابايت و2 جيجابايت بحسب ما تضيفه. أما تثبيت سطح مكتب كامل مع GNOME فيكون حوالي 4 إلى 6 جيجابايت، لكنك أنت من يضع كل بايت فيه. استخدام RAM بعد الإقلاع يختلف كثيرًا حسب سطح المكتب، لكن مدير نوافذ خفيف على Arch قد يستقر تحت 200 ميجابايت.
 
-Ubuntu with GNOME sits around 7-10GB installed and idles at around 700MB-1GB RAM
-depending on background services. For most modern machines this is completely fine. It's
-not lightweight but it's not particularly heavy either.
+Ubuntu مع GNOME يستهلك عادةً نحو 7 إلى 10 جيجابايت تثبيتًا، ويستقر عند نحو 700 ميجابايت إلى 1 جيجابايت RAM بحسب الخدمات الخلفية. في معظم الأجهزة الحديثة هذا جيد تمامًا. ليس خفيفًا، لكنه ليس ثقيلًا بشكل مزعج أيضًا.
 
-Mint with Cinnamon is noticeably lighter than GNOME. Installed footprint is similar to
-Ubuntu since they share the same base, but Cinnamon idles at roughly 400-500MB RAM, which
-is a real difference if you're on a machine with 4GB or 8GB. This is one of the reasons
-Mint became popular as a way to breathe life into older hardware.
+Mint مع Cinnamon أخف بوضوح من GNOME. المساحة المثبتة مشابهة لـ Ubuntu لأنه يعتمد على نفس الأساس، لكن Cinnamon يستقر عند نحو 400 إلى 500 ميجابايت RAM، وهذا فرق حقيقي إذا كنت على جهاز بذاكرة 4 أو 8 جيجابايت. هذا أحد أسباب شعبية Mint كطريقة لإحياء الأجهزة القديمة.
 
-## The Documentation Situation
+## وضع التوثيق
 
-Arch wiki vs Ubuntu community vs Mint forums. This is worth talking about.
+Arch wiki مقابل مجتمع Ubuntu مقابل منتديات Mint. هذا يستحق الحديث عنه.
 
-The Arch wiki is the best Linux documentation in existence. It's not even close. Detailed,
-accurate, kept up to date, and its coverage extends well beyond Arch-specific topics. If
-you're debugging something on any distro, there's a reasonable chance the Arch wiki page
-about that thing is the most useful resource online.
+Arch wiki هو أفضل توثيق لـ Linux موجود. وليس هناك منافس قريب. مفصل، دقيق، محدث، وتغطيته تمتد إلى ما هو أبعد من مواضيع Arch نفسها. إذا كنت تصحح مشكلة على أي توزيعة، فهناك احتمال معقول أن صفحة Arch wiki الخاصة بتلك المشكلة هي المورد الأكثر فائدة على الإنترنت.
 
-The Ubuntu community is enormous. Ask Ubuntu on Stack Exchange has answers for basically
-every problem you'll encounter, and most of them are detailed. The flip side is that answers
-go stale, older threads give outdated commands, and you sometimes have to read five threads
-to figure out which solution applies to your current version.
+مجتمع Ubuntu ضخم. لدى Ask Ubuntu على Stack Exchange إجابات تقريبًا لكل مشكلة ستواجهها، ومعظمها مفصل. الوجه الآخر هو أن الإجابات تصبح قديمة، والمواضيع الأقدم تعطي أوامر غير محدثة، وأحيانًا تضطر لقراءة خمس مواضيع لتعرف أي حل ينطبق على نسختك الحالية.
 
-Mint's forums are smaller but the community is genuinely patient with beginners. If you're
-not a developer who's comfortable figuring things out alone, the Mint forums are
-surprisingly pleasant to use.
+منتديات Mint أصغر، لكن المجتمع يصبر فعلًا على المبتدئين. إذا لم تكن مطورًا مرتاحًا لحل الأمور وحدك، فالمنتديات هناك لطيفة الاستخدام بشكل مفاجئ.
 
-## Who Should Use What
+## من ينبغي أن يستخدم ماذا
 
-If you want to actually understand your Linux system, enjoy reading documentation, want the
-newest software, and don't mind occasional breakage that you'll be expected to fix yourself:
-Arch is genuinely excellent. It's not for everyone but it rewards investment.
+إذا كنت تريد أن تفهم Linux فعلًا، وتستمتع بقراءة التوثيق، وتريد أحدث البرمجيات، ولا تمانع بعض الأعطال التي يُتوقع منك إصلاحها بنفسك: فإن Arch ممتاز فعلًا. ليس للجميع، لكنه يكافئ من يستثمر فيه.
 
-If you're setting up a development machine, a server, or a system where compatibility and
-community support matter more than anything else: Ubuntu LTS is still a defensible choice.
-It's boring in the right way for professional contexts, and boring is sometimes exactly what
-you need.
+إذا كنت تجهز جهاز تطوير أو خادمًا أو نظامًا تهم فيه التوافقية ودعم المجتمع أكثر من أي شيء آخر: فإن Ubuntu LTS لا يزال خيارًا يمكن الدفاع عنه. إنه ممل بالطريقة الصحيحة للسياقات المهنية، وأحيانًا هذا بالضبط ما تحتاجه.
 
-If you want a Linux desktop that stays out of your way, doesn't change things on you, and
-would work fine for someone who just wants to browse the web and open LibreOffice without
-thinking about it: Mint is probably the most underappreciated distro in the mainstream
-conversation. It's stable, clean, and the Cinnamon desktop is genuinely good.
+إذا كنت تريد سطح مكتب Linux يبتعد عن طريقك، ولا يغيّر الأشياء عليك، وسيعمل جيدًا لشخص يريد فقط تصفح الويب وفتح LibreOffice من دون التفكير في الأمر: فـ Mint ربما تكون أقل توزيعة مقدّرة حق قدرها في الحديث السائد. إنها مستقرة ونظيفة، وسطح مكتب Cinnamon جيد فعلًا.
 
-The worst outcome isn't picking the wrong distro. It's spending so long arguing about
-distros online that you never actually build anything. Install something, break it, fix it,
-learn something. That's the whole game. And if you hate your first pick, switching is one
-afternoon of your time.
+أسوأ نتيجة ليست اختيار التوزيعة الخاطئة. بل أن تمضي وقتًا طويلًا جدًا في الجدال حول التوزيعات على الإنترنت من دون أن تبني شيئًا فعلًا. ثبّت شيئًا، اكسره، أصلحه، وتعلم شيئًا. هذا هو كل اللعب. وإذا كرهت اختيارك الأول، فالتبديل لا يستغرق سوى ظهيرة واحدة من وقتك.

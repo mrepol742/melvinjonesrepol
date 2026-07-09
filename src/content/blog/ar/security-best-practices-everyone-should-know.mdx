@@ -1,7 +1,7 @@
 ---
-title: "Security Best Practices Everyone Should Know: Developer to Developer"
+title: "أفضل ممارسات الأمان التي يجب أن يعرفها كل مطور: من مطور إلى مطور"
 date: "2026-04-28"
-excerpt: "In the ever-evolving landscape of web development and application security, it's crucial for developers to stay informed about best practices to protect their applications and users. In this post, we'll explore some essential security best practices that every developer should know and implement to enhance the security of their applications."
+excerpt: "في عالم تطوير الويب وأمن التطبيقات المتغير باستمرار، من الضروري أن يبقى المطورون على اطلاع بأفضل الممارسات لحماية تطبيقاتهم ومستخدميهم. في هذه التدوينة سنستعرض مجموعة من أفضل ممارسات الأمان الأساسية التي يجب على كل مطور معرفتها وتطبيقها."
 topics:
   [
     "security",
@@ -12,20 +12,20 @@ topics:
   ]
 ---
 
-There is no such thing as a perfectly secure system. There is no one size fits all solution to security. However, there are some best practices that every developer should know and follow
-to help improve the security of their applications and systems.
+لا يوجد شيء اسمه نظام آمن تمامًا. ولا توجد حل واحد يناسب الجميع في الأمان. ومع ذلك، هناك بعض أفضل الممارسات التي ينبغي على كل مطور معرفتها واتباعها
+لتحسين أمان تطبيقاته وأنظمته.
 
-## Rate Limiting
+## تحديد معدل الطلبات
 
-Rate limiting is a technique used to control the amount of traffic that a user or client can send to a server in a given period of time.
-This can help prevent abuse and protect against denial of service attacks. Implementing rate limiting can be done using various methods, such as token buckets, leaky buckets, or fixed windows.
+تحديد معدل الطلبات هو أسلوب للتحكم في كمية الحركة التي يمكن لمستخدم أو عميل إرسالها إلى الخادم خلال فترة زمنية معينة.
+يساعد هذا في منع إساءة الاستخدام والحماية من هجمات حجب الخدمة. ويمكن تنفيذ ذلك بطرق مختلفة، مثل token buckets أو leaky buckets أو fixed windows.
 
-With Rate Limiting, you can set limits on the number of requests a user can make in a certain time frame, which can help prevent brute force attacks and reduce the risk of server overload.
+من خلال تحديد معدل الطلبات، يمكنك وضع حدود لعدد الطلبات التي يمكن للمستخدم إرسالها خلال إطار زمني محدد، مما يساعد على منع هجمات brute force وتقليل خطر تحميل الخادم فوق طاقته.
 
-If you did not setup rate limiting, an attacker could potentially send a large number of requests to your server, overwhelming it and causing it to crash or become unresponsive.
-This can lead to a denial of service for legitimate users and can also be used as a distraction while the attacker attempts to exploit other vulnerabilities in your system.
+إذا لم تقم بإعداد تحديد معدل الطلبات، فقد يتمكن المهاجم من إرسال عدد كبير من الطلبات إلى خادمك، ما يرهقه وقد يتسبب في تعطله أو توقفه عن الاستجابة.
+يمكن أن يؤدي ذلك إلى حجب الخدمة عن المستخدمين الشرعيين، ويمكن استخدامه أيضًا كتشتيت بينما يحاول المهاجم استغلال ثغرات أخرى في نظامك.
 
-This is an example of a simple rate limiter implemented in Next.js proxy. It checks the number of requests from a specific IP address and blocks requests that exceed the defined limits.
+هذا مثال على محدد معدل بسيط مطبق في Next.js proxy. يتحقق من عدد الطلبات من عنوان IP معين ويمنع الطلبات التي تتجاوز الحدود المحددة.
 
 ```ts
 import { NextRequest, NextResponse } from "next/server";
@@ -75,7 +75,7 @@ export default function RateLimiter(
 }
 ```
 
-Check Rate Limit function:
+دالة التحقق من معدل الطلبات:
 
 ```ts
 const ipRequests: Record<string, { count: number; firstRequest: number }> = {};
@@ -101,50 +101,50 @@ export function checkRateLimit(
     return true;
   }
 
-  // reset window
+// إعادة تعيين النافذة
   ipRequests[ip] = { count: 1, firstRequest: now };
   return true;
 }
 ```
 
-## Input Validation
+## التحقق من المدخلات
 
-We used different types of input validation to ensure that the data being sent to our applications is in the correct format and does not contain any malicious code.
-This can help prevent common vulnerabilities such as SQL injection, cross-site scripting (XSS), and command injection. Input validation can be done using various techniques, such as regular expressions, whitelisting, and blacklisting. It is important to validate all user input, including data from forms, query parameters, and headers.
+استخدمنا أنواعًا مختلفة من التحقق من المدخلات لضمان أن البيانات المرسلة إلى تطبيقاتنا بالصيغة الصحيحة ولا تحتوي على أي كود خبيث.
+يمكن أن يساعد هذا في منع ثغرات شائعة مثل SQL injection وcross-site scripting (XSS) وcommand injection. ويمكن تنفيذ التحقق من المدخلات باستخدام تقنيات متعددة مثل regular expressions وwhitelisting وblacklisting. من المهم التحقق من كل مدخلات المستخدم، بما في ذلك البيانات القادمة من النماذج ومعلمات الاستعلام والرؤوس.
 
-Improper input validation can lead to security vulnerabilities, such as SQL injection, where an attacker can inject malicious SQL code into a query, or cross-site scripting (XSS),
-where an attacker can inject malicious code into a web page that is then executed by the user's browser.
+قد يؤدي ضعف التحقق من المدخلات إلى ثغرات أمنية مثل SQL injection، حيث يمكن للمهاجم حقن SQL خبيث داخل استعلام، أو cross-site scripting (XSS)،
+حيث يمكن للمهاجم حقن كود خبيث داخل صفحة ويب يتم تنفيذه بعد ذلك في متصفح المستخدم.
 
-## Authentication and Authorization
+## المصادقة والتفويض
 
-Authentication is the process of verifying the identity of a user or client, while authorization is the process of determining what actions a user or client is allowed to perform.
-Implementing strong authentication and authorization mechanisms can help protect against unauthorized access and ensure that users only have access to the resources they are allowed to access.
+المصادقة هي عملية التحقق من هوية المستخدم أو العميل، بينما التفويض هو عملية تحديد الأفعال التي يُسمح للمستخدم أو العميل بتنفيذها.
+إن تطبيق آليات قوية للمصادقة والتفويض يمكن أن يساعد في الحماية من الوصول غير المصرح به ويضمن أن المستخدمين لا يصلون إلا إلى الموارد المسموح لهم بها.
 
-Using strong passwords, multi-factor authentication, and role-based access control can help improve the security of your applications and systems.
+استخدام كلمات مرور قوية والمصادقة متعددة العوامل والتحكم بالوصول المعتمد على الأدوار يمكن أن يحسن أمان تطبيقاتك وأنظمتك.
 
-## Email & Phone Number Verification
+## التحقق من البريد الإلكتروني ورقم الهاتف
 
-Email and phone number verification can help ensure that the contact information provided by users is valid and can be used for communication.
-This can help prevent spam, fraud, and other malicious activities. Implementing email and phone number verification can be done using various methods, such as sending a verification code or link to the user's email or phone number.
+يمكن أن يساعد التحقق من البريد الإلكتروني ورقم الهاتف في التأكد من أن معلومات الاتصال التي يقدمها المستخدمون صحيحة ويمكن استخدامها للتواصل.
+يساعد هذا في منع الرسائل المزعجة والاحتيال والأنشطة الخبيثة الأخرى. ويمكن تنفيذ التحقق عبر إرسال رمز أو رابط تحقق إلى بريد المستخدم الإلكتروني أو رقم هاتفه.
 
-Blocking well known disposable email domains and phone numbers can also help prevent abuse and improve the quality of your user base.
+يمكن أن يساعد حظر نطاقات البريد الإلكتروني المؤقتة والأرقام المعروفة أيضًا في منع الإساءة وتحسين جودة قاعدة المستخدمين.
 
-## Honeypots
+## المصائد
 
-This are so called decoys that are designed to attract and trap attackers. They can be used to detect and analyze attacks, as well as to divert attackers away from more valuable targets.
-Honeypots can be implemented in various ways, such as fake inputs, fake login pages, fake databases, or fake network services.
+هذه ما يُسمى خدعًا أو طعومًا صُممت لجذب المهاجمين وإيقاعهم. يمكن استخدامها لاكتشاف الهجمات وتحليلها، وكذلك لإبعاد المهاجمين عن الأهداف الأهم.
+يمكن تنفيذ honeypots بطرق مختلفة، مثل مدخلات وهمية أو صفحات تسجيل دخول وهمية أو قواعد بيانات وهمية أو خدمات شبكية وهمية.
 
-Honeypots can help improve the security of your applications and systems by providing early warning of attacks and allowing you to analyze attack patterns and techniques.
-Blocking them before they can cause harm can help prevent damage to your systems and protect your users.
+يمكن أن تساعد المصائد في تحسين أمان تطبيقاتك وأنظمتك من خلال توفير إنذار مبكر للهجمات والسماح لك بتحليل أنماط الهجوم وتقنياته.
+وحظرها قبل أن تسبب ضررًا يمكن أن يساعد في منع الأذى عن أنظمتك وحماية مستخدميك.
 
-## ReCAPTCHA or HCAPTCHA
+## ReCAPTCHA أو hCAPTCHA
 
-ReCAPTCHA and HCAPTCHA are popular tools used to protect websites from spam and abuse by verifying that a user is human. They can help prevent automated bots from submitting forms,
-creating accounts, or performing other actions on your website.
+ReCAPTCHA وHCAPTCHA أدوات شائعة تستخدم لحماية المواقع من الرسائل المزعجة والإساءة عبر التحقق من أن المستخدم إنسان. ويمكنها منع الروبوتات الآلية من إرسال النماذج،
+أو إنشاء الحسابات، أو تنفيذ إجراءات أخرى على موقعك.
 
-Implementing ReCAPTCHA or HCAPTCHA can help improve the security of your applications and systems by reducing the risk of spam and abuse. They can also help improve the user experience by preventing unwanted interactions with your website.
+يمكن أن يساعد تطبيق ReCAPTCHA أو HCAPTCHA في تحسين أمان تطبيقاتك وأنظمتك عبر تقليل خطر الرسائل المزعجة والإساءة. كما يمكن أن يحسن تجربة المستخدم بمنع التفاعلات غير المرغوبة مع موقعك.
 
-This is an example of how to implement ReCAPTCHA Enterprise and Honeypot in a Laravel application. The code validates the email and password fields, checks for the honeypot field, and verifies the ReCAPTCHA response.
+هذا مثال على كيفية تطبيق ReCAPTCHA Enterprise وHoneypot في تطبيق Laravel. يتحقق الكود من حقلي البريد الإلكتروني وكلمة المرور، ويفحص حقل المصيدة، ويتحقق من استجابة ReCAPTCHA.
 
 ```php
 $request->validate(
@@ -161,15 +161,15 @@ $request->validate(
        );
 ```
 
-## Browser Fingerprinting and Header Analysis
+## بصمة المتصفح وتحليل الرؤوس
 
-Browser fingerprinting and header analysis are techniques used to identify and track users based on their browser and device characteristics.
-This can help improve security by allowing you to detect and block suspicious activity, such as bots or malicious users. Many bots and automation followed the same patterns,
-so by analyzing the headers and fingerprints, you can identify and block them before they can cause harm.
+بصمة المتصفح وتحليل الرؤوس هما تقنيتان تُستخدمان لتحديد المستخدمين وتتبعهم بناءً على خصائص المتصفح والجهاز.
+يمكن أن يساعد هذا في تحسين الأمان عبر تمكينك من اكتشاف النشاط المشبوه وحظره، مثل الروبوتات أو المستخدمين الخبثاء. كثير من الروبوتات والأتمتة تتبع الأنماط نفسها،
+لذا من خلال تحليل الرؤوس والبصمات يمكنك التعرف عليها وحظرها قبل أن تسبب ضررًا.
 
-For example, automation usually have the same user agent, or they might not have certain headers that a normal browser would have. By analyzing these patterns, you can improve the security of your applications and systems.
+على سبيل المثال، عادةً ما يكون للأتمتة نفس user agent، أو قد تفتقد بعض الرؤوس التي يمتلكها المتصفح العادي. ومن خلال تحليل هذه الأنماط يمكنك تحسين أمان تطبيقاتك وأنظمتك.
 
-This is an example of a simple headless browser check implemented in Next.js proxy. It checks the user agent header for known patterns associated with headless browsers and blocks requests that match those patterns.
+هذا مثال على فحص بسيط لمتصفح headless مطبق في Next.js proxy. يتحقق من رأس user agent بحثًا عن أنماط معروفة مرتبطة بمتصفحات headless ويحظر الطلبات المطابقة لها.
 
 ```ts
 import { NextResponse } from "next/server";
@@ -183,7 +183,7 @@ const HEADLESS_PATTERNS = [
   "Chrome-Lighthouse",
 ] as const;
 
-// block bots, pass through real browsers
+// حظر الروبوتات، والسماح للمتصفحات الحقيقية
 export default function HeadlessBrowserCheck(
   req: Request,
 ): NextResponse | undefined {
@@ -206,55 +206,55 @@ export default function HeadlessBrowserCheck(
 }
 ```
 
-## Dependabot and Snyk
+## Dependabot وSnyk
 
-Dependabot and Snyk are tools that help you keep your dependencies up to date and secure. They can automatically scan your dependencies for vulnerabilities and provide alerts when
-new vulnerabilities are discovered.
+Dependabot وSnyk أداتان تساعدانك على إبقاء الاعتماديات محدثة وآمنة. ويمكنهما فحص اعتمادياتك تلقائيًا بحثًا عن الثغرات وإرسال تنبيهات عند
+اكتشاف ثغرات جديدة.
 
-Using tools like Dependabot and Snyk can help improve the security of your applications and systems by ensuring that you are using the latest and most secure versions of your dependencies.
+يمكن أن يساعد استخدام أدوات مثل Dependabot وSnyk في تحسين أمان تطبيقاتك وأنظمتك من خلال ضمان استخدام أحدث وأأمن إصدارات الاعتماديات.
 
-## Database Encryption (Only if you have sensitive data)
+## تشفير قاعدة البيانات (فقط إذا كانت لديك بيانات حساسة)
 
-Database encryption is the process of encrypting data stored in a database to protect it from unauthorized access. This can help improve the security of your applications and systems by
-ensuring that sensitive data is protected even if the database is compromised.
+تشفير قاعدة البيانات هو عملية تشفير البيانات المخزنة في قاعدة البيانات لحمايتها من الوصول غير المصرح به. ويمكن أن يساعد هذا في تحسين أمان تطبيقاتك وأنظمتك عبر
+ضمان حماية البيانات الحساسة حتى لو تم اختراق قاعدة البيانات.
 
-Implementing database encryption can be done using various methods, such as encrypting data at rest, encrypting data in transit, or using field-level encryption.
-It is important to carefully consider the performance implications of database encryption and to choose a method that is appropriate for your specific use case.
+يمكن تنفيذ تشفير قاعدة البيانات بطرق مختلفة، مثل تشفير البيانات أثناء التخزين، أو تشفير البيانات أثناء النقل، أو استخدام التشفير على مستوى الحقل.
+من المهم التفكير بعناية في تأثير ذلك على الأداء واختيار الطريقة المناسبة لحالة الاستخدام الخاصة بك.
 
-## OTP, Magic Links, and Passwordless Authentication
+## OTP وMagic Links والمصادقة بدون كلمة مرور
 
-OTP (One-Time Passwords), Magic Links, and Passwordless Authentication are methods of authentication that do not require users to remember and enter a password.
-These methods can help improve security by reducing the risk of password-related vulnerabilities, such as weak passwords, password reuse, and phishing attacks.
+OTP (One-Time Passwords) وMagic Links والمصادقة بدون كلمة مرور هي أساليب لا تتطلب من المستخدمين تذكر كلمة مرور وإدخالها.
+يمكن لهذه الأساليب أن تحسن الأمان من خلال تقليل مخاطر الثغرات المرتبطة بكلمات المرور، مثل ضعف كلمات المرور وإعادة استخدامها وهجمات التصيد.
 
-## Content Security Policy (CSP)
+## سياسة أمان المحتوى (CSP)
 
-Content Security Policy (CSP) is a security feature that helps prevent cross-site scripting (XSS) and other code injection attacks by specifying which sources of content are allowed to be loaded by a web page.
-Implementing a Content Security Policy can help improve the security of your applications and systems by reducing the risk of XSS and other code injection attacks.
-It is important to carefully configure your CSP to allow only trusted sources of content while blocking potentially malicious sources.
+سياسة أمان المحتوى (CSP) هي ميزة أمان تساعد في منع cross-site scripting (XSS) وهجمات حقن الكود الأخرى عبر تحديد مصادر المحتوى المسموح لصفحة الويب بتحميلها.
+يمكن أن يساعد تطبيق CSP في تحسين أمان تطبيقاتك وأنظمتك عبر تقليل خطر XSS وهجمات حقن الكود الأخرى.
+من المهم ضبط CSP بعناية للسماح فقط بالمصادر الموثوقة للمحتوى مع حظر المصادر المحتملة الخبث.
 
-Though not all website need a CSP, it is a good practice to implement one if your website includes user-generated content or if you want to add an extra layer of security to your application.
+رغم أن ليس كل موقع يحتاج CSP، إلا أنه من الجيد تطبيقه إذا كان موقعك يحتوي على محتوى ينشئه المستخدمون أو إذا كنت تريد إضافة طبقة أمنية إضافية إلى تطبيقك.
 
 ## CORS
 
-The developer nightmare, Cross-Origin Resource Sharing (CORS) is a security feature implemented by web browsers to prevent malicious websites from making unauthorized requests to a
-different domain. CORS can be a complex topic, but it is important for developers to understand how it works and how to properly configure it to ensure the security of their applications and systems.
+كابوس المطورين، Cross-Origin Resource Sharing (CORS)، هي ميزة أمنية تنفذها متصفحات الويب لمنع المواقع الخبيثة من إرسال طلبات غير مصرح بها إلى
+نطاق مختلف. CORS موضوع معقد، لكنه مهم للمطورين لفهم آليته وكيفية ضبطه بشكل صحيح لضمان أمان تطبيقاتهم وأنظمتهم.
 
 Improperly configured CORS can lead to security vulnerabilities, such as allowing unauthorized access to your API or exposing sensitive data to malicious websites.
 It is important to carefully configure your CORS settings to allow only trusted origins and to restrict the types of requests that are allowed.
 
-## Cloudflare or Other CDN and WAF
+## Cloudflare أو أي CDN وWAF آخر
 
 Not all Security Measures are implemented in the code, using a CDN (Content Delivery Network) and WAF (Web Application Firewall) can help improve the security of your applications and systems by providing additional layers of protection against various types of attacks,
 such as DDoS attacks, SQL injection, and cross-site scripting (XSS).
 
 CDNs can help improve the performance and security of your applications by caching content and distributing it across multiple servers, while WAFs can help protect your applications by filtering and monitoring incoming traffic for malicious activity.
 
-## IP Blocking and Geo-Blocking
+## حظر عناوين IP والحظر الجغرافي
 
 IP blocking and geo-blocking are techniques used to restrict access to your applications and systems based on the IP address or geographic location of the user.
 This can help improve security by blocking access from known malicious IP addresses or from regions that are not relevant to your business.
 
-## Learn Social Engineering and Phishing Attacks
+## تعلّم الهجمات القائمة على الهندسة الاجتماعية والتصيد
 
 Majority of attacks are not technical, but rather social engineering and phishing attacks. Learning about these types of attacks can help you understand how attackers manipulate people to gain access to sensitive information or systems.
 They pretend to be someone else, such as a trusted friend, colleague, or organization, to trick victims into revealing sensitive information or performing actions that can compromise security.
@@ -268,7 +268,7 @@ In Cybersecurity, you have no friends, only targets and attackers. Always be cau
 
 - Melvin Jones
 
-## Your Hosting Provider
+## مزود الاستضافة الخاص بك
 
 Choosing a reputable hosting provider that prioritizes security can help improve the security of your applications and systems. Look for hosting providers that offer features such as regular security updates, DDoS protection, and secure data centers.
 A good hosting provider can help ensure that your applications and systems are protected against various types of attacks and vulnerabilities, and can also provide support and resources to help you maintain the security of your applications.

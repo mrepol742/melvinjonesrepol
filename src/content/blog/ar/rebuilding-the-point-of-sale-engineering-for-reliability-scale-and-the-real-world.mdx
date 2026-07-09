@@ -1,7 +1,7 @@
 ---
 title: "Rebuilding the Point of Sale: Engineering for Reliability, Scale, and the Real World"
 date: "2026-05-06"
-excerpt: "A deep dive into why I built a modern POS system from scratch, passionately focused on reliability, performance, and long-term sustainability for real-world business operations."
+excerpt: "غوص عميق في سبب بنائي نظام POS حديثًا من الصفر، مع تركيز قوي على الاعتمادية والأداء والاستدامة طويلة الأمد لعمليات الأعمال في العالم الحقيقي."
 topics:
   [
     "software engineering",
@@ -12,55 +12,55 @@ topics:
   ]
 ---
 
-## The Beginning
+## البداية
 
-During my internship, I was given the opportunity to observe and work closely with a company's existing Point of Sale (POS) system. What started as a simple task quickly turned into something much deeper: identifying critical operational weaknesses and imagining a better foundation.
+خلال فترة التدريب، أُتيحت لي فرصة مراقبة والعمل عن قرب مع نظام Point of Sale (POS) موجود لدى شركة. ما بدأ كمهمة بسيطة تحول سريعًا إلى شيء أعمق بكثير: تحديد نقاط الضعف التشغيلية الحرجة وتخيل أساس أفضل.
 
-The existing system worked, albeit only under ideal conditions. And that was the problem.
+كان النظام الحالي يعمل، لكنه كان يعمل فقط تحت ظروف مثالية. وكانت تلك هي المشكلة.
 
-## The Problems I Saw
+## المشكلات التي رأيتها
 
-The company's POS system had several issues that directly affected business continuity:
+كان لنظام POS في الشركة عدة مشكلات أثرت مباشرة في استمرارية العمل:
 
 - **Performance bottlenecks:** Even with a relatively small dataset (~5,000 products), the system lagged significantly.
 - **Internet dependency:** The moment the internet went down, operations stopped entirely.
 - **No centralized file sharing:** Employees relied on third-party services or personal accounts, making it a spectacular mess of inefficiency and insecurity.
 - **Windows OS limitations:** Mandatory system updates, unexpected crashes, and application failures possessed an uncanny knack for pausing operations without a moment's notice.
 
-In short, the system wasn’t resilient. It worked flawlessly, right up until it spectacularly didn’t.
+باختصار، لم يكن النظام مرنًا. كان يعمل بلا أخطاء، إلى أن توقف بشكل لافت.
 
-## Building a Better Foundation
+## بناء أساس أفضل
 
-Instead of patching problems one by one, I decided to approach it differently: rebuild the POS system from the ground up with long-term reliability in mind.
+بدلًا من ترقيع المشكلات واحدة تلو الأخرى، قررت التعامل معها بشكل مختلف: إعادة بناء نظام POS من الصفر مع وضع الاعتمادية طويلة الأمد في الاعتبار.
 
-This wasn’t just about fixing bugs; it was about completely rethinking how a POS system should operate in real-world conditions.
+لم يكن الأمر مجرد إصلاح أخطاء؛ بل كان إعادة تفكير كاملة في كيفية عمل نظام POS في ظروف العالم الحقيقي.
 
-### Key Design Decisions
+### قرارات التصميم الأساسية
 
-- **Linux LTS Server Deployment**
-  By running the system on a Long-Term Support (LTS) Linux server, we drastically reduce unexpected downtime. No forced updates, fewer crashes, and more control over the environment.
+- **نشره على خادم Linux LTS**
+  عبر تشغيل النظام على خادم Linux طويل الدعم (LTS)، نقلل بشكل كبير من التوقف غير المتوقع. لا تحديثات قسرية، ولا أعطال أقل، ومزيد من التحكم في البيئة.
 
-- **Web-Based Architecture**
-  The POS runs in the browser, meaning:
-  - No need to install software on every machine
-  - Faster updates and deployment
-  - Accessible across the local network instantly
+- **بنية معتمدة على الويب**
+  يعمل POS داخل المتصفح، وهذا يعني:
+  - لا حاجة لتثبيت البرنامج على كل جهاز
+  - تحديثات ونشر أسرع
+  - إمكانية الوصول عبر الشبكة المحلية فورًا
 
-- **Centralized System Design**
-  A single server handles:
-  - User roles and permissions
-  - Data storage
-  - File sharing
-  - Analytics
+- **تصميم نظام مركزي**
+  يتولى خادم واحد:
+  - الأدوار والصلاحيات
+  - تخزين البيانات
+  - مشاركة الملفات
+  - التحليلات
 
   This eliminates fragmentation and improves security.
 
-- **Offline-Resilient Thinking**
-  The system is designed with the cheerful assumption that things _will_ fail, particularly the internet. Operations should continue regardless.
+- **تفكير مرن أمام انقطاع الاتصال**
+  صُمم النظام مع افتراض متفائل بأن الأشياء _ستفشل_، خصوصًا الإنترنت. يجب أن تستمر العمليات بغض النظر عن ذلك.
 
-## Beyond Just a POS
+## أكثر من مجرد POS
 
-I didn’t just want to recreate what already exists; instead, I wanted to radically expand what a POS system could actually accomplish:
+لم أرد فقط إعادة إنشاء ما هو موجود؛ بل أردت توسيع ما يمكن لنظام POS أن يفعله فعليًا بشكل جذري:
 
 - **Built-in File Sharing**
   No need for third-party tools or personal accounts.
@@ -77,29 +77,29 @@ I didn’t just want to recreate what already exists; instead, I wanted to radic
 - **Mobile Support (Planned)**
   Access the system anytime, anywhere.
 
-## Performance at Scale
+## الأداء عند التوسع
 
-One of the biggest motivations behind this project was performance.
+أحد أكبر الدوافع وراء هذا المشروع كان الأداء.
 
-If a system struggles with 5,000 products, how can it handle real growth?
+إذا كان النظام يعاني مع 5,000 منتج، فكيف سيتعامل مع نمو حقيقي؟
 
-This new POS is engineered with scalability in mind:
+صُمم هذا النظام الجديد مع قابلية التوسع في الاعتبار:
 
 - Optimized data handling
 - Efficient queries
 - Modern web performance practices
 
-Could it handle a million products? A billion transactions?
+هل يمكنه التعامل مع مليون منتج؟ أو مليار معاملة؟
 
-That’s the goal.
+هذا هو الهدف.
 
-## The Reality
+## الواقع
 
-I wasn’t able to fully deploy this system within the company. My internship came to an end before I could push it into production.
+لم أتمكن من نشر هذا النظام بالكامل داخل الشركة. انتهت فترة تدريبي قبل أن أتمكن من دفعه إلى الإنتاج.
 
-But I didn’t stop there.
+لكنني لم أتوقف عند ذلك.
 
-Before leaving, I forked the project and continued it independently, adopting a new direction and license, focused on:
+قبل المغادرة، قمت بعمل fork للمشروع وواصلته بشكل مستقل، مع اتجاه ورخصة جديدين، يركزان على:
 
 - Long-term support (LTS mindset)
 - Better UI/UX
@@ -107,28 +107,28 @@ Before leaving, I forked the project and continued it independently, adopting a 
 - High performance
 - Cross-platform and mobile accessibility
 
-## “Why Build Another POS?”
+## "لماذا نبني نظام POS آخر؟"
 
-There are already countless POS systems out there.
+هناك بالفعل عدد لا يُحصى من أنظمة POS في الخارج.
 
-So why build another one?
+إذًا لماذا نبني واحدًا آخر؟
 
-Because most systems are built for ideal conditions.
+لأن معظم الأنظمة مبنية لظروف مثالية.
 
-This one is built for reality.
+هذا النظام مبني للواقع.
 
-- When the internet goes down
-- When systems fail
-- When businesses scale
-- When reliability matters most
+- عندما ينقطع الإنترنت
+- عندما تفشل الأنظمة
+- عندما تتوسع الأعمال
+- عندما تصبح الاعتمادية هي الأهم
 
-This isn’t just another POS.
+هذا ليس مجرد POS آخر.
 
-It’s an attempt to engineer a system that _keeps businesses running no matter what_.
+إنه محاولة لهندسة نظام _يحافظ على استمرار الأعمال مهما حدث_.
 
-## What’s Next
+## ما التالي
 
-This project is still evolving. The foundation is there, but the vision goes further:
+ما يزال هذا المشروع يتطور. الأساس موجود، لكن الرؤية أبعد من ذلك:
 
 - Full mobile ecosystem
 - Smarter analytics
@@ -136,15 +136,15 @@ This project is still evolving. The foundation is there, but the vision goes fur
 - Continuous performance improvements
 - AI Integration for predictive insights and automation
 
-## Final Thoughts
+## أفكار أخيرة
 
-This started as an internship proposal.
+بدأ هذا كمقترح تدريب.
 
-It blossomed into something much bigger: a personal mission to rethink how critical systems like POS should be designed.
+ثم تحوّل إلى شيء أكبر بكثير: مهمة شخصية لإعادة التفكير في كيفية تصميم الأنظمة الحرجة مثل POS.
 
-Because at the end of the day, a POS system isn’t just software.
+لأن نظام POS في نهاية اليوم ليس مجرد برنامج.
 
-It’s the heartbeat of a business.
+إنه نبض العمل التجاري.
 
 ---
 
