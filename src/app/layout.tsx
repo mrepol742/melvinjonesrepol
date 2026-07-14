@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Source_Code_Pro, Maven_Pro } from "next/font/google";
+import { Source_Code_Pro, Maven_Pro, Sora } from "next/font/google";
 import "./globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -22,7 +22,7 @@ const sourceCodePro = Source_Code_Pro({
   subsets: ["latin"],
   weight: ["400"],
   display: "swap",
-  variable: "--font-heading",
+  variable: "--font-heading-alt",
 });
 
 const mavenPro = Maven_Pro({
@@ -30,6 +30,13 @@ const mavenPro = Maven_Pro({
   weight: ["400"],
   display: "swap",
   variable: "--font-body",
+});
+
+const sora = Sora({
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+  variable: "--font-heading",
 });
 
 export const revalidate = 43200; // 12 hours (in seconds)
@@ -145,7 +152,7 @@ export default async function RootLayout({
 
   return (
     <html
-      className={`${sourceCodePro.variable} ${mavenPro.variable}`}
+      className={`${sourceCodePro.variable} ${mavenPro.variable} ${sora.variable}`}
       data-scroll-behavior="smooth"
       lang="en"
     >
