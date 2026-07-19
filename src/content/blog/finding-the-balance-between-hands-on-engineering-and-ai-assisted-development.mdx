@@ -1,0 +1,258 @@
+---
+title: "Finding the Balance Between Hands-On Engineering and AI Assisted Development"
+date: "2026-07-19"
+excerpt: "Building software with AI is incredibly productive, but shipping reliable systems still depends on engineering judgment, good prompts, careful reviews, and a healthy amount of manual work."
+topics: ["ai", "software-engineering", "vibe-coding", "developer-experience"]
+---
+
+The first time I let an AI assistant build an entire feature, I felt like I had unlocked a cheat code. A few prompts later, I had APIs, database models, validation, and even a decent looking frontend. Then I opened the pull request. Half of it was surprisingly good. The other half looked like someone had copied five different Stack Overflow answers into the same file and hoped for the best. That was the moment I realized AI wasn't replacing engineering. It was replacing the blank page.
+
+Since then I've stopped thinking about it as "manual coding" versus AI. A better comparison is **hands-on engineering** versus **AI assisted development**. One is about making technical decisions, understanding systems, and owning the outcome. The other is an accelerator. Mixing them well has made me far more productive than relying entirely on either approach.
+
+## Why I Stopped Treating AI Like an Autopilot
+
+There was a phase where every new feature started with a prompt.
+
+Need authentication? Prompt.
+
+Need a dashboard? Prompt.
+
+Need a migration? Prompt.
+
+Need a deployment pipeline? Prompt.
+
+It worked... until it didn't.
+
+The generated code usually compiled. Sometimes it even passed the tests. What it didn't always have was context. It didn't know why our architecture looked the way it did. It didn't understand previous production incidents. It couldn't tell which shortcut would become tomorrow's technical debt.
+
+That's not a flaw in AI. It's simply doing exactly what we asked it to do.
+
+The responsibility still belongs to the engineer.
+
+## AI Is Fast. Engineering Is Judgment.
+
+One thing I've learned is that writing code is only a small part of software engineering.
+
+A typical feature usually involves things like:
+
+- understanding business requirements
+- deciding where the logic belongs
+- reviewing security implications
+- designing maintainable APIs
+- thinking about future scalability
+- planning migrations
+- reviewing edge cases
+- writing tests
+- monitoring production behavior
+
+AI can absolutely help with almost every item on that list.
+
+What it cannot do on its own is make informed tradeoffs based on business priorities, historical decisions, or operational experience.
+
+That's still our job.
+
+## Prompting Is Becoming an Engineering Skill
+
+People joke about "prompt engineering," but there is some truth behind it.
+
+The quality of AI generated code is often limited by the quality of the instructions.
+
+A vague prompt usually produces vague software.
+
+A detailed prompt that explains architecture, constraints, naming conventions, expected behavior, performance expectations, and edge cases tends to produce much better results.
+
+The interesting part is that this looks surprisingly similar to writing a good technical specification.
+
+If you can't clearly explain what you want, chances are the implementation won't be very good whether a human or an AI writes it.
+
+## Security Doesn't Magically Appear
+
+One thing that worries me is how easy it has become to generate an application that _looks_ production ready.
+
+A login page.
+
+JWT authentication.
+
+Database models.
+
+Role management.
+
+Admin dashboard.
+
+Everything works.
+
+Until someone starts reviewing the security.
+
+I've seen AI generated code that:
+
+- trusted client input too much
+- skipped authorization checks
+- exposed internal APIs
+- leaked sensitive information through logs
+- stored secrets incorrectly
+- generated SQL queries that deserved a second look
+
+None of these issues are unique to AI. Humans make the same mistakes.
+
+The difference is volume.
+
+When AI generates thousands of lines in minutes, it also generates thousands of lines that need proper review.
+
+The review process doesn't become less important.
+
+It becomes even more important.
+
+## Technical Debt Arrives Faster Than Ever
+
+AI is incredibly good at generating code that solves today's problem.
+
+It's less concerned with next year's maintenance.
+
+That means it's surprisingly easy to accumulate technical debt without noticing.
+
+Maybe the naming isn't consistent.
+
+Maybe similar business logic now exists in four different services.
+
+Maybe the generated abstractions are solving problems that don't exist.
+
+Maybe there are helper functions calling other helper functions until nobody remembers where the actual logic lives.
+
+Everything works.
+
+Nobody wants to touch it six months later.
+
+Velocity isn't just about writing code quickly.
+
+It's about being able to continue changing that code without introducing fear.
+
+## Infrastructure Debt Is Even Easier to Ignore
+
+Infrastructure often gets left behind because the application appears to work.
+
+AI can happily generate:
+
+- Dockerfiles
+- Kubernetes manifests
+- CI/CD pipelines
+- Terraform
+- monitoring configuration
+- cloud infrastructure
+
+The scary part is that generated infrastructure often works just well enough to reach production.
+
+Then the bills arrive.
+
+Or deployments become painfully slow.
+
+Or permissions are far broader than necessary.
+
+Or every service scales independently without anyone asking whether it should.
+
+Infrastructure debt doesn't usually fail immediately.
+
+It quietly becomes expensive.
+
+Eventually someone asks why a relatively small application now costs several times more than expected to operate.
+
+## AI Generated Systems Can Cost More
+
+This is something I don't see discussed often.
+
+Building software is only part of the total cost.
+
+Running it is another story.
+
+AI tends to optimize for getting something working, not necessarily for minimizing operational costs.
+
+That can lead to:
+
+- unnecessary services
+- duplicated infrastructure
+- excessive API calls
+- oversized cloud resources
+- redundant background workers
+- multiple caching layers solving the same problem
+- complicated architectures that don't match the application's scale
+
+An experienced engineer might replace three microservices with one application.
+
+AI often goes in the opposite direction because each component appears logically separated.
+
+The code looks organized.
+
+The cloud invoice tells a different story.
+
+## QA Still Matters More Than Ever
+
+One misconception is that AI reduces the need for testing.
+
+I think it does the opposite.
+
+The faster code is produced, the faster bugs are introduced.
+
+Good QA isn't just clicking through the interface.
+
+It's validating assumptions.
+
+It's testing unusual scenarios.
+
+It's questioning whether the implementation actually matches the requirements.
+
+AI doesn't know if the business owner changed their mind yesterday.
+
+QA does.
+
+## The Best Workflow I've Found
+
+Today my workflow looks very different from when I first started experimenting with AI.
+
+I let AI handle repetitive work.
+
+I ask it to generate boilerplate.
+
+I use it for documentation, refactoring ideas, unit tests, SQL queries, regex, migrations, and occasionally for exploring implementation options.
+
+Then I switch back into engineering mode.
+
+I simplify.
+
+I remove unnecessary abstractions.
+
+I verify security.
+
+I rethink architecture.
+
+I profile performance.
+
+Sometimes I even delete half of what the AI generated.
+
+Oddly enough, that's still a productivity win because deleting unnecessary code is much faster than writing everything from scratch.
+
+## AI Is a Multiplier, Not the Driver
+
+The biggest realization for me is that software delivery still depends on the same fundamentals it always has.
+
+Better AI models improve output quality.
+
+Better prompts produce better implementations.
+
+Clear requirements reduce misunderstandings.
+
+Good architecture keeps projects maintainable.
+
+Code reviews catch mistakes.
+
+QA protects production.
+
+Monitoring catches what everyone missed.
+
+The AI is only one part of that chain.
+
+If any of the others are weak, the final product will be too.
+
+---
+
+I don't think the future belongs to developers who refuse to use AI, and I don't think it belongs to people who blindly accept everything AI generates either. It probably belongs to engineers who know when to trust the assistant, when to challenge it, and when to delete an entire generated file without hesitation.
+
+At the end of the day, the code running in production doesn't care who wrote it. Your users only care that it's secure, maintainable, reliable, and solves their problem without making your cloud bill look like a mortgage.
