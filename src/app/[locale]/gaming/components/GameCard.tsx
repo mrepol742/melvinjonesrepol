@@ -29,11 +29,11 @@ export default function GameCard({ game }: { game: GameType }) {
       </div>
 
       <div className="flex min-w-0 flex-1 flex-col">
-        <h2 className="text-lg font-semibold truncate">
+        <h2 className="text-lg font-semibold line-clamp-2">
           {isExplicit ? "Private" : game.name}
         </h2>
 
-        <div className="mt-1 flex flex-wrap gap-3 text-sm text-zinc-300">
+        <div className="mt-1 flex flex-wrap gap-3 text-sm">
           <div>
             <span className="font-semibold">Total:</span>{" "}
             {toHours(game.playtime_forever)}h
