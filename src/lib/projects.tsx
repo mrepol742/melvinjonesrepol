@@ -104,12 +104,12 @@ const Projects = [
     technology: ["Next.js", "TypeScript", "Tailwind CSS"],
   },
   {
-    title: "Ulisha Store Laravel",
+    title: "Ulisha Store AI Laravel",
     key: "ulisha_store_laravel",
     description:
-      "A modern and efficient e-commerce solutions tailored for small to medium-sized businesses specifically built with Laravel, enabling seamless setup and cost effective web hosting.",
+      "A modern and efficient AI-powered e-commerce solutions tailored for small to medium-sized businesses specifically built with Laravel, enabling seamless setup and cost effective web hosting.",
     ai_description:
-      "Ulisha Store is a comprehensive e-commerce platform engineered with Laravel and React. Designed specifically for SMBs, it offers a cost-effective, easily deployable architecture that simplifies inventory management, order processing, and customer interactions without the overhead of enterprise-level software.",
+      "Ulisha Store is a comprehensive AI-powered e-commerce platform engineered with Laravel and React. Designed specifically for SMBs, it offers a cost-effective, easily deployable architecture that simplifies inventory management, order processing, and customer interactions without the overhead of enterprise-level software.",
     type: "venture",
     link: "/ulisha-store-laravel",
     featured: true,
