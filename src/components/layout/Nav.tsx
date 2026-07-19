@@ -21,7 +21,7 @@ import {
 import { useEffect, useState } from "react";
 import { useTheme } from "@/hooks/theme";
 import { useLocale, useTranslations } from "next-intl";
-import { navLanguages } from "@/i18n/request";
+import { navLanguages } from "@/lib/i18n";
 import { usePathname, useRouter } from "next/navigation";
 
 export default function Nav() {

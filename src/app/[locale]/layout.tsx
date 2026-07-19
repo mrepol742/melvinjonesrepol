@@ -8,18 +8,7 @@ import ScrollTop from "@/components/ui/ScrollTop";
 import { getRecentPosts } from "@/lib/posts";
 import PrivacyPolicyPrompt from "@/components/common/PrivacyPolicyPrompt";
 import DevToolsDetector from "@/components/common/DevToolsDetector";
-
-const locales = [
-  "en",
-  "fil",
-  "hi",
-  "es",
-  "cmn",
-  "nl",
-  "fr",
-  "ru",
-  "ar",
-] as const;
+import { locales } from "@/lib/i18n";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));

@@ -7,7 +7,6 @@ import remarkGfm from "remark-gfm";
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
 
 export const dynamic = "force-static";
-export const dynamicParams = false;
 export const revalidate = false;
 
 type Heading = {
@@ -44,11 +43,7 @@ function extractHeadings(content: string): Heading[] {
 }
 
 export function generateStaticParams() {
-  const locales = ["en", "fil", "hi", "es", "cmn", "nl", "fr", "ru", "ar"];
-
-  return locales.flatMap((locale) =>
-    getAllPosts(locale).map(({ slug }) => ({ locale, slug })),
-  );
+  return getAllPosts("en").map(({ slug }) => ({ locale: "en", slug }));
 }
 
 export async function generateMetadata({
@@ -56,8 +51,8 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
-  const { locale, slug } = await params;
-  const post = getPostBySlug(slug, locale);
+  const { slug } = await params;
+  const post = getPostBySlug(slug, "en");
 
   if (!post) return notFound();
 
@@ -70,10 +65,10 @@ export async function generateMetadata({
       description: post.data.excerpt,
       type: "article",
       siteName: "Melvin Jones Repol",
-      locale: locale === "en" ? "en_US" : `${locale}_${locale.toUpperCase()}`,
+      locale: "en_US",
     },
     alternates: {
-      canonical: `https://www.melvinjonesrepol.com${locale === "en" ? "" : `/${locale}`}/blog/${slug}`,
+      canonical: `https://www.melvinjonesrepol.com/blog/${slug}`,
     },
     twitter: {
       card: "summary_large_image",
@@ -129,10 +124,10 @@ export default async function BlogPost({
 }: {
   params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { locale, slug } = await params;
+  const { slug } = await params;
 
-  const post = getPostBySlug(slug, locale);
-  const posts = getAllPosts(locale);
+  const post = getPostBySlug(slug, "en");
+  const posts = getAllPosts("en");
   if (!post) notFound();
 
   const { content, data } = post;
@@ -212,11 +207,7 @@ export default async function BlogPost({
               .map((post) => (
                 <li key={post.slug}>
                   <Link
-                    href={
-                      locale === "en"
-                        ? `/blog/${post.slug}`
-                        : `/${locale}/blog/${post.slug}`
-                    }
+                    href={`/blog/${post.slug}`}
                     className="group block h-full rounded-2xl border border-zinc-800 p-5 md:p-6 transition-transform duration-300 hover:-translate-y-0.5"
                   >
                     <div className="flex items-center justify-between gap-3 mb-3">

@@ -11,7 +11,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
-import { navLanguages } from "@/i18n/request";
+import { navLanguages } from "@/lib/i18n";
 import dynamic from "next/dynamic";
 
 export default function Footer({
