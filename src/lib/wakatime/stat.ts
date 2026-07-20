@@ -59,8 +59,6 @@ export async function fetchCurrentStats(): Promise<Stat | undefined> {
 
     const data: Stat = await res.json();
 
-    console.log(JSON.stringify(data, null, 2));
-
     return {
       ...data,
       last_fetched: new Date().toUTCString(),
