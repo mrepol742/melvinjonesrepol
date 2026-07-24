@@ -26,13 +26,11 @@ export default function Footer({
 
   const handleLocaleChange = (nextLocale: string) => {
     if (nextLocale === locale) return;
-
     const normalizedPath = pathname.replace(
       /^\/(en|fil|cmn|es|hi|nl|fr|ru|ar)(?=\/|$)/,
       "",
     );
     const nextPath = `/${nextLocale}${normalizedPath || "/"}`;
-    // replace and refresh to ensure the new locale is applied immediately
     router.replace(nextPath);
   };
 
@@ -40,335 +38,219 @@ export default function Footer({
     ssr: false,
   });
 
+  const navLinks = [
+    { href: "/", label: t("footer_home") },
+    { href: "/projects", label: t("footer_projects") },
+    { href: "/blog", label: t("footer_blog") },
+    { href: "/gaming", label: t("footer_gaming") },
+    { href: "/certificates", label: t("footer_certificates") },
+    { href: "/work-experience", label: t("footer_work_experience") },
+    { href: "/gallery", label: t("footer_gallery") },
+    { href: "/contact-me", label: t("footer_contact_me") },
+  ];
+
+  const legalLinks = [
+    { href: "/legal/terms-of-service", label: t("footer_terms_of_service") },
+    { href: "/legal/privacy-policy", label: t("footer_privacy_policy") },
+    { href: "/legal/cookie-policy", label: t("footer_cookie_policy") },
+    { href: "/legal/refund-policy", label: "Refund Policy" },
+    {
+      href: "/legal/developer-client-agreement",
+      label: "Developer Client Agreement",
+    },
+  ];
+
+  const projectLinks = [
+    {
+      href: "https://web-designs.melvinjonesrepol.com",
+      label: "Web Design",
+      external: true,
+    },
+    {
+      href: "https://wakatime.melvinjonesrepol.com",
+      label: t("footer_wakatime_stats"),
+      external: true,
+    },
+    {
+      href: "https://ai.melvinjonesrepol.com",
+      label: t("footer_melvin_ai"),
+      external: true,
+    },
+    { href: "/webvium-browser", label: t("footer_webvium_browser") },
+    { href: "/protocol-discussion-platform", label: t("footer_pdp") },
+    { href: "/axleshift-freight-management", label: t("footer_afm") },
+    { href: "/point-of-sale", label: t("footer_pos") },
+    { href: "/ulisha-store-laravel", label: t("footer_usl") },
+    { href: "/canis-chatbot", label: t("footer_canis_chatbot") },
+    {
+      href: "https://keepandroidopen.org/",
+      label: t("footer_kao"),
+      external: true,
+    },
+    {
+      href: "https://www.hallofcodes.org",
+      label: t("footer_hoc"),
+      external: true,
+    },
+    { href: "/sitemap.xml", label: t("footer_sitemap") },
+  ];
+
+  const toolLinks = [
+    { href: "/tools/open-graph", label: t("footer_ogc") },
+    { href: "/tools/ip-address", label: t("footer_iat") },
+    { href: "/tools/qrcode-generator", label: t("footer_qcg") },
+    { href: "/tools/user-agent", label: t("footer_uap") },
+    {
+      href: "https://go.melvinjonesrepol.com",
+      label: t("footer_shortlink"),
+      external: true,
+    },
+  ];
+
+  const socialLinks = [
+    {
+      href: "https://facebook.com/melvinjonesrepol",
+      icon: faFacebook,
+      label: "Facebook",
+    },
+    { href: "https://github.com/mrepol742", icon: faGithub, label: "GitHub" },
+    {
+      href: "https://linkedin.com/in/mrepol742",
+      icon: faLinkedin,
+      label: "LinkedIn",
+    },
+    {
+      href: "https://youtube.com/@mrepol742",
+      icon: faYoutube,
+      label: "YouTube",
+    },
+    {
+      href: "https://steamcommunity.com/id/mrepol742",
+      icon: faSteam,
+      label: "Steam",
+    },
+  ];
+
   return (
     <footer
       className="bg-gray-900 text-gray-200 py-10 border-t border-gray-800 m-2 md:m-5 xl:m-8 rounded-xl"
       data-aos="fade-up"
     >
       <nav aria-label="Footer Navigation" className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
-          {/* Logo & Description */}
-          <div className="mb-6 md:mb-0">
-            <span className="text-2xl font-bold bg-gradient-to-tr from-violet-500 via-yellow-300 to-green-400 bg-clip-text text-transparent animate-gradient-shift">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-10">
+          {/* Brand */}
+          <div className="sm:col-span-2 md:col-span-1">
+            <span className="text-xl font-bold bg-gradient-to-tr from-violet-500 via-yellow-300 to-green-400 bg-clip-text text-transparent animate-gradient-shift">
               Melvin Jones Repol
             </span>
-            <p className="my-2 text-sm text-gray-400 max-w-xs">
+            <p className="mt-3 text-xs text-gray-400 leading-relaxed max-w-52">
               {t("description")}
             </p>
-
-            <div className="flex space-x-3 mb-4">
-              <Link
-                href="https://facebook.com/melvinjonesrepol"
-                target="_blank"
-                aria-label="Facebook"
-              >
-                <FontAwesomeIcon
-                  icon={faFacebook}
-                  size="lg"
-                  className="hover:text-red-500 transition"
-                />
-              </Link>
-              <Link
-                href="https://github.com/mrepol742"
-                target="_blank"
-                aria-label="GitHub"
-              >
-                <FontAwesomeIcon
-                  icon={faGithub}
-                  size="lg"
-                  className="hover:text-red-500 transition"
-                />
-              </Link>
-              <Link
-                href="https://linkedin.com/in/mrepol742"
-                target="_blank"
-                aria-label="LinkedIn"
-              >
-                <FontAwesomeIcon
-                  icon={faLinkedin}
-                  size="lg"
-                  className="hover:text-red-500 transition"
-                />
-              </Link>
-              <Link
-                href="https://youtube.com/@mrepol742"
-                target="_blank"
-                aria-label="YouTube"
-              >
-                <FontAwesomeIcon
-                  icon={faYoutube}
-                  size="lg"
-                  className="hover:text-red-500 transition"
-                />
-              </Link>
-              <Link
-                href="https://steamcommunity.com/id/mrepol742"
-                target="_blank"
-                aria-label="Steam"
-              >
-                <FontAwesomeIcon
-                  icon={faSteam}
-                  size="lg"
-                  className="hover:text-red-500 transition"
-                />
-              </Link>
+            <div className="flex gap-2 mt-5">
+              {socialLinks.map(({ href, icon, label }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  aria-label={label}
+                  className="flex items-center justify-center p-2 rounded-full border border-gray-700 text-gray-400 hover:border-indigo-500/60 hover:text-indigo-400 hover:bg-indigo-500/10 transition-all duration-200"
+                >
+                  <FontAwesomeIcon icon={icon} className="text-sm" />
+                </Link>
+              ))}
             </div>
-
-            <TrustpilotWidget />
-          </div>
-          {/* Links */}
-          <div>
-            <div>
-              <h4 className="text-sm font-semibold mb-2 text-white">Links</h4>
-              <ul className="space-y-1 text-sm">
-                <li>
-                  <Link
-                    href="/"
-                    className="hover:text-orange-500 text-gray-400"
-                  >
-                    {t("footer_home")}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/projects"
-                    className="hover:text-orange-500 text-gray-400"
-                  >
-                    {t("footer_projects")}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/blog"
-                    className="hover:text-orange-500 text-gray-400"
-                  >
-                    {t("footer_blog")}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/gaming"
-                    className="hover:text-orange-500 text-blue-400"
-                  >
-                    {t("footer_gaming")}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/certificates"
-                    className="hover:text-orange-500 text-gray-400"
-                  >
-                    {t("footer_certificates")}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/work-experience"
-                    className="hover:text-orange-500 text-gray-400"
-                  >
-                    {t("footer_work_experience")}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/gallery"
-                    className="hover:text-orange-500 text-gray-400"
-                  >
-                    {t("footer_gallery")}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/contact-me"
-                    className="hover:text-orange-500 text-gray-400"
-                  >
-                    {t("footer_contact_me")}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/legal/terms-of-service"
-                    className="hover:text-orange-500 text-gray-400"
-                  >
-                    {t("footer_terms_of_service")}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/legal/privacy-policy"
-                    className="hover:text-orange-500 text-gray-400"
-                  >
-                    {t("footer_privacy_policy")}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/legal/cookie-policy"
-                    className="hover:text-orange-500 text-gray-400"
-                  >
-                    {t("footer_cookie_policy")}
-                  </Link>
-                </li>
-              </ul>
+            <div className="my-5">
+              <TrustpilotWidget />
             </div>
           </div>
-          {/* Resources */}
+
+          {/* Navigate */}
           <div>
-            <h4 className="text-sm font-semibold mb-2 text-white">Resources</h4>
-            <ul className="space-y-1 text-sm">
-              <li>
-                <Link
-                  href="https://web-designs.melvinjonesrepol.com"
-                  className="hover:text-orange-500 text-blue-400"
-                >
-                  Web Design
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://wakatime.melvinjonesrepol.com"
-                  className="hover:text-orange-500 text-blue-400"
-                >
-                  {t("footer_wakatime_stats")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://ai.melvinjonesrepol.com"
-                  className="hover:text-orange-500 text-red-400"
-                >
-                  {t("footer_melvin_ai")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/webvium-browser"
-                  className="hover:text-orange-500 text-blue-400"
-                >
-                  {t("footer_webvium_browser")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/protocol-discussion-platform"
-                  className="hover:text-orange-500 text-gray-400"
-                >
-                  {t("footer_pdp")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/axleshift-freight-management"
-                  className="hover:text-orange-500 text-gray-400"
-                >
-                  {t("footer_afm")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/point-of-sale"
-                  className="hover:text-orange-500 text-gray-400"
-                >
-                  {t("footer_pos")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/ulisha-store-laravel"
-                  className="hover:text-orange-500 text-blue-400"
-                >
-                  {t("footer_usl")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/canis-chatbot"
-                  className="hover:text-orange-500 text-gray-400"
-                >
-                  {t("footer_canis_chatbot")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://keepandroidopen.org/"
-                  className="hover:text-orange-500 text-red-400"
-                >
-                  {t("footer_kao")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://www.hallofcodes.org"
-                  className="hover:text-orange-500 text-blue-400"
-                >
-                  {t("footer_hoc")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/sitemap.xml"
-                  className="hover:text-orange-500 text-gray-400"
-                >
-                  {t("footer_sitemap")}
-                </Link>
-              </li>
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-4">
+              Navigate
+            </h4>
+            <ul className="space-y-2.5">
+              {navLinks.map(({ href, label }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="text-sm text-gray-400 hover:text-indigo-400 transition-colors"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
-          <div className="max-w-full md:max-w-90 lg:max-w-40 xl:max-w-50">
-            <h4 className="text-sm font-semibold mb-2 text-white">Tools</h4>
-            <ul className="space-y-1 text-sm">
-              <li>
-                <Link
-                  href="/tools/open-graph"
-                  className="hover:text-orange-500 text-gray-400"
-                >
-                  {t("footer_ogc")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/tools/ip-address"
-                  className="hover:text-orange-500 text-gray-400"
-                >
-                  {t("footer_iat")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/tools/qrcode-generator"
-                  className="hover:text-orange-500 text-gray-400"
-                >
-                  {t("footer_qcg")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/tools/user-agent"
-                  className="hover:text-orange-500 text-gray-400"
-                >
-                  {t("footer_uap")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://go.melvinjonesrepol.com"
-                  className="hover:text-orange-500 text-blue-400"
-                >
-                  {t("footer_shortlink")}
-                </Link>
-              </li>
+
+          {/* Legal */}
+          <div>
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-4">
+              Legal
+            </h4>
+            <ul className="space-y-2.5">
+              {legalLinks.map(({ href, label }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="text-sm text-gray-400 hover:text-indigo-400 transition-colors"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Projects */}
+          <div>
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-4">
+              Projects
+            </h4>
+            <ul className="space-y-2.5">
+              {projectLinks.map(({ href, label, external }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    target={external ? "_blank" : undefined}
+                    className="text-sm text-gray-400 hover:text-indigo-400 transition-colors"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Tools + Language */}
+          <div>
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-4">
+              Tools
+            </h4>
+            <ul className="space-y-2.5">
+              {toolLinks.map(({ href, label, external }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    target={external ? "_blank" : undefined}
+                    className="text-sm text-gray-400 hover:text-indigo-400 transition-colors"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
 
-            <h4 className="text-sm font-semibold my-2 text-white">
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mt-8 mb-3">
               {t("footer_recent_posts")}
             </h4>
             {posts.length > 0 ? (
-              <ul className="space-y-1 text-sm">
+              <ul className="space-y-2.5 mb-8">
                 {posts.map((post) => (
                   <li key={post.slug}>
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="block max-w-full truncate hover:text-orange-500 text-gray-400"
+                      className="block max-w-full truncate text-sm text-gray-400 hover:text-indigo-400 transition-colors"
                       title={post.title}
                     >
                       {post.title}
@@ -377,21 +259,19 @@ export default function Footer({
                 ))}
               </ul>
             ) : (
-              <p className="text-gray-400 text-sm">
+              <p className="text-gray-400 text-sm mb-8">
                 {t("footer_no_recent_posts")}
               </p>
             )}
-          </div>
 
-          <div>
-            <h4 className="text-sm font-semibold mb-2 text-white">
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-3">
               {t("footer_language_region")}
             </h4>
             <div className="relative">
               <select
                 value={locale}
                 onChange={(e) => handleLocaleChange(e.target.value)}
-                className="w-full appearance-none rounded-lg border border-gray-800 bg-gray-950/40 px-3 py-2 text-sm text-gray-200 focus:outline-none focus:ring-1 focus:ring-gray-500"
+                className="w-full appearance-none rounded-lg border border-gray-700 bg-gray-800/60 px-3 py-2 text-xs text-gray-300 focus:outline-none focus:ring-1 focus:ring-indigo-500/50 focus:border-indigo-500/50 transition-colors"
                 aria-label="Select language"
               >
                 {navLanguages.map((lang) => (
@@ -400,30 +280,32 @@ export default function Footer({
                   </option>
                 ))}
               </select>
-              <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-400">
+              <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-500">
                 ▼
               </span>
             </div>
           </div>
         </div>
-        <div className="block md:flex justify-between mt-10 border-t border-gray-800 pt-6 text-center text-xs text-gray-300">
-          <span className="block">
+
+        {/* Bottom bar */}
+        <div className="mt-8 pt-6 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <span className="text-xs text-gray-500">
             © {new Date().getFullYear()} Melvin Jones Repol.{" "}
             {t("footer_all_rights_reserved")}
           </span>
-
-          <div className="text-xs flex gap-4">
+          <div className="flex items-center gap-5 text-xs">
             <Link
               href="/uptime"
               target="_blank"
-              className="hover:text-green-300"
+              className="text-gray-500 hover:text-green-400 transition-colors"
             >
               Uptime
             </Link>
+            <span className="text-gray-700 select-none">·</span>
             <Link
               href="https://github.com/mrepol742/melvinjonesrepol"
               target="_blank"
-              className="text-green-400 hover:text-green-300"
+              className="text-gray-500 hover:text-green-400 transition-colors"
             >
               {t("footer_open_source")}
             </Link>

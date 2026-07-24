@@ -30,6 +30,7 @@ const routes = [
   "/tools/qrcode-generator",
   "/tools/user-agent",
   "/legal",
+  "/legal/refund-policy",
   "/legal/privacy-policy",
   "/legal/terms-of-service",
   "/legal/cookie-policy",

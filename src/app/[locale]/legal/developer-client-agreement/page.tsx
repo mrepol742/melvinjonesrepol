@@ -1,6 +1,7 @@
 import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { Metadata } from "next";
 import Link from "next/link";
+import LegalFooter from "../components/LegalFooter";
 
 export async function generateMetadata({
   params,
@@ -12,35 +13,35 @@ export async function generateMetadata({
   return {
     title: "Developer Client Agreement - Melvin Jones Repol",
     description:
-    "Developer Client Agreement for services provided by Melvin Jones Repol.",
+      "Developer Client Agreement for services provided by Melvin Jones Repol.",
     alternates: getAlternates("/legal/developer-client-agreement", locale),
     openGraph: {
-    title: "Developer Client Agreement - Melvin Jones Repol",
-    description:
-      "Developer Client Agreement for services provided by Melvin Jones Repol.",
-    url: "https://www.melvinjonesrepol.com/legal/developer-client-agreement",
-    siteName: "Melvin Jones Repol",
-    images: [
-      {
-        url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
-        width: 1200,
-        height: 630,
-        alt: "Developer Client Agreement Cover",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
+      title: "Developer Client Agreement - Melvin Jones Repol",
+      description:
+        "Developer Client Agreement for services provided by Melvin Jones Repol.",
+      url: "https://www.melvinjonesrepol.com/legal/developer-client-agreement",
+      siteName: "Melvin Jones Repol",
+      images: [
+        {
+          url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+          width: 1200,
+          height: 630,
+          alt: "Developer Client Agreement Cover",
+        },
+      ],
+      locale: "en_US",
+      type: "website",
+    },
     twitter: {
-    card: "summary_large_image",
-    title: "Developer Client Agreement - Melvin Jones Repol",
-    description:
-      "Developer Client Agreement for services provided by Melvin Jones Repol.",
-    images: [
-      "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
-    ],
-    creator: "@mrepol742",
-  },
+      card: "summary_large_image",
+      title: "Developer Client Agreement - Melvin Jones Repol",
+      description:
+        "Developer Client Agreement for services provided by Melvin Jones Repol.",
+      images: [
+        "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+      ],
+      creator: "@mrepol742",
+    },
   };
 }
 
@@ -95,9 +96,9 @@ export default function DeveloperClientAgreement() {
         </div>
       </section>
 
-      <section className="px-6 py-24 md:px-10">
+      <section className="px-6 my-6 md:px-10">
         <div className="max-w-5xl mx-auto">
-          <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-8 md:p-10 space-y-8">
+          <div className="rp-8 md:p-10 space-y-8">
             <div>
               <p className="text-xs uppercase tracking-widest opacity-50 mb-1">
                 Last Updated
@@ -338,33 +339,7 @@ export default function DeveloperClientAgreement() {
             </div>
           </div>
 
-          <div className="mt-12 rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div>
-              <p className="text-xs uppercase tracking-widest opacity-50 mb-1">
-                Last reviewed
-              </p>
-              <p className="text-sm font-medium">March 2026</p>
-            </div>
-            <div className="h-px sm:h-8 sm:w-px border-b sm:border-b-0 sm:border-r border-zinc-800 w-full sm:w-auto" />
-            <div>
-              <p className="text-xs uppercase tracking-widest opacity-50 mb-1">
-                Jurisdiction
-              </p>
-              <p className="text-sm font-medium">Philippines</p>
-            </div>
-            <div className="h-px sm:h-8 sm:w-px border-b sm:border-b-0 sm:border-r border-zinc-800 w-full sm:w-auto" />
-            <div>
-              <p className="text-xs uppercase tracking-widest opacity-50 mb-1">
-                Questions?
-              </p>
-              <Link
-                href="/contact-me"
-                className="text-sm font-medium underline underline-offset-2 hover:opacity-70 transition-opacity"
-              >
-                Contact us
-              </Link>
-            </div>
-          </div>
+          <LegalFooter date="March 2026" />
         </div>
       </section>
     </main>
