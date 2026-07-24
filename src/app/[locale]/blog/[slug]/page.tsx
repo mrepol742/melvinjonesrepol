@@ -158,9 +158,31 @@ export default async function BlogPost({
       <section className="relative min-h-screen overflow-hidden border-b border-zinc-800">
         <div className="relative flex min-h-screen flex-col px-6 py-12 md:px-10">
           <div className="my-auto py-14">
-            <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-[0.85] mb-8">
-              {data.title}
-            </h1>
+            {(() => {
+              const words = data.title.split(" ");
+              const chunkSize = Math.ceil(words.length / 3);
+              const line1 = words.slice(0, chunkSize).join(" ");
+              const line2 = words.slice(chunkSize, chunkSize * 2).join(" ");
+              const line3 = words.slice(chunkSize * 2).join(" ");
+
+              return (
+                <h1 className="text-[10vw] md:text-[7vw] lg:text-[5vw] font-black tracking-tighter leading-[0.85] mb-8">
+                  {line1}
+                  {line2 && (
+                    <>
+                      <br />
+                      <span className="opacity-40">{line2}</span>
+                    </>
+                  )}
+                  {line3 && (
+                    <>
+                      <br />
+                      {line3}
+                    </>
+                  )}
+                </h1>
+              );
+            })()}
 
             {data.excerpt && (
               <p
@@ -183,12 +205,14 @@ export default async function BlogPost({
           </div>
 
           <div
-            className="border-t border-zinc-800 pt-6 grid grid-cols-2 sm:grid-cols-4 gap-6"
+            className="border-t border-zinc-800 pt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
             data-aos="fade-up"
             data-aos-delay="300"
           >
             <div>
-              <p className="text-4xl font-black">{new Date(data.date).toLocaleDateString()}</p>
+              <p className="text-4xl font-black">
+                {data.date && <>{new Date(data.date).toLocaleDateString()}</>}
+              </p>
               <p className="mt-1 text-sm text-zinc-400">Date</p>
             </div>
             <div>
