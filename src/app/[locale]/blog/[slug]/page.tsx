@@ -5,6 +5,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import remarkGfm from "remark-gfm";
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
+import BlogCard from "../components/BlogCard";
 
 export const dynamic = "force-static";
 export const revalidate = false;
@@ -153,93 +154,100 @@ export default async function BlogPost({
   };
 
   return (
-    <>
-      <div className="flex justify-center">
-        <div className="flex gap-10 w-full max-w-6xl">
-          <article className="prose max-w-none p-3 md:p-8 flex-1 min-w-0">
-            <div className="py-18">
-              <h1>{data.title}</h1>
+    <main>
+      <section className="relative min-h-screen overflow-hidden border-b border-zinc-800">
+        <div className="relative flex min-h-screen flex-col px-6 py-12 md:px-10">
+          <div className="my-auto py-14">
+            <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-[0.85] mb-8">
+              {data.title}
+            </h1>
 
-              {data.excerpt && <p>{data.excerpt}</p>}
-
-              <p className="text-sm text-muted-foreground">
-                {data.date} • {estimatedReadingTime} min read
+            {data.excerpt && (
+              <p
+                className="max-w-2xl text-lg leading-8 text-zinc-400 md:text-xl"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                {data.excerpt}
               </p>
+            )}
 
-              {data.topics && data.topics.length > 0 && (
-                <div className="flex flex-wrap gap-2 my-4">
-                  {data.topics.map((topic: string, i: number) => (
-                    <span
-                      key={i}
-                      className="inline-flex capitalize rounded-full border px-2.5 py-1 text-xs"
-                    >
-                      {topic}
-                    </span>
-                  ))}
-                </div>
-              )}
+            <p
+              className="mt-3 text-sm text-zinc-500 flex items-center gap-1.5"
+              data-aos="fade-up"
+              data-aos-delay="250"
+            >
+              <span>🌐</span>
+              Blog posts are available in English only.
+            </p>
+          </div>
 
+          <div
+            className="border-t border-zinc-800 pt-6 grid grid-cols-2 sm:grid-cols-4 gap-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div>
+              <p className="text-4xl font-black">{new Date(data.date).toLocaleDateString()}</p>
+              <p className="mt-1 text-sm text-zinc-400">Date</p>
+            </div>
+            <div>
+              <p className="text-4xl font-black">
+                {estimatedReadingTime} min read
+              </p>
+              <p className="mt-1 text-sm text-zinc-400">Reading Time</p>
+            </div>
+            {data.topics && data.topics.length > 0 && (
+              <div className="col-span-2 flex flex-wrap items-center gap-2">
+                {data.topics.map((topic: string, i: number) => (
+                  <span
+                    key={i}
+                    className="rounded-full border border-zinc-700 px-3 py-1 text-xs capitalize"
+                  >
+                    {topic}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 my-6 md:px-10">
+        <div className="flex justify-center mb-4">
+          <div className="flex gap-10 w-full max-w-6xl">
+            <article className="prose max-w-none flex-1 min-w-0">
               <MDXRemote
                 source={content}
                 components={components}
                 options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
               />
-            </div>
-          </article>
+            </article>
 
-          <TableOfContents headings={headings} />
-        </div>
-      </div>
-
-      <div className="flex justify-center">
-        <div className="p-10 gap-10 w-full max-w-6xl">
-          <div className="flex items-center gap-4 mb-3">
-            <h3 className="text-lg font-semibold whitespace-nowrap">
-              Related Articles
-            </h3>
-            <div className="h-px flex-1 bg-gray-400" />
+            <TableOfContents headings={headings} />
           </div>
-
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-            {posts
-              .filter((p) => p.slug !== slug)
-              .slice(0, 8)
-              .map((post) => (
-                <li key={post.slug}>
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="group block h-full rounded-2xl border border-zinc-800 p-5 md:p-6 transition-transform duration-300 hover:-translate-y-0.5"
-                  >
-                    <div className="flex items-center justify-between gap-3 mb-3">
-                      <span className="inline-flex capitalize rounded-full border border-zinc-800 px-2.5 py-1 text-xs">
-                        {post.topics?.[0] ?? "general"}
-                      </span>
-                      <p className="text-xs md:text-sm">{post.date}</p>
-                    </div>
-
-                    <h2 className="text-lg md:text-xl font-semibold leading-snug mb-2 hover:text-orange-500 transition-colors">
-                      {post.title}
-                    </h2>
-
-                    <p
-                      className="text-sm md:text-base line-clamp-3"
-                      title={post.excerpt}
-                    >
-                      {post.excerpt}
-                    </p>
-
-                    <div className="mt-5 inline-flex items-center text-sm font-medium text-orange-600 dark:text-orange-400">
-                      Read article
-                      <span className="ml-1 transition-transform group-hover:translate-x-1">
-                        →
-                      </span>
-                    </div>
-                  </Link>
-                </li>
-              ))}
-          </ul>
         </div>
-      </div>
-    </>
+
+        <div className="flex justify-center">
+          <div className="w-full max-w-6xl">
+            <div className="flex items-center gap-4 mb-3">
+              <h3 className="text-lg font-semibold whitespace-nowrap">
+                Articles you might like
+              </h3>
+              <div className="h-px flex-1 bg-gray-400" />
+            </div>
+
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+              {posts
+                .filter((p) => p.slug !== slug)
+                .slice(0, 8)
+                .map((post, index) => (
+                  <BlogCard key={post.slug} post={post} index={index} />
+                ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }

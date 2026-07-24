@@ -1,39 +1,18 @@
 import { getAllPosts } from "@/lib/posts";
 import { Metadata } from "next";
-import Link from "next/link";
+import BlogCard from "./components/BlogCard";
+import Pagination from "./components/Pagination";
 
 const POSTS_PER_PAGE = 12;
 const SITE_URL = "https://www.melvinjonesrepol.com";
 const SITE_NAME = "Melvin Jones Repol";
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og/blog.png`;
 
-export async function generateMetadata({
-  searchParams,
-}: {
-  params: Promise<{ locale: string }>;
-  searchParams: Promise<{ page?: string }>;
-}): Promise<Metadata> {
-  const sp = await searchParams;
-
-  const rawPage = Number(sp?.page);
-  const page = Number.isInteger(rawPage) && rawPage > 0 ? rawPage : 1;
-
-  const isFirstPage = page === 1;
-  const title = isFirstPage
-    ? `Blog - ${SITE_NAME}`
-    : `Blog - Page ${page} - ${SITE_NAME}`;
-
-  const description = isFirstPage
-    ? "Browse my blog posts, insights, and experiences on software development, technology trends, and personal growth in the tech industry."
-    : `Page ${page} of my blog posts covering software development, technology trends, and personal growth in the tech industry.`;
-
-  const canonicalUrl = isFirstPage
-    ? `${SITE_URL}/blog`
-    : `${SITE_URL}/blog?page=${page}`;
-
+export async function generateMetadata(): Promise<Metadata> {
   return {
-    title,
-    description,
+    title: `Blog - ${SITE_NAME}`,
+    description:
+      "Browse my blog posts, insights, and experiences on software development, technology trends, and personal growth in the tech industry.",
     keywords: [
       "blog",
       "software development",
@@ -42,13 +21,14 @@ export async function generateMetadata({
       "web development",
     ],
     alternates: {
-      canonical: canonicalUrl,
+      canonical: `${SITE_URL}/blog`,
     },
     openGraph: {
-      title,
-      description,
+      title: `Blog - ${SITE_NAME}`,
+      description:
+        "Browse my blog posts, insights, and experiences on software development, technology trends, and personal growth in the tech industry.",
       type: "website",
-      url: canonicalUrl,
+      url: `${SITE_URL}/blog`,
       siteName: SITE_NAME,
       locale: "en_US",
       images: [
@@ -62,34 +42,19 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title,
-      description,
+      title: `Blog - ${SITE_NAME}`,
+      description:
+        "Browse my blog posts, insights, and experiences on software development, technology trends, and personal growth in the tech industry.",
       creator: "@mrepol742",
       images: [DEFAULT_OG_IMAGE],
     },
   };
 }
 
-export default async function BlogPage({
-  params,
-  searchParams,
-}: {
-  params: Promise<{ locale: string }>;
-  searchParams: Promise<{ page?: string }>;
-}) {
-  await params;
-
-  const sp = await searchParams;
-  const rawPage = Number(sp?.page ?? "1");
-  const page = Number.isFinite(rawPage) && rawPage > 0 ? rawPage : 1;
-
+export default async function BlogPage() {
   const posts = getAllPosts("en");
   const totalPages = Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE));
-
-  const safePage = Math.min(page, totalPages);
-  const start = (safePage - 1) * POSTS_PER_PAGE;
-  const end = start + POSTS_PER_PAGE;
-  const paginatedPosts = posts.slice(start, end);
+  const paginatedPosts = posts.slice(0, POSTS_PER_PAGE);
 
   const allTopics = Array.from(
     new Set(posts.flatMap((p) => p.topics ?? []).filter(Boolean)),
@@ -154,56 +119,14 @@ export default async function BlogPage({
         </div>
       </section>
 
-      <section className="px-6 py-24 md:px-10">
-        <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 md:gap-6">
+      <section className="px-6 my-6 md:px-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 gap-4 md:gap-6">
           {paginatedPosts.map((post, index) => (
-            <li
-              key={post.slug}
-              className="group"
-              data-aos="fade-up"
-              data-aos-delay={120 + index * 80}
-            >
-              <Link
-                href={`/blog/${post.slug}`}
-                className="block h-full rounded-2xl border border-zinc-800 p-5 md:p-6 transition-transform duration-300 hover:-translate-y-0.5"
-              >
-                <div className="flex items-center justify-between gap-3 mb-3">
-                  <span className="inline-flex capitalize rounded-full border border-zinc-800 px-2.5 py-1 text-xs">
-                    {post.topics?.[0] ?? "general"}
-                  </span>
-                  <p className="text-xs md:text-sm">{post.date}</p>
-                </div>
-
-                <h2 className="text-lg md:text-xl font-semibold leading-snug mb-2 group-hover:text-orange-500 transition-colors">
-                  {post.title}
-                </h2>
-
-                <p
-                  className="text-sm md:text-base line-clamp-3"
-                  title={post.excerpt}
-                >
-                  {post.excerpt}
-                </p>
-
-                <div className="mt-5 inline-flex items-center text-sm font-medium text-orange-600 dark:text-orange-400">
-                  Read article
-                  <span className="ml-1 transition-transform group-hover:translate-x-1">
-                    →
-                  </span>
-                </div>
-              </Link>
-            </li>
+            <BlogCard key={post.slug} post={post} index={index} />
           ))}
-        </ul>
-
-        <div className="flex gap-4 mt-6">
-          {safePage > 1 && (
-            <Link href={`/blog?page=${safePage - 1}`}>← Prev</Link>
-          )}
-          {safePage < totalPages && (
-            <Link href={`/blog?page=${safePage + 1}`}>Next →</Link>
-          )}
         </div>
+
+        <Pagination currentPage={1} totalPages={totalPages} />
       </section>
     </main>
   );

@@ -3,9 +3,8 @@
 User-Agent: *
 Allow: /
 Disallow: /.well-known/assetlinks.json
+Disallow: /sounds/soundreality-whoosh-door-243097.mp3
+Disallow: /resources
 Disallow: /api
-Disallow: /blog?page=1
-Disallow: /projects?
-Disallow: /gaming?
 
 Sitemap: https://www.melvinjonesrepol.com/sitemap.xml
