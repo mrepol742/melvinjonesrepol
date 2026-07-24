@@ -1,6 +1,15 @@
 import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import WorkExperienceCard from "./components/WorkExperienceCard";
+
+export type Experience = {
+  company: string;
+  title: string;
+  date: string;
+  description: string;
+  cert?: string;
+};
 
 export async function generateMetadata({
   params,
@@ -12,49 +21,49 @@ export async function generateMetadata({
   return {
     title: "Work Experience - Melvin Jones Repol",
     description:
-    "A summary of my professional work experience, including the roles, responsibilities, and projects I have contributed to throughout my career in development and technology.",
+      "A summary of my professional work experience, including the roles, responsibilities, and projects I have contributed to throughout my career in development and technology.",
     keywords: [
-    "Work Experience",
-    "Melvin Jones Repol",
-    "Software Engineer",
-    "Freelance Developer",
-    "IT Staff",
-    "Web Development",
-    "Full-Stack Developer",
-    "DevOps",
-    "Professional Experience",
-    "Career History",
-    "Software Development",
-    "IT Support",
-  ],
+      "Work Experience",
+      "Melvin Jones Repol",
+      "Software Engineer",
+      "Freelance Developer",
+      "IT Staff",
+      "Web Development",
+      "Full-Stack Developer",
+      "DevOps",
+      "Professional Experience",
+      "Career History",
+      "Software Development",
+      "IT Support",
+    ],
     alternates: getAlternates("/work-experience", locale),
     openGraph: {
-    title: "Work Experience - Melvin Jones Repol",
-    description:
-      "A summary of my professional work experience, including the roles, responsibilities, and projects I have contributed to throughout my career in development and technology.",
-    url: "https://www.melvinjonesrepol.com/work-experience",
-    siteName: "Melvin Jones Repol",
-    images: [
-      {
-        url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
-        width: 1200,
-        height: 630,
-        alt: "Work Experience Cover",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
+      title: "Work Experience - Melvin Jones Repol",
+      description:
+        "A summary of my professional work experience, including the roles, responsibilities, and projects I have contributed to throughout my career in development and technology.",
+      url: "https://www.melvinjonesrepol.com/work-experience",
+      siteName: "Melvin Jones Repol",
+      images: [
+        {
+          url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+          width: 1200,
+          height: 630,
+          alt: "Work Experience Cover",
+        },
+      ],
+      locale: "en_US",
+      type: "website",
+    },
     twitter: {
-    card: "summary_large_image",
-    title: "Work Experience - Melvin Jones Repol",
-    description:
-      "A summary of my professional work experience, including the roles, responsibilities, and projects I have contributed to throughout my career in development and technology.",
-    images: [
-      "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
-    ],
-    creator: "@mrepol742",
-  },
+      card: "summary_large_image",
+      title: "Work Experience - Melvin Jones Repol",
+      description:
+        "A summary of my professional work experience, including the roles, responsibilities, and projects I have contributed to throughout my career in development and technology.",
+      images: [
+        "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+      ],
+      creator: "@mrepol742",
+    },
   };
 }
 
@@ -138,50 +147,70 @@ export default async function WorkExperiencePage() {
         </div>
       </section>
 
-      <section className="px-6 py-24 md:px-10">
-        <div className="relative mt-12">
-          <div className="absolute top-4 left-1 w-full h-0.5 bg-gray-800 hidden md:block" />
+      <section className="px-6 my-6 md:px-10">
+        <div className="relative">
+          {/* Spine */}
+          <div className="absolute left-3 md:left-1/2 top-0 bottom-0 w-px bg-zinc-800 md:-translate-x-1/2" />
 
-          <div className="flex flex-col md:flex-row gap-8 md:gap-12 md:overflow-x-auto pb-8 snap-x scrollbar-hide">
-            {experiences.map((exp, index) => (
-              <div
-                key={index}
-                className="relative md:w-96 flex-shrink-0 snap-start"
-                data-aos="fade-up"
-                data-aos-delay={index * 150}
-              >
-                <div className="mt-2 ms-1 hidden md:block absolute -top-1 left-0 w-6 h-6 rounded-full bg-[#7873f5] z-10 ring-2 ring-gray-800" />
-
-                <div className="md:mt-10 border border-gray-800 md:border-none p-5 md:p-0 rounded-2xl md:rounded-none">
-                  <span className="text-xs font-mono mb-2 block opacity-70">
-                    {exp.date}
-                  </span>
-                  <h3 className="text-xl font-bold">{exp.title}</h3>
-                  <h4 className="text-md font-medium mb-4 opacity-80">
-                    {exp.company}
-                  </h4>
-                  <p className="text-sm leading-relaxed opacity-90">
-                    {exp.description}
-                  </p>
-
-                  {exp.cert && (
-                    <div className="mt-5">
-                      <a
-                        href={exp.cert}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs font-medium transition-colors flex items-center gap-1 underline underline-offset-2 hover:opacity-80"
-                      >
-                        {t("view_certificate")}
-                      </a>
+          <div className="flex flex-col gap-10">
+            {experiences.map((exp, index) => {
+              const isLeft = index % 2 === 0;
+              return (
+                <div
+                  key={index}
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
+                >
+                  {/* Desktop: alternating columns */}
+                  <div className="hidden md:flex items-start">
+                    {/* Left half */}
+                    <div className="w-1/2 flex justify-end pr-8">
+                      {isLeft && (
+                        <div className="relative w-full max-w-lg">
+                          <div className="absolute top-7 -right-8 w-8 h-px bg-zinc-700" />
+                          <WorkExperienceCard
+                            exp={exp}
+                            viewLabel={t("view_certificate")}
+                          />
+                        </div>
+                      )}
                     </div>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
 
-          <span className="text-xs">{t("swipe_hint")}</span>
+                    {/* Dot */}
+                    <div className="flex-shrink-0 z-10 mt-6 -mx-2">
+                      <div className="w-4 h-4 rounded-full ring-4 ring-black bg-zinc-600" />
+                    </div>
+
+                    {/* Right half */}
+                    <div className="w-1/2 pl-8">
+                      {!isLeft && (
+                        <div className="relative w-full max-w-lg">
+                          <div className="absolute top-7 -left-8 w-8 h-px bg-zinc-700" />
+                          <WorkExperienceCard
+                            exp={exp}
+                            viewLabel={t("view_certificate")}
+                          />
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Mobile: single column */}
+                  <div className="flex md:hidden items-start gap-5">
+                    <div className="flex-shrink-0 z-10 mt-7">
+                      <div className="w-3 h-3 rounded-full ring-4 ring-black bg-zinc-600" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <WorkExperienceCard
+                        exp={exp}
+                        viewLabel={t("view_certificate")}
+                      />
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
     </main>
