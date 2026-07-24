@@ -303,7 +303,12 @@
     "last_incident": "Последний инцидент",
     "duration_label": "Длительность:",
     "duration_minutes": "минут",
-    "reason_label": "Причина:"
+    "reason_label": "Причина:",
+    "title_line1": "Система",
+    "title_line2": "Статус",
+    "title_line3": "Монитор.",
+    "current_status": "Текущий Статус",
+    "loading": "Загрузка..."
   },
   "legal": {
     "title_line1": "Политики",

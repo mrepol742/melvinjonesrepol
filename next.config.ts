@@ -101,7 +101,6 @@ const nextConfig: NextConfig = {
 
     unoptimized: true,
   },
-
   headers: async () => [
     {
       source: "/(.*)",

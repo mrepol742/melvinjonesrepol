@@ -303,7 +303,12 @@
     "last_incident": "最近一次故障",
     "duration_label": "持续时间：",
     "duration_minutes": "分钟",
-    "reason_label": "原因："
+    "reason_label": "原因：",
+    "title_line1": "系统",
+    "title_line2": "状态",
+    "title_line3": "监控。",
+    "current_status": "当前状态",
+    "loading": "加载中..."
   },
   "legal": {
     "title_line1": "政策",

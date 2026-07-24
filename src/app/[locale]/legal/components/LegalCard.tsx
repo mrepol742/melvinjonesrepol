@@ -15,7 +15,6 @@ export default function LegalCard({
 }) {
   return (
     <Link
-      key={link.href}
       href={link.href}
       data-aos="fade-up"
       className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-2xl transition-all duration-300 hover:border-white/20 hover:bg-white/[0.05] hover:shadow-[0_30px_80px_rgba(0,0,0,0.35)]"

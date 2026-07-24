@@ -303,7 +303,12 @@
     "last_incident": "Last Incident",
     "duration_label": "Duration:",
     "duration_minutes": "minutes",
-    "reason_label": "Reason:"
+    "reason_label": "Reason:",
+    "title_line1": "System",
+    "title_line2": "Status",
+    "title_line3": "Monitor.",
+    "current_status": "Current Status",
+    "loading": "Loading..."
   },
   "legal": {
     "title_line1": "Policies",
