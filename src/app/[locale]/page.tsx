@@ -14,7 +14,8 @@ import Blog from "@/app/[locale]/components/Blog";
 import Certificate from "@/app/[locale]/components/Certificate";
 import EngineeringPhilosophy from "@/app/[locale]/components/EngineeringPhilosophy";
 import Github from "@/app/[locale]/components/Github";
-import ServicesCarousel from "@/app/[locale]/components/Technologies";
+import ServicesCarousel from "@/app/[locale]/components/StickyServicesCarousel";
+import HeroFade from "@/app/[locale]/components/HeroFade";
 import Project from "@/app/[locale]/components/Project";
 import ClientFeedback from "@/app/[locale]/components/ClientFeedback";
 import { Metadata } from "next";
@@ -149,7 +150,7 @@ export default async function Home({
       />
       <main>
         <section>
-          <div className="relative min-h-screen overflow-hidden border-b border-zinc-800 mb-10">
+          <HeroFade className="relative min-h-screen overflow-hidden border-b border-zinc-800 mb-10">
             {/* Full-height photo bleeding to the right edge — desktop only */}
             <div className="hidden lg:block absolute right-0 top-0 h-full w-[42%]">
               <Image
@@ -209,19 +210,7 @@ export default async function Home({
                 </div>
               </div>
             </div>
-
-            {/* Mobile photo below content */}
-            <div className="lg:hidden relative w-full aspect-[4/3]">
-              <Image
-                src="/images/melvin-jones-repol-black.jpg"
-                alt={t("profile_alt")}
-                fill
-                priority
-                className="object-cover object-top"
-              />
-              <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white dark:from-black to-transparent" />
-            </div>
-          </div>
+          </HeroFade>
 
           <div className="p-3 md:px-8">
             <div className="relative py-14 md:py-28 overflow-hidden">
