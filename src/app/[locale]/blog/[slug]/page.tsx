@@ -263,7 +263,8 @@ export default async function BlogPost({
 
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               {posts
-                .filter((p) => p.slug !== slug)
+                .filter((p) => p.title !== data.title)
+                .sort(() => Math.random() - 0.5)
                 .slice(0, 8)
                 .map((post, index) => (
                   <BlogCard key={post.slug} post={post} index={index} />
