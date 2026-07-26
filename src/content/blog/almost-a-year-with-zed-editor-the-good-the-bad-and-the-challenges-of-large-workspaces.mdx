@@ -1,0 +1,128 @@
+---
+title: "Almost a Year with Zed: The Good, the Bad, and the Challenges of Large Workspaces"
+date: "2026-07-25"
+excerpt: "After using Zed as my primary editor for almost a year, I've come to appreciate its incredible speed while also running into some interesting challenges as my workspaces grew."
+topics: ["zed-editor", "vscode", "language-server", "developer-tools"]
+---
+
+I switched to Zed almost a year ago because I wanted something that felt different. After spending years in VS Code, a Rust-based editor with a GPU-rendered interface sounded like an interesting experiment. The first impression was honestly great. Everything opened instantly, typing felt incredibly responsive, and the editor stayed smooth no matter how quickly I jumped between files. It wasn't just benchmark numbers or marketing videos either. It genuinely felt fast enough that I stopped thinking about the editor and focused on writing code instead.
+
+That experience is still true today. I haven't switched back to VS Code. Zed has become my primary editor, but after nearly a year of daily use, I've also started noticing where its design choices begin to show their tradeoffs.
+
+## Why Zed Feels So Fast
+
+One thing Zed absolutely gets right is responsiveness.
+
+The editor itself is written in Rust, while the user interface is rendered using the GPU instead of relying on the traditional rendering approach many editors use. Whether the GPU rendering is the biggest reason for the performance or simply one piece of the puzzle is something I'll leave to the engineers behind it, but the end result is difficult to argue with.
+
+Startup is incredibly fast.
+
+Searching feels instant.
+
+Scrolling through thousands of lines of code rarely feels sluggish.
+
+Opening files is almost immediate.
+
+Compared to launching a fresh VS Code window, Zed often feels like it has already finished loading before you realize you clicked the icon.
+
+## Where Things Start Changing
+
+The experience depends heavily on the size of your workspace.
+
+If I'm working on a single repository, Zed is fantastic.
+
+Two related projects? Still excellent.
+
+The problems begin once I open a workspace containing four or more repositories.
+
+For me, that's a completely normal setup. A typical workspace might include a Laravel backend, a Next.js frontend, several Node.js services, shared packages, and a few smaller utilities. Keeping everything together makes jumping between services much easier.
+
+Unfortunately, it's also where resource usage starts climbing much faster than I expected.
+
+## Language Servers Become the Real Workload
+
+One of Zed's biggest strengths is how little setup it requires.
+
+Open a project, and language support simply works.
+
+You don't spend time hunting for extensions or manually enabling language servers. Zed detects the project type and starts the appropriate tooling automatically.
+
+That convenience is fantastic until the workspace becomes large.
+
+Many language servers are launched simply because certain files exist inside the repository. You don't necessarily need to open a TypeScript file. Having a `package.json`, `tsconfig.json`, or other recognizable project configuration is often enough for the editor to prepare language support.
+
+The result is that opening a workspace can immediately start several heavyweight background processes before you've written a single line of code.
+
+## TypeScript Can Get Expensive
+
+The biggest example I've seen is `vtsls`.
+
+This isn't unique to Zed because TypeScript tooling has always been memory intensive. Large dependency graphs, symbol indexing, file watching, diagnostics, autocomplete, and project analysis all require memory.
+
+I've personally seen a single `vtsls` process grow beyond **5 GB of RAM**.
+
+Now imagine a workspace with five different TypeScript projects.
+
+Each repository has its own dependencies.
+
+Each has its own `node_modules`.
+
+Each has its own TypeScript configuration.
+
+Each starts its own language server.
+
+At that point, the editor itself is barely the problem. The language servers become the largest consumers of memory.
+
+## This Isn't Really a Rust Problem
+
+It's tempting to blame Rust or the editor itself, but I don't think that's fair.
+
+The rendering engine remains incredibly responsive even while the machine starts consuming more RAM.
+
+Most of what I'm seeing comes from the ecosystem around modern development rather than the editor's rendering performance.
+
+Large JavaScript and TypeScript projects naturally require expensive tooling.
+
+Language servers need to understand the project.
+
+They need to index files.
+
+They need to watch for changes.
+
+They need to provide completions almost instantly.
+
+That's a difficult problem regardless of which editor is hosting them.
+
+## I Think Zed Could Handle This Differently
+
+Where I think Zed could improve is how aggressively it prepares the workspace.
+
+Right now, the philosophy seems to be making everything immediately available, which creates a fantastic experience for smaller projects. The downside is that larger workspaces pay the price upfront, even if only one repository is actively being edited.
+
+I'd love to see more intelligent resource management.
+
+For example, language servers could be started only when the first relevant source file is opened instead of immediately after scanning the workspace.
+
+Idle language servers could be suspended after several minutes without activity.
+
+Projects that haven't been touched recently could temporarily unload their indexing data while keeping the editor responsive.
+
+Another idea would be introducing workspace performance profiles. Sometimes I want every language server available instantly. Other times I only need one backend service and don't care about the rest until later in the day.
+
+Giving developers that choice would probably benefit larger teams more than adding another experimental feature.
+
+## Good Software Solves Different Problems
+
+One thing I've learned after using both editors is that they optimize for different experiences.
+
+VS Code has spent years building around massive ecosystems, extensions, and enterprise-scale workflows.
+
+Zed feels like it's optimizing for raw responsiveness and making the editor disappear while you work.
+
+Neither philosophy is wrong.
+
+The interesting challenge is what happens when those worlds meet. As more developers adopt Zed for increasingly complex production environments, problems like language server management, memory usage, and large workspaces become much more important than shaving another few milliseconds off rendering.
+
+---
+
+I'm still using Zed every day because I genuinely enjoy working in it. I just think the next big performance improvements probably won't come from rendering frames faster. They'll come from making smarter decisions about what actually needs to be running in the background.

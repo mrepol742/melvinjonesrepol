@@ -14,7 +14,8 @@ import Blog from "@/app/[locale]/components/Blog";
 import Certificate from "@/app/[locale]/components/Certificate";
 import EngineeringPhilosophy from "@/app/[locale]/components/EngineeringPhilosophy";
 import Github from "@/app/[locale]/components/Github";
-import ServicesCarousel from "@/app/[locale]/components/Technologies";
+import ServicesCarousel from "@/app/[locale]/components/StickyServicesCarousel";
+import HeroFade from "@/app/[locale]/components/HeroFade";
 import Project from "@/app/[locale]/components/Project";
 import ClientFeedback from "@/app/[locale]/components/ClientFeedback";
 import { Metadata } from "next";
@@ -149,11 +150,11 @@ export default async function Home({
       />
       <main>
         <section>
-          <div className="relative min-h-screen overflow-hidden border-b border-zinc-800 mb-10">
+          <HeroFade className="relative min-h-screen overflow-hidden border-b border-zinc-800 mb-10">
             {/* Full-height photo bleeding to the right edge — desktop only */}
             <div className="hidden lg:block absolute right-0 top-0 h-full w-[42%]">
               <Image
-                src="/images/melvin-jones-repol-black-412x408.jpg"
+                src="/images/melvin-jones-repol-black.jpg"
                 alt={t("profile_alt")}
                 fill
                 priority
@@ -176,29 +177,17 @@ export default async function Home({
                   Repol
                 </h1>
 
-                <p
-                  className="text-base md:text-xl leading-relaxed mb-6 max-w-lg"
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                >
+                <p className="text-base md:text-xl leading-relaxed mb-6 max-w-lg">
                   {t("intro")}
                 </p>
 
-                <p
-                  className="text-sm leading-relaxed max-w-lg opacity-60"
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                >
+                <p className="text-sm leading-relaxed max-w-lg opacity-60">
                   {t("delivery_mindset")}
                 </p>
               </div>
 
               {/* Bottom info strip — newspaper footer style */}
-              <div
-                className="border-t border-zinc-800 pt-6 grid grid-cols-1 sm:grid-cols-3 gap-6 lg:max-w-[60%] xl:max-w-[56%]"
-                data-aos="fade-up"
-                data-aos-delay="400"
-              >
+              <div className="border-t border-zinc-800 pt-6 grid grid-cols-1 sm:grid-cols-3 gap-6 lg:max-w-[60%] xl:max-w-[56%]">
                 <div>
                   <p className="text-xs uppercase tracking-widest mb-1 opacity-50">
                     {t("role_label")}
@@ -221,19 +210,7 @@ export default async function Home({
                 </div>
               </div>
             </div>
-
-            {/* Mobile photo below content */}
-            <div className="lg:hidden relative w-full aspect-[4/3]">
-              <Image
-                src="/images/melvin-jones-repol-black.jpg"
-                alt={t("profile_alt")}
-                fill
-                priority
-                className="object-cover object-top"
-              />
-              <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white dark:from-black to-transparent" />
-            </div>
-          </div>
+          </HeroFade>
 
           <div className="p-3 md:px-8">
             <div className="relative py-14 md:py-28 overflow-hidden">
@@ -492,17 +469,11 @@ export default async function Home({
                       {t("community_title")}
                     </h2>
 
-                    <p
-                      className="mt-4 max-w-xl"
-                      data-aos="fade-up"
-                    >
+                    <p className="mt-4 max-w-xl" data-aos="fade-up">
                       {t("community_description_1")}
                     </p>
 
-                    <p
-                      className="mt-4 max-w-xl"
-                      data-aos="fade-up"
-                    >
+                    <p className="mt-4 max-w-xl" data-aos="fade-up">
                       {t("community_description_2")}
                     </p>
 
@@ -582,9 +553,7 @@ export default async function Home({
                         {t("webvium_title")}
                       </h2>
 
-                      <p className="mt-4">
-                        {t("webvium_description")}
-                      </p>
+                      <p className="mt-4">{t("webvium_description")}</p>
 
                       <div className="mt-8 flex flex-wrap gap-3">
                         <Link href="https://webvium.melvinjonesrepol.com">
@@ -618,7 +587,9 @@ export default async function Home({
 
                         <div className="rounded-xl border border-zinc-800 p-5">
                           <div className="text-3xl font-bold">2018</div>
-                          <div className="text-sm text-zinc-400">{t("webvium_stat_started")}</div>
+                          <div className="text-sm text-zinc-400">
+                            {t("webvium_stat_started")}
+                          </div>
                         </div>
 
                         <div className="rounded-xl border border-zinc-800 p-5">

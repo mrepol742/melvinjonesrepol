@@ -1,24 +1,18 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import {
-  faCircleCheck,
-  faTriangleExclamation,
-  faClockRotateLeft,
-  faServer,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTranslations } from "next-intl";
+import MonitorCard from "./MonitorCard";
 
 const API_URL = "https://stats.uptimerobot.com/api/getMonitorList/IZwUI4mLcR";
 
-type DailyRatio = {
+export type DailyRatio = {
   date: string;
   ratio: string;
   color: string;
 };
 
-type Monitor = {
+export type Monitor = {
   monitorId: number;
   name: string;
   type: string;
@@ -45,20 +39,22 @@ type Monitor = {
   } | null;
 };
 
-export default function SystemStatus() {
+export default function SystemStatus({
+  initialMonitors = [],
+}: {
+  initialMonitors?: Monitor[];
+}) {
   const t = useTranslations("uptime");
-  const [monitors, setMonitors] = useState<Monitor[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [lastUpdated, setLastUpdated] = useState<Date>();
+  const [monitors, setMonitors] = useState<Monitor[]>(initialMonitors);
+  const [loading, setLoading] = useState(initialMonitors.length === 0);
+  const [lastUpdated, setLastUpdated] = useState<Date | undefined>(
+    initialMonitors.length > 0 ? new Date() : undefined,
+  );
 
   const fetchData = async () => {
     try {
-      const res = await fetch(API_URL, {
-        cache: "no-store",
-      });
-
+      const res = await fetch(API_URL, { cache: "no-store" });
       const json = await res.json();
-
       setMonitors(json.data || []);
       setLastUpdated(new Date());
     } catch (err) {
@@ -70,9 +66,7 @@ export default function SystemStatus() {
 
   useEffect(() => {
     fetchData();
-
     const interval = setInterval(fetchData, 30000);
-
     return () => clearInterval(interval);
   }, []);
 
@@ -83,77 +77,75 @@ export default function SystemStatus() {
   const allOperational = onlineCount === monitors.length && monitors.length > 0;
 
   return (
-    <main className="min-h-screen py-14">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#14532d20,transparent_40%)]" />
+    <main>
+      <section className="relative min-h-screen overflow-hidden border-b border-zinc-800">
+        <div className="relative flex min-h-screen flex-col px-6 py-12 md:px-10">
+          <div className="my-auto py-14">
+            <h1
+              className="text-[14vw] sm:text-[10vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8"
+              data-aos="fade-up"
+            >
+              {t("title_line1")}
+              <br />
+              <span className="opacity-40">{t("title_line2")}</span>
+              <br />
+              {t("title_line3")}
+            </h1>
 
-      <div className="relative mx-auto max-w-7xl px-6 py-12">
-        <div className="mb-10">
-          <div className="inline-flex items-center gap-2 rounded-full border border-zinc-800 px-4 py-2 text-sm">
-            <FontAwesomeIcon icon={faServer} />
-            {t("status_page_badge")}
+            <p
+              className="max-w-2xl text-lg leading-8 text-zinc-400 md:text-xl"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              {t("subtitle")}
+            </p>
           </div>
 
-          <h1 className="mt-5 text-5xl font-bold tracking-tight">
-            {t("title")}
-          </h1>
-
-          <p className="mt-3 text-zinc-400">
-            {t("subtitle")}
-          </p>
-        </div>
-
-        {/* Hero */}
-        <div
-          className={`mb-10 rounded-3xl border p-8 ${
-            allOperational
-              ? "border-emerald-500/20 bg-emerald-500/5"
-              : "border-red-500/20 bg-red-500/5"
-          }`}
-        >
-          <div className="flex items-center gap-4">
-            <div
-              className={`h-4 w-4 rounded-full animate-pulse ${
-                allOperational ? "bg-emerald-500" : "bg-red-500"
-              }`}
-            />
-
+          <div
+            className="border-t border-zinc-800 pt-6 grid grid-cols-2 sm:grid-cols-4 gap-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
             <div>
-              <h2 className="text-3xl font-bold">
-                {allOperational
-                  ? t("all_systems_operational")
-                  : t("service_disruption")}
-              </h2>
-
-              <p className="text-zinc-400 mt-1">
-                {t("services_operational", { online: onlineCount, total: monitors.length })}
+              <p className="text-4xl font-black">{monitors.length || "--"}</p>
+              <p className="mt-1 text-sm text-zinc-400">
+                {t("total_services")}
               </p>
+            </div>
+            <div>
+              <p className="text-4xl font-black">
+                {loading ? "--" : onlineCount}
+              </p>
+              <p className="mt-1 text-sm text-zinc-400">{t("operational")}</p>
+            </div>
+            <div>
+              <div className="flex items-center gap-2 mt-1">
+                <div
+                  className={`h-3 w-3 rounded-full ${allOperational ? "bg-emerald-500 animate-pulse" : monitors.length === 0 ? "bg-zinc-600" : "bg-red-500 animate-pulse"}`}
+                />
+                <p className="text-sm font-semibold">
+                  {loading
+                    ? t("loading")
+                    : allOperational
+                      ? t("all_systems_operational")
+                      : t("service_disruption")}
+                </p>
+              </div>
+              <p className="mt-1 text-sm text-zinc-400">
+                {t("current_status")}
+              </p>
+            </div>
+            <div>
+              <p className="text-lg font-black">
+                {lastUpdated ? lastUpdated.toLocaleTimeString() : "--"}
+              </p>
+              <p className="mt-1 text-sm text-zinc-400">{t("last_refresh")}</p>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Stats */}
-        <div className="grid gap-4 md:grid-cols-3 mb-10">
-          <div className="rounded-3xl border border-zinc-800 p-6">
-            <p className="text-zinc-500 text-sm">{t("total_services")}</p>
-
-            <h3 className="text-3xl font-bold mt-2">{monitors.length}</h3>
-          </div>
-
-          <div className="rounded-3xl border border-emerald-500 p-6">
-            <p className="text-emerald-400 text-sm">{t("operational")}</p>
-
-            <h3 className="text-3xl font-bold mt-2">{onlineCount}</h3>
-          </div>
-
-          <div className="rounded-3xl border border-zinc-800 p-6">
-            <p className="text-zinc-500 text-sm">{t("last_refresh")}</p>
-
-            <h3 className="text-lg font-medium mt-2">
-              {lastUpdated ? lastUpdated.toLocaleTimeString() : "--"}
-            </h3>
-          </div>
-        </div>
-
+      <section className="px-6 my-6 md:px-10">
         {/* Legend */}
         <div className="flex flex-wrap gap-5 text-xs text-zinc-400 mb-8">
           <div className="flex items-center gap-2">
@@ -181,114 +173,19 @@ export default function SystemStatus() {
         <div className="space-y-5">
           {loading &&
             Array.from({ length: 4 }).map((_, i) => (
-              <div
-                key={i}
-                className="h-48 rounded-3xl animate-pulse"
-              />
+              <div key={i} className="h-48 rounded-3xl animate-pulse" />
             ))}
 
           {!loading &&
-            monitors.map((monitor) => (
-              <div
+            monitors.map((monitor, index) => (
+              <MonitorCard
                 key={monitor.monitorId}
-                className="rounded-3xl border border-zinc-800 p-6 backdrop-blur"
-              >
-                <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
-                  <div>
-                    <h3 className="text-xl font-semibold">{monitor.name}</h3>
-
-                    <p className="text-sm text-zinc-500 mt-1">{monitor.type}</p>
-                  </div>
-
-                  <div>
-                    {monitor.statusClass === "success" ? (
-                      <span className="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-4 py-2 text-sm text-emerald-400">
-                        <FontAwesomeIcon icon={faCircleCheck} />
-                        {t("status_operational")}
-                      </span>
-                    ) : (
-                      <span className="inline-flex items-center gap-2 rounded-full bg-red-500/10 px-4 py-2 text-sm text-red-400">
-                        <FontAwesomeIcon icon={faTriangleExclamation} />
-                        {t("status_incident")}
-                      </span>
-                    )}
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-8">
-                  <div>
-                    <p className="text-xs text-zinc-500">{t("current_uptime")}</p>
-
-                    <p className="text-2xl font-bold">{monitor.ratio.ratio}%</p>
-                  </div>
-
-                  <div>
-                    <p className="text-xs text-zinc-500">{t("days_30")}</p>
-
-                    <p className="text-2xl font-bold">
-                      {monitor["30dRatio"].ratio}%
-                    </p>
-                  </div>
-
-                  <div>
-                    <p className="text-xs text-zinc-500">{t("days_90")}</p>
-
-                    <p className="text-2xl font-bold">
-                      {monitor["90dRatio"].ratio}%
-                    </p>
-                  </div>
-                </div>
-
-                {/* History */}
-                <div className="mt-8">
-                  <p className="text-sm text-zinc-400 mb-3">{t("history_90_days")}</p>
-
-                  <div className="flex gap-[2px]">
-                    {monitor.dailyRatios.slice(-90).map((day, index) => (
-                      <div
-                        key={index}
-                        title={`${day.date} (${day.ratio}%)`}
-                        className={`h-8 flex-1 rounded-sm ${
-                          day.color === "green"
-                            ? "bg-emerald-500"
-                            : day.color === "blue"
-                              ? "bg-sky-500"
-                              : day.color === "red"
-                                ? "bg-red-500"
-                                : "bg-zinc-700"
-                        }`}
-                      />
-                    ))}
-                  </div>
-                </div>
-
-                {/* Incident */}
-                {monitor.lastDowntime && (
-                  <div className="mt-6 rounded-2xl border border-red-500/10 bg-red-500/5 p-4">
-                    <div className="flex items-center gap-2 text-red-400">
-                      <FontAwesomeIcon icon={faClockRotateLeft} />
-
-                      <span className="font-medium">{t("last_incident")}</span>
-                    </div>
-
-                    <p className="mt-2 text-xs">
-                      {monitor.lastDowntime.date}
-                    </p>
-
-                    <p className="text-sm text-zinc-500">
-                      {t("duration_label")} {Math.round(monitor.lastDowntime.duration / 60)}{" "}
-                      {t("duration_minutes")}
-                    </p>
-
-                    <p className="text-sm text-zinc-500">
-                      {t("reason_label")} {monitor.lastDowntime.reason}
-                    </p>
-                  </div>
-                )}
-              </div>
+                monitor={monitor}
+                index={index}
+              />
             ))}
         </div>
-      </div>
+      </section>
     </main>
   );
 }

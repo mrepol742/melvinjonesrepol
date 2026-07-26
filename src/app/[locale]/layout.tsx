@@ -8,18 +8,7 @@ import ScrollTop from "@/components/ui/ScrollTop";
 import { getRecentPosts } from "@/lib/posts";
 import PrivacyPolicyPrompt from "@/components/common/PrivacyPolicyPrompt";
 import DevToolsDetector from "@/components/common/DevToolsDetector";
-
-const locales = [
-  "en",
-  "fil",
-  "hi",
-  "es",
-  "cmn",
-  "nl",
-  "fr",
-  "ru",
-  "ar",
-] as const;
+import { locales } from "@/lib/i18n";
 
 // en is ignore because it is the default locale
 export function generateStaticParams() {
@@ -40,7 +29,7 @@ export default async function LocaleLayout({
 
   const env = process.env.NEXT_PUBLIC_NODE_ENV || "production";
   const isProduction = env === "production";
-  const posts = getRecentPosts(5, locale);
+  const posts = getRecentPosts(8, locale);
   const messages = await getMessages();
 
   return (

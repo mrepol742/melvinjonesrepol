@@ -303,7 +303,12 @@
     "last_incident": "Laatste incident",
     "duration_label": "Duur:",
     "duration_minutes": "minuten",
-    "reason_label": "Reden:"
+    "reason_label": "Reden:",
+    "title_line1": "Systeem",
+    "title_line2": "Status",
+    "title_line3": "Monitor.",
+    "current_status": "Huidige Status",
+    "loading": "Laden..."
   },
   "legal": {
     "title_line1": "Beleid",

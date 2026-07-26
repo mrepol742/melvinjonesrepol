@@ -303,7 +303,12 @@
     "last_incident": "Huling Insidente",
     "duration_label": "Tagal:",
     "duration_minutes": "minuto",
-    "reason_label": "Dahilan:"
+    "reason_label": "Dahilan:",
+    "title_line1": "Sistema",
+    "title_line2": "Katayuan",
+    "title_line3": "Monitor.",
+    "current_status": "Kasalukuyang Katayuan",
+    "loading": "Naglo-load..."
   },
   "legal": {
     "title_line1": "Mga Patakaran",

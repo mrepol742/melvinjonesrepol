@@ -1,4 +1,4 @@
-import { supportedLocales } from "@/i18n/request";
+import { nonEnLocales, locales } from "@/lib/i18n";
 
 const baseUrl =
   process.env.NODE_ENV === "production"
@@ -21,7 +21,7 @@ export function getAlternates(path: string, locale?: string) {
   return {
     canonical: `${baseUrl}${canonicalPath}`,
     languages: Object.fromEntries(
-      ["en", ...supportedLocales].map((l) => [
+      ["en", ...nonEnLocales].map((l) => [
         l,
         `${baseUrl}${withLocalePrefix(path, l)}`,
       ]),

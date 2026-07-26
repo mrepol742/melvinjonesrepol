@@ -1,0 +1,170 @@
+---
+title: "Why We Moved Ulisha Store Production to a Local Server"
+date: "2026-07-19"
+excerpt: "We recently migrated Ulisha Store's production environment from traditional hosting to a self-hosted local server. Here's why it made sense, what we learned, and why simplicity sometimes wins."
+topics: ["self-hosting", "infrastructure", "cloudflare", "ulisha-store"]
+---
+
+A few weeks ago I wrote about turning an old laptop into a production-ready web server using Cloudflare Tunnel. At the time, it was mostly an experiment that became our staging environment. It was where new features lived before they reached actual users, and it gave the team a safe place to break things without affecting production.
+
+Last week, that experiment graduated.
+
+We migrated the **Ulisha Store production environment** to our local server.
+
+If someone had told me a few years ago that I'd be running a production ecommerce platform from hardware sitting a few feet away from me, I probably would've laughed. Yet here we are, and surprisingly, it's working really well.
+
+## Why We Decided to Move
+
+Like many startups and indie projects, every recurring expense matters.
+
+Cloud hosting is incredibly convenient, but convenience comes with a monthly bill. Even modest VPS plans become noticeable when you're paying for databases, storage, backups, monitoring, email services, and other infrastructure.
+
+We asked ourselves a simple question.
+
+Do we actually need all of that right now?
+
+The answer was no.
+
+Our traffic is still growing, the platform is actively evolving, and our focus is shipping features instead of scaling for traffic we don't have yet.
+
+That made the decision much easier.
+
+## Faster Than We Expected
+
+One thing that genuinely surprised me wasn't the cost savings.
+
+It was the performance.
+
+Without noisy neighbors, shared resources, or virtualization overhead, the application feels incredibly responsive. Database queries complete quickly, deployments are straightforward, and overall latency inside the server itself is almost nonexistent.
+
+Of course, users still connect over the internet, but the application itself has plenty of breathing room.
+
+Sometimes we assume "cloud" automatically means "faster."
+
+That's not always true.
+
+## The Cost Difference Is Hard to Ignore
+
+Running the production server locally dramatically reduces our infrastructure costs.
+
+The hardware was already available.
+
+The internet connection was already there.
+
+The only additional cost is electricity, which is significantly lower than maintaining another cloud server month after month.
+
+For a growing startup, reducing operational expenses without sacrificing reliability is a win.
+
+Every peso we save on infrastructure is another peso we can invest in improving the platform itself.
+
+## Cloudflare Tunnel Continues to Do the Heavy Lifting
+
+One of the biggest reasons this setup works is **Cloudflare Tunnel**.
+
+There's no need to expose our home network directly to the internet or deal with complicated firewall rules and port forwarding.
+
+Traffic securely reaches the application through Cloudflare, which also gives us access to useful features like HTTPS, DDoS protection, caching, and traffic management.
+
+The infrastructure stays surprisingly clean without requiring enterprise-level networking knowledge.
+
+## Keeping Things Simple
+
+It's tempting to overengineer infrastructure early.
+
+Microservices.
+
+Multiple Kubernetes clusters.
+
+Load balancers.
+
+Auto scaling.
+
+Distributed caching.
+
+The list goes on.
+
+Those technologies absolutely have their place.
+
+But they also introduce complexity that needs to be maintained.
+
+Right now, our priority isn't proving how sophisticated our infrastructure is.
+
+It's building a better marketplace.
+
+A simple architecture that's easy to understand and maintain is often more valuable than a complex one that solves problems you don't actually have.
+
+## This Isn't the Final Architecture
+
+It's important to be clear about one thing.
+
+This isn't intended to be our forever solution.
+
+We're not claiming every production application should run from a local server.
+
+Infrastructure should match the stage of the product.
+
+Today, this setup makes sense because it keeps costs low while giving us excellent performance and complete control over the environment.
+
+Tomorrow may be different.
+
+## Scaling Won't Be Difficult
+
+One concern people usually have is scalability.
+
+"What happens when traffic grows?"
+
+That's actually one of the reasons we're comfortable with this setup.
+
+The application has been designed so that moving back to cloud infrastructure isn't a complete rebuild.
+
+When the time comes, migrating to a VPS or dedicated server will mostly involve infrastructure changes rather than application changes.
+
+We'll be able to introduce components like:
+
+- Nginx as a reverse proxy
+- Dedicated VPS instances
+- Separate database servers
+- Background worker nodes
+- Redis caching
+- Load balancing
+- Additional monitoring and observability
+
+Those upgrades become worthwhile when traffic and business growth justify the added complexity.
+
+Until then, we'd rather spend our engineering time building features people actually use.
+
+## Building for Today's Reality
+
+One lesson I've learned over the years is that developers often optimize for imaginary scale.
+
+We build systems capable of handling millions of requests before we've served our first hundred thousand.
+
+Meanwhile, the actual bottleneck isn't the infrastructure.
+
+It's getting people to use the product.
+
+Infrastructure should evolve alongside the business, not years ahead of it.
+
+## Sometimes the Best Solution Is the Practical One
+
+There's something refreshing about running production on infrastructure you completely understand.
+
+No hidden layers.
+
+No surprise invoices.
+
+No wondering where your resources are going.
+
+Just a server doing its job.
+
+Will this architecture last forever?
+
+Probably not.
+
+But it doesn't need to.
+
+---
+
+The goal isn't to build the most impressive infrastructure on day one. The goal is to build a product people love while making responsible engineering decisions along the way. When Ulisha Store reaches the point where this server starts struggling to keep up, that'll be a good problem to have, and we'll happily move to a larger VPS or dedicated infrastructure when the time comes.
+
+Until then, we're keeping things simple, fast, and surprisingly affordable.

@@ -1,8 +1,8 @@
 import certificates from "@/lib/certificates";
 import { Metadata } from "next";
-import SearchForm from "@/components/ui/SearchForm";
 import { getTranslations } from "next-intl/server";
 import { getAlternates } from "@/components/common/metadata/Alternatives";
+import CertificateCard from "./components/CertificateCard";
 
 export async function generateMetadata({
   params,
@@ -14,50 +14,50 @@ export async function generateMetadata({
   return {
     title: "Certificates - Melvin Jones Repol",
     description:
-    "A collection of certificates I have earned through various courses and programs, showcasing my commitment to continuous learning and professional development in software engineering and DevOps.",
+      "A collection of certificates I have earned through various courses and programs, showcasing my commitment to continuous learning and professional development in software engineering and DevOps.",
     keywords: [
-    "Certificates",
-    "Coursera",
-    "Google",
-    "IBM",
-    "Sololearn",
-    "Board Infinity",
-    "Software Engineering",
-    "DevOps",
-    "JavaScript",
-    "Node.js",
-    "Express.js",
-    "Laravel",
-    "PHP",
-  ],
+      "Certificates",
+      "Coursera",
+      "Google",
+      "IBM",
+      "Sololearn",
+      "Board Infinity",
+      "Software Engineering",
+      "DevOps",
+      "JavaScript",
+      "Node.js",
+      "Express.js",
+      "Laravel",
+      "PHP",
+    ],
     alternates: getAlternates("/certificates", locale),
     openGraph: {
-    title: "Certificates - Melvin Jones Repol",
-    description:
-      "A collection of certificates I have earned through various courses and programs, showcasing my commitment to continuous learning and professional development in software engineering and DevOps.",
-    url: "https://www.melvinjonesrepol.com/certificates",
-    siteName: "Melvin Jones Repol",
-    images: [
-      {
-        url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
-        width: 1200,
-        height: 630,
-        alt: "Certificates Cover",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
+      title: "Certificates - Melvin Jones Repol",
+      description:
+        "A collection of certificates I have earned through various courses and programs, showcasing my commitment to continuous learning and professional development in software engineering and DevOps.",
+      url: "https://www.melvinjonesrepol.com/certificates",
+      siteName: "Melvin Jones Repol",
+      images: [
+        {
+          url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+          width: 1200,
+          height: 630,
+          alt: "Certificates Cover",
+        },
+      ],
+      locale: "en_US",
+      type: "website",
+    },
     twitter: {
-    card: "summary_large_image",
-    title: "Certificates - Melvin Jones Repol",
-    description:
-      "A collection of certificates I have earned through various courses and programs, showcasing my commitment to continuous learning and professional development in software engineering and DevOps.",
-    images: [
-      "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
-    ],
-    creator: "@mrepol742",
-  },
+      card: "summary_large_image",
+      title: "Certificates - Melvin Jones Repol",
+      description:
+        "A collection of certificates I have earned through various courses and programs, showcasing my commitment to continuous learning and professional development in software engineering and DevOps.",
+      images: [
+        "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+      ],
+      creator: "@mrepol742",
+    },
   };
 }
 
@@ -112,7 +112,9 @@ export default async function CertificatesPage({
             </div>
             <div>
               <p className="text-4xl font-black">5+</p>
-              <p className="mt-1 text-sm text-zinc-400">{t("platforms_label")}</p>
+              <p className="mt-1 text-sm text-zinc-400">
+                {t("platforms_label")}
+              </p>
             </div>
             <div className="col-span-2 flex flex-wrap items-center gap-2">
               {["Coursera", "Google", "IBM", "Sololearn", "Board Infinity"].map(
@@ -130,58 +132,85 @@ export default async function CertificatesPage({
         </div>
       </section>
 
-      <section className="px-6 py-24 md:px-10">
-        <div className="mb-8 max-w-xl">
-          <SearchForm initialQuery={query} />
-        </div>
-
+      <section className="px-6 my-6 md:px-10">
         {filteredCertificates.length === 0 ? (
-          <div className="mt-8">
-            <h2>{t("no_results_found")}</h2>
+          <div className="py-20 text-center text-zinc-500">
+            <p className="text-lg font-medium">{t("no_results_found")}</p>
           </div>
         ) : (
-          <div className="relative mt-12">
-            <div className="absolute top-4 left-1 w-full h-0.5 bg-gray-800 hidden md:block" />
+          <div className="relative">
+            {/* Spine */}
+            <div className="absolute left-3 md:left-1/2 top-0 bottom-0 w-px bg-zinc-800 md:-translate-x-1/2" />
 
-            <div className="flex flex-col md:flex-row gap-8 md:gap-12 md:overflow-x-auto pb-8 snap-x scrollbar-hide">
-              {filteredCertificates.map((certificate, index) => (
-                <div
-                  key={index}
-                  className="relative md:w-96 flex-shrink-0 snap-start"
-                  data-aos="fade-up"
-                  data-aos-delay={(index % 10) * 150}
-                >
-                  <div className="mt-2 ms-1 hidden md:block absolute -top-1 left-0 w-6 h-6 rounded-full bg-[#7873f5] z-10 ring-2 ring-gray-800" />
-
-                  <div className="md:mt-10 border border-gray-800 md:border-none p-5 md:p-0 rounded-2xl md:rounded-none">
-                    <span className="text-xs font-mono mb-2 block opacity-70">
-                      {certificate.date}
-                    </span>
-                    <h3 className="text-xl font-bold">{certificate.title}</h3>
-                    <p className="text-sm leading-relaxed opacity-90">
-                      {certificate.description}
-                    </p>
-
-                    {certificate.link && (
-                      <div className="mt-5">
-                        <a
-                          href={certificate.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-xs font-medium transition-colors flex items-center gap-1 underline underline-offset-2 hover:opacity-80"
-                        >
-                          {t("view_certificate")}
-                        </a>
+            <div className="flex flex-col gap-10">
+              {filteredCertificates.map((certificate, index) => {
+                const isLeft = index % 2 === 0;
+                return (
+                  <div key={index}>
+                    {/* Desktop: two-column switch */}
+                    <div className="hidden md:flex items-start">
+                      {/* Left half */}
+                      <div className="w-1/2 flex justify-end pr-8">
+                        {isLeft && (
+                          <div className="relative w-full max-w-lg">
+                            <div className="absolute top-7 -right-8 w-8 h-px bg-zinc-700" />
+                            <CertificateCard
+                              certificate={certificate}
+                              viewLabel={t("view_certificate")}
+                            />
+                          </div>
+                        )}
                       </div>
-                    )}
+
+                      {/* Dot */}
+                      <div className="flex-shrink-0 z-10 mt-6 -mx-2">
+                        <div
+                          className={`w-4 h-4 rounded-full ring-4 ring-black ${
+                            certificate.featured
+                              ? "bg-orange-400"
+                              : "bg-zinc-600"
+                          }`}
+                        />
+                      </div>
+
+                      {/* Right half */}
+                      <div className="w-1/2 pl-8">
+                        {!isLeft && (
+                          <div className="relative w-full max-w-lg">
+                            <div className="absolute top-7 -left-8 w-8 h-px bg-zinc-700" />
+                            <CertificateCard
+                              certificate={certificate}
+                              viewLabel={t("view_certificate")}
+                            />
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Mobile: single column */}
+                    <div className="flex md:hidden items-start gap-5">
+                      <div className="flex-shrink-0 z-10 mt-7">
+                        <div
+                          className={`w-3 h-3 rounded-full ring-4 ring-black ${
+                            certificate.featured
+                              ? "bg-orange-400"
+                              : "bg-zinc-600"
+                          }`}
+                        />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <CertificateCard
+                          certificate={certificate}
+                          viewLabel={t("view_certificate")}
+                        />
+                      </div>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         )}
-
-        <span className="text-xs">{t("swipe_hint")}</span>
       </section>
     </main>
   );

@@ -1,8 +1,8 @@
 /* eslint-disable no-restricted-globals */
 
-const IMAGE_CACHE = "image-cache-v2.1";
-const FONT_CACHE = "font-cache-v2.1";
-const STATIC_CACHE = "static-cache-v2.1";
+const IMAGE_CACHE = "image-cache-v2.2";
+const FONT_CACHE = "font-cache-v2.2";
+const STATIC_CACHE = "static-cache-v2.2";
 
 const MAX_ENTRIES = 80;
 const NETWORK_TIMEOUT_MS = 2500;

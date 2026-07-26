@@ -1,5 +1,11 @@
 const WAKATIME_API_KEY = process.env.WAKATIME_API_KEY;
 
+export interface Agent {
+  name: string;
+  lines: number;
+  cost: number;
+}
+
 export interface Data {
   decimal: string;
   digital: string;
@@ -9,6 +15,13 @@ export interface Data {
   percent: number;
   text: string;
   total_seconds: number;
+  ai_additions: number;
+  ai_deletions: number;
+  human_additions: number;
+  human_deletions: number;
+  ai_input_tokens: number;
+  ai_output_tokens: number;
+  ai_agent_breakdown: Agent[];
 }
 
 export interface Stat {

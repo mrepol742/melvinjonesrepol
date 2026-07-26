@@ -1,6 +1,13 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+@theme {
+    --animate-stroke-grow: stroke-grow 0.6s cubic-bezier(0.22, 1, 0.36, 1)
+        forwards;
+    --animate-letter-in: letter-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    --animate-rise: rise 1.8s ease-out forwards;
+}
+
 :root {
     --background: #ffffff;
     --foreground: #171717;
@@ -8,7 +15,7 @@
     --color-foreground: var(--foreground);
     --tw-prose-body: #111827;
     --tw-prose-headings: #111827;
-    --tw-prose-links: #2563eb;
+    --tw-prose-links: #22c55e;
     --tw-prose-bold: #111827;
 }
 
@@ -17,7 +24,7 @@
     --foreground: #ededed;
     --tw-prose-body: #e5e7eb;
     --tw-prose-headings: #f9fafb;
-    --tw-prose-links: #60a5fa;
+    --tw-prose-links: #22c55e;
     --tw-prose-bold: #f9fafb;
 }
 
@@ -36,7 +43,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #e5e5e5;
+    background: #22c55e;
     border-radius: 999px;
 }
 
@@ -52,7 +59,7 @@
 /* Firefox */
 * {
     scrollbar-width: thin;
-    scrollbar-color: #7873f5 transparent;
+    scrollbar-color: #22c55e transparent;
 }
 
 html {
@@ -76,7 +83,6 @@ h4,
 h5,
 h6 {
     font-family: var(--font-heading);
-    letter-spacing: -0.05em;
 }
 
 .prose {
@@ -93,7 +99,6 @@ h6 {
 .prose h5,
 .prose h6 {
     font-family: var(--font-heading);
-    letter-spacing: -0.05em;
     color: var(--foreground);
 }
 
@@ -226,67 +231,6 @@ h6 {
     scrollbar-width: none;
 }
 
-/* door effect */
-.door-container {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    display: flex;
-    pointer-events: none;
-    perspective: 1200px;
-}
-
-/* Base door */
-.door {
-    position: relative;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(135deg, #1a1a1a, #000);
-    transition: transform 1s ease-in-out;
-    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.8);
-}
-
-/* Left & right */
-.door-left {
-    transform-origin: left;
-    border-right: 2px solid #111;
-}
-
-.door-right {
-    transform-origin: right;
-    border-left: 2px solid #111;
-}
-
-/* Open animation (3D swing) */
-.door-left.open {
-    transform: rotateY(-100deg);
-}
-
-.door-right.open {
-    transform: rotateY(100deg);
-}
-
-/* Knob */
-.door-knob {
-    position: absolute;
-    width: 14px;
-    height: 14px;
-    background: #7873f5;
-    border-radius: 50%;
-    top: 50%;
-    transform: translateY(-50%);
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
-}
-
-/* Knob positions */
-.left-knob {
-    right: 20px;
-}
-
-.right-knob {
-    left: 20px;
-}
-
 @layer utilities {
     @keyframes scroll-left {
         from {
@@ -360,4 +304,57 @@ h6 {
         :where([class~="not-prose"], [class~="not-prose"] *)
     ):after {
     content: "";
+}
+
+@keyframes stroke-grow {
+    to {
+        width: min(70vw, 520px);
+    }
+}
+@keyframes letter-in {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+@keyframes rise {
+    0% {
+        opacity: 0;
+        transform: translateY(0) scale(0.6);
+    }
+    15% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-70vh) scale(1);
+    }
+}
+
+/* the only things Tailwind can't express: rotateY swing state + per-letter delay */
+.door-left {
+    transform: rotateY(0deg);
+    transition: transform 1.4s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.door-right {
+    transform: rotateY(0deg);
+    transition: transform 1.4s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.door-open .door-left {
+    transform: rotateY(-115deg);
+}
+
+.door-open .door-right {
+    transform: rotateY(115deg);
+}
+
+.letter {
+    animation-delay: calc(0.5s + var(--i) * 0.045s);
+}
+
+.particle {
+    left: calc(50% + (var(--i) - 12) * 3vw);
+    animation-delay: calc(var(--i) * 0.04s);
 }

@@ -23,6 +23,7 @@ const defaultConsent: ConsentPreferences = {
 export default function CookieBanner() {
   const { updateConsent } = useConsent();
   const [open, setOpen] = useState(false);
+  const [visible, setVisible] = useState(false);
   const [showPreferences, setShowPreferences] = useState(false);
 
   const [preferences, setPreferences] =
@@ -30,15 +31,28 @@ export default function CookieBanner() {
 
   useEffect(() => {
     const consent = localStorage.getItem(STORAGE_KEY);
+    if (consent) return;
 
-    if (!consent) {
+    const show = () => {
       setOpen(true);
-    }
+      requestAnimationFrame(() =>
+        requestAnimationFrame(() => setVisible(true)),
+      );
+    };
+
+    const handleDoorDone = () => {
+      setTimeout(show, 600);
+    };
+    window.addEventListener("door:done", handleDoorDone);
+    return () => window.removeEventListener("door:done", handleDoorDone);
   }, []);
 
   const saveConsent = (consent: ConsentPreferences) => {
-    updateConsent(consent);
-    setOpen(false);
+    setVisible(false);
+    setTimeout(() => {
+      updateConsent(consent);
+      setOpen(false);
+    }, 400);
   };
 
   const acceptAll = () => {
@@ -62,7 +76,11 @@ export default function CookieBanner() {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-4 z-[9999] px-3 md:px-6">
+    <div
+      className={`fixed inset-x-0 bottom-4 z-[9999] px-3 md:px-6
+        transition-all duration-400 ease-out
+        ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+    >
       <div className="mx-auto max-w-4xl rounded-2xl border bg-gray-900 text-white p-4 md:p-5 shadow-xl">
         <h3 className="font-semibold">Cookie Preferences</h3>
 

@@ -303,7 +303,12 @@
     "last_incident": "آخر حادث",
     "duration_label": "المدة:",
     "duration_minutes": "دقيقة",
-    "reason_label": "السبب:"
+    "reason_label": "السبب:",
+    "title_line1": "النظام",
+    "title_line2": "الحالة",
+    "title_line3": "المراقبة.",
+    "current_status": "الحالة الحالية",
+    "loading": "جار التحميل..."
   },
   "legal": {
     "title_line1": "السياسات",

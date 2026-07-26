@@ -10,11 +10,12 @@ export async function generateMetadata({
   const { locale } = await params;
 
   return {
-    title: "Ulisha Store Laravel - Melvin Jones Repol",
+    title: "Ulisha Store AI Laravel - Melvin Jones Repol",
     description:
-      "A modern and efficient e-commerce solutions tailored for small to medium-sized businesses specifically built with Laravel, enabling seamless setup and cost effective web hosting.",
+      "A modern and efficient AI-powered e-commerce solutions tailored for small to medium-sized businesses specifically built with Laravel, enabling seamless setup and cost effective web hosting.",
     keywords: [
-      "Ulisha Store Laravel",
+      "AI-powered e-commerce",
+      "Ulisha Store AI Laravel",
       "Online Shopping",
       "E-commerce",
       "Shopping",
@@ -28,9 +29,9 @@ export async function generateMetadata({
     ],
     alternates: getAlternates("/ulisha-store-laravel", locale),
     openGraph: {
-      title: "Ulisha Store Laravel - Melvin Jones Repol",
+      title: "Ulisha Store AI Laravel - Melvin Jones Repol",
       description:
-        "A modern and efficient e-commerce solutions tailored for small to medium-sized businesses specifically built with Laravel, enabling seamless setup and cost effective web hosting.",
+        "A modern and efficient AI-powered e-commerce solutions tailored for small to medium-sized businesses specifically built with Laravel, enabling seamless setup and cost effective web hosting.",
       url: "https://www.melvinjonesrepol.com/ulisha-store-laravel",
       siteName: "Melvin Jones Repol",
       images: [
@@ -46,9 +47,9 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: "Ulisha Store Laravel - Melvin Jones Repol",
+      title: "Ulisha Store AI Laravel - Melvin Jones Repol",
       description:
-        "A modern and efficient e-commerce solutions tailored for small to medium-sized businesses specifically built with Laravel, enabling seamless setup and cost effective web hosting.",
+        "A modern and efficient AI-powered e-commerce solutions tailored for small to medium-sized businesses specifically built with Laravel, enabling seamless setup and cost effective web hosting.",
       images: [
         "https://www.melvinjonesrepol.com/images/ulisha-store-laravel.png",
       ],
@@ -65,6 +66,10 @@ const Images = [
 ];
 
 const features = [
+  {
+    title: "AI-Powered Platform",
+    description: "Equip your store with an AI-powered platform that learns from your customers and provides personalized product recommendations, tools, and analytics."
+  },
   {
     title: "Product Management",
     description:
@@ -166,11 +171,11 @@ export default function UlishaStore() {
 
       <Project
         project={{
-          title: "Ulisha Store Laravel",
+          title: "Ulisha Store AI Laravel",
           description:
             "A modern and efficient e-commerce solutions tailored for small to medium-sized businesses specifically built with Laravel, enabling seamless setup and cost effective web hosting.",
           description_long:
-            "Ulisha Store Laravel is a modern and efficient e-commerce solution tailored for small to medium-sized businesses. Built with Laravel, it offers a seamless setup process and cost-effective web hosting options. The platform provides essential features such as product management, shopping cart functionality, user accounts, and an intuitive admin dashboard. With a focus on performance and user experience, Ulisha Store Laravel is the ideal choice for startups looking to establish a strong online presence without the hassle of complex configurations.",
+            "Ulisha Store AI Laravel is a modern and efficient e-commerce solution tailored for small to medium-sized businesses. Built with Laravel, it offers a seamless setup process and cost-effective web hosting options. The platform provides essential features such as product management, shopping cart functionality, user accounts, and an intuitive admin dashboard. With a focus on performance and user experience, Ulisha Store AI Laravel is the ideal choice for startups looking to establish a strong online presence without the hassle of complex configurations.",
           is_open_source: false,
           is_freeware: false,
           license: "Polyform Noncommercial License 1.0.0",

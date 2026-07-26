@@ -303,7 +303,12 @@
     "last_incident": "अंतिम घटना",
     "duration_label": "अवधि:",
     "duration_minutes": "मिनट",
-    "reason_label": "कारण:"
+    "reason_label": "कारण:",
+    "title_line1": "सिस्टम",
+    "title_line2": "स्थिति",
+    "title_line3": "मॉनिटर।",
+    "current_status": "वर्तमान स्थिति",
+    "loading": "लोड हो रहा है..."
   },
   "legal": {
     "title_line1": "नीतियाँ",

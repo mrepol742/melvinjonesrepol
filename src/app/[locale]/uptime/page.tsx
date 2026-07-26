@@ -2,6 +2,20 @@ import { Metadata } from "next";
 import SystemStatus from "./components/SystemStatus";
 import { getAlternates } from "@/components/common/metadata/Alternatives";
 
+export const revalidate = 60;
+
+const API_URL = "https://stats.uptimerobot.com/api/getMonitorList/IZwUI4mLcR";
+
+async function getMonitors() {
+  try {
+    const res = await fetch(API_URL, { next: { revalidate: 60 } });
+    const json = await res.json();
+    return json.data ?? [];
+  } catch {
+    return [];
+  }
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -50,6 +64,7 @@ export async function generateMetadata({
   };
 }
 
-export default function Uptime() {
-  return <SystemStatus />;
+export default async function Uptime() {
+  const initialMonitors = await getMonitors();
+  return <SystemStatus initialMonitors={initialMonitors} />;
 }

@@ -91,7 +91,7 @@ export default async function Gaming({
   });
 
   const filteredGames: GameType[] = steamActivities.filter((game) =>
-    game.name.toLowerCase().includes(query),
+    game.name.toLowerCase().includes(query.toLowerCase()),
   );
 
   return (
