@@ -36,6 +36,11 @@ export default async function proxy(request: NextRequest) {
 
   const { pathname } = request.nextUrl;
 
+  // Health check - skip locale middleware
+  if (pathname === "/up") {
+    return NextResponse.next();
+  }
+
   // Redirect /{non-en-locale}/blog/... → /blog/... before next-intl can loop it back.
   const blogLocale = nonEnLocales.find((l) =>
     pathname.startsWith(`/${l}/blog`),
