@@ -18,12 +18,17 @@ export default function CertificateCard({
       }`}
     >
       <div className="relative p-8 md:p-10">
-        <div className="flex items-center justify-between gap-3 mb-4">
-          <span className="inline-flex rounded-full border border-zinc-700 px-2.5 py-1 text-xs text-zinc-400">
-            {certificate.description}
+        <div className="mb-4 flex flex-wrap gap-3">
+          <span className="text-nowrap rounded-full border border-zinc-400 px-3 py-1 text-xs text-zinc-400">
+            {certificate.instructor}
           </span>
+
+          <span className="text-nowrap rounded-full border border-zinc-400 px-3 py-1 text-xs text-zinc-400">
+            {certificate.date}
+          </span>
+
           {certificate.featured && (
-            <span className="text-xs text-orange-400 font-medium">
+            <span className="rounded-full border border-orange-400 px-3 py-1 text-xs text-orange-400">
               Featured
             </span>
           )}
@@ -34,7 +39,7 @@ export default function CertificateCard({
         </h3>
 
         <p className="text-xs font-mono text-zinc-500 mb-4">
-          {certificate.date}
+          {certificate.description}
         </p>
 
         {certificate.link && (

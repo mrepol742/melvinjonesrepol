@@ -25,6 +25,7 @@ export default function CertificateSection() {
               <Link href={certificate.link || "#"}>
                 <div className="p-6 border border-zinc-800 rounded-2xl shadow-sm max-w-sm mx-auto transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-[0.98]">
                   <h2 className="font-bold">{certificate.title}</h2>
+                  <p className="mb-2 text-sm">{certificate.instructor}</p>
 
                   <p className="mb-4 line-clamp-3">{certificate.description}</p>
 

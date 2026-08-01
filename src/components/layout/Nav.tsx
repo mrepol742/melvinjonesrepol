@@ -4,10 +4,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faAward,
   faBars,
   faBlog,
   faBriefcase,
-  faCertificate,
   faEnvelope,
   faFileContract,
   faFolder,
@@ -61,7 +61,7 @@ export default function Nav() {
       key: "certificates",
       label: t("nav_certificates"),
       href: "/certificates",
-      icon: faCertificate,
+      icon: faAward,
     },
     {
       key: "work-experience",
