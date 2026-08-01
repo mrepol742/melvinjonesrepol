@@ -1,3 +1,4 @@
+import Card from "@/components/ui/Card";
 import YoutubeVideo from "@/components/ui/YoutubeVideo";
 import { fetchYoutubeLatestVideos } from "@/lib/youtube/latest-videos";
 import { getTranslations } from "next-intl/server";
@@ -32,7 +33,7 @@ export default async function Youtube() {
               key={index}
               className="group snap-start flex-shrink-0 w-80 md:w-96 flex"
             >
-              <div className="p-6 border border-zinc-800 rounded-2xl shadow-sm max-w-sm mx-auto transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-[0.98]">
+              <Card>
                 <div className="mb-4 relative rounded-2xl overflow-hidden">
                   <YoutubeVideo
                     videoId={videoId}
@@ -40,15 +41,12 @@ export default async function Youtube() {
                   />
                 </div>
 
-                <h2 className="text-3xl font-bold text-gray-400">
-                  {String(index + 1).padStart(2, "0")}
-                </h2>
                 <h3 className="font-bold">{video.snippet?.title}</h3>
 
-                <p className="mb-4 line-clamp-3">
+                <p className="mb-4 line-clamp-3 text-zinc-400">
                   {video.snippet?.description}
                 </p>
-              </div>
+              </Card>
             </article>
           );
         })}

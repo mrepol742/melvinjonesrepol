@@ -1,3 +1,4 @@
+import Card from "@/components/ui/Card";
 import { getRecentPosts } from "@/lib/posts";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,54 +17,49 @@ export default function BlogSection({ locale = "en" }: { locale?: string }) {
     >
       {getRecentPosts(10, locale).map((post: any, index: number) => {
         return (
-          <article
+          <Link
             key={index}
-            className="group snap-start flex-shrink-0 w-80 md:w-96 flex"
+            href={
+              locale === "en"
+                ? `/blog/${post.slug}`
+                : `/${locale}/blog/${post.slug}`
+            }
           >
-            <Link
-              href={
-                locale === "en"
-                  ? `/blog/${post.slug}`
-                  : `/${locale}/blog/${post.slug}`
-              }
+            <Card
+              index={index}
+              className="group snap-start flex-shrink-0 w-80 md:w-96 flex"
             >
-              <div className="p-6 border border-zinc-800 rounded-2xl shadow-sm max-w-sm mx-auto transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-[0.98]">
-                <span className="text-3xl font-bold text-gray-400">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-
-                <p className="mt-2 text-xl font-bold">{post.title}</p>
-                <p className="mb-4 line-clamp-3" title={post.excerpt}>
-                  {post.excerpt}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {post.topics.map((topic: string, index: number) => (
-                    <span
-                      key={index}
-                      className="px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-sm bg-gray-500/20"
-                    >
-                      {topic}
-                    </span>
-                  ))}
-                </div>
-
-                <p className="text-sm text-gray-500 mb-4">{post.date}</p>
-
-                <div className="flex justify-end items-center gap-4">
-                  <button
-                    title="Read more"
-                    className="inline-flex items-center text-white bg-purple-500 hover:bg-purple-600 font-medium text-sm px-4 py-2 rounded-lg transition-all"
+              <p className="mb-2 text-xl font-bold line-clamp-2">
+                {post.title}
+              </p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {post.topics.map((topic: string, index: number) => (
+                  <span
+                    key={index}
+                    className="rounded-full border border-zinc-400 px-3 py-1 text-xs text-zinc-400"
                   >
-                    <FontAwesomeIcon
-                      icon={faArrowRight}
-                      className="transition-transform group-hover:translate-x-1"
-                    />
-                  </button>
-                </div>
+                    {topic}
+                  </span>
+                ))}
               </div>
-            </Link>
-          </article>
+
+              <p className="mb-4 line-clamp-4" title={post.excerpt}>
+                {post.excerpt}
+              </p>
+
+              <div className="flex justify-end items-center gap-4">
+                <button
+                  title="Read more"
+                  className="inline-flex items-center text-white bg-purple-500 hover:bg-purple-600 font-medium text-sm px-4 py-2 rounded-lg transition-all"
+                >
+                  <FontAwesomeIcon
+                    icon={faArrowRight}
+                    className="transition-transform group-hover:translate-x-1"
+                  />
+                </button>
+              </div>
+            </Card>
+          </Link>
         );
       })}
     </div>

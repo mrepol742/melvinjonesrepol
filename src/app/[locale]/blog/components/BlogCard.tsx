@@ -1,3 +1,4 @@
+import Card from "@/components/ui/Card";
 import { BlogPost } from "@/lib/posts";
 import Link from "next/link";
 
@@ -9,19 +10,8 @@ export default function BlogCard({
   index: number;
 }) {
   return (
-    <Link
-      href={`/blog/${post.slug}`}
-      className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-2xl transition-all duration-300 hover:border-white/20 hover:bg-white/[0.05] hover:shadow-[0_30px_80px_rgba(0,0,0,0.35)]"
-    >
-      {/* Gradient Overlay */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/[0.05] via-transparent to-transparent opacity-70" />
-
-      {/* Large Number */}
-      <div className="absolute right-8 top-6 text-7xl font-black text-white/[0.03] transition-opacity duration-300 group-hover:text-white/[0.05]">
-        {String(index + 1).padStart(2, "0")}
-      </div>
-
-      <div className="relative p-8 md:p-10">
+    <Link href={`/blog/${post.slug}`}>
+      <Card className="group" index={index}>
         <div className="flex items-center justify-between gap-3 mb-3">
           <span className="inline-flex capitalize rounded-full border border-zinc-800 px-2.5 py-1 text-xs">
             {post.topics?.[0] ?? "general"}
@@ -43,7 +33,7 @@ export default function BlogCard({
             →
           </span>
         </div>
-      </div>
+      </Card>
     </Link>
   );
 }

@@ -1,3 +1,4 @@
+import Card from "@/components/ui/Card";
 import { getTranslations } from "next-intl/server";
 
 // I ain’t Socrates, but who am I to say that this isn’t a philosophy?
@@ -17,27 +18,20 @@ export default async function EngineeringPhilosophySection() {
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
         {PhilosophySection.map((item, index) => (
-          <article
+          <Card
             key={index}
+            subtitle={item.sub}
             data-aos="fade-up"
             data-aos-delay={100 * (index + 1)}
           >
-            <div className="group border border-zinc-800 rounded-2xl px-6 py-5 md:px-7 md:py-6">
-              <div className="mb-4">
-                <span className="text-xs uppercase tracking-wider text-gray-400">
-                  {item.sub}
-                </span>
-              </div>
+            <h3 className="text-xl md:text-2xl font-semibold mb-3">
+              {item.title}
+            </h3>
 
-              <h3 className="text-xl md:text-2xl font-semibold mb-3">
-                {item.title}
-              </h3>
+            <p className="leading-relaxed mb-4">{item.description}</p>
 
-              <p className="leading-relaxed mb-4">{item.description}</p>
-
-              <p className="text-sm border-t pt-3">{item.takeaway}</p>
-            </div>
-          </article>
+            <p className="text-sm border-t pt-3">{item.takeaway}</p>
+          </Card>
         ))}
       </div>
 

@@ -1,3 +1,4 @@
+import Card from "@/components/ui/Card";
 import { fetchSteamLibrary, GameType } from "@/lib/steam/library";
 import { getTimeAgo, toHours } from "@/utils/date";
 import { getTranslations } from "next-intl/server";
@@ -137,31 +138,29 @@ export default async function Steam() {
         >
           {mostPlayedFavoriteGames.map((game: GameType, index) => (
             <Link href={`/gaming?q=${game.name}`} key={index}>
-              <article className="group snap-start flex-shrink-0 w-80 md:w-96">
-                <div className="p-6 border border-zinc-800 rounded-2xl shadow-sm max-w-sm mx-auto transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-[0.98]">
-                  <div className="relative w-full h-48 rounded-2xl overflow-hidden mb-4">
-                    <Image
-                      src={game.cover_url}
-                      alt={game.name}
-                      fill
-                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-3xl font-bold text-gray-400">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <span className="text-xl font-bold">{game.name}</span>
-                  </div>
-
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-sm bg-gray-500/20">
-                      {toHours(game.playtime_forever)} {t("total_hours_label")}
-                    </span>
-                  </div>
+              <Card className="group snap-start flex-shrink-0 w-80 md:w-96">
+                <div className="relative w-full h-48 rounded-2xl overflow-hidden mb-4">
+                  <Image
+                    src={game.cover_url}
+                    alt={game.name}
+                    fill
+                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
-              </article>
+
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-3xl font-bold text-gray-400">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className="text-xl font-bold">{game.name}</span>
+                </div>
+
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-sm bg-gray-500/20">
+                    {toHours(game.playtime_forever)} {t("total_hours_label")}
+                  </span>
+                </div>
+              </Card>
             </Link>
           ))}
         </div>
