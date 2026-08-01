@@ -1,4 +1,5 @@
 import Card from "@/components/ui/Card";
+import Slider from "@/components/ui/Slider";
 import certificates from "@/lib/certificates";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,15 +8,7 @@ import Link from "next/link";
 export default function CertificateSection() {
   return (
     <>
-      <div
-        className="overflow-x-auto scroll-smooth snap-x snap-mandatory flex items-stretch gap-6 py-6 scrollbar-hide"
-        style={{
-          WebkitMaskImage:
-            "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
-          WebkitMaskRepeat: "no-repeat",
-          WebkitMaskSize: "100% 100%",
-        }}
-      >
+      <Slider>
         {certificates
           .filter((certificate) => certificate.featured)
           .map((certificate, idx) => (
@@ -45,7 +38,7 @@ export default function CertificateSection() {
               </Card>
             </Link>
           ))}
-      </div>
+      </Slider>
     </>
   );
 }

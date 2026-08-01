@@ -1,4 +1,5 @@
 import Card from "@/components/ui/Card";
+import Slider from "@/components/ui/Slider";
 import { fetchSteamLibrary, GameType } from "@/lib/steam/library";
 import { getTimeAgo, toHours } from "@/utils/date";
 import { getTranslations } from "next-intl/server";
@@ -127,15 +128,7 @@ export default async function Steam() {
           </p>
         </div>
 
-        <div
-          className="overflow-x-auto scroll-smooth snap-x snap-mandatory flex gap-6 py-6 scrollbar-hide"
-          style={{
-            WebkitMaskImage:
-              "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
-            WebkitMaskRepeat: "no-repeat",
-            WebkitMaskSize: "100% 100%",
-          }}
-        >
+        <Slider>
           {mostPlayedFavoriteGames.map((game: GameType, index) => (
             <Link href={`/gaming?q=${game.name}`} key={index}>
               <Card className="group snap-start flex-shrink-0 w-80 md:w-96">
@@ -163,7 +156,7 @@ export default async function Steam() {
               </Card>
             </Link>
           ))}
-        </div>
+        </Slider>
 
         <span className="text-xs">{t("swipe_hint")}</span>
       </div>

@@ -9,6 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import Card from "@/components/ui/Card";
+import Slider from "@/components/ui/Slider";
 
 export default function ProjectCarousel() {
   const tc = useTranslations("projects_content");
@@ -20,15 +21,7 @@ export default function ProjectCarousel() {
 
   return (
     <>
-      <div
-        className="overflow-x-auto scroll-smooth snap-x snap-mandatory flex items-stretch gap-6 py-6 scrollbar-hide"
-        style={{
-          WebkitMaskImage:
-            "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
-          WebkitMaskRepeat: "no-repeat",
-          WebkitMaskSize: "100% 100%",
-        }}
-      >
+      <Slider>
         {projects
           .filter((project) => project.type === "client" || project.featured)
           .map((project, idx) => {
@@ -115,7 +108,7 @@ export default function ProjectCarousel() {
               </Card>
             );
           })}
-      </div>
+      </Slider>
     </>
   );
 }

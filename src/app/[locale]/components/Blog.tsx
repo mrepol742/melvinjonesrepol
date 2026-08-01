@@ -1,4 +1,5 @@
 import Card from "@/components/ui/Card";
+import Slider from "@/components/ui/Slider";
 import { getRecentPosts } from "@/lib/posts";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,15 +7,7 @@ import Link from "next/link";
 
 export default function BlogSection({ locale = "en" }: { locale?: string }) {
   return (
-    <div
-      className="overflow-x-auto scroll-smooth snap-x snap-mandatory flex items-stretch gap-6 py-6 scrollbar-hide"
-      style={{
-        WebkitMaskImage:
-          "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
-        WebkitMaskRepeat: "no-repeat",
-        WebkitMaskSize: "100% 100%",
-      }}
-    >
+    <Slider>
       {getRecentPosts(10, locale).map((post: any, index: number) => {
         return (
           <Link
@@ -62,6 +55,6 @@ export default function BlogSection({ locale = "en" }: { locale?: string }) {
           </Link>
         );
       })}
-    </div>
+    </Slider>
   );
 }
