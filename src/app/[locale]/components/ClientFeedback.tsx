@@ -1,3 +1,4 @@
+import Card from "@/components/ui/Card";
 import { getTranslations } from "next-intl/server";
 
 type Outcome = {
@@ -27,7 +28,7 @@ export default async function ClientFeedback() {
     <section className="w-full">
       <div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-6">
         <aside className="lg:col-span-4">
-          <div className="rounded-2xl border border-zinc-800 p-5 sticky top-24">
+          <Card subtitle={t("section_label")}>
             <p className="text-xs uppercase tracking-wider mb-3">
               {t("section_label")}
             </p>
@@ -39,7 +40,7 @@ export default async function ClientFeedback() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Card>
         </aside>
 
         <div className="lg:col-span-8">
@@ -53,13 +54,13 @@ export default async function ClientFeedback() {
               >
                 <span className="absolute -left-[30px] top-2 h-3 w-3 rounded-full bg-zinc-800" />
 
-                <div className="rounded-2xl border border-zinc-800 p-5 md:p-6">
+                <Card>
                   <div className="block md:flex items-center justify-between gap-4 mb-3">
                     <h3 className="text-base md:text-lg font-semibold leading-snug">
                       {item.title}
                     </h3>
                     {item.metric && (
-                      <span className="text-xs rounded-full border border-zinc-800 px-2 py-0.5 text-nowrap">
+                      <span className="rounded-full border border-zinc-400 px-3 py-1 text-xs text-zinc-400">
                         {item.metric}
                       </span>
                     )}
@@ -67,25 +68,25 @@ export default async function ClientFeedback() {
 
                   <div className="grid gap-3 text-sm md:text-[15px] leading-relaxed">
                     <p>
-                      <span className="text-xs uppercase tracking-wide block mb-1">
+                      <span className="text-xs uppercase tracking-wide block mb-1 text-zinc-400">
                         {t("situation_label")}
                       </span>
                       {item.situation}
                     </p>
                     <p>
-                      <span className="text-xs uppercase tracking-wide block mb-1">
+                      <span className="text-xs uppercase tracking-wide block mb-1 text-zinc-400">
                         {t("action_label")}
                       </span>
                       {item.action}
                     </p>
                     <p>
-                      <span className="text-xs uppercase tracking-wide block mb-1">
+                      <span className="text-xs uppercase tracking-wide block mb-1 text-zinc-400">
                         {t("result_label")}
                       </span>
                       {item.result}
                     </p>
                   </div>
-                </div>
+                </Card>
               </li>
             ))}
           </ol>

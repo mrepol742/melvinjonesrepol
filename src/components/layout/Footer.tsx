@@ -133,7 +133,7 @@ export default function Footer({
 
   return (
     <footer
-      className="bg-gray-900 text-gray-200 py-10 border-t border-gray-800 m-2 md:m-5 xl:m-8 rounded-xl"
+      className="bg-gray-900 text-gray-200 py-10 border-t border-gray-800 rounded-xl"
       data-aos="fade-up"
     >
       <nav aria-label="Footer Navigation" className="container mx-auto px-4">

@@ -9,13 +9,13 @@
 }
 
 :root {
-    --background: #ffffff;
+    --background: #e5e7eb;
     --foreground: #171717;
     --color-background: var(--background);
     --color-foreground: var(--foreground);
     --tw-prose-body: #111827;
     --tw-prose-headings: #111827;
-    --tw-prose-links: #22c55e;
+    --tw-prose-links: #22c55e; 
     --tw-prose-bold: #111827;
 }
 

@@ -24,6 +24,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import "devicon/devicon.min.css";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
+import Card from "@/components/ui/Card";
 
 export const revalidate = 10800;
 
@@ -468,6 +469,15 @@ export default async function Home({
                     >
                       {t("community_title")}
                     </h2>
+                    <Link
+                      href="https://www.hallofcodes.org"
+                      data-aos="fade-up"
+                      data-aos-delay="300"
+                      className="text-zinc-400"
+                      target="_blank"
+                    >
+                      www.hallofcodes.org
+                    </Link>
 
                     <p className="mt-4 max-w-xl" data-aos="fade-up">
                       {t("community_description_1")}
@@ -476,62 +486,35 @@ export default async function Home({
                     <p className="mt-4 max-w-xl" data-aos="fade-up">
                       {t("community_description_2")}
                     </p>
-
-                    <div className="mt-6 flex flex-wrap gap-2 md:gap-3">
-                      <Link
-                        href="https://www.hallofcodes.org"
-                        data-aos="fade-up"
-                        data-aos-delay="300"
-                      >
-                        <Button
-                          icon={faCodeSolid}
-                          className="border border-zinc-800"
-                        >
-                          {t("community_cta_join")}
-                        </Button>
-                      </Link>
-                      <Link
-                        href="https://github.com/hallofcodes"
-                        data-aos="fade-up"
-                        data-aos-delay="300"
-                      >
-                        <Button
-                          icon={faGithub}
-                          className="border border-zinc-800"
-                        >
-                          {t("community_cta_github")}
-                        </Button>
-                      </Link>
-                    </div>
                   </div>
 
                   {/* Right stacked cards */}
                   <div className="relative">
                     <div className="space-y-3">
-                      <div className="rounded-xl border border-zinc-800 px-4 py-3">
+                      <Card index={0}>
                         <div className="text-lg font-semibold">
                           {t("community_card1_title")}
                         </div>
                         <div className="text-xs uppercase tracking-wider text-zinc-400">
                           {t("community_card1_desc")}
                         </div>
-                      </div>
-                      <div className="rounded-xl border border-zinc-800 px-4 py-3">
+                      </Card>
+                      <Card index={1}>
                         <div className="text-lg font-semibold">
                           {t("community_card2_title")}
                         </div>
                         <div className="text-xs uppercase tracking-wider text-zinc-400">
                           {t("community_card2_desc")}
                         </div>
-                      </div>
-                      <div className="rounded-xl border border-zinc-800 px-4 py-3">
+                      </Card>
+                      <Card index={2}>
                         <div className="text-lg font-semibold">
                           {t("community_card3_title")}
                         </div>
                         <div className="text-xs uppercase tracking-wider text-zinc-400">
                           {t("community_card3_desc")}
                         </div>
-                      </div>
+                      </Card>
                     </div>
                   </div>
                 </div>
@@ -540,10 +523,10 @@ export default async function Home({
 
             <div className="relative py-14 md:py-28 overflow-hidden">
               <div className="mx-auto max-w-6xl px-4 md:px-6">
-                <div className="rounded-3xl border border-zinc-800 overflow-hidden">
+                <Card>
                   <div className="grid lg:grid-cols-2">
                     {/* Product Side */}
-                    <div className="p-8 md:p-12">
+                    <div>
                       <div className="inline-flex items-center gap-2 rounded-full border border-zinc-800 px-3 py-1 text-xs font-semibold uppercase">
                         <span className="h-2 w-2 rounded-full bg-green-500" />
                         {t("webvium_badge")}
@@ -552,56 +535,53 @@ export default async function Home({
                       <h2 className="mt-5 text-4xl font-bold">
                         {t("webvium_title")}
                       </h2>
+                      <Link
+                        href="https://webvium.melvinjonesrepol.com"
+                        data-aos="fade-up"
+                        data-aos-delay="300"
+                        className="text-zinc-400"
+                        target="_blank"
+                      >
+                        webvium.melvinjonesrepol.com
+                      </Link>
 
                       <p className="mt-4">{t("webvium_description")}</p>
-
-                      <div className="mt-8 flex flex-wrap gap-3">
-                        <Link href="https://webvium.melvinjonesrepol.com">
-                          <Button>{t("webvium_cta_explore")}</Button>
-                        </Link>
-
-                        <Link href="https://github.com/webvium">
-                          <Button className="border border-zinc-800">
-                            {t("webvium_cta_github")}
-                          </Button>
-                        </Link>
-                      </div>
                     </div>
 
                     {/* Stats Side */}
-                    <div className="border-t lg:border-t-0 lg:border-l border-zinc-800 p-8 md:p-12">
+                    <div className="p-8 md:p-12">
                       <div className="grid sm:grid-cols-2 gap-4">
-                        <div className="rounded-xl border border-zinc-800 p-5">
+                        <Card subtitle="15+">
                           <div className="text-3xl font-bold">15+</div>
                           <div className="text-sm text-zinc-400">
                             {t("webvium_stat_repositories")}
                           </div>
-                        </div>
+                        </Card>
 
-                        <div className="rounded-xl border border-zinc-800 p-5">
+                        <Card subtitle="6+">
                           <div className="text-3xl font-bold">6+</div>
                           <div className="text-sm text-zinc-400">
                             {t("webvium_stat_browser_tools")}
                           </div>
-                        </div>
+                        </Card>
 
-                        <div className="rounded-xl border border-zinc-800 p-5">
+                        <Card subtitle="2018">
                           <div className="text-3xl font-bold">2018</div>
                           <div className="text-sm text-zinc-400">
                             {t("webvium_stat_started")}
                           </div>
-                        </div>
+                        </Card>
 
-                        <div className="rounded-xl border border-zinc-800 p-5">
+                        <Card subtitle="375KB">
                           <div className="text-3xl font-bold">375KB</div>
                           <div className="text-sm text-zinc-400">
                             {t("webvium_stat_lightest")}
                           </div>
-                        </div>
+                        </Card>
                       </div>
                     </div>
                   </div>
-                </div>
+                </Card>
               </div>
             </div>
 

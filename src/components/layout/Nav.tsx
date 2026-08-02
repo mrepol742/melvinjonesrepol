@@ -4,10 +4,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faAward,
   faBars,
   faBlog,
   faBriefcase,
-  faCertificate,
   faEnvelope,
   faFileContract,
   faFolder,
@@ -61,7 +61,7 @@ export default function Nav() {
       key: "certificates",
       label: t("nav_certificates"),
       href: "/certificates",
-      icon: faCertificate,
+      icon: faAward,
     },
     {
       key: "work-experience",
@@ -176,7 +176,7 @@ export default function Nav() {
   return (
     <>
       <nav
-        className={`rounded md:rounded-full fixed z-50 mt-5 top-0 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white p-3 shadow-lg hover:shadow-xl transition-all duration-300 ${
+        className={`rounded-full fixed z-50 mt-5 top-0 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white p-3 shadow-lg hover:shadow-xl transition-all duration-300 ${
           show ? "translate-y-0" : "-translate-y-full"
         }`}
         aria-label="Main Navigation"
