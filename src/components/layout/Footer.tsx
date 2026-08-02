@@ -40,6 +40,9 @@ export default function Footer({
 
   const navLinks = [
     { href: "/", label: t("footer_home") },
+    { href: "/about", label: t("footer_about") },
+    { href: "/case-studies", label: t("footer_case_studies") },
+    { href: "/now", label: t("footer_now") },
     { href: "/projects", label: t("footer_projects") },
     { href: "/blog", label: t("footer_blog") },
     { href: "/gaming", label: t("footer_gaming") },

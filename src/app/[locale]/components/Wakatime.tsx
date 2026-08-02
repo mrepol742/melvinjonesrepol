@@ -78,7 +78,9 @@ export default async function Wakatime() {
         </Card>
 
         <Card>
-          <p className="text-xs uppercase tracking-wide">Top Agent</p>
+          <p className="text-xs uppercase tracking-wide">
+            {t("top_agent_label")}
+          </p>
           <p className="mt-2 text-xl font-semibold">
             {aiModelBreakdown[0]?.name || "—"}
           </p>
@@ -117,9 +119,11 @@ export default async function Wakatime() {
 
       <div className="mb-4 flex items-center justify-between">
         <p className="text-sm font-semibold uppercase tracking-wide">
-          Top Agents Breakdown
+          {t("agents_breakdown_title")}
         </p>
-        <p className="text-xs">${aiAgentTotalCost.toFixed(2)} total cost</p>
+        <p className="text-xs">
+          ${aiAgentTotalCost.toFixed(2)} {t("total_cost_label")}
+        </p>
       </div>
 
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
@@ -142,7 +146,7 @@ export default async function Wakatime() {
 
               <div className="mt-3">
                 <div className="mb-1 flex items-center justify-between text-xs">
-                  <span>Lines</span>
+                  <span>{t("lines_label")}</span>
                   <span>{agent.lines.toLocaleString()}</span>
                 </div>
                 <div className="h-1.5 w-full overflow-hidden rounded-full border border-zinc-800">

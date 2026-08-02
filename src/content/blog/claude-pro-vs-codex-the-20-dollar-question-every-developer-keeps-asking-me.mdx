@@ -1,0 +1,36 @@
+---
+title: "Claude Pro vs Codex: The $20 Question Every Developer Keeps Asking Me"
+date: "2026-08-02"
+excerpt: "Both start at twenty bucks. Both write real code. Here's what actually separates Claude Pro and OpenAI's Codex once you look past the marketing pages."
+topics: ["claude", "openai-codex", "ai-coding-tools", "developer-tools"]
+---
+
+Somebody asked me last week which one to pick, Claude or Codex, and I gave the answer I always give, which is "depends what you're optimizing for," and got the look you give someone dodging the question. So let's actually break it down, because the two ladders line up close enough in price that the real decision happens somewhere else entirely.
+
+## Subscriptions
+
+The pricing tiers are basically mirror images of each other. Both consumer ladders run $0, $20, $100, $200, and the entry points, Claude Pro and ChatGPT Plus, cost the same twenty bucks. Where they diverge is the edges. ChatGPT has an $8 Go tier with ads, and Claude Pro drops to $17 a month if you pay annually. OpenAI also stacks in more granularity above Plus, with a $100 tier offering 5x usage and a $200 tier at 20x, while Anthropic keeps it to Pro, Max 5x, and Max 20x at roughly the same price points.
+
+The bigger shift is that neither company gates its coding agent behind a special plan anymore. Claude Pro includes Claude Code at every paid tier now, and Codex ships on every ChatGPT tier including Free. A year ago you'd have needed a separate coding-specific subscription. Now it's just bundled in, which quietly changes the calculus, because you're no longer paying extra to get an agent in your terminal.
+
+## Tokens and Limits
+
+This is where people actually get burned, and it's not about the sticker price. At the $20 tier, ChatGPT Plus consistently gives you more sessions per dollar, and Claude tends to hit its usage caps sooner. Anecdotally, developers report Claude Pro's 5-hour window feeling tight, sometimes as low as a few dozen prompts before you're waiting out the clock, while ChatGPT Pro at $200 removes rate limits almost entirely, letting you run hours of continuous work with parallel background agents.
+
+Context window is a different story. Claude reads up to a 1 million token context against Codex's 200K, which matters a lot if you're working across a genuinely large codebase and don't want to keep re-explaining what's in the files Claude already saw ten messages ago. So the trade-off in plain terms: Codex gives you more room to run before hitting a wall, Claude gives you more room to reason about a big project in one go.
+
+## Logic and Code Quality
+
+Raw benchmark numbers are close enough to call it a wash. GPT-5.5 edges ahead on Terminal-Bench 2.0 and SWE-bench Verified, while Claude's Opus model leads on SWE-bench Pro, a benchmark built around harder, more real-world engineering tasks. Numbers aside, the qualitative reputation has been consistent for a while: in a survey of over 500 developers, 65 percent said they preferred using Codex day to day, but blind reviewers rated Claude Code's actual output cleaner 67 percent of the time. That's a strange split worth sitting with. People like working with Codex more. The code Claude writes tends to hold up better under review.
+
+Cost per task tells its own story too. One documented Express.js refactor ran about $15 through Codex and $155 through Claude Code, which is a big enough gap that "which one is smarter" stops being the only question that matters.
+
+## CLI and Workflow
+
+Both run as terminal agents now, but the philosophy behind them is genuinely different. Claude Code leans into a developer-in-the-loop, local-first workflow, while Codex is built for both local work and autonomous cloud task delegation, meaning you can hand it something and walk away. Codex runs tasks in an isolated sandbox for minutes or hours and reports back with a diff, logs, and test citations when it's done, which is a fundamentally different rhythm than sitting there watching Claude work through a change in real time.
+
+Both have gone multi-agent this year too. Codex can run up to 8 parallel subagents in isolated cloud sandboxes, while Claude Code's Agent Teams share a task list and message each other as they work. If you like delegating and checking back later, Codex's model fits. If you want something closer to pair programming with occasional autonomy, Claude's tighter loop fits better.
+
+---
+
+Honestly, the developers who've actually lived with both for a while mostly land on the same answer: use both. Codex for rapid prototyping and parallel implementation, Claude Code for review, security auditing, and careful refactoring. At $20 a month each, running both costs less than a single mid-tier subscription to almost anything else in this space, and you get to route each task to whichever one is actually better suited to it instead of forcing one tool to do everything.
