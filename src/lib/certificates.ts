@@ -9,6 +9,14 @@ const certificates = [
     featured: false,
   },
   {
+    title: "CompTIA Security+ 701",
+    description: "",
+    instructor: "Infosec",
+    date: "8-2026",
+    link: "#",
+    featured: false,
+  },
+  {
     title: "AI-Assisted Code Modernization",
     description:
       "Trained AI to write code responsibly, then used it to drag legacy Java and Python systems kicking and screaming into the present, capstone project included. Now I'm ready to get paid to make old code less embarrassing.",
