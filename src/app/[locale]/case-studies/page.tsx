@@ -47,6 +47,30 @@ export async function generateMetadata({
 
 const caseStudies = [
   {
+    title: "Building a browser from scratch even AI will refused to do it",
+    label: "Engineering Journey",
+    summary:
+    "Webvium Browser started as a personal challenge to build a lightweight Android browser entirely from scratch. Instead of relying on third party libraries, the goal was to understand every layer of the application while creating something that was fast, private, and efficient.",
+    sections: [
+      {
+        heading: "Context",
+        body: "In the early days of learning Android development, I wanted to build more than a simple practice application. Existing browsers felt heavy on low end devices, so I challenged myself to create one using only Java and the Android SDK with zero external dependencies. The objective was simple: build a browser that stayed lightweight without sacrificing usability or privacy.",
+      },
+      {
+        heading: "Decision",
+        body: "Rather than taking shortcuts with frameworks, I built the browser from the ground up. Every optimization came from understanding the platform itself, reducing unnecessary code, simplifying layouts, and continuously refining the architecture until the application became significantly smaller while remaining feature complete.",
+      },
+      {
+        heading: "Reasoning",
+        body: "Building software from first principles teaches lessons that libraries often hide. Every kilobyte mattered because smaller applications install faster, consume fewer resources, and perform better on budget devices. The project became less about creating another browser and more about learning software engineering through real engineering constraints.",
+      },
+      {
+        heading: "Takeaway",
+        body: "Webvium proved that meaningful engineering is not always about adding more technology. Sometimes the best solution comes from understanding the fundamentals deeply enough to build only what is necessary, resulting in software that is faster, easier to maintain, and genuinely respects the user's device and privacy.",
+      },
+    ],
+  },
+  {
     title: "When a rewrite was the honest fix",
     label: "Architecture Decision",
     summary:
