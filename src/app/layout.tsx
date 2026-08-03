@@ -160,13 +160,13 @@ export default async function RootLayout({
         <meta name="hostname" content="www.melvinjonesrepol.com" />
         <NortonSafeweb />
         <Algolia />
-        <GoogleAdsense />
+        {/* <GoogleAdsense /> */}
       </head>
 
       <body className="antialiased min-h-screen flex flex-col background-grid">
         <ConsentProvider>
-          <DoorEffect />
-          <MouseCodeTrail />
+          {/* <DoorEffect /> */}
+          {/* <MouseCodeTrail /> */}
           <AOSWrapper />
           <NextTopLoader showSpinner={false} color="#7873f5" />
 
@@ -182,7 +182,7 @@ export default async function RootLayout({
             <>
               <GoogleAnalytics />
               <ServiceWorkerRegister />
-              <BrowserCheck />
+              {/* <BrowserCheck /> */}
             </>
           )}
 
