@@ -14,12 +14,16 @@ type ConsentPreferences = {
 type ConsentContextType = {
   consent: ConsentPreferences | null;
   updateConsent: (prefs: ConsentPreferences) => void;
+  bannerOpen: boolean;
+  openBanner: () => void;
+  closeBanner: () => void;
 };
 
 const ConsentContext = createContext<ConsentContextType | null>(null);
 
 export function ConsentProvider({ children }: { children: React.ReactNode }) {
   const [consent, setConsent] = useState<ConsentPreferences | null>(null);
+  const [bannerOpen, setBannerOpen] = useState(false);
 
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
@@ -35,8 +39,11 @@ export function ConsentProvider({ children }: { children: React.ReactNode }) {
     setConsent(prefs);
   };
 
+  const openBanner = () => setBannerOpen(true);
+  const closeBanner = () => setBannerOpen(false);
+
   return (
-    <ConsentContext.Provider value={{ consent, updateConsent }}>
+    <ConsentContext.Provider value={{ consent, updateConsent, bannerOpen, openBanner, closeBanner }}>
       {children}
     </ConsentContext.Provider>
   );

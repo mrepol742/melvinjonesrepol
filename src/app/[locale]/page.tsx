@@ -170,6 +170,16 @@ export default async function Home({
             {/* Content layer */}
             <div className="relative z-10 min-h-screen flex flex-col px-6 py-12 md:px-10">
               <div className="my-auto py-14 lg:max-w-[60%] xl:max-w-[56%]">
+                <div className="inline-flex items-center gap-2.5 mb-6 text-xs">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
+                  </span>
+                  <span className="font-mono tracking-widest uppercase opacity-50">Currently at</span>
+                  <span className="font-bold tracking-wide">Up to Date Web Design</span>
+                  <span className="opacity-30">·</span>
+                  <span className="opacity-60">Full Stack Developer</span>
+                </div>
                 <h1 className="text-[17vw] sm:text-[12vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8">
                   Melvin
                   <br />

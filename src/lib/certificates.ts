@@ -1,19 +1,18 @@
 const certificates = [
   {
-    title: "Application Security for Developers and DevOps Professionals",
-    description:
-      "",
-    instructor: "IBM",
-    date: "8-2026",
-    link: "#",
+    title: "ISO 27001 Information Security Compliance Management",
+    description: "",
+    instructor: "Packt",
+    date: "PENDING",
+    link: "https://www.coursera.org/learn/packt-iso-27001-information-security-compliance-management",
     featured: false,
   },
   {
-    title: "CompTIA Security+ 701",
+    title: "Application Security for Developers and DevOps Professionals",
     description: "",
-    instructor: "Infosec",
-    date: "8-2026",
-    link: "#",
+    instructor: "IBM",
+    date: "PENDING",
+    link: "https://www.coursera.org/learn/application-security-for-developers-devops",
     featured: false,
   },
   {

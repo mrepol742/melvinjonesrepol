@@ -6,7 +6,6 @@ import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import ScrollTop from "@/components/ui/ScrollTop";
 import { getRecentPosts } from "@/lib/posts";
-import PrivacyPolicyPrompt from "@/components/common/PrivacyPolicyPrompt";
 import DevToolsDetector from "@/components/common/DevToolsDetector";
 import { locales } from "@/lib/i18n";
 
@@ -28,7 +27,7 @@ export default async function LocaleLayout({
 
   const env = process.env.NEXT_PUBLIC_NODE_ENV || "production";
   const isProduction = env === "production";
-  const posts = getRecentPosts(8, locale);
+  const posts = getRecentPosts(12, locale);
   const messages = await getMessages();
 
   return (
@@ -46,7 +45,6 @@ export default async function LocaleLayout({
         </>
       )}
 
-      <PrivacyPolicyPrompt />
       <ToastContainer />
       <ScrollTop />
       <Footer posts={posts} />

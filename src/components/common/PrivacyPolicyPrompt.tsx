@@ -21,7 +21,7 @@ const defaultConsent: ConsentPreferences = {
 };
 
 export default function CookieBanner() {
-  const { updateConsent } = useConsent();
+  const { updateConsent, bannerOpen, closeBanner } = useConsent();
   const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(false);
   const [showPreferences, setShowPreferences] = useState(false);
@@ -43,15 +43,31 @@ export default function CookieBanner() {
     const handleDoorDone = () => {
       setTimeout(show, 600);
     };
-    window.addEventListener("door:done", handleDoorDone);
-    return () => window.removeEventListener("door:done", handleDoorDone);
+
+    handleDoorDone();
+    // window.addEventListener("door:done", handleDoorDone);
+    // return () => window.removeEventListener("door:done", handleDoorDone);
   }, []);
+
+  useEffect(() => {
+    if (!bannerOpen) return;
+    setOpen(true);
+    let raf1: number, raf2: number;
+    raf1 = requestAnimationFrame(() => {
+      raf2 = requestAnimationFrame(() => setVisible(true));
+    });
+    return () => {
+      cancelAnimationFrame(raf1);
+      cancelAnimationFrame(raf2);
+    };
+  }, [bannerOpen]);
 
   const saveConsent = (consent: ConsentPreferences) => {
     setVisible(false);
     setTimeout(() => {
       updateConsent(consent);
       setOpen(false);
+      closeBanner();
     }, 400);
   };
 

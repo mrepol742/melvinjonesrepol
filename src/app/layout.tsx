@@ -15,6 +15,7 @@ import BrowserCheck from "@/components/common/BrowserCheck";
 import { ConsentProvider, useConsent } from "@/context/consent";
 import LivechatAI from "@/components/common/LivechatAI";
 import GoogleAdsense from "@/components/common/metadata/GoogleAdsense";
+import CookieBanner from "@/components/common/PrivacyPolicyPrompt";
 
 config.autoAddCss = false;
 
@@ -167,6 +168,7 @@ export default async function RootLayout({
         <ConsentProvider>
           {/* <DoorEffect /> */}
           {/* <MouseCodeTrail /> */}
+          <CookieBanner />
           <AOSWrapper />
           <NextTopLoader showSpinner={false} color="#7873f5" />
 
