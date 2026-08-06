@@ -1,11 +1,18 @@
 const certificates = [
   {
+    title: "ISO 27001 Information Security Compliance Management",
+    description: "",
+    instructor: "Packt",
+    date: "PENDING",
+    link: "https://www.coursera.org/learn/packt-iso-27001-information-security-compliance-management",
+    featured: false,
+  },
+  {
     title: "Application Security for Developers and DevOps Professionals",
-    description:
-      "",
+    description: "",
     instructor: "IBM",
-    date: "8-2026",
-    link: "#",
+    date: "PENDING",
+    link: "https://www.coursera.org/learn/application-security-for-developers-devops",
     featured: false,
   },
   {

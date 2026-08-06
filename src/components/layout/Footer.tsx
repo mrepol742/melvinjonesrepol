@@ -13,6 +13,8 @@ import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 import { navLanguages } from "@/lib/i18n";
 import dynamic from "next/dynamic";
+import Image from "next/image";
+import { useConsent } from "@/context/consent";
 
 export default function Footer({
   posts,
@@ -23,6 +25,7 @@ export default function Footer({
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
+  const { openBanner } = useConsent();
 
   const handleLocaleChange = (nextLocale: string) => {
     if (nextLocale === locale) return;
@@ -30,8 +33,7 @@ export default function Footer({
       /^\/(en|fil|cmn|es|hi|nl|fr|ru|ar)(?=\/|$)/,
       "",
     );
-    const nextPath = `/${nextLocale}${normalizedPath || "/"}`;
-    router.replace(nextPath);
+    router.replace(`/${nextLocale}${normalizedPath || "/"}`);
   };
 
   const TrustpilotWidget = dynamic(() => import("../common/TrustPilotWidget"), {
@@ -50,17 +52,6 @@ export default function Footer({
     { href: "/work-experience", label: t("footer_work_experience") },
     { href: "/gallery", label: t("footer_gallery") },
     { href: "/contact-me", label: t("footer_contact_me") },
-  ];
-
-  const legalLinks = [
-    { href: "/legal/terms-of-service", label: t("footer_terms_of_service") },
-    { href: "/legal/privacy-policy", label: t("footer_privacy_policy") },
-    { href: "/legal/cookie-policy", label: t("footer_cookie_policy") },
-    { href: "/legal/refund-policy", label: "Refund Policy" },
-    {
-      href: "/legal/developer-client-agreement",
-      label: "Developer Client Agreement",
-    },
   ];
 
   const projectLinks = [
@@ -134,6 +125,9 @@ export default function Footer({
     },
   ];
 
+  const linkClass =
+    "text-sm text-zinc-500 hover:text-zinc-100 transition-colors duration-150";
+
   return (
     <footer
       className="bg-gray-900 text-gray-200 py-10 border-t border-gray-800 rounded-xl"
@@ -146,9 +140,22 @@ export default function Footer({
             <span className="text-xl font-bold bg-gradient-to-tr from-violet-500 via-yellow-300 to-green-400 bg-clip-text text-transparent animate-gradient-shift">
               Melvin Jones Repol
             </span>
-            <p className="mt-3 text-xs text-gray-400 leading-relaxed max-w-52">
+
+            <div className="flex items-center gap-2 text-xs text-zinc-500 leading-relaxed max-w-52">
+              <span className="relative flex h-1.5 w-1.5 me-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-green-500" />
+              </span>
+              <div className="flex flex-col">
+                <span className="text-zinc-500">Full Stack Developer</span>
+                <span className="opacity-60">Up to Date Web Design</span>
+              </div>
+            </div>
+
+            <p className="text-xs text-zinc-500 leading-relaxed max-w-52">
               {t("description")}
             </p>
+
             <div className="flex gap-2 mt-5">
               {socialLinks.map(({ href, icon, label }) => (
                 <Link
@@ -156,48 +163,27 @@ export default function Footer({
                   href={href}
                   target="_blank"
                   aria-label={label}
-                  className="flex items-center justify-center p-2 rounded-full border border-gray-700 text-gray-400 hover:border-indigo-500/60 hover:text-indigo-400 hover:bg-indigo-500/10 transition-all duration-200"
+                  className="flex items-center justify-center p-2 rounded-full border border-zinc-800 text-zinc-500 hover:border-zinc-600 hover:text-zinc-100 hover:bg-white/5 transition-all duration-200"
                 >
                   <FontAwesomeIcon icon={icon} className="text-sm" />
                 </Link>
               ))}
             </div>
-            <div className="my-5">
+
+            <div className="mt-5">
               <TrustpilotWidget />
             </div>
           </div>
 
           {/* Navigate */}
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-4">
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-zinc-600 mb-4">
               Navigate
             </h4>
             <ul className="space-y-2.5">
               {navLinks.map(({ href, label }) => (
                 <li key={href}>
-                  <Link
-                    href={href}
-                    className="text-sm text-gray-400 hover:text-indigo-400 transition-colors"
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Legal */}
-          <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-4">
-              Legal
-            </h4>
-            <ul className="space-y-2.5">
-              {legalLinks.map(({ href, label }) => (
-                <li key={href}>
-                  <Link
-                    href={href}
-                    className="text-sm text-gray-400 hover:text-indigo-400 transition-colors"
-                  >
+                  <Link href={href} className={linkClass}>
                     {label}
                   </Link>
                 </li>
@@ -207,7 +193,7 @@ export default function Footer({
 
           {/* Projects */}
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-4">
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-zinc-600 mb-4">
               Projects
             </h4>
             <ul className="space-y-2.5">
@@ -216,7 +202,7 @@ export default function Footer({
                   <Link
                     href={href}
                     target={external ? "_blank" : undefined}
-                    className="text-sm text-gray-400 hover:text-indigo-400 transition-colors"
+                    className={linkClass}
                   >
                     {label}
                   </Link>
@@ -225,9 +211,9 @@ export default function Footer({
             </ul>
           </div>
 
-          {/* Tools + Language */}
+          {/* Tools */}
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-4">
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-zinc-600 mb-4">
               Tools
             </h4>
             <ul className="space-y-2.5">
@@ -236,24 +222,28 @@ export default function Footer({
                   <Link
                     href={href}
                     target={external ? "_blank" : undefined}
-                    className="text-sm text-gray-400 hover:text-indigo-400 transition-colors"
+                    className={linkClass}
                   >
                     {label}
                   </Link>
                 </li>
               ))}
             </ul>
+          </div>
 
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mt-8 mb-3">
+          {/* Recent posts + Language */}
+          <div>
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-zinc-600 mb-4">
               {t("footer_recent_posts")}
             </h4>
+
             {posts.length > 0 ? (
               <ul className="space-y-2.5 mb-8">
                 {posts.map((post) => (
                   <li key={post.slug}>
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="block max-w-full truncate text-sm text-gray-400 hover:text-indigo-400 transition-colors"
+                      className={`block truncate ${linkClass}`}
                       title={post.title}
                     >
                       {post.title}
@@ -262,12 +252,12 @@ export default function Footer({
                 ))}
               </ul>
             ) : (
-              <p className="text-gray-400 text-sm mb-8">
+              <p className="text-zinc-600 text-sm mb-8">
                 {t("footer_no_recent_posts")}
               </p>
             )}
 
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-3">
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-zinc-600 mb-3">
               {t("footer_language_region")}
             </h4>
             <div className="relative">
@@ -283,7 +273,7 @@ export default function Footer({
                   </option>
                 ))}
               </select>
-              <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-500">
+              <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs text-zinc-600">
                 ▼
               </span>
             </div>
@@ -291,24 +281,52 @@ export default function Footer({
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-8 pt-6 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <span className="text-xs text-gray-500">
+        <div className="mt-10 pt-6 border-t border-zinc-800/60 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <span className="text-xs text-zinc-600">
             © {new Date().getFullYear()} Melvin Jones Repol.{" "}
             {t("footer_all_rights_reserved")}
           </span>
-          <div className="flex items-center gap-5 text-xs">
+
+          <div className="flex items-center gap-4 text-xs text-zinc-600">
+            <button
+              onClick={openBanner}
+              className="flex items-center gap-1.5 hover:text-zinc-300 transition-colors"
+            >
+              <Image
+                src="/images/0410-hd-privacy-choices-icon.png"
+                alt="Privacy Choices"
+                width={16}
+                height={16}
+              />
+              Cookie Preferences
+            </button>
+
+            <span className="text-zinc-800 select-none">·</span>
+
             <Link
               href="/uptime"
               target="_blank"
-              className="text-gray-500 hover:text-green-400 transition-colors"
+              className="hover:text-zinc-300 transition-colors"
             >
               Uptime
             </Link>
-            <span className="text-gray-700 select-none">·</span>
+
+            <span className="text-zinc-800 select-none">·</span>
+
+            <Link
+              href="/legal"
+              target="_blank"
+              className="hover:text-zinc-300 transition-colors"
+            >
+              Legal
+            </Link>
+
+            <span className="text-zinc-800 select-none">·</span>
+
             <Link
               href="https://github.com/mrepol742/melvinjonesrepol"
               target="_blank"
-              className="text-gray-500 hover:text-green-400 transition-colors"
+              className="hover:text-zinc-300 transition-colors"
             >
               {t("footer_open_source")}
             </Link>
