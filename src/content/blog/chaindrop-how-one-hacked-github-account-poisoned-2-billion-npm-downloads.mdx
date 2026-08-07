@@ -1,0 +1,102 @@
+---
+title: "ChainDrop: How One Hacked GitHub Account Poisoned 2 Billion npm Downloads (And Whether npm v12 Would Have Stopped It)"
+date: "2026-08-07"
+excerpt: "On August 4th, a single compromised maintainer account turned into one of the largest npm supply chain attacks ever recorded. Here's the full story, how the worm actually worked, and the uncomfortable truth about whether npm v12 fixes any of it."
+topics: ["security", "npm", "supply-chain", "open-source"]
+---
+
+Most supply chain attacks follow a predictable arc. Someone publishes a typosquatted package with a name one letter off from something popular, a few developers install it by accident, some credentials get stolen, a security blog writes it up, and then everyone collectively agrees to be more careful before going back to running `npm install` on whatever they find. ChainDrop is not that story. What happened on August 4th, 2026 was faster, wider, and more mechanically sophisticated than almost anything the npm ecosystem has seen, and it started with a single GitHub account belonging to one maintainer. By the time researchers had a full picture of the blast radius, the worm had touched over 452 packages, rewritten 2,251 versions across the registry, and exposed projects representing roughly 2 billion combined monthly downloads to a credential-stealing payload that was specifically designed to keep spreading without anyone at a keyboard. The organizations caught in the fallout include Deliveroo, Picsart, Qlik, and ServiceTitan, among others still being enumerated.
+
+This is the full breakdown: what happened, how the worm worked at a technical level, which parts of this npm v12 would have stopped, and which parts it would not have touched at all.
+
+## Who Got Compromised and Why It Mattered
+
+The account that served as patient zero belonged to Jared Wray, a maintainer with publish rights across a cluster of widely used caching and storage utilities for Node.js. The packages under his account include `keyv`, a key-value storage interface that abstracts over Redis, SQLite, MongoDB, and other backends; `cacheable`, the underlying HTTP cache framework; `flat-cache`, a persistent file-based cache; `file-entry-cache`; and several others. None of these are niche tools. `keyv` alone logs over 600 million downloads per month. `flat-cache` sits at nearly 580 million. `cacheable-request` is over 137 million. These packages live deep in the transitive dependency trees of thousands of projects, which means even teams who have never heard of `keyv` are probably running it.
+
+The reason a single account compromise could cascade into hundreds of packages is exactly because of this. When an attacker gets control of a GitHub account that has publish rights across an entire package family, they do not need to find a vulnerability in each individual project. They just need to push once and let the dependency graph do the rest.
+
+How Wray's account was compromised in the first place is still part of the ongoing investigation. What is notable is that Wray himself confirmed he uses OIDC with npm and one-time codes for GitHub, meaning he was not relying on long-lived static tokens. That is actually a solid security posture, which suggests the initial compromise was either a phishing attack, session hijacking, or something in his environment that the attacker was able to exploit before those protections kicked in. He regained access to his account at around 20:00 UTC on the same day, roughly eleven hours after the attack began.
+
+## How the Attack Unfolded: A Timeline
+
+At approximately 9:00 UTC on August 4th, someone using the compromised `jaredwray` GitHub account pushed malicious commits directly to the main branch of the `keyv` repository. They did not create a separate pull request or branch. They pushed directly to main, and then immediately cut a new release.
+
+That release was `keyv@6.0.0`.
+
+Because Wray's CI pipeline was set up to publish to npm on release, GitHub Actions kicked in and built and published the infected version automatically, complete with valid provenance signatures. This is an important detail: the malicious package arrived on the registry signed by GitHub Actions, which means it passed the attestation checks that are supposed to signal trustworthiness. The package looked legitimate from a provenance standpoint because the build process that produced it was legitimate. Only the source code it was built from was not.
+
+A few minutes after the keyv commit, the attacker used the same account to push similar commits to `jaredwray/cacheable` and `jaredwray/ecto`. From there, the worm's spreading logic took over and the human operator largely stepped back.
+
+## The Worm Itself: Setup.mjs and the Bun Trick
+
+The payload that the attacker embedded into those packages follows a pattern that Elastic Security Labs, Wiz, and others have now traced back to the broader Shai-Hulud malware family, specifically a variant referred to as Mini Shai-Hulud. The same toolkit has appeared in previous campaigns against the PyTorch Lightning PyPI package in April 2026 and the @antv npm ecosystem in May, with attribution overlapping a threat cluster called TeamPCP. Precise attribution for ChainDrop itself is still under active investigation.
+
+The execution chain works like this. The malicious package includes a `preinstall` lifecycle script in its `package.json` that points to a file called `setup.mjs`. When any developer or CI system runs `npm install` on an affected package, `setup.mjs` fires automatically before the installation even completes. The file is lightly obfuscated and its first task is to check whether Bun is already available by running `bun --version`. If Bun is not present, it downloads a temporary Bun 1.3.13 runtime executable. Once Bun is available, it uses it to execute the main payload, a heavily obfuscated file called `Math_Symbol.js`.
+
+The reason the attackers route through Bun rather than Node.js is evasion. A lot of security tooling in CI environments watches for suspicious Node.js process behavior. Bun is newer, less scrutinized by those tools, and runs the same JavaScript. It is a clever enough move that security researchers noted it specifically in their writeups.
+
+`Math_Symbol.js` is the actual credential harvester. It dumps GitHub Actions runner memory to capture temporary publishing tokens, scrapes the local filesystem for npm tokens, GitHub personal access tokens, SSH keys, AWS credentials, Kubernetes configs, HashiCorp Vault tokens, and anything else that looks like a secret. Once it has collected what it can find, it needs to get that data out and keep spreading.
+
+## The Command and Control: EtherHiding and GitHub as an Exfil Target
+
+One of the details that makes ChainDrop stand out from earlier Shai-Hulud variants is how it handles its command and control infrastructure. The attacker used a technique called EtherHiding, where the payload retrieves the exfiltration endpoint URL from an Ethereum smart contract at address `0xE1f2395ee43e45A1556EC6438a88c31B83493103`. The practical implication of this is that the attacker can change where stolen data gets sent at any time simply by updating the smart contract, without touching the payload embedded in the packages. Blocking the original exfiltration URL does nothing because the payload fetches the current URL dynamically from the blockchain each time it runs.
+
+The primary exfiltration destination is a public GitHub repository. The payload creates or pushes to a repo under the victim's GitHub account with the description "Shai-Hulud: Here We Go Again". At the time researchers were analyzing the attack, there were over 1,300 public GitHub repositories matching that string, each one representing a compromised developer's encrypted credential bundle sitting publicly accessible. If the GitHub upload fails for any reason, the payload falls back to an endpoint at `npm-cache[.]com:443/router`, a domain registered in May 2026 that serves no legitimate purpose and was clearly set up for this campaign.
+
+There is also a destructive element. The malware contains what amounts to a dead man's switch: if the stolen GitHub token is revoked, it attempts to delete the contents of the machine it is running on. The commit message that the worm uses when pushing to GitHub repositories also contains the stolen token alongside the string `IfYouBlockThisAPIKeyItWillCrashTheLiveProductionServersOfAllThirdPartyClients`. That is a coercion tactic, not a technical one. The attacker is betting that whoever sees a revocation notice will hesitate.
+
+## How the Worm Propagated to 400+ Packages
+
+The self-propagating logic is what turned a single account compromise into a 452-package event. Once the credential harvester has collected npm tokens, it evaluates each one against two specific requirements: the token must have package write permissions, and it must be able to publish without requiring two-factor authentication, what the code checks for as `bypass_2fa`. Tokens that fail either of those checks get exfiltrated but not used for spreading.
+
+For tokens that pass both checks, the worm enumerates every package the token holder has publish rights to. Then, for each of those packages, it downloads the latest published tarball from the npm registry, injects the malicious `preinstall` hook and payload files into it, increments the version number, and publishes the modified package back to the registry. No human intervention required. The worm is doing the maintainer work itself.
+
+This is why the spread happened as fast as it did. The worm was not waiting for developers to install `keyv` before it could reach other packages. It was using stolen tokens to push directly to the registry, creating new infected versions of packages maintained by people who had never had any interaction with the compromised account. Those packages then infected their own downstream dependents the next time anyone ran `npm install`.
+
+The worm also persists through local AI coding assistants and IDEs including Claude and VS Code by planting payloads in workspace configuration files like `.claude/settings.json` and `.vscode/` directories, ensuring execution continues even after the infected package version gets removed.
+
+## Does npm v12 Actually Fix This?
+
+This is where things get complicated, and the honest answer is: partly, but probably not in the way you are hoping.
+
+npm v12 was released around July 2026, just weeks before ChainDrop hit. The headline change is that it blocks lifecycle scripts from running by default. When you run `npm install`, packages can no longer define `preinstall`, `install`, or `postinstall` scripts that execute automatically. Scripts only run for packages that you have explicitly added to an allowlist using `npm approve-scripts`, and that allowlist gets committed to your project. The change is significant because every major npm supply chain worm in the past year, including the earlier Shai-Hulud variants, Nx s1ngularity, and the Miasma worm, spread specifically through these automatic install-time script hooks. npm v12 shuts that execution path down at the ecosystem default level.
+
+If your project was running npm v12 when ChainDrop hit, the `setup.mjs` preinstall hook would not have fired. The infected version of `keyv` would have been downloaded, but the credential harvesting payload would not have executed. You would not have had your npm tokens stolen, which means the worm would have stopped at you rather than spreading further through your credentials.
+
+That is meaningful. It is probably the most useful single change npm could have made given the attack patterns of the past twelve months.
+
+But here is what npm v12 does not fix.
+
+The worm spread by publishing new versions of packages to the npm registry using stolen tokens. That publishing step happens server-side. npm v12 runs on your machine during install. The attacker was using compromised tokens to push malicious versions of packages you depend on to the registry, and those versions would still be sitting there in v12 environments. The moment you run `npm install` and pull a freshly infected version, v12 would block the preinstall script from running, yes. But the package itself still made it into your `node_modules`. If any of that malicious code executes at import time rather than install time, you are still exposed.
+
+Import-time execution is exactly where attackers have been shifting. The April 2026 Astral Injection campaign already demonstrated packages where the malicious code runs the moment you `require()` or `import` the module, no lifecycle script needed. v12 has nothing to say about that. If ChainDrop had been designed to execute at import rather than install time, which is a trivially small design change for the attacker, npm v12 would not have blocked it at all.
+
+There is also the human element to consider. A developer staring at a wall of v12 warnings in a CI pipeline that is now failing because half the dependencies need to be approved might just run `npm approve-scripts --all` to clear the backlog and move on. That turns the allowlist into meaningless paperwork. The protection is only as strong as the review process behind each approval decision, and under deadline pressure, that review process has a documented tendency to collapse into rubber-stamping.
+
+The initial GitHub account compromise is also entirely outside npm v12's scope. Whatever method the attacker used to get into Jared Wray's account, blocking postinstall scripts would not have touched it. The provenance attestations that were supposed to signal package integrity also did not help here because the compromised packages were built by legitimate GitHub Actions pipelines from legitimately checked-in code. The signatures were valid. The source was not.
+
+## What You Should Actually Do Right Now
+
+If you have not already audited your dependency tree since August 4th, that needs to happen before anything else. The confirmed affected packages include `keyv`, `cacheable`, `flat-cache`, `file-entry-cache`, and `cacheable-request`, but the list has been growing as researchers continue to investigate downstream packages that the worm propagated to.
+
+The specific versions to look for are anything published between the morning of August 4th and the point where clean versions were re-published. Check your `package-lock.json` or `yarn.lock` for unexpected version bumps you did not intentionally make, especially in packages that are deep in your transitive dependency tree and that you would not normally be watching. If you have CI environments that ran `npm install` during that window without npm v12 protections in place, treat those environments as fully compromised. That means revoking all npm tokens, GitHub tokens, and any cloud credentials that were accessible from those runners.
+
+Check your GitHub organization for any repositories with the description "Shai-Hulud: Here We Go Again" or any commits containing that string. Each one of those repositories represents a credential dump.
+
+Going forward, upgrading to npm v12 is the right call. Blocking install scripts by default meaningfully reduces the install-time attack surface, and the rest of the v12 changes, particularly blocking Git dependencies unless explicitly allowed, close additional execution paths that attackers have been using. Pair that with pinning your CI tokens to minimum required permissions, requiring two-factor authentication on npm publishing, and treating any unexpected version bump in a lockfile as a red flag worth investigating rather than a noise event to ignore.
+
+The more uncomfortable adjustment is organizational. ChainDrop succeeded at the scale it did because the npm ecosystem still treats token-based publishing as a first-class trust signal, and because most teams are not watching their transitive dependencies closely enough to notice when something they did not intentionally update has a new version. `keyv` being at `6.0.0` instead of `5.x` when yesterday it was not is the kind of detail that should trigger a question, and most dependency update automation is not configured to ask that question.
+
+This is the third documented wave of the same Shai-Hulud toolkit hitting different ecosystems in 2026. The same hook file names, the same Bun download pattern, the same credential harvesting logic, reused across PyPI, npm, and now npm again, against targets ranging from PyTorch Lightning to major npm caching libraries. The tooling is mature, the operators are patient, and they keep finding maintainer accounts to compromise. npm v12 raises the bar on what happens after a compromise. It does nothing about the compromise itself.
+
+Upgrade to v12. Audit your tokens. And maybe spend fifteen minutes this week actually looking at which packages in your dependency tree have publish rights over other packages you depend on, because that graph is probably larger and more interconnected than you think.
+
+---
+
+You can explore more about the attack and response here:
+
+- [Elastic Security Labs: Shai-Hulud CHAINDROP Analysis](https://www.elastic.co/security-labs/shai-hulud-chaindrop-npm-supply-chain)
+- [Wiz Blog: keyv and cacheable Supply Chain Attack](https://www.wiz.io/blog/keyv-and-cacheable-npm-supply-chain-attack)
+- [Microsoft Security Blog: ChainDrop Worm Anatomy](https://www.microsoft.com/en-us/security/blog/2026/08/04/chaindrop-supply-chain-compromise-anatomy-self-propagating-worm/)
+- [Aikido Security: npm v12 and Postinstall Blocking](https://www.aikido.dev/blog/npm-v12-block-postinstall)
+- [npm v12 Breaking Changes Announcement](https://github.blog/changelog/2026-06-09-upcoming-breaking-changes-for-npm-v12/)
