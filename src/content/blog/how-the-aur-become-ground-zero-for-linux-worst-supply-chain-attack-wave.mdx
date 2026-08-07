@@ -1,0 +1,64 @@
+---
+title: "Atomic Arch: How the AUR Became Ground Zero for Linux's Worst Supply Chain Attack Wave"
+date: "2026-08-07"
+excerpt: "Three waves. Nearly 1,900 compromised packages. A Rust-based infostealer with an eBPF rootkit hiding inside your build process. The Atomic Arch campaign is not just an AUR incident — it is a question about whether community-maintained package repositories can survive contact with a determined, patient attacker."
+topics: ["linux", "arch-linux", "supply-chain", "security"]
+---
+
+There is a particular kind of confidence that comes from running Arch Linux. You built the system yourself, you know what is on it, you maintain it intentionally, and that gives you a mental model of your machine that most users of more managed distributions do not have. The AUR is part of that deal. It is where you go when the official repos do not have what you need, and you trade some safety guarantees for access to a massive catalog of community-maintained build scripts. You review the PKGBUILD, you understand the tradeoff, you install it. That relationship between the Arch user and the AUR has basically worked for over two decades. Then came Atomic Arch, and it has been running for three waves since late May 2026, compromising somewhere between 1,500 and 1,900 packages depending on which researcher's count you trust, deploying a Rust-based infostealer and an eBPF rootkit onto developer machines and CI environments, and forcing the Arch Linux team to take the drastic step of halting all package adoptions and eventually all AUR uploads entirely.
+
+The thing is, the attackers did not find a vulnerability in Arch Linux. They did not break pacman, they did not compromise the official repositories, and they did not find some clever exploit in `makepkg`. They just read the documentation, found the package adoption process for orphaned packages, and used it as designed.
+
+## What the AUR Actually Is and Why It Was Soft
+
+If you are coming from a Debian or Fedora background, the AUR probably seems strange. Rather than shipping pre-built binaries that a distribution has packaged and tested, the AUR is a collection of PKGBUILDs: plain text build scripts that describe how to fetch, compile, and install a piece of software. You use a helper like `yay` or `paru` to clone those scripts, review them, and run `makepkg` to build and install the result. The actual binaries get built on your machine.
+
+The upside is that the AUR contains over 85,000 packages for things the official Arch repositories will never ship. The downside is that the trust model is almost entirely social. There is no mandatory security review, no intake process, no automated scanning of PKGBUILD contents before a package gets listed. A package is as trustworthy as whoever is currently maintaining it, and the Arch team has been clear that this is a design choice, not an oversight. The repository prioritizes ease of contribution over intake security.
+
+When a maintainer stops maintaining a package and stops responding to requests, that package becomes orphaned. Orphaned packages can be adopted by other community members through a straightforward process. The new maintainer gets write access to the package, takes over upkeep, and the users who were installing it continue installing it from the same place they always did, often without noticing the maintainer changed. That adoption system is exactly what the Atomic Arch campaign exploited, at scale, in an apparently coordinated way, starting around late May 2026.
+
+## The First Wave: June 11th and the npm Trojan Horse
+
+Sonatype researchers named the June 2026 incident "Atomic Arch" after discovering that attackers had systematically adopted orphaned AUR packages and injected malicious build logic. The mechanism was consistent across the packages they examined. Attackers targeted packages with existing users and a history of legitimate use, then modified the PKGBUILD or install hooks to run `npm install atomic-lockfile`, pulling in a malicious Node package.
+
+That is worth sitting with for a second. A PKGBUILD for what you thought was a Linux-native package suddenly contains a call to npm during the build process. If you were not reading the diff carefully, or if you were using a helper configured to skip review prompts, that command would just run. When users installed or updated the AUR package, it transparently fetched and executed the malicious dependency.
+
+The `atomic-lockfile` payload drops a Rust binary named `deps`. When executed, `deps` harvests browser cookies and saved credentials, SSH private keys, GitHub personal access tokens, and session tokens from Slack, Discord, and Microsoft Teams. That is already a broad credential sweep. But the part that made security researchers pay close attention was what happened next: when the binary runs with root privileges, which AUR package builds often do, it also loads an eBPF rootkit that hides the binary from process listings, network connections, and standard filesystem inspection.
+
+eBPF rootkits are not casual additions to a malware payload. eBPF is a legitimate Linux kernel feature that lets programs run sandboxed code inside the kernel, used for things like performance tracing and network filtering. Attackers who understand eBPF can use it to intercept kernel calls and manipulate what system tools see when they enumerate processes, files, and network connections. Your standard rootkit-checking tools like `rkhunter` or `chkrootkit` work at a higher abstraction level and will not reliably detect this. The attackers were not writing script kiddie malware. This was built to survive on a compromised system.
+
+The attackers injected commands into build scripts that pulled malicious dependencies including rogue npm packages `atomic-lockfile` and `js-digest`, which executed automatically during the package build process. This approach allowed attackers to distribute malware without modifying the software itself, instead abusing the trusted build pipeline.
+
+## The Scale Gets Worse on Closer Inspection
+
+Initial reporting put the first wave at over 400 compromised packages. Community analysis on the Arch mailing list revised that number upward. A large-scale supply chain attack targeting the Arch User Repository resulted in the compromise of over 1,500 community-maintained packages. The packages affected were not obscure tools with single-digit install counts. Packages in this round included `i915-sriov-dkms`, `rtk-git`, `boringssl-git`, `warp-terminal-git`, `weather-display`, `astro-box`, and many others.
+
+Any Arch Linux user, and users of Arch-based distributions like Manjaro, EndeavourOS, and Garuda, who installed or updated affected packages during the exposure window needed to treat their machines as fully compromised. That means rotating everything: SSH keys, GitHub personal access tokens, cloud credentials, session tokens for any service they were logged into, and any secret that could have been sitting in environment variables or config files. It also means that CI/CD environments running on Arch-based systems needed the same treatment, because the credential harvester was specifically designed to sweep those environments too.
+
+Critically, Arch's official repositories (`[core]`, `[extra]`, `[multilib]`) were not affected. This matters for the post-incident framing. Arch Linux itself was not broken. The official package infrastructure was not compromised. The attack lived entirely in the AUR, which is a separate system with a separate trust model.
+
+## Arch Purges 1,900 Packages and Declares Victory Too Early
+
+Arch developers ultimately purged more than 1,900 compromised packages and suspended new account registrations before declaring the repository clean in mid-June. For a few weeks, it seemed like the situation was contained. The npm-based delivery mechanism had been identified, the malicious packages had been removed, and the community had a clear signal to look for: any PKGBUILD that called out to npm for packages named `atomic-lockfile` or `js-digest` should be flagged immediately.
+
+Then the third wave showed up.
+
+## The Third Wave: Compiled ELF Binaries and a Smarter Attacker
+
+The campaign began in late May when attackers started adopting orphaned packages and embedding compiled ELF binaries directly into build scripts, effectively bypassing the npm and JavaScript-based detection methods that caught the earlier waves.
+
+This is the part that demonstrates the attackers are paying attention. When the community got good at spotting `npm install atomic-lockfile` in PKGBUILDs, the attacker stopped using that approach. Instead, they started embedding pre-compiled ELF binaries directly into the build scripts and using obfuscated downloaders and static payloads that execute during the `makepkg` build phase. The detection signatures from the first wave stopped working. The July 30 lockdown is the third major response Arch Linux has mounted to this campaign.
+
+Compromised packages deliver a Rust-based infostealer that exfiltrates sensitive credentials, browser data, and crypto wallets from affected systems. The third wave version appears to route exfiltrated data through Tor, which makes tracing the destination harder and adds another layer of operational security that the earlier waves did not bother with.
+
+On July 30th, Robin Candau (known online as Antiz) posted on behalf of the Arch Linux DevOps team: "Due to the current influx of malicious package adoptions and follow-up commits made via the AUR, package adoption is currently disabled while we are handling the situation. We will send a follow-up once we're able to. In the meantime, feel free to report suspicious adoption events or commits that haven't been dealt with yet, and stay vigilant."
+
+A few days later, Arch Linux suspended all AUR uploads after detecting another supply chain attack, with at least 120 malicious AUR packages identified and reverted over just a few days. Suspending all uploads is a serious call. It means no one can push any package update to the AUR, not just orphaned ones. That is the maintainers essentially freezing the entire community repository to stop a bleeding they could not otherwise control.
+
+## Why the "Just Read the PKGBUILD" Advice Broke Down
+
+The standard Arch community response to AUR safety questions has always been some version of "read the PKGBUILD before you install." It is good advice and it is real. A PKGBUILD is a shell script. You can open it in a text editor, read what it does, check where it downloads from, and verify the checksums. If something looks wrong, you do not install it.
+
+---
+
+The problem with Atomic Arch is that this advice requires users to read the PKGBUILD not just once when they first install a package, but every time an update comes through. And it requires them to notice when a package they have been installing for two years has quietly changed maintainers and now has three new lines buried in the `package()` function. AUR helpers like `yay` and `paru` will show you diffs when packages update, but in practice a lot of users hit `y` through those prompts without reading them, especially for packages they trust because they have been using them
