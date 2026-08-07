@@ -22,7 +22,6 @@ import { Metadata } from "next";
 import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
-import "devicon/devicon.min.css";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 import Card from "@/components/ui/Card";
 

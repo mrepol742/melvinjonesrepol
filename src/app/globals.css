@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+@import "devicon/devicon.min.css";
 
 @theme {
     --animate-stroke-grow: stroke-grow 0.6s cubic-bezier(0.22, 1, 0.36, 1)
