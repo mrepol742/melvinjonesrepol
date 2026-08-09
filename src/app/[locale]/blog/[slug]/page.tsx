@@ -210,16 +210,14 @@ export default async function BlogPost({
             data-aos-delay="300"
           >
             <div>
-              <p className="text-4xl font-black">
+              <p className="mt-1 text-sm text-zinc-400">
                 {data.date && <>{new Date(data.date).toLocaleDateString()}</>}
               </p>
-              <p className="mt-1 text-sm text-zinc-400">Date</p>
             </div>
             <div>
-              <p className="text-4xl font-black">
+              <p className="mt-1 text-sm text-zinc-400">
                 {estimatedReadingTime} min read
               </p>
-              <p className="mt-1 text-sm text-zinc-400">Reading Time</p>
             </div>
             {data.topics && data.topics.length > 0 && (
               <div className="col-span-2 flex flex-wrap items-center gap-2">
@@ -240,7 +238,7 @@ export default async function BlogPost({
       <section className="px-6 my-6 md:px-10">
         <div className="flex justify-center mb-4">
           <div className="flex gap-10 w-full max-w-6xl">
-            <article className="prose max-w-none flex-1 min-w-0">
+            <article className="prose max-w-none flex-1 min-w-0 wrap-break-word">
               <MDXRemote
                 source={content}
                 components={components}

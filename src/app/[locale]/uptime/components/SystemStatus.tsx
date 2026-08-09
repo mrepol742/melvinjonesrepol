@@ -170,7 +170,7 @@ export default function SystemStatus({
         </div>
 
         {/* Services */}
-        <div className="space-y-5">
+        <div className="space-y-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
           {loading &&
             Array.from({ length: 4 }).map((_, i) => (
               <div key={i} className="h-48 rounded-3xl animate-pulse" />
