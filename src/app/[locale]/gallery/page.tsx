@@ -98,23 +98,6 @@ const albums = [
     ],
   },
   {
-    id: "ulisha",
-    title: "Ulisha Store (React & Laravel)",
-    description:
-      "Ulisha Store is an e-commerce platform built with React and Laravel. It offers a seamless shopping experience with a user-friendly interface, secure payment options, and efficient product management. The platform is designed to help businesses establish their online presence and reach a wider audience.",
-    cover: "/images/ulisha-store-1.png",
-    media: [
-      "/images/ulisha-store-1.png",
-      "/images/ulisha-store-2.png",
-      "/images/ulisha-store-3.png",
-      "/images/ulisha-store-4.png",
-      "/images/ulisha-store-laravel.png",
-      "/images/ulisha-store-laravel-1.png",
-      "/images/ulisha-store-laravel-2.png",
-      "/images/ulisha-store-laravel-3.png",
-    ],
-  },
-  {
     id: "axleshift",
     title: "Axleshift",
     description:
@@ -181,7 +164,6 @@ const albums = [
       "/images/floating-console-extension.png",
       "/images/myportfolio.png",
       "/images/melvin-jones-repol-portfolio-new.png",
-      "/images/devpulse-waka.png",
       "/images/melvin-jones-repol-black.jpg",
       "/images/melvin-jones-repol-black-circle.png",
       "/images/melvinjonesrepol.png",

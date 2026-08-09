@@ -23,7 +23,12 @@ export default function ProjectCarousel() {
     <>
       <Slider>
         {projects
-          .filter((project) => project.type === "client" || project.featured)
+          .filter(
+            (project) =>
+              project.type === "client" ||
+              project.type === "community" ||
+              project.featured,
+          )
           .map((project, idx) => {
             const isAi = !!aiOpen[idx];
             const hasAi = Boolean(project.ai_description);

@@ -15,8 +15,6 @@ export const STATIC_ROUTES = [
   "/case-studies",
   "/now",
   "/projects",
-  "/ulisha-store-laravel",
-  "/ulisha-store-next",
   "/protocol-discussion-platform",
   "/web-surface-scan",
   "/webvium-browser",

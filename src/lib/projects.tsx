@@ -7,10 +7,9 @@ const Projects = [
     ai_description:
       "Clearflow is a modern community water billing and management system built with Expo (React Native) and Laravel.",
     type: "personal",
-    featured: true,
+    featured: false,
     repo: "https://github.com/mrepol742/clearflow-community-water-billing",
     technology: ["Laravel", "Expo (React Native)"],
-    cover: "/images/clearflow.png",
   },
   {
     title: "NPM Guard",
@@ -20,7 +19,7 @@ const Projects = [
     ai_description:
       "NPM Guard is an NPM package monitoring tool that scans your project's dependencies for vulnerabilities and ensures they are up-to-date and safe to use.",
     type: "personal",
-    featured: true,
+    featured: false,
     repo: "https://github.com/mrepol742/npm-guard",
     technology: ["Python"],
   },
@@ -111,10 +110,9 @@ const Projects = [
     ai_description:
       "Ulisha Store is a comprehensive AI-powered e-commerce platform engineered with Laravel and React. Designed specifically for SMBs, it offers a cost-effective, easily deployable architecture that simplifies inventory management, order processing, and customer interactions without the overhead of enterprise-level software.",
     type: "venture",
-    link: "/ulisha-store-laravel",
+    link: "https://ulishastore.com",
     featured: true,
     technology: ["Laravel", "Blade", "React", "Tailwind CSS"],
-    cover: "/images/ulisha-store-laravel.png",
   },
   {
     title: "Protocol Discussion Platform",
@@ -170,6 +168,19 @@ const Projects = [
     technology: ["Kotlin"],
   },
   {
+    title: "Devpulse",
+    key: "devpulse",
+    description:
+      "Turn your daily coding activity into competitive, shareable leaderboards. Track productivity, motivate your team, and visualize real developer impact.",
+    ai_description:
+      "Devpulse is a web-based leaderboard platform that turns your coding activity into a competitive, shareable experience. Track your productivity, visualize real developer impact, and motivate your team with leaderboard rankings and real-time updates.",
+    type: "community",
+    link: "https://devpulse.hallofcodes.org",
+    repo: "https://github.com/hallofcodes/devpulse",
+    featured: false,
+    technology: ["Next.js", "TypeScript", "Tailwind CSS"],
+  },
+  {
     title: "Web Appp",
     key: "web_appp",
     description:
@@ -216,9 +227,8 @@ const Projects = [
       "Project Canis is a highly sophisticated WhatsApp automation engine. Engineered as the spiritual successor to Project Orion, it boasts a strictly typed TypeScript codebase, Prisma ORM for reliable data persistence, and full Docker containerization. Its modular architecture allows developers to easily inject new commands and features, making it a highly scalable solution for business automation.",
     type: "personal",
     link: "/canis-chatbot",
-    featured: false,
+    featured: true,
     technology: ["TypeScript"],
-    cover: "/images/canis-1.png",
   },
   {
     title: "Ulisha Store Next",
@@ -228,10 +238,10 @@ const Projects = [
     ai_description:
       "Ulisha Store Next is the Next.js variant of the Ulisha ecosystem, optimized for the modern serverless edge. By coupling Next.js with Supabase (an open-source Firebase alternative), it provides startups with a fully functional, highly performant e-commerce platform that can be hosted entirely for free on Vercel, drastically reducing initial operational costs.",
     type: "venture",
-    link: "/ulisha-store-next",
+    link: "https://ulishastore.com",
+    repo: "https://github.com/ulisha-limited/ulisha-store-next",
     featured: false,
     technology: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
-    cover: "/images/ulisha-store-1.png",
   },
   {
     title: "Devops Capstone Project",
@@ -255,7 +265,7 @@ const Projects = [
       "This Point of Sale (POS) system was architected from the ground up to solve real-world retail challenges. It features a progressive web app (PWA) design that guarantees offline resilience. Built with Laravel and React, it securely handles multi-department user roles, intensive inventory tracking, and transactional integrity even during network outages.",
     type: "personal",
     link: "/point-of-sale",
-    featured: true,
+    featured: false,
     technology: ["Laravel", "JavaScript", "React", "Bootstrap"],
     cover: "/images/point-of-sale-1.png",
   },
@@ -268,7 +278,7 @@ const Projects = [
       "Axleshift is an enterprise-grade freight management platform engineered on the MERN stack (MongoDB, Express, React, Node.js). It provides logistics businesses with real-time tracking, secure data handling, and operational reliability, streamlining the complex workflows associated with modern supply chain management.",
     type: "personal",
     link: "/axleshift-freight-management",
-    featured: true,
+    featured: false,
     technology: ["JavaScript", "React", "Node.js", "MongoDB", "Bootstrap"],
     cover: "/images/axleshift-3.png",
   },
@@ -321,7 +331,6 @@ const Projects = [
     link: "/orion-chatbot",
     featured: true,
     technology: ["JavaScript"],
-    cover: "/images/orion-1.jpg",
     archived: true,
   },
   {
@@ -400,7 +409,6 @@ const Projects = [
     link: "/webvium-browser",
     featured: true,
     technology: ["Java"],
-    cover: "/images/webvium-banner.png",
   },
 ];
 export const Templates = [
