@@ -2,8 +2,12 @@ name: IndexNow
 
 on:
   push:
-    branches: ["production"]
+    branches: ["master"]
   workflow_dispatch:
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -12,13 +16,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 2
 
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: "npm"
 
       - name: Submit URLs
         run: |
