@@ -1,23 +1,12 @@
-# Portfolio & Projects
+<img src="https://camo.githubusercontent.com/0876db7eeb6ef6b0e610f06b52dbc7524272e9054331340100780357d2d47109/68747470733a2f2f63646e2e706670732e67672f62616e6e6572732f363535382d616e696d652d6769662e706e67">
 
-Build with simplicity and professionalism in mind. 
+<div align="center">
 
-I used different technologies and integrated web services such as but not limited to:  
+# I am Melvin Jones
 
-- Github, Wakatime, Steam & Youtube to showcase my up-to-date information and stats without hard coding it,
-- MDX for blogging, 
-- Google Adsense to monitized projects, 
-- Google Analytics to analyse web traffic to improve Website Performance and User Experience, 
-- Sentry for error monitoring, 
-- Google SMTP to send emails, 
-- Google Recaptcha Enterprise to protect Form Fields together with Honey Input & Rate Limiter, 
-- Setup browser & request checker to lessened emulation and introder inspection,
-- Integrate Zoho Email Services & Trustpilot, - Algolia Search for Search Engine,
-- Exchange Rate API for currency conversion, 
-- AI Integration for content summarization,
-- Google Search Console, Bing Webmaster and other web master to maximized SEO. 
+[![IndexNow](https://github.com/mrepol742/melvinjonesrepol/actions/workflows/indexnow.yml/badge.svg)](https://github.com/mrepol742/melvinjonesrepol/actions/workflows/indexnow.yml)
 
-Too much for a Portfolio, but that's the simplest way to flex skill & being relevance in today's world.
+</div>
 
 > _“Striving for excellence, one project at a time.”_
 
@@ -49,3 +38,7 @@ To build the project run:
 ```bash
 npm run  build
 ```
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
