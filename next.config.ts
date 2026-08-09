@@ -101,6 +101,16 @@ const nextConfig: NextConfig = {
 
     unoptimized: true,
   },
+  rewrites: async () => [
+    {
+      source: "/sitemap-blog-:page.xml",
+      destination: "/sitemap-blog/:page",
+    },
+    {
+      source: "/sitemap-:locale.xml",
+      destination: "/sitemaps/:locale",
+    },
+  ],
   headers: async () => [
     {
       source: "/(.*)",
