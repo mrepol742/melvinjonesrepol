@@ -50,7 +50,6 @@ export default function Footer({
     { href: "/gaming", label: t("footer_gaming") },
     { href: "/certificates", label: t("footer_certificates") },
     { href: "/work-experience", label: t("footer_work_experience") },
-    { href: "/gallery", label: t("footer_gallery") },
     { href: "/contact-me", label: t("footer_contact_me") },
   ];
 

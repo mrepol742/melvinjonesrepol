@@ -14,7 +14,6 @@
       "nav_teams": "Équipes",
       "nav_certificates": "Certifications",
       "nav_work_experience": "Expérience professionnelle",
-      "nav_gallery": "Galerie",
       "nav_about": "À propos",
       "nav_contact_me": "Me contacter",
       "nav_toggle_theme": "Changer de thème",
@@ -30,7 +29,6 @@
       "footer_teams": "Équipes",
       "footer_certificates": "Certifications",
       "footer_work_experience": "Expérience professionnelle",
-      "footer_gallery": "Galerie",
       "footer_about": "À propos",
       "footer_case_studies": "Études de cas",
       "footer_now": "En ce moment",
@@ -245,16 +243,6 @@
     "toast_success": "Message envoyé avec succès !",
     "toast_error": "Échec de l'envoi du message. Veuillez réessayer.",
     "recaptcha_error": "reCAPTCHA n'est pas chargé. Veuillez réessayer plus tard."
-  },
-  "gallery": {
-    "title_line1": "Portfolio",
-    "title_line2": "visuel",
-    "title_line3": "de projets.",
-    "hero_description": "Une collection soigneusement sélectionnée d'images mettant en valeur mes projets personnels, mes réalisations en design et mes solutions numériques créatives. Chaque album regroupe des images ou des vidéos liées afin que vous puissiez parcourir les projets facilement.",
-    "albums_label": "Albums",
-    "media_files_label": "Fichiers multimédias",
-    "back_to_albums": "Retour aux albums",
-    "items_count": "éléments"
   },
   "gaming": {
     "title_line1": "Jouer.",
@@ -539,6 +527,7 @@
   },
   "projects_content": {
     "clearflow_description": "Un système moderne de gestion et de facturation de l'eau communautaire développé avec Expo (React Native) et Laravel.",
+    "devpulse_description": "Transformez votre activité quotidienne de programmation en classements compétitifs et partageables. Suivez la productivité, motivez votre équipe et visualisez l’impact réel des développeurs.",
     "npm_guard_description": "À la suite des récentes attaques sur la chaîne d'approvisionnement logicielle, nous avons développé NPM Guard afin de surveiller et sécuriser les installations de packages NPM, garantissant ainsi l'intégrité et la sécurité de vos dépendances.",
     "digital_music_platform_description": "Une plateforme musicale numérique centralisée proposant une sélection de remixes via un modèle d'abonnement administré par des gestionnaires.",
     "enterprise_ams_description": "Une plateforme de gestion des actifs d'entreprise en cours de développement, intégrant un contrôle d'accès basé sur les rôles, le suivi des actifs et des flux d'attribution, avec AWS Cognito pour l'authentification et le SSO.",

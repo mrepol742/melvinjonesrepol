@@ -14,7 +14,6 @@
       "nav_teams": "Teams",
       "nav_certificates": "Certificates",
       "nav_work_experience": "Work Experience",
-      "nav_gallery": "Gallery",
       "nav_about": "About",
       "nav_contact_me": "Contact Me",
       "nav_toggle_theme": "Toggle Theme",
@@ -30,7 +29,6 @@
       "footer_teams": "Teams",
       "footer_certificates": "Certificates",
       "footer_work_experience": "Work Experience",
-      "footer_gallery": "Gallery",
       "footer_about": "About",
       "footer_case_studies": "Case Studies",
       "footer_now": "Now",
@@ -245,16 +243,6 @@
     "toast_success": "Message sent successfully!",
     "toast_error": "Failed to send message. Please try again.",
     "recaptcha_error": "reCAPTCHA is not loaded. Please try again later."
-  },
-  "gallery": {
-    "title_line1": "Visual",
-    "title_line2": "project",
-    "title_line3": "portfolio.",
-    "hero_description": "A curated collection of images highlighting my personal projects, design work, and creative digital solutions. Each album groups related images or videos so you can browse by project.",
-    "albums_label": "Albums",
-    "media_files_label": "Media files",
-    "back_to_albums": "Back to albums",
-    "items_count": "items"
   },
   "gaming": {
     "title_line1": "Play.",
@@ -539,6 +527,7 @@
   },
   "projects_content": {
     "clearflow_description": "A modern community water billing and management system built with Expo (React Native) and Laravel.",
+    "devpulse_description": "Turn your daily coding activity into competitive, shareable leaderboards. Track productivity, motivate your team, and visualize real developer impact.",
     "npm_guard_description": "Due to the recent supply chain attacks, we developed NPM Guard to monitor and secure NPM package installations, ensuring the integrity and safety of your dependencies.",
     "digital_music_platform_description": "A centralized digital music platform offering curated remix content through a subscription-based access model managed by administrators.",
     "enterprise_ams_description": "An in-progress enterprise asset management platform with role-based access control, asset tracking, and assignment workflows, integrated with AWS Cognito for authentication and SSO.",

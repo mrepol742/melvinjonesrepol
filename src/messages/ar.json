@@ -14,7 +14,6 @@
       "nav_teams": "الفرق",
       "nav_certificates": "الشهادات",
       "nav_work_experience": "الخبرة العملية",
-      "nav_gallery": "المعرض",
       "nav_about": "حول",
       "nav_contact_me": "اتصل بي",
       "nav_toggle_theme": "تبديل السمة",
@@ -30,7 +29,6 @@
       "footer_teams": "الفرق",
       "footer_certificates": "الشهادات",
       "footer_work_experience": "الخبرة العملية",
-      "footer_gallery": "المعرض",
       "footer_about": "حول",
       "footer_case_studies": "دراسات الحالة",
       "footer_now": "الآن",
@@ -245,16 +243,6 @@
     "toast_success": "تم إرسال الرسالة بنجاح!",
     "toast_error": "فشل إرسال الرسالة. يُرجى المحاولة مرة أخرى.",
     "recaptcha_error": "لم يتم تحميل reCAPTCHA. يُرجى المحاولة لاحقًا."
-  },
-  "gallery": {
-    "title_line1": "معرض",
-    "title_line2": "الأعمال",
-    "title_line3": "المرئي.",
-    "hero_description": "مجموعة مختارة من الصور التي تستعرض مشاريعي الشخصية، وأعمال التصميم، والحلول الرقمية الإبداعية. يجمع كل ألبوم الصور أو مقاطع الفيديو ذات الصلة لتتمكن من تصفحها حسب المشروع.",
-    "albums_label": "الألبومات",
-    "media_files_label": "ملفات الوسائط",
-    "back_to_albums": "العودة إلى الألبومات",
-    "items_count": "عنصر"
   },
   "gaming": {
     "title_line1": "العب.",
@@ -539,6 +527,7 @@
   },
   "projects_content": {
     "clearflow_description": "نظام حديث لإدارة وفوترة المياه المجتمعية، مبني باستخدام Expo (React Native) وLaravel.",
+    "devpulse_description": "حوّل نشاطك اليومي في البرمجة إلى لوحات صدارة تنافسية وقابلة للمشاركة. تتبّع الإنتاجية، حفّز فريقك، وشاهد التأثير الحقيقي للمطورين.",
     "npm_guard_description": "بسبب الهجمات الأخيرة على سلسلة التوريد، قمنا بتطوير NPM Guard لمراقبة وتأمين تثبيت حزم NPM، وضمان سلامة واعتمادية التبعيات.",
     "digital_music_platform_description": "منصة موسيقية رقمية مركزية توفر محتوى ريمكسات مختار بعناية من خلال نموذج اشتراك يُدار بواسطة المسؤولين.",
     "enterprise_ams_description": "منصة مؤسسية لإدارة الأصول قيد التطوير، تدعم التحكم في الوصول حسب الأدوار، وتتبع الأصول، وسير عمل التعيين، مع تكامل مع AWS Cognito للمصادقة وتسجيل الدخول الموحد (SSO).",

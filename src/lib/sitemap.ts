@@ -27,7 +27,6 @@ export const STATIC_ROUTES = [
   "/teams",
   "/certificates",
   "/work-experience",
-  "/gallery",
   "/contact-me",
   "/gaming",
   "/tools/open-graph",

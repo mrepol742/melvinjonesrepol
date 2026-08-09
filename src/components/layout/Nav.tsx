@@ -12,7 +12,6 @@ import {
   faFileContract,
   faFolder,
   faGamepad,
-  faImages,
   faMoon,
   faSun,
   faTimes,
@@ -68,13 +67,6 @@ export default function Nav() {
       label: t("nav_work_experience"),
       href: "/work-experience",
       icon: faBriefcase,
-    },
-    {
-      key: "gallery",
-      label: t("nav_gallery"),
-      href: "/gallery",
-      icon: faImages,
-      mobileMenu: true, // make sure its visible on mobile
     },
     {
       key: "legal",

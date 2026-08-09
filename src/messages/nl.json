@@ -14,7 +14,6 @@
       "nav_teams": "Teams",
       "nav_certificates": "Certificaten",
       "nav_work_experience": "Werkervaring",
-      "nav_gallery": "Galerij",
       "nav_about": "Over",
       "nav_contact_me": "Neem contact op",
       "nav_toggle_theme": "Thema wisselen",
@@ -30,7 +29,6 @@
       "footer_teams": "Teams",
       "footer_certificates": "Certificaten",
       "footer_work_experience": "Werkervaring",
-      "footer_gallery": "Galerij",
       "footer_about": "Over",
       "footer_case_studies": "Casestudy's",
       "footer_now": "Nu",
@@ -245,16 +243,6 @@
     "toast_success": "Bericht succesvol verzonden!",
     "toast_error": "Het verzenden van het bericht is mislukt. Probeer het opnieuw.",
     "recaptcha_error": "reCAPTCHA is niet geladen. Probeer het later opnieuw."
-  },
-  "gallery": {
-    "title_line1": "Visuele",
-    "title_line2": "project",
-    "title_line3": "portfolio.",
-    "hero_description": "Een zorgvuldig samengestelde verzameling afbeeldingen die mijn persoonlijke projecten, ontwerpwerk en creatieve digitale oplossingen laten zien. Elk album groepeert gerelateerde afbeeldingen of video's, zodat je per project kunt bladeren.",
-    "albums_label": "Albums",
-    "media_files_label": "Mediabestanden",
-    "back_to_albums": "Terug naar albums",
-    "items_count": "items"
   },
   "gaming": {
     "title_line1": "Speel.",
@@ -539,6 +527,7 @@
   },
   "projects_content": {
     "clearflow_description": "Een modern systeem voor waterfacturering en -beheer voor gemeenschappen, gebouwd met Expo (React Native) en Laravel.",
+    "devpulse_description": "Maak van je dagelijkse programmeeractiviteit competitieve en deelbare ranglijsten. Houd de productiviteit bij, motiveer je team en visualiseer de echte impact van ontwikkelaars.",
     "npm_guard_description": "Vanwege de recente aanvallen op de software supply chain hebben we NPM Guard ontwikkeld om npm-pakketinstallaties te monitoren en te beveiligen, zodat de integriteit en veiligheid van afhankelijkheden worden gewaarborgd.",
     "digital_music_platform_description": "Een gecentraliseerd digitaal muziekplatform dat samengestelde remixcontent aanbiedt via een abonnementsmodel dat door beheerders wordt beheerd.",
     "enterprise_ams_description": "Een enterprise-platform voor assetbeheer in ontwikkeling, met rolgebaseerde toegangscontrole, assettracking en toewijzingsworkflows, geïntegreerd met AWS Cognito voor authenticatie en Single Sign-On.",

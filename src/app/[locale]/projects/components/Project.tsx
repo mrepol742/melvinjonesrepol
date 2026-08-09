@@ -81,11 +81,15 @@ export default async function Project({ query }: { query: string }) {
           >
             <div>
               <p className="text-4xl font-black">100+</p>
-              <p className="mt-1 text-sm text-zinc-400">{t("projects_label")}</p>
+              <p className="mt-1 text-sm text-zinc-400">
+                {t("projects_label")}
+              </p>
             </div>
             <div>
               <p className="text-4xl font-black">9+</p>
-              <p className="mt-1 text-sm text-zinc-400">{t("years_building_label")}</p>
+              <p className="mt-1 text-sm text-zinc-400">
+                {t("years_building_label")}
+              </p>
             </div>
             <div className="col-span-2 flex flex-wrap items-center gap-2">
               {[

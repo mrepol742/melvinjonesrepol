@@ -14,7 +14,6 @@
       "nav_teams": "Mga Koponan",
       "nav_certificates": "Mga Sertipiko",
       "nav_work_experience": "Karanasan sa Trabaho",
-      "nav_gallery": "Gallery",
       "nav_about": "Tungkol",
       "nav_contact_me": "Makipag-ugnayan sa Akin",
       "nav_toggle_theme": "Palitan ang Tema",
@@ -30,7 +29,6 @@
       "footer_teams": "Mga Koponan",
       "footer_certificates": "Mga Sertipiko",
       "footer_work_experience": "Karanasan sa Trabaho",
-      "footer_gallery": "Gallery",
       "footer_about": "Tungkol",
       "footer_case_studies": "Mga Case Study",
       "footer_now": "Ngayon",
@@ -245,16 +243,6 @@
     "toast_success": "Matagumpay na naipadala ang mensahe!",
     "toast_error": "Nabigo ang pagpapadala ng mensahe. Subukan ulit.",
     "recaptcha_error": "Hindi na-load ang reCAPTCHA. Subukan ulit mamaya."
-  },
-  "gallery": {
-    "title_line1": "Visual",
-    "title_line2": "na portfolio ng",
-    "title_line3": "proyekto.",
-    "hero_description": "Isang piling koleksyon ng mga larawan na nagtatampok ng aking mga personal na proyekto, gawa sa disenyo, at mga malikhaing digital na solusyon. Bawat album ay naggrugrupo ng mga kaugnay na larawan o video para mas madaling ma-browse ayon sa proyekto.",
-    "albums_label": "Mga Album",
-    "media_files_label": "Mga Media File",
-    "back_to_albums": "Bumalik sa mga album",
-    "items_count": "aytem"
   },
   "gaming": {
     "title_line1": "Maglaro.",
@@ -533,6 +521,7 @@
   },
   "projects_content": {
     "clearflow_description": "Isang modernong sistema ng pamamahala at pagsingil ng tubig sa komunidad na ginawa gamit ang Expo (React Native) at Laravel.",
+    "devpulse_description": "Gawing competitive at shareable na mga leaderboard ang iyong araw-araw na coding activity. Subaybayan ang productivity, i-motivate ang iyong team, at i-visualize ang tunay na impact ng mga developer.",
     "npm_guard_description": "Dahil sa mga kamakailang supply chain attacks, binuo namin ang NPM Guard upang subaybayan at i-secure ang mga pag-install ng NPM package, tinitiyak ang integridad at kaligtasan ng iyong mga dependency.",
     "digital_music_platform_description": "Isang sentralisadong digital music platform na nag-aalok ng curated remix content sa pamamagitan ng subscription-based na modelo ng access na pinamamahalaan ng mga administrator.",
     "enterprise_ams_description": "Isang enterprise asset management platform na may role-based access control, asset tracking, at assignment workflows, na naka-integrate sa AWS Cognito para sa authentication at SSO.",

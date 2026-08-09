@@ -14,12 +14,12 @@ Core skills: JavaScript/TypeScript, Node.js/Express, React/Next.js, Laravel, Doc
 - [Work Experience](https://www.melvinjonesrepol.com/work-experience): Detailed work history with roles, responsibilities, and achievements.
 - [Contact](https://www.melvinjonesrepol.com/contact): Contact form and social links for inquiries and networking.
 - [Blog](https://www.melvinjonesrepol.com/blog): Articles on software development, project case studies, and technical insights.
-- [Gallery](https://www.melvinjonesrepol.com/gallery): Visual showcase of projects, workspaces, and events.
 - [Legal](https://www.melvinjonesrepol.com/legal): Legal information and policies for the website.
 
 ## Featured Projects
 
-- [Ulisha Store](https://www.melvinjonesrepol.com/ulisha-store-laravel): Laravel/PHP/MySQL e-commerce platform for small to medium businesses with scalable architecture.
+- [DevPulse](https://devpulse.hallofcodes.org): Turn your daily coding activity into competitive, shareable leaderboards. Track productivity, motivate your team, and visualize real developer impact.
+- [Ulisha Store AI](https://ulishastore.com): AI e-commerce platform for small to medium businesses with scalable architecture.
 - [Canis Chatbot](https://www.melvinjonesrepol.com/canis-chatbot): TypeScript/Node.js/Prisma/Docker modular chatbot system for messaging platforms.
 - [Point of Sale](https://www.melvinjonesrepol.com/point-of-sale): Lightweight, offline-capable point-of-sale system built on JavaScript and backend APIs.
 - [Axleshift Freight Management](https://www.melvinjonesrepol.com/axleshift-freight-management): Full-stack logistics and freight management platform for tracking and operations.

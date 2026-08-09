@@ -14,7 +14,6 @@
       "nav_teams": "团队",
       "nav_certificates": "证书",
       "nav_work_experience": "工作经历",
-      "nav_gallery": "图库",
       "nav_about": "关于",
       "nav_contact_me": "联系我",
       "nav_toggle_theme": "切换主题",
@@ -30,7 +29,6 @@
       "footer_teams": "团队",
       "footer_certificates": "证书",
       "footer_work_experience": "工作经历",
-      "footer_gallery": "图库",
       "footer_about": "关于",
       "footer_case_studies": "案例研究",
       "footer_now": "现在",
@@ -245,16 +243,6 @@
     "toast_success": "消息发送成功！",
     "toast_error": "消息发送失败，请重试。",
     "recaptcha_error": "reCAPTCHA 未加载，请稍后重试。"
-  },
-  "gallery": {
-    "title_line1": "视觉",
-    "title_line2": "项目",
-    "title_line3": "作品集。",
-    "hero_description": "精选图片合集，展示我的个人项目、设计作品和创意数字解决方案。每个相册按项目分组，方便浏览图片或视频。",
-    "albums_label": "相册",
-    "media_files_label": "媒体文件",
-    "back_to_albums": "返回相册",
-    "items_count": "项"
   },
   "gaming": {
     "title_line1": "游玩。",
@@ -533,6 +521,7 @@
   },
   "projects_content": {
     "clearflow_description": "基于 Expo（React Native）和 Laravel 构建的现代社区水费账单与管理系统。",
+    "devpulse_description": "将你的日常编码活动转化为具有竞争力且可分享的排行榜。追踪生产力、激励你的团队，并直观了解开发者的实际影响力。",
     "npm_guard_description": "鉴于近期供应链攻击事件，我们开发了 NPM Guard 来监控和保护 NPM 包安装，确保依赖项的完整性和安全性。",
     "digital_music_platform_description": "一个集中式数字音乐平台，通过管理员管理的订阅访问模式提供精选混音内容。",
     "enterprise_ams_description": "一个进行中的企业资产管理平台，具备基于角色的访问控制、资产跟踪和分配工作流，并集成了 AWS Cognito 用于身份验证和 SSO。",
