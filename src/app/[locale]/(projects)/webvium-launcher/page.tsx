@@ -12,31 +12,42 @@ export async function generateMetadata({
   return {
     title: "Download Webvium Launcher - Melvin Jones Repol",
     description:
-    "Lightweight, modern and lightning-fast Android launcher thats currently in development. Built with speed, simplicity and customization in mind.",
+      "Lightweight, modern and lightning-fast Android launcher thats currently in development. Built with speed, simplicity and customization in mind.",
     keywords: [
-    "Webvium Launcher",
-    "Android Launcher",
-    "Lightweight Launcher",
-    "Fast Launcher",
-  ],
+      "Webvium Launcher",
+      "Android Launcher",
+      "Lightweight Launcher",
+      "Fast Launcher",
+    ],
     alternates: getAlternates("/webvium-launcher", locale),
     openGraph: {
-    title: "Download Webvium Launcher - Melvin Jones Repol",
-    description:
-      "Lightweight, modern and lightning-fast Android launcher thats currently in development. Built with speed, simplicity and customization in mind.",
+      title: "Download Webvium Launcher - Melvin Jones Repol",
+      description:
+        "Lightweight, modern and lightning-fast Android launcher thats currently in development. Built with speed, simplicity and customization in mind.",
 
-    url: "https://www.melvinjonesrepol.com/webvium-launcher",
-    siteName: "Melvin Jones Repol",
-    locale: "en_US",
-    type: "website",
-  },
+      url: "https://www.melvinjonesrepol.com/webvium-launcher",
+      siteName: "Melvin Jones Repol",
+      images: [
+        {
+          url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+          width: 800,
+          height: 600,
+          alt: "Melvin Jones Repol",
+        },
+      ],
+      locale: "en_US",
+      type: "website",
+    },
     twitter: {
-    card: "summary_large_image",
-    title: "Download Webvium Launcher - Melvin Jones Repol",
-    description:
-      "Lightweight, modern and lightning-fast Android launcher thats currently in development. Built with speed, simplicity and customization in mind.",
-    creator: "@mrepol742",
-  },
+      card: "summary_large_image",
+      title: "Download Webvium Launcher - Melvin Jones Repol",
+      description:
+        "Lightweight, modern and lightning-fast Android launcher thats currently in development. Built with speed, simplicity and customization in mind.",
+      images: [
+        "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+      ],
+      creator: "@mrepol742",
+    },
   };
 }
 

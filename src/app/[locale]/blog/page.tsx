@@ -5,12 +5,10 @@ import Pagination from "./components/Pagination";
 
 const POSTS_PER_PAGE = 12;
 const SITE_URL = "https://www.melvinjonesrepol.com";
-const SITE_NAME = "Melvin Jones Repol";
-const DEFAULT_OG_IMAGE = `${SITE_URL}/og/blog.png`;
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: `Blog - ${SITE_NAME}`,
+    title: `Blog - Melvin Jones Repol`,
     description:
       "Browse my blog posts, insights, and experiences on software development, technology trends, and personal growth in the tech industry.",
     keywords: [
@@ -24,29 +22,31 @@ export async function generateMetadata(): Promise<Metadata> {
       canonical: `${SITE_URL}/blog`,
     },
     openGraph: {
-      title: `Blog - ${SITE_NAME}`,
+      title: `Blog - Melvin Jones Repol`,
       description:
         "Browse my blog posts, insights, and experiences on software development, technology trends, and personal growth in the tech industry.",
-      type: "website",
       url: `${SITE_URL}/blog`,
-      siteName: SITE_NAME,
-      locale: "en_US",
+      siteName: "Melvin Jones Repol",
       images: [
         {
-          url: DEFAULT_OG_IMAGE,
-          width: 1200,
-          height: 630,
-          alt: `${SITE_NAME} Blog`,
+          url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+          width: 800,
+          height: 600,
+          alt: "Melvin Jones Repol",
         },
       ],
+      locale: "en_US",
+      type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: `Blog - ${SITE_NAME}`,
+      title: `Blog - Melvin Jones Repol`,
       description:
         "Browse my blog posts, insights, and experiences on software development, technology trends, and personal growth in the tech industry.",
+      images: [
+        "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+      ],
       creator: "@mrepol742",
-      images: [DEFAULT_OG_IMAGE],
     },
   };
 }

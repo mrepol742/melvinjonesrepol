@@ -56,8 +56,8 @@ export async function generateMetadata({
       images: [
         {
           url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
-          width: 1200,
-          height: 630,
+          width: 800,
+          height: 600,
           alt: "Melvin Jones Repol",
         },
       ],
@@ -110,8 +110,13 @@ export default async function Home({
     worksFor: [
       {
         "@type": "Organization",
+        name: "UP-TO-DATE Webdesign",
+        url: "https://www.uptodatewebdesign.com",
+      },
+      {
+        "@type": "Organization",
         name: "Hall of Codes",
-        url: "https://www.hallofcodes.com",
+        url: "https://www.hallofcodes.org",
         sameAs: [
           "https://www.facebook.com/hallofcodes",
           "https://github.com/hallofcodes",
@@ -174,8 +179,12 @@ export default async function Home({
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
                   </span>
-                  <span className="font-mono tracking-widest uppercase opacity-50">Currently at</span>
-                  <span className="font-bold tracking-wide">Up to Date Web Design</span>
+                  <span className="font-mono tracking-widest uppercase opacity-50">
+                    Currently at
+                  </span>
+                  <span className="font-bold tracking-wide">
+                    Up to Date Web Design
+                  </span>
                   <span className="opacity-30">·</span>
                   <span className="opacity-60">Full Stack Developer</span>
                 </div>

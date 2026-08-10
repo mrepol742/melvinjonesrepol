@@ -38,9 +38,9 @@ export async function generateMetadata({
       images: [
         {
           url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
-          width: 1200,
-          height: 630,
-          alt: "Contact Me Cover",
+          width: 800,
+          height: 600,
+          alt: "Melvin Jones Repol",
         },
       ],
       locale: "en_US",

@@ -12,43 +12,43 @@ export async function generateMetadata({
   return {
     title: "Web Surface Scan - Melvin Jones Repol",
     description:
-    "A lightweight developer-focused tool for analyzing a website’s technology stack, integrations, and potential security flaws using automated browser inspection.",
+      "A lightweight developer-focused tool for analyzing a website’s technology stack, integrations, and potential security flaws using automated browser inspection.",
     keywords: [
-    "Web Surface Scan",
-    "Website Analysis Tool",
-    "Technology Stack Analysis",
-    "Integration Analysis",
-    "Security Flaw Detection",
-    "Website Inspection",
-  ],
+      "Web Surface Scan",
+      "Website Analysis Tool",
+      "Technology Stack Analysis",
+      "Integration Analysis",
+      "Security Flaw Detection",
+      "Website Inspection",
+    ],
     alternates: getAlternates("/web-surface-scan", locale),
     openGraph: {
-    title: "Web Surface Scan - Melvin Jones Repol",
-    description:
-      "A lightweight developer-focused tool for analyzing a website’s technology stack, integrations, and potential security flaws using automated browser inspection.",
-    url: "https://www.melvinjonesrepol.com/web-surface-scan",
-    siteName: "Melvin Jones Repol",
-    images: [
-      {
-        url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
-        width: 800,
-        height: 600,
-        alt: "Web Surface Scan Screenshot",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
+      title: "Web Surface Scan - Melvin Jones Repol",
+      description:
+        "A lightweight developer-focused tool for analyzing a website’s technology stack, integrations, and potential security flaws using automated browser inspection.",
+      url: "https://www.melvinjonesrepol.com/web-surface-scan",
+      siteName: "Melvin Jones Repol",
+      images: [
+        {
+          url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+          width: 800,
+          height: 600,
+          alt: "Melvin Jones Repol",
+        },
+      ],
+      locale: "en_US",
+      type: "website",
+    },
     twitter: {
-    card: "summary_large_image",
-    title: "Web Surface Scan - Melvin Jones Repol",
-    description:
-      "A lightweight developer-focused tool for analyzing a website’s technology stack, integrations, and potential security flaws using automated browser inspection.",
-    images: [
-      "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
-    ],
-    creator: "@mrepol742",
-  },
+      card: "summary_large_image",
+      title: "Web Surface Scan - Melvin Jones Repol",
+      description:
+        "A lightweight developer-focused tool for analyzing a website’s technology stack, integrations, and potential security flaws using automated browser inspection.",
+      images: [
+        "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+      ],
+      creator: "@mrepol742",
+    },
   };
 }
 

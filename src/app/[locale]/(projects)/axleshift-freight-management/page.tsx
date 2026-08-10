@@ -34,10 +34,10 @@ export async function generateMetadata({
       siteName: "Melvin Jones Repol",
       images: [
         {
-          url: "https://www.melvinjonesrepol.com/images/axleshift-1.png",
+          url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
           width: 800,
           height: 600,
-          alt: "Axleshift Freight Management Screenshot",
+          alt: "Melvin Jones Repol",
         },
       ],
       locale: "en_US",
@@ -48,7 +48,9 @@ export async function generateMetadata({
       title: "Axleshift Freight Management - Melvin Jones Repol",
       description:
         "A freight management services. Providing Businesses with cutting-edge platform, security, and reliability.",
-      images: ["https://www.melvinjonesrepol.com/images/axleshift-1.png"],
+      images: [
+        "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+      ],
       creator: "@mrepol742",
     },
   };

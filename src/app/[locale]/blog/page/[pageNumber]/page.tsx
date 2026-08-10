@@ -6,8 +6,6 @@ import Pagination from "../../components/Pagination";
 
 const POSTS_PER_PAGE = 12;
 const SITE_URL = "https://www.melvinjonesrepol.com";
-const SITE_NAME = "Melvin Jones Repol";
-const DEFAULT_OG_IMAGE = `${SITE_URL}/og/blog.png`;
 
 export async function generateStaticParams() {
   const posts = getAllPosts("en");
@@ -25,7 +23,7 @@ export async function generateMetadata({
   const { pageNumber } = await params;
   const page = Number(pageNumber);
 
-  const title = `Blog - Page ${page} - ${SITE_NAME}`;
+  const title = `Blog - Page ${page} - Melvin Jones Repol`;
   const description = `Page ${page} of blog posts covering software development, technology trends, and personal growth in the tech industry.`;
   const canonicalUrl = `${SITE_URL}/blog/page/${page}`;
 
@@ -45,25 +43,27 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      type: "website",
       url: canonicalUrl,
-      siteName: SITE_NAME,
-      locale: "en_US",
+      siteName: "Melvin Jones Repol",
       images: [
         {
-          url: DEFAULT_OG_IMAGE,
-          width: 1200,
-          height: 630,
-          alt: `${SITE_NAME} Blog`,
+          url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+          width: 800,
+          height: 600,
+          alt: "Melvin Jones Repol",
         },
       ],
+      locale: "en_US",
+      type: "website",
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [
+        "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+      ],
       creator: "@mrepol742",
-      images: [DEFAULT_OG_IMAGE],
     },
   };
 }

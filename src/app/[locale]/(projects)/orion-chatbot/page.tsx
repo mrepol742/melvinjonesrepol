@@ -12,43 +12,45 @@ export async function generateMetadata({
   return {
     title: "Orion Chatbot - Melvin Jones Repol",
     description:
-    "Meet the lightning-fast Facebook Messenger chatbot, seamlessly managing multiple accounts with access to 271 commands.",
+      "Meet the lightning-fast Facebook Messenger chatbot, seamlessly managing multiple accounts with access to 271 commands.",
     keywords: [
-    "Orion Chatbot",
-    "Facebook Messenger Bot",
-    "Chatbot",
-    "Multi-account Management",
-    "271 Commands",
-    "Messenger Automation",
-    "AI Chatbot",
-    "Orion Bot",
-  ],
+      "Orion Chatbot",
+      "Facebook Messenger Bot",
+      "Chatbot",
+      "Multi-account Management",
+      "271 Commands",
+      "Messenger Automation",
+      "AI Chatbot",
+      "Orion Bot",
+    ],
     alternates: getAlternates("/orion-chatbot", locale),
     openGraph: {
-    title: "Orion Chatbot - Melvin Jones Repol",
-    description:
-      "Meet the lightning-fast Facebook Messenger chatbot, seamlessly managing multiple accounts with access to 271 commands.",
-    url: "https://www.melvinjonesrepol.com/orion-chatbot",
-    siteName: "Melvin Jones Repol",
-    images: [
-      {
-        url: "https://opengraph.githubassets.com/1/mrepol742/project-orion",
-        width: 800,
-        height: 600,
-        alt: "Orion Chatbot Screenshot",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
+      title: "Orion Chatbot - Melvin Jones Repol",
+      description:
+        "Meet the lightning-fast Facebook Messenger chatbot, seamlessly managing multiple accounts with access to 271 commands.",
+      url: "https://www.melvinjonesrepol.com/orion-chatbot",
+      siteName: "Melvin Jones Repol",
+      images: [
+        {
+          url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+          width: 800,
+          height: 600,
+          alt: "Melvin Jones Repol",
+        },
+      ],
+      locale: "en_US",
+      type: "website",
+    },
     twitter: {
-    card: "summary_large_image",
-    title: "Orion Chatbot - Melvin Jones Repol",
-    description:
-      "Meet the lightning-fast Facebook Messenger chatbot, seamlessly managing multiple accounts with access to 271 commands.",
-    images: ["https://opengraph.githubassets.com/1/mrepol742/project-orion"],
-    creator: "@mrepol742",
-  },
+      card: "summary_large_image",
+      title: "Orion Chatbot - Melvin Jones Repol",
+      description:
+        "Meet the lightning-fast Facebook Messenger chatbot, seamlessly managing multiple accounts with access to 271 commands.",
+      images: [
+        "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+      ],
+      creator: "@mrepol742",
+    },
   };
 }
 
@@ -68,7 +70,7 @@ const SoftwareApplication = {
   operatingSystem: "CrossPlatform",
   applicationCategory: "Chatbot",
   applicationSubCategory: "MessagingApplication",
-    description:
+  description:
     "Meet the lightning-fast Facebook Messenger chatbot, seamlessly managing multiple accounts with access to 271 commands.",
   creator: {
     "@type": "Person",

@@ -24,9 +24,9 @@ export async function generateMetadata({
       images: [
         {
           url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
-          width: 1200,
-          height: 630,
-          alt: "Case Studies",
+          width: 800,
+          height: 600,
+          alt: "Melvin Jones Repol",
         },
       ],
       locale: "en_US",
@@ -50,7 +50,7 @@ const caseStudies = [
     title: "Building a browser from scratch even AI will refused to do it",
     label: "Engineering Journey",
     summary:
-    "Webvium Browser started as a personal challenge to build a lightweight Android browser entirely from scratch. Instead of relying on third party libraries, the goal was to understand every layer of the application while creating something that was fast, private, and efficient.",
+      "Webvium Browser started as a personal challenge to build a lightweight Android browser entirely from scratch. Instead of relying on third party libraries, the goal was to understand every layer of the application while creating something that was fast, private, and efficient.",
     sections: [
       {
         heading: "Context",
@@ -155,8 +155,7 @@ export default function CaseStudiesPage() {
               Case
               <br />
               <span className="opacity-40">studies</span>
-              <br />
-              & tradeoffs.
+              <br />& tradeoffs.
             </h1>
 
             <p className="max-w-2xl text-lg leading-8 text-zinc-400 md:text-xl">

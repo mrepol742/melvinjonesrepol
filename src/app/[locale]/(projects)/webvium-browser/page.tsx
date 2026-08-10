@@ -12,49 +12,51 @@ export async function generateMetadata({
   return {
     title: "Download Webvium Browser - Melvin Jones Repol",
     description:
-    "A lightweight, lightning-fast, ad-blocker and beautifully designed web browser for Android.",
+      "A lightweight, lightning-fast, ad-blocker and beautifully designed web browser for Android.",
     keywords: [
-    "Webvium Browser",
-    "Android Browser",
-    "Lightweight Browser",
-    "Fast Browser",
-    "Material Design",
-    "Full-Featured Browser",
-    "Web Browser",
-    "Mobile Browser",
-    "Internet Browser",
-    "Privacy-Focused Browser",
-    "Secure Browser",
-    "Browser Adblocker",
-    "Adblock",
-    "Built-in browser adblock",
-  ],
+      "Webvium Browser",
+      "Android Browser",
+      "Lightweight Browser",
+      "Fast Browser",
+      "Material Design",
+      "Full-Featured Browser",
+      "Web Browser",
+      "Mobile Browser",
+      "Internet Browser",
+      "Privacy-Focused Browser",
+      "Secure Browser",
+      "Browser Adblocker",
+      "Adblock",
+      "Built-in browser adblock",
+    ],
     alternates: getAlternates("/webvium-browser", locale),
     openGraph: {
-    title: "Download Webvium Browser - Melvin Jones Repol",
-    description:
-      "A lightweight, lightning-fast, ad-blocker and beautifully designed web browser for Android.",
-    url: "https://www.melvinjonesrepol.com/webvium-browser",
-    siteName: "Melvin Jones Repol",
-    images: [
-      {
-        url: "https://www.melvinjonesrepol.com/images/webvium-banner.png",
-        width: 800,
-        height: 600,
-        alt: "Webvium Browser Screenshot",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
+      title: "Download Webvium Browser - Melvin Jones Repol",
+      description:
+        "A lightweight, lightning-fast, ad-blocker and beautifully designed web browser for Android.",
+      url: "https://www.melvinjonesrepol.com/webvium-browser",
+      siteName: "Melvin Jones Repol",
+      images: [
+        {
+          url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+          width: 800,
+          height: 600,
+          alt: "Melvin Jones Repol",
+        },
+      ],
+      locale: "en_US",
+      type: "website",
+    },
     twitter: {
-    card: "summary_large_image",
-    title: "Download Webvium Browser - Melvin Jones Repol",
-    description:
-      "A lightweight, lightning-fast, ad-blocker and beautifully designed web browser for Android.",
-    images: ["https://www.melvinjonesrepol.com/images/webvium-banner.png"],
-    creator: "@mrepol742",
-  },
+      card: "summary_large_image",
+      title: "Download Webvium Browser - Melvin Jones Repol",
+      description:
+        "A lightweight, lightning-fast, ad-blocker and beautifully designed web browser for Android.",
+      images: [
+        "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+      ],
+      creator: "@mrepol742",
+    },
   };
 }
 

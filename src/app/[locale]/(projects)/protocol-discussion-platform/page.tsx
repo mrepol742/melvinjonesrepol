@@ -12,45 +12,45 @@ export async function generateMetadata({
   return {
     title: "Protocol Discussion Platform - Melvin Jones Repol",
     description:
-    "A content-first discussion platform where users can post structured protocols, create discussion threads, and engage through comments, reviews, and voting.",
+      "A content-first discussion platform where users can post structured protocols, create discussion threads, and engage through comments, reviews, and voting.",
     keywords: [
-    "Protocol Discussion Platform",
-    "Discussion Platform",
-    "Content-First Discussion",
-    "Structured Protocols",
-    "Discussion Threads",
-    "Comments",
-    "Reviews",
-    "Voting",
-  ],
+      "Protocol Discussion Platform",
+      "Discussion Platform",
+      "Content-First Discussion",
+      "Structured Protocols",
+      "Discussion Threads",
+      "Comments",
+      "Reviews",
+      "Voting",
+    ],
     alternates: getAlternates("/protocol-discussion-platform", locale),
     openGraph: {
-    title: "Protocol Discussion Platform - Melvin Jones Repol",
-    description:
-      "A content-first discussion platform where users can post structured protocols, create discussion threads, and engage through comments, reviews, and voting.",
-    url: "https://www.melvinjonesrepol.com/protocol-discussion-platform",
-    siteName: "Melvin Jones Repol",
-    images: [
-      {
-        url: "https://www.melvinjonesrepol.com/images/protocol-discussion-platform.png",
-        width: 800,
-        height: 600,
-        alt: "Protocol Discussion Screenshot",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
+      title: "Protocol Discussion Platform - Melvin Jones Repol",
+      description:
+        "A content-first discussion platform where users can post structured protocols, create discussion threads, and engage through comments, reviews, and voting.",
+      url: "https://www.melvinjonesrepol.com/protocol-discussion-platform",
+      siteName: "Melvin Jones Repol",
+      images: [
+        {
+          url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+          width: 800,
+          height: 600,
+          alt: "Melvin Jones Repol",
+        },
+      ],
+      locale: "en_US",
+      type: "website",
+    },
     twitter: {
-    card: "summary_large_image",
-    title: "Protocol Discussion Platform - Melvin Jones Repol",
-    description:
-      "A content-first discussion platform where users can post structured protocols, create discussion threads, and engage through comments, reviews, and voting.",
-    images: [
-      "https://www.melvinjonesrepol.com/images/protocol-discussion-platform.png",
-    ],
-    creator: "@mrepol742",
-  },
+      card: "summary_large_image",
+      title: "Protocol Discussion Platform - Melvin Jones Repol",
+      description:
+        "A content-first discussion platform where users can post structured protocols, create discussion threads, and engage through comments, reviews, and voting.",
+      images: [
+        "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+      ],
+      creator: "@mrepol742",
+    },
   };
 }
 

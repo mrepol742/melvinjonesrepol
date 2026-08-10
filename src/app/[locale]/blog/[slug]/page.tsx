@@ -64,9 +64,17 @@ export async function generateMetadata({
     openGraph: {
       title: (post.data.title ?? "Blog Post") + " - Melvin Jones Repol",
       description: post.data.excerpt,
-      type: "article",
       siteName: "Melvin Jones Repol",
+      images: [
+        {
+          url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+          width: 800,
+          height: 600,
+          alt: "Melvin Jones Repol",
+        },
+      ],
       locale: "en_US",
+      type: "article",
     },
     alternates: {
       canonical: `https://www.melvinjonesrepol.com/blog/${slug}`,
@@ -75,6 +83,9 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: (post.data.title ?? "Blog Post") + " - Melvin Jones Repol",
       description: post.data.excerpt,
+      images: [
+        "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+      ],
       creator: "@mrepol742",
     },
   };

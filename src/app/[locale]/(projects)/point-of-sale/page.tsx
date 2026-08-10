@@ -36,10 +36,10 @@ export async function generateMetadata({
       siteName: "Melvin Jones Repol",
       images: [
         {
-          url: "https://www.melvinjonesrepol.com/images/point-of-sale.png",
+          url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
           width: 800,
           height: 600,
-          alt: "Point of Sale Screenshot",
+          alt: "Melvin Jones Repol",
         },
       ],
       locale: "en_US",
@@ -50,7 +50,9 @@ export async function generateMetadata({
       title: "Point of Sale - Melvin Jones Repol",
       description:
         "A lightweight, web-based and offline-capable POS system built for flawless performance, supporting multi-department roles and full functionality.",
-      images: ["https://www.melvinjonesrepol.com/images/point-of-sale.png"],
+      images: [
+        "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+      ],
       creator: "@mrepol742",
     },
   };

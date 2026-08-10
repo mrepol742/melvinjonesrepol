@@ -12,45 +12,47 @@ export async function generateMetadata({
   return {
     title: "Download Webvium VPN - Melvin Jones Repol",
     description:
-    "Anonymous, Secured, Private and the fastest Virtual Private Network.",
+      "Anonymous, Secured, Private and the fastest Virtual Private Network.",
     keywords: [
-    "Webvium VPN",
-    "Virtual Private Network",
-    "VPN",
-    "Anonymous VPN",
-    "Secured VPN",
-    "Private VPN",
-    "Fast VPN",
-    "Android VPN",
-    "Internet Security",
-    "Online Privacy",
-  ],
+      "Webvium VPN",
+      "Virtual Private Network",
+      "VPN",
+      "Anonymous VPN",
+      "Secured VPN",
+      "Private VPN",
+      "Fast VPN",
+      "Android VPN",
+      "Internet Security",
+      "Online Privacy",
+    ],
     alternates: getAlternates("/webvium-vpn", locale),
     openGraph: {
-    title: "Download Webvium VPN - Melvin Jones Repol",
-    description:
-      "Anonymous, Secured, Private and the fastest Virtual Private Network.",
-    url: "https://www.melvinjonesrepol.com/webvium-vpn",
-    siteName: "Melvin Jones Repol",
-    images: [
-      {
-        url: "https://www.melvinjonesrepol.com/images/webviumvpn-banner.png",
-        width: 800,
-        height: 600,
-        alt: "Webvium VPN Screenshot",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
+      title: "Download Webvium VPN - Melvin Jones Repol",
+      description:
+        "Anonymous, Secured, Private and the fastest Virtual Private Network.",
+      url: "https://www.melvinjonesrepol.com/webvium-vpn",
+      siteName: "Melvin Jones Repol",
+      images: [
+        {
+          url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+          width: 800,
+          height: 600,
+          alt: "Melvin Jones Repol",
+        },
+      ],
+      locale: "en_US",
+      type: "website",
+    },
     twitter: {
-    card: "summary_large_image",
-    title: "Download Webvium VPN - Melvin Jones Repol",
-    description:
-      "Anonymous, Secured, Private and the fastest Virtual Private Network.",
-    images: ["https://www.melvinjonesrepol.com/images/webviumvpn-banner.png"],
-    creator: "@mrepol742",
-  },
+      card: "summary_large_image",
+      title: "Download Webvium VPN - Melvin Jones Repol",
+      description:
+        "Anonymous, Secured, Private and the fastest Virtual Private Network.",
+      images: [
+        "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+      ],
+      creator: "@mrepol742",
+    },
   };
 }
 

@@ -19,7 +19,7 @@ export const STATIC_ROUTES = [
   "/web-surface-scan",
   "/webvium-browser",
   "/webvium-vpn",
-  "/canis-chatbot",
+  "/canis-agent",
   "/axleshift-freight-management",
   "/point-of-sale",
   "/webvium-launcher",

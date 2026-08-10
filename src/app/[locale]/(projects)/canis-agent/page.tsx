@@ -34,10 +34,10 @@ export async function generateMetadata({
       siteName: "Melvin Jones Repol",
       images: [
         {
-          url: "https://opengraph.githubassets.com/1/mrepol742/project-canis",
+          url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
           width: 800,
           height: 600,
-          alt: "Canis Agent Screenshot",
+          alt: "Melvin Jones Repol",
         },
       ],
       locale: "en_US",
@@ -48,7 +48,9 @@ export async function generateMetadata({
       title: "Canis Agent - Melvin Jones Repol",
       description:
         "A multi-account WhatsApp bot built in TypeScript that handles everything from group commands and instant media downloads to an agentic AI that can search the web, write and run code, and deliver files.",
-      images: ["https://opengraph.githubassets.com/1/mrepol742/project-canis"],
+      images: [
+        "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+      ],
       creator: "@mrepol742",
     },
   };
