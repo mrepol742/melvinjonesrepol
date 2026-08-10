@@ -222,11 +222,11 @@ const Projects = [
     title: "Project Canis",
     key: "project_canis",
     description:
-      "A scalable, modular WhatsApp chatbot built in TypeScript. It leverages modern best practices, lean architecture, Prisma ORM, Dockerization, and environment-based configuration to deliver a robust, flexible successor to Orion.",
+      "A multi-account WhatsApp bot built in TypeScript that handles everything from group commands and instant media downloads to an agentic AI that can search the web, write and run code, and deliver files. All through a single chat message.",
     ai_description:
-      "Project Canis is a highly sophisticated WhatsApp automation engine. Engineered as the spiritual successor to Project Orion, it boasts a strictly typed TypeScript codebase, Prisma ORM for reliable data persistence, and full Docker containerization. Its modular architecture allows developers to easily inject new commands and features, making it a highly scalable solution for business automation.",
+      "Project Canis is an AI-powered WhatsApp bot that delivers a seamless, multi-account chat experience. With a modular architecture and agentic AI capabilities, it can handle complex commands, media downloads, and web searches, all through a single chat message.",
     type: "personal",
-    link: "/canis-chatbot",
+    link: "/canis-agent",
     featured: true,
     technology: ["TypeScript"],
   },

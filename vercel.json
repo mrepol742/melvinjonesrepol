@@ -99,6 +99,11 @@
       "source": "/floating-console-extension",
       "destination": "https://webvium.melvinjonesrepol.com",
       "permanent": true
+    },
+    {
+      "source": "/canis-chatbot",
+      "destination": "/canis-agent",
+      "permanent": true
     }
   ]
 }
