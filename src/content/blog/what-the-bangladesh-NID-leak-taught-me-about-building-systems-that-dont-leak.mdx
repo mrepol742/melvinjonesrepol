@@ -1,0 +1,54 @@
+---
+title: "What the Bangladesh NID Leak Taught Me About Building Systems That Don't Leak"
+date: "2026-08-11"
+excerpt: "A dark web dump full of national ID data got me thinking about how normal, boring engineering decisions are usually the difference between 'we're fine' and 'we're a headline.'"
+topics: ["data-security", "backend-engineering", "privacy", "system-design"]
+---
+
+I read the news about Bangladesh's national identity card data reportedly showing up on the dark web the same way I read most breach stories now, which is with a weird mix of dread and déjà vu. Another country, another database, another headline about millions of records floating around where they shouldn't be. I've been building backend systems for long enough to know that these stories almost never come from some genius hacker outsmarting a fortress. They come from someone leaving a door unlocked, forgetting to rotate a key, or shipping a "temporary" endpoint that never got temporary-ed away. It's rarely a movie hacking scene. It's usually just a Tuesday afternoon decision that nobody thought was a big deal at the time.
+
+This post isn't really about the specifics of that particular leak, because honestly the details are still being pieced together by people with a lot more access and context than I have. What it did do is send me down a rabbit hole thinking about the actual engineering patterns that separate systems that hold up under pressure from ones that quietly fall apart, and I wanted to write some of that down while it's fresh.
+
+## Why This Story Hit Different
+
+National ID systems are a special kind of scary to think about as an engineer. Most apps I've worked on, if the database leaks, users can change a password, cancel a card, rotate an API key. Identity data doesn't work that way. A national ID number, a date of birth, a father's name, a permanent address, none of that is rotatable. Once it's out, it's out for the person's entire life. That's the part that makes these stories land heavier than your average SaaS breach.
+
+It also made me realize how much of "data protection infrastructure" is treated as a compliance checkbox instead of an actual engineering discipline. Teams will spend weeks optimizing a database query that saves 40 milliseconds, then leave an internal admin panel reachable without proper auth because "nobody outside the team knows the URL." I've seen that exact reasoning in real codebases. It's not stupidity, it's just how priorities quietly drift when deadlines are loud and security is silent until it isn't.
+
+## The Boring Stuff That Actually Matters
+
+None of what actually prevents these leaks is exciting. That's kind of the point.
+
+Access control that's actually enforced at the data layer, not just the UI. I've audited systems where the frontend hides a button, and everyone assumed that counted as security. It doesn't. If your API will happily return the data to anyone who crafts the right request, the button was theater.
+
+Logging who touched what, and when. Not for compliance paperwork, but because when something does go wrong, the difference between "we found it in six hours" and "we found it in six months" usually comes down to whether anyone can even answer the question "who accessed this table last week."
+
+Encryption at rest that isn't just a checkbox in a cloud console. I've seen teams enable disk-level encryption and call it a day, while the actual sensitive fields sit in plaintext columns, fully readable to anyone with database access, including a compromised service account that has way more permissions than it needs.
+
+And permission scoping. This one gets skipped constantly because it's annoying to set up properly. Giving every internal service a god-mode database credential is faster to build with, until the day one of those services gets popped and suddenly the blast radius is the entire dataset instead of one table.
+
+## Things I Started Doing Differently
+
+After reading through how these mass identity leaks tend to happen, structurally, I went back and audited a couple of my own side projects, and honestly it was humbling. I found an admin route that had no rate limiting. I found a database export script that logged full user records to a debug file that never got cleaned up. Small stuff, nothing catastrophic, but exactly the kind of small stuff that adds up into a real incident when a system scales past "just me and a few beta users."
+
+A few things I've actually changed since:
+
+I started treating any field that identifies a real human as sensitive by default, instead of deciding case by case. Name, address, ID numbers, phone numbers, all of it gets the same handling: encrypted at rest, access logged, never dumped into logs or error messages.
+
+I stopped trusting "internal only" as a security boundary. Internal tools get breached constantly because people assume internal means safe, so they skip the auth checks they'd normally add. An internal admin panel with weak auth is not meaningfully different from a public one, it's just public to a smaller, dumber attack surface.
+
+I started running my own mini threat model before shipping anything that touches personal data. Not a formal audit, just five minutes asking "if this leaked tomorrow, what would be in it, and would I be okay explaining that." That question alone has killed a few lazy shortcuts I was about to take.
+
+## Why This Is Everyone's Problem, Not Just Big Companies'
+
+It's tempting to read a story like this and think it's a government-scale problem that doesn't apply to your weekend project or your startup's MVP. But the patterns that cause massive leaks are the exact same patterns that cause small ones. An unauthenticated endpoint doesn't care if your user base is 12 people or 170 million. A misconfigured S3 bucket behaves identically at any scale. The only real difference is how many people get hurt when it goes wrong.
+
+That's honestly the most useful reframe I got out of following this story. Security isn't a separate feature you bolt on before launch. It's a property of how you build things from the first migration file onward. The teams that avoid these disasters aren't the ones with the biggest security budgets, they're the ones who never let "we'll fix it later" become the default answer to "should this be locked down."
+
+## What I'm Taking Into My Next Project
+
+I'm not pretending a checklist prevents nation-scale breaches, that's a much bigger conversation involving policy, oversight, and infrastructure decisions way above what any single developer controls. But at the level I actually operate at, the lesson is pretty clear. Assume any personal data you store will eventually be a target. Design for that from day one instead of retrofitting it after something goes wrong. Ask the annoying questions early, the ones that slow down a sprint but save you from writing an incident report later.
+
+---
+
+Stories like this Bangladesh NID situation are uncomfortable to read, but they're also useful. They're a reminder that the boring, unglamorous engineering work of proper access control and data handling isn't bureaucratic overhead. It's the actual job.
