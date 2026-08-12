@@ -35,7 +35,6 @@
     "shiki": "^4.0.2"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/aos": "^3.0.7",
     "@types/node": "^20",
@@ -46,7 +45,7 @@
     "autoprefixer": "^10.4.21",
     "baseline-browser-mapping": "^2.10.10",
     "eslint": "^9",
-    "eslint-config-next": "16.0.10",
+    "eslint-config-next": "^16.1.6",
     "postcss": "^8.5.6",
     "tailwindcss": "^4",
     "typescript": "^5"

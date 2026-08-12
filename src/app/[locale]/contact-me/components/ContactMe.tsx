@@ -16,7 +16,7 @@ export default function ContactMe() {
     message: "",
     username: "",
   });
-
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [grecaptchaLoaded, setGrecaptchaLoaded] = useState(false);
 
   const wordCount =
@@ -26,17 +26,21 @@ export default function ContactMe() {
   const isValidWordCount = wordCount >= 20 && wordCount <= 500;
 
   useEffect(() => {
-    const scriptId = "recaptcha-enterprise";
-    if (!document.getElementById(scriptId)) {
-      const script = document.createElement("script");
-      script.id = scriptId;
-      script.src = `https://www.google.com/recaptcha/enterprise.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`;
-      script.async = true;
-      script.onload = () => setGrecaptchaLoaded(true);
-      document.body.appendChild(script);
-    } else {
-      setGrecaptchaLoaded(true);
-    }
+    const loadGrecaptcha = () => {
+      const scriptId = "recaptcha-enterprise";
+      if (!document.getElementById(scriptId)) {
+        const script = document.createElement("script");
+        script.id = scriptId;
+        script.src = `https://www.google.com/recaptcha/enterprise.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`;
+        script.async = true;
+        script.onload = () => setGrecaptchaLoaded(true);
+        document.body.appendChild(script);
+      } else {
+        setGrecaptchaLoaded(true);
+      }
+    };
+
+    loadGrecaptcha();
   }, []);
 
   const handleChange = (
@@ -48,12 +52,16 @@ export default function ContactMe() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    if (isSubmitting) return;
+
     if (!grecaptchaLoaded || !window.grecaptcha?.enterprise) {
       toast.error(t("recaptcha_error"));
       return;
     }
 
-    const resolveAfter3Sec = new Promise(async (resolve, reject) => {
+    setIsSubmitting(true);
+
+    const submitPromise = (async () => {
       try {
         const token = await window.grecaptcha.enterprise.execute(
           process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? "",
@@ -72,15 +80,20 @@ export default function ContactMe() {
           throw new Error(data?.error || "Something went wrong");
         }
 
-        setFormData({ name: "", email: "", message: "", username: "" });
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+          username: "",
+        });
 
-        resolve(data);
-      } catch (error) {
-        reject(error);
+        return data;
+      } finally {
+        setIsSubmitting(false);
       }
-    });
+    })();
 
-    toast.promise(resolveAfter3Sec, {
+    toast.promise(submitPromise, {
       pending: t("toast_pending"),
       success: t("toast_success"),
       error: {
@@ -129,10 +142,14 @@ export default function ContactMe() {
             </div>
           </div>
 
-          <div>
+          <div
+            className="absolute left-[-9999px] top-[-9999px]"
+            aria-hidden="true"
+          >
             <p className="text-xs uppercase tracking-widest mb-2 opacity-50">
               {t("form_username_label")}
             </p>
+
             <Input
               icon={faUser}
               handleChange={handleChange}
@@ -140,7 +157,7 @@ export default function ContactMe() {
                 name: "username",
                 value: formData.username,
                 placeholder: t("form_username_placeholder"),
-                required: true,
+                required: false,
               }}
             />
           </div>
@@ -226,8 +243,12 @@ export default function ContactMe() {
               .
             </p>
 
-            <Button className="w-full bg-indigo-400 before:bg-indigo-600 after:bg-indigo-600">
-              {t("form_submit")}
+            <Button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full bg-indigo-400 before:bg-indigo-600 after:bg-indigo-600 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {isSubmitting ? t("toast_pending") : t("form_submit")}
             </Button>
           </div>
         </form>
@@ -237,7 +258,9 @@ export default function ContactMe() {
         <div className="rounded-2xl border border-zinc-800 p-6">
           <div className="flex items-center gap-2 mb-3">
             <span className="h-2 w-2 rounded-full bg-green-400 animate-pulse" />
-            <span className="text-xs uppercase tracking-widest">{t("sidebar_status")}</span>
+            <span className="text-xs uppercase tracking-widest">
+              {t("sidebar_status")}
+            </span>
           </div>
           <p className="text-sm leading-relaxed opacity-60">
             {t("sidebar_status_description")}
@@ -291,9 +314,7 @@ export default function ContactMe() {
             rel="noopener noreferrer"
             className="flex items-center justify-between group"
           >
-            <span className="text-sm font-medium">
-              {t("sidebar_dca")}
-            </span>
+            <span className="text-sm font-medium">{t("sidebar_dca")}</span>
             <span className="text-xs opacity-40 group-hover:opacity-70 transition-opacity">
               →
             </span>
