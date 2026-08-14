@@ -1,0 +1,143 @@
+---
+title: "Your Signup Form Is a Crime Scene and You Don't Even Know It Yet"
+date: "2026-08-14"
+excerpt: "A step by step walk through how a normal registration flow gets abused, why 'we have reCAPTCHA' is not a security strategy, and what actually stops the bots and bad actors once they're past your front door, plus sessions, secrets, supply chain, and everything else people forget."
+topics:
+  [
+    "security",
+    "authentication",
+    "abuse-prevention",
+    "web-development",
+    "incident-response",
+  ]
+---
+
+Every developer has that moment. You ship a shiny new signup form, you demo it to the team, everyone claps, and three weeks later your database has four thousand accounts with emails like "asdkj123@tempmail.lol" and your SendGrid bill looks like a phone number. Nobody warned you that the most boring part of your app, a form with two text fields and a button, is also the part attackers spend the most time thinking about. Meanwhile you were busy worrying about your fancy recommendation algorithm. The truth is unglamorous and a little insulting: most breaches don't start with some genius exploiting your clever business logic, they start with your registration form politely accepting garbage because nobody told it not to.
+
+So let's actually walk through this properly, step by step, the way an attacker (or more realistically, a bored script kiddie with a Python file and too much free time) sees your app. Not to scare you into doing nothing, but because knowing the actual sequence makes the fixes make sense instead of feeling like paranoid checkbox security theater.
+
+## Step 1: The Register Form, aka the Unlocked Front Door
+
+This is where it always starts. Email or phone, password, submit. Simple, right?
+
+Here's the problem. Most of us validate that the email "looks like" an email using a regex and call it a day. We don't check if it's from a known disposable email provider, we don't check if it's already flagged in a spam or abuse database, we barely check if the domain has valid MX records. So congratulations, your form happily accepts a throwaway inbox from some ten minute email service and now you've got an account that exists purely to abuse whatever your app does next, whether that's free trial credits, referral bonuses, or just a fresh identity to hide behind.
+
+The fix isn't complicated, it's just something people skip because it feels like "extra work" for a form that "already works." Validate MX records. Check against a disposable email list, there are maintained open source ones, use them. If you're doing phone signup, actually verify carrier type and don't just trust that a string of digits in the right shape means a real human owns it.
+
+## Step 2: Verification, or the Step Everyone Skips Because It's Annoying
+
+This one is almost funnier because it's so self inflicted. A ton of apps let you register and then just... let you keep going. No email confirmation link, no OTP, nothing. You typed something into a box, the box believed you, welcome to the platform.
+
+Skipping verification is basically leaving a note on your door that says "please feel free to create infinite accounts, we won't check." Bots love this. Spammers love this. And when your business logic later assumes "one email equals one real user," that assumption quietly breaks and you don't find out until someone's abusing referral codes or flooding your support queue with fake tickets.
+
+Verify before granting any meaningful access. Not after. Gate anything valuable, credits, elevated permissions, API access, behind a confirmed identity, not just a submitted form.
+
+## Step 3: The reCAPTCHA and Turnstile Illusion
+
+Okay so now let's say you did add a captcha. Good, that's a real speed bump. It's also not the wall people think it is.
+
+Automated abuse today isn't some guy manually solving puzzles all day, it's captcha solving services, it's headless browsers with real fingerprints, it's residential proxy networks that make requests look like they're coming from a normal person's home wifi. A captcha raises the cost of attack, it does not make the attack impossible. Treat it as one layer, not the layer. If your entire security posture is "we have Turnstile on the login page," you've built a screen door and called it a vault.
+
+## Step 4: CSRF, CORS, and the Nuisance Tax
+
+This is the part where security starts feeling like paperwork, and that's exactly why people cut corners here. CSRF tokens, strict CORS policies, proper SameSite cookie settings, they're annoying, they break your local dev environment at least once, and they don't demo well because nothing visibly changes when you add them.
+
+But here's the thing, they're not there to stop some elite hacker doing something clever. They're there to stop the boring, automatable stuff, a malicious site quietly firing requests using a logged in user's session, or your API accepting requests from literally any origin because someone forgot to lock it down. It's not exciting work. It's also the difference between "someone can trick a logged in user's browser into doing things on their behalf" and "they can't." Do the boring paperwork.
+
+## Step 5: Putting Auth Behind Cloudflare (or Similar)
+
+Sticking your auth pages behind something like Cloudflare isn't just about DDoS protection, though that's part of it. It's about getting bot scoring, request fingerprinting, and challenge pages in front of traffic before it even reaches your app server. It's a genuinely good layer, and a lot of teams skip it because "we don't need that yet, we're small." You don't add these things because you're big, you add them before you're big, because that's exactly when a single unprotected auth endpoint can take your whole app down or get scraped clean by someone automating account creation at scale.
+
+## Step 6: Rate Limiting, the Feature Everyone Says They'll Add Later
+
+Rate limiting sounds simple until you actually implement it and realize you need to think about per IP, per account, per endpoint, and per action limits separately, because a login endpoint and a password reset endpoint have very different abuse patterns. Someone hammering your login form 500 times a minute from one IP is obviously a credential stuffing attempt. Someone requesting password resets for a thousand different accounts is a different kind of obviously bad.
+
+"We'll add rate limiting later" is one of those sentences that ages about as well as milk left in a hot car. Add it early, even a basic version. You can always tune the thresholds later, but you can't retroactively stop the abuse that already happened before you got around to it.
+
+## Step 7: Load Balancing and Redundancy, Because Attacks Aren't the Only Threat
+
+This one's slightly different from the rest because it's not purely about malicious actors, it's about your system surviving being popular or being hated in equal measure. A load balancer spreading traffic across instances means one flood of junk requests, malicious or not, doesn't take your entire service down. It's less "security feature" and more "the thing that keeps your other security features from becoming irrelevant because the whole app fell over."
+
+## Here's the Uncomfortable Truth
+
+You can stack every single one of the steps above and it still won't matter if you didn't design the system thinking about how it gets misused. This is the part that's hard to teach because it's not a checklist, it's a mindset shift. Most of us design for the happy path. User signs up, user does the normal thing, user leaves happy. Attackers don't care about your happy path. They're specifically looking for the path you didn't think about.
+
+Building a real system means asking, at every step, "okay, what happens if someone does the opposite of what I expect here." What happens if they submit this field with a script tag. What happens if they call this endpoint directly instead of clicking the button. What happens if they replay this request a thousand times. If you didn't ask that question while building it, no amount of Cloudflare or rate limiting bolted on afterward fully saves you, it just raises the cost of finding the gap.
+
+## Now Talk About Policies, Because Permissions Are Not Optional
+
+Let's say someone's past registration, past verification, past your captcha and rate limits. They've got a legitimate looking account. Now what stops them from just doing whatever they want inside your system?
+
+This is where access policies actually matter, and it's shocking how many apps get this wrong even after nailing everything above. A user should only be able to touch what they've explicitly been given access to, nothing more, by default. Not "we'll check permissions on the frontend." Not "the API technically allows it but the UI doesn't show the button." If your backend trusts the frontend to enforce who can do what, you don't actually have access control, you have a suggestion. Every endpoint needs to independently verify that the requester is allowed to do the specific thing they're asking to do, every single time, no exceptions, no "it's an internal only route so it's probably fine."
+
+## The Framework and the Vibe Coding Problem
+
+Picking the right framework and structure genuinely matters here, not because one framework is magically more secure, but because a good one makes the secure path the easy path. Frameworks with sane defaults for CSRF protection, ORM query parameterization, and auth middleware save you from yourself on your worst, most rushed Friday afternoon deploy.
+
+And look, I get the appeal of letting AI write big chunks of your app, I use it constantly too. But here's the thing nobody wants to say out loud, letting a model vibe code your entire auth flow without carefully reviewing every validation path is asking for trouble. AI is genuinely great at writing code that works. It is not automatically great at writing code that refuses to work correctly when someone's actively trying to break it, unless you explicitly ask it to think about that angle. It won't add input sanitization it wasn't told to add. It won't add an authorization check on a route you didn't mention needed one. It fills gaps with reasonable looking code, not paranoid code, and security is fundamentally a paranoid discipline. Use it to speed up the boring parts, but read every line that touches auth, money, or user data like your job depends on it, because it kind of does.
+
+## Okay So They're Past Register and Login. Now What?
+
+This is usually where people think the story ends. It doesn't, it just changes shape.
+
+Once someone's authenticated, the next fight is behavioral. This is where automation detection and honeypots earn their keep. Honeypot fields are almost comically simple and still work embarrassingly well, you add a form field that's invisible to real humans through CSS but perfectly visible to a bot filling out every field it can find, and if that field gets filled, you know instantly you're dealing with automation, no fancy machine learning required. It's the digital equivalent of a fake wallet with a note inside that says "nice try."
+
+Beyond honeypots, actual behavioral analysis starts mattering. Real humans move a mouse imperfectly, they pause before submitting forms, their typing has natural rhythm and typos. Bots tend to be suspiciously perfect or suspiciously robotic, filling fields instantly in a fixed order with zero hesitation. Device fingerprinting, session anomaly detection, watching for the same "user" logging in from geographically impossible locations within minutes of each other, these all stack up into a picture. No single signal proves someone's malicious, but enough weird signals together are a pretty reliable tell.
+
+And this is the part that never really ends, because it's not a wall you build once, it's an arms race you maintain. Attackers adapt to whatever you ship. You adapt back. The goal was never "unhackable," because that doesn't exist, the goal is "annoying enough, slow enough, and costly enough that they go bother someone else's signup form instead."
+
+## Sessions and Tokens, or How People Stay Logged In Forever By Accident
+
+Here's a fun one nobody thinks about until it bites them. You built login, great, but what happens after? A lot of apps issue a session token or JWT and then just... never think about it again. No expiration, no rotation, no way to revoke it if it leaks. So now if an attacker gets their hands on one token, through a leaked log, a malicious browser extension, an XSS bug, whatever, they've got a permanent skeleton key into that account and you have no way to kick them out short of nuking your entire session store.
+
+Set short expirations and use refresh tokens properly. Rotate refresh tokens on use so a stolen one becomes useless the moment the real user's session refreshes. Store tokens in httpOnly cookies instead of localStorage if you can, because localStorage is trivially readable by any script running on your page, including one an attacker snuck in through a dependency or a stored XSS payload. And actually build a "log out everywhere" button. You'd be surprised how many products don't have one.
+
+## Secrets Management, aka Please Stop Committing .env Files
+
+This deserves its own section because it happens constantly and it's almost never malicious, it's just carelessness. API keys hardcoded in source, database passwords sitting in a config file that got committed to a public repo, a `.env` file that made it into git history three years ago and is still sitting there even though someone deleted it in a later commit. Git history doesn't forget, that's kind of the whole point of git.
+
+Use a proper secrets manager, even a basic one, instead of environment files scattered across servers. Rotate anything that's ever been exposed, don't just delete the file and hope. And scan your repos for secrets before they merge, not after someone finds them scraping GitHub for exposed keys, because that scraping absolutely happens at scale and it happens fast.
+
+## Dependency and Supply Chain Risk, Because Your Code Isn't Just Your Code
+
+Your app is maybe 10% code you actually wrote and 90% packages you pulled in without reading a single line. Every one of those is a door you didn't build but are still responsible for locking. A malicious or compromised package can sit quietly in your node_modules folder doing absolutely nothing suspicious until one day it starts exfiltrating environment variables or mining crypto in the background.
+
+Pin your dependency versions, review what you're actually installing especially for anything touching auth or payments, and run automated vulnerability scanning as part of your CI pipeline instead of finding out from a security researcher's tweet. Typosquatting is real too, someone publishes a package one character off from a popular one, hoping a rushed `npm install` typo does the rest of the work for them.
+
+## Logging and Monitoring, or You Can't Stop What You Can't See
+
+A lot of teams treat logging as a debugging tool and completely forget it's also a security tool. If you can't answer "who accessed this record and when," you're not actually protecting that data, you're just hoping nothing bad happens to it. And when something does go wrong, and eventually something will, the difference between a five minute investigation and a five day one is whether you logged the right things in the first place.
+
+Log authentication events, permission changes, and anything touching sensitive data, with enough context to actually reconstruct what happened. Set up alerts for the obviously weird stuff, a login from a new country immediately after one from home, fifty failed password attempts in a minute, an account suddenly pulling way more data than it normally does. You don't need a fancy SIEM setup on day one, you just need to actually be watching.
+
+## Input Validation Isn't Just an Auth Problem
+
+Everything above focused on the registration and login flow, but the same discipline has to apply everywhere user input touches your system, not just the signup form. Stored XSS from a comment field, SQL injection from a search box, a file upload that accepts an executable disguised as an image, these all follow the exact same root cause as the disposable email problem from step one. Something accepted input it shouldn't have trusted.
+
+Validate and sanitize on the server, always, no matter what the frontend already checked. Never trust the client, ever, because the client is just a suggestion box sitting in front of an attacker who can bypass it in about four seconds with dev tools open.
+
+## Nobody Talks About the Bill Until It Arrives
+
+Here's the part that doesn't get discussed enough because it's not as flashy as "hacker breaks in," it's just quietly, boringly expensive. All this abuse costs actual money, and it costs it whether or not anyone ever "hacks" you in the dramatic sense. A bot doesn't need to steal anything to hurt you, it just needs to exist on your infrastructure and use it.
+
+If you're on AWS, or GCP, or any cloud provider that bills on usage, every single request a bot sends, every signup attempt, every failed login, every password reset spam, is compute time, bandwidth, and database writes you're paying for. Autoscaling makes this worse in a specific, ironic way, because the whole point of autoscaling is to handle traffic spikes automatically, and a bot flood looks exactly like a traffic spike to your infrastructure. Congratulations, your system did its job perfectly and spun up five extra instances to lovingly handle ten thousand fake registration attempts. You'll see the bill at the end of the month and have a very confusing conversation with finance about why "growth" numbers don't match revenue.
+
+Then there's SendGrid, Twilio, or whatever you're using for email and SMS. These usually bill per message sent, and if your signup flow fires a verification email or OTP text on every registration attempt, guess what, bots don't care that they'll never actually check that inbox. They'll happily trigger ten thousand verification emails or texts and you'll pay for every single one, for accounts that will never be used for anything except costing you money. SMS OTP abuse specifically has a name in the industry, toll fraud or SMS pumping, and it's a whole business model for certain bad actors who get a cut of the carrier fees your provider pays out. Yes, that's real, yes, it's exactly as annoying as it sounds, and yes, companies have lost genuinely large amounts of money to it before anyone noticed the pattern.
+
+## It Also Wrecks Data You Actually Care About
+
+Beyond the direct dollar cost, there's a quieter kind of damage that's arguably worse because it doesn't show up as a scary line item, it just slowly poisons decisions. Your marketing and growth teams are looking at signup numbers, conversion rates, activation rates, all of it, to decide where to spend the next ad budget or which campaign is "working." If a meaningful chunk of your signups are bots or spam accounts, every one of those metrics is now lying to you, confidently and consistently.
+
+Conversion rate looks worse than it actually is because the denominator is inflated with accounts that were never going to convert. A/B tests get skewed because bot traffic doesn't behave like real users and doesn't distribute evenly across your test groups. Someone on the marketing team ends up killing a campaign that was actually working, or doubling down on one that wasn't, because the underlying data was contaminated and nobody flagged it. This stuff compounds quietly for months before anyone thinks to ask "wait, why do we have forty thousand signups from one specific traffic source and basically zero retention."
+
+The annoying part is that fixing this after the fact is way harder than preventing it. Once bad data is baked into a quarter's worth of dashboards and reports that leadership already made decisions from, you're not just cleaning a database, you're trying to explain to people why the numbers they trusted for the last three months were wrong. That conversation is a lot less fun than adding email validation would have been.
+
+So when someone asks why bother with all these signup protections if "we're not even getting hacked," this is the actual answer. You're already paying for it, every month, in infrastructure bills, in provider charges, and in decisions made on bad data, you just haven't connected the dots yet because it doesn't show up as a single dramatic breach headline. It shows up as a slightly higher AWS bill and a marketing meeting where nobody can explain the numbers.
+
+Last one, and it's the one nobody wants to think about because it means admitting you might get breached anyway despite doing everything right. You might. That's not pessimism, that's just how this works. The difference between companies that recover quietly and companies that end up in a bad headline is almost never "who had zero vulnerabilities," it's "who had a plan for when something went wrong."
+
+Know who gets paged, know how you rotate credentials fast across your whole stack, know how you communicate with affected users without either panicking them or getting sued for staying silent too long. Practice it once before you actually need it, the same way you'd hope a fire drill happens before an actual fire.
+
+---
+
+Build for the user you want. Then build for the user you're afraid of. Most teams only do the first one, and that gap is exactly where everything interesting, and everything expensive, ends up happening.

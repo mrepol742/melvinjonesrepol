@@ -1,0 +1,69 @@
+---
+title: "LiteLLM Had a Rough Year, and Your Proxy Might Be Next"
+date: "2026-08-14"
+excerpt: "A look at the string of LiteLLM vulnerabilities that hit in 2026, why a proxy sitting in front of your API keys is such a juicy target, and what actually happened when attackers found out."
+topics: ["litellm", "security", "llm-infrastructure", "vulnerabilities"]
+---
+
+If you've ever set up LiteLLM as the gateway in front of your OpenAI, Anthropic, or whatever-flavor-of-the-month LLM API, you know the appeal instantly. One proxy, one config file, and suddenly your app doesn't care which model it's talking to. It's the kind of infrastructure decision that feels boring in the best way, right up until it isn't. And in 2026, it very much wasn't, at least for a few uncomfortable weeks. A pile of CVEs landed on BerriAI's doorstep, one of them got weaponized by attackers within about a day of the patch going public, and suddenly a tool a lot of teams treated as plumbing turned out to be sitting on top of every credential they had.
+
+I've been digging through the disclosures because a client asked, half joking, "wait, is our LLM gateway a bigger attack surface than our actual app?" Turns out that's not a dumb question at all.
+
+## Why This Even Matters
+
+Here's the thing people forget about proxies like LiteLLM: they're not just routing traffic, they're holding the keys. Literally. Every provider API key, every virtual key you've issued to internal teams, every bit of routing logic that decides who gets billed for what, it all lives in that one service. When you put a single component in charge of authentication, credential storage, and request routing all at once, you've built something that's incredibly convenient and also an incredibly attractive single point of failure. Attackers know this. A database full of provider API keys is worth a lot more to someone than access to one random microservice.
+
+So when a vulnerability shows up in the auth path of a tool like this, it's not "oops, minor bug." It's "someone can potentially walk out the front door with every key you've ever issued."
+
+## The One That Actually Got Exploited
+
+The headline vulnerability here is CVE-2026-42208, a SQL injection sitting in LiteLLM's API key verification path, and it's the one that actually turned into a real incident, not just a hypothetical CVSS number.
+
+The bug itself is almost annoyingly simple once you see it. The proxy took the value from the Authorization header and mixed it straight into a SQL query instead of parameterizing it. That's the kind of mistake every backend developer has been warned about since their first week on the job, and yet here it is in 2026, in a widely used piece of AI infrastructure with over 20,000 GitHub stars. An unauthenticated attacker could send a specially crafted header to basically any LLM route, including something as mundane as `/chat/completions`, and reach that vulnerable query through the error handling path. From there they could read the database, and potentially modify it too, which means access to stored credentials and the routing config that decides where requests go.
+
+What makes this one sting is the timeline. The fix shipped in v1.83.7-stable on April 19. The GitHub advisory went public a few days later. Attackers were already probing and exploiting it roughly 26 hours after the advisory hit the index. That's not a slow, opportunistic scan months later. That's someone actively watching security advisory feeds for AI infrastructure tooling and jumping on it almost immediately. Security researchers traced the malicious traffic back to specific egress IPs and watched it target tables like `litellm_credentials.credential_values`, which is about as close to "here's the treasure chest" as a table name can get.
+
+## The MCP Rabbit Hole
+
+If SQL injection wasn't enough excitement, LiteLLM also had a couple of remote code execution issues tied to its MCP (Model Context Protocol) support, and these ones are a good reminder that new features often mean new ways to shoot yourself in the foot.
+
+The core problem was that LiteLLM let users register MCP servers using a JSON config that included a `command` field. That command got passed straight through to `StdioServerParameters` and executed as a subprocess on the host, with basically no validation. So if you had a valid API key, even a low-privilege one, you could potentially get the proxy to run arbitrary commands on its own host. That's a pretty wild escalation path for something that started as "let me register an MCP server."
+
+There were actually two related disclosures here, one where the MCP preview endpoints lacked proper role-based authorization entirely, and another specific to the stdio transport handling. Both got fixed with the same basic idea: add a command allowlist and stop blindly trusting user-supplied config for something that spins up a subprocess. It's a good example of a pattern that shows up constantly in this kind of tooling. Every time you add a feature that lets users configure "run this thing," you've quietly added a code execution surface, whether you meant to or not.
+
+## The Supply Chain Curveball
+
+Not every issue was a logic bug in the code. At one point, two published versions of the LiteLLM package on the registry actually contained credential-harvesting malware, which is a completely different threat model than a SQL injection. That's not "we made a mistake writing this query," that's "someone got malicious code into an official release artifact."
+
+This is the distinction that's easy to blur together when you're skimming a long CVE list and start to panic. A logic vulnerability means the software has a flaw that needs patching. A supply chain compromise means you need to check whether you installed a poisoned version and, if so, treat every credential that touched that environment as burned. Different response, different urgency, same general lesson: pin your versions, check your lockfiles, and don't assume "it's on the official registry" means "it's safe."
+
+## What Actually Impressed Me
+
+I want to give credit where it's due here, because it would be easy to write this whole post as "LiteLLM bad, everyone panic." That's not really the honest takeaway.
+
+The maintainers run an actual bug bounty program, they pay out for supply chain and unauthenticated proxy access issues specifically, and they've been publishing formal GitHub Security Advisories with real fixed versions attached instead of vague "we're looking into it" statements. When they found an advisory they thought was wrong, they withdrew it. When two CVEs turned out to be duplicates, they flagged that too. That's not the behavior of a project trying to bury bad news, that's a team that's actually maintaining their own security record instead of letting it rot into noise.
+
+That said, there's still an open thread that bugs me a little. A few CVEs from later in the year, tied to session expiration and a missing authentication check on a critical function, were flagged with literally no remediation path available at the time they were reported. That's the kind of gap that makes we-patch-things-fast credibility a bit shakier, and it's worth keeping an eye on if you're running a version in that affected range.
+
+## What I'd Actually Do About It
+
+If you're running LiteLLM in production, or honestly any LLM gateway, none of this should be a reason to rip it out. It's more a reason to treat it like what it actually is: a credential vault with a network interface, not a disposable routing layer.
+
+A few things worth actually doing instead of just nodding along:
+
+- Pin your version and actually update it. I know, groundbreaking advice. But the whole "exploited within 26 hours of disclosure" thing should be motivation enough.
+- Don't expose the proxy admin and MCP routes to the open internet. Put them behind a reverse proxy or ingress rule that only trusts your internal network.
+- Scope API keys tightly and kill unused ones. The MCP RCE issues specifically needed a valid key, even a low-privilege one, to trigger.
+- If you were running an affected version during the exploitation window, rotate every credential that gateway touched. Not just the obvious ones.
+- Run the proxy process unprivileged and inside a container. If something does get RCE, you want the blast radius to be small.
+
+None of this is exotic advice. It's the same boring hygiene that applies to any service holding secrets. The only thing that's changed is that "LLM gateway" is now a category of software people actually need to think about this way, instead of treating it like some lightweight glue code that doesn't matter much.
+
+The bigger pattern worth sitting with is that AI infrastructure is growing up fast, and the security tooling and habits around it are playing catch up. A year ago most of these gateways barely had a security advisory history at all. Now we've got SQL injection, RCE via MCP, and supply chain poisoning all showing up in the same tool within a few months of each other. That's not a reason to panic, but it is a reason to stop treating your LLM proxy like it's just a config file with a URL in it.
+
+---
+
+You can explore more about the project here:
+
+- [LiteLLM GitHub Repository](https://github.com/BerriAI/litellm)
+- [LiteLLM Security Advisories](https://github.com/BerriAI/litellm/security/advisories)
