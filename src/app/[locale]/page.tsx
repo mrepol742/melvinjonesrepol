@@ -35,9 +35,10 @@ export async function generateMetadata({
   const { locale } = await params;
 
   return {
-    title: "Melvin Jones Repol - Software Engineer",
+    title:
+      "Melvin Jones Repol - Full-Stack Developer, CTO & DevSecOps Engineer",
     description:
-      "I'm Melvin Jones Repol, a Software Engineer who builds practical, scalable software — full-stack web, Android apps, and DevOps. From planning to production.",
+      "Melvin Jones Repol is a Software Engineer, CTO, and DevSecOps specialist building practical, scalable software and taking ideas from architecture to production.",
     keywords: [
       "Melvin Jones Repol",
       "software engineer",
@@ -48,9 +49,10 @@ export async function generateMetadata({
     ],
     alternates: getAlternates("", locale),
     openGraph: {
-      title: "Melvin Jones Repol - Software Engineer",
+      title:
+        "Melvin Jones Repol - Full-Stack Developer, CTO & DevSecOps Engineer",
       description:
-        "I'm Melvin Jones Repol, a Software Engineer who builds practical, scalable software — full-stack web, Android apps, and DevOps. From planning to production.",
+        "Melvin Jones Repol is a Software Engineer, CTO, and DevSecOps specialist building practical, scalable software and taking ideas from architecture to production.",
       url: "https://www.melvinjonesrepol.com",
       siteName: "Melvin Jones Repol",
       images: [
@@ -66,9 +68,10 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: "Melvin Jones Repol - Software Engineer",
+      title:
+        "Melvin Jones Repol - Full-Stack Developer, CTO & DevSecOps Engineer",
       description:
-        "I'm Melvin Jones Repol, a Software Engineer who builds practical, scalable software — full-stack web, Android apps, and DevOps. From planning to production.",
+        "Melvin Jones Repol is a Software Engineer, CTO, and DevSecOps specialist building practical, scalable software and taking ideas from architecture to production.",
       images: [
         "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
       ],
@@ -94,8 +97,8 @@ export default async function Home({
     image:
       "https://www.melvinjonesrepol.com/images/melvin-jones-repol-black-circle.png",
     description:
-      "Software Engineer building scalable web and Android applications — from planning and design to production.",
-    jobTitle: "Founder, CTO, Software Engineer",
+      "Melvin Jones Repol is a Software Engineer, CTO, and DevSecOps specialist building practical, scalable software and taking ideas from architecture to production.",
+    jobTitle: "Full-Stack Developer, CTO & DevSecOps Engineer",
     mainEntityOfPage: "https://www.melvinjonesrepol.com",
     sameAs: [
       "https://www.facebook.com/melvinjonesrepol",
@@ -106,6 +109,14 @@ export default async function Home({
       "https://g.dev/mrepol742",
       "https://steamcommunity.com/id/mrepol742",
       "https://codeberg.org/mrepol742",
+    ],
+    knowsAbout: [
+      "Software Engineering",
+      "Full-Stack Development",
+      "Android Development",
+      "DevOps",
+      "DevSecOps",
+      "Cloud Infrastructure",
     ],
     worksFor: [
       {
@@ -173,58 +184,32 @@ export default async function Home({
 
             {/* Content layer */}
             <div className="relative z-10 min-h-screen flex flex-col px-6 py-12 md:px-10">
-              <div className="my-auto py-14 lg:max-w-[60%] xl:max-w-[56%]">
-                <div className="inline-flex items-center gap-2.5 mb-6 text-xs">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
-                  </span>
-                  <span className="font-mono tracking-widest uppercase opacity-50">
-                    Currently at
-                  </span>
-                  <span className="font-bold tracking-wide">
-                    Up to Date Web Design
-                  </span>
-                  <span className="opacity-30">·</span>
-                  <span className="opacity-60">Full Stack Developer</span>
-                </div>
-                <h1 className="text-[17vw] sm:text-[12vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8">
-                  Melvin
-                  <br />
-                  <span className="opacity-40">Jones</span>
-                  <br />
-                  Repol
-                </h1>
+              <div className="my-auto py-14 w-full lg:w-[58%] lg:mr-auto">
+                <div className="w-full max-w-3xl mx-auto">
+                  <div className="inline-flex items-center gap-2.5 mb-6 text-xs">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                      <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
+                    </span>
+                    <span className="font-mono tracking-widest uppercase opacity-50">
+                      Currently at
+                    </span>
+                    <span className="font-bold tracking-wide">
+                      UP-TO-DATE Webdesign
+                    </span>
+                    <span className="opacity-30">·</span>
+                    <span className="opacity-60">Full-Stack Developer</span>
+                  </div>
+                  <h1 className="text-[17vw] sm:text-[12vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8">
+                    Melvin
+                    <br />
+                    <span className="opacity-40">Jones</span>
+                    <br />
+                    Repol
+                  </h1>
 
-                <p className="text-base md:text-xl leading-relaxed mb-6 max-w-lg">
-                  {t("intro")}
-                </p>
-
-                <p className="text-sm leading-relaxed max-w-lg opacity-60">
-                  {t("delivery_mindset")}
-                </p>
-              </div>
-
-              {/* Bottom info strip — newspaper footer style */}
-              <div className="border-t border-zinc-800 pt-6 grid grid-cols-1 sm:grid-cols-3 gap-6 lg:max-w-[60%] xl:max-w-[56%]">
-                <div>
-                  <p className="text-xs uppercase tracking-widest mb-1 opacity-50">
-                    {t("role_label")}
-                  </p>
-                  <p className="font-semibold text-sm">{t("role_value")}</p>
-                </div>
-                <div>
-                  <p className="text-xs uppercase tracking-widest mb-1 opacity-50">
-                    {t("focus_label")}
-                  </p>
-                  <p className="font-semibold text-sm">{t("focus_value")}</p>
-                </div>
-                <div>
-                  <p className="text-xs uppercase tracking-widest mb-1 opacity-50">
-                    {t("expertise_label")}
-                  </p>
-                  <p className="font-semibold text-sm">
-                    {t("expertise_value")}
+                  <p className="text-base md:text-xl leading-relaxed mb-6 max-w-lg">
+                    {t("intro")}
                   </p>
                 </div>
               </div>
@@ -236,18 +221,18 @@ export default async function Home({
               <div className="relative z-10 max-w-6xl mx-auto px-4">
                 <div className="text-center mb-10 md:mb-14">
                   <span
-                    className="text-sm font-semibold tracking-widest text-blue-500 uppercase mb-3"
+                    className="text-sm font-semibold tracking-widest uppercase mb-3"
                     data-aos="fade-up"
                   >
                     {t("engineering_philosophy_label")}
                   </span>
                   <h2
-                    className="text-3xl md:text-5xl font-bold leading-tight"
+                    className="text-3xl md:text-4xl font-bold mb-4"
                     data-aos="fade-up"
                     data-aos-delay="100"
                   >
                     {t("engineering_philosophy_title_line1")}
-                    <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-violet-500">
+                    <span className="block">
                       {t("engineering_philosophy_title_line2")}
                     </span>
                   </h2>
@@ -280,7 +265,7 @@ export default async function Home({
             <div className="relative py-14 md:py-28 overflow-hidden">
               <div className="text-center">
                 <span
-                  className="text-sm font-semibold tracking-widest text-cyan-500 uppercase mb-3"
+                  className="text-sm font-semibold tracking-widest uppercase mb-3"
                   data-aos="fade-up"
                 >
                   {t("coding_activity_label")}

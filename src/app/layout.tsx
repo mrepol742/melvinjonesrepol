@@ -44,9 +44,9 @@ export const revalidate = 43200; // 12 hours (in seconds)
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.melvinjonesrepol.com"),
-  title: "Melvin Jones Repol - Software Engineer",
+  title: "Melvin Jones Repol - Full-Stack Developer, CTO & DevSecOps Engineer",
   description:
-    "Building scalable systems from planning and design to development and production support, helping businesses grow efficiently.",
+    "Melvin Jones Repol is a Software Engineer, CTO, and DevSecOps specialist building practical, scalable software and taking ideas from architecture to production.",
   keywords: [
     "Software Engineer",
     "Software Developer",
@@ -69,9 +69,10 @@ export const metadata: Metadata = {
   },
   creator: "Melvin Jones Repol",
   openGraph: {
-    title: "Melvin Jones Repol - Software Engineer",
+    title:
+      "Melvin Jones Repol - Full-Stack Developer, CTO & DevSecOps Engineer",
     description:
-      "Building scalable systems from planning and design to development and production support, helping businesses grow efficiently.",
+      "Melvin Jones Repol is a Software Engineer, CTO, and DevSecOps specialist building practical, scalable software and taking ideas from architecture to production.",
     url: "https://www.melvinjonesrepol.com",
     siteName: "Melvin Jones Repol",
     images: [
@@ -87,9 +88,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Melvin Jones Repol - Software Engineer",
+    title:
+      "Melvin Jones Repol - Full-Stack Developer, CTO & DevSecOps Engineer",
     description:
-      "Building scalable systems from planning and design to development and production support, helping businesses grow efficiently.",
+      "Melvin Jones Repol is a Software Engineer, CTO, and DevSecOps specialist building practical, scalable software and taking ideas from architecture to production.",
     images: [
       "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
     ],

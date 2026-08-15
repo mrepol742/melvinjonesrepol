@@ -1,57 +1,119 @@
 import Card from "@/components/ui/Card";
 import { getTranslations } from "next-intl/server";
 
-// I ain’t Socrates, but who am I to say that this isn’t a philosophy?
-// I just know that it’s the one I live by when it comes to software development.
-// If you share these values, then we’re probably on the same wavelength when it comes to building great software.
 export default async function EngineeringPhilosophySection() {
   const t = await getTranslations("engineering_philosophy");
 
-  const PhilosophySection = Array.from({ length: 6 }, (_, i) => ({
-    sub: t(`item_${i}_sub` as any),
-    title: t(`item_${i}_title` as any),
-    description: t(`item_${i}_description` as any),
-    takeaway: t(`item_${i}_takeaway` as any),
-  }));
+  const principles = [
+    {
+      kicker: "01",
+      title: t("performance_title"),
+      description: t("performance_description"),
+      points: [
+        t("performance_point_1"),
+        t("performance_point_2"),
+        t("performance_point_3"),
+      ],
+    },
+    {
+      kicker: "02",
+      title: t("security_title"),
+      description: t("security_description"),
+      points: [
+        t("security_point_1"),
+        t("security_point_2"),
+        t("security_point_3"),
+      ],
+    },
+    {
+      kicker: "03",
+      title: t("revenue_title"),
+      description: t("revenue_description"),
+      points: [
+        t("revenue_point_1"),
+        t("revenue_point_2"),
+        t("revenue_point_3"),
+      ],
+    },
+  ];
 
   return (
-    <>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-        {PhilosophySection.map((item, index) => (
-          <Card
-            key={index}
-            subtitle={item.sub}
-            data-aos="fade-up"
-            data-aos-delay={100 * (index + 1)}
-          >
-            <h3 className="text-xl md:text-2xl font-semibold mb-3">
-              {item.title}
+    <div className="max-w-6xl mx-auto">
+      <div className="relative" data-aos="fade-up">
+        <div className="relative grid gap-8 p-6 md:p-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10 lg:p-10">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.28em]">
+              {t("kicker")}
+            </p>
+
+            <h3 className="mt-3 max-w-2xl text-2xl font-bold leading-tight md:text-4xl">
+              {t("title")}
             </h3>
 
-            <p className="leading-relaxed mb-4">{item.description}</p>
-
-            <p className="text-sm border-t pt-3">{item.takeaway}</p>
-          </Card>
-        ))}
-      </div>
-
-      {/** SIGNATURE BLOCK */}
-      <div
-        className="mt-10 md:mt-14 px-6 md:px-7 py-6 border-t border-gray-200 dark:border-gray-800"
-        data-aos="fade-up"
-        data-aos-delay="350"
-      >
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <div className="max-w-xl">
-            <p className="text-sm uppercase tracking-widest font-semibold text-gray-500">
-              {t("signature")}
+            <p className="mt-4 max-w-2xl text-sm leading-7">
+              {t("description")}
             </p>
-            <p className="mt-2 text-sm md:text-base leading-relaxed font-medium">
-              {t("author")}
-            </p>
+
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              <Card>
+                <p className="text-[11px] uppercase tracking-[0.24em]">
+                  {t("core_label")}
+                </p>
+                <p className="mt-2 text-sm font-semibold">{t("core_value")}</p>
+              </Card>
+
+              <Card>
+                <p className="text-[11px] uppercase tracking-[0.24em]">
+                  {t("compliance_label")}
+                </p>
+                <p className="mt-2 text-sm font-semibold">
+                  {t("compliance_value")}
+                </p>
+              </Card>
+
+              <Card>
+                <p className="text-[11px] uppercase tracking-[0.24em]">
+                  {t("impact_label")}
+                </p>
+                <p className="mt-2 text-sm font-semibold">
+                  {t("impact_value")}
+                </p>
+              </Card>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            {principles.map((item, index) => (
+              <Card
+                key={item.title}
+                data-aos="fade-up"
+                data-aos-delay={120 * (index + 1)}
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <h4 className="text-lg font-semibold md:text-xl">
+                    {item.title}
+                  </h4>
+
+                  <span className="text-xs font-semibold tracking-[0.24em]">
+                    {item.kicker}
+                  </span>
+                </div>
+
+                <p className="mt-3 text-sm leading-7">{item.description}</p>
+
+                <ul className="mt-4 space-y-2 text-sm">
+                  {item.points.map((point) => (
+                    <li key={point} className="flex gap-3">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-green-400" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Card>
+            ))}
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

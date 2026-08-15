@@ -149,7 +149,7 @@ export default async function Wakatime() {
                   <span>{t("lines_label")}</span>
                   <span>{agent.lines.toLocaleString()}</span>
                 </div>
-                <div className="h-1.5 w-full overflow-hidden rounded-full border border-zinc-800">
+                <div className="h-1.5 w-full overflow-hidden rounded-full">
                   <div
                     className="h-full rounded-full bg-cyan-500"
                     style={{
@@ -200,7 +200,7 @@ export default async function Wakatime() {
                   <span>{t("share_label")}</span>
                   <span>{formatPct(lang.percent)}</span>
                 </div>
-                <div className="h-1.5 w-full overflow-hidden rounded-full border border-zinc-800">
+                <div className="h-1.5 w-full overflow-hidden rounded-full">
                   <div
                     className="h-full rounded-full bg-cyan-500"
                     style={{ width: formatPct(lang.percent) }}
