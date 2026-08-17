@@ -1,0 +1,48 @@
+---
+title: "Even Microsoft's Money Can't Buy GitHub Uptime"
+date: "2026-08-18"
+excerpt: "GitHub went down again, and it got me thinking about how much of our infrastructure is being duct-taped together with AI hype instead of actual engineering discipline."
+topics: ["infrastructure", "github", "devops", "ai-in-engineering"]
+---
+
+So GitHub went down again today. Third time this month, if you're keeping count, and I definitely am because I had three separate deploys blocked by it. I was mid coffee, mid standup, mid pretending my code was ready for review, and then the little status indicator in my terminal just sat there spinning like it owed me money. The thing that gets me isn't that it happened. Outages happen, servers fall over, cables get dug up by a guy on a backhoe somewhere in Virginia. What gets me is who owns this thing. This is not some scrappy startup running on a single EC2 instance and a prayer. This is GitHub, backed by Microsoft, a company with more cash reserves than some countries have GDP, and it still buckles on a semi regular basis.
+
+That contradiction is what actually got me writing this instead of just tweeting angrily into the void like usual. Money was never really the bottleneck here, so something else is going on, and I think a lot of us in this industry already suspect what it is.
+
+## The Uncomfortable Pattern
+
+Here's the thing nobody wants to say out loud in a standup. A huge chunk of the infrastructure we all depend on daily is being built, patched, and "optimized" by teams that are under enormous pressure to ship AI features into everything, whether or not the underlying systems can actually support that pressure. It is not that AI tooling is bad. I use it every day, it saves me hours I would otherwise spend fighting boilerplate. The problem is when leadership decides every product needs an AI layer bolted onto it this quarter, and the infra team quietly absorbs the extra load, extra complexity, and extra failure surface without getting the extra headcount or extra time to actually harden anything.
+
+You end up with systems that were stable for years suddenly getting flaky right around the time some new AI powered feature ships. Coincidence? Sometimes. But often enough it's not, and anyone who has worked infra long enough can smell the pattern. New dependency graph, new caching layer nobody fully understands, new service mesh call that adds latency nobody budgeted for. It piles up.
+
+## Why "Vibe Coded" Isn't Just a Meme
+
+I've started using "vibe coded infrastructure" half jokingly with my colleagues, but the more I say it the less funny it feels. It describes something real: code and architecture decisions that got made because they felt right, or because a demo looked impressive, or because leadership wanted to announce something at a conference, rather than because someone sat down and asked whether the system could actually hold that weight in production.
+
+The scary part is that vibe coding used to mean some junior dev shipping a hacky script that only they understood. Now it can mean an entire platform team shipping a redesigned auth flow or a new git object storage layer because an AI assistant suggested a clever approach and it passed code review fast enough that nobody stress tested it under real load. Speed became the metric that mattered, and speed quietly ate reliability's lunch.
+
+I'm not blaming the tools. A hammer doesn't care if you use it to build a house or hit your own thumb. I'm blaming the decision to swing it at everything without checking if the wall could take a nail in the first place.
+
+## What Actually Breaks When This Happens
+
+From the outside, an outage just looks like a red banner on a status page. From the inside, it's usually a cascade. One service starts timing out, retries pile up, queues back up behind it, and suddenly a component that had nothing to do with the original problem is also on fire because it never expected that much backpressure. Add an AI feature into that mix, something doing embeddings lookups or running inference calls on every request, and now you've added a whole new class of latency and failure modes on top of infrastructure that was already stretched thin.
+
+I've debugged versions of this myself, at much smaller scale obviously. Added a "smart" auto tagging feature to an internal tool, felt very proud of myself, and then watched our queue times triple because I didn't think hard enough about what happens when the model call is slow and everything downstream is waiting on it synchronously. Small mistake, small blast radius, lesson learned cheap. At GitHub's scale, that same category of mistake takes down deploys for a large percentage of the software industry for an afternoon.
+
+## What I Actually Do About It Now
+
+None of this means stop using AI tools or panic about the sky falling. It means treating infrastructure decisions with the same seriousness we used to before "ship it fast, ship it AI powered" became the default instinct. A few things I've started doing differently after watching this happen one too many times:
+
+- I stopped trusting any single git remote as my only source of truth. Local mirrors and backups aren't paranoid anymore, they're just normal hygiene.
+- I ask "what happens if this call times out" before I ask "how do I make this call smarter." Boring question, saves you at 2am.
+- I push back a little harder when a feature gets justified with "it'll look good in the demo" instead of "here's the load testing that shows it holds up."
+
+None of that is groundbreaking. It's just discipline that's easy to skip when everyone around you is moving fast and demoing shiny things.
+
+## The Part That Actually Matters
+
+The real lesson from today's outage isn't really about GitHub specifically. It's a reminder that scale and funding don't automatically buy you resilience. Resilience is a series of unglamorous decisions made consistently over time, and it's the first thing that gets sacrificed when everyone's incentivized to chase the next flashy feature instead. Microsoft has the money to hire the best infra engineers on the planet, and they probably have, and it still doesn't matter if the org pressure pushes those engineers to prioritize speed over stability.
+
+---
+
+I don't think the answer is doom and gloom about AI ruining engineering. I think the answer is way more boring than that: slow down enough to actually test the thing before you ship it, regardless of what's trendy that quarter. It's not exciting advice. It just happens to be the advice that keeps your status page green.
