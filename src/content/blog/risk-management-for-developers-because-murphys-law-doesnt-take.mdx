@@ -1,0 +1,58 @@
+---
+title: "Risk Management for Developers: Because Murphy's Law Doesn't Take Requests"
+date: "2026-08-17"
+excerpt: "A practical, slightly paranoid look at how developers handle risk, from dead SSDs to power outages that laugh at your UPS."
+topics: ["developer-life", "risk-management", "hardware", "disaster-recovery"]
+---
+
+I used to think risk management was a boring corporate term that only applied to insurance companies and people wearing lanyards. Then my SSD died at 11pm on a Tuesday, mid deploy, with three uncommitted files sitting in my editor like they had never heard of version control. That night taught me more about risk than any onboarding doc ever did. Developers don't usually think of themselves as risk managers, but the truth is we do it constantly, quietly, in the background, without ever calling it that. We back things up, we keep spares, we prep for outages, and we do it because we've all been burned at least once. Some of us learned the hard way. Some of us learned the very hard way. Either way, the lesson sticks.
+
+This post is basically a walkthrough of how I handle risk as a solo dev, the stuff that actually matters day to day, not the theoretical "what if a meteor hits the datacenter" scenarios. Some of it is boring and practical. Some of it I only started doing after something broke in a spectacularly annoying way.
+
+## The Stuff You Can Actually Control
+
+Here's the thing about risk. Some of it is out of your hands completely. Acts of god, as I like to call them, meaning power grid failures, ISP outages, or your city deciding to do "planned maintenance" during your busiest hour. You can't stop those. What you can do is control everything upstream and downstream of that chaos so when it happens, you're not the one scrambling.
+
+That's really the whole philosophy. Work must go on, even when the universe is actively trying to ruin your day.
+
+## Hardware Failures Will Happen, Plan Like It's Tuesday
+
+Every piece of hardware you own is on a timer. You just don't know the number. SSDs fail, RAM sticks go flaky, CPUs cook themselves if a fan dies quietly without telling anyone. The fix isn't complicated, it's just discipline. Keep a spare disk around. Keep a spare stick of RAM if you can afford it. If your rig is your income, an extra CPU sitting in a drawer isn't paranoia, it's insurance that doesn't require a monthly premium.
+
+The annoying part is that most people only think about this after the failure, not before. I get it, spare parts feel like dead weight until the one day they save your entire week. That's the trade off. You're paying a small tax now so future-you doesn't have a meltdown later.
+
+## The Bootable Disk Nobody Talks About
+
+This one is underrated to a criminal degree. Nobody brags about their bootable USB collection at meetups, but they should, because it is quietly one of the best time savers in a dev's toolkit. When a drive fails, the last thing you want is to be hunting down an ISO on a sketchy mirror site while your deadline creeps closer.
+
+Having a prepped bootable disk sitting in a drawer means when the SSD dies, you're not googling "where do I even download Ubuntu" at 2am. You plug it in, boot up, and you're reinstalling an OS within fifteen minutes instead of losing half a day to setup panic. It sounds like a small thing until you're the person who actually has it ready and your coworker is the person who doesn't.
+
+## Power Failures, the Nasty Unpredictable One
+
+This is the risk that humbles everyone eventually. A UPS is non negotiable if your work depends on uptime, and I don't just mean for the PC. Your router needs one too, because a machine running on battery backup connected to a dead router is just an expensive paperweight with good intentions.
+
+But here's the part that stings. Sometimes the failure isn't even yours to fix. If the main substation feeding your entire city goes down, your UPS is buying you minutes, not hours, and your internet is gone regardless of how charged your battery is. That's the act of god part. You can prepare for local failures all day long, but when the failure is regional, all your prep does is buy you a graceful shutdown instead of a corrupted filesystem. Honestly, that's still worth it. A clean shutdown versus a corrupted database is the difference between an annoying evening and a genuinely bad week.
+
+## Other Risks Worth Thinking About
+
+Once you start thinking in terms of risk, you start seeing it everywhere.
+
+Version control is risk management. Committing early and often means a bad edit doesn't erase a day's work.
+
+Automated backups are risk management. Manual backups fail because humans forget, automated ones fail less because they don't care about your excuses.
+
+Redundant internet, like a mobile hotspot as backup, is risk management. It's saved me during more outages than I'd like to admit.
+
+Documentation is risk management too, weirdly. If you get hit by a bus, or more realistically, if you just forget how your own script works six months later, good notes are the difference between a five minute fix and a rebuild from scratch.
+
+None of these feel exciting. They're not supposed to. Good risk management is boring by design. The exciting version of risk management is called "an outage," and nobody wants that kind of excitement.
+
+## What I've Learned
+
+The pattern I keep noticing is that risk management isn't about preventing every bad thing, because you can't. It's about shrinking the blast radius when bad things happen, because they will. The goal isn't a perfect system, it's a system that fails politely instead of catastrophically.
+
+Work must go on. Not because we're all workaholics who can't take a night off, but because half the job of being a developer, freelancer, or anyone running their own infrastructure is being the person who already thought about the thing that just broke.
+
+---
+
+You don't need to build a bunker. You just need a spare disk, a bootable USB, a UPS, and a healthy respect for how creative the universe can get when it comes to ruining a Tuesday.
