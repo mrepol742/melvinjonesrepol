@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { getAlternates } from "@/components/common/metadata/Alternatives";
 import Card from "@/components/ui/Card";
+import Header from "@/components/ui/Header";
 
 export async function generateMetadata({
   params,
@@ -66,53 +67,19 @@ const principles = [
 
 export default function AboutPage() {
   return (
-    <main>
-      <section className="relative min-h-screen overflow-hidden border-b border-zinc-800">
-        <div className="relative flex min-h-screen flex-col px-6 py-12 md:px-10">
-          <div className="my-auto py-14">
-            <h1 className="text-[14vw] sm:text-[10vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8">
-              About
-              <br />
-              <span className="opacity-40">the work</span>
-              <br />
-              behind it.
-            </h1>
-
-            <p className="max-w-2xl text-lg leading-8 text-zinc-400 md:text-xl">
-              This page exists as background, not a pitch. It explains how I
-              think about software, why some decisions look conservative from
-              the outside, and why I care more about long-term system health
-              than short-term excitement.
-            </p>
-          </div>
-
-          <div className="border-t border-zinc-800 pt-6 grid grid-cols-2 sm:grid-cols-4 gap-6">
-            <div>
-              <p className="text-4xl font-black">6+</p>
-              <p className="mt-1 text-sm text-zinc-400">Years building</p>
-            </div>
-            <div>
-              <p className="text-4xl font-black">Web + Android</p>
-              <p className="mt-1 text-sm text-zinc-400">Primary surfaces</p>
-            </div>
-            <div className="col-span-2 flex flex-wrap items-center gap-2">
-              {[
-                "Architecture",
-                "Operations",
-                "AI Features",
-                "Practicality",
-              ].map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-zinc-400 px-3 py-1 text-xs text-zinc-400"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+    <>
+      <Header
+        title={
+          <>
+            About
+            <br />
+            <span className="opacity-40">the work</span>
+            <br />
+            behind it.
+          </>
+        }
+        intro="This page exists as background, not a pitch. It explains how I think about software, why some decisions look conservative from the outside, and why I care more about long-term system health than short-term excitement."
+      />
 
       <section className="px-6 py-24 md:px-10">
         <div className="mx-auto max-w-6xl grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
@@ -187,6 +154,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-    </main>
+    </>
   );
 }

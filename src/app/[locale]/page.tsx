@@ -24,6 +24,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 import Card from "@/components/ui/Card";
+import Header from "@/components/ui/Header";
 
 export const revalidate = 10800;
 
@@ -164,468 +165,411 @@ export default async function Home({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(meMyselfI) }}
       />
-      <main>
-        <section>
-          <HeroFade className="relative min-h-screen overflow-hidden border-b border-zinc-800 mb-10">
-            {/* Full-height photo bleeding to the right edge — desktop only */}
-            <div className="hidden lg:block absolute right-0 top-0 h-full w-[42%]">
-              <Image
-                src="/images/melvin-jones-repol-black.jpg"
-                alt={t("profile_alt")}
-                fill
-                priority
-                className="object-cover object-top"
-              />
-              {/* Fade left edge into background */}
-              <div className="absolute inset-y-0 left-0 w-48 bg-gradient-to-r from-white dark:from-black to-transparent" />
-              {/* Fade bottom edge */}
-              <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-white dark:from-black to-transparent" />
-            </div>
-
-            {/* Content layer */}
-            <div className="relative z-10 min-h-screen flex flex-col px-6 py-12 md:px-10">
-              <div className="my-auto py-14 w-full lg:w-[58%] lg:mr-auto">
-                <div className="w-full max-w-3xl mx-auto">
-                  <div className="inline-flex items-center gap-2.5 mb-6 text-xs">
-                    <span className="relative flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                      <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
-                    </span>
-                    <span className="font-mono tracking-widest uppercase opacity-50">
-                      Currently at
-                    </span>
-                    <span className="font-bold tracking-wide">
-                      UP-TO-DATE Webdesign
-                    </span>
-                    <span className="opacity-30">·</span>
-                    <span className="opacity-60">Full-Stack Developer</span>
-                  </div>
-                  <h1 className="text-[17vw] sm:text-[12vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8">
-                    Melvin
-                    <br />
-                    <span className="opacity-40">Jones</span>
-                    <br />
-                    Repol
-                  </h1>
-
-                  <p className="text-base md:text-xl leading-relaxed mb-6 max-w-lg">
-                    {t("intro")}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </HeroFade>
-
-          <div className="p-3 md:px-8">
-            <div className="relative py-14 md:py-28 overflow-hidden">
-              <div className="relative z-10 max-w-6xl mx-auto px-4">
-                <div className="text-center mb-10 md:mb-14">
-                  <span
-                    className="text-sm font-semibold tracking-widest uppercase mb-3"
-                    data-aos="fade-up"
-                  >
-                    {t("engineering_philosophy_label")}
-                  </span>
-                  <h2
-                    className="text-3xl md:text-4xl font-bold mb-4"
-                    data-aos="fade-up"
-                    data-aos-delay="100"
-                  >
-                    {t("engineering_philosophy_title_line1")}
-                    <span className="block">
-                      {t("engineering_philosophy_title_line2")}
-                    </span>
-                  </h2>
-                </div>
-                <EngineeringPhilosophy />
-              </div>
-            </div>
-
-            <div className="relative py-14 md:py-28 overflow-hidden">
-              <div className="text-center mb-10 md:mb-14">
-                <span
-                  className="text-sm font-semibold tracking-widest uppercase mb-3"
-                  data-aos="fade-up"
-                >
-                  {t("how_i_help")}
-                </span>
-                <h2
-                  className="text-3xl md:text-5xl font-bold leading-tight"
-                  data-aos="fade-up"
-                >
-                  {t("how_i_help_title")}
-                </h2>
-                <p className="max-w-2xl mx-auto mt-4" data-aos="fade-up">
-                  {t("how_i_help_description")}
-                </p>
-              </div>
-              <ServicesCarousel />
-            </div>
-
-            <div className="relative py-14 md:py-28 overflow-hidden">
-              <div className="text-center">
-                <span
-                  className="text-sm font-semibold tracking-widest uppercase mb-3"
-                  data-aos="fade-up"
-                >
-                  {t("coding_activity_label")}
-                </span>
-                <h2
-                  className="text-3xl md:text-4xl font-bold mb-4"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                >
-                  {t("coding_activity_title")}
-                </h2>
-                <p
-                  className="text-center max-w-2xl mx-auto mb-6"
-                  data-aos="fade-up"
-                >
-                  {t("coding_activity_description")}
-                </p>
-              </div>
-              <Wakatime />
-            </div>
-
-            <Github />
-
-            <div className="relative py-14 md:py-28 overflow-hidden">
-              <div className="text-center">
-                <span
-                  className="text-sm font-semibold tracking-widest uppercase mb-3"
-                  data-aos="fade-up"
-                >
-                  {t("results_case_studies")}
-                </span>
-                <h2
-                  className="text-3xl md:text-4xl font-bold mb-4"
-                  data-aos="fade-up"
-                >
-                  {t("work_that_drives_outcomes")}
-                </h2>
-                <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
-                  {t("work_that_drives_outcomes_description")}
-                </p>
-              </div>
-              <Project />
-              <span className="text-xs">
-                {t("swipe_left_or_right_to_see_more")}
+      <Header
+        imageUrl="/images/melvin-jones-repol-black.jpg"
+        imageAlt={t("profile_alt")}
+        title={
+          <>
+            Melvin
+            <br />
+            <span className="opacity-40">Jones</span>
+            <br />
+            Repol
+          </>
+        }
+        intro={t("intro")}
+        badge={
+          <>
+            <div className="inline-flex items-center gap-2.5 mb-6 text-xs">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
               </span>
+              <span className="font-mono tracking-widest uppercase opacity-50">
+                Currently at
+              </span>
+              <span className="font-bold tracking-wide">
+                UP-TO-DATE Webdesign
+              </span>
+              <span className="opacity-30">·</span>
+              <span className="opacity-60">Full-Stack Developer</span>
             </div>
+          </>
+        }
+      />
 
-            <div className="relative py-14 md:py-28 overflow-hidden">
-              <div className="relative z-10 max-w-6xl mx-auto px-4">
-                <div className="text-center">
-                  <span
-                    className="text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3"
-                    data-aos="fade-up"
-                  >
-                    {t("security_label")}
-                  </span>
-                  <h2
-                    className="text-3xl md:text-4xl font-bold mb-4"
-                    data-aos="fade-up"
-                    data-aos-delay="100"
-                  >
-                    {t("security_title")}
-                  </h2>
-                  <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
-                    {t("security_description")}
-                  </p>
-                </div>
-                <SecurityPractices />
-              </div>
-            </div>
-
-            <div className="relative py-14 md:py-28 overflow-hidden">
-              <div className="relative z-10 max-w-6xl mx-auto px-4">
-                <div className="text-center">
-                  <span
-                    className="text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3"
-                    data-aos="fade-up"
-                  >
-                    {t("ai_label")}
-                  </span>
-                  <h2
-                    className="text-3xl md:text-4xl font-bold mb-4"
-                    data-aos="fade-up"
-                    data-aos-delay="100"
-                  >
-                    {t("ai_title")}
-                  </h2>
-                  <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
-                    {t("ai_description")}
-                  </p>
-                </div>
-                <AI />
-              </div>
-            </div>
-
-            <div className="relative py-14 md:py-28 overflow-hidden">
-              <div className="text-center">
-                <span
-                  className="text-sm font-semibold tracking-widest text-fuchsia-500 uppercase mb-3"
-                  data-aos="fade-up"
-                >
-                  {t("certifications_label")}
+      <div className="p-3 md:px-8">
+        <div className="relative py-14 md:py-28 overflow-hidden">
+          <div className="relative z-10 max-w-6xl mx-auto px-4">
+            <div className="text-center mb-10 md:mb-14">
+              <span
+                className="text-sm font-semibold tracking-widest uppercase mb-3"
+                data-aos="fade-up"
+              >
+                {t("engineering_philosophy_label")}
+              </span>
+              <h2
+                className="text-3xl md:text-4xl font-bold mb-4"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                {t("engineering_philosophy_title_line1")}
+                <span className="block">
+                  {t("engineering_philosophy_title_line2")}
                 </span>
-                <h2
-                  className="text-3xl md:text-4xl font-bold mb-4"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                >
-                  {t("certifications_title")}
-                </h2>
-                <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
-                  {t("certifications_description")}
-                </p>
-              </div>
-              <Certificate />
-              <span className="text-xs">{t("swipe_left_or_right")}</span>
+              </h2>
             </div>
-
-            <div className="relative py-14 md:py-28 overflow-hidden">
-              <div className="text-center">
-                <span
-                  className="text-sm font-semibold tracking-widest text-green-500 uppercase mb-3"
-                  data-aos="fade-up"
-                >
-                  {t("blog_label")}
-                </span>
-                <h2
-                  className="text-3xl md:text-4xl font-bold mb-4"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                >
-                  {t("blog_title")}
-                </h2>
-                <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
-                  {t("blog_description")}
-                </p>
-              </div>
-              <Blog locale={locale} />
-            </div>
-
-            <div className="relative py-14 md:py-28 overflow-hidden">
-              <div className="text-center">
-                <span
-                  className="text-sm font-semibold tracking-widest uppercase mb-3"
-                  data-aos="fade-up"
-                >
-                  {t("client_feedback")}
-                </span>
-                <h2
-                  className="text-3xl md:text-4xl font-bold mb-4"
-                  data-aos="fade-up"
-                >
-                  {t("trusted_for_delivery_and_reliability")}
-                </h2>
-                <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
-                  {t("trusted_for_delivery_and_reliability_description")}
-                </p>
-              </div>
-              <ClientFeedback />
-            </div>
-
-            <Steam />
-
-            <div className="relative py-14 md:py-28 overflow-hidden">
-              <div className="text-center">
-                <span
-                  className="text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3"
-                  data-aos="fade-up"
-                >
-                  {t("youtube_label")}
-                </span>
-                <h2
-                  className="text-3xl md:text-4xl font-bold mb-4"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                >
-                  {t("youtube_title")}
-                </h2>
-                <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
-                  {t("youtube_description")}
-                </p>
-              </div>
-              <Youtube />
-              <span className="text-xs">{t("swipe_left_or_right")}</span>
-            </div>
-
-            <div className="relative py-14 md:py-28 overflow-hidden">
-              <div className="mx-auto max-w-6xl px-4 md:px-6">
-                <div className="grid gap-10 md:grid-cols-[1.2fr_1fr] items-start">
-                  {/* Left content rail */}
-                  <div>
-                    <div
-                      className="inline-flex items-center gap-2 rounded-full border border-zinc-800 px-3 py-1 text-xs font-semibold tracking-widest uppercase"
-                      data-aos="fade-up"
-                    >
-                      <span className="inline-block h-2 w-2 rounded-full border" />
-                      {t("community_label")}
-                    </div>
-
-                    <h2
-                      className="mt-4 text-3xl md:text-4xl font-bold max-w-xl"
-                      data-aos="fade-up"
-                      data-aos-delay="100"
-                    >
-                      {t("community_title")}
-                    </h2>
-                    <Link
-                      href="https://www.hallofcodes.org"
-                      data-aos="fade-up"
-                      data-aos-delay="300"
-                      className="text-zinc-400"
-                      target="_blank"
-                    >
-                      www.hallofcodes.org
-                    </Link>
-
-                    <p className="mt-4 max-w-xl" data-aos="fade-up">
-                      {t("community_description_1")}
-                    </p>
-
-                    <p className="mt-4 max-w-xl" data-aos="fade-up">
-                      {t("community_description_2")}
-                    </p>
-                  </div>
-
-                  {/* Right stacked cards */}
-                  <div className="relative">
-                    <div className="space-y-3">
-                      <Card index={0}>
-                        <div className="text-lg font-semibold">
-                          {t("community_card1_title")}
-                        </div>
-                        <div className="text-xs uppercase tracking-wider text-zinc-400">
-                          {t("community_card1_desc")}
-                        </div>
-                      </Card>
-                      <Card index={1}>
-                        <div className="text-lg font-semibold">
-                          {t("community_card2_title")}
-                        </div>
-                        <div className="text-xs uppercase tracking-wider text-zinc-400">
-                          {t("community_card2_desc")}
-                        </div>
-                      </Card>
-                      <Card index={2}>
-                        <div className="text-lg font-semibold">
-                          {t("community_card3_title")}
-                        </div>
-                        <div className="text-xs uppercase tracking-wider text-zinc-400">
-                          {t("community_card3_desc")}
-                        </div>
-                      </Card>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative py-14 md:py-28 overflow-hidden">
-              <div className="mx-auto max-w-6xl px-4 md:px-6">
-                <Card>
-                  <div className="grid lg:grid-cols-2">
-                    {/* Product Side */}
-                    <div>
-                      <div className="inline-flex items-center gap-2 rounded-full border border-zinc-800 px-3 py-1 text-xs font-semibold uppercase">
-                        <span className="h-2 w-2 rounded-full bg-green-500" />
-                        {t("webvium_badge")}
-                      </div>
-
-                      <h2 className="mt-5 text-4xl font-bold">
-                        {t("webvium_title")}
-                      </h2>
-                      <Link
-                        href="https://webvium.melvinjonesrepol.com"
-                        data-aos="fade-up"
-                        data-aos-delay="300"
-                        className="text-zinc-400"
-                        target="_blank"
-                      >
-                        webvium.melvinjonesrepol.com
-                      </Link>
-
-                      <p className="mt-4">{t("webvium_description")}</p>
-                    </div>
-
-                    {/* Stats Side */}
-                    <div className="p-8 md:p-12">
-                      <div className="grid sm:grid-cols-2 gap-4">
-                        <Card subtitle="15+">
-                          <div className="text-3xl font-bold">15+</div>
-                          <div className="text-sm text-zinc-400">
-                            {t("webvium_stat_repositories")}
-                          </div>
-                        </Card>
-
-                        <Card subtitle="6+">
-                          <div className="text-3xl font-bold">6+</div>
-                          <div className="text-sm text-zinc-400">
-                            {t("webvium_stat_browser_tools")}
-                          </div>
-                        </Card>
-
-                        <Card subtitle="2018">
-                          <div className="text-3xl font-bold">2018</div>
-                          <div className="text-sm text-zinc-400">
-                            {t("webvium_stat_started")}
-                          </div>
-                        </Card>
-
-                        <Card subtitle="375KB">
-                          <div className="text-3xl font-bold">375KB</div>
-                          <div className="text-sm text-zinc-400">
-                            {t("webvium_stat_lightest")}
-                          </div>
-                        </Card>
-                      </div>
-                    </div>
-                  </div>
-                </Card>
-              </div>
-            </div>
-
-            {/*<div
-              className="relative py-14 md:py-28 overflow-hidden"
-              data-aos="slide-up"
-            >
-              <div className="relative mx-auto max-w-4xl">
-                <div className="relative rounded-3xl border border-zinc-800 p-6 md:p-10 shadow-[0_10px_50px_-20px_rgba(0,0,0,0.15)]">
-                  <div className="inline-flex items-center gap-2 rounded-full border border-zinc-800 px-3 py-1 mb-4">
-                    <span className="h-2 w-2 rounded-full border border-zinc-800 animate-pulse" />
-                    <span className="text-xs font-medium tracking-wide uppercase">
-                      {t("next_step_label")}
-                    </span>
-                  </div>
-
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4 leading-tight">
-                    {t("next_step_title")}
-                  </h3>
-
-                  <p className="text-sm md:text-base leading-relaxed">
-                    {t("next_step_description")}
-                  </p>
-
-                  <div className="mt-6 flex flex-wrap items-center gap-3">
-                    <span className="text-xs md:text-sm rounded-full border border-zinc-800 px-3 py-1">
-                      {t("next_step_tag_outcome")}
-                    </span>
-                    <span className="text-xs md:text-sm rounded-full border border-zinc-800 px-3 py-1">
-                      {t("next_step_tag_business")}
-                    </span>
-                    <span className="text-xs md:text-sm rounded-full border border-zinc-800 px-3 py-1">
-                      {t("next_step_tag_reliable")}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>*/}
+            <EngineeringPhilosophy />
           </div>
-        </section>
-      </main>
+        </div>
+
+        <div className="relative py-14 md:py-28 overflow-hidden">
+          <div className="text-center mb-10 md:mb-14">
+            <span
+              className="text-sm font-semibold tracking-widest uppercase mb-3"
+              data-aos="fade-up"
+            >
+              {t("how_i_help")}
+            </span>
+            <h2
+              className="text-3xl md:text-5xl font-bold leading-tight"
+              data-aos="fade-up"
+            >
+              {t("how_i_help_title")}
+            </h2>
+            <p className="max-w-2xl mx-auto mt-4" data-aos="fade-up">
+              {t("how_i_help_description")}
+            </p>
+          </div>
+          <ServicesCarousel />
+        </div>
+
+        <div className="relative py-14 md:py-28 overflow-hidden">
+          <div className="text-center">
+            <span
+              className="text-sm font-semibold tracking-widest uppercase mb-3"
+              data-aos="fade-up"
+            >
+              {t("coding_activity_label")}
+            </span>
+            <h2
+              className="text-3xl md:text-4xl font-bold mb-4"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              {t("coding_activity_title")}
+            </h2>
+            <p
+              className="text-center max-w-2xl mx-auto mb-6"
+              data-aos="fade-up"
+            >
+              {t("coding_activity_description")}
+            </p>
+          </div>
+          <Wakatime />
+        </div>
+
+        <Github />
+
+        <div className="relative py-14 md:py-28 overflow-hidden">
+          <div className="text-center">
+            <span
+              className="text-sm font-semibold tracking-widest uppercase mb-3"
+              data-aos="fade-up"
+            >
+              {t("results_case_studies")}
+            </span>
+            <h2
+              className="text-3xl md:text-4xl font-bold mb-4"
+              data-aos="fade-up"
+            >
+              {t("work_that_drives_outcomes")}
+            </h2>
+            <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
+              {t("work_that_drives_outcomes_description")}
+            </p>
+          </div>
+          <Project />
+          <span className="text-xs">
+            {t("swipe_left_or_right_to_see_more")}
+          </span>
+        </div>
+
+        <div className="relative py-14 md:py-28 overflow-hidden">
+          <div className="relative z-10 max-w-6xl mx-auto px-4">
+            <div className="text-center">
+              <span
+                className="text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3"
+                data-aos="fade-up"
+              >
+                {t("security_label")}
+              </span>
+              <h2
+                className="text-3xl md:text-4xl font-bold mb-4"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                {t("security_title")}
+              </h2>
+              <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
+                {t("security_description")}
+              </p>
+            </div>
+            <SecurityPractices />
+          </div>
+        </div>
+
+        <div className="relative py-14 md:py-28 overflow-hidden">
+          <div className="relative z-10 max-w-6xl mx-auto px-4">
+            <div className="text-center">
+              <span
+                className="text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3"
+                data-aos="fade-up"
+              >
+                {t("ai_label")}
+              </span>
+              <h2
+                className="text-3xl md:text-4xl font-bold mb-4"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                {t("ai_title")}
+              </h2>
+              <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
+                {t("ai_description")}
+              </p>
+            </div>
+            <AI />
+          </div>
+        </div>
+
+        <div className="relative py-14 md:py-28 overflow-hidden">
+          <div className="text-center">
+            <span
+              className="text-sm font-semibold tracking-widest text-fuchsia-500 uppercase mb-3"
+              data-aos="fade-up"
+            >
+              {t("certifications_label")}
+            </span>
+            <h2
+              className="text-3xl md:text-4xl font-bold mb-4"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              {t("certifications_title")}
+            </h2>
+            <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
+              {t("certifications_description")}
+            </p>
+          </div>
+          <Certificate />
+          <span className="text-xs">{t("swipe_left_or_right")}</span>
+        </div>
+
+        <div className="relative py-14 md:py-28 overflow-hidden">
+          <div className="text-center">
+            <span
+              className="text-sm font-semibold tracking-widest text-green-500 uppercase mb-3"
+              data-aos="fade-up"
+            >
+              {t("blog_label")}
+            </span>
+            <h2
+              className="text-3xl md:text-4xl font-bold mb-4"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              {t("blog_title")}
+            </h2>
+            <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
+              {t("blog_description")}
+            </p>
+          </div>
+          <Blog locale={locale} />
+        </div>
+
+        <div className="relative py-14 md:py-28 overflow-hidden">
+          <div className="text-center">
+            <span
+              className="text-sm font-semibold tracking-widest uppercase mb-3"
+              data-aos="fade-up"
+            >
+              {t("client_feedback")}
+            </span>
+            <h2
+              className="text-3xl md:text-4xl font-bold mb-4"
+              data-aos="fade-up"
+            >
+              {t("trusted_for_delivery_and_reliability")}
+            </h2>
+            <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
+              {t("trusted_for_delivery_and_reliability_description")}
+            </p>
+          </div>
+          <ClientFeedback />
+        </div>
+
+        <Steam />
+
+        <div className="relative py-14 md:py-28 overflow-hidden">
+          <div className="text-center">
+            <span
+              className="text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3"
+              data-aos="fade-up"
+            >
+              {t("youtube_label")}
+            </span>
+            <h2
+              className="text-3xl md:text-4xl font-bold mb-4"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              {t("youtube_title")}
+            </h2>
+            <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
+              {t("youtube_description")}
+            </p>
+          </div>
+          <Youtube />
+          <span className="text-xs">{t("swipe_left_or_right")}</span>
+        </div>
+
+        <div className="relative py-14 md:py-28 overflow-hidden">
+          <div className="mx-auto max-w-6xl px-4 md:px-6">
+            <div className="grid gap-10 md:grid-cols-[1.2fr_1fr] items-start">
+              {/* Left content rail */}
+              <div>
+                <div
+                  className="inline-flex items-center gap-2 rounded-full border border-zinc-800 px-3 py-1 text-xs font-semibold tracking-widest uppercase"
+                  data-aos="fade-up"
+                >
+                  <span className="inline-block h-2 w-2 rounded-full border" />
+                  {t("community_label")}
+                </div>
+
+                <h2
+                  className="mt-4 text-3xl md:text-4xl font-bold max-w-xl"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  {t("community_title")}
+                </h2>
+                <Link
+                  href="https://www.hallofcodes.org"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                  className="text-zinc-400"
+                  target="_blank"
+                >
+                  www.hallofcodes.org
+                </Link>
+
+                <p className="mt-4 max-w-xl" data-aos="fade-up">
+                  {t("community_description_1")}
+                </p>
+
+                <p className="mt-4 max-w-xl" data-aos="fade-up">
+                  {t("community_description_2")}
+                </p>
+              </div>
+
+              {/* Right stacked cards */}
+              <div className="relative">
+                <div className="space-y-3">
+                  <Card index={0}>
+                    <div className="text-lg font-semibold">
+                      {t("community_card1_title")}
+                    </div>
+                    <div className="text-xs uppercase tracking-wider text-zinc-400">
+                      {t("community_card1_desc")}
+                    </div>
+                  </Card>
+                  <Card index={1}>
+                    <div className="text-lg font-semibold">
+                      {t("community_card2_title")}
+                    </div>
+                    <div className="text-xs uppercase tracking-wider text-zinc-400">
+                      {t("community_card2_desc")}
+                    </div>
+                  </Card>
+                  <Card index={2}>
+                    <div className="text-lg font-semibold">
+                      {t("community_card3_title")}
+                    </div>
+                    <div className="text-xs uppercase tracking-wider text-zinc-400">
+                      {t("community_card3_desc")}
+                    </div>
+                  </Card>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="relative py-14 md:py-28 overflow-hidden">
+          <div className="mx-auto max-w-6xl px-4 md:px-6">
+            <Card>
+              <div className="grid lg:grid-cols-2">
+                {/* Product Side */}
+                <div>
+                  <div className="inline-flex items-center gap-2 rounded-full border border-zinc-800 px-3 py-1 text-xs font-semibold uppercase">
+                    <span className="h-2 w-2 rounded-full bg-green-500" />
+                    {t("webvium_badge")}
+                  </div>
+
+                  <h2 className="mt-5 text-4xl font-bold">
+                    {t("webvium_title")}
+                  </h2>
+                  <Link
+                    href="https://webvium.melvinjonesrepol.com"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                    className="text-zinc-400"
+                    target="_blank"
+                  >
+                    webvium.melvinjonesrepol.com
+                  </Link>
+
+                  <p className="mt-4">{t("webvium_description")}</p>
+                </div>
+
+                {/* Stats Side */}
+                <div className="p-8 md:p-12">
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <Card subtitle="15+">
+                      <div className="text-3xl font-bold">15+</div>
+                      <div className="text-sm text-zinc-400">
+                        {t("webvium_stat_repositories")}
+                      </div>
+                    </Card>
+
+                    <Card subtitle="6+">
+                      <div className="text-3xl font-bold">6+</div>
+                      <div className="text-sm text-zinc-400">
+                        {t("webvium_stat_browser_tools")}
+                      </div>
+                    </Card>
+
+                    <Card subtitle="2018">
+                      <div className="text-3xl font-bold">2018</div>
+                      <div className="text-sm text-zinc-400">
+                        {t("webvium_stat_started")}
+                      </div>
+                    </Card>
+
+                    <Card subtitle="375KB">
+                      <div className="text-3xl font-bold">375KB</div>
+                      <div className="text-sm text-zinc-400">
+                        {t("webvium_stat_lightest")}
+                      </div>
+                    </Card>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </div>
 
       <RecentGithubActivityWrapper>
         <RecentGithubActivity />

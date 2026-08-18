@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { getAlternates } from "@/components/common/metadata/Alternatives";
 import Card from "@/components/ui/Card";
+import Header from "@/components/ui/Header";
 
 export async function generateMetadata({
   params,
@@ -69,48 +70,19 @@ const currentFocus = [
 
 export default function NowPage() {
   return (
-    <main>
-      <section className="relative min-h-screen overflow-hidden border-b border-zinc-800">
-        <div className="relative flex min-h-screen flex-col px-6 py-12 md:px-10">
-          <div className="my-auto py-14">
-            <h1 className="text-[14vw] sm:text-[10vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8">
-              Current
-              <br />
-              <span className="opacity-40">focus</span>
-              <br />
-              right now.
-            </h1>
-
-            <p className="max-w-2xl text-lg leading-8 text-zinc-400 md:text-xl">
-              A snapshot of what I am spending time on recently. This changes as
-              projects evolve, but the current pattern is clear: more AI-linked
-              workflows, more tool-connected systems, and more effort toward
-              making useful capabilities accessible through a single interface.
-            </p>
-          </div>
-
-          <div className="border-t border-zinc-800 pt-6 grid grid-cols-2 sm:grid-cols-4 gap-6">
-            <div>
-              <p className="text-4xl font-black">2026</p>
-              <p className="mt-1 text-sm text-zinc-400">Current snapshot</p>
-            </div>
-            <div>
-              <p className="text-4xl font-black">AI + Tools</p>
-              <p className="mt-1 text-sm text-zinc-400">Main direction</p>
-            </div>
-            <div className="col-span-2 flex flex-wrap items-center gap-2">
-              {["MCP", "Chatbots", "DevPulse", "Automation"].map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-zinc-400 px-3 py-1 text-xs text-zinc-400"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+    <>
+      <Header
+        title={
+          <>
+            Current
+            <br />
+            <span className="opacity-40">focus</span>
+            <br />
+            right now.
+          </>
+        }
+        intro="A snapshot of what I am spending time on recently. This changes as projects evolve, but the current pattern is clear: more AI-linked workflows, more tool-connected systems, and more effort toward making useful capabilities accessible through a single interface."
+      />
 
       <section className="px-6 py-24 md:px-10">
         <div className="mx-auto max-w-6xl grid gap-6 md:grid-cols-2">
@@ -141,10 +113,10 @@ export default function NowPage() {
               </p>
               <p>
                 I am especially interested in where multiple features can be
-                exposed through one assistant without turning the experience into
-                chaos. That means thinking carefully about capability design,
-                retrieval, command boundaries, and what should remain explicit
-                instead of being abstracted away.
+                exposed through one assistant without turning the experience
+                into chaos. That means thinking carefully about capability
+                design, retrieval, command boundaries, and what should remain
+                explicit instead of being abstracted away.
               </p>
               <p>
                 Some of this work is experimental, some of it is already applied
@@ -155,6 +127,6 @@ export default function NowPage() {
           </Card>
         </div>
       </section>
-    </main>
+    </>
   );
 }

@@ -38,7 +38,7 @@ export default function CertificateCard({
           {certificate.title}
         </h3>
 
-        <p className="text-xs font-mono text-zinc-500 mb-4">
+        <p className="text-xs font-mono mb-4">
           {certificate.description}
         </p>
 

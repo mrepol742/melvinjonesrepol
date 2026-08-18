@@ -2,6 +2,7 @@ import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { Metadata } from "next";
 import Link from "next/link";
 import LegalFooter from "../components/LegalFooter";
+import Header from "@/components/ui/Header";
 
 export async function generateMetadata({
   params,
@@ -47,54 +48,19 @@ export async function generateMetadata({
 
 export default function DeveloperClientAgreement() {
   return (
-    <main>
-      <section className="relative min-h-screen overflow-hidden border-b border-zinc-800">
-        <div className="relative flex min-h-screen flex-col px-6 py-12 md:px-10">
-          <div className="my-auto py-14">
-            <h1 className="text-[14vw] sm:text-[10vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8">
-              Developer
-              <br />
-              <span className="opacity-40">client</span>
-              <br />
-              agreement.
-            </h1>
-
-            <p
-              className="max-w-2xl text-lg leading-8 text-zinc-400 md:text-xl"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              Terms for professional development services, payment structure,
-              delivery responsibilities, and ownership.
-            </p>
-          </div>
-
-          <div
-            className="border-t border-zinc-800 pt-6 grid grid-cols-2 sm:grid-cols-4 gap-6"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <div>
-              <p className="text-4xl font-black">12</p>
-              <p className="mt-1 text-sm text-zinc-400">Sections</p>
-            </div>
-            <div>
-              <p className="text-4xl font-black">Active</p>
-              <p className="mt-1 text-sm text-zinc-400">Current agreement</p>
-            </div>
-            <div className="col-span-2 flex flex-wrap items-center gap-2">
-              {["Scope", "Payment", "Ownership", "Liability"].map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-zinc-400 px-3 py-1 text-xs text-zinc-400"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+    <>
+      <Header
+        title={
+          <>
+            Developer
+            <br />
+            <span className="opacity-40">client</span>
+            <br />
+            agreement.
+          </>
+        }
+        intro="This Developer Client Agreement outlines the terms and conditions for services provided by Melvin Jones Repol."
+      />
 
       <section className="px-6 my-6 md:px-10">
         <div className="max-w-5xl mx-auto">
@@ -342,6 +308,6 @@ export default function DeveloperClientAgreement() {
           <LegalFooter date="March 2026" />
         </div>
       </section>
-    </main>
+    </>
   );
 }

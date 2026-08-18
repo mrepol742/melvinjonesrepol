@@ -2,6 +2,7 @@ import { getAllPosts } from "@/lib/posts";
 import { Metadata } from "next";
 import BlogCard from "./components/BlogCard";
 import Pagination from "./components/Pagination";
+import Header from "@/components/ui/Header";
 
 const POSTS_PER_PAGE = 12;
 const SITE_URL = "https://www.melvinjonesrepol.com";
@@ -61,63 +62,19 @@ export default async function BlogPage() {
   ).slice(0, 6);
 
   return (
-    <main>
-      <section className="relative min-h-screen overflow-hidden border-b border-zinc-800">
-        <div className="relative flex min-h-screen flex-col px-6 py-12 md:px-10">
-          <div className="my-auto py-14">
-            <h1 className="text-[14vw] sm:text-[10vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8">
-              Insights
-              <br />
-              <span className="opacity-40">&</span>
-              <br />
-              experiences.
-            </h1>
-
-            <p
-              className="max-w-2xl text-lg leading-8 text-zinc-400 md:text-xl"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              Thoughts, insights, and experiences on software development,
-              technology trends, and personal growth in the tech industry.
-            </p>
-
-            <p
-              className="mt-3 text-sm text-zinc-500 flex items-center gap-1.5"
-              data-aos="fade-up"
-              data-aos-delay="250"
-            >
-              <span>🌐</span>
-              Blog posts are available in English only.
-            </p>
-          </div>
-
-          <div
-            className="border-t border-zinc-800 pt-6 grid grid-cols-2 sm:grid-cols-4 gap-6"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <div>
-              <p className="text-4xl font-black">{posts.length}</p>
-              <p className="mt-1 text-sm text-zinc-400">Posts</p>
-            </div>
-            <div>
-              <p className="text-4xl font-black">{totalPages}</p>
-              <p className="mt-1 text-sm text-zinc-400">Pages</p>
-            </div>
-            <div className="col-span-2 flex flex-wrap items-center gap-2">
-              {allTopics.map((topic) => (
-                <span
-                  key={topic}
-                  className="rounded-full border border-zinc-700 px-3 py-1 text-xs capitalize"
-                >
-                  {topic}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+    <>
+      <Header
+        title={
+          <>
+            Insights
+            <br />
+            <span className="opacity-40">&</span>
+            <br />
+            experiences.
+          </>
+        }
+        intro="Thoughts, insights, and experiences on software development, technology trends, and personal growth in the tech industry."
+      />
 
       <section className="px-6 my-6 md:px-10">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 gap-4 md:gap-6">
@@ -128,6 +85,6 @@ export default async function BlogPage() {
 
         <Pagination currentPage={1} totalPages={totalPages} />
       </section>
-    </main>
+    </>
   );
 }

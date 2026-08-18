@@ -15,12 +15,12 @@ export default function WorkExperienceCard({
         <span className="inline-flex capitalize rounded-full border border-zinc-800 px-2.5 py-1 text-xs">
           {exp.company}
         </span>
-        <span className="text-xs font-mono text-zinc-500">{exp.date}</span>
+        <span className="text-xs font-mono">{exp.date}</span>
       </div>
 
       <h3 className="text-base font-bold leading-snug mb-3">{exp.title}</h3>
 
-      <p className="text-sm text-zinc-400 leading-relaxed">{exp.description}</p>
+      <p className="text-sm leading-relaxed">{exp.description}</p>
 
       {exp.cert && (
         <Link

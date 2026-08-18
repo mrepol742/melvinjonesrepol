@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import remarkGfm from "remark-gfm";
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
 import BlogCard from "../components/BlogCard";
+import Header from "@/components/ui/Header";
 
 export const dynamic = "force-static";
 export const revalidate = false;
@@ -165,91 +166,69 @@ export default async function BlogPost({
   };
 
   return (
-    <main>
-      <section className="relative min-h-screen overflow-hidden border-b border-zinc-800">
-        <div className="relative flex min-h-screen flex-col px-6 py-12 md:px-10">
-          <div className="my-auto py-14">
-            {(() => {
-              const words = data.title.split(" ");
-              const chunkSize = Math.ceil(words.length / 3);
-              const line1 = words.slice(0, chunkSize).join(" ");
-              const line2 = words.slice(chunkSize, chunkSize * 2).join(" ");
-              const line3 = words.slice(chunkSize * 2).join(" ");
+    <>
+      <Header
+        title={(() => {
+          const words = data.title.split(" ");
+          const chunkSize = Math.ceil(words.length / 3);
+          const line1 = words.slice(0, chunkSize).join(" ");
+          const line2 = words.slice(chunkSize, chunkSize * 2).join(" ");
+          const line3 = words.slice(chunkSize * 2).join(" ");
 
-              return (
-                <h1 className="text-[10vw] md:text-[7vw] lg:text-[5vw] font-black tracking-tighter leading-[0.85] mb-8">
-                  {line1}
-                  {line2 && (
-                    <>
-                      <br />
-                      <span className="opacity-40">{line2}</span>
-                    </>
-                  )}
-                  {line3 && (
-                    <>
-                      <br />
-                      {line3}
-                    </>
-                  )}
-                </h1>
-              );
-            })()}
-
-            {data.excerpt && (
-              <p
-                className="max-w-2xl text-lg leading-8 text-zinc-400 md:text-xl"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                {data.excerpt}
-              </p>
-            )}
-
-            <p
-              className="mt-3 text-sm text-zinc-500 flex items-center gap-1.5"
-              data-aos="fade-up"
-              data-aos-delay="250"
-            >
-              <span>🌐</span>
-              Blog posts are available in English only.
-            </p>
-          </div>
-
-          <div
-            className="border-t border-zinc-800 pt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <div>
-              <p className="mt-1 text-sm text-zinc-400">
-                {data.date && <>{new Date(data.date).toLocaleDateString()}</>}
-              </p>
-            </div>
-            <div>
-              <p className="mt-1 text-sm text-zinc-400">
-                {estimatedReadingTime} min read
-              </p>
-            </div>
-            {data.topics && data.topics.length > 0 && (
-              <div className="col-span-2 flex flex-wrap items-center gap-2">
-                {data.topics.map((topic: string, i: number) => (
-                  <span
-                    key={i}
-                    className="rounded-full border border-zinc-700 px-3 py-1 text-xs capitalize"
-                  >
-                    {topic}
-                  </span>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
+          return (
+            <h1 className="text-[10vw] md:text-[7vw] lg:text-[5vw] font-black tracking-tighter leading-[0.85] mb-8">
+              {line1}
+              {line2 && (
+                <>
+                  <br />
+                  <span className="opacity-40">{line2}</span>
+                </>
+              )}
+              {line3 && (
+                <>
+                  <br />
+                  {line3}
+                </>
+              )}
+            </h1>
+          );
+        })()}
+        intro={data.excerpt ?? ""}
+      />
 
       <section className="px-6 my-6 md:px-10">
-        <div className="flex justify-center mb-4">
+        <div className="flex justify-center mb-25">
           <div className="flex gap-10 w-full max-w-6xl">
             <article className="prose max-w-none flex-1 min-w-0 wrap-break-word">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div>
+                  <h2 className="mt-1 text-sm">Date</h2>
+                  <p className="mt-1 text-sm">
+                    {data.date && (
+                      <>{new Date(data.date).toLocaleDateString()}</>
+                    )}
+                  </p>
+                </div>
+                <div>
+                  <h2 className="mt-1 text-sm">Reading Time</h2>
+                  <p className="mt-1 text-sm">
+                    {estimatedReadingTime} min read
+                  </p>
+                </div>
+                {data.topics && data.topics.length > 0 && (
+                  <div className="col-span-2 flex flex-wrap items-center gap-2">
+                    {data.topics.map((topic: string, i: number) => (
+                      <span
+                        key={i}
+                        className="rounded-full border border-zinc-700 px-3 py-1 text-xs capitalize"
+                      >
+                        {topic}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+
               <MDXRemote
                 source={content}
                 components={components}
@@ -263,7 +242,7 @@ export default async function BlogPost({
 
         <div className="flex justify-center">
           <div className="w-full max-w-6xl">
-            <div className="flex items-center gap-4 mb-3">
+            <div className="flex items-center gap-4 mb-15">
               <h3 className="text-lg font-semibold whitespace-nowrap">
                 Articles you might like
               </h3>
@@ -282,6 +261,6 @@ export default async function BlogPost({
           </div>
         </div>
       </section>
-    </main>
+    </>
   );
 }

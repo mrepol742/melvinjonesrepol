@@ -142,7 +142,7 @@ export default async function RootLayout({
           {/* <MouseCodeTrail /> */}
           <CookieBanner />
           <AOSWrapper />
-          <NextTopLoader showSpinner={false} color="#7873f5" />
+          <NextTopLoader showSpinner={false} color="#22c55e" />
 
           <div className="background-gloss">
             <div className="gloss-circle circle1"></div>
@@ -150,7 +150,7 @@ export default async function RootLayout({
             <div className="gloss-circle circle3"></div>
           </div>
 
-          {children}
+          <main>{children}</main>
 
           {isProduction && (
             <>

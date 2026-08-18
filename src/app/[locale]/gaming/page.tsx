@@ -5,6 +5,7 @@ import SearchForm from "@/components/ui/SearchForm";
 import GameCard from "@/app/[locale]/gaming/components/GameCard";
 import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { getTranslations } from "next-intl/server";
+import Header from "@/components/ui/Header";
 
 export async function generateMetadata({
   params,
@@ -17,42 +18,42 @@ export async function generateMetadata({
     title: "Gaming - Melvin Jones Repol",
     description: "Here are some of my gaming achievements and activities.",
     keywords: [
-    "Gaming",
-    "Melvin Jones Repol",
-    "Steam Games",
-    "Gaming Achievements",
-    "Gaming Activities",
-    "Gamer Profile",
-    "Gaming Community",
-    "Video Games",
-    "PC Gaming",
-  ],
+      "Gaming",
+      "Melvin Jones Repol",
+      "Steam Games",
+      "Gaming Achievements",
+      "Gaming Activities",
+      "Gamer Profile",
+      "Gaming Community",
+      "Video Games",
+      "PC Gaming",
+    ],
     alternates: getAlternates("/gaming", locale),
     openGraph: {
-    title: "Gaming - Melvin Jones Repol",
-    description: "Here are some of my gaming achievements and activities.",
-    url: "https://www.melvinjonesrepol.com/gaming",
-    siteName: "Melvin Jones Repol",
-    images: [
-      {
-        url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
-        width: 800,
-        height: 600,
-        alt: "Melvin Jones Repol",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
+      title: "Gaming - Melvin Jones Repol",
+      description: "Here are some of my gaming achievements and activities.",
+      url: "https://www.melvinjonesrepol.com/gaming",
+      siteName: "Melvin Jones Repol",
+      images: [
+        {
+          url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+          width: 800,
+          height: 600,
+          alt: "Melvin Jones Repol",
+        },
+      ],
+      locale: "en_US",
+      type: "website",
+    },
     twitter: {
-    card: "summary_large_image",
-    title: "Gaming - Melvin Jones Repol",
-    description: "Here are some of my gaming achievements and activities.",
-    images: [
-      "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
-    ],
-    creator: "@mrepol742",
-  },
+      card: "summary_large_image",
+      title: "Gaming - Melvin Jones Repol",
+      description: "Here are some of my gaming achievements and activities.",
+      images: [
+        "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
+      ],
+      creator: "@mrepol742",
+    },
   };
 }
 
@@ -95,62 +96,19 @@ export default async function Gaming({
   );
 
   return (
-    <main>
-      <section className="relative min-h-screen overflow-hidden border-b border-zinc-800">
-        <div className="relative flex min-h-screen flex-col px-6 py-12 md:px-10">
-          <div className="my-auto py-14">
-            <h1 className="text-[14vw] sm:text-[10vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8">
-              {t("title_line1")}
-              <br />
-              <span className="opacity-40">{t("title_line2")}</span>
-              <br />
-              {t("title_line3")}
-            </h1>
-
-            <p
-              className="max-w-2xl text-lg leading-8 text-zinc-400 md:text-xl"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              {t("hero_description")}
-            </p>
-          </div>
-
-          <div
-            className="border-t border-zinc-800 pt-6 grid grid-cols-2 sm:grid-cols-4 gap-6"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <div>
-              <p className="text-4xl font-black">{steamActivities.length}+</p>
-              <p className="mt-1 text-sm text-zinc-400">{t("games_label")}</p>
-            </div>
-            <div>
-              <p className="text-4xl font-black">Steam</p>
-              <p className="mt-1 text-sm text-zinc-400">{t("platform_label")}</p>
-            </div>
-            <div className="col-span-2 flex flex-wrap items-center gap-2">
-              {[
-                "NFS",
-                "Forza Horizon",
-                "Minecraft",
-                "Just Cause",
-                "WRC",
-                "Simulation",
-                "Sports",
-                "Racing",
-              ].map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-zinc-400 px-3 py-1 text-xs text-zinc-400"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+    <>
+      <Header
+        title={
+          <>
+            {t("title_line1")}
+            <br />
+            <span className="opacity-40">{t("title_line2")}</span>
+            <br />
+            {t("title_line3")}
+          </>
+        }
+        intro={t("hero_description")}
+      />
 
       <section className="px-6 py-24 md:px-10">
         <div className="mb-8 max-w-xl">
@@ -195,6 +153,6 @@ export default async function Gaming({
           {t("titles_disclaimer")}
         </span>
       </section>
-    </main>
+    </>
   );
 }

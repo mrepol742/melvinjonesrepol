@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { getAlternates } from "@/components/common/metadata/Alternatives";
 import CertificateCard from "./components/CertificateCard";
+import Header from "@/components/ui/Header";
 
 export async function generateMetadata({
   params,
@@ -80,57 +81,19 @@ export default async function CertificatesPage({
   );
 
   return (
-    <main>
-      <section className="relative min-h-screen overflow-hidden border-b border-zinc-800">
-        <div className="relative flex min-h-screen flex-col px-6 py-12 md:px-10">
-          <div className="my-auto py-14">
-            <h1 className="text-[14vw] sm:text-[10vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8">
-              {t("title_line1")}
-              <br />
-              <span className="opacity-40">{t("title_line2")}</span>
-              <br />
-              {t("title_line3")}
-            </h1>
-
-            <p
-              className="max-w-2xl text-lg leading-8 text-zinc-400 md:text-xl"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              {t("description")}
-            </p>
-          </div>
-
-          <div
-            className="border-t border-zinc-800 pt-6 grid grid-cols-2 sm:grid-cols-4 gap-6"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <div>
-              <p className="text-4xl font-black">{certificates.length}+</p>
-              <p className="mt-1 text-sm text-zinc-400">{t("count_label")}</p>
-            </div>
-            <div>
-              <p className="text-4xl font-black">5+</p>
-              <p className="mt-1 text-sm text-zinc-400">
-                {t("platforms_label")}
-              </p>
-            </div>
-            <div className="col-span-2 flex flex-wrap items-center gap-2">
-              {["Coursera", "Google", "IBM", "Sololearn", "Board Infinity"].map(
-                (item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-zinc-400 px-3 py-1 text-xs text-zinc-400"
-                  >
-                    {item}
-                  </span>
-                ),
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
+    <>
+      <Header
+        title={
+          <>
+            {t("title_line1")}
+            <br />
+            <span className="opacity-40">{t("title_line2")}</span>
+            <br />
+            {t("title_line3")}
+          </>
+        }
+        intro={t("description")}
+      />
 
       <section className="px-6 my-6 md:px-10">
         {filteredCertificates.length === 0 ? (
@@ -212,6 +175,6 @@ export default async function CertificatesPage({
           </div>
         )}
       </section>
-    </main>
+    </>
   );
 }

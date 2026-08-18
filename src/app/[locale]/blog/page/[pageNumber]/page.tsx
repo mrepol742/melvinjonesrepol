@@ -88,7 +88,7 @@ export default async function BlogPageN({
   const paginatedPosts = posts.slice(start, start + POSTS_PER_PAGE);
 
   return (
-    <main>
+    <>
       <section className="px-6 pt-24 pb-6 md:px-10 border-b border-zinc-800">
         <div className="flex items-baseline gap-4">
           <h1 className="text-4xl sm:text-5xl font-black tracking-tighter">
@@ -113,6 +113,6 @@ export default async function BlogPageN({
 
         <Pagination currentPage={page} totalPages={totalPages} />
       </section>
-    </main>
+    </>
   );
 }

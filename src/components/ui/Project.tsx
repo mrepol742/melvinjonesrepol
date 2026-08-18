@@ -1,6 +1,7 @@
 import Image from "next/image";
 import HorizontalAdDisplayUnit from "./HorizontalAdDisplay";
 import Link from "next/link";
+import Header from "./Header";
 
 type ProjectFeature = {
   title: string;
@@ -41,71 +42,35 @@ export default function Project({
   const images = project?.images ?? [];
 
   return (
-    <main>
-      <section className="relative min-h-screen overflow-hidden border-b border-zinc-800">
-        <div className="relative flex min-h-screen flex-col px-6 py-12 md:px-10">
-          <div className="my-auto py-14">
-            {(() => {
-              const words = project.title.split(" ");
-              const chunkSize = Math.ceil(words.length / 3);
-              const line1 = words.slice(0, chunkSize).join(" ");
-              const line2 = words.slice(chunkSize, chunkSize * 2).join(" ");
-              const line3 = words.slice(chunkSize * 2).join(" ");
+    <>
+      <Header
+        title={(() => {
+          const words = project.title.split(" ");
+          const chunkSize = Math.ceil(words.length / 3);
+          const line1 = words.slice(0, chunkSize).join(" ");
+          const line2 = words.slice(chunkSize, chunkSize * 2).join(" ");
+          const line3 = words.slice(chunkSize * 2).join(" ");
 
-              return (
-                <h1 className="font-mono text-[10vw] md:text-[7vw] lg:text-[5vw] font-black tracking-tighter leading-[0.85] mb-8">
-                  {line1}
-                  {line2 && (
-                    <>
-                      <br />
-                      <span className="text-zinc-600">{line2}</span>
-                    </>
-                  )}
-                  {line3 && (
-                    <>
-                      <br />
-                      {line3}
-                    </>
-                  )}
-                </h1>
-              );
-            })()}
-
-            <p
-              className="max-w-2xl text-lg leading-8 text-zinc-400 md:text-xl"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              {project.description}
-            </p>
-          </div>
-
-          <div
-            className="border-t border-zinc-800 pt-6 grid grid-cols-2 sm:grid-cols-4 gap-6"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <div>
-              <p className="text-4xl font-black">{project.features.length}</p>
-              <p className="mt-1 text-sm text-zinc-400">Features</p>
-            </div>
-            <div>
-              <p className="text-4xl font-black">{project.resources.length}</p>
-              <p className="mt-1 text-sm text-zinc-400">Resources</p>
-            </div>
-            <div className="col-span-2 flex flex-wrap items-center gap-2">
-              {chips.map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-zinc-400 px-3 py-1 text-xs text-zinc-400"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+          return (
+            <h1 className="font-mono text-[10vw] md:text-[7vw] lg:text-[5vw] font-black tracking-tighter leading-[0.85] mb-8">
+              {line1}
+              {line2 && (
+                <>
+                  <br />
+                  <span className="text-zinc-600">{line2}</span>
+                </>
+              )}
+              {line3 && (
+                <>
+                  <br />
+                  {line3}
+                </>
+              )}
+            </h1>
+          );
+        })()}
+        intro={project.description}
+      />
 
       <section id="about" className="px-6 py-28 md:px-10">
         <div className="max-w-4xl mx-auto">
@@ -264,6 +229,6 @@ export default function Project({
           </a>
         </section>
       )}
-    </main>
+    </>
   );
 }

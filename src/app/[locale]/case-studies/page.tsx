@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { getAlternates } from "@/components/common/metadata/Alternatives";
 import Card from "@/components/ui/Card";
+import Header from "@/components/ui/Header";
 
 export async function generateMetadata({
   params,
@@ -147,47 +148,18 @@ const caseStudies = [
 
 export default function CaseStudiesPage() {
   return (
-    <main>
-      <section className="relative min-h-screen overflow-hidden border-b border-zinc-800">
-        <div className="relative flex min-h-screen flex-col px-6 py-12 md:px-10">
-          <div className="my-auto py-14">
-            <h1 className="text-[14vw] sm:text-[10vw] lg:text-[7.5vw] font-black tracking-tighter leading-[0.85] mb-8">
-              Case
-              <br />
-              <span className="opacity-40">studies</span>
-              <br />& tradeoffs.
-            </h1>
-
-            <p className="max-w-2xl text-lg leading-8 text-zinc-400 md:text-xl">
-              These are not polished marketing stories. They are short records
-              of engineering decisions, tradeoffs, and moments where saying
-              “rewrite it,” “do less,” or “choose the boring option” was the
-              more responsible answer.
-            </p>
-          </div>
-
-          <div className="border-t border-zinc-800 pt-6 grid grid-cols-2 sm:grid-cols-4 gap-6">
-            <div>
-              <p className="text-4xl font-black">{caseStudies.length}</p>
-              <p className="mt-1 text-sm text-zinc-400">Published studies</p>
-            </div>
-            <div>
-              <p className="text-4xl font-black">Practical</p>
-              <p className="mt-1 text-sm text-zinc-400">Bias in decisions</p>
-            </div>
-            <div className="col-span-2 flex flex-wrap items-center gap-2">
-              {["Rewrites", "Cost", "SSR", "Architecture"].map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-zinc-400 px-3 py-1 text-xs text-zinc-400"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+    <>
+      <Header
+        title={
+          <>
+            Case
+            <br />
+            <span className="opacity-40">studies</span>
+            <br />& tradeoffs.
+          </>
+        }
+        intro=" These are not polished marketing stories. They are short records of engineering decisions, tradeoffs, and moments where saying “rewrite it,” “do less,” or “choose the boring option” was the more responsible answer."
+      />
 
       <section className="px-6 py-24 md:px-10">
         <div className="mx-auto max-w-6xl flex flex-col gap-8">
@@ -232,6 +204,6 @@ export default function CaseStudiesPage() {
           ))}
         </div>
       </section>
-    </main>
+    </>
   );
 }
