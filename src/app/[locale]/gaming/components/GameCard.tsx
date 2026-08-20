@@ -1,5 +1,7 @@
+import Card from "@/components/ui/Card";
 import { GameType } from "@/lib/steam/library";
 import { getTimeAgo, toHours } from "@/utils/date";
+import Image from "next/image";
 
 export default function GameCard({ game }: { game: GameType }) {
   const explicitPatterns = [/🔞/i, /sexy/i, /nsfw/i, /adult/i, /sex/i, /xxx/i];
@@ -12,26 +14,24 @@ export default function GameCard({ game }: { game: GameType }) {
   const coverUrl = !isExplicit ? game.cover_url : "";
 
   return (
-    <div
-      className="group h-48 rounded-lg border border-zinc-800 p-4 flex gap-4"
-      data-aos="fade-up"
-    >
-      <div className="h-full w-32 shrink-0 overflow-hidden rounded-md border border-zinc-800 flex items-center justify-center">
-        {coverUrl ? (
-          <img
-            src={coverUrl}
-            alt={isExplicit ? "Private" : game.name}
-            className="h-full w-full object-cover"
-          />
-        ) : (
-          <span className="text-xs text-zinc-400">Private</span>
-        )}
-      </div>
+    <div data-aos="fade-up" className="h-full flex">
+      <Card className="group">
+        <div className="relative w-full h-48 rounded-2xl overflow-hidden mb-4">
+          {coverUrl ? (
+            <Image
+              src={coverUrl}
+              alt={isExplicit ? "Private" : game.name}
+              fill
+              className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+            />
+          ) : (
+            <span className="text-xs text-zinc-400">Private</span>
+          )}
+        </div>
 
-      <div className="flex min-w-0 flex-1 flex-col">
-        <h2 className="text-lg font-semibold line-clamp-2">
+        <p className="mb-2 text-xl font-bold line-clamp-2">
           {isExplicit ? "Private" : game.name}
-        </h2>
+        </p>
 
         <div className="mt-1 flex flex-wrap gap-3 text-sm">
           <div>
@@ -46,7 +46,7 @@ export default function GameCard({ game }: { game: GameType }) {
           )}
         </div>
 
-        <div className="mt-2 grid gap-1 text-xs text-zinc-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="mt-2 grid gap-1 text-xs">
           {game.playtime_mac_forever > 0 && (
             <div>
               <span className="font-semibold">Mac:</span>{" "}
@@ -72,7 +72,7 @@ export default function GameCard({ game }: { game: GameType }) {
             </div>
           )}
         </div>
-      </div>
+      </Card>
     </div>
   );
 }

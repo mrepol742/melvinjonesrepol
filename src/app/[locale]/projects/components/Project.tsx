@@ -78,7 +78,7 @@ export default async function Project({ query }: { query: string }) {
             <h2>{t("no_results_found")}</h2>
           </div>
         ) : (
-          <div className="grid gap-6 mt-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+          <div className="grid gap-6 mt-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {filteredProjects.map((project, idx) => (
               <div key={idx}>
                 <ProjectCard {...project} />
@@ -117,7 +117,7 @@ export default async function Project({ query }: { query: string }) {
           {t("templates_description")}
         </p>
 
-        <div className="grid gap-6 mt-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+        <div className="grid gap-6 mt-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {translatedTemplates.map((template, idx) => (
             <div key={idx}>
               <ProjectCard {...template} />

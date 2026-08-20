@@ -11,7 +11,7 @@ export default function Card({
 }) {
   return (
     <div
-      className={`relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-2xl transition-all duration-300 ${className ?? ""}`}
+      className={`w-full hover:shadow-xl hover:-translate-y-1 active:scale-[0.98] relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-2xl transition-all duration-300 ${className ?? ""}`}
     >
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/[0.05] via-transparent to-transparent opacity-70" />
 

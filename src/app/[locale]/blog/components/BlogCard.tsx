@@ -1,5 +1,7 @@
 import Card from "@/components/ui/Card";
 import { BlogPost } from "@/lib/posts";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
 export default function BlogCard({
@@ -12,26 +14,26 @@ export default function BlogCard({
   return (
     <Link href={`/blog/${post.slug}`}>
       <Card className="group" index={index}>
-        <div className="flex items-center justify-between gap-3 mb-3">
-          <span className="inline-flex capitalize rounded-full border border-zinc-800 px-2.5 py-1 text-xs">
-            {post.topics?.[0] ?? "general"}
-          </span>
-          <p className="text-xs md:text-sm">{post.date}</p>
-        </div>
+        <p className="mb-2 text-xl font-bold line-clamp-2">{post.title}</p>
 
-        <h2 className="text-lg md:text-xl font-semibold leading-snug mb-2 group-hover:text-orange-500 transition-colors">
-          {post.title}
-        </h2>
+        <span className="inline-flex capitalize text-xs mb-3">
+          {post.topics?.[0] ?? "general"}
+        </span>
 
-        <p className="text-sm md:text-base line-clamp-3" title={post.excerpt}>
+        <p className="mb-4 line-clamp-4" title={post.excerpt}>
           {post.excerpt}
         </p>
 
-        <div className="mt-5 inline-flex items-center text-sm font-medium text-orange-600 dark:text-orange-400">
-          Read article
-          <span className="ml-1 transition-transform group-hover:translate-x-1">
-            →
-          </span>
+        <div className="flex justify-end items-center gap-4">
+          <button
+            title="Read article"
+            className="inline-flex items-center text-white bg-purple-500 hover:bg-purple-600 font-medium text-sm px-4 py-2 rounded-lg transition-all"
+          >
+            <FontAwesomeIcon
+              icon={faArrowRight}
+              className="transition-transform group-hover:translate-x-1"
+            />
+          </button>
         </div>
       </Card>
     </Link>

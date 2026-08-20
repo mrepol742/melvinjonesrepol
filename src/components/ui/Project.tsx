@@ -229,6 +229,15 @@ export default function Project({
           </a>
         </section>
       )}
+
+      <section className="mb-5 border-y border-white/10 bg-black/30 py-10">
+        <div className="max-w-5xl mx-auto px-6">
+          <p className="font-mono text-[10px] uppercase tracking-[0.3em] mb-4">
+            Advertisements
+          </p>
+          <HorizontalAdDisplayUnit />
+        </div>
+      </section>
     </>
   );
 }

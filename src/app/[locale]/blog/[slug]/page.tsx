@@ -7,6 +7,7 @@ import remarkGfm from "remark-gfm";
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
 import BlogCard from "../components/BlogCard";
 import Header from "@/components/ui/Header";
+import HorizontalAdDisplayUnit from "@/components/ui/HorizontalAdDisplay";
 
 export const dynamic = "force-static";
 export const revalidate = false;
@@ -128,6 +129,19 @@ function TableOfContents({ headings }: { headings: Heading[] }) {
           </li>
         ))}
       </ul>
+
+      <div className="flex justify-center my-5">
+        <div className="w-full max-w-6xl">
+          <div className="border-y border-white/10 bg-black/30 py-10">
+            <div className="max-w-5xl mx-auto px-6">
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] mb-4">
+                Advertisements
+              </p>
+              <HorizontalAdDisplayUnit />
+            </div>
+          </div>
+        </div>
+      </div>
     </aside>
   );
 }
@@ -197,7 +211,7 @@ export default async function BlogPost({
       />
 
       <section className="px-6 my-6 md:px-10">
-        <div className="flex justify-center mb-25">
+        <div className="flex justify-center">
           <div className="flex gap-10 w-full max-w-6xl">
             <article className="prose max-w-none flex-1 min-w-0 wrap-break-word">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -240,6 +254,19 @@ export default async function BlogPost({
           </div>
         </div>
 
+        <div className="flex justify-center my-5">
+          <div className="w-full max-w-6xl">
+            <div className="border-y border-white/10 bg-black/30 py-10">
+              <div className="max-w-5xl mx-auto px-6">
+                <p className="font-mono text-[10px] uppercase tracking-[0.3em] mb-4">
+                  Advertisements
+                </p>
+                <HorizontalAdDisplayUnit />
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="flex justify-center">
           <div className="w-full max-w-6xl">
             <div className="flex items-center gap-4 mb-15">
@@ -258,6 +285,19 @@ export default async function BlogPost({
                   <BlogCard key={post.slug} post={post} index={index} />
                 ))}
             </ul>
+          </div>
+        </div>
+
+        <div className="flex justify-center my-5">
+          <div className="w-full max-w-6xl">
+            <div className="border-y border-white/10 bg-black/30 py-10">
+              <div className="max-w-5xl mx-auto px-6">
+                <p className="font-mono text-[10px] uppercase tracking-[0.3em] mb-4">
+                  Advertisements
+                </p>
+                <HorizontalAdDisplayUnit />
+              </div>
+            </div>
           </div>
         </div>
       </section>

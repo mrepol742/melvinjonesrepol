@@ -1,7 +1,8 @@
 const certificates = [
   {
     title: "ISO 27001 Information Security Compliance Management",
-    description: "",
+    description:
+      "The most boring course ever, no videos just text and a AI voice over reading it for you. Can't believe I had to take this, but it's the only way to get the job done.",
     instructor: "Packt",
     date: "PENDING",
     link: "https://www.coursera.org/learn/packt-iso-27001-information-security-compliance-management",
@@ -9,7 +10,8 @@ const certificates = [
   },
   {
     title: "Application Security for Developers and DevOps Professionals",
-    description: "",
+    description:
+      "Already know most of this course, the TLS, encryption, and security best practices. Still had to take it to get the certification.",
     instructor: "IBM",
     date: "PENDING",
     link: "https://www.coursera.org/learn/application-security-for-developers-devops",

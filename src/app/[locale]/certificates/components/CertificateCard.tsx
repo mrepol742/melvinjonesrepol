@@ -1,4 +1,8 @@
+import Card from "@/components/ui/Card";
 import certificates from "@/lib/certificates";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 
 type Certificate = (typeof certificates)[number];
 
@@ -10,52 +14,39 @@ export default function CertificateCard({
   viewLabel: string;
 }) {
   return (
-    <div
-      className={`group rounded-3xl border backdrop-blur-2xl transition-all duration-300 hover:shadow-[0_30px_80px_rgba(0,0,0,0.35)] ${
-        certificate.featured
-          ? "border-orange-500/20 bg-orange-500/[0.03] hover:border-orange-500/30"
-          : "border-white/10 bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.05]"
-      }`}
-    >
-      <div className="relative p-8 md:p-10">
-        <div className="mb-4 flex flex-wrap gap-3">
-          <span className="text-nowrap rounded-full border border-zinc-400 px-3 py-1 text-xs text-zinc-400">
+    <Link href={certificate.link}>
+      <Card className="group">
+        <p className="mb-2 text-xl font-bold line-clamp-2">
+          {certificate.title}
+        </p>
+
+        <div className="mb-3 flex flex-wrap gap-3">
+          <span className="text-nowrap capitalize text-xs">
             {certificate.instructor}
           </span>
-
-          <span className="text-nowrap rounded-full border border-zinc-400 px-3 py-1 text-xs text-zinc-400">
+          <span className="text-nowrap capitalize text-xs">
             {certificate.date}
           </span>
-
-          {certificate.featured && (
-            <span className="rounded-full border border-orange-400 px-3 py-1 text-xs text-orange-400">
-              Featured
-            </span>
-          )}
         </div>
 
-        <h3 className="text-base font-bold leading-snug mb-1">
-          {certificate.title}
-        </h3>
-
-        <p className="text-xs font-mono mb-4">
+        <p className="mb-4" title={certificate.description}>
           {certificate.description}
         </p>
 
         {certificate.link && (
-          <a
-            href={certificate.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-sm font-medium text-orange-400 hover:text-orange-300 transition-colors"
-          >
-            {viewLabel}
-            <span className="transition-transform group-hover:translate-x-0.5">
-              →
-            </span>
-          </a>
+          <div className="flex justify-end items-center gap-4">
+            <button
+              title="Read article"
+              className="inline-flex items-center text-white bg-purple-500 hover:bg-purple-600 font-medium text-sm px-4 py-2 rounded-lg transition-all"
+            >
+              <FontAwesomeIcon
+                icon={faArrowRight}
+                className="transition-transform group-hover:translate-x-1"
+              />
+            </button>
+          </div>
         )}
-      </div>
-    </div>
+      </Card>
+    </Link>
   );
 }

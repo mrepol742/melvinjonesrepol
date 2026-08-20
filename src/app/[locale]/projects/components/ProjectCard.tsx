@@ -13,6 +13,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
+import Card from "@/components/ui/Card";
 
 type ProjectCardProps = {
   title: string;
@@ -42,41 +43,37 @@ export default function ProjectCard({
 
   return (
     <div data-aos="fade-up" className="h-full flex">
-      <div className="relative overflow-hidden group border border-zinc-800 rounded-2xl shadow-sm w-full transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-[0.98]">
-        {showSummary && (
-          <div className="absolute inset-0 z-50 p-6 flex flex-col backdrop-blur-xl bg-gray-900/95 text-white">
-            <div className="flex justify-between items-center mb-4">
-              <h5 className="text-lg font-semibold flex items-center gap-2">
-                <FontAwesomeIcon icon={faWandMagicSparkles} />
-                AI Summary
-              </h5>
-              <button onClick={() => setShowSummary(false)}>
-                <FontAwesomeIcon icon={faXmark} size="lg" />
-              </button>
+      <Link href={link || "#"}>
+        <Card className="group">
+          {showSummary && (
+            <div className="absolute inset-0 z-50 p-6 flex flex-col backdrop-blur-xl bg-gray-900/95 text-white">
+              <div className="flex justify-between items-center mb-4">
+                <h5 className="text-lg font-semibold flex items-center gap-2">
+                  <FontAwesomeIcon icon={faWandMagicSparkles} />
+                  AI Summary
+                </h5>
+                <button onClick={() => setShowSummary(false)}>
+                  <FontAwesomeIcon icon={faXmark} size="lg" />
+                </button>
+              </div>
+              <div className="flex-1 overflow-y-auto text-md leading-relaxed scrollbar-hide">
+                {ai_description}
+              </div>
             </div>
-            <div className="flex-1 overflow-y-auto text-md leading-relaxed scrollbar-hide">
-              {ai_description}
-            </div>
+          )}
+
+          <div className="relative w-full h-48 rounded-2xl overflow-hidden mb-4">
+            <Image
+              src={cover ?? "/images/melvinjonesrepol.cover.png"}
+              alt={title}
+              fill
+              className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+            />
           </div>
-        )}
 
-        <div className="relative w-full h-48 rounded-t-2xl overflow-hidden">
-          <Image
-            src={cover ?? "/images/melvinjonesrepol.cover.png"}
-            alt={title}
-            fill
-            className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
-          />
-        </div>
+          <p className="mb-2 text-xl font-bold line-clamp-2">{title}</p>
 
-        <div className="p-6 flex flex-col flex-1">
-          <Link href={link || "#"}>
-            <h5 className="mt-2 mb-4 text-xl font-semibold tracking-tight">
-              {title}
-            </h5>
-          </Link>
-
-          <p className="mb-6 line-clamp-3 flex-1" title={description}>
+          <p className="mb-4 line-clamp-4" title={description}>
             {description}
           </p>
 
@@ -124,20 +121,19 @@ export default function ProjectCard({
             )}
 
             {link && (
-              <Link
+              <button
                 title="View Project"
-                href={link}
                 className="inline-flex items-center text-white bg-purple-500 hover:bg-purple-600 font-medium text-sm px-4 py-2 rounded-lg transition-all"
               >
                 <FontAwesomeIcon
                   icon={faArrowRight}
-                  className="transition-transform group-hover:translate-x-2"
+                  className="transition-transform group-hover:translate-x-1"
                 />
-              </Link>
+              </button>
             )}
           </div>
-        </div>
-      </div>
+        </Card>
+      </Link>
     </div>
   );
 }
