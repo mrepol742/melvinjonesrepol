@@ -133,7 +133,7 @@ export default async function RootLayout({
         <meta name="hostname" content="www.melvinjonesrepol.com" />
         <NortonSafeweb />
         <Algolia />
-        {/* <GoogleAdsense /> */}
+        <GoogleAdsense />
       </head>
 
       <body className="antialiased min-h-screen flex flex-col background-grid">
