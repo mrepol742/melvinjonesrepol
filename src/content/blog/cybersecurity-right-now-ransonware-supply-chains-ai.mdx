@@ -1,0 +1,185 @@
+---
+title: "Cybersecurity Right Now: Ransomware, Supply Chains, AI and Social Engineering"
+date: "2026-08-23"
+excerpt: "A developer-focused look at the cybersecurity stories dominating August 2026, from ransomware and actively exploited vulnerabilities to poisoned packages, social engineering, and AI-assisted attacks."
+topics: ["cybersecurity", "ransomware", "supply-chain-security", "ai-security"]
+---
+
+Cybersecurity news has been particularly chaotic lately, and not in the fun "someone accidentally exposed a test database" kind of way. We've got ransomware gangs hitting hundreds of critical infrastructure organizations, attackers actively exploiting newly disclosed vulnerabilities, and developers discovering that even the packages they install can become part of an attack. Then there is AI, which has somehow managed to become useful to both the people defending systems and the people trying to break them. The frustrating part is that none of these attacks require some magical Hollywood hacker typing at 300 words per minute. A stolen credential, an unpatched service, a compromised dependency, or one convincing phone call can be enough. For developers, that makes the current cybersecurity landscape worth paying attention to even if security isn't technically your job.
+
+The interesting thing is how these attacks connect. The individual incidents look different, but they keep exploiting the same basic assumptions we make about software, infrastructure, and people.
+
+## Medusa Is Still Causing Problems
+
+One of the biggest stories this week is the continued activity surrounding Medusa ransomware.
+
+Medusa has affected hundreds of organizations across critical infrastructure sectors, including healthcare, manufacturing, government, financial services, technology, and education.
+
+Medusa operates as ransomware-as-a-service, which means the people developing the ransomware aren't necessarily the same people breaking into every organization. Affiliates and access brokers can be involved in obtaining access and carrying out attacks.
+
+The model is pretty simple and unfortunately effective:
+
+1. Get access.
+2. Move around the environment.
+3. Steal useful data.
+4. Encrypt systems.
+5. Threaten to publish the stolen data.
+6. Ask for money.
+
+The double-extortion part is particularly nasty because backups alone don't necessarily solve the problem. If an attacker has already copied sensitive information, restoring your servers doesn't make that information disappear.
+
+For developers, this is another reminder that ransomware protection isn't just about antivirus software. Network segmentation, credential security, patching, backups, logging, and limiting unnecessary privileges all matter.
+
+## The Vulnerability Doesn't Need to Be Exotic
+
+Another story that caught my attention was the active exploitation of a critical vulnerability in Zimbra Collaboration Suite.
+
+The vulnerability allows remote code execution through the Zimbra SNMP component, and attackers have reportedly started exploiting it in the wild.
+
+Then there is TrueConf Server, where two actively exploited vulnerabilities have drawn attention from security authorities.
+
+One of them can allow an unauthenticated remote attacker to execute arbitrary scripts through vulnerable server functionality.
+
+This is where the usual developer phrase "I'll patch it later" becomes considerably less funny.
+
+If a service is reachable from the internet, its vulnerability isn't sitting quietly on a backlog. Someone else might already be looking for it.
+
+The same pattern is appearing with ML infrastructure. A critical vulnerability in MLflow has also become an active exploitation target.
+
+That's worth noticing because the attack surface of modern development environments is expanding. It's no longer just your web server, database, and SSH port. You might also have CI runners, container registries, internal dashboards, monitoring systems, ML services, package registries, and a dozen development tools nobody remembered were publicly reachable.
+
+## Your Dependencies Can Betray You
+
+Supply-chain attacks are probably one of the most uncomfortable categories for developers because they attack something we are trained to trust.
+
+You install a package.
+
+You import it.
+
+Your application runs.
+
+Everyone goes home.
+
+Except that package might have been compromised.
+
+A recent attack against the Rust ecosystem involved malicious code being distributed through legitimate packages. The attackers targeted developers and build environments rather than simply trying to compromise a single application.
+
+The interesting part isn't just that malicious code appeared in packages. It's **where the attack happened**.
+
+The developer doesn't necessarily need to download a suspicious executable manually. The malicious code can become part of the normal build process.
+
+That's terrifyingly convenient for an attacker.
+
+The same basic problem exists across npm, PyPI, Composer, Maven, NuGet, crates.io, container images, GitHub Actions, and practically every modern ecosystem.
+
+This is why lockfiles, dependency review, package provenance, automated updates, restricted CI permissions, and reproducible builds aren't just annoying ceremony.
+
+They're part of your security boundary.
+
+## Then There Is the Human Problem
+
+One of the more interesting recent incidents involved attackers gaining unauthorized access to cloud platforms through social engineering.
+
+This is a good reminder that security doesn't always look like someone exploiting a zero-day.
+
+Sometimes the attacker just calls somebody.
+
+That sounds almost disappointingly simple compared with the usual cybersecurity headlines, but that's exactly why it works. Organizations can spend enormous amounts of money protecting cloud infrastructure while an attacker focuses on convincing one person that they are someone they aren't.
+
+The technical lesson here is uncomfortable:
+
+**A perfectly patched system can still be compromised through a compromised human.**
+
+MFA helps. Strong identity controls help. Conditional access helps. Security awareness helps.
+
+But the larger lesson is that identity has become one of the most important parts of infrastructure security.
+
+## AI Is Joining the Attack Chain
+
+AI has also started appearing more directly in attack campaigns.
+
+We've spent the last couple of years talking about AI-generated phishing emails, which was already annoying enough. Now we're seeing more discussion around attackers using AI-assisted development to build attack tooling and malware.
+
+Recent campaigns have highlighted AI-assisted attacks against industrial systems and espionage operations where threat actors used AI to help develop multiple malware strains.
+
+The important distinction is that AI isn't necessarily replacing the attacker.
+
+It's making the attacker faster.
+
+A capable attacker can use AI to generate code, modify existing malware, troubleshoot errors, analyze documentation, and automate repetitive work.
+
+That doesn't magically turn somebody into an elite hacker. It does reduce the amount of time they need to spend doing tedious engineering work.
+
+And defenders have the exact same advantage.
+
+AI can help analyze logs, investigate suspicious behavior, summarize vulnerabilities, write detection rules, and investigate large amounts of telemetry.
+
+So the interesting question isn't really "Will AI hack everything?"
+
+It's more like:
+
+**Which side gets better at integrating AI into their existing workflow?**
+
+## Developers Have a Bigger Security Job Than They Think
+
+This is probably the biggest takeaway from all of this.
+
+Security isn't a separate box that infrastructure teams deal with after developers finish building the application.
+
+If you write code that handles authentication, you're doing security.
+
+If you decide which npm package to install, you're doing security.
+
+If you expose a debugging endpoint, you're doing security.
+
+If you configure a GitHub Actions workflow with access to production credentials, you're doing security.
+
+If you deploy an internal service to the public internet because it was easier than configuring a VPN, you're definitely doing security.
+
+That doesn't mean every developer needs to become a penetration tester.
+
+It means we should start treating the entire development environment as part of the application's attack surface.
+
+## A Few Things Worth Checking
+
+If you're maintaining a personal project, startup, or production application, I'd start with the boring stuff.
+
+Check what services are actually exposed to the internet.
+
+Then check whether you still need all of them.
+
+Audit your dependencies and remove packages you aren't using. Make sure lockfiles are committed and review unusual dependency changes instead of blindly accepting every update.
+
+Look at your CI/CD credentials too. A compromised package running inside a CI environment with production credentials is considerably more interesting to an attacker than a compromised package running on someone's laptop.
+
+Then look at authentication.
+
+Use MFA where possible. Don't reuse credentials. Don't give applications or CI runners more permissions than they need. Rotate secrets when they're exposed and don't leave long-lived credentials sitting in repositories.
+
+And please stop putting `.env` files in Git.
+
+I know.
+
+Someone still does it.
+
+## The Attack Surface Keeps Moving
+
+What makes the current cybersecurity landscape interesting isn't any individual vulnerability.
+
+It's the combination of everything.
+
+Ransomware groups are becoming more organized. Vulnerabilities are being exploited quickly after disclosure. Software dependencies are becoming attractive targets. Cloud platforms have become central to corporate infrastructure. Identity attacks are increasingly effective. And AI is giving both attackers and defenders another set of tools.
+
+For developers, the practical response isn't panic.
+
+It's reducing unnecessary trust.
+
+Trust fewer dependencies. Trust fewer network-exposed services. Trust fewer credentials. Trust fewer assumptions about who is calling you. Give systems less access by default and make compromise harder to turn into a complete disaster.
+
+None of that is particularly glamorous.
+
+It also happens to be the stuff that tends to work.
+
+---
+
+I'd rather spend an afternoon removing an unnecessary public service than spend a weekend explaining to someone why the server is now named `PLEASE_PAY_500BTC`.

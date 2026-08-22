@@ -89,8 +89,6 @@ h6 {
 .prose {
     color: var(--foreground);
     font-family: var(--font-body);
-    line-height: 1.6;
-    font-size: 1rem;
 }
 
 .prose h1,
