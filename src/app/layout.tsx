@@ -127,7 +127,6 @@ export default async function RootLayout({
     <html
       className={`${sourceCodePro.variable} ${mavenPro.variable} ${sora.variable}`}
       data-scroll-behavior="smooth"
-      lang="en"
     >
       <head>
         <meta name="hostname" content="www.melvinjonesrepol.com" />
@@ -144,11 +143,24 @@ export default async function RootLayout({
           <AOSWrapper />
           <NextTopLoader showSpinner={false} color="#22c55e" />
 
-          <div className="background-gloss">
+          {/* Peter Cullen, the voice of Optimus Prime since 1984. */}
+          <div
+            className="fixed inset-0 -z-10 bg-cover bg-no-repeat -scale-x-100 opacity-5 grayscale"
+            style={{
+              backgroundImage: `url('/images/optimus-prime.png')`,
+              backgroundPosition: "left center",
+            }}
+          ></div>
+
+          <p className="fixed bottom-6 left-6 -z-10 text-sm text-gray-500 italic max-w-xs select-none">
+            &quot;Freedom is the right of all sentient beings.&quot;
+          </p>
+
+          {/*<div className="background-gloss">
             <div className="gloss-circle circle1"></div>
             <div className="gloss-circle circle2"></div>
             <div className="gloss-circle circle3"></div>
-          </div>
+          </div>*/}
 
           <main>{children}</main>
 

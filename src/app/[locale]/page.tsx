@@ -571,9 +571,11 @@ export default async function Home({
         </div>
       </div>
 
-      <RecentGithubActivityWrapper>
-        <RecentGithubActivity />
-      </RecentGithubActivityWrapper>
+      {/*
+  <RecentGithubActivityWrapper>
+    <RecentGithubActivity />
+  </RecentGithubActivityWrapper>
+  */}
     </>
   );
 }
