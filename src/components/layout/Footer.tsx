@@ -125,11 +125,11 @@ export default function Footer({
   ];
 
   const linkClass =
-    "text-sm text-zinc-500 hover:text-zinc-100 transition-colors duration-150";
+    "text-sm text-zinc-400 hover:text-zinc-100 transition-colors duration-150";
 
   return (
     <footer
-      className="bg-gray-900 text-gray-200 py-10 border-t border-gray-800 rounded-xl"
+      className="bg-gray-900 text-white py-10 border-t border-gray-800 rounded-xl"
       data-aos="fade-up"
     >
       <nav aria-label="Footer Navigation" className="container mx-auto px-4">
@@ -140,18 +140,18 @@ export default function Footer({
               Melvin Jones Repol
             </span>
 
-            <div className="flex items-center gap-2 text-xs text-zinc-500 leading-relaxed max-w-52">
+            <div className="flex items-center gap-2 text-xs text-zinc-400 leading-relaxed max-w-52">
               <span className="relative flex h-1.5 w-1.5 me-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
                 <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-green-500" />
               </span>
               <div className="flex flex-col">
-                <span className="text-zinc-500">Full Stack Developer</span>
-                <span className="opacity-60">Up to Date Web Design</span>
+                <span className="text-zinc-400">Full Stack Developer</span>
+                <span className="opacity-60">UP-TO-DATE Webdesign</span>
               </div>
             </div>
 
-            <p className="text-xs text-zinc-500 leading-relaxed max-w-52">
+            <p className="text-xs text-zinc-400 leading-relaxed max-w-52">
               {t("description")}
             </p>
 
@@ -162,7 +162,7 @@ export default function Footer({
                   href={href}
                   target="_blank"
                   aria-label={label}
-                  className="flex items-center justify-center p-2 rounded-full border border-zinc-800 text-zinc-500 hover:border-zinc-600 hover:text-zinc-100 hover:bg-white/5 transition-all duration-200"
+                  className="flex items-center justify-center p-2 rounded-full border border-zinc-800 text-zinc-400 hover:border-zinc-600 hover:text-zinc-100 hover:bg-white/5 transition-all duration-200"
                 >
                   <FontAwesomeIcon icon={icon} className="text-sm" />
                 </Link>
@@ -176,7 +176,7 @@ export default function Footer({
 
           {/* Navigate */}
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-zinc-600 mb-4">
+            <h4 className="text-xs font-semibold uppercase tracking-widest mb-4">
               Navigate
             </h4>
             <ul className="space-y-2.5">
@@ -192,7 +192,7 @@ export default function Footer({
 
           {/* Projects */}
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-zinc-600 mb-4">
+            <h4 className="text-xs font-semibold uppercase tracking-widest mb-4">
               Projects
             </h4>
             <ul className="space-y-2.5">
@@ -212,7 +212,7 @@ export default function Footer({
 
           {/* Tools */}
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-zinc-600 mb-4">
+            <h4 className="text-xs font-semibold uppercase tracking-widest mb-4">
               Tools
             </h4>
             <ul className="space-y-2.5">
@@ -232,7 +232,7 @@ export default function Footer({
 
           {/* Recent posts + Language */}
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-zinc-600 mb-4">
+            <h4 className="text-xs font-semibold uppercase tracking-widest mb-4">
               {t("footer_recent_posts")}
             </h4>
 
@@ -256,7 +256,7 @@ export default function Footer({
               </p>
             )}
 
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-zinc-600 mb-3">
+            <h4 className="text-xs font-semibold uppercase tracking-widest mb-3">
               {t("footer_language_region")}
             </h4>
             <div className="relative">
@@ -272,7 +272,7 @@ export default function Footer({
                   </option>
                 ))}
               </select>
-              <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs text-zinc-600">
+              <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs">
                 ▼
               </span>
             </div>
@@ -281,12 +281,12 @@ export default function Footer({
 
         {/* Bottom bar */}
         <div className="mt-10 pt-6 border-t border-zinc-800/60 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <span className="text-xs text-zinc-600">
+          <span className="text-xs">
             © {new Date().getFullYear()} Melvin Jones Repol.{" "}
             {t("footer_all_rights_reserved")}
           </span>
 
-          <div className="flex items-center gap-4 text-xs text-zinc-600">
+          <div className="flex items-center gap-4 text-xs">
             <button
               onClick={openBanner}
               className="flex items-center gap-1.5 hover:text-zinc-300 transition-colors"

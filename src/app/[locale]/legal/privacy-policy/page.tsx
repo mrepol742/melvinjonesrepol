@@ -11,15 +11,17 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
 
+  const title = "Privacy Policy - Melvin Jones Repol & Webvium";
+  const description =
+    "This Privacy Policy describes how Melvin Jones Repol handles information in connection with melvinjonesrepol.com, webvium.com, Webvium Browser, Chrome extensions, and other related projects and services.";
+
   return {
-    title: "Privacy Policy - Melvin Jones Repol",
-    description:
-      "This Privacy Policy describes how Melvin Jones Repol handles information in connection with our portfolio website, Webvium Browser, Chrome extensions, and other projects.",
+    title,
+    description,
     alternates: getAlternates("/legal/privacy-policy", locale),
     openGraph: {
-      title: "Privacy Policy - Melvin Jones Repol",
-      description:
-        "This Privacy Policy describes how Melvin Jones Repol handles information in connection with our portfolio website, Webvium Browser, Chrome extensions, and other projects.",
+      title,
+      description,
       url: "https://www.melvinjonesrepol.com/legal/privacy-policy",
       siteName: "Melvin Jones Repol",
       images: [
@@ -35,9 +37,8 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: "Privacy Policy - Melvin Jones Repol",
-      description:
-        "This Privacy Policy describes how Melvin Jones Repol handles information in connection with our portfolio website, Webvium Browser, Chrome extensions, and other projects.",
+      title,
+      description,
       images: [
         "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
       ],
@@ -59,7 +60,7 @@ export default function Privacy() {
             details.
           </>
         }
-        intro="This Privacy Policy outlines the rules for handling information in connection with our portfolio website, Webvium Browser, Chrome extensions, and other projects."
+        intro="This Privacy Policy outlines the rules for handling information in connection with Melvin Jones Repol, Webvium, their websites, applications, browser extensions, and other related services."
       />
 
       <section className="px-6 my-6 md:px-10">
@@ -69,14 +70,17 @@ export default function Privacy() {
               <p className="text-xs uppercase tracking-widest opacity-50 mb-1">
                 Last Updated
               </p>
-              <p className="text-sm font-medium">June 1, 2026</p>
+              <p className="text-sm font-medium">September 6, 2026</p>
             </div>
 
             <p>
-              Melvin Jones Repol / Webvium (“we,” “us,” or “our”) refers to
-              services operated by the same individual. This Privacy Policy
-              explains how we handle information across the Services listed
-              below.
+              The websites <strong>melvinjonesrepol.com</strong> and{" "}
+              <strong>webvium.com</strong>, together with the applications,
+              browser extensions, tools, and related services published under
+              these names, are operated and maintained by the same individual.
+              For purposes of this Privacy Policy, “Melvin Jones Repol /
+              Webvium,” “we,” “us,” or “our” refers to these services and their
+              operator.
             </p>
 
             <div>
@@ -88,12 +92,16 @@ export default function Privacy() {
                   launcher settings).
                 </li>
                 <li>
-                  We use limited third-party tools on the website for ads,
-                  analytics, spam prevention, and search.
+                  We use limited third-party tools on our websites for ads,
+                  analytics, spam prevention, search, and other functionality.
                 </li>
                 <li>
                   Extension permissions are disclosed at install time and are
                   used only to provide the extension’s functionality.
+                </li>
+                <li>
+                  Webvium applications are designed to minimize unnecessary
+                  collection of personal and browsing information.
                 </li>
               </ul>
             </div>
@@ -104,6 +112,11 @@ export default function Privacy() {
                 <li>
                   <Link href="#website">
                     Website (www.melvinjonesrepol.com)
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#webvium-website">
+                    Webvium Website (www.webvium.com)
                   </Link>
                 </li>
                 <li>
@@ -151,7 +164,8 @@ export default function Privacy() {
                   </Link>
                 </li>
                 <li>
-                  Any related applications, tools, or services (the “Services”)
+                  Any related applications, tools, or services operated under
+                  the Melvin Jones Repol or Webvium names (the “Services”)
                 </li>
               </ul>
             </div>
@@ -159,9 +173,17 @@ export default function Privacy() {
             <div>
               <h2 className="text-2xl font-semibold">1. Who We Are</h2>
               <p className="mt-3">
-                Melvin Jones Repol and Webvium are operated by the same person.
-                For privacy purposes, “Melvin Jones Repol / Webvium” is the data
-                controller for the Services described in this policy.
+                <strong>Melvin Jones Repol</strong> is the operator of the
+                websites, applications, browser extensions, and related services
+                described in this policy. <strong>Webvium</strong> is a project
+                and product identity operated by Melvin Jones Repol.
+              </p>
+              <p className="mt-3">
+                The domains <strong>www.melvinjonesrepol.com</strong> and{" "}
+                <strong>www.webvium.com</strong> are therefore operated by the
+                same individual. References to “Melvin Jones Repol / Webvium” in
+                this Privacy Policy refer to the operator and the Services
+                provided under these names.
               </p>
             </div>
 
@@ -206,6 +228,35 @@ export default function Privacy() {
                 </li>
               </ul>
 
+              <h3 className="text-xl font-semibold mt-6" id="webvium-website">
+                Webvium Website (www.webvium.com)
+              </h3>
+              <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
+                <li>
+                  The website is operated and maintained by Melvin Jones Repol
+                  under the Webvium name.
+                </li>
+                <li>
+                  Information voluntarily submitted through forms or other
+                  interactive features may be collected to provide the requested
+                  service or respond to inquiries.
+                </li>
+                <li>
+                  Technical information such as IP address, browser information,
+                  request data, and security logs may be processed by the
+                  hosting and infrastructure providers used by the website.
+                </li>
+                <li>
+                  Where analytics, advertising, search, or other third-party
+                  services are enabled, those providers may process information
+                  according to their respective privacy policies.
+                </li>
+                <li>
+                  We do not sell or rent personal information collected through
+                  the Webvium website.
+                </li>
+              </ul>
+
               <h3 className="text-xl font-semibold mt-6" id="shortlink">
                 Shortlink (go.melvinjonesrepol.com)
               </h3>
@@ -213,7 +264,7 @@ export default function Privacy() {
                 <li>We only collect the links you submit for shortening.</li>
                 <li>
                   No personal data, IP addresses, or browser details are
-                  collected.
+                  intentionally collected for the shortlink service.
                 </li>
                 <li>We do not use cookies or tracking technologies.</li>
                 <li>Links are used only to provide the shortlink service.</li>
@@ -268,7 +319,7 @@ export default function Privacy() {
               <p className="mt-2">
                 Webvium Launcher stores user settings locally on your device
                 (e.g., preferences and layout settings). No data is transmitted
-                to external servers.
+                to external servers by the launcher for these settings.
               </p>
 
               <h3
@@ -332,6 +383,10 @@ export default function Privacy() {
                 <li>Operate and improve the Services.</li>
                 <li>Provide ads and measure site performance.</li>
                 <li>Prevent spam, abuse, and security threats.</li>
+                <li>
+                  Provide requested features and functionality across our
+                  websites, applications, and extensions.
+                </li>
               </ul>
             </div>
 
@@ -340,9 +395,9 @@ export default function Privacy() {
                 4. Sharing and Third Parties
               </h2>
               <p className="mt-3">
-                We do not sell or rent personal data. We may share limited
-                information with third-party providers that help us operate the
-                Services.
+                We do not sell or rent personal data. We may share or allow
+                limited information to be processed by third-party providers
+                that help us operate, secure, analyze, or improve the Services.
               </p>
               <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
                 <li>
@@ -423,8 +478,9 @@ export default function Privacy() {
               <p className="mt-3">
                 Contact form submissions are retained only as long as needed to
                 respond to your request. Website logs and analytics data are
-                retained according to the third-party provider’s policies. Local
-                app data remains on your device until you delete it.
+                retained according to the applicable third-party provider’s
+                policies. Local app data remains on your device until you delete
+                it.
               </p>
             </div>
 
@@ -455,9 +511,11 @@ export default function Privacy() {
             <div>
               <h2 className="text-2xl font-semibold">8. Other Projects</h2>
               <p className="mt-3">
-                Other projects may be open-source or distributed for a fee and
-                may have their own terms and privacy practices. Please review
-                those policies before use.
+                Other projects operated or published by Melvin Jones Repol may
+                be open-source, distributed for a fee, or provided as separate
+                products and services. Such projects may have their own terms,
+                privacy policies, or data practices. Please review the
+                applicable policies before using those Services.
               </p>
             </div>
 
@@ -468,6 +526,8 @@ export default function Privacy() {
               <p className="mt-3">
                 We may update this Privacy Policy from time to time. Updates
                 will be posted on this page with a revised “Last Updated” date.
+                Material changes may also be communicated through the relevant
+                website or application where appropriate.
               </p>
             </div>
 
@@ -486,7 +546,7 @@ export default function Privacy() {
             </div>
           </div>
 
-          <LegalFooter date="June 2026" />
+          <LegalFooter date="September 2026" />
         </div>
       </section>
     </>

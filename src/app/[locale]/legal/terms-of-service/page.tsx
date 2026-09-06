@@ -12,14 +12,14 @@ export async function generateMetadata({
   const { locale } = await params;
 
   return {
-    title: "Terms of Service - Melvin Jones Repol",
+    title: "Terms of Service - Melvin Jones Repol & Webvium",
     description:
-      "Terms of Service for melvinjonesrepol.com and related projects",
+      "Terms of Service for melvinjonesrepol.com, webvium.com, and related applications, browser extensions, and services operated by Melvin Jones Repol.",
     alternates: getAlternates("/legal/terms-of-service", locale),
     openGraph: {
-      title: "Terms of Service - Melvin Jones Repol",
+      title: "Terms of Service - Melvin Jones Repol & Webvium",
       description:
-        "Terms of Service for melvinjonesrepol.com and related projects",
+        "Terms of Service for melvinjonesrepol.com, webvium.com, and related applications, browser extensions, and services operated by Melvin Jones Repol.",
       url: "https://www.melvinjonesrepol.com/legal/terms-of-service",
       siteName: "Melvin Jones Repol",
       images: [
@@ -35,9 +35,9 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: "Terms of Service - Melvin Jones Repol",
+      title: "Terms of Service - Melvin Jones Repol & Webvium",
       description:
-        "Terms of Service for melvinjonesrepol.com and related projects",
+        "Terms of Service for melvinjonesrepol.com, webvium.com, and related applications, browser extensions, and services operated by Melvin Jones Repol.",
       images: [
         "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
       ],
@@ -59,7 +59,7 @@ export default function Terms() {
             service.
           </>
         }
-        intro="These Terms explain the rules for using Melvin Jones Repol / Webvium services, including the website, apps, extensions, and shortlink tools."
+        intro="These Terms explain the rules for using Melvin Jones Repol / Webvium services, including the websites, apps, extensions, and shortlink tools."
       />
 
       <section className="px-6 my-6 md:px-10">
@@ -69,18 +69,25 @@ export default function Terms() {
               <p className="text-xs uppercase tracking-widest opacity-50 mb-1">
                 Last Updated
               </p>
-              <p className="text-sm font-medium">June 1, 2026</p>
+              <p className="text-sm font-medium">September 6, 2026</p>
             </div>
+
             <p>
               These Terms of Service (“Terms”) govern your access to and use of
-              the services operated by Melvin Jones Repol / Webvium (“we,” “us,”
-              or “our”). By using the Services, you agree to these Terms.
+              the websites, applications, browser extensions, tools, and other
+              services operated under the Melvin Jones Repol and Webvium names.
+              The domains <strong>melvinjonesrepol.com</strong> and{" "}
+              <strong>webvium.com</strong> are operated and maintained by the
+              same individual. By using any of these Services, you agree to
+              these Terms.
             </p>
+
             <div className="space-y-6">
               <div>
                 <h2 className="text-2xl font-semibold">1. Services Covered</h2>
                 <ul className="list-disc list-inside ml-4 mt-3 space-y-1">
                   <li>Website (www.melvinjonesrepol.com)</li>
+                  <li>Webvium Website (www.webvium.com)</li>
                   <li>Shortlink (go.melvinjonesrepol.com)</li>
                   <li>Webvium Browser (Android)</li>
                   <li>Webvium Launcher (Android)</li>
@@ -94,8 +101,9 @@ export default function Terms() {
                     Search)
                   </li>
                   <li>
-                    Any related applications, tools, or services (the
-                    “Services”)
+                    Any related applications, tools, websites, or services
+                    operated or published under the Melvin Jones Repol or
+                    Webvium names (the “Services”)
                   </li>
                 </ul>
               </div>
@@ -115,6 +123,11 @@ export default function Terms() {
                   <li>
                     You must comply with third-party website or service terms
                     when accessing them through our Services.
+                  </li>
+                  <li>
+                    You must not use the Services to distribute malware, conduct
+                    phishing, abuse infrastructure, or engage in other unlawful
+                    activity.
                   </li>
                 </ul>
               </div>
@@ -149,9 +162,10 @@ export default function Terms() {
                 </h2>
                 <p className="mt-3">
                   Some Services integrate or interact with third-party providers
-                  (e.g., Google, Trustpilot, Algolia, Vercel). Those services
-                  are governed by their own terms and policies, and we are not
-                  responsible for their practices or content.
+                  such as Google, Trustpilot, Algolia, Vercel, GitHub,
+                  Microsoft, and other third-party services. Those services are
+                  governed by their own terms and policies, and we are not
+                  responsible for their practices, availability, or content.
                 </p>
               </div>
 
@@ -160,11 +174,12 @@ export default function Terms() {
                   5. Feedback and User Content
                 </h2>
                 <p className="mt-3">
-                  If you submit feedback or other content, you grant us a
-                  worldwide, non-exclusive, royalty-free license to use it for
-                  improving the Services. You confirm you have the right to
-                  submit the content and it does not infringe third-party
-                  rights.
+                  If you submit feedback, suggestions, reports, or other content
+                  to us, you grant us a worldwide, non-exclusive, royalty-free
+                  license to use, reproduce, modify, and use that content for
+                  operating, maintaining, and improving the Services. You
+                  confirm that you have the right to submit the content and that
+                  it does not infringe the rights of any third party.
                 </p>
               </div>
 
@@ -173,10 +188,18 @@ export default function Terms() {
                   6. Intellectual Property
                 </h2>
                 <p className="mt-3">
-                  The Services, including branding and content, are owned by
-                  Melvin Jones Repol / Webvium unless otherwise stated. Some
-                  source code may be open-source and governed by its applicable
-                  license.
+                  The Services, including their branding, names, logos,
+                  interfaces, original content, and other materials, are owned
+                  by or operated under the authorization of Melvin Jones Repol
+                  unless otherwise stated. Webvium is a project and product
+                  identity operated by Melvin Jones Repol and does not
+                  constitute a separate legal entity unless expressly stated
+                  otherwise.
+                </p>
+                <p className="mt-3">
+                  Some source code, libraries, assets, or other components may
+                  be open-source or provided by third parties and are governed
+                  by their respective licenses.
                 </p>
               </div>
 
@@ -185,9 +208,12 @@ export default function Terms() {
                   7. Discontinued/Legacy Services
                 </h2>
                 <p className="mt-3">
-                  Discontinued services (including Webvium VPN, Beta/Dev builds,
-                  and Webvium Search) are provided “as is,” without support or
-                  updates. Use is at your own risk.
+                  Discontinued services, including Webvium VPN, Beta/Dev builds,
+                  and Webvium Search, are no longer actively maintained or
+                  supported. Such services are provided “as is” and “as
+                  available,” without guarantees of updates, availability,
+                  compatibility, security, or continued operation. Use of
+                  discontinued services is at your own risk.
                 </p>
               </div>
 
@@ -196,10 +222,11 @@ export default function Terms() {
                   8. Disclaimer of Warranties
                 </h2>
                 <p className="mt-3">
-                  The Services are provided “as is” and “as available.” We make
-                  no warranties of any kind, express or implied, regarding
-                  reliability, availability, or fitness for a particular
-                  purpose.
+                  The Services are provided “as is” and “as available.” To the
+                  maximum extent permitted by law, we make no warranties of any
+                  kind, express or implied, regarding the reliability,
+                  availability, accuracy, security, compatibility, or fitness of
+                  the Services for a particular purpose.
                 </p>
               </div>
 
@@ -208,9 +235,11 @@ export default function Terms() {
                   9. Limitation of Liability
                 </h2>
                 <p className="mt-3">
-                  To the maximum extent permitted by law, we are not liable for
-                  any indirect, incidental, special, consequential, or punitive
-                  damages arising from your use of the Services.
+                  To the maximum extent permitted by law, Melvin Jones Repol
+                  shall not be liable for any indirect, incidental, special,
+                  consequential, or punitive damages, or for any loss of data,
+                  revenue, profits, or access arising from or related to your
+                  use of or inability to use the Services.
                 </p>
               </div>
 
@@ -219,8 +248,11 @@ export default function Terms() {
                   10. Changes to These Terms
                 </h2>
                 <p className="mt-3">
-                  We may update these Terms from time to time. Continued use of
-                  the Services after changes means you accept the updated Terms.
+                  We may update these Terms from time to time. Updated Terms
+                  will be posted on this page with a revised “Last Updated”
+                  date. Your continued use of the Services after the updated
+                  Terms become effective constitutes acceptance of the revised
+                  Terms.
                 </p>
               </div>
 
@@ -240,7 +272,7 @@ export default function Terms() {
             </div>
           </div>
 
-          <LegalFooter date="June 2026" />
+          <LegalFooter date="September 2026" />
         </div>
       </section>
     </>

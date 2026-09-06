@@ -59,7 +59,7 @@ const legalLinks = [
     description:
       "Learn how we collect, use, and protect your information across our services.",
     category: "Data",
-    version: "v1.2",
+    version: "v1.3",
   },
   {
     href: "/legal/terms-of-service",
@@ -67,7 +67,7 @@ const legalLinks = [
     description:
       "Understand the rules and guidelines for using our website, apps, and extensions.",
     category: "Usage",
-    version: "v1.2",
+    version: "v1.3",
   },
   {
     href: "/legal/cookie-policy",
@@ -75,7 +75,7 @@ const legalLinks = [
     description:
       "See how we and third-party services use cookies and similar tracking technologies.",
     category: "Tracking",
-    version: "v1.0",
+    version: "v1.1",
   },
   {
     href: "/legal/developer-client-agreement",
