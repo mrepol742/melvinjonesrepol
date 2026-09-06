@@ -12,9 +12,8 @@ import {
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 import { navLanguages } from "@/lib/i18n";
-import dynamic from "next/dynamic";
-import Image from "next/image";
-import { useConsent } from "@/context/consent";
+import CookiePreference from "../common/CookiePreference";
+import TrustPilotWidget from "../common/TrustPilotWidget";
 
 export default function Footer({
   posts,
@@ -25,7 +24,6 @@ export default function Footer({
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
-  const { openBanner } = useConsent();
 
   const handleLocaleChange = (nextLocale: string) => {
     if (nextLocale === locale) return;
@@ -35,10 +33,6 @@ export default function Footer({
     );
     router.replace(`/${nextLocale}${normalizedPath || "/"}`);
   };
-
-  const TrustpilotWidget = dynamic(() => import("../common/TrustPilotWidget"), {
-    ssr: false,
-  });
 
   const navLinks = [
     { href: "/", label: t("footer_home") },
@@ -170,7 +164,7 @@ export default function Footer({
             </div>
 
             <div className="mt-5">
-              <TrustpilotWidget />
+              <TrustPilotWidget />
             </div>
           </div>
 
@@ -287,18 +281,7 @@ export default function Footer({
           </span>
 
           <div className="flex items-center gap-4 text-xs">
-            <button
-              onClick={openBanner}
-              className="flex items-center gap-1.5 hover:text-zinc-300 transition-colors"
-            >
-              <Image
-                src="/images/0410-hd-privacy-choices-icon.png"
-                alt="Privacy Choices"
-                width={16}
-                height={16}
-              />
-              Cookie Preferences
-            </button>
+            <CookiePreference />
 
             <span className="text-zinc-800 select-none">·</span>
 
