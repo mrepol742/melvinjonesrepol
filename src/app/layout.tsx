@@ -127,12 +127,18 @@ export default async function RootLayout({
     <html
       className={`${sourceCodePro.variable} ${mavenPro.variable} ${sora.variable}`}
       data-scroll-behavior="smooth"
+      suppressHydrationWarning
     >
       <head>
         <meta name="hostname" content="www.melvinjonesrepol.com" />
         <NortonSafeweb />
         <Algolia />
         <GoogleAdsense />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&window.matchMedia("(prefers-color-scheme: dark)").matches)){document.documentElement.classList.add("dark")}}catch(e){}})()`,
+          }}
+        />
       </head>
 
       <body className="antialiased min-h-screen flex flex-col background-grid">
