@@ -43,7 +43,6 @@
       "footer_pos": "Point of Sale",
       "footer_usl": "Ulisha Store Laravel",
       "footer_canis_chatbot": "Canis Chatbot",
-      "footer_kao": "Keep Android Open",
       "footer_hoc": "Hall of Codes",
       "footer_sitemap": "Sitemap",
       "footer_ogc": "Open Graph Checker",
@@ -148,7 +147,6 @@
     "youtube_label": "YouTube Channel",
     "youtube_title": "Pinakabagong Videos",
     "youtube_description": "Silip sa aking pinakabagong video content kung saan ako ay nagbabahagi ng insights, tutorials, at behind-the-scenes sa aking projects at gaming. Tingnan ang aking YouTube!",
-    "community_label": "Dev Community",
     "community_title": "Hall of Codes",
     "community_description_1": "Isang komunidad para sa developers, creatives, at problem-solvers. Dito nagiging projects ang mga ideya at nagiging pagkakataon ang projects para matuto at makipag-collaborate.",
     "community_description_2": "Naniniwala kami sa kapangyarihan ng shared knowledge at collective growth. Sumali upang makipag-connect, makipag-collaborate, at lumikha kasama ang mga kaparehong hilig sa coding at innovation.",
@@ -160,7 +158,6 @@
     "community_card3_desc": "Events at Networking",
     "community_cta_join": "Sumali",
     "community_cta_github": "Github",
-    "webvium_badge": "Webvium Ecosystem",
     "webvium_title": "Magaang na Software na Ginawa para sa Bilis",
     "webvium_description": "Mula sa mga Android browser hanggang sa mga developer tool at browser extension, nakatuon ang Webvium sa performance, privacy, kasimplihan, at praktikal na software.",
     "webvium_cta_explore": "I-explore ang Webvium",
@@ -237,8 +234,6 @@
     "form_privacy_prefix": "Sa pagpapatuloy, sumasang-ayon ka sa aming",
     "form_privacy_link": "Patakaran sa Privacy",
     "form_submit": "Ipadala ang Mensahe",
-    "sidebar_status": "Available",
-    "sidebar_status_description": "Kasalukuyang bukas sa mga bagong proyekto at pakikipagtulungan. Ang karaniwang oras ng tugon ay sa loob ng 24 na oras.",
     "sidebar_reach_out": "Makipag-ugnayan sa pamamagitan ng",
     "sidebar_before_start": "Bago tayo magsimula",
     "sidebar_dca": "Kasunduan ng Developer at Kliyente",
@@ -269,9 +264,7 @@
     "years_building_label": "Taon ng pagtatayo",
     "no_results_found": "Walang nahanap na resulta.",
     "github_cta_text": "Ang mga proyekto ng kliyente ay kumpidensyal, ngunit lagi akong bukas sa pagbabahagi ng higit pa tungkol sa aking mga personal na proyekto at code. Kung interesado kang makita ang aking mga gawa, bisitahin ang aking GitHub profile.",
-    "github_button": "Github",
-    "templates_title": "Mga Template",
-    "templates_description": "Nagpapanatili rin ako ng koleksyon ng mga open-source na template at starter kit para sa iba't ibang framework at gamit. Ang mga template na ito ay dinisenyo upang matulungan ang ibang mga developer na makapagsimula nang mabilis sa pamamagitan ng mga pinakamahusay na gawi at modernong tooling."
+    "github_button": "Github"
   },
   "uptime": {
     "status_page_badge": "Status Page",

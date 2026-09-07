@@ -43,7 +43,6 @@
       "footer_pos": "Point of Sale",
       "footer_usl": "Ulisha Store Laravel",
       "footer_canis_chatbot": "Canis Chatbot",
-      "footer_kao": "Keep Android Open",
       "footer_hoc": "Hall of Codes",
       "footer_sitemap": "Sitemap",
       "footer_ogc": "Open Graph Checker",
@@ -148,7 +147,6 @@
     "youtube_label": "YouTube-kanaal",
     "youtube_title": "Nieuwste video's",
     "youtube_description": "Een kijkje in mijn nieuwste videocontent, waarin ik inzichten, tutorials en een blik achter de schermen van mijn projecten en gaming deel. Bekijk waar ik mee bezig ben op YouTube!",
-    "community_label": "Ontwikkelaarscommunity",
     "community_title": "Hall of Codes",
     "community_description_1": "Een community voor ontwikkelaars, creatievelingen en probleemoplossers. Hier worden ideeën projecten, en projecten kansen om te leren en samen te werken.",
     "community_description_2": "Wij geloven in de kracht van gedeelde kennis en gezamenlijke groei. Sluit je aan om in contact te komen, samen te werken en te creëren met gelijkgestemden die gepassioneerd zijn over programmeren en innovatie.",
@@ -160,7 +158,6 @@
     "community_card3_desc": "Evenementen & Netwerken",
     "community_cta_join": "Word lid",
     "community_cta_github": "GitHub",
-    "webvium_badge": "Webvium-ecosysteem",
     "webvium_title": "Lichtgewicht software gebouwd voor snelheid",
     "webvium_description": "Van Android-browsers tot ontwikkelaarstools en browserextensies: Webvium richt zich op prestaties, privacy, eenvoud en praktische software.",
     "webvium_cta_explore": "Ontdek Webvium",
@@ -237,8 +234,6 @@
     "form_privacy_prefix": "Door verder te gaan, ga je akkoord met ons",
     "form_privacy_link": "Privacybeleid",
     "form_submit": "Bericht verzenden",
-    "sidebar_status": "Beschikbaar",
-    "sidebar_status_description": "Momenteel beschikbaar voor nieuwe projecten en samenwerkingen. De gebruikelijke reactietijd is binnen 24 uur.",
     "sidebar_reach_out": "Neem contact op via",
     "sidebar_before_start": "Voordat we beginnen",
     "sidebar_dca": "Ontwikkelaar-Klantovereenkomst",
@@ -269,9 +264,7 @@
     "years_building_label": "Jaren ervaring",
     "no_results_found": "Geen resultaten gevonden.",
     "github_cta_text": "Projecten van klanten zijn vertrouwelijk, maar ik deel graag meer over mijn persoonlijke projecten en code. Als je meer van mijn werk wilt zien, bekijk dan gerust mijn GitHub-profiel, waar ik regelmatig updates deel over mijn projecten en experimenten.",
-    "github_button": "GitHub",
-    "templates_title": "Templates",
-    "templates_description": "Ik onderhoud ook een verzameling open-sourcetemplates en starterkits voor verschillende frameworks en toepassingen. Deze templates zijn ontworpen om andere ontwikkelaars snel op weg te helpen met best practices en moderne tooling."
+    "github_button": "GitHub"
   },
   "uptime": {
     "status_page_badge": "Statuspagina",

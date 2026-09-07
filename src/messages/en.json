@@ -43,7 +43,6 @@
       "footer_pos": "Point of Sale",
       "footer_usl": "Ulisha Store Laravel",
       "footer_canis_chatbot": "Canis Chatbot",
-      "footer_kao": "Keep Android Open",
       "footer_hoc": "Hall of Codes",
       "footer_sitemap": "Sitemap",
       "footer_ogc": "Open Graph Checker",
@@ -148,7 +147,6 @@
     "youtube_label": "YouTube Channel",
     "youtube_title": "Latest Videos",
     "youtube_description": "A glimpse into my latest video content, where I share insights, tutorials, and behind-the-scenes looks at my projects and gaming. Check out what I’ve been up to on YouTube!",
-    "community_label": "Dev Community",
     "community_title": "Hall of Codes",
     "community_description_1": "A community for developers, creatives, and problem-solvers. It’s where ideas turn into projects, and projects turn into opportunities to learn and collaborate.",
     "community_description_2": "We believe in the power of shared knowledge and collective growth. Join us to connect, collaborate, and create with like-minded individuals who are passionate about coding and innovation.",
@@ -160,7 +158,6 @@
     "community_card3_desc": "Events & Networking",
     "community_cta_join": "Join Us",
     "community_cta_github": "Github",
-    "webvium_badge": "Webvium Ecosystem",
     "webvium_title": "Lightweight Software Built For Speed",
     "webvium_description": "From Android browsers to developer tools and browser extensions, Webvium focuses on performance, privacy, simplicity and practical software.",
     "webvium_cta_explore": "Explore Webvium",
@@ -237,8 +234,6 @@
     "form_privacy_prefix": "By continuing, you agree to our",
     "form_privacy_link": "Privacy Policy",
     "form_submit": "Send Message",
-    "sidebar_status": "Available",
-    "sidebar_status_description": "Currently open to new projects and collaborations. Typical response time is within 24 hours.",
     "sidebar_reach_out": "Reach out via",
     "sidebar_before_start": "Before we start",
     "sidebar_dca": "Developer Client Agreement",
@@ -269,9 +264,7 @@
     "years_building_label": "Years building",
     "no_results_found": "No results found.",
     "github_cta_text": "Client's projects are confidential, but I'm always open to sharing more about my personal projects and code. If you're interested in seeing more of my work, feel free to check out my GitHub profile where I regularly share updates on my projects and experiments.",
-    "github_button": "Github",
-    "templates_title": "Templates",
-    "templates_description": "I also maintain a collection of open-source templates and starter kits for various frameworks and use cases. These templates are designed to help other developers get up and running quickly with best practices and modern tooling."
+    "github_button": "Github"
   },
   "uptime": {
     "status_page_badge": "Status Page",

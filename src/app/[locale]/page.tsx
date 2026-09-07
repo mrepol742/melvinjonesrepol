@@ -5,8 +5,6 @@ import { faCode as faCodeSolid } from "@fortawesome/free-solid-svg-icons";
 import Button from "@/components/ui/Button";
 import Steam from "@/app/[locale]/components/Steam";
 import Wakatime from "@/app/[locale]/components/Wakatime";
-import RecentGithubActivityWrapper from "@/app/[locale]/components/RecentGithubActivityWrapper";
-import RecentGithubActivity from "@/app/[locale]/components/RecentGithubActivity";
 import Youtube from "@/app/[locale]/components/Youtube";
 import SecurityPractices from "@/app/[locale]/components/SecurityPractices";
 import AI from "@/app/[locale]/components/AI";
@@ -439,14 +437,6 @@ export default async function Home({
             <div className="grid gap-10 md:grid-cols-[1.2fr_1fr] items-start">
               {/* Left content rail */}
               <div>
-                <div
-                  className="inline-flex items-center gap-2 rounded-full border border-zinc-800 px-3 py-1 text-xs font-semibold tracking-widest uppercase"
-                  data-aos="fade-up"
-                >
-                  <span className="inline-block h-2 w-2 rounded-full border" />
-                  {t("community_label")}
-                </div>
-
                 <h2
                   className="mt-4 text-3xl md:text-4xl font-bold max-w-xl"
                   data-aos="fade-up"
@@ -508,74 +498,61 @@ export default async function Home({
 
         <div className="relative py-14 md:py-28 overflow-hidden">
           <div className="mx-auto max-w-6xl px-4 md:px-6">
-            <Card>
-              <div className="grid lg:grid-cols-2">
-                {/* Product Side */}
-                <div>
-                  <div className="inline-flex items-center gap-2 rounded-full border border-zinc-800 px-3 py-1 text-xs font-semibold uppercase">
-                    <span className="h-2 w-2 rounded-full bg-green-500" />
-                    {t("webvium_badge")}
-                  </div>
+            <div className="grid lg:grid-cols-2">
+              {/* Product Side */}
+              <div>
+                <h2 className="mt-5 text-4xl font-bold">
+                  {t("webvium_title")}
+                </h2>
+                <Link
+                  href="https://www.webvium.com"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                  className="text-zinc-400"
+                  target="_blank"
+                >
+                  www.webvium.com
+                </Link>
 
-                  <h2 className="mt-5 text-4xl font-bold">
-                    {t("webvium_title")}
-                  </h2>
-                  <Link
-                    href="https://webvium.melvinjonesrepol.com"
-                    data-aos="fade-up"
-                    data-aos-delay="300"
-                    className="text-zinc-400"
-                    target="_blank"
-                  >
-                    webvium.melvinjonesrepol.com
-                  </Link>
+                <p className="mt-4">{t("webvium_description")}</p>
+              </div>
 
-                  <p className="mt-4">{t("webvium_description")}</p>
-                </div>
+              {/* Stats Side */}
+              <div className="p-8 md:p-12">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <Card subtitle="15+">
+                    <div className="text-3xl font-bold">15+</div>
+                    <div className="text-sm text-zinc-400">
+                      {t("webvium_stat_repositories")}
+                    </div>
+                  </Card>
 
-                {/* Stats Side */}
-                <div className="p-8 md:p-12">
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <Card subtitle="15+">
-                      <div className="text-3xl font-bold">15+</div>
-                      <div className="text-sm text-zinc-400">
-                        {t("webvium_stat_repositories")}
-                      </div>
-                    </Card>
+                  <Card subtitle="6+">
+                    <div className="text-3xl font-bold">6+</div>
+                    <div className="text-sm text-zinc-400">
+                      {t("webvium_stat_browser_tools")}
+                    </div>
+                  </Card>
 
-                    <Card subtitle="6+">
-                      <div className="text-3xl font-bold">6+</div>
-                      <div className="text-sm text-zinc-400">
-                        {t("webvium_stat_browser_tools")}
-                      </div>
-                    </Card>
+                  <Card subtitle="2018">
+                    <div className="text-3xl font-bold">2018</div>
+                    <div className="text-sm text-zinc-400">
+                      {t("webvium_stat_started")}
+                    </div>
+                  </Card>
 
-                    <Card subtitle="2018">
-                      <div className="text-3xl font-bold">2018</div>
-                      <div className="text-sm text-zinc-400">
-                        {t("webvium_stat_started")}
-                      </div>
-                    </Card>
-
-                    <Card subtitle="375KB">
-                      <div className="text-3xl font-bold">375KB</div>
-                      <div className="text-sm text-zinc-400">
-                        {t("webvium_stat_lightest")}
-                      </div>
-                    </Card>
-                  </div>
+                  <Card subtitle="375KB">
+                    <div className="text-3xl font-bold">375KB</div>
+                    <div className="text-sm text-zinc-400">
+                      {t("webvium_stat_lightest")}
+                    </div>
+                  </Card>
                 </div>
               </div>
-            </Card>
+            </div>
           </div>
         </div>
       </div>
-
-      {/*
-  <RecentGithubActivityWrapper>
-    <RecentGithubActivity />
-  </RecentGithubActivityWrapper>
-  */}
     </>
   );
 }

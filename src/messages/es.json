@@ -43,7 +43,6 @@
       "footer_pos": "Punto de venta",
       "footer_usl": "Ulisha Store Laravel",
       "footer_canis_chatbot": "Chatbot Canis",
-      "footer_kao": "Keep Android Open",
       "footer_hoc": "Sala de Códigos",
       "footer_sitemap": "Mapa del sitio",
       "footer_ogc": "Verificador Open Graph",
@@ -148,7 +147,6 @@
     "youtube_label": "Canal de YouTube",
     "youtube_title": "Últimos videos",
     "youtube_description": "Un vistazo a mi contenido más reciente en video, donde comparto ideas, tutoriales y detrás de escena de mis proyectos y juegos. ¡Mira lo que estoy haciendo en YouTube!",
-    "community_label": "Comunidad de desarrolladores",
     "community_title": "Sala de Códigos",
     "community_description_1": "Una comunidad para desarrolladores, creativos y solucionadores de problemas. Aquí las ideas se convierten en proyectos y los proyectos en oportunidades de aprendizaje y colaboración.",
     "community_description_2": "Creemos en el poder del conocimiento compartido y el crecimiento colectivo. Únete para conectar, colaborar y crear con personas apasionadas por la programación y la innovación.",
@@ -160,7 +158,6 @@
     "community_card3_desc": "Eventos y networking",
     "community_cta_join": "Únete",
     "community_cta_github": "Github",
-    "webvium_badge": "Ecosistema Webvium",
     "webvium_title": "Software ligero construido para la velocidad",
     "webvium_description": "Desde navegadores Android hasta herramientas para desarrolladores y extensiones de navegador, Webvium se centra en rendimiento, privacidad, simplicidad y software práctico.",
     "webvium_cta_explore": "Explorar Webvium",
@@ -237,8 +234,6 @@
     "form_privacy_prefix": "Al continuar, aceptas nuestra",
     "form_privacy_link": "Política de privacidad",
     "form_submit": "Enviar mensaje",
-    "sidebar_status": "Disponible",
-    "sidebar_status_description": "Actualmente abierto a nuevos proyectos y colaboraciones. El tiempo de respuesta habitual es de 24 horas.",
     "sidebar_reach_out": "Contáctame por",
     "sidebar_before_start": "Antes de empezar",
     "sidebar_dca": "Acuerdo desarrollador-cliente",
@@ -269,9 +264,7 @@
     "years_building_label": "Años construyendo",
     "no_results_found": "No se encontraron resultados.",
     "github_cta_text": "Los proyectos de clientes son confidenciales, pero siempre estoy dispuesto a compartir más sobre mis proyectos personales y código. Si quieres ver más de mi trabajo, visita mi perfil de GitHub donde comparto regularmente actualizaciones de proyectos y experimentos.",
-    "github_button": "Github",
-    "templates_title": "Plantillas",
-    "templates_description": "También mantengo una colección de plantillas de código abierto y kits de inicio para varios frameworks y casos de uso. Estas plantillas están diseñadas para ayudar a otros desarrolladores a empezar rápidamente con las mejores prácticas y herramientas modernas."
+    "github_button": "Github"
   },
   "uptime": {
     "status_page_badge": "Página de estado",

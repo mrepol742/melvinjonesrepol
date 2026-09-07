@@ -1,4 +1,4 @@
-import projects, { Templates } from "@/lib/projects";
+import projects from "@/lib/projects";
 import SearchForm from "@/components/ui/SearchForm";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Button from "@/components/ui/Button";
@@ -17,13 +17,6 @@ export default async function Project({ query }: { query: string }) {
     description: project.key
       ? tc(`${project.key}_description` as any)
       : project.description,
-  }));
-
-  const translatedTemplates = Templates.map((template) => ({
-    ...template,
-    description: template.key
-      ? tc(`${template.key}_description` as any)
-      : template.description,
   }));
 
   const filteredProjects = translatedProjects
@@ -104,25 +97,6 @@ export default async function Project({ query }: { query: string }) {
               {t("github_button")}
             </Button>
           </Link>
-        </div>
-
-        <h2
-          className="text-2xl font-semibold"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          {t("templates_title")}
-        </h2>
-        <p className="my-2" data-aos="fade-up" data-aos-delay="100">
-          {t("templates_description")}
-        </p>
-
-        <div className="grid gap-6 mt-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {translatedTemplates.map((template, idx) => (
-            <div key={idx}>
-              <ProjectCard {...template} />
-            </div>
-          ))}
         </div>
       </section>
     </>

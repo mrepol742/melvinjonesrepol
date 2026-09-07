@@ -162,7 +162,7 @@ const Projects = [
     ai_description:
       "Webvium Launcher is an experimental Android home screen replacement written natively in Kotlin. Prioritizing extreme performance and minimal resource consumption, it offers users a clean, highly customizable interface devoid of the bloatware typically found in OEM launchers.",
     type: "personal",
-    link: "/webvium-launcher",
+    link: "https://www.webvium.com",
     repo: "https://github.com/webvium/webvium-launcher",
     featured: false,
     technology: ["Kotlin"],
@@ -188,7 +188,8 @@ const Projects = [
     ai_description:
       "Web Appp is a streamlined Kotlin-based wrapper designed to democratize Android app development. By simply dropping in a website URL, developers can instantly generate a production-ready Android APK. It bridges the gap between web development and mobile distribution, offering native-like performance without the steep learning curve of Android SDKs.",
     type: "personal",
-    repo: "https://github.com/mrepol742/web-appp",
+    link: "https://www.webvium.com",
+    repo: "https://github.com/webvium/web-appp",
     featured: false,
     technology: ["Kotlin"],
   },
@@ -378,7 +379,7 @@ const Projects = [
     ai_description:
       "Webvium VPN is a native Android application engineered in Java. It provides users with a secure, encrypted tunnel for internet traffic, emphasizing strict privacy protocols and minimal battery consumption. It strips away the complex configurations of standard VPN clients in favor of a one-tap connection model.",
     type: "personal",
-    link: "/webvium-vpn",
+    link: "https://www.webvium.com",
     featured: false,
     technology: ["Java"],
     cover: "/images/webviumvpn-banner.png",
@@ -406,64 +407,9 @@ const Projects = [
     ai_description:
       "Project Webvium is a fully-fledged Android web browser developed natively in Java. It was engineered from the ground up to challenge mainstream browsers by offering a hyper-minimalist footprint, aggressive privacy controls, and rapid page rendering. It represents a deep dive into Androids WebView architecture and efficient memory management on mobile devices.",
     type: "personal",
-    link: "/webvium-browser",
+    link: "https://www.webvium.com/browser",
     featured: true,
     technology: ["Java"],
-  },
-];
-export const Templates = [
-  {
-    title: "Laravel GraphQL",
-    key: "template_laravel_graphql",
-    description:
-      "A boilerplate template for building GraphQL APIs with Laravel, providing a solid foundation for rapid development and efficient API design.",
-    ai_description:
-      "This boilerplate serves as a rapid starting point for backend developers constructing GraphQL APIs within the Laravel ecosystem. It pre-configures essential routing, schema definitions, and database migrations, drastically reducing initial setup time.",
-    repo: "https://github.com/mrepol742/laravel-graphql-template",
-  },
-  {
-    title: "Laravel React",
-    key: "template_laravel_react",
-    description:
-      "A boilerplate template for building React applications with Laravel, providing a solid foundation for rapid development and efficient API design.",
-    ai_description:
-      "This template provides a robust, monolithic starter kit for full-stack developers. It tightly integrates a modern React frontend with a powerful Laravel backend API, streamlining the development process for comprehensive web applications.",
-    repo: "https://github.com/mrepol742/laravel-react-template",
-  },
-  {
-    title: "Laravel React TypeScript",
-    key: "template_laravel_react_ts",
-    description:
-      "A boilerplate template for building React applications with Laravel and TypeScript, providing a solid foundation for rapid development and efficient API design.",
-    ai_description:
-      "An advanced iteration of the standard React-Laravel boilerplate, this template introduces TypeScript into the frontend stack. This ensures strict type safety across components, making it ideal for scaling large enterprise applications.",
-    repo: "https://github.com/mrepol742/laravel-react-ts-template",
-  },
-  {
-    title: "Angular",
-    key: "template_angular",
-    description:
-      "A boilerplate template for building Angular applications, providing a solid foundation for rapid development and efficient API design.",
-    ai_description:
-      "This Angular boilerplate is designed to accelerate the scaffolding of new enterprise-grade single-page applications. It includes pre-configured routing, optimal state management patterns, and built-in HTTP interceptors.",
-    repo: "https://github.com/mrepol742/angular-boilerplate",
-  },
-  {
-    title: "Responsive Views",
-    key: "template_responsive_views",
-    description:
-      "An Android template using Fragments, bottom navbar, navigation drawer and floating action buttons.",
-    ai_description:
-      "A foundational Android UI toolkit written in Java/Kotlin. It implements Material Design guidelines out-of-the-box, providing developers with pre-built, responsive navigation patterns including bottom navigation and side drawers.",
-    repo: "https://github.com/mrepol742/templateresponsiveviews",
-  },
-  {
-    title: "Read CV",
-    key: "template_read_cv",
-    description: "A simple CV template exported from read.cv.",
-    ai_description:
-      "A lightweight, heavily styled HTML/CSS template derived from modern CV aesthetics. It provides a clean, highly readable format for professionals looking to host their resumes statically.",
-    repo: "https://github.com/mrepol742/read-cv",
   },
 ];
 

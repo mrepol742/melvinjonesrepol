@@ -19,11 +19,11 @@ export default function ContactMe() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [grecaptchaLoaded, setGrecaptchaLoaded] = useState(false);
 
-  const wordCount =
+  const characterCount =
     formData.message.trim() === ""
       ? 0
-      : formData.message.trim().split(/\s+/).length;
-  const isValidWordCount = wordCount >= 20 && wordCount <= 500;
+      : formData.message.trim().length;
+  const isValidcharacterCount = characterCount >= 500 && characterCount <= 1000;
 
   useEffect(() => {
     const loadGrecaptcha = () => {
@@ -169,16 +169,16 @@ export default function ContactMe() {
               </p>
               <span
                 className={`text-xs font-mono transition-colors ${
-                  wordCount === 0
+                  characterCount === 0
                     ? "opacity-30"
-                    : isValidWordCount
+                    : isValidcharacterCount
                       ? "text-green-500"
-                      : wordCount > 500
+                      : characterCount > 1000
                         ? "text-red-500"
                         : "text-amber-500"
                 }`}
               >
-                {wordCount} / 500
+                {characterCount} / 1000
               </span>
             </div>
 
@@ -195,27 +195,27 @@ export default function ContactMe() {
             </div>
 
             <div className="mt-1.5 flex items-center justify-between">
-              {wordCount > 0 && !isValidWordCount ? (
+              {characterCount > 0 && !isValidcharacterCount ? (
                 <p className="text-xs text-amber-500">
-                  {wordCount < 20
-                    ? `${20 - wordCount} more word${20 - wordCount === 1 ? "" : "s"} needed`
-                    : `${wordCount - 500} word${wordCount - 500 === 1 ? "" : "s"} over limit`}
+                  {characterCount < 500
+                    ? `${500 - characterCount} more character${500 - characterCount === 1 ? "" : "s"} needed`
+                    : `${characterCount - 1000} character${characterCount - 1000 === 1 ? "" : "s"} over limit`}
                 </p>
               ) : (
                 <span />
               )}
               <div className="flex gap-0.5">
                 {Array.from({ length: 10 }).map((_, i) => {
-                  const threshold = (i + 1) * 50;
-                  const filled = wordCount >= threshold;
+                  const threshold = (i + 1) * 100;
+                  const filled = characterCount >= threshold;
                   const partial =
-                    !filled && wordCount > i * 50 && wordCount < threshold;
+                    !filled && characterCount > i * 100 && characterCount < threshold;
                   return (
                     <div
                       key={i}
                       className={`h-1 w-4 rounded-full transition-all duration-200 ${
                         filled
-                          ? wordCount > 500
+                          ? characterCount > 1000
                             ? "bg-red-500"
                             : "bg-green-500"
                           : partial
@@ -255,18 +255,6 @@ export default function ContactMe() {
       </div>
 
       <div className="lg:col-span-2 flex flex-col gap-4">
-        <div className="rounded-2xl border border-zinc-800 p-6">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="h-2 w-2 rounded-full bg-green-400 animate-pulse" />
-            <span className="text-xs uppercase tracking-widest">
-              {t("sidebar_status")}
-            </span>
-          </div>
-          <p className="text-sm leading-relaxed opacity-60">
-            {t("sidebar_status_description")}
-          </p>
-        </div>
-
         <div className="rounded-2xl border border-zinc-800 p-6">
           <p className="text-xs uppercase tracking-widest mb-4 opacity-50">
             {t("sidebar_reach_out")}

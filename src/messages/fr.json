@@ -43,7 +43,6 @@
       "footer_pos": "Point de vente",
       "footer_usl": "Ulisha Store Laravel",
       "footer_canis_chatbot": "Canis Chatbot",
-      "footer_kao": "Keep Android Open",
       "footer_hoc": "Hall of Codes",
       "footer_sitemap": "Plan du site",
       "footer_ogc": "Vérificateur Open Graph",
@@ -148,7 +147,6 @@
     "youtube_label": "Chaîne YouTube",
     "youtube_title": "Dernières vidéos",
     "youtube_description": "Découvrez mes dernières vidéos, où je partage des conseils, des tutoriels ainsi que les coulisses de mes projets et de mes sessions gaming. Venez voir ce que je prépare sur YouTube !",
-    "community_label": "Communauté de développeurs",
     "community_title": "Hall of Codes",
     "community_description_1": "Une communauté destinée aux développeurs, créatifs et passionnés de résolution de problèmes. C'est là que les idées deviennent des projets, et que les projets deviennent des opportunités d'apprendre et de collaborer.",
     "community_description_2": "Nous croyons au pouvoir du partage des connaissances et de la croissance collective. Rejoignez-nous pour échanger, collaborer et créer avec des personnes partageant la même passion pour le développement et l'innovation.",
@@ -160,7 +158,6 @@
     "community_card3_desc": "Événements & Réseautage",
     "community_cta_join": "Nous rejoindre",
     "community_cta_github": "GitHub",
-    "webvium_badge": "Écosystème Webvium",
     "webvium_title": "Des logiciels légers conçus pour la vitesse",
     "webvium_description": "Des navigateurs Android aux outils pour développeurs et extensions de navigateur, Webvium met l'accent sur les performances, la confidentialité, la simplicité et des logiciels pratiques.",
     "webvium_cta_explore": "Découvrir Webvium",
@@ -237,8 +234,6 @@
     "form_privacy_prefix": "En continuant, vous acceptez notre",
     "form_privacy_link": "Politique de confidentialité",
     "form_submit": "Envoyer le message",
-    "sidebar_status": "Disponible",
-    "sidebar_status_description": "Actuellement ouvert à de nouveaux projets et collaborations. Le délai de réponse est généralement inférieur à 24 heures.",
     "sidebar_reach_out": "Me contacter via",
     "sidebar_before_start": "Avant de commencer",
     "sidebar_dca": "Accord Développeur-Client",
@@ -269,9 +264,7 @@
     "years_building_label": "Années d'expérience",
     "no_results_found": "Aucun résultat trouvé.",
     "github_cta_text": "Les projets de mes clients sont confidentiels, mais je suis toujours ravi de partager davantage sur mes projets personnels et mon code. Si vous souhaitez découvrir davantage de mon travail, n'hésitez pas à consulter mon profil GitHub où je publie régulièrement des mises à jour sur mes projets et expérimentations.",
-    "github_button": "GitHub",
-    "templates_title": "Modèles",
-    "templates_description": "Je maintiens également une collection de modèles open source et de kits de démarrage pour différents frameworks et cas d'utilisation. Ces modèles permettent aux développeurs de démarrer rapidement en suivant les bonnes pratiques et les outils modernes."
+    "github_button": "GitHub"
   },
   "uptime": {
     "status_page_badge": "Page d'état",

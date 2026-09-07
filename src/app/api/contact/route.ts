@@ -38,21 +38,21 @@ export async function POST(request: Request) {
 
     if ([NODE_MAILER_RECEIVER, NODE_MAILER_USER].includes(email)) {
       throw new Error(
-        "Nice try! 😏 You can't send this message using our emails. Please use your own email address.",
+        "Nice try! 😏 You can't send this message using our emails.",
       );
     }
 
-    const wordCount = message.trim().split(/\s+/).length;
+    const wordCount = message.trim().length;
 
-    if (wordCount < 20) {
+    if (wordCount < 500) {
       throw new Error(
-        "Your message must contain at least 20 words to be submitted.",
+        "Your message must contain at least 500 characters to be submitted.",
       );
     }
 
-    if (wordCount > 500) {
+    if (wordCount > 1000) {
       throw new Error(
-        "Your message cannot exceed 500 words. Please shorten your message.",
+        "Your message cannot exceed 1000 characters.",
       );
     }
 
@@ -65,7 +65,7 @@ export async function POST(request: Request) {
       const lastSent = recentMessages.get(hash)!;
       if (now - lastSent < DUPLICATE_TIMEOUT) {
         throw new Error(
-          "You have already sent this message recently. Please wait before resending.",
+          "You have already sent this message recently.",
         );
       }
     }

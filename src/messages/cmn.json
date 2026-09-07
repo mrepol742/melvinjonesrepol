@@ -43,7 +43,6 @@
       "footer_pos": "销售点系统",
       "footer_usl": "Ulisha Store Laravel",
       "footer_canis_chatbot": "Canis 聊天机器人",
-      "footer_kao": "Keep Android Open",
       "footer_hoc": "代码大厅",
       "footer_sitemap": "网站地图",
       "footer_ogc": "Open Graph 检查器",
@@ -148,7 +147,6 @@
     "youtube_label": "YouTube频道",
     "youtube_title": "最新视频",
     "youtube_description": "展示我最新的视频内容，包括见解、教程以及项目与游戏的幕后内容。欢迎观看我的YouTube频道！",
-    "community_label": "开发者社区",
     "community_title": "代码大厅",
     "community_description_1": "一个面向开发者、创作者与问题解决者的社区。在这里，想法变成项目，项目变成学习与合作的机会。",
     "community_description_2": "我们相信知识共享与共同成长的力量。加入我们，与志同道合、热爱编程与创新的人一起连接、协作与创造。",
@@ -160,7 +158,6 @@
     "community_card3_desc": "活动与社交网络",
     "community_cta_join": "加入我们",
     "community_cta_github": "Github",
-    "webvium_badge": "Webvium 生态系统",
     "webvium_title": "为速度而生的轻量级软件",
     "webvium_description": "从 Android 浏览器到开发者工具和浏览器扩展，Webvium 专注于性能、隐私、简洁性和实用软件。",
     "webvium_cta_explore": "探索 Webvium",
@@ -237,8 +234,6 @@
     "form_privacy_prefix": "继续即表示您同意我们的",
     "form_privacy_link": "隐私政策",
     "form_submit": "发送消息",
-    "sidebar_status": "可联系",
-    "sidebar_status_description": "目前接受新项目与合作。典型响应时间在 24 小时内。",
     "sidebar_reach_out": "联系方式",
     "sidebar_before_start": "合作前须知",
     "sidebar_dca": "开发者客户协议",
@@ -269,9 +264,7 @@
     "years_building_label": "年开发经验",
     "no_results_found": "未找到结果。",
     "github_cta_text": "客户项目属于保密内容，但我始终乐于分享我的个人项目和代码。如果您有兴趣了解更多，欢迎查看我的 GitHub，我会定期在那里分享项目和实验的最新进展。",
-    "github_button": "Github",
-    "templates_title": "模板",
-    "templates_description": "我还维护了一系列各种框架和用例的开源模板和入门套件。这些模板旨在帮助其他开发者快速上手，并遵循最佳实践和现代工具链。"
+    "github_button": "Github"
   },
   "uptime": {
     "status_page_badge": "状态页面",
