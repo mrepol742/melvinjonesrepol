@@ -36,9 +36,6 @@ export default function Footer({
 
   const navLinks = [
     { href: "/", label: t("footer_home") },
-    { href: "/about", label: t("footer_about") },
-    { href: "/case-studies", label: t("footer_case_studies") },
-    { href: "/now", label: t("footer_now") },
     { href: "/projects", label: t("footer_projects") },
     { href: "/blog", label: t("footer_blog") },
     { href: "/gaming", label: t("footer_gaming") },
@@ -56,11 +53,6 @@ export default function Footer({
     {
       href: "https://wakatime.melvinjonesrepol.com",
       label: t("footer_wakatime_stats"),
-      external: true,
-    },
-    {
-      href: "https://ai.melvinjonesrepol.com",
-      label: t("footer_melvin_ai"),
       external: true,
     },
     { href: "https://www.webvium.com", label: t("footer_webvium_browser") },
@@ -83,7 +75,7 @@ export default function Footer({
     { href: "/tools/qrcode-generator", label: t("footer_qcg") },
     { href: "/tools/user-agent", label: t("footer_uap") },
     {
-      href: "https://go.melvinjonesrepol.com",
+      href: "https://shrtly.melvinjonesrepol.com",
       label: t("footer_shortlink"),
       external: true,
     },
