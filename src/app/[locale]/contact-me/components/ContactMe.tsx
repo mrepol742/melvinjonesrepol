@@ -264,7 +264,7 @@ export default function ContactMe() {
               { name: "WhatsApp", href: "https://wa.me/+639283559507" },
               {
                 name: "Facebook",
-                href: "https://www.facebook.com/melvinjonesrepol",
+                href: "https://www.facebook.com/mrepol742",
               },
               { name: "Email", href: "mailto:me@melvinjonesrepol.com" },
               {

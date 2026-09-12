@@ -44,9 +44,9 @@ export const revalidate = 43200; // 12 hours (in seconds)
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.melvinjonesrepol.com"),
-  title: "Melvin Jones Repol - Full-Stack Developer, CTO & DevSecOps Engineer",
+  title: "Melvin Jones Repol - Software Engineer",
   description:
-    "Melvin Jones Repol is a Software Engineer, CTO, and DevSecOps specialist building practical, scalable software and taking ideas from architecture to production.",
+    "Since 2018, building practical, secure, and scalable digital products that turn ideas into reliable real-world solutions.",
   keywords: [
     "Software Engineer",
     "Software Developer",
@@ -70,9 +70,9 @@ export const metadata: Metadata = {
   creator: "Melvin Jones Repol",
   openGraph: {
     title:
-      "Melvin Jones Repol - Full-Stack Developer, CTO & DevSecOps Engineer",
+      "Melvin Jones Repol - Software Engineer",
     description:
-      "Melvin Jones Repol is a Software Engineer, CTO, and DevSecOps specialist building practical, scalable software and taking ideas from architecture to production.",
+      "Since 2018, building practical, secure, and scalable digital products that turn ideas into reliable real-world solutions.",
     url: "https://www.melvinjonesrepol.com",
     siteName: "Melvin Jones Repol",
     images: [
@@ -89,9 +89,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Melvin Jones Repol - Full-Stack Developer, CTO & DevSecOps Engineer",
+      "Melvin Jones Repol - Software Engineer",
     description:
-      "Melvin Jones Repol is a Software Engineer, CTO, and DevSecOps specialist building practical, scalable software and taking ideas from architecture to production.",
+      "Since 2018, building practical, secure, and scalable digital products that turn ideas into reliable real-world solutions.",
     images: [
       "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
     ],
@@ -148,19 +148,6 @@ export default async function RootLayout({
           <CookieBanner />
           <AOSWrapper />
           <NextTopLoader showSpinner={false} color="#22c55e" />
-
-          {/* Peter Cullen, the voice of Optimus Prime since 1984. */}
-          <div
-            className="fixed inset-0 -z-10 bg-cover bg-no-repeat -scale-x-100 opacity-5 grayscale"
-            style={{
-              backgroundImage: `url('/images/optimus-prime.png')`,
-              backgroundPosition: "left center",
-            }}
-          ></div>
-
-          <p className="fixed bottom-6 left-6 -z-10 text-sm text-gray-500 italic max-w-xs select-none">
-            &quot;Freedom is the right of all sentient beings.&quot;
-          </p>
 
           {/*<div className="background-gloss">
             <div className="gloss-circle circle1"></div>

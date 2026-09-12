@@ -1,6 +1,6 @@
 # Melvin Jones Repol
 
-> Software Engineer / Full-Stack Web Developer / DevOps Enthusiast based in Taytay, Rizal, Philippines. Focused on building scalable web applications, backend systems, automation tools, and developer-focused platforms.
+> Software Engineer based in Taytay, Rizal, Philippines. Focused on building scalable web applications, backend systems, automation tools, and developer-focused platforms.
 
 Core focus areas: full-stack web development, DevOps & cloud systems, backend architecture, automation & tooling, and AI integration in web systems.
 
@@ -19,11 +19,10 @@ Core skills: JavaScript/TypeScript, Node.js/Express, React/Next.js, Laravel, Doc
 ## Featured Projects
 
 - [DevPulse](https://devpulse.hallofcodes.org): Turn your daily coding activity into competitive, shareable leaderboards. Track productivity, motivate your team, and visualize real developer impact.
-- [Ulisha Store AI](https://ulishastore.com): AI e-commerce platform for small to medium businesses with scalable architecture.
 - [Canis Chatbot](https://www.melvinjonesrepol.com/canis-chatbot): TypeScript/Node.js/Prisma/Docker modular chatbot system for messaging platforms.
 - [Point of Sale](https://www.melvinjonesrepol.com/point-of-sale): Lightweight, offline-capable point-of-sale system built on JavaScript and backend APIs.
 - [Axleshift Freight Management](https://www.melvinjonesrepol.com/axleshift-freight-management): Full-stack logistics and freight management platform for tracking and operations.
-- [Webvium Browser](https://www.melvinjonesrepol.com/webvium-browser): Custom Android web browser with unique features and optimizations.
+- [Webvium Browser](https://www.webvium.com): Custom Android web browser with unique features and optimizations.
 
 +## Work Experience
 
@@ -34,12 +33,11 @@ Core skills: JavaScript/TypeScript, Node.js/Express, React/Next.js, Laravel, Doc
 ## Organizations
 
 - [Hall of Codes](https://www.hallofcodes.org/): Community bringing developers, maintainers, and builders together to mentor newcomers, review work, and turn ideas into sustainable open-source projects.
-- [The Webvium Project](https://webvium.melvinjonesrepol.com/): Ecosystem spanning Android browsers, website-to-app tools, and browser extensions, focused on performance, privacy, and simplicity.
-- [Ulisha Limited](https://www.ulishalimited.com/): Builds the digital backbone for market efficiency, connecting households to cost-effective products and empowering local businesses with proprietary tech.
+- [The Webvium Project](https://www.webvium.com/): Ecosystem spanning Android browsers, website-to-app tools, and browser extensions, focused on performance, privacy, and simplicity.
 
 ## Online Presence
 
-- [Facebook](https://www.facebook.com/melvinjonesrepol)
+- [Facebook](https://www.facebook.com/mrepol742)
 - [GitHub](https://github.com/mrepol742)
 - [LinkedIn](https://www.linkedin.com/in/mrepol742)
 - [X](https://x.com/mrepol742)

@@ -34,10 +34,9 @@ export async function generateMetadata({
   const { locale } = await params;
 
   return {
-    title:
-      "Melvin Jones Repol - Full-Stack Developer, CTO & DevSecOps Engineer",
+    title: "Melvin Jones Repol - Software Engineer",
     description:
-      "Melvin Jones Repol is a Software Engineer, CTO, and DevSecOps specialist building practical, scalable software and taking ideas from architecture to production.",
+      "Since 2018, building practical, secure, and scalable digital products that turn ideas into reliable real-world solutions.",
     keywords: [
       "Melvin Jones Repol",
       "software engineer",
@@ -48,10 +47,9 @@ export async function generateMetadata({
     ],
     alternates: getAlternates("", locale),
     openGraph: {
-      title:
-        "Melvin Jones Repol - Full-Stack Developer, CTO & DevSecOps Engineer",
+      title: "Melvin Jones Repol - Software Engineer",
       description:
-        "Melvin Jones Repol is a Software Engineer, CTO, and DevSecOps specialist building practical, scalable software and taking ideas from architecture to production.",
+        "Since 2018, building practical, secure, and scalable digital products that turn ideas into reliable real-world solutions.",
       url: "https://www.melvinjonesrepol.com",
       siteName: "Melvin Jones Repol",
       images: [
@@ -67,10 +65,9 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title:
-        "Melvin Jones Repol - Full-Stack Developer, CTO & DevSecOps Engineer",
+      title: "Melvin Jones Repol - Software Engineer",
       description:
-        "Melvin Jones Repol is a Software Engineer, CTO, and DevSecOps specialist building practical, scalable software and taking ideas from architecture to production.",
+        "Since 2018, building practical, secure, and scalable digital products that turn ideas into reliable real-world solutions.",
       images: [
         "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
       ],
@@ -96,11 +93,11 @@ export default async function Home({
     image:
       "https://www.melvinjonesrepol.com/images/melvin-jones-repol-black-circle.png",
     description:
-      "Melvin Jones Repol is a Software Engineer, CTO, and DevSecOps specialist building practical, scalable software and taking ideas from architecture to production.",
-    jobTitle: "Full-Stack Developer, CTO & DevSecOps Engineer",
+      "Since 2018, building practical, secure, and scalable digital products that turn ideas into reliable real-world solutions.",
+    jobTitle: ["Mid-Level Full-Stack Developer", "Custom Software Consultant"],
     mainEntityOfPage: "https://www.melvinjonesrepol.com",
     sameAs: [
-      "https://www.facebook.com/melvinjonesrepol",
+      "https://www.facebook.com/mrepol742",
       "https://linkedin.com/in/mrepol742",
       "https://github.com/mrepol742",
       "https://wakatime.com/@mrepol742",
@@ -116,13 +113,14 @@ export default async function Home({
       "DevOps",
       "DevSecOps",
       "Cloud Infrastructure",
+      "Custom Software Development",
     ],
-    worksFor: [
-      {
-        "@type": "Organization",
-        name: "UP-TO-DATE Webdesign",
-        url: "https://www.uptodatewebdesign.com",
-      },
+    worksFor: {
+      "@type": "Organization",
+      name: "UP-TO-DATE WebDesign",
+      url: "https://www.uptodatewebdesign.com",
+    },
+    founder: [
       {
         "@type": "Organization",
         name: "Hall of Codes",
@@ -134,12 +132,12 @@ export default async function Home({
       },
       {
         "@type": "Organization",
-        name: "Ulisha Limited",
-        url: "https://www.ulishalimited.com",
-      },
-      {
-        "@type": "Organization",
-        name: "Self-Employed",
+        name: "Webvium",
+        url: "https://www.webvium.com",
+        sameAs: [
+          "https://www.facebook.com/the.webvium.project",
+          "https://github.com/webvium",
+        ],
       },
     ],
   };
