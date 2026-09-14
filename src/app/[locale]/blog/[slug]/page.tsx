@@ -208,6 +208,7 @@ export default async function BlogPost({
           );
         })()}
         intro={data.excerpt ?? ""}
+        isBlog={true}
       />
 
       <section className="px-6 my-6 md:px-10">

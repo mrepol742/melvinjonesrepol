@@ -20,7 +20,7 @@ export default function BlogCard({
           {post.topics?.[0] ?? "general"}
         </span>
 
-        <p className="mb-6 line-clamp-4 leading-7 text-stone-700 dark:text-stone-300" title={post.excerpt}>
+        <p className="mb-6 line-clamp-4 leading-7" title={post.excerpt}>
           {post.excerpt}
         </p>
 

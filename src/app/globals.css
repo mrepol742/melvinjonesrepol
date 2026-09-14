@@ -101,47 +101,101 @@ h6 {
     color: var(--foreground);
 }
 
-/* Homepage v3: a single orange accent, hard edges, and no decorative gradients. */
-.homepage-shell { background: var(--background); }
-.homepage-rule { background-color: #ea580c; }
-.homepage-accent { color: #ea580c; }
-.homepage-kicker { color: #c2410c; font-size: .72rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
-.homepage-intro { color: #453329; }
-.homepage-portrait-frame { border: 1px solid color-mix(in srgb, var(--foreground) 22%, transparent); border-bottom: 10px solid #ea580c; }
-.homepage-band { background: color-mix(in srgb, #ea580c 7%, var(--background)); }
-.homepage-section { max-width: 80rem; margin: 0 auto; padding: 6rem 1.5rem; }
-.homepage-section-heading { max-width: 43rem; margin-bottom: 3rem; }
-.homepage-section-heading h2 { margin-top: .8rem; font-size: clamp(2.25rem, 5vw, 4.5rem); font-weight: 800; letter-spacing: -.055em; line-height: .94; }
-.homepage-section-heading p:not(.homepage-kicker) { margin-top: 1.25rem; color: color-mix(in srgb, var(--foreground) 70%, transparent); font-size: 1.05rem; line-height: 1.75; }
-.homepage-split-section { display: grid; gap: 4rem; }
-.homepage-button { display: inline-flex; align-items: center; min-height: 3.25rem; padding: .75rem 1.25rem; border: 1px solid var(--foreground); font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; transition: transform .2s ease, background-color .2s ease, color .2s ease; }
-.homepage-button:hover { transform: translate(3px, 3px); }
-.homepage-button-primary { background: #ea580c; border-color: #ea580c; color: #fff7ed; }
-.homepage-button-secondary:hover { background: var(--foreground); color: var(--background); }
-.homepage-text-link { display: inline-flex; gap: .5rem; margin-top: 1.75rem; border-bottom: 2px solid #ea580c; padding-bottom: .25rem; font-size: .9rem; font-weight: 700; }
-@media (min-width: 1024px) { .homepage-split-section { grid-template-columns: minmax(16rem, .65fr) minmax(0, 1.35fr); } }
-html.dark .homepage-intro { color: #ded4ca; }
-
-/*
- * This is a workaround to force light mode for Disqus comments
- * inside an iframe, which does not respect the parent theme.
- * It ensures that the Disqus comments section always appears in light mode,
- * regardless of the site's theme.
- *
- * https: //github.com/disqus/disqus-react/issues/153
- */
-#disqus_thread {
-    /* force light mode */
-    color-scheme: light !important;
-    filter: none;
-    background-color: black !important;
+.homepage-shell {
+    background: var(--background);
 }
-
-/* If you switch your site to dark mode, keep forcing “light” inside the iframe */
-[data-theme="dark"] #disqus_thread {
-    color-scheme: light !important;
-    color: white !important;
-    background-color: black !important;
+.homepage-rule {
+    background-color: #ea580c;
+}
+.homepage-accent {
+    color: #ea580c;
+}
+.homepage-kicker {
+    color: #c2410c;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+.homepage-intro {
+    color: #453329;
+}
+.homepage-portrait-frame {
+    border: 1px solid color-mix(in srgb, var(--foreground) 22%, transparent);
+    border-bottom: 10px solid #ea580c;
+}
+.homepage-band {
+    background: color-mix(in srgb, #ea580c 7%, var(--background));
+}
+.homepage-section {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 6rem 1.5rem;
+}
+.homepage-section-heading {
+    max-width: 43rem;
+    margin-bottom: 3rem;
+}
+.homepage-section-heading h2 {
+    margin-top: 0.8rem;
+    font-size: clamp(2.25rem, 5vw, 4.5rem);
+    font-weight: 800;
+    letter-spacing: -0.055em;
+    line-height: 0.94;
+}
+.homepage-section-heading p:not(.homepage-kicker) {
+    margin-top: 1.25rem;
+    color: color-mix(in srgb, var(--foreground) 70%, transparent);
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+.homepage-split-section {
+    display: grid;
+    gap: 4rem;
+}
+.homepage-button {
+    display: inline-flex;
+    align-items: center;
+    min-height: 3.25rem;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid var(--foreground);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+.homepage-button:hover {
+    transform: translate(3px, 3px);
+}
+.homepage-button-primary {
+    background: #ea580c;
+    border-color: #ea580c;
+    color: #fff7ed;
+}
+.homepage-button-secondary:hover {
+    background: var(--foreground);
+    color: var(--background);
+}
+.homepage-text-link {
+    display: inline-flex;
+    gap: 0.5rem;
+    margin-top: 1.75rem;
+    border-bottom: 2px solid #ea580c;
+    padding-bottom: 0.25rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+@media (min-width: 1024px) {
+    .homepage-split-section {
+        grid-template-columns: minmax(16rem, 0.65fr) minmax(0, 1.35fr);
+    }
+}
+html.dark .homepage-intro {
+    color: #ded4ca;
 }
 
 .grecaptcha-badge {

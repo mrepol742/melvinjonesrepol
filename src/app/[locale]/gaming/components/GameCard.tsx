@@ -33,7 +33,7 @@ export default function GameCard({ game }: { game: GameType }) {
           {isExplicit ? "Private" : game.name}
         </p>
 
-        <div className="mt-1 flex flex-wrap gap-3 text-sm text-stone-700 dark:text-stone-300">
+        <div className="mt-1 flex flex-wrap gap-3 text-sm">
           <div>
             <span className="font-semibold">Total:</span>{" "}
             {toHours(game.playtime_forever)}h
@@ -46,7 +46,7 @@ export default function GameCard({ game }: { game: GameType }) {
           )}
         </div>
 
-        <div className="mt-3 grid gap-1 border-l-2 border-orange-500 pl-3 text-xs text-stone-600 dark:text-stone-400">
+        <div className="mt-3 grid gap-1 border-l-2 border-orange-500 pl-3 text-xs">
           {game.playtime_mac_forever > 0 && (
             <div>
               <span className="font-semibold">Mac:</span>{" "}

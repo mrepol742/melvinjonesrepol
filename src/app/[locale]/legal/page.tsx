@@ -136,7 +136,9 @@ function DocumentList({
             <span className="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-stone-500 dark:text-stone-400">
               <span>{document.category}</span>
               <span>{document.version}</span>
-              <span className="text-lg text-orange-600 transition-transform group-hover:translate-x-1 dark:text-orange-400">→</span>
+              <span className="text-lg text-orange-600 transition-transform group-hover:translate-x-1 dark:text-orange-400">
+                →
+              </span>
             </span>
           </Link>
         </li>
@@ -173,9 +175,16 @@ export default async function Legal() {
               ["03", "Open-source licenses"],
               ["01", "Place to ask questions"],
             ].map(([value, label]) => (
-              <div key={label} className="border-b border-stone-300 px-5 py-6 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0 dark:border-stone-700">
-                <p className="text-2xl font-black tracking-tight text-orange-700 dark:text-orange-300">{value}</p>
-                <p className="mt-1 text-sm text-stone-600 dark:text-stone-400">{label}</p>
+              <div
+                key={label}
+                className="border-b border-stone-300 px-5 py-6 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0 dark:border-stone-700"
+              >
+                <p className="text-2xl font-black tracking-tight text-orange-700 dark:text-orange-300">
+                  {value}
+                </p>
+                <p className="mt-1 text-sm text-stone-600 dark:text-stone-400">
+                  {label}
+                </p>
               </div>
             ))}
           </div>
@@ -183,15 +192,19 @@ export default async function Legal() {
           <div className="mt-20 grid gap-10 lg:grid-cols-[minmax(14rem,.45fr)_minmax(0,1.55fr)]">
             <div className="border border-stone-300 bg-stone-100 p-6 dark:border-stone-700 dark:bg-stone-950 lg:sticky lg:top-28 lg:self-start md:p-8">
               <p className="homepage-kicker">Document directory</p>
-              <h2 className="mt-4 text-4xl font-black uppercase leading-[0.88] tracking-[-0.06em] md:text-5xl">
+              <h2 className="mt-4 text-4xl text-white uppercase leading-[0.88] tracking-[-0.06em] md:text-5xl">
                 The rules,
                 <br />
                 plainly <span className="homepage-accent">stated.</span>
               </h2>
               <p className="mt-6 max-w-sm text-sm leading-7 text-stone-600 dark:text-stone-400">
-                The documents that explain how this site, its services, and its code are used.
+                The documents that explain how this site, its services, and its
+                code are used.
               </p>
-              <Link href="/contact-me" className="mt-7 inline-flex border-b-2 border-orange-600 pb-1 text-xs font-bold uppercase tracking-widest hover:text-orange-700 dark:hover:text-orange-300">
+              <Link
+                href="/contact-me"
+                className="mt-7 text-white inline-flex border-b-2 border-orange-600 pb-1 text-xs font-bold uppercase tracking-widest hover:text-orange-700 dark:hover:text-orange-300"
+              >
                 Ask a question
               </Link>
             </div>
@@ -200,20 +213,31 @@ export default async function Legal() {
               <div className="mb-5 flex items-end justify-between gap-4">
                 <div>
                   <p className="homepage-kicker">Policies & agreements</p>
-                  <h3 className="mt-2 text-2xl font-bold tracking-tight">How we work and handle information.</h3>
+                  <h3 className="mt-2 text-2xl font-bold tracking-tight">
+                    How we work and handle information.
+                  </h3>
                 </div>
-                <span className="font-mono text-sm text-stone-500 dark:text-stone-400">{String(policies.length).padStart(2, "0")} docs</span>
+                <span className="font-mono text-sm text-stone-500 dark:text-stone-400">
+                  {String(policies.length).padStart(2, "0")} docs
+                </span>
               </div>
               <DocumentList documents={policies} />
 
               <div className="mb-5 mt-16 flex items-end justify-between gap-4">
                 <div>
                   <p className="homepage-kicker">Licenses</p>
-                  <h3 className="mt-2 text-2xl font-bold tracking-tight">The terms attached to open-source work.</h3>
+                  <h3 className="mt-2 text-2xl font-bold tracking-tight">
+                    The terms attached to open-source work.
+                  </h3>
                 </div>
-                <span className="font-mono text-sm text-stone-500 dark:text-stone-400">{String(licenses.length).padStart(2, "0")} docs</span>
+                <span className="font-mono text-sm text-stone-500 dark:text-stone-400">
+                  {String(licenses.length).padStart(2, "0")} docs
+                </span>
               </div>
-              <DocumentList documents={licenses} startIndex={policies.length + 1} />
+              <DocumentList
+                documents={licenses}
+                startIndex={policies.length + 1}
+              />
             </div>
           </div>
         </div>

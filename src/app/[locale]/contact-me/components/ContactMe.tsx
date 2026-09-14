@@ -70,7 +70,8 @@ export default function ContactMe() {
           body: JSON.stringify({ ...formData, token }),
         });
         const data = await response.json();
-        if (!response.ok) throw new Error(data?.error || "Something went wrong");
+        if (!response.ok)
+          throw new Error(data?.error || "Something went wrong");
 
         setFormData({ name: "", email: "", message: "", username: "" });
         return data;
@@ -92,9 +93,21 @@ export default function ContactMe() {
   };
 
   const contactRoutes = [
-    { name: "Email", detail: "me@melvinjonesrepol.com", href: "mailto:me@melvinjonesrepol.com" },
-    { name: "LinkedIn", detail: "Professional inquiries", href: "https://www.linkedin.com/in/mrepol742" },
-    { name: "WhatsApp", detail: "Quick questions", href: "https://wa.me/+639283559507" },
+    {
+      name: "Email",
+      detail: "me@melvinjonesrepol.com",
+      href: "mailto:me@melvinjonesrepol.com",
+    },
+    {
+      name: "LinkedIn",
+      detail: "Professional inquiries",
+      href: "https://www.linkedin.com/in/mrepol742",
+    },
+    {
+      name: "WhatsApp",
+      detail: "Quick questions",
+      href: "https://wa.me/+639283559507",
+    },
   ];
 
   return (
@@ -106,8 +119,10 @@ export default function ContactMe() {
           <br />
           something <span className="homepage-accent">useful.</span>
         </h2>
-        <p className="mt-6 max-w-md leading-7 text-stone-700 dark:text-stone-300">
-          Tell me what you are trying to solve, who it is for, and where the work stands today. A detailed brief helps me respond with useful next steps.
+        <p className="mt-6 max-w-md leading-7">
+          Tell me what you are trying to solve, who it is for, and where the
+          work stands today. A detailed brief helps me respond with useful next
+          steps.
         </p>
 
         <div className="mt-10 border-y border-stone-300 dark:border-stone-700">
@@ -120,10 +135,16 @@ export default function ContactMe() {
               className="group flex items-center justify-between border-b border-stone-300 py-4 last:border-b-0 hover:text-orange-700 dark:border-stone-700 dark:hover:text-orange-300"
             >
               <span>
-                <span className="block text-xs font-bold uppercase tracking-widest">{route.name}</span>
-                <span className="mt-1 block text-sm text-stone-600 dark:text-stone-400">{route.detail}</span>
+                <span className="block text-xs font-bold uppercase tracking-widest">
+                  {route.name}
+                </span>
+                <span className="mt-1 block text-sm text-stone-600 dark:text-stone-400">
+                  {route.detail}
+                </span>
               </span>
-              <span className="text-lg transition-transform group-hover:translate-x-1">→</span>
+              <span className="text-lg transition-transform group-hover:translate-x-1">
+                →
+              </span>
             </Link>
           ))}
         </div>
@@ -141,36 +162,91 @@ export default function ContactMe() {
       <div className="border border-orange-500/50 bg-stone-950 p-6 text-stone-100 shadow-[5px_5px_0_0_rgba(234,88,12,0.55)] md:p-10">
         <div className="border-b border-stone-700 pb-6">
           <p className="homepage-kicker">Project brief</p>
-          <h3 className="mt-2 text-2xl font-bold tracking-tight">Give me the useful version.</h3>
+          <h3 className="mt-2 text-2xl font-bold tracking-tight">
+            Give me the useful version.
+          </h3>
           <p className="mt-2 text-sm leading-6 text-stone-400">
-            Please include the problem, the goal, and any relevant timeline or constraints. Messages need 500 to 1,000 characters.
+            Please include the problem, the goal, and any relevant timeline or
+            constraints. Messages need 500 to 1,000 characters.
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="mt-8 space-y-6">
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
             <label>
-              <span className="mb-2 block text-xs font-bold uppercase tracking-widest text-stone-400">{t("form_name_label")}</span>
-              <Input icon={faUser} handleChange={handleChange} form={{ name: "name", value: formData.name, placeholder: t("form_name_placeholder"), required: true }} className="border-stone-700 bg-stone-900 text-stone-100" />
+              <span className="mb-2 block text-xs font-bold uppercase tracking-widest text-stone-400">
+                {t("form_name_label")}
+              </span>
+              <Input
+                icon={faUser}
+                handleChange={handleChange}
+                form={{
+                  name: "name",
+                  value: formData.name,
+                  placeholder: t("form_name_placeholder"),
+                  required: true,
+                }}
+                className="border-stone-700 bg-stone-900 text-stone-100"
+              />
             </label>
             <label>
-              <span className="mb-2 block text-xs font-bold uppercase tracking-widest text-stone-400">{t("form_email_label")}</span>
-              <Input icon={faAt} handleChange={handleChange} form={{ name: "email", value: formData.email, placeholder: t("form_email_placeholder"), required: true }} className="border-stone-700 bg-stone-900 text-stone-100" />
+              <span className="mb-2 block text-xs font-bold uppercase tracking-widest text-stone-400">
+                {t("form_email_label")}
+              </span>
+              <Input
+                icon={faAt}
+                handleChange={handleChange}
+                form={{
+                  name: "email",
+                  value: formData.email,
+                  placeholder: t("form_email_placeholder"),
+                  required: true,
+                }}
+                className="border-stone-700 bg-stone-900 text-stone-100"
+              />
             </label>
           </div>
 
-          <div className="absolute left-[-9999px] top-[-9999px]" aria-hidden="true">
-            <p className="text-xs uppercase tracking-widest mb-2 opacity-50">{t("form_username_label")}</p>
-            <Input icon={faUser} handleChange={handleChange} form={{ name: "username", value: formData.username, placeholder: t("form_username_placeholder"), required: false }} />
+          <div
+            className="absolute left-[-9999px] top-[-9999px]"
+            aria-hidden="true"
+          >
+            <p className="text-xs uppercase tracking-widest mb-2 opacity-50">
+              {t("form_username_label")}
+            </p>
+            <Input
+              icon={faUser}
+              handleChange={handleChange}
+              form={{
+                name: "username",
+                value: formData.username,
+                placeholder: t("form_username_placeholder"),
+                required: false,
+              }}
+            />
           </div>
 
           <div>
             <div className="mb-2 flex items-center justify-between">
-              <span className="text-xs font-bold uppercase tracking-widest text-stone-400">{t("form_message_label")}</span>
-              <span className={`text-xs font-mono ${characterCount === 0 ? "text-stone-400" : isValidcharacterCount ? "text-orange-600 dark:text-orange-400" : "text-orange-700 dark:text-orange-300"}`}>{characterCount} / 1000</span>
+              <span className="text-xs font-bold uppercase tracking-widest text-stone-400">
+                {t("form_message_label")}
+              </span>
+              <span
+                className={`text-xs font-mono ${characterCount === 0 ? "text-stone-400" : isValidcharacterCount ? "text-orange-600 dark:text-orange-400" : "text-orange-700 dark:text-orange-300"}`}
+              >
+                {characterCount} / 1000
+              </span>
             </div>
             <div className="border border-stone-700 bg-stone-900 px-4 py-3 transition-all duration-200 focus-within:border-orange-500 focus-within:shadow-[3px_3px_0_0_rgba(234,88,12,0.35)]">
-              <textarea rows={9} name="message" value={formData.message} onChange={handleChange} required placeholder={t("form_message_placeholder")} className="w-full resize-none bg-transparent text-sm outline-none placeholder:opacity-40" />
+              <textarea
+                rows={9}
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                placeholder={t("form_message_placeholder")}
+                className="w-full resize-none bg-transparent text-sm outline-none placeholder:opacity-40"
+              />
             </div>
             <div className="mt-2 flex items-center justify-between gap-4">
               <p className="text-xs text-stone-400">
@@ -182,7 +258,10 @@ export default function ContactMe() {
               </p>
               <div className="flex gap-0.5" aria-hidden="true">
                 {Array.from({ length: 10 }).map((_, index) => (
-                  <span key={index} className={`h-1 w-4 ${characterCount >= (index + 1) * 100 ? "bg-orange-500" : "bg-stone-700"}`} />
+                  <span
+                    key={index}
+                    className={`h-1 w-4 ${characterCount >= (index + 1) * 100 ? "bg-orange-500" : "bg-stone-700"}`}
+                  />
                 ))}
               </div>
             </div>
@@ -190,9 +269,22 @@ export default function ContactMe() {
 
           <div className="border-t border-stone-700 pt-6">
             <p className="mb-4 text-xs leading-5 text-stone-400">
-              {t("form_privacy_prefix")} <Link href="/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="font-semibold text-orange-700 underline underline-offset-2 hover:text-orange-900 dark:text-orange-300 dark:hover:text-orange-200">{t("form_privacy_link")}</Link>.
+              {t("form_privacy_prefix")}{" "}
+              <Link
+                href="/legal/privacy-policy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-orange-700 underline underline-offset-2 hover:text-orange-900 dark:text-orange-300 dark:hover:text-orange-200"
+              >
+                {t("form_privacy_link")}
+              </Link>
+              .
             </p>
-            <Button type="submit" disabled={isSubmitting} className="w-full border border-orange-600 bg-orange-600 text-orange-50 before:bg-orange-700 after:bg-orange-700 disabled:cursor-not-allowed disabled:opacity-50">
+            <Button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full border border-orange-600 bg-orange-600 text-orange-50 before:bg-orange-700 after:bg-orange-700 disabled:cursor-not-allowed disabled:opacity-50"
+            >
               {isSubmitting ? t("toast_pending") : t("form_submit")}
             </Button>
           </div>

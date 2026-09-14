@@ -64,7 +64,7 @@ export default function ProjectCard({
           {link ? (
             <Link
               href={link}
-              className="relative mb-4 block h-48 w-full overflow-hidden rounded-md border border-orange-400/70 dark:border-orange-700"
+              className="relative mb-4 block h-48 w-full overflow-hidden rounded-md"
               aria-label={`View ${title}`}
             >
               <Image
@@ -75,7 +75,7 @@ export default function ProjectCard({
               />
             </Link>
           ) : (
-            <div className="relative mb-4 h-48 w-full overflow-hidden rounded-md border border-orange-400/70 dark:border-orange-700">
+            <div className="relative mb-4 h-48 w-full overflow-hidden rounded-md">
               <Image
                 src={cover ?? "/images/melvinjonesrepol.cover.png"}
                 alt={title}

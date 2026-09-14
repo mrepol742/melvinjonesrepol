@@ -83,7 +83,7 @@ export default function Footer({
 
   const socialLinks = [
     {
-      href: "https://facebook.com/melvinjonesrepol",
+      href: "https://facebook.com/mrepol742",
       icon: faFacebook,
       label: "Facebook",
     },

@@ -6,7 +6,7 @@ export async function CodeBlock({
 }: React.HTMLAttributes<HTMLElement>) {
   // Inline code
   if (!className) {
-    return <code className="bg-orange-100 px-1 py-0.5 text-orange-950 dark:bg-orange-500/15 dark:text-orange-200">{children}</code>;
+    return <code className="bg-orange-500/50 px-1 py-0.5 text-gray-950">{children}</code>;
   }
 
   const lang = className.match(/language-(\w+)/)?.[1] ?? "text";

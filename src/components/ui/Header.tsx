@@ -6,18 +6,18 @@ export default function Header({
   badge,
   title,
   intro,
-  kicker = "Software engineer · Since 2018",
   actions,
   caption,
+  isBlog,
 }: {
   imageUrl?: string;
   imageAlt?: string;
   badge?: React.ReactNode;
   title: React.ReactNode;
   intro: string;
-  kicker?: string;
   actions?: React.ReactNode;
   caption?: string;
+  isBlog?: boolean;
 }) {
   return (
     <section className="relative min-h-screen px-6 pb-14 pt-32 md:px-10 lg:px-16">
@@ -31,14 +31,21 @@ export default function Header({
       >
         <div className="pb-4 lg:pb-16">
           {badge && <div className="mb-6">{badge}</div>}
-          <p className="homepage-kicker">{kicker}</p>
-          <h1 className="mt-6 max-w-4xl text-[16vw] font-black uppercase leading-[0.78] tracking-[-0.08em] sm:text-8xl lg:text-[8.5rem] xl:text-[10rem]">
-            {title}
-          </h1>
+          {isBlog ? (
+            <h1 className="mt-6 max-w-4xl text-4xl font-black uppercase leading-[0.9] tracking-[-0.06em] sm:text-5xl lg:text-6xl xl:text-7xl">
+              {title}
+            </h1>
+          ) : (
+            <h1 className="mt-6 max-w-4xl text-[16vw] font-black uppercase leading-[0.78] tracking-[-0.08em] sm:text-8xl lg:text-[8.5rem] xl:text-[10rem]">
+              {title}
+            </h1>
+          )}
           <p className="homepage-intro mt-9 max-w-2xl text-lg leading-8 md:text-xl">
             {intro}
           </p>
-          {actions && <div className="mt-10 flex flex-wrap gap-3">{actions}</div>}
+          {actions && (
+            <div className="mt-10 flex flex-wrap gap-3">{actions}</div>
+          )}
         </div>
 
         {imageUrl && (
