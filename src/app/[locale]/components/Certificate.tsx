@@ -26,7 +26,7 @@ export default function CertificateSection() {
                   {certificate.link && (
                     <button
                       title="View Certificate"
-                      className="inline-flex items-center text-white bg-purple-500 hover:bg-purple-600 font-medium text-sm px-4 py-2 rounded-lg transition-all"
+                      className="inline-flex items-center text-white bg-orange-600 hover:bg-orange-700 font-medium text-sm px-4 py-2 rounded-md transition-all"
                     >
                       <FontAwesomeIcon
                         icon={faArrowRight}

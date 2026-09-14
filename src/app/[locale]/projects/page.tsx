@@ -64,7 +64,11 @@ export default async function Projects({
   const query = Array.isArray(sParams.q)
     ? sParams.q.join(", ")
     : sParams.q || "";
+  const type = Array.isArray(sParams.type) ? sParams.type[0] : sParams.type || "";
+  const featured = Array.isArray(sParams.featured)
+    ? sParams.featured[0]
+    : sParams.featured || "";
+  const technology = Array.isArray(sParams.tech) ? sParams.tech[0] : sParams.tech || "";
 
-
-  return <Project query={query} />;
+  return <Project query={query} type={type} featured={featured} technology={technology} />;
 }

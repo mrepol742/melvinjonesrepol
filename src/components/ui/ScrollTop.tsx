@@ -22,7 +22,7 @@ export default function ScrollTop() {
       onClick={scrollTop}
       aria-label="Go to top"
       className={`fixed right-4 top-1/2 transform -translate-y-1/2 z-50
-      bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-orange-500
+      border border-orange-500/60 bg-zinc-900 p-3 text-orange-400 shadow-[3px_3px_0_0_rgb(249_115_22)] hover:bg-orange-500 hover:text-stone-950
       transition-opacity duration-300 ${
         show ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}

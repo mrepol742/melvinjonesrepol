@@ -68,6 +68,19 @@ export const metadata: Metadata = {
     },
   },
   creator: "Melvin Jones Repol",
+  applicationName: "Melvin Jones Repol",
+  category: "technology",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     title:
       "Melvin Jones Repol - Software Engineer",
@@ -125,6 +138,7 @@ export default async function RootLayout({
 
   return (
     <html
+      lang="en"
       className={`${sourceCodePro.variable} ${mavenPro.variable} ${sora.variable}`}
       data-scroll-behavior="smooth"
       suppressHydrationWarning
@@ -147,7 +161,7 @@ export default async function RootLayout({
           {/* <MouseCodeTrail /> */}
           <CookieBanner />
           <AOSWrapper />
-          <NextTopLoader showSpinner={false} color="#22c55e" />
+          <NextTopLoader showSpinner={false} color="#ea580c" />
 
           {/*<div className="background-gloss">
             <div className="gloss-circle circle1"></div>

@@ -70,7 +70,7 @@ export default function AlgoliaSearch() {
     <div ref={containerRef} className="relative max-w-md mx-auto">
       <FontAwesomeIcon
         icon={faSearch}
-        className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+        className="absolute left-3 top-1/2 transform -translate-y-1/2 text-stone-400"
       />
 
       <input
@@ -80,24 +80,24 @@ export default function AlgoliaSearch() {
         onFocus={() => hits.length && setShowDropdown(true)}
         disabled={!consent?.functional}
         placeholder="Search anything..."
-        className="w-full pl-10 pr-10 py-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-gray-700 transition-all duration-300"
+        className="w-full rounded-md border border-stone-700 bg-stone-950 py-2 pl-10 pr-10 text-white focus:outline-none focus:ring-2 focus:ring-orange-500 transition-colors duration-300"
       />
 
       {query && (
         <FontAwesomeIcon
           icon={faX}
           onClick={() => setQuery("")}
-          className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 cursor-pointer"
+          className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-stone-400 hover:text-orange-300"
         />
       )}
 
       {showDropdown && hits.length > 0 && (
-        <div className="absolute left-0 right-0 mt-1 bg-gray-800 border rounded shadow-lg z-50 max-h-80 overflow-y-auto">
+        <div className="absolute left-0 right-0 z-50 mt-1 max-h-80 overflow-y-auto rounded-md border border-orange-500/40 bg-stone-950 shadow-[4px_4px_0_0_rgba(234,88,12,0.5)]">
           {hits.map((hit) => (
             <a
               key={hit.objectID}
               href={hit.url || "#"}
-              className="block px-4 py-2 hover:bg-gray-700 transition-all cursor-pointer"
+              className="block cursor-pointer px-4 py-2 hover:bg-orange-500/10 transition-colors"
             >
               <div
                 className="font-semibold text-white"
@@ -106,7 +106,7 @@ export default function AlgoliaSearch() {
                 }}
               />
               <div
-                className="text-sm text-gray-300"
+                className="text-sm text-stone-300"
                 dangerouslySetInnerHTML={{
                   __html:
                     hit._highlightResult?.description?.value || hit.description,

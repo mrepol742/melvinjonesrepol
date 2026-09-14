@@ -70,7 +70,7 @@ export default async function ContactMePage() {
           <>
             <span>{t("title_line1")}</span>
             <br />
-            <span className="opacity-40">{t("title_line2")}</span>
+            <span className="homepage-accent">{t("title_line2")}</span>
             <br />
             <span>{t("title_line3")}</span>
           </>

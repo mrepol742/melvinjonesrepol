@@ -135,7 +135,7 @@ export default async function Wakatime() {
           >
             <Card>
               <div className="flex items-center gap-3">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-cyan-500/10 text-sm font-semibold uppercase text-cyan-400">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-orange-500/10 text-sm font-semibold uppercase text-orange-600 dark:text-orange-400">
                   {agent.name.slice(0, 2)}
                 </span>
                 <div className="min-w-0">
@@ -151,7 +151,7 @@ export default async function Wakatime() {
                 </div>
                 <div className="h-1.5 w-full overflow-hidden rounded-full">
                   <div
-                    className="h-full rounded-full bg-cyan-500"
+                    className="h-full rounded-full bg-orange-600"
                     style={{
                       width: `${Math.min(
                         100,
@@ -202,7 +202,7 @@ export default async function Wakatime() {
                 </div>
                 <div className="h-1.5 w-full overflow-hidden rounded-full">
                   <div
-                    className="h-full rounded-full bg-cyan-500"
+                    className="h-full rounded-full bg-orange-600"
                     style={{ width: formatPct(lang.percent) }}
                   />
                 </div>

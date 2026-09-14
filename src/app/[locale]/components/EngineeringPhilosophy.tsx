@@ -104,7 +104,7 @@ export default async function EngineeringPhilosophySection() {
                 <ul className="mt-4 space-y-2 text-sm">
                   {item.points.map((point) => (
                     <li key={point} className="flex gap-3">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-green-400" />
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-500" />
                       <span>{point}</span>
                     </li>
                   ))}

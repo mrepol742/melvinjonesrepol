@@ -55,7 +55,7 @@ export default function Privacy() {
           <>
             Privacy
             <br />
-            <span className="opacity-40">policy</span>
+            <span className="homepage-accent">policy</span>
             <br />
             details.
           </>
@@ -65,7 +65,7 @@ export default function Privacy() {
 
       <section className="px-6 my-6 md:px-10">
         <div className="max-w-5xl mx-auto">
-          <div className="rp-8 md:p-10 space-y-8">
+          <div className="border border-stone-300 bg-stone-50 p-6 leading-7 shadow-[3px_3px_0_0_rgba(120,113,108,0.14)] md:p-10 dark:border-white/15 dark:bg-white/[0.03] dark:shadow-none space-y-8">
             <div>
               <p className="text-xs uppercase tracking-widest opacity-50 mb-1">
                 Last Updated
@@ -405,7 +405,7 @@ export default function Privacy() {
                     href="https://policies.google.com/privacy"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline text-blue-400"
+                    className="underline text-orange-600 dark:text-orange-400"
                   >
                     Google Privacy Policy
                   </a>
@@ -415,7 +415,7 @@ export default function Privacy() {
                     href="https://adssettings.google.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline text-blue-400"
+                    className="underline text-orange-600 dark:text-orange-400"
                   >
                     Google Ad Personalization Settings
                   </a>
@@ -425,7 +425,7 @@ export default function Privacy() {
                     href="https://vercel.com/legal/privacy-policy"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline text-blue-400"
+                    className="underline text-orange-600 dark:text-orange-400"
                   >
                     Vercel Privacy Policy
                   </a>
@@ -435,7 +435,7 @@ export default function Privacy() {
                     href="https://www.algolia.com/policies/privacy/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline text-blue-400"
+                    className="underline text-orange-600 dark:text-orange-400"
                   >
                     Algolia Privacy Policy
                   </a>
@@ -445,7 +445,7 @@ export default function Privacy() {
                     href="https://legal.trustpilot.com/privacy-policy"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline text-blue-400"
+                    className="underline text-orange-600 dark:text-orange-400"
                   >
                     Trustpilot Privacy Policy
                   </a>
@@ -455,7 +455,7 @@ export default function Privacy() {
                     href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline text-blue-400"
+                    className="underline text-orange-600 dark:text-orange-400"
                   >
                     GitHub Privacy Statement
                   </a>
@@ -465,7 +465,7 @@ export default function Privacy() {
                     href="https://privacy.microsoft.com/en-us/privacystatement"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline text-blue-400"
+                    className="underline text-orange-600 dark:text-orange-400"
                   >
                     Microsoft Privacy Statement (Bing)
                   </a>

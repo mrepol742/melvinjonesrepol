@@ -45,7 +45,7 @@ export default function DevToolsDetector() {
         devtoolsOpen ? "block" : "hidden"
       }`}
     >
-      <div className="mx-auto max-w-4xl rounded-2xl border bg-gray-900 text-white backdrop-blur p-4 md:p-5 shadow-xl">
+      <div className="mx-auto max-w-4xl rounded-md border border-orange-500/40 bg-stone-950 text-white p-4 md:p-5 shadow-[4px_4px_0_0_rgba(234,88,12,0.5)]">
         <p className="text-sm leading-relaxed">{t("description")}</p>
       </div>
     </div>

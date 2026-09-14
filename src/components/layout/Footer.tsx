@@ -60,7 +60,7 @@ export default function Footer({
     { href: "/axleshift-freight-management", label: t("footer_afm") },
     { href: "/point-of-sale", label: t("footer_pos") },
     { href: "https://ulishastore.com", label: t("footer_usl") },
-    { href: "/canis-chatbot", label: t("footer_canis_chatbot") },
+    { href: "/canis-agent", label: t("footer_canis_chatbot") },
     {
       href: "https://www.hallofcodes.org",
       label: t("footer_hoc"),
@@ -106,25 +106,25 @@ export default function Footer({
   ];
 
   const linkClass =
-    "text-sm text-zinc-400 hover:text-zinc-100 transition-colors duration-150";
+    "text-sm text-zinc-400 hover:text-orange-300 transition-colors duration-150";
 
   return (
     <footer
-      className="bg-gray-900 text-white py-10 border-t border-gray-800 rounded-xl"
+      className="bg-stone-950 text-white py-10 border-t-4 border-orange-600 rounded-none"
       data-aos="fade-up"
     >
       <nav aria-label="Footer Navigation" className="container mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-10">
           {/* Brand */}
           <div className="sm:col-span-2 md:col-span-1">
-            <span className="text-xl font-bold bg-gradient-to-tr from-violet-500 via-yellow-300 to-green-400 bg-clip-text text-transparent animate-gradient-shift">
+            <span className="text-xl font-bold text-orange-400">
               Melvin Jones Repol
             </span>
 
             <div className="flex items-center gap-2 text-xs text-zinc-400 leading-relaxed max-w-52">
               <span className="relative flex h-1.5 w-1.5 me-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-green-500" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-orange-600" />
               </span>
               <div className="flex flex-col">
                 <span className="text-zinc-400">Full Stack Developer</span>
@@ -143,7 +143,7 @@ export default function Footer({
                   href={href}
                   target="_blank"
                   aria-label={label}
-                  className="flex items-center justify-center p-2 rounded-full border border-zinc-800 text-zinc-400 hover:border-zinc-600 hover:text-zinc-100 hover:bg-white/5 transition-all duration-200"
+                  className="flex items-center justify-center p-2 rounded-full border border-zinc-800 text-zinc-400 hover:border-orange-500 hover:text-orange-300 hover:bg-orange-500/10 transition-all duration-200"
                 >
                   <FontAwesomeIcon icon={icon} className="text-sm" />
                 </Link>
@@ -244,7 +244,7 @@ export default function Footer({
               <select
                 value={locale}
                 onChange={(e) => handleLocaleChange(e.target.value)}
-                className="w-full appearance-none rounded-lg border border-gray-700 bg-gray-800/60 px-3 py-2 text-xs text-gray-300 focus:outline-none focus:ring-1 focus:ring-indigo-500/50 focus:border-indigo-500/50 transition-colors"
+                className="w-full appearance-none rounded-md border border-stone-700 bg-stone-900 px-3 py-2 text-xs text-stone-300 focus:outline-none focus:ring-1 focus:ring-orange-500 focus:border-orange-500 transition-colors"
                 aria-label="Select language"
               >
                 {navLanguages.map((lang) => (
@@ -275,7 +275,7 @@ export default function Footer({
             <Link
               href="/uptime"
               target="_blank"
-              className="hover:text-zinc-300 transition-colors"
+              className="hover:text-orange-300 transition-colors"
             >
               Uptime
             </Link>
@@ -285,7 +285,7 @@ export default function Footer({
             <Link
               href="/legal"
               target="_blank"
-              className="hover:text-zinc-300 transition-colors"
+              className="hover:text-orange-300 transition-colors"
             >
               Legal
             </Link>
@@ -295,7 +295,7 @@ export default function Footer({
             <Link
               href="https://github.com/mrepol742/melvinjonesrepol"
               target="_blank"
-              className="hover:text-zinc-300 transition-colors"
+              className="hover:text-orange-300 transition-colors"
             >
               {t("footer_open_source")}
             </Link>

@@ -15,12 +15,12 @@ export default function WorkExperienceCard({
     <Link href={exp.cert || "#"}>
       <Card className="group">
         <div className="flex justify-end mb-5">
-          <span className="text-xs font-mono">{exp.date}</span>
+          <span className="border-l-2 border-orange-500 pl-2 text-xs font-mono text-stone-600 dark:text-stone-400">{exp.date}</span>
         </div>
 
         <p className="mb-2 text-xl font-bold line-clamp-2">{exp.title}</p>
 
-        <span className="inline-flex capitalize text-xs mb-3">
+        <span className="mb-3 inline-flex border-b border-orange-400 pb-1 text-xs capitalize text-stone-600 dark:text-stone-400">
           {exp.company}
         </span>
 
@@ -31,7 +31,7 @@ export default function WorkExperienceCard({
         <div className="flex justify-end items-center gap-4">
           <button
             title="View certificate"
-            className="inline-flex items-center text-white bg-purple-500 hover:bg-purple-600 font-medium text-sm px-4 py-2 rounded-lg transition-all"
+            className="inline-flex items-center rounded-sm bg-orange-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-orange-700"
           >
             <FontAwesomeIcon
               icon={faArrowRight}

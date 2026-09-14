@@ -17,8 +17,8 @@ export const STATIC_ROUTES = [
   "/canis-agent",
   "/axleshift-freight-management",
   "/point-of-sale",
-  "/floating-console-extension",
-  "/teams",
+  "/orion-chatbot",
+  "/blog",
   "/certificates",
   "/work-experience",
   "/contact-me",
@@ -40,7 +40,6 @@ export function getLocalizedStaticUrls(locale: string) {
 
   return STATIC_ROUTES.map((route) => ({
     url: `${BASE_URL}${prefix}${route}`,
-    lastModified: new Date(),
     changeFrequency: "weekly" as const,
     priority: route === "" ? 1 : 0.7,
   }));

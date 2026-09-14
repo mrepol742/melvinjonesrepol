@@ -105,7 +105,7 @@ export default async function WorkExperiencePage() {
           <>
             Work
             <br />
-            <span className="opacity-40">experience</span>
+            <span className="homepage-accent">experience</span>
             <br />& roles.
           </>
         }
@@ -115,7 +115,7 @@ export default async function WorkExperiencePage() {
       <section className="px-6 my-6 md:px-10">
         <div className="relative">
           {/* Spine */}
-          <div className="absolute left-3 md:left-1/2 top-0 bottom-0 w-px bg-zinc-800 md:-translate-x-1/2" />
+          <div className="absolute bottom-0 left-3 top-0 w-px bg-orange-300 dark:bg-orange-900 md:left-1/2 md:-translate-x-1/2" />
 
           <div className="flex flex-col gap-10">
             {experiences.map((exp, index) => {
@@ -132,7 +132,7 @@ export default async function WorkExperiencePage() {
                     <div className="w-1/2 flex justify-end pr-8">
                       {isLeft && (
                         <div className="relative w-full max-w-lg">
-                          <div className="absolute top-7 -right-8 w-8 h-px bg-zinc-700" />
+                          <div className="absolute -right-8 top-7 h-px w-8 bg-orange-300 dark:bg-orange-900" />
                           <WorkExperienceCard
                             exp={exp}
                             viewLabel={t("view_certificate")}
@@ -143,14 +143,14 @@ export default async function WorkExperiencePage() {
 
                     {/* Dot */}
                     <div className="flex-shrink-0 z-10 mt-6 -mx-2">
-                      <div className="w-4 h-4 rounded-full ring-4 ring-black bg-zinc-600" />
+                      <div className="h-4 w-4 rounded-full bg-orange-500 ring-4 ring-[#f5f0e8] dark:ring-[#15130f]" />
                     </div>
 
                     {/* Right half */}
                     <div className="w-1/2 pl-8">
                       {!isLeft && (
                         <div className="relative w-full max-w-lg">
-                          <div className="absolute top-7 -left-8 w-8 h-px bg-zinc-700" />
+                          <div className="absolute -left-8 top-7 h-px w-8 bg-orange-300 dark:bg-orange-900" />
                           <WorkExperienceCard
                             exp={exp}
                             viewLabel={t("view_certificate")}
@@ -163,7 +163,7 @@ export default async function WorkExperiencePage() {
                   {/* Mobile: single column */}
                   <div className="flex md:hidden items-start gap-5">
                     <div className="flex-shrink-0 z-10 mt-7">
-                      <div className="w-3 h-3 rounded-full ring-4 ring-black bg-zinc-600" />
+                      <div className="h-3 w-3 rounded-full bg-orange-500 ring-4 ring-[#f5f0e8] dark:ring-[#15130f]" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <WorkExperienceCard

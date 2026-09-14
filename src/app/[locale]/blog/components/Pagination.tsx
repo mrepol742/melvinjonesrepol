@@ -34,10 +34,10 @@ export default function Pagination({
       <Link
         href={pageHref(currentPage - 1)}
         aria-disabled={currentPage === 1}
-        className={`flex items-center gap-1.5 rounded-2xl border px-4 py-2 text-sm font-medium transition-all duration-200 ${
+        className={`flex items-center gap-1.5 border px-4 py-2 text-sm font-bold transition-all duration-200 ${
           currentPage === 1
-            ? "pointer-events-none border-white/5 text-zinc-600"
-            : "border-white/10 bg-white/[0.03] text-zinc-400 hover:border-white/20 hover:bg-white/[0.05] hover:text-zinc-200"
+            ? "pointer-events-none border-stone-200 text-stone-400 dark:border-white/10 dark:text-stone-600"
+            : "border-stone-300 bg-stone-50 text-stone-700 hover:border-orange-600 hover:text-orange-700 dark:border-white/15 dark:bg-white/[0.03] dark:text-stone-300 dark:hover:border-orange-400 dark:hover:text-orange-300"
         }`}
       >
         ← Prev
@@ -47,7 +47,7 @@ export default function Pagination({
         p === "..." ? (
           <span
             key={`ellipsis-${i}`}
-            className="flex h-10 w-10 items-center justify-center text-sm text-zinc-600 select-none"
+            className="flex h-10 w-10 items-center justify-center text-sm text-stone-400 dark:text-stone-600 select-none"
           >
             …
           </span>
@@ -56,10 +56,10 @@ export default function Pagination({
             key={p}
             href={pageHref(p)}
             aria-current={p === currentPage ? "page" : undefined}
-            className={`flex h-10 w-10 items-center justify-center rounded-2xl border text-sm font-medium transition-all duration-200 ${
+            className={`flex h-10 w-10 items-center justify-center border text-sm font-bold transition-all duration-200 ${
               p === currentPage
-                ? "border-orange-500/40 bg-orange-500/10 text-orange-400"
-                : "border-white/10 bg-white/[0.03] text-zinc-400 hover:border-white/20 hover:bg-white/[0.05] hover:text-zinc-200"
+                ? "border-orange-600 bg-orange-600 text-orange-50"
+                : "border-stone-300 bg-stone-50 text-stone-700 hover:border-orange-600 hover:text-orange-700 dark:border-white/15 dark:bg-white/[0.03] dark:text-stone-300 dark:hover:border-orange-400 dark:hover:text-orange-300"
             }`}
           >
             {p}
@@ -70,10 +70,10 @@ export default function Pagination({
       <Link
         href={pageHref(currentPage + 1)}
         aria-disabled={currentPage === totalPages}
-        className={`flex items-center gap-1.5 rounded-2xl border px-4 py-2 text-sm font-medium transition-all duration-200 ${
+        className={`flex items-center gap-1.5 border px-4 py-2 text-sm font-bold transition-all duration-200 ${
           currentPage === totalPages
-            ? "pointer-events-none border-white/5 text-zinc-600"
-            : "border-white/10 bg-white/[0.03] text-zinc-400 hover:border-white/20 hover:bg-white/[0.05] hover:text-zinc-200"
+            ? "pointer-events-none border-stone-200 text-stone-400 dark:border-white/10 dark:text-stone-600"
+            : "border-stone-300 bg-stone-50 text-stone-700 hover:border-orange-600 hover:text-orange-700 dark:border-white/15 dark:bg-white/[0.03] dark:text-stone-300 dark:hover:border-orange-400 dark:hover:text-orange-300"
         }`}
       >
         Next →

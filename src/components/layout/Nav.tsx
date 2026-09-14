@@ -141,7 +141,7 @@ export default function Nav() {
 
   const mobileMenuItems = navItems.filter((item) => item.mobileMenu);
 
-  const baseLinkClass = "group flex items-center hover:text-orange-500";
+  const baseLinkClass = "group flex items-center hover:text-orange-300 transition-colors duration-200";
 
   const hoverLabelClass =
     "ml-1 overflow-hidden max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-200 whitespace-nowrap";
@@ -168,7 +168,7 @@ export default function Nav() {
   return (
     <>
       <nav
-        className={`rounded-full fixed z-50 mt-5 top-0 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white p-3 shadow-lg hover:shadow-xl transition-all duration-300 ${
+        className={`fixed z-50 mt-5 top-0 left-1/2 -translate-x-1/2 rounded-md border border-orange-500/40 bg-stone-950/95 p-3 text-white shadow-[4px_4px_0_0_rgba(234,88,12,0.65)] backdrop-blur-sm transition-all duration-300 hover:shadow-[6px_6px_0_0_rgba(234,88,12,0.8)] ${
           show ? "translate-y-0" : "-translate-y-full"
         }`}
         aria-label="Main Navigation"
@@ -199,7 +199,7 @@ export default function Nav() {
             {navItems.map(renderMainItem)}
 
             {showDesktopContact ? (
-              <li className="bg-gray-700 hover:bg-orange-400 transition-all text-white rounded-full px-2 py-1">
+              <li className="bg-orange-600 hover:bg-orange-500 transition-colors text-white rounded-md px-2 py-1">
                 <Link
                   href="/contact-me"
                   className="flex items-center whitespace-nowrap text-xs"
@@ -224,7 +224,7 @@ export default function Nav() {
 
             <li
               onClick={toggleTheme}
-              className="hidden md:flex items-center bg-gray-700 hover:bg-orange-400 transition-all text-white rounded-full px-2 py-1"
+              className="hidden md:flex items-center border border-white/15 bg-white/5 hover:bg-orange-600 transition-colors text-white rounded-md px-2 py-1"
               title={t("nav_toggle_theme")}
             >
               <button className="text-xs">
@@ -284,7 +284,7 @@ export default function Nav() {
         />
 
         <aside
-          className={`absolute top-0 right-0 h-full w-[82%] max-w-sm bg-gray-800 border-l border-white/10 shadow-2xl transition-transform duration-300 ease-out flex flex-col ${
+          className={`absolute top-0 right-0 h-full w-[82%] max-w-sm bg-stone-950 border-l-2 border-orange-600 shadow-2xl transition-transform duration-300 ease-out flex flex-col ${
             isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
@@ -304,7 +304,7 @@ export default function Nav() {
                     Melvin Jones Repol
                   </p>
 
-                  <p className="text-sm text-gray-400 truncate">
+                  <p className="text-sm text-stone-400 truncate">
                     support@melvinjonesrepol.com
                   </p>
                 </div>
@@ -327,7 +327,7 @@ export default function Nav() {
 
           <div className="flex-1 overflow-y-auto p-4">
             <div className="mb-6">
-              <p className="px-3 mb-2 text-xs font-semibold uppercase tracking-wider text-gray-400">
+              <p className="px-3 mb-2 text-xs font-semibold uppercase tracking-wider text-orange-300/70">
                 {t("nav_main_sections")}
               </p>
 
@@ -348,11 +348,11 @@ export default function Nav() {
                           group flex items-center gap-3
                           rounded-xl
                           px-3 py-3
-                          hover:bg-gray-950/20
+                          hover:bg-orange-500/10
                           transition-all duration-200
                         "
                       >
-                        <div className="w-10 h-10 rounded-lg bg-gray-900 flex items-center justify-center text-white group-hover:text-orange-400 transition-colors">
+                        <div className="w-10 h-10 rounded-md bg-stone-900 flex items-center justify-center text-white group-hover:bg-orange-600 group-hover:text-white transition-colors">
                           <FontAwesomeIcon icon={item.icon} />
                         </div>
 
@@ -364,7 +364,7 @@ export default function Nav() {
             </div>
 
             <div>
-              <p className="px-3 mb-2 text-xs font-semibold uppercase tracking-wider text-gray-400">
+              <p className="px-3 mb-2 text-xs font-semibold uppercase tracking-wider text-orange-300/70">
                 {t("nav_other_sections")}
               </p>
 
@@ -378,11 +378,11 @@ export default function Nav() {
                         group flex items-center gap-3
                         rounded-xl
                         px-3 py-3
-                        hover:bg-slate-800/40
+                          hover:bg-orange-500/10
                         transition-all duration-200
                       "
                     >
-                      <div className="w-10 h-10 rounded-lg bg-gray-900 flex items-center justify-center text-white group-hover:text-orange-400 transition-colors">
+                        <div className="w-10 h-10 rounded-md bg-stone-900 flex items-center justify-center text-white group-hover:bg-orange-600 group-hover:text-white transition-colors">
                         <FontAwesomeIcon icon={item.icon} />
                       </div>
 
@@ -402,7 +402,7 @@ export default function Nav() {
               <select
                 value={locale}
                 onChange={(e) => handleLocaleChange(e.target.value)}
-                className="w-full appearance-none rounded-lg border border-gray-800 bg-gray-950/40 px-3 py-2 text-sm text-gray-200 focus:outline-none focus:ring-1 focus:ring-gray-500"
+                className="w-full appearance-none rounded-md border border-stone-700 bg-stone-900 px-3 py-2 text-sm text-stone-200 focus:outline-none focus:ring-1 focus:ring-orange-500"
                 aria-label="Select language"
               >
                 {navLanguages.map((lang) => (
@@ -411,7 +411,7 @@ export default function Nav() {
                   </option>
                 ))}
               </select>
-              <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-400">
+              <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs text-stone-400">
                 ▼
               </span>
             </div>
@@ -419,7 +419,7 @@ export default function Nav() {
             <Link
               href="/contact-me"
               onClick={handleMobileLinkClick}
-              className="flex items-center justify-center rounded-xl px-4 py-3 bg-gray-900 hover:bg-orange-400 text-white text-sm transition-all"
+              className="flex items-center justify-center rounded-md px-4 py-3 bg-orange-600 hover:bg-orange-500 text-white text-sm transition-colors"
             >
               {t("nav_contact_me")}
             </Link>

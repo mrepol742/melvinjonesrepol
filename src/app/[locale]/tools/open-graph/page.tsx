@@ -68,7 +68,7 @@ export default async function OpenGraph() {
           <>
             Open
             <br />
-            <span className="opacity-40">graph</span>
+            <span className="homepage-accent">graph</span>
             <br />
             checker.
           </>

@@ -23,11 +23,11 @@ export default function Input({
 }) {
   return (
     <div
-      className={`flex items-center gap-2 px-4 py-2 rounded-xl border border-zinc-800
-                 transition-all duration-300
-                 focus-within:shadow-md focus-within:-translate-y-[1px] ${className}`}
+      className={`flex items-center gap-2 border border-stone-300 bg-white px-4 py-3 text-stone-950
+                 transition-all duration-300 focus-within:border-orange-500 focus-within:shadow-[3px_3px_0_0_rgb(249_115_22)] focus-within:-translate-y-[1px]
+                 dark:border-orange-500/35 dark:bg-zinc-900 dark:text-stone-100 ${className}`}
     >
-      <span className="flex items-center justify-center shrink-0 opacity-70">
+      <span className="flex shrink-0 items-center justify-center text-orange-600 dark:text-orange-400">
         <FontAwesomeIcon icon={icon} size="sm" />
       </span>
       <input

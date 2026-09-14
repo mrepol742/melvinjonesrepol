@@ -54,7 +54,7 @@ export default function Terms() {
           <>
             Terms
             <br />
-            <span className="opacity-40">of</span>
+            <span className="homepage-accent">of</span>
             <br />
             service.
           </>
@@ -64,7 +64,7 @@ export default function Terms() {
 
       <section className="px-6 my-6 md:px-10">
         <div className="max-w-5xl mx-auto">
-          <div className="rp-8 md:p-10 space-y-8">
+          <div className="border border-stone-300 bg-stone-50 p-6 leading-7 shadow-[3px_3px_0_0_rgba(120,113,108,0.14)] md:p-10 dark:border-white/15 dark:bg-white/[0.03] dark:shadow-none space-y-8">
             <div>
               <p className="text-xs uppercase tracking-widest opacity-50 mb-1">
                 Last Updated

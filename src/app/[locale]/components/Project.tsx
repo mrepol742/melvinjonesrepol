@@ -41,7 +41,7 @@ export default function ProjectCarousel() {
                 key={project.title}
                 className="group snap-start flex-shrink-0 w-80 md:w-96 flex"
               >
-                <div className="relative w-full h-48 rounded-2xl overflow-hidden mb-4">
+                <div className="relative w-full h-48 rounded-md overflow-hidden mb-4">
                   <Image
                     src={project.cover || "/images/melvinjonesrepol.cover.png"}
                     alt={project.title}
@@ -101,7 +101,7 @@ export default function ProjectCarousel() {
                   {project.link && (
                     <Link
                       href={project.link}
-                      className="inline-flex items-center text-white bg-purple-500 hover:bg-purple-600 font-medium text-sm px-4 py-2 rounded-lg transition-all"
+                      className="inline-flex items-center text-white bg-orange-600 hover:bg-orange-700 font-medium text-sm px-4 py-2 rounded-md transition-all"
                     >
                       <FontAwesomeIcon
                         icon={faArrowRight}

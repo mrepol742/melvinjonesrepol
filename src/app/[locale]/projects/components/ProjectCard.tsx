@@ -42,11 +42,10 @@ export default function ProjectCard({
   const [showSummary, setShowSummary] = useState(false);
 
   return (
-    <div data-aos="fade-up" className="h-full flex">
-      <Link href={link || "#"}>
-        <Card className="group">
+    <div data-aos="fade-up" className="h-full">
+      <Card className="group h-full">
           {showSummary && (
-            <div className="absolute inset-0 z-50 p-6 flex flex-col backdrop-blur-xl bg-gray-900/95 text-white">
+            <div className="absolute inset-0 z-50 flex flex-col bg-stone-950 p-6 text-stone-100">
               <div className="flex justify-between items-center mb-4">
                 <h5 className="text-lg font-semibold flex items-center gap-2">
                   <FontAwesomeIcon icon={faWandMagicSparkles} />
@@ -62,14 +61,29 @@ export default function ProjectCard({
             </div>
           )}
 
-          <div className="relative w-full h-48 rounded-2xl overflow-hidden mb-4">
-            <Image
-              src={cover ?? "/images/melvinjonesrepol.cover.png"}
-              alt={title}
-              fill
-              className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
-            />
-          </div>
+          {link ? (
+            <Link
+              href={link}
+              className="relative mb-4 block h-48 w-full overflow-hidden rounded-md border border-orange-400/70 dark:border-orange-700"
+              aria-label={`View ${title}`}
+            >
+              <Image
+                src={cover ?? "/images/melvinjonesrepol.cover.png"}
+                alt={title}
+                fill
+                className="h-full w-full object-cover grayscale sepia-[.28] transition-transform duration-300 group-hover:scale-105"
+              />
+            </Link>
+          ) : (
+            <div className="relative mb-4 h-48 w-full overflow-hidden rounded-md border border-orange-400/70 dark:border-orange-700">
+              <Image
+                src={cover ?? "/images/melvinjonesrepol.cover.png"}
+                alt={title}
+                fill
+                className="h-full w-full object-cover grayscale sepia-[.28] transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+          )}
 
           <p className="mb-2 text-xl font-bold line-clamp-2">{title}</p>
 
@@ -79,7 +93,7 @@ export default function ProjectCard({
 
           <div className="flex flex-wrap gap-2 mb-6">
             {archived && (
-              <span className="px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-sm bg-gray-500/20">
+              <span className="rounded-sm border border-orange-300 bg-orange-100 px-3 py-1 text-xs font-semibold text-orange-950 dark:border-orange-900 dark:bg-orange-950/50 dark:text-orange-200">
                 Archived
               </span>
             )}
@@ -89,7 +103,7 @@ export default function ProjectCard({
               technology.map((tech, idx) => (
                 <span
                   key={idx}
-                  className="px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-sm bg-gray-500/20"
+                  className="rounded-sm border border-stone-300 bg-stone-100 px-3 py-1 text-xs font-semibold text-stone-700 dark:border-stone-700 dark:bg-stone-900 dark:text-stone-300"
                 >
                   {tech}
                 </span>
@@ -100,7 +114,7 @@ export default function ProjectCard({
             <button
               onClick={() => setShowSummary(true)}
               title="Summarize with AI"
-              className="mr-auto text-purple-500 hover:text-purple-600 transition-colors"
+              className="mr-auto text-orange-600 transition-colors hover:text-orange-700 dark:text-orange-400 dark:hover:text-orange-300"
             >
               <FontAwesomeIcon
                 icon={faWandMagicSparkles}
@@ -121,19 +135,19 @@ export default function ProjectCard({
             )}
 
             {link && (
-              <button
-                title="View Project"
-                className="inline-flex items-center text-white bg-purple-500 hover:bg-purple-600 font-medium text-sm px-4 py-2 rounded-lg transition-all"
+              <Link
+                href={link}
+                title={`View ${title}`}
+                className="inline-flex items-center rounded-sm bg-orange-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-orange-700"
               >
                 <FontAwesomeIcon
                   icon={faArrowRight}
                   className="transition-transform group-hover:translate-x-1"
                 />
-              </button>
+              </Link>
             )}
           </div>
-        </Card>
-      </Link>
+      </Card>
     </div>
   );
 }

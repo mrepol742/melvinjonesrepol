@@ -104,11 +104,11 @@ function TableOfContents({ headings }: { headings: Heading[] }) {
 
   return (
     <aside className="hidden xl:block w-64 sticky top-24 self-start">
-      <div className="flex items-center gap-4 text-sm font-semibold mb-3">
+        <div className="flex items-center gap-4 text-sm font-semibold mb-3">
         <h3 className="text-lg font-semibold whitespace-nowrap">
           On this page
         </h3>
-        <div className="h-px flex-1 bg-gray-400" />
+        <div className="h-px flex-1 bg-orange-600/50" />
       </div>
 
       <ul className="space-y-1 text-sm">
@@ -122,7 +122,7 @@ function TableOfContents({ headings }: { headings: Heading[] }) {
             <Link
               href={`#${h.id}`}
               title={h.text}
-              className=" hover:text-orange-500 transition-colors line-clamp-1 truncate"
+              className="hover:text-orange-700 dark:hover:text-orange-300 transition-colors line-clamp-1 truncate"
             >
               • {h.text}
             </Link>
@@ -132,7 +132,7 @@ function TableOfContents({ headings }: { headings: Heading[] }) {
 
       <div className="flex justify-center my-5">
         <div className="w-full max-w-6xl">
-          <div className="border-y border-white/10 bg-black/30 py-10">
+          <div className="border-y border-stone-300 bg-orange-500/[0.04] py-10 dark:border-white/15 dark:bg-orange-500/[0.05]">
             <div className="max-w-5xl mx-auto px-6">
               <p className="font-mono text-[10px] uppercase tracking-[0.3em] mb-4">
                 Advertisements
@@ -190,12 +190,12 @@ export default async function BlogPost({
           const line3 = words.slice(chunkSize * 2).join(" ");
 
           return (
-            <h1 className="text-[10vw] md:text-[7vw] lg:text-[5vw] font-black tracking-tighter leading-[0.85] mb-8">
+            <>
               {line1}
               {line2 && (
                 <>
                   <br />
-                  <span className="opacity-40">{line2}</span>
+                  <span className="homepage-accent">{line2}</span>
                 </>
               )}
               {line3 && (
@@ -204,7 +204,7 @@ export default async function BlogPost({
                   {line3}
                 </>
               )}
-            </h1>
+            </>
           );
         })()}
         intro={data.excerpt ?? ""}
@@ -214,9 +214,9 @@ export default async function BlogPost({
         <div className="flex justify-center">
           <div className="flex gap-10 w-full max-w-6xl">
             <article className="prose max-w-none flex-1 min-w-0 wrap-break-word">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 border-y border-stone-300 py-5 dark:border-white/15">
                 <div>
-                  <h2 className="mt-1 text-sm">Date</h2>
+                  <h2 className="mt-1 text-xs font-bold uppercase tracking-widest text-orange-700 dark:text-orange-300">Date</h2>
                   <p className="mt-1 text-sm">
                     {data.date && (
                       <>{new Date(data.date).toLocaleDateString()}</>
@@ -224,7 +224,7 @@ export default async function BlogPost({
                   </p>
                 </div>
                 <div>
-                  <h2 className="mt-1 text-sm">Reading Time</h2>
+                  <h2 className="mt-1 text-xs font-bold uppercase tracking-widest text-orange-700 dark:text-orange-300">Reading Time</h2>
                   <p className="mt-1 text-sm">
                     {estimatedReadingTime} min read
                   </p>
@@ -234,7 +234,7 @@ export default async function BlogPost({
                     {data.topics.map((topic: string, i: number) => (
                       <span
                         key={i}
-                        className="rounded-full border border-zinc-700 px-3 py-1 text-xs capitalize"
+                        className="border border-orange-600/30 bg-orange-500/10 px-3 py-1 text-xs font-semibold capitalize text-orange-700 dark:text-orange-300"
                       >
                         {topic}
                       </span>
@@ -256,7 +256,7 @@ export default async function BlogPost({
 
         <div className="flex justify-center my-5">
           <div className="w-full max-w-6xl">
-            <div className="border-y border-white/10 bg-black/30 py-10">
+            <div className="border-y border-stone-300 bg-orange-500/[0.04] py-10 dark:border-white/15 dark:bg-orange-500/[0.05]">
               <div className="max-w-5xl mx-auto px-6">
                 <p className="font-mono text-[10px] uppercase tracking-[0.3em] mb-4">
                   Advertisements
@@ -273,7 +273,7 @@ export default async function BlogPost({
               <h3 className="text-lg font-semibold whitespace-nowrap">
                 Articles you might like
               </h3>
-              <div className="h-px flex-1 bg-gray-400" />
+              <div className="h-px flex-1 bg-orange-600/50" />
             </div>
 
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
@@ -290,7 +290,7 @@ export default async function BlogPost({
 
         <div className="flex justify-center my-5">
           <div className="w-full max-w-6xl">
-            <div className="border-y border-white/10 bg-black/30 py-10">
+            <div className="border-y border-stone-300 bg-orange-500/[0.04] py-10 dark:border-white/15 dark:bg-orange-500/[0.05]">
               <div className="max-w-5xl mx-auto px-6">
                 <p className="font-mono text-[10px] uppercase tracking-[0.3em] mb-4">
                   Advertisements

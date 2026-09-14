@@ -20,9 +20,7 @@ export default function ContactMe() {
   const [grecaptchaLoaded, setGrecaptchaLoaded] = useState(false);
 
   const characterCount =
-    formData.message.trim() === ""
-      ? 0
-      : formData.message.trim().length;
+    formData.message.trim() === "" ? 0 : formData.message.trim().length;
   const isValidcharacterCount = characterCount >= 500 && characterCount <= 1000;
 
   useEffect(() => {
@@ -44,14 +42,13 @@ export default function ContactMe() {
   }, []);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
     if (isSubmitting) return;
 
     if (!grecaptchaLoaded || !window.grecaptcha?.enterprise) {
@@ -67,26 +64,15 @@ export default function ContactMe() {
           process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? "",
           { action: "contact_me" },
         );
-
         const response = await fetch("/api/contact", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ ...formData, token }),
         });
-
         const data = await response.json();
+        if (!response.ok) throw new Error(data?.error || "Something went wrong");
 
-        if (!response.ok) {
-          throw new Error(data?.error || "Something went wrong");
-        }
-
-        setFormData({
-          name: "",
-          email: "",
-          message: "",
-          username: "",
-        });
-
+        setFormData({ name: "", email: "", message: "", username: "" });
         return data;
       } finally {
         setIsSubmitting(false);
@@ -98,216 +84,119 @@ export default function ContactMe() {
       success: t("toast_success"),
       error: {
         render({ data }) {
-          const err = data as Error;
-          return err?.message || t("toast_error");
+          const error = data as Error;
+          return error?.message || t("toast_error");
         },
       },
     });
   };
 
+  const contactRoutes = [
+    { name: "Email", detail: "me@melvinjonesrepol.com", href: "mailto:me@melvinjonesrepol.com" },
+    { name: "LinkedIn", detail: "Professional inquiries", href: "https://www.linkedin.com/in/mrepol742" },
+    { name: "WhatsApp", detail: "Quick questions", href: "https://wa.me/+639283559507" },
+  ];
+
   return (
-    <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12">
-      <div className="lg:col-span-3">
-        <form onSubmit={handleSubmit} className="space-y-5">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <p className="text-xs uppercase tracking-widest mb-2 opacity-50">
-                {t("form_name_label")}
-              </p>
-              <Input
-                icon={faUser}
-                handleChange={handleChange}
-                form={{
-                  name: "name",
-                  value: formData.name,
-                  placeholder: t("form_name_placeholder"),
-                  required: true,
-                }}
-              />
-            </div>
-            <div>
-              <p className="text-xs uppercase tracking-widest mb-2 opacity-50">
-                {t("form_email_label")}
-              </p>
-              <Input
-                icon={faAt}
-                handleChange={handleChange}
-                form={{
-                  name: "email",
-                  value: formData.email,
-                  placeholder: t("form_email_placeholder"),
-                  required: true,
-                }}
-              />
-            </div>
+    <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[minmax(16rem,.7fr)_minmax(0,1.3fr)]">
+      <aside className="lg:sticky lg:top-28 lg:self-start">
+        <p className="homepage-kicker">Start with context</p>
+        <h2 className="mt-4 max-w-md text-4xl font-black uppercase leading-[0.88] tracking-[-0.06em] md:text-6xl">
+          Let&apos;s build
+          <br />
+          something <span className="homepage-accent">useful.</span>
+        </h2>
+        <p className="mt-6 max-w-md leading-7 text-stone-700 dark:text-stone-300">
+          Tell me what you are trying to solve, who it is for, and where the work stands today. A detailed brief helps me respond with useful next steps.
+        </p>
+
+        <div className="mt-10 border-y border-stone-300 dark:border-stone-700">
+          {contactRoutes.map((route) => (
+            <Link
+              key={route.name}
+              href={route.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-between border-b border-stone-300 py-4 last:border-b-0 hover:text-orange-700 dark:border-stone-700 dark:hover:text-orange-300"
+            >
+              <span>
+                <span className="block text-xs font-bold uppercase tracking-widest">{route.name}</span>
+                <span className="mt-1 block text-sm text-stone-600 dark:text-stone-400">{route.detail}</span>
+              </span>
+              <span className="text-lg transition-transform group-hover:translate-x-1">→</span>
+            </Link>
+          ))}
+        </div>
+
+        <Link
+          href="/legal/developer-client-agreement"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-8 inline-flex border-b-2 border-orange-600 pb-1 text-xs font-bold uppercase tracking-widest hover:text-orange-700 dark:hover:text-orange-300"
+        >
+          Read the developer agreement
+        </Link>
+      </aside>
+
+      <div className="border border-orange-500/50 bg-stone-950 p-6 text-stone-100 shadow-[5px_5px_0_0_rgba(234,88,12,0.55)] md:p-10">
+        <div className="border-b border-stone-700 pb-6">
+          <p className="homepage-kicker">Project brief</p>
+          <h3 className="mt-2 text-2xl font-bold tracking-tight">Give me the useful version.</h3>
+          <p className="mt-2 text-sm leading-6 text-stone-400">
+            Please include the problem, the goal, and any relevant timeline or constraints. Messages need 500 to 1,000 characters.
+          </p>
+        </div>
+
+        <form onSubmit={handleSubmit} className="mt-8 space-y-6">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+            <label>
+              <span className="mb-2 block text-xs font-bold uppercase tracking-widest text-stone-400">{t("form_name_label")}</span>
+              <Input icon={faUser} handleChange={handleChange} form={{ name: "name", value: formData.name, placeholder: t("form_name_placeholder"), required: true }} className="border-stone-700 bg-stone-900 text-stone-100" />
+            </label>
+            <label>
+              <span className="mb-2 block text-xs font-bold uppercase tracking-widest text-stone-400">{t("form_email_label")}</span>
+              <Input icon={faAt} handleChange={handleChange} form={{ name: "email", value: formData.email, placeholder: t("form_email_placeholder"), required: true }} className="border-stone-700 bg-stone-900 text-stone-100" />
+            </label>
           </div>
 
-          <div
-            className="absolute left-[-9999px] top-[-9999px]"
-            aria-hidden="true"
-          >
-            <p className="text-xs uppercase tracking-widest mb-2 opacity-50">
-              {t("form_username_label")}
-            </p>
-
-            <Input
-              icon={faUser}
-              handleChange={handleChange}
-              form={{
-                name: "username",
-                value: formData.username,
-                placeholder: t("form_username_placeholder"),
-                required: false,
-              }}
-            />
+          <div className="absolute left-[-9999px] top-[-9999px]" aria-hidden="true">
+            <p className="text-xs uppercase tracking-widest mb-2 opacity-50">{t("form_username_label")}</p>
+            <Input icon={faUser} handleChange={handleChange} form={{ name: "username", value: formData.username, placeholder: t("form_username_placeholder"), required: false }} />
           </div>
 
           <div>
-            <div className="flex items-center justify-between mb-2">
-              <p className="text-xs uppercase tracking-widest opacity-50">
-                {t("form_message_label")}
+            <div className="mb-2 flex items-center justify-between">
+              <span className="text-xs font-bold uppercase tracking-widest text-stone-400">{t("form_message_label")}</span>
+              <span className={`text-xs font-mono ${characterCount === 0 ? "text-stone-400" : isValidcharacterCount ? "text-orange-600 dark:text-orange-400" : "text-orange-700 dark:text-orange-300"}`}>{characterCount} / 1000</span>
+            </div>
+            <div className="border border-stone-700 bg-stone-900 px-4 py-3 transition-all duration-200 focus-within:border-orange-500 focus-within:shadow-[3px_3px_0_0_rgba(234,88,12,0.35)]">
+              <textarea rows={9} name="message" value={formData.message} onChange={handleChange} required placeholder={t("form_message_placeholder")} className="w-full resize-none bg-transparent text-sm outline-none placeholder:opacity-40" />
+            </div>
+            <div className="mt-2 flex items-center justify-between gap-4">
+              <p className="text-xs text-stone-400">
+                {characterCount > 0 && !isValidcharacterCount
+                  ? characterCount < 500
+                    ? `${500 - characterCount} more characters needed`
+                    : `${characterCount - 1000} characters over limit`
+                  : "A concise, detailed brief works best."}
               </p>
-              <span
-                className={`text-xs font-mono transition-colors ${
-                  characterCount === 0
-                    ? "opacity-30"
-                    : isValidcharacterCount
-                      ? "text-green-500"
-                      : characterCount > 1000
-                        ? "text-red-500"
-                        : "text-amber-500"
-                }`}
-              >
-                {characterCount} / 1000
-              </span>
-            </div>
-
-            <div className="rounded-xl border border-zinc-800 px-4 py-3 transition-all duration-200 focus-within:shadow-sm focus-within:-translate-y-px">
-              <textarea
-                rows={7}
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                placeholder={t("form_message_placeholder")}
-                className="w-full outline-none bg-transparent text-sm placeholder:opacity-40 resize-none"
-              />
-            </div>
-
-            <div className="mt-1.5 flex items-center justify-between">
-              {characterCount > 0 && !isValidcharacterCount ? (
-                <p className="text-xs text-amber-500">
-                  {characterCount < 500
-                    ? `${500 - characterCount} more character${500 - characterCount === 1 ? "" : "s"} needed`
-                    : `${characterCount - 1000} character${characterCount - 1000 === 1 ? "" : "s"} over limit`}
-                </p>
-              ) : (
-                <span />
-              )}
-              <div className="flex gap-0.5">
-                {Array.from({ length: 10 }).map((_, i) => {
-                  const threshold = (i + 1) * 100;
-                  const filled = characterCount >= threshold;
-                  const partial =
-                    !filled && characterCount > i * 100 && characterCount < threshold;
-                  return (
-                    <div
-                      key={i}
-                      className={`h-1 w-4 rounded-full transition-all duration-200 ${
-                        filled
-                          ? characterCount > 1000
-                            ? "bg-red-500"
-                            : "bg-green-500"
-                          : partial
-                            ? "bg-amber-400"
-                            : "opacity-10 border"
-                      }`}
-                    />
-                  );
-                })}
+              <div className="flex gap-0.5" aria-hidden="true">
+                {Array.from({ length: 10 }).map((_, index) => (
+                  <span key={index} className={`h-1 w-4 ${characterCount >= (index + 1) * 100 ? "bg-orange-500" : "bg-stone-700"}`} />
+                ))}
               </div>
             </div>
           </div>
 
-          <div className="pt-2">
-            <p className="text-xs opacity-50 mb-4">
-              {t("form_privacy_prefix")}{" "}
-              <Link
-                href="/legal/privacy-policy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline underline-offset-2 hover:opacity-80"
-              >
-                {t("form_privacy_link")}
-              </Link>
-              .
+          <div className="border-t border-stone-700 pt-6">
+            <p className="mb-4 text-xs leading-5 text-stone-400">
+              {t("form_privacy_prefix")} <Link href="/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="font-semibold text-orange-700 underline underline-offset-2 hover:text-orange-900 dark:text-orange-300 dark:hover:text-orange-200">{t("form_privacy_link")}</Link>.
             </p>
-
-            <Button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full bg-indigo-400 before:bg-indigo-600 after:bg-indigo-600 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
+            <Button type="submit" disabled={isSubmitting} className="w-full border border-orange-600 bg-orange-600 text-orange-50 before:bg-orange-700 after:bg-orange-700 disabled:cursor-not-allowed disabled:opacity-50">
               {isSubmitting ? t("toast_pending") : t("form_submit")}
             </Button>
           </div>
         </form>
-      </div>
-
-      <div className="lg:col-span-2 flex flex-col gap-4">
-        <div className="rounded-2xl border border-zinc-800 p-6">
-          <p className="text-xs uppercase tracking-widest mb-4 opacity-50">
-            {t("sidebar_reach_out")}
-          </p>
-          <div className="flex flex-col gap-3">
-            {[
-              { name: "WhatsApp", href: "https://wa.me/+639283559507" },
-              {
-                name: "Facebook",
-                href: "https://www.facebook.com/mrepol742",
-              },
-              { name: "Email", href: "mailto:me@melvinjonesrepol.com" },
-              {
-                name: "LinkedIn",
-                href: "https://www.linkedin.com/in/mrepol742",
-              },
-            ].map((item, index) => (
-              <>
-                {index !== 0 && <div className="h-px border-t opacity-20" />}
-
-                <Link
-                  key={index}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between group"
-                >
-                  <span className="text-sm font-medium">{item.name}</span>
-                  <span className="text-xs opacity-40 group-hover:opacity-70 transition-opacity">
-                    →
-                  </span>
-                </Link>
-              </>
-            ))}
-          </div>
-        </div>
-
-        <div className="rounded-2xl border border-zinc-800 p-6">
-          <p className="text-xs uppercase tracking-widest mb-4 opacity-50">
-            {t("sidebar_before_start")}
-          </p>
-          <Link
-            href="/legal/developer-client-agreement"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-between group"
-          >
-            <span className="text-sm font-medium">{t("sidebar_dca")}</span>
-            <span className="text-xs opacity-40 group-hover:opacity-70 transition-opacity">
-              →
-            </span>
-          </Link>
-        </div>
       </div>
     </div>
   );

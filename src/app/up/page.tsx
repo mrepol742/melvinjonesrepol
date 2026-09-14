@@ -2,11 +2,11 @@ export const dynamic = "force-static";
 
 export default function UpPage() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-white px-6 dark:bg-neutral-950">
+    <main className="flex min-h-screen items-center justify-center bg-stone-100 px-6 dark:bg-stone-950">
       <div className="text-center">
-        <div className="animate-pulse mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-950/40">
+        <div className="animate-pulse mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-md bg-orange-100 dark:bg-orange-950/40">
           <svg
-            className="h-8 w-8 text-emerald-600 dark:text-emerald-400"
+            className="h-8 w-8 text-orange-600 dark:text-orange-400"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -20,33 +20,33 @@ export default function UpPage() {
           </svg>
         </div>
 
-        <h1 className="text-3xl font-semibold tracking-tight text-neutral-900 dark:text-white">
+        <h1 className="text-3xl font-semibold tracking-tight text-stone-900 dark:text-white">
           Application Up
         </h1>
 
-        <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-400">
+        <p className="mt-3 text-sm text-stone-600 dark:text-stone-400">
           Everything is running normally.
         </p>
 
-        <div className="mt-8 rounded-lg border border-neutral-200 bg-neutral-50 p-4 text-left dark:border-neutral-800 dark:bg-neutral-900">
+        <div className="mt-8 rounded-md border border-stone-300 bg-stone-50 p-4 text-left dark:border-stone-800 dark:bg-stone-900">
           <dl className="space-y-2 text-sm">
             <div className="flex justify-between gap-8">
-              <dt className="text-neutral-500">Status</dt>
-              <dd className="font-medium text-emerald-600 dark:text-emerald-400 animate-pulse">
+              <dt className="text-stone-500">Status</dt>
+              <dd className="font-medium text-orange-600 dark:text-orange-400 animate-pulse">
                 UP
               </dd>
             </div>
 
             <div className="flex justify-between gap-8">
-              <dt className="text-neutral-500">Environment</dt>
-              <dd className="font-medium text-neutral-600 dark:text-neutral-400">
+              <dt className="text-stone-500">Environment</dt>
+              <dd className="font-medium text-stone-600 dark:text-stone-400">
                 {process.env.NODE_ENV}
               </dd>
             </div>
 
             <div className="flex justify-between gap-8">
-              <dt className="text-neutral-500">Timestamp</dt>
-              <dd className="font-mono text-neutral-600 dark:text-neutral-400">
+              <dt className="text-stone-500">Timestamp</dt>
+              <dd className="font-mono text-stone-600 dark:text-stone-400">
                 {new Date().toISOString()}
               </dd>
             </div>

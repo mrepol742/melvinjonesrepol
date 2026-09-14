@@ -20,11 +20,11 @@ export default function CertificateCard({
           {certificate.title}
         </p>
 
-        <div className="mb-3 flex flex-wrap gap-3">
-          <span className="text-nowrap capitalize text-xs">
+        <div className="mb-3 flex flex-wrap gap-3 text-stone-600 dark:text-stone-400">
+          <span className="text-nowrap border-l-2 border-orange-500 pl-2 text-xs capitalize">
             {certificate.instructor}
           </span>
-          <span className="text-nowrap capitalize text-xs">
+          <span className="text-nowrap text-xs capitalize">
             {certificate.date}
           </span>
         </div>
@@ -37,7 +37,7 @@ export default function CertificateCard({
           <div className="flex justify-end items-center gap-4">
             <button
               title="Read article"
-              className="inline-flex items-center text-white bg-purple-500 hover:bg-purple-600 font-medium text-sm px-4 py-2 rounded-lg transition-all"
+              className="inline-flex items-center rounded-sm bg-orange-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-orange-700"
             >
               <FontAwesomeIcon
                 icon={faArrowRight}

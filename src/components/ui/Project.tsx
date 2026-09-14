@@ -57,7 +57,7 @@ export default function Project({
               {line2 && (
                 <>
                   <br />
-                  <span className="text-zinc-600">{line2}</span>
+                  <span className="text-orange-600 dark:text-orange-400">{line2}</span>
                 </>
               )}
               {line3 && (
@@ -90,7 +90,7 @@ export default function Project({
                 <a
                   href={project.view_source_url}
                   target="_blank"
-                  className="group inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-medium transition hover:border-white/40"
+                  className="group inline-flex items-center gap-2 border border-stone-400 bg-stone-50 px-6 py-3 text-sm font-medium transition hover:border-orange-500 dark:border-orange-500/40 dark:bg-zinc-900"
                 >
                   View Source
                   <span className="transition-transform group-hover:translate-x-0.5">
@@ -102,7 +102,7 @@ export default function Project({
                 <a
                   href={project.download_url}
                   target="_blank"
-                  className="group inline-flex items-center gap-2 rounded-full bg-[#FFB020] px-6 py-3 text-sm font-semibold text-black transition hover:opacity-85"
+                  className="group inline-flex items-center gap-2 border border-orange-600 bg-orange-500 px-6 py-3 text-sm font-semibold text-stone-950 shadow-[3px_3px_0_0_rgb(67_20_7)] transition hover:translate-x-0.5 hover:translate-y-0.5"
                 >
                   Download
                   <span className="transition-transform group-hover:translate-x-0.5">
@@ -116,12 +116,12 @@ export default function Project({
       </section>
 
       {images.length > 0 && (
-        <section className="border-y border-white/10 bg-black/40 py-20">
+        <section className="border-y border-stone-300 bg-orange-50/50 py-20 dark:border-orange-500/25 dark:bg-zinc-900">
           <div className="px-6 md:px-10 mb-8 flex items-end justify-between max-w-6xl mx-auto">
             <h2 className="font-mono text-xs uppercase tracking-[0.3em]">
               Gallery / {String(images.length).padStart(2, "0")} frames
             </h2>
-            <p className="hidden sm:block text-xs text-zinc-600 font-mono">
+            <p className="hidden font-mono text-xs text-stone-500 dark:text-stone-400 sm:block">
               scroll →
             </p>
           </div>
@@ -130,7 +130,7 @@ export default function Project({
             {images.map((img, i) => (
               <div
                 key={i}
-                className="relative shrink-0 w-[80vw] sm:w-[420px] h-[280px] snap-start rounded-lg overflow-hidden border border-white/10 group"
+                className="group relative h-[280px] w-[80vw] shrink-0 snap-start overflow-hidden border border-stone-300 sm:w-[420px] dark:border-orange-500/25"
               >
                 <Image
                   src={img}
@@ -138,7 +138,7 @@ export default function Project({
                   fill
                   className="object-cover grayscale group-hover:grayscale-0 transition duration-500 group-hover:scale-105"
                 />
-                <span className="absolute bottom-3 left-3 font-mono text-xs text-white/70 bg-black/50 backdrop-blur px-2 py-1 rounded">
+                <span className="absolute bottom-3 left-3 bg-zinc-950 px-2 py-1 font-mono text-xs text-orange-200">
                   {String(i + 1).padStart(2, "0")} /{" "}
                   {String(images.length).padStart(2, "0")}
                 </span>
@@ -154,15 +154,15 @@ export default function Project({
             Feature Set
           </h2>
 
-          <div className="divide-y divide-white/10 border-t border-white/10">
+          <div className="divide-y divide-stone-300 border-t border-stone-300 dark:divide-orange-500/25 dark:border-orange-500/25">
             {project.features?.map((f, i) => (
               <div
                 key={i}
-                className="group grid grid-cols-[3rem_1fr] md:grid-cols-[4rem_1fr_1fr] gap-x-6 gap-y-2 py-8 transition-colors hover:bg-white/[0.03] px-4 -mx-4 rounded-lg"
+                className="group -mx-4 grid grid-cols-[3rem_1fr] gap-x-6 gap-y-2 px-4 py-8 transition-colors hover:bg-orange-50 dark:hover:bg-orange-500/5 md:grid-cols-[4rem_1fr_1fr]"
                 data-aos="fade-up"
                 data-aos-delay={Math.min(i * 40, 240)}
               >
-                <span className="font-mono text-sm text-zinc-600 group-hover:text-green-300 transition-colors">
+                <span className="font-mono text-sm text-stone-500 transition-colors group-hover:text-orange-600 dark:text-stone-400 dark:group-hover:text-orange-400">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="text-lg font-semibold">{f.title}</h3>
@@ -175,7 +175,7 @@ export default function Project({
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-black/30 py-10">
+      <section className="border-y border-stone-300 bg-orange-50/50 py-10 dark:border-orange-500/25 dark:bg-zinc-900">
         <div className="max-w-5xl mx-auto px-6">
           <p className="font-mono text-[10px] uppercase tracking-[0.3em] mb-4">
             Advertisements
@@ -190,21 +190,21 @@ export default function Project({
             Resources
           </h2>
 
-          <div className="rounded-xl border border-white/10 bg-black/40 overflow-hidden">
+          <div className="overflow-hidden border border-stone-300 bg-stone-50 dark:border-orange-500/25 dark:bg-zinc-900">
             {project.resources?.map((r, i) => (
               <Link
                 key={i}
                 href={r.url}
                 target="_blank"
-                className="group flex items-center justify-between gap-4 px-6 py-4 border-b border-white/10 last:border-b-0 transition-colors hover:bg-white/[0.04]"
+                className="group flex items-center justify-between gap-4 border-b border-stone-300 px-6 py-4 transition-colors last:border-b-0 hover:bg-orange-50 dark:border-orange-500/25 dark:hover:bg-orange-500/5"
               >
                 <span className="flex items-center gap-3 font-mono text-sm">
-                  <span className="text-[#7CFFB2]">$</span>
-                  <span className="text-zinc-300 group-hover:text-white transition-colors">
+                  <span className="text-orange-600 dark:text-orange-400">$</span>
+                  <span className="text-stone-700 transition-colors group-hover:text-stone-950 dark:text-stone-300 dark:group-hover:text-white">
                     open {r.title.toLowerCase().replace(/\s+/g, "-")}
                   </span>
                 </span>
-                <span className="text-zinc-600 group-hover:text-[#FFB020] transition-colors text-sm">
+                <span className="text-sm text-stone-500 transition-colors group-hover:text-orange-600 dark:text-stone-400 dark:group-hover:text-orange-400">
                   ↗
                 </span>
               </Link>
@@ -214,8 +214,8 @@ export default function Project({
       </section>
 
       {project.is_open_source && (
-        <section className="py-28 text-center border-t border-white/10">
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-zinc-500 mb-4">
+        <section className="border-t border-stone-300 py-28 text-center dark:border-orange-500/25">
+          <p className="mb-4 font-mono text-xs uppercase tracking-[0.3em] text-orange-600 dark:text-orange-400">
             Contribute
           </p>
           <h3 className="text-3xl font-bold mb-8">Clone it. Build on it.</h3>
@@ -223,14 +223,14 @@ export default function Project({
           <a
             href={project.view_source_url}
             target="_blank"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#FFB020] text-black font-semibold hover:scale-105 transition"
+            className="inline-flex items-center gap-2 border border-orange-600 bg-orange-500 px-8 py-4 font-semibold text-stone-950 shadow-[3px_3px_0_0_rgb(67_20_7)] transition hover:translate-x-0.5 hover:translate-y-0.5"
           >
             Get Started →
           </a>
         </section>
       )}
 
-      <section className="mb-5 border-y border-white/10 bg-black/30 py-10">
+      <section className="mb-5 border-y border-stone-300 bg-orange-50/50 py-10 dark:border-orange-500/25 dark:bg-zinc-900">
         <div className="max-w-5xl mx-auto px-6">
           <p className="font-mono text-[10px] uppercase tracking-[0.3em] mb-4">
             Advertisements

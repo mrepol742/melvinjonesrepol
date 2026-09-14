@@ -74,7 +74,7 @@ export default function SystemStatus({
           <>
             {t("title_line1")}
             <br />
-            <span className="opacity-40">{t("title_line2")}</span>
+            <span className="homepage-accent">{t("title_line2")}</span>
             <br />
             {t("title_line3")}
           </>
@@ -84,24 +84,24 @@ export default function SystemStatus({
 
       <section className="px-6 my-6 md:px-10">
         {/* Legend */}
-        <div className="flex flex-wrap gap-5 text-xs text-zinc-400 mb-8">
+        <div className="flex flex-wrap gap-5 border-y border-stone-300 py-4 text-xs text-stone-600 dark:border-white/15 dark:text-stone-300 mb-8">
           <div className="flex items-center gap-2">
-            <div className="h-3 w-3 rounded bg-emerald-500" />
+            <div className="h-3 w-3 bg-orange-600" />
             {t("legend_excellent")}
           </div>
 
           <div className="flex items-center gap-2">
-            <div className="h-3 w-3 rounded bg-sky-500" />
+            <div className="h-3 w-3 bg-orange-400" />
             {t("legend_good")}
           </div>
 
           <div className="flex items-center gap-2">
-            <div className="h-3 w-3 rounded bg-red-500" />
+            <div className="h-3 w-3 bg-orange-800" />
             {t("legend_poor")}
           </div>
 
           <div className="flex items-center gap-2">
-            <div className="h-3 w-3 rounded bg-zinc-700" />
+            <div className="h-3 w-3 bg-stone-300 dark:bg-white/15" />
             {t("legend_no_data")}
           </div>
         </div>
@@ -110,7 +110,7 @@ export default function SystemStatus({
         <div className="space-y-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
           {loading &&
             Array.from({ length: 4 }).map((_, i) => (
-              <div key={i} className="h-48 rounded-3xl animate-pulse" />
+              <div key={i} className="h-48 border border-stone-300 bg-stone-200 animate-pulse dark:border-white/15 dark:bg-white/[0.06]" />
             ))}
 
           {!loading &&

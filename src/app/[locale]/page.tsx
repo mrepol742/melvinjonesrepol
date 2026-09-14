@@ -1,28 +1,17 @@
-import Image from "next/image";
 import Link from "next/link";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faCode as faCodeSolid } from "@fortawesome/free-solid-svg-icons";
-import Button from "@/components/ui/Button";
-import Steam from "@/app/[locale]/components/Steam";
+import { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getAlternates } from "@/components/common/metadata/Alternatives";
+import Project from "@/app/[locale]/components/Project";
+import Github from "@/app/[locale]/components/Github";
 import Wakatime from "@/app/[locale]/components/Wakatime";
-import Youtube from "@/app/[locale]/components/Youtube";
-import SecurityPractices from "@/app/[locale]/components/SecurityPractices";
-import AI from "@/app/[locale]/components/AI";
 import Blog from "@/app/[locale]/components/Blog";
 import Certificate from "@/app/[locale]/components/Certificate";
-import EngineeringPhilosophy from "@/app/[locale]/components/EngineeringPhilosophy";
-import Github from "@/app/[locale]/components/Github";
-import ServicesCarousel from "@/app/[locale]/components/StickyServicesCarousel";
-import HeroFade from "@/app/[locale]/components/HeroFade";
-import Project from "@/app/[locale]/components/Project";
-import ClientFeedback from "@/app/[locale]/components/ClientFeedback";
-import { Metadata } from "next";
-import { getAlternates } from "@/components/common/metadata/Alternatives";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import Steam from "@/app/[locale]/components/Steam";
+import Youtube from "@/app/[locale]/components/Youtube";
+import Header from "@/components/ui/Header";
 
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
-import Card from "@/components/ui/Card";
-import Header from "@/components/ui/Header";
 
 export const revalidate = 10800;
 
@@ -34,78 +23,50 @@ export async function generateMetadata({
   const { locale } = await params;
 
   return {
-    title: "Melvin Jones Repol - Software Engineer",
+    title: "Melvin Jones Repol | Software Engineer",
     description:
-      "Since 2018, building practical, secure, and scalable digital products that turn ideas into reliable real-world solutions.",
+      "A software engineer building practical, reliable products across web, mobile, infrastructure, and open source since 2018.",
     keywords: [
       "Melvin Jones Repol",
       "software engineer",
-      "web development",
       "full-stack development",
-      "android development",
+      "web development",
+      "Android development",
       "portfolio",
     ],
     alternates: getAlternates("", locale),
     openGraph: {
-      title: "Melvin Jones Repol - Software Engineer",
+      title: "Melvin Jones Repol | Software Engineer",
       description:
-        "Since 2018, building practical, secure, and scalable digital products that turn ideas into reliable real-world solutions.",
+        "A software engineer building practical, reliable products across web, mobile, infrastructure, and open source since 2018.",
       url: "https://www.melvinjonesrepol.com",
       siteName: "Melvin Jones Repol",
-      images: [
-        {
-          url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
-          width: 800,
-          height: 600,
-          alt: "Melvin Jones Repol",
-        },
-      ],
-      locale: "en_US",
+      images: [{ url: "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png", width: 800, height: 600, alt: "Melvin Jones Repol" }],
       type: "profile",
     },
     twitter: {
       card: "summary_large_image",
-      title: "Melvin Jones Repol - Software Engineer",
+      title: "Melvin Jones Repol | Software Engineer",
       description:
-        "Since 2018, building practical, secure, and scalable digital products that turn ideas into reliable real-world solutions.",
-      images: [
-        "https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png",
-      ],
+        "A software engineer building practical, reliable products across web, mobile, infrastructure, and open source since 2018.",
+      images: ["https://www.melvinjonesrepol.com/images/melvinjonesrepol.cover.png"],
       creator: "@mrepol742",
     },
   };
 }
 
-export default async function Home({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("home");
-
   const person = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Melvin Jones Repol",
     url: "https://www.melvinjonesrepol.com",
-    image:
-      "https://www.melvinjonesrepol.com/images/melvin-jones-repol-black-circle.png",
-    description:
-      "Since 2018, building practical, secure, and scalable digital products that turn ideas into reliable real-world solutions.",
-    jobTitle: ["Mid-Level Full-Stack Developer", "Custom Software Consultant"],
-    mainEntityOfPage: "https://www.melvinjonesrepol.com",
-    sameAs: [
-      "https://www.facebook.com/mrepol742",
-      "https://linkedin.com/in/mrepol742",
-      "https://github.com/mrepol742",
-      "https://wakatime.com/@mrepol742",
-      "https://www.youtube.com/@mrepol742",
-      "https://g.dev/mrepol742",
-      "https://steamcommunity.com/id/mrepol742",
-      "https://codeberg.org/mrepol742",
-    ],
+    image: "https://www.melvinjonesrepol.com/images/melvin-jones-repol-black-circle.png",
+    description: "A software engineer building practical, reliable products across web, mobile, infrastructure, and open source since 2018.",
+    jobTitle: "Full-Stack Software Engineer",
     knowsAbout: [
       "Software Engineering",
       "Full-Stack Development",
@@ -113,444 +74,56 @@ export default async function Home({
       "DevOps",
       "DevSecOps",
       "Cloud Infrastructure",
-      "Custom Software Development",
     ],
-    worksFor: {
-      "@type": "Organization",
-      name: "UP-TO-DATE WebDesign",
-      url: "https://www.uptodatewebdesign.com",
-    },
-    founder: [
-      {
-        "@type": "Organization",
-        name: "Hall of Codes",
-        url: "https://www.hallofcodes.org",
-        sameAs: [
-          "https://www.facebook.com/hallofcodes",
-          "https://github.com/hallofcodes",
-        ],
-      },
-      {
-        "@type": "Organization",
-        name: "Webvium",
-        url: "https://www.webvium.com",
-        sameAs: [
-          "https://www.facebook.com/the.webvium.project",
-          "https://github.com/webvium",
-        ],
-      },
-    ],
-  };
-
-  const webSite = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: "Melvin Jones Repol",
-    url: "https://www.melvinjonesrepol.com",
-    inLanguage: "en",
-  };
-
-  const meMyselfI = {
-    "@context": "https://schema.org",
-    "@graph": [person, webSite],
+    sameAs: ["https://www.facebook.com/mrepol742", "https://linkedin.com/in/mrepol742", "https://github.com/mrepol742", "https://wakatime.com/@mrepol742", "https://www.youtube.com/@mrepol742", "https://steamcommunity.com/id/mrepol742"],
   };
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(meMyselfI) }}
-      />
-      <Header
-        imageUrl="/images/melvin-jones-repol-black.jpg"
-        imageAlt={t("profile_alt")}
-        title={
-          <>
-            Melvin
-            <br />
-            <span className="opacity-40">Jones</span>
-            <br />
-            Repol
-          </>
-        }
-        intro={t("intro")}
-        badge={
-          <>
-            <div className="inline-flex items-center gap-2.5 mb-6 text-xs">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
-              </span>
-              <span className="font-mono tracking-widest uppercase opacity-50">
-                Currently at
-              </span>
-              <span className="font-bold tracking-wide">
-                UP-TO-DATE Webdesign
-              </span>
-              <span className="opacity-30">·</span>
-              <span className="opacity-60">Full-Stack Developer</span>
-            </div>
-          </>
-        }
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(person) }} />
+      <main className="homepage-shell overflow-hidden">
+        <Header
+          imageUrl="/images/melvin-jones-repol-black.jpg"
+          imageAlt="Melvin Jones Repol"
+          title={<>Melvin<br />Jones<br /><span className="homepage-accent">Repol.</span></>}
+          intro={t("intro")}
+          actions={<><Link href="/projects" className="homepage-button homepage-button-primary">See the work</Link><Link href="/contact-me" className="homepage-button homepage-button-secondary">Start a conversation</Link></>}
+          caption="Builder. Problem solver. Lifelong learner."
+        />
 
-      <div className="p-3 md:px-8">
-        <div className="relative py-14 md:py-28 overflow-hidden">
-          <div className="relative z-10 max-w-6xl mx-auto px-4">
-            <div className="text-center mb-10 md:mb-14">
-              <span
-                className="text-sm font-semibold tracking-widest uppercase mb-3"
-                data-aos="fade-up"
-              >
-                {t("engineering_philosophy_label")}
-              </span>
-              <h2
-                className="text-3xl md:text-4xl font-bold mb-4"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                {t("engineering_philosophy_title_line1")}
-                <span className="block">
-                  {t("engineering_philosophy_title_line2")}
-                </span>
-              </h2>
-            </div>
-            <EngineeringPhilosophy />
+        <section className="homepage-band border-y border-black/10 dark:border-white/10">
+          <div className="mx-auto grid max-w-7xl gap-px bg-black/10 sm:grid-cols-3 dark:bg-white/10">
+            {[["10+", "years building and learning"], ["Full stack", "web, mobile, systems"], ["Production minded", "from first commit to support"]].map(([value, label]) => (
+              <div key={label} className="bg-[var(--background)] px-6 py-7 md:px-10"><p className="text-2xl font-bold tracking-tight">{value}</p><p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">{label}</p></div>
+            ))}
           </div>
-        </div>
+        </section>
 
-        <div className="relative py-14 md:py-28 overflow-hidden">
-          <div className="text-center mb-10 md:mb-14">
-            <span
-              className="text-sm font-semibold tracking-widest uppercase mb-3"
-              data-aos="fade-up"
-            >
-              {t("how_i_help")}
-            </span>
-            <h2
-              className="text-3xl md:text-5xl font-bold leading-tight"
-              data-aos="fade-up"
-            >
-              {t("how_i_help_title")}
-            </h2>
-            <p className="max-w-2xl mx-auto mt-4" data-aos="fade-up">
-              {t("how_i_help_description")}
-            </p>
-          </div>
-          <ServicesCarousel />
-        </div>
-
-        <div className="relative py-14 md:py-28 overflow-hidden">
-          <div className="text-center">
-            <span
-              className="text-sm font-semibold tracking-widest uppercase mb-3"
-              data-aos="fade-up"
-            >
-              {t("coding_activity_label")}
-            </span>
-            <h2
-              className="text-3xl md:text-4xl font-bold mb-4"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              {t("coding_activity_title")}
-            </h2>
-            <p
-              className="text-center max-w-2xl mx-auto mb-6"
-              data-aos="fade-up"
-            >
-              {t("coding_activity_description")}
-            </p>
-          </div>
-          <Wakatime />
-        </div>
-
-        <Github />
-
-        <div className="relative py-14 md:py-28 overflow-hidden">
-          <div className="text-center">
-            <span
-              className="text-sm font-semibold tracking-widest uppercase mb-3"
-              data-aos="fade-up"
-            >
-              {t("results_case_studies")}
-            </span>
-            <h2
-              className="text-3xl md:text-4xl font-bold mb-4"
-              data-aos="fade-up"
-            >
-              {t("work_that_drives_outcomes")}
-            </h2>
-            <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
-              {t("work_that_drives_outcomes_description")}
-            </p>
-          </div>
+        <section className="homepage-section" id="work">
+          <div className="homepage-section-heading"><p className="homepage-kicker">Selected work</p><h2>Real systems. Real constraints.</h2><p>Products built to solve operational problems, not just fill a gallery.</p></div>
           <Project />
-          <span className="text-xs">
-            {t("swipe_left_or_right_to_see_more")}
-          </span>
-        </div>
+        </section>
 
-        <div className="relative py-14 md:py-28 overflow-hidden">
-          <div className="relative z-10 max-w-6xl mx-auto px-4">
-            <div className="text-center">
-              <span
-                className="text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3"
-                data-aos="fade-up"
-              >
-                {t("security_label")}
-              </span>
-              <h2
-                className="text-3xl md:text-4xl font-bold mb-4"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                {t("security_title")}
-              </h2>
-              <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
-                {t("security_description")}
-              </p>
-            </div>
-            <SecurityPractices />
-          </div>
-        </div>
+        <section className="homepage-section homepage-split-section">
+          <div className="homepage-section-heading"><p className="homepage-kicker">The practice</p><h2>Still close to the code.</h2><p>The work is shaped by years of shipping, debugging, maintaining, and improving software after launch.</p><Link href="/work-experience" className="homepage-text-link">Read my experience <span aria-hidden="true">→</span></Link></div>
+          <div className="space-y-16"><Github /><Wakatime /></div>
+        </section>
 
-        <div className="relative py-14 md:py-28 overflow-hidden">
-          <div className="relative z-10 max-w-6xl mx-auto px-4">
-            <div className="text-center">
-              <span
-                className="text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3"
-                data-aos="fade-up"
-              >
-                {t("ai_label")}
-              </span>
-              <h2
-                className="text-3xl md:text-4xl font-bold mb-4"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                {t("ai_title")}
-              </h2>
-              <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
-                {t("ai_description")}
-              </p>
-            </div>
-            <AI />
-          </div>
-        </div>
-
-        <div className="relative py-14 md:py-28 overflow-hidden">
-          <div className="text-center">
-            <span
-              className="text-sm font-semibold tracking-widest text-fuchsia-500 uppercase mb-3"
-              data-aos="fade-up"
-            >
-              {t("certifications_label")}
-            </span>
-            <h2
-              className="text-3xl md:text-4xl font-bold mb-4"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              {t("certifications_title")}
-            </h2>
-            <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
-              {t("certifications_description")}
-            </p>
-          </div>
-          <Certificate />
-          <span className="text-xs">{t("swipe_left_or_right")}</span>
-        </div>
-
-        <div className="relative py-14 md:py-28 overflow-hidden">
-          <div className="text-center">
-            <span
-              className="text-sm font-semibold tracking-widest text-green-500 uppercase mb-3"
-              data-aos="fade-up"
-            >
-              {t("blog_label")}
-            </span>
-            <h2
-              className="text-3xl md:text-4xl font-bold mb-4"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              {t("blog_title")}
-            </h2>
-            <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
-              {t("blog_description")}
-            </p>
-          </div>
+        <section className="homepage-section">
+          <div className="homepage-section-heading"><p className="homepage-kicker">Notes from the workbench</p><h2>I write what I learn.</h2><p>Engineering decisions, production lessons, security, infrastructure, and the occasional hard-earned opinion.</p></div>
           <Blog locale={locale} />
-        </div>
+        </section>
 
-        <div className="relative py-14 md:py-28 overflow-hidden">
-          <div className="text-center">
-            <span
-              className="text-sm font-semibold tracking-widest uppercase mb-3"
-              data-aos="fade-up"
-            >
-              {t("client_feedback")}
-            </span>
-            <h2
-              className="text-3xl md:text-4xl font-bold mb-4"
-              data-aos="fade-up"
-            >
-              {t("trusted_for_delivery_and_reliability")}
-            </h2>
-            <p className="max-w-2xl mx-auto mb-10" data-aos="fade-up">
-              {t("trusted_for_delivery_and_reliability_description")}
-            </p>
-          </div>
-          <ClientFeedback />
-        </div>
+        <section className="homepage-section">
+          <div className="homepage-section-heading"><p className="homepage-kicker">Beyond the pull request</p><h2>Videos, games, and curiosity.</h2><p>I make time to share, play, and stay curious. Good engineering needs a life outside the editor too.</p></div>
+          <div className="space-y-20"><Youtube /><Steam /></div>
+        </section>
 
-        <Steam />
-
-        <div className="relative py-14 md:py-28 overflow-hidden">
-          <div className="text-center">
-            <span
-              className="text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3"
-              data-aos="fade-up"
-            >
-              {t("youtube_label")}
-            </span>
-            <h2
-              className="text-3xl md:text-4xl font-bold mb-4"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              {t("youtube_title")}
-            </h2>
-            <p className="max-w-2xl mx-auto mb-6" data-aos="fade-up">
-              {t("youtube_description")}
-            </p>
-          </div>
-          <Youtube />
-          <span className="text-xs">{t("swipe_left_or_right")}</span>
-        </div>
-
-        <div className="relative py-14 md:py-28 overflow-hidden">
-          <div className="mx-auto max-w-6xl px-4 md:px-6">
-            <div className="grid gap-10 md:grid-cols-[1.2fr_1fr] items-start">
-              {/* Left content rail */}
-              <div>
-                <h2
-                  className="mt-4 text-3xl md:text-4xl font-bold max-w-xl"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                >
-                  {t("community_title")}
-                </h2>
-                <Link
-                  href="https://www.hallofcodes.org"
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                  className="text-zinc-400"
-                  target="_blank"
-                >
-                  www.hallofcodes.org
-                </Link>
-
-                <p className="mt-4 max-w-xl" data-aos="fade-up">
-                  {t("community_description_1")}
-                </p>
-
-                <p className="mt-4 max-w-xl" data-aos="fade-up">
-                  {t("community_description_2")}
-                </p>
-              </div>
-
-              {/* Right stacked cards */}
-              <div className="relative">
-                <div className="space-y-3">
-                  <Card index={0}>
-                    <div className="text-lg font-semibold">
-                      {t("community_card1_title")}
-                    </div>
-                    <div className="text-xs uppercase tracking-wider text-zinc-400">
-                      {t("community_card1_desc")}
-                    </div>
-                  </Card>
-                  <Card index={1}>
-                    <div className="text-lg font-semibold">
-                      {t("community_card2_title")}
-                    </div>
-                    <div className="text-xs uppercase tracking-wider text-zinc-400">
-                      {t("community_card2_desc")}
-                    </div>
-                  </Card>
-                  <Card index={2}>
-                    <div className="text-lg font-semibold">
-                      {t("community_card3_title")}
-                    </div>
-                    <div className="text-xs uppercase tracking-wider text-zinc-400">
-                      {t("community_card3_desc")}
-                    </div>
-                  </Card>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="relative py-14 md:py-28 overflow-hidden">
-          <div className="mx-auto max-w-6xl px-4 md:px-6">
-            <div className="grid lg:grid-cols-2">
-              {/* Product Side */}
-              <div>
-                <h2 className="mt-5 text-4xl font-bold">
-                  {t("webvium_title")}
-                </h2>
-                <Link
-                  href="https://www.webvium.com"
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                  className="text-zinc-400"
-                  target="_blank"
-                >
-                  www.webvium.com
-                </Link>
-
-                <p className="mt-4">{t("webvium_description")}</p>
-              </div>
-
-              {/* Stats Side */}
-              <div className="p-8 md:p-12">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <Card subtitle="15+">
-                    <div className="text-3xl font-bold">15+</div>
-                    <div className="text-sm text-zinc-400">
-                      {t("webvium_stat_repositories")}
-                    </div>
-                  </Card>
-
-                  <Card subtitle="6+">
-                    <div className="text-3xl font-bold">6+</div>
-                    <div className="text-sm text-zinc-400">
-                      {t("webvium_stat_browser_tools")}
-                    </div>
-                  </Card>
-
-                  <Card subtitle="2018">
-                    <div className="text-3xl font-bold">2018</div>
-                    <div className="text-sm text-zinc-400">
-                      {t("webvium_stat_started")}
-                    </div>
-                  </Card>
-
-                  <Card subtitle="375KB">
-                    <div className="text-3xl font-bold">375KB</div>
-                    <div className="text-sm text-zinc-400">
-                      {t("webvium_stat_lightest")}
-                    </div>
-                  </Card>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        <section className="homepage-section pb-24">
+          <div className="homepage-section-heading"><p className="homepage-kicker">Proof of the journey</p><h2>Always adding range.</h2><p>{t("certifications_description")}</p></div>
+          <Certificate />
+        </section>
+      </main>
     </>
   );
 }

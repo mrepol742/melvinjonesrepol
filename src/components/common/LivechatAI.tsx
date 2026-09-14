@@ -14,7 +14,7 @@ export default function LivechatAI() {
     <Script
       id="livechat-ai"
       src="https://app.livechatai.com/embed.js"
-      strategy="afterInteractive"
+      strategy="lazyOnload"
       data-id="cmdmcvh4n0001jt0c03xemlxw"
       onLoad={() => {
         console.log("LiveChatAI loaded");

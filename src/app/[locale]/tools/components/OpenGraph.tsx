@@ -103,7 +103,7 @@ export default function OpenGraphTool() {
     <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
       <div className="space-y-6">
         <Card>
-          <div className="text-xs uppercase tracking-widest mb-4">
+          <div className="mb-4 text-xs font-semibold uppercase tracking-widest text-orange-600 dark:text-orange-400">
             Tool Overview
           </div>
           <h2 className="text-3xl font-bold mb-4">{t("title")}</h2>
@@ -117,7 +117,7 @@ export default function OpenGraphTool() {
         <Card subtitle="OG">
           <div className="space-y-4 text-sm">
             <div className="flex items-start gap-3">
-              <span className="mt-1">
+              <span className="mt-1 text-orange-600 dark:text-orange-400">
                 <FontAwesomeIcon icon={faGlobe} />
               </span>
               <div>
@@ -129,7 +129,7 @@ export default function OpenGraphTool() {
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <span className="mt-0.5">
+              <span className="mt-0.5 text-orange-600 dark:text-orange-400">
                 <FontAwesomeIcon icon={faLink} />
               </span>
               <div>
@@ -142,7 +142,7 @@ export default function OpenGraphTool() {
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <span className="mt-0.5">
+              <span className="mt-0.5 text-orange-600 dark:text-orange-400">
                 <FontAwesomeIcon icon={faShieldHalved} />
               </span>
               <div>
@@ -159,7 +159,7 @@ export default function OpenGraphTool() {
 
       <div className="space-y-6">
         <Card>
-          <div className="text-xs uppercase tracking-widest mb-4">
+          <div className="mb-4 text-xs font-semibold uppercase tracking-widest text-orange-600 dark:text-orange-400">
             Run Check
           </div>
 
@@ -201,7 +201,7 @@ export default function OpenGraphTool() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="rounded uppercase text-sm relative px-7 py-4 mt-3 font-semibold overflow-hidden shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1 before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-full before:h-1 before:rounded-b-lg after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-1 after:h-full after:rounded-r-lg w-full bg-indigo-400 before:bg-indigo-600 after:bg-indigo-600 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-x-0 disabled:hover:translate-y-0"
+              className="mt-3 w-full border border-orange-600 bg-orange-500 px-7 py-4 text-sm font-semibold uppercase text-stone-950 shadow-[4px_4px_0_0_rgb(67_20_7)] transition-transform duration-200 hover:translate-x-0.5 hover:translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-x-0 disabled:hover:translate-y-0"
             >
               {isSubmitting ? t("toast_pending") : t("fetch_button")}
             </button>
@@ -210,7 +210,7 @@ export default function OpenGraphTool() {
 
         <Card>
           <div className="mb-6">
-            <div className="text-xs uppercase tracking-widest mb-2">
+            <div className="mb-2 text-xs font-semibold uppercase tracking-widest text-orange-600 dark:text-orange-400">
               Results
             </div>
             <h2 className="text-2xl font-bold">{t("result_title")}</h2>
@@ -221,7 +221,7 @@ export default function OpenGraphTool() {
               {Object.entries(meta).map(([key, value]) => (
                 <div
                   key={key}
-                  className="rounded-2xl border border-zinc-800 p-4"
+                  className="border border-stone-300 bg-stone-50 p-4 dark:border-orange-500/25 dark:bg-zinc-800"
                 >
                   <p className="text-xs uppercase tracking-widest mb-2">
                     {key}
@@ -231,7 +231,7 @@ export default function OpenGraphTool() {
               ))}
             </div>
           ) : (
-            <div className="rounded-2xl border border-dashed border-zinc-800 p-6 text-sm leading-7">
+            <div className="border border-dashed border-orange-500/60 bg-orange-50/60 p-6 text-sm leading-7 dark:bg-zinc-800/60">
               No metadata loaded yet. Run a check to inspect the page title,
               description, Open Graph fields, and supported Twitter card tags.
             </div>

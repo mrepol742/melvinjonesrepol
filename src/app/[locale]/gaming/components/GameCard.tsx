@@ -16,7 +16,7 @@ export default function GameCard({ game }: { game: GameType }) {
   return (
     <div data-aos="fade-up" className="h-full flex">
       <Card className="group">
-        <div className="relative w-full h-48 rounded-2xl overflow-hidden mb-4">
+        <div className="relative mb-4 h-48 w-full overflow-hidden rounded-md border border-stone-300 dark:border-stone-700">
           {coverUrl ? (
             <Image
               src={coverUrl}
@@ -25,7 +25,7 @@ export default function GameCard({ game }: { game: GameType }) {
               className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
             />
           ) : (
-            <span className="text-xs text-zinc-400">Private</span>
+            <span className="border-l-2 border-orange-500 pl-2 text-xs text-stone-500 dark:text-stone-400">Private</span>
           )}
         </div>
 
@@ -33,7 +33,7 @@ export default function GameCard({ game }: { game: GameType }) {
           {isExplicit ? "Private" : game.name}
         </p>
 
-        <div className="mt-1 flex flex-wrap gap-3 text-sm">
+        <div className="mt-1 flex flex-wrap gap-3 text-sm text-stone-700 dark:text-stone-300">
           <div>
             <span className="font-semibold">Total:</span>{" "}
             {toHours(game.playtime_forever)}h
@@ -46,7 +46,7 @@ export default function GameCard({ game }: { game: GameType }) {
           )}
         </div>
 
-        <div className="mt-2 grid gap-1 text-xs">
+        <div className="mt-3 grid gap-1 border-l-2 border-orange-500 pl-3 text-xs text-stone-600 dark:text-stone-400">
           {game.playtime_mac_forever > 0 && (
             <div>
               <span className="font-semibold">Mac:</span>{" "}

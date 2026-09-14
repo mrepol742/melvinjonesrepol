@@ -2,7 +2,6 @@ import { getAlternates } from "@/components/common/metadata/Alternatives";
 import { Metadata } from "next";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import LegalCard from "./components/LegalCard";
 import Header from "@/components/ui/Header";
 
 export async function generateMetadata({
@@ -108,8 +107,48 @@ const legalLinks = [
   },
 ];
 
+function DocumentList({
+  documents,
+  startIndex = 1,
+}: {
+  documents: typeof legalLinks;
+  startIndex?: number;
+}) {
+  return (
+    <ol className="border-t border-stone-300 dark:border-stone-700">
+      {documents.map((document, index) => (
+        <li key={document.href}>
+          <Link
+            href={document.href}
+            className="group grid gap-5 border-b border-stone-300 py-6 transition-colors hover:bg-orange-500/5 dark:border-stone-700 dark:hover:bg-orange-500/10 md:grid-cols-[3.5rem_minmax(0,1fr)_auto] md:items-center md:px-4"
+          >
+            <span className="font-mono text-sm text-orange-700 dark:text-orange-300">
+              {String(index + startIndex).padStart(2, "0")}
+            </span>
+            <span>
+              <span className="block text-xl font-bold tracking-tight group-hover:text-orange-700 dark:group-hover:text-orange-300">
+                {document.title}
+              </span>
+              <span className="mt-2 block max-w-2xl text-sm leading-6 text-stone-600 dark:text-stone-400">
+                {document.description}
+              </span>
+            </span>
+            <span className="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-stone-500 dark:text-stone-400">
+              <span>{document.category}</span>
+              <span>{document.version}</span>
+              <span className="text-lg text-orange-600 transition-transform group-hover:translate-x-1 dark:text-orange-400">→</span>
+            </span>
+          </Link>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
 export default async function Legal() {
   const t = await getTranslations("legal");
+  const policies = legalLinks.filter((link) => link.category !== "License");
+  const licenses = legalLinks.filter((link) => link.category === "License");
 
   return (
     <>
@@ -118,7 +157,7 @@ export default async function Legal() {
           <>
             {t("title_line1")}
             <br />
-            <span className="opacity-40">{t("title_line2")}</span>
+            <span className="homepage-accent">{t("title_line2")}</span>
             <br />
             {t("title_line3")}
           </>
@@ -126,12 +165,56 @@ export default async function Legal() {
         intro={t("hero_description")}
       />
 
-      <section className="px-6 my-6 md:px-10">
-        <div className="mx-auto max-w-6xl">
-          <div className="flex flex-col space-y-6">
-            {legalLinks.map((link, index) => (
-              <LegalCard key={link.href} link={link} index={index} />
+      <section className="px-6 py-24 md:px-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid border-y border-stone-300 dark:border-stone-700 sm:grid-cols-3">
+            {[
+              ["05", "Policies & agreements"],
+              ["03", "Open-source licenses"],
+              ["01", "Place to ask questions"],
+            ].map(([value, label]) => (
+              <div key={label} className="border-b border-stone-300 px-5 py-6 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0 dark:border-stone-700">
+                <p className="text-2xl font-black tracking-tight text-orange-700 dark:text-orange-300">{value}</p>
+                <p className="mt-1 text-sm text-stone-600 dark:text-stone-400">{label}</p>
+              </div>
             ))}
+          </div>
+
+          <div className="mt-20 grid gap-10 lg:grid-cols-[minmax(14rem,.45fr)_minmax(0,1.55fr)]">
+            <div className="border border-stone-300 bg-stone-100 p-6 dark:border-stone-700 dark:bg-stone-950 lg:sticky lg:top-28 lg:self-start md:p-8">
+              <p className="homepage-kicker">Document directory</p>
+              <h2 className="mt-4 text-4xl font-black uppercase leading-[0.88] tracking-[-0.06em] md:text-5xl">
+                The rules,
+                <br />
+                plainly <span className="homepage-accent">stated.</span>
+              </h2>
+              <p className="mt-6 max-w-sm text-sm leading-7 text-stone-600 dark:text-stone-400">
+                The documents that explain how this site, its services, and its code are used.
+              </p>
+              <Link href="/contact-me" className="mt-7 inline-flex border-b-2 border-orange-600 pb-1 text-xs font-bold uppercase tracking-widest hover:text-orange-700 dark:hover:text-orange-300">
+                Ask a question
+              </Link>
+            </div>
+
+            <div>
+              <div className="mb-5 flex items-end justify-between gap-4">
+                <div>
+                  <p className="homepage-kicker">Policies & agreements</p>
+                  <h3 className="mt-2 text-2xl font-bold tracking-tight">How we work and handle information.</h3>
+                </div>
+                <span className="font-mono text-sm text-stone-500 dark:text-stone-400">{String(policies.length).padStart(2, "0")} docs</span>
+              </div>
+              <DocumentList documents={policies} />
+
+              <div className="mb-5 mt-16 flex items-end justify-between gap-4">
+                <div>
+                  <p className="homepage-kicker">Licenses</p>
+                  <h3 className="mt-2 text-2xl font-bold tracking-tight">The terms attached to open-source work.</h3>
+                </div>
+                <span className="font-mono text-sm text-stone-500 dark:text-stone-400">{String(licenses.length).padStart(2, "0")} docs</span>
+              </div>
+              <DocumentList documents={licenses} startIndex={policies.length + 1} />
+            </div>
           </div>
         </div>
       </section>

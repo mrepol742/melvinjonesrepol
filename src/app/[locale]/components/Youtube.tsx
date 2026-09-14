@@ -27,7 +27,7 @@ export default async function Youtube() {
               className="group snap-start flex-shrink-0 w-80 md:w-96 flex"
             >
               <Card>
-                <div className="mb-4 relative rounded-2xl overflow-hidden">
+                <div className="mb-4 relative rounded-md overflow-hidden">
                   <YoutubeVideo
                     videoId={videoId}
                     title={video.snippet?.title || "YouTube video"}
