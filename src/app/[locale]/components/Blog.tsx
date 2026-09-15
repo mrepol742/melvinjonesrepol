@@ -17,11 +17,9 @@ export default function BlogSection({ locale = "en" }: { locale?: string }) {
                 ? `/blog/${post.slug}`
                 : `/${locale}/blog/${post.slug}`
             }
+            className="block w-[90vw] shrink-0 snap-start md:w-96"
           >
-            <Card
-              index={index}
-              className="group snap-start flex-shrink-0 w-80 md:w-96 flex"
-            >
+            <Card index={index} className="group h-full">
               <p className="mb-2 text-xl font-bold line-clamp-2">
                 {post.title}
               </p>

@@ -109,7 +109,7 @@ export default async function Steam() {
         </div>
 
         <div className="text-sm text-muted">
-          {t("last_updated_label")} {" "}
+          {t("last_updated_label")}{" "}
           {steam && "last_fetched" in steam && steam.last_fetched
             ? new Date(steam.last_fetched).toUTCString()
             : "—"}
@@ -131,8 +131,12 @@ export default async function Steam() {
 
         <Slider>
           {mostPlayedFavoriteGames.map((game, index) => (
-            <Link href={`/gaming?q=${game.name}`} key={game.appid ?? index}>
-              <Card className="group snap-start flex-shrink-0 w-80 md:w-96">
+            <Link
+              href={`/gaming?q=${game.name}`}
+              key={game.appid ?? index}
+              className="block w-[90vw] shrink-0 snap-start md:w-96"
+            >
+              <Card index={index} className="group h-full">
                 <div className="relative mb-4 h-48 w-full overflow-hidden rounded-md">
                   <Image
                     src={game.cover_url}
