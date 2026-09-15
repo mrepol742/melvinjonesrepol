@@ -51,9 +51,7 @@
       "footer_recent_posts": "Последние публикации",
       "footer_no_recent_posts": "Нет последних публикаций.",
       "footer_language_region": "Язык / Регион",
-      "footer_all_rights_reserved": "Все права защищены",
-      "footer_copyright": "Melvin Jones Repol (также известный как Repol Systems) — единое юридическое лицо, ответственное за все сервисы и контент на этом сайте.",
-      "footer_open_source": "Этот сайт имеет открытый исходный код."
+      "footer_all_rights_reserved": "Все права защищены"
     },
     "devtools_detector": {
       "description": "Для наилучшего взаимодействия закройте инструменты разработчика. Этот сайт создан для комфортного просмотра без отвлекающих факторов, а открытые инструменты разработчика могут мешать работе некоторых визуальных эффектов."
@@ -258,36 +256,6 @@
     "no_results_found": "Ничего не найдено.",
     "github_cta_text": "Проекты клиентов являются конфиденциальными, но я всегда готов рассказать больше о своих личных проектах и коде. Если вам интересно увидеть больше моих работ, загляните в мой профиль GitHub, где я регулярно публикую обновления проектов и экспериментов.",
     "github_button": "GitHub"
-  },
-  "uptime": {
-    "status_page_badge": "Страница состояния",
-    "title": "Состояние системы",
-    "subtitle": "Мониторинг в реальном времени и история доступности",
-    "all_systems_operational": "Все системы работают в штатном режиме",
-    "service_disruption": "Обнаружен сбой в работе сервиса",
-    "services_operational": "Работают {online} из {total} сервисов",
-    "total_services": "Всего сервисов",
-    "operational": "Работает",
-    "last_refresh": "Последнее обновление",
-    "legend_excellent": "Отлично",
-    "legend_good": "Хорошо",
-    "legend_poor": "Плохо",
-    "legend_no_data": "Нет данных",
-    "status_operational": "Работает",
-    "status_incident": "Инцидент",
-    "current_uptime": "Текущий",
-    "days_30": "30 дней",
-    "days_90": "90 дней",
-    "history_90_days": "История за 90 дней",
-    "last_incident": "Последний инцидент",
-    "duration_label": "Длительность:",
-    "duration_minutes": "минут",
-    "reason_label": "Причина:",
-    "title_line1": "Система",
-    "title_line2": "Статус",
-    "title_line3": "Монитор.",
-    "current_status": "Текущий Статус",
-    "loading": "Загрузка..."
   },
   "legal": {
     "title_line1": "Политики",

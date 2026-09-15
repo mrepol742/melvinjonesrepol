@@ -51,9 +51,7 @@
       "footer_recent_posts": "Recente berichten",
       "footer_no_recent_posts": "Geen recente berichten.",
       "footer_language_region": "Taal / Regio",
-      "footer_all_rights_reserved": "Alle rechten voorbehouden",
-      "footer_copyright": "Melvin Jones Repol (ook bekend als Repol Systems) is één enkele juridische entiteit die verantwoordelijk is voor alle diensten en inhoud op deze website.",
-      "footer_open_source": "Deze website is open source."
+      "footer_all_rights_reserved": "Alle rechten voorbehouden"
     },
     "devtools_detector": {
       "description": "Voor de beste ervaring sluit je de ontwikkelaarstools. Deze website is ontworpen om zonder afleiding te worden gebruikt, en geopende ontwikkelaarstools kunnen bepaalde visuele effecten verstoren."
@@ -258,36 +256,6 @@
     "no_results_found": "Geen resultaten gevonden.",
     "github_cta_text": "Projecten van klanten zijn vertrouwelijk, maar ik deel graag meer over mijn persoonlijke projecten en code. Als je meer van mijn werk wilt zien, bekijk dan gerust mijn GitHub-profiel, waar ik regelmatig updates deel over mijn projecten en experimenten.",
     "github_button": "GitHub"
-  },
-  "uptime": {
-    "status_page_badge": "Statuspagina",
-    "title": "Systeemstatus",
-    "subtitle": "Live monitoring en uptimegeschiedenis",
-    "all_systems_operational": "Alle systemen operationeel",
-    "service_disruption": "Serviceonderbreking gedetecteerd",
-    "services_operational": "{online} van {total} services operationeel",
-    "total_services": "Totaal aantal services",
-    "operational": "Operationeel",
-    "last_refresh": "Laatst vernieuwd",
-    "legend_excellent": "Uitstekend",
-    "legend_good": "Goed",
-    "legend_poor": "Matig",
-    "legend_no_data": "Geen gegevens",
-    "status_operational": "Operationeel",
-    "status_incident": "Incident",
-    "current_uptime": "Huidig",
-    "days_30": "30 dagen",
-    "days_90": "90 dagen",
-    "history_90_days": "Geschiedenis van 90 dagen",
-    "last_incident": "Laatste incident",
-    "duration_label": "Duur:",
-    "duration_minutes": "minuten",
-    "reason_label": "Reden:",
-    "title_line1": "Systeem",
-    "title_line2": "Status",
-    "title_line3": "Monitor.",
-    "current_status": "Huidige Status",
-    "loading": "Laden..."
   },
   "legal": {
     "title_line1": "Beleid",

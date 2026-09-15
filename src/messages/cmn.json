@@ -51,9 +51,7 @@
       "footer_recent_posts": "最近文章",
       "footer_no_recent_posts": "暂无最近文章。",
       "footer_language_region": "语言 / 地区",
-      "footer_all_rights_reserved": "版权所有",
-      "footer_copyright": "Melvin Jones Repol（亦称 Repol Systems）是负责本网站所有服务与内容的唯一法律实体。",
-      "footer_open_source": "本网站为开源项目。"
+      "footer_all_rights_reserved": "版权所有"
     },
     "devtools_detector": {
       "description": "为了获得最佳体验，请关闭开发者工具。本网站旨在无干扰地使用，开启开发者工具可能会影响某些视觉效果。"
@@ -258,36 +256,6 @@
     "no_results_found": "未找到结果。",
     "github_cta_text": "客户项目属于保密内容，但我始终乐于分享我的个人项目和代码。如果您有兴趣了解更多，欢迎查看我的 GitHub，我会定期在那里分享项目和实验的最新进展。",
     "github_button": "Github"
-  },
-  "uptime": {
-    "status_page_badge": "状态页面",
-    "title": "系统状态",
-    "subtitle": "实时监控与正常运行时间历史",
-    "all_systems_operational": "所有系统正常运行",
-    "service_disruption": "检测到服务中断",
-    "services_operational": "{online} / {total} 个服务正常运行",
-    "total_services": "服务总数",
-    "operational": "正常运行",
-    "last_refresh": "最后刷新",
-    "legend_excellent": "优秀",
-    "legend_good": "良好",
-    "legend_poor": "较差",
-    "legend_no_data": "无数据",
-    "status_operational": "正常运行",
-    "status_incident": "故障",
-    "current_uptime": "当前",
-    "days_30": "30 天",
-    "days_90": "90 天",
-    "history_90_days": "90 天历史",
-    "last_incident": "最近一次故障",
-    "duration_label": "持续时间：",
-    "duration_minutes": "分钟",
-    "reason_label": "原因：",
-    "title_line1": "系统",
-    "title_line2": "状态",
-    "title_line3": "监控。",
-    "current_status": "当前状态",
-    "loading": "加载中..."
   },
   "legal": {
     "title_line1": "政策",

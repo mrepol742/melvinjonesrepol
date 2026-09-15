@@ -51,9 +51,7 @@
       "footer_recent_posts": "हाल की पोस्ट",
       "footer_no_recent_posts": "कोई हाल की पोस्ट नहीं है।",
       "footer_language_region": "भाषा / क्षेत्र",
-      "footer_all_rights_reserved": "सभी अधिकार सुरक्षित",
-      "footer_copyright": "Melvin Jones Repol (जिसे Repol Systems के नाम से भी जाना जाता है) इस वेबसाइट की सभी सेवाओं और सामग्री के लिए एकमात्र कानूनी इकाई है।",
-      "footer_open_source": "यह साइट ओपन सोर्स है।"
+      "footer_all_rights_reserved": "सभी अधिकार सुरक्षित"
     },
     "devtools_detector": {
       "description": "बेहतर अनुभव के लिए कृपया अपने डेवलपर टूल्स बंद करें। यह वेबसाइट बिना किसी ध्यान भटकाव के आनंद लेने के लिए बनाई गई है, और डेवलपर टूल्स खुले होने से कुछ विज़ुअल इफेक्ट्स में बाधा आ सकती है।"
@@ -258,36 +256,6 @@
     "no_results_found": "कोई परिणाम नहीं मिला।",
     "github_cta_text": "क्लाइंट प्रोजेक्ट गोपनीय हैं, लेकिन मैं हमेशा अपने व्यक्तिगत प्रोजेक्ट और कोड के बारे में अधिक साझा करने के लिए तैयार हूँ। यदि आप मेरा अधिक काम देखना चाहते हैं, तो मेरे GitHub प्रोफ़ाइल को देखें।",
     "github_button": "Github"
-  },
-  "uptime": {
-    "status_page_badge": "स्टेटस पेज",
-    "title": "सिस्टम स्थिति",
-    "subtitle": "लाइव मॉनिटरिंग और अपटाइम इतिहास",
-    "all_systems_operational": "सभी सिस्टम सामान्य रूप से चल रहे हैं",
-    "service_disruption": "सेवा बाधा का पता चला",
-    "services_operational": "{total} में से {online} सेवाएं सामान्य",
-    "total_services": "कुल सेवाएं",
-    "operational": "सामान्य",
-    "last_refresh": "अंतिम रिफ्रेश",
-    "legend_excellent": "उत्कृष्ट",
-    "legend_good": "अच्छा",
-    "legend_poor": "खराब",
-    "legend_no_data": "कोई डेटा नहीं",
-    "status_operational": "सामान्य",
-    "status_incident": "घटना",
-    "current_uptime": "वर्तमान",
-    "days_30": "30 दिन",
-    "days_90": "90 दिन",
-    "history_90_days": "90 दिन का इतिहास",
-    "last_incident": "अंतिम घटना",
-    "duration_label": "अवधि:",
-    "duration_minutes": "मिनट",
-    "reason_label": "कारण:",
-    "title_line1": "सिस्टम",
-    "title_line2": "स्थिति",
-    "title_line3": "मॉनिटर।",
-    "current_status": "वर्तमान स्थिति",
-    "loading": "लोड हो रहा है..."
   },
   "legal": {
     "title_line1": "नीतियाँ",

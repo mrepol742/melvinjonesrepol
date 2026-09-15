@@ -51,9 +51,7 @@
       "footer_recent_posts": "Publicaciones recientes",
       "footer_no_recent_posts": "No hay publicaciones recientes.",
       "footer_language_region": "Idioma / Región",
-      "footer_all_rights_reserved": "Todos los derechos reservados",
-      "footer_copyright": "Melvin Jones Repol (también conocido como Repol Systems) es una entidad legal única responsable de todos los servicios y contenido de este sitio web.",
-      "footer_open_source": "Este sitio es de código abierto."
+      "footer_all_rights_reserved": "Todos los derechos reservados"
     },
     "devtools_detector": {
       "description": "Para una mejor experiencia, por favor cierre las herramientas de desarrollo. Este sitio está diseñado para disfrutarse sin distracciones, y tener las herramientas de desarrollo abiertas puede interferir con ciertos efectos visuales."
@@ -258,36 +256,6 @@
     "no_results_found": "No se encontraron resultados.",
     "github_cta_text": "Los proyectos de clientes son confidenciales, pero siempre estoy dispuesto a compartir más sobre mis proyectos personales y código. Si quieres ver más de mi trabajo, visita mi perfil de GitHub donde comparto regularmente actualizaciones de proyectos y experimentos.",
     "github_button": "Github"
-  },
-  "uptime": {
-    "status_page_badge": "Página de estado",
-    "title": "Estado del sistema",
-    "subtitle": "Monitoreo en vivo e historial de disponibilidad",
-    "all_systems_operational": "Todos los sistemas operativos",
-    "service_disruption": "Interrupción de servicio detectada",
-    "services_operational": "{online} de {total} servicios operativos",
-    "total_services": "Total de servicios",
-    "operational": "Operativo",
-    "last_refresh": "Última actualización",
-    "legend_excellent": "Excelente",
-    "legend_good": "Bueno",
-    "legend_poor": "Deficiente",
-    "legend_no_data": "Sin datos",
-    "status_operational": "Operativo",
-    "status_incident": "Incidente",
-    "current_uptime": "Actual",
-    "days_30": "30 días",
-    "days_90": "90 días",
-    "history_90_days": "Historial de 90 días",
-    "last_incident": "Último incidente",
-    "duration_label": "Duración:",
-    "duration_minutes": "minutos",
-    "reason_label": "Motivo:",
-    "title_line1": "Sistema",
-    "title_line2": "Estado",
-    "title_line3": "Monitor.",
-    "current_status": "Estado Actual",
-    "loading": "Cargando..."
   },
   "legal": {
     "title_line1": "Políticas",

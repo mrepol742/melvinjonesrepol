@@ -51,9 +51,7 @@
       "footer_recent_posts": "أحدث المقالات",
       "footer_no_recent_posts": "لا توجد مقالات حديثة.",
       "footer_language_region": "اللغة / المنطقة",
-      "footer_all_rights_reserved": "جميع الحقوق محفوظة",
-      "footer_copyright": "ميلفين جونز ريبول (المعروف أيضًا باسم Repol Systems) هو كيان قانوني واحد مسؤول عن جميع الخدمات والمحتوى على هذا الموقع.",
-      "footer_open_source": "هذا الموقع مفتوح المصدر."
+      "footer_all_rights_reserved": "جميع الحقوق محفوظة"
     },
     "devtools_detector": {
       "description": "للحصول على أفضل تجربة، يُرجى إغلاق أدوات المطور. صُمم هذا الموقع للاستمتاع به دون تشتيت، وقد يؤثر فتح أدوات المطور على بعض التأثيرات البصرية."
@@ -258,36 +256,6 @@
     "no_results_found": "لم يتم العثور على نتائج.",
     "github_cta_text": "مشاريع العملاء سرية، لكنني دائمًا منفتح على مشاركة المزيد حول مشاريعي الشخصية وأكوادي. إذا كنت مهتمًا بالاطلاع على المزيد من أعمالي، فلا تتردد في زيارة ملفي الشخصي على GitHub حيث أشارك باستمرار تحديثات حول مشاريعي وتجارب التطوير.",
     "github_button": "GitHub"
-  },
-  "uptime": {
-    "status_page_badge": "صفحة الحالة",
-    "title": "حالة النظام",
-    "subtitle": "مراقبة مباشرة وسجل وقت التشغيل",
-    "all_systems_operational": "جميع الأنظمة تعمل بشكل طبيعي",
-    "service_disruption": "تم اكتشاف انقطاع في الخدمة",
-    "services_operational": "{online} من أصل {total} خدمة تعمل بشكل طبيعي",
-    "total_services": "إجمالي الخدمات",
-    "operational": "قيد التشغيل",
-    "last_refresh": "آخر تحديث",
-    "legend_excellent": "ممتاز",
-    "legend_good": "جيد",
-    "legend_poor": "ضعيف",
-    "legend_no_data": "لا توجد بيانات",
-    "status_operational": "يعمل بشكل طبيعي",
-    "status_incident": "حادث",
-    "current_uptime": "الحالي",
-    "days_30": "30 يومًا",
-    "days_90": "90 يومًا",
-    "history_90_days": "سجل آخر 90 يومًا",
-    "last_incident": "آخر حادث",
-    "duration_label": "المدة:",
-    "duration_minutes": "دقيقة",
-    "reason_label": "السبب:",
-    "title_line1": "النظام",
-    "title_line2": "الحالة",
-    "title_line3": "المراقبة.",
-    "current_status": "الحالة الحالية",
-    "loading": "جار التحميل..."
   },
   "legal": {
     "title_line1": "السياسات",

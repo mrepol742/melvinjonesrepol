@@ -51,9 +51,7 @@
       "footer_recent_posts": "Mga Kamakailang Post",
       "footer_no_recent_posts": "Walang kamakailang post.",
       "footer_language_region": "Wika / Rehiyon",
-      "footer_all_rights_reserved": "Lahat ng Karapatan ay Nakalaan",
-      "footer_copyright": "Ang Melvin Jones Repol (kilala rin bilang Repol Systems) ay isang solong legal na entidad na responsable para sa lahat ng serbisyo at nilalaman ng website na ito.",
-      "footer_open_source": "Ang site na ito ay open source."
+      "footer_all_rights_reserved": "Lahat ng Karapatan ay Nakalaan"
     },
     "devtools_detector": {
       "description": "Para sa pinakamahusay na karanasan, pakisara ang iyong developer tools. Idinisenyo ang website na ito upang ma-enjoy nang walang distraksyon, at ang pagbukas ng dev tools ay maaaring makaapekto sa ilang visual effects."
@@ -258,36 +256,6 @@
     "no_results_found": "Walang nahanap na resulta.",
     "github_cta_text": "Ang mga proyekto ng kliyente ay kumpidensyal, ngunit lagi akong bukas sa pagbabahagi ng higit pa tungkol sa aking mga personal na proyekto at code. Kung interesado kang makita ang aking mga gawa, bisitahin ang aking GitHub profile.",
     "github_button": "Github"
-  },
-  "uptime": {
-    "status_page_badge": "Status Page",
-    "title": "Katayuan ng Sistema",
-    "subtitle": "Live na pagmamanman at kasaysayan ng uptime",
-    "all_systems_operational": "Lahat ng Sistema ay Gumagana",
-    "service_disruption": "Natukoy ang Pagkagambala ng Serbisyo",
-    "services_operational": "{online} sa {total} na serbisyo ang gumagana",
-    "total_services": "Kabuuang Serbisyo",
-    "operational": "Gumagana",
-    "last_refresh": "Huling I-refresh",
-    "legend_excellent": "Mahusay",
-    "legend_good": "Maganda",
-    "legend_poor": "Mahina",
-    "legend_no_data": "Walang Data",
-    "status_operational": "Gumagana",
-    "status_incident": "Insidente",
-    "current_uptime": "Kasalukuyan",
-    "days_30": "30 Araw",
-    "days_90": "90 Araw",
-    "history_90_days": "Kasaysayan ng 90 Araw",
-    "last_incident": "Huling Insidente",
-    "duration_label": "Tagal:",
-    "duration_minutes": "minuto",
-    "reason_label": "Dahilan:",
-    "title_line1": "Sistema",
-    "title_line2": "Katayuan",
-    "title_line3": "Monitor.",
-    "current_status": "Kasalukuyang Katayuan",
-    "loading": "Naglo-load..."
   },
   "legal": {
     "title_line1": "Mga Patakaran",

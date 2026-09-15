@@ -51,9 +51,7 @@
       "footer_recent_posts": "Articles récents",
       "footer_no_recent_posts": "Aucun article récent.",
       "footer_language_region": "Langue / Région",
-      "footer_all_rights_reserved": "Tous droits réservés",
-      "footer_copyright": "Melvin Jones Repol (également connu sous le nom de Repol Systems) est l'unique entité juridique responsable de tous les services et contenus de ce site web.",
-      "footer_open_source": "Ce site est open source."
+      "footer_all_rights_reserved": "Tous droits réservés"
     },
     "devtools_detector": {
       "description": "Pour une expérience optimale, veuillez fermer vos outils de développement. Ce site est conçu pour être utilisé sans distraction, et l'ouverture des outils de développement peut perturber certains effets visuels."
@@ -258,36 +256,6 @@
     "no_results_found": "Aucun résultat trouvé.",
     "github_cta_text": "Les projets de mes clients sont confidentiels, mais je suis toujours ravi de partager davantage sur mes projets personnels et mon code. Si vous souhaitez découvrir davantage de mon travail, n'hésitez pas à consulter mon profil GitHub où je publie régulièrement des mises à jour sur mes projets et expérimentations.",
     "github_button": "GitHub"
-  },
-  "uptime": {
-    "status_page_badge": "Page d'état",
-    "title": "État du système",
-    "subtitle": "Surveillance en temps réel et historique de disponibilité",
-    "all_systems_operational": "Tous les systèmes sont opérationnels",
-    "service_disruption": "Perturbation de service détectée",
-    "services_operational": "{online} services sur {total} sont opérationnels",
-    "total_services": "Nombre total de services",
-    "operational": "Opérationnel",
-    "last_refresh": "Dernière mise à jour",
-    "legend_excellent": "Excellent",
-    "legend_good": "Bon",
-    "legend_poor": "Faible",
-    "legend_no_data": "Aucune donnée",
-    "status_operational": "Opérationnel",
-    "status_incident": "Incident",
-    "current_uptime": "Actuel",
-    "days_30": "30 jours",
-    "days_90": "90 jours",
-    "history_90_days": "Historique des 90 derniers jours",
-    "last_incident": "Dernier incident",
-    "duration_label": "Durée :",
-    "duration_minutes": "minutes",
-    "reason_label": "Raison :",
-    "title_line1": "Système",
-    "title_line2": "Statut",
-    "title_line3": "Moniteur.",
-    "current_status": "Statut Actuel",
-    "loading": "Chargement..."
   },
   "legal": {
     "title_line1": "Politiques",

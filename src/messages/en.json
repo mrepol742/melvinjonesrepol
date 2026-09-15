@@ -51,9 +51,7 @@
       "footer_recent_posts": "Recent Posts",
       "footer_no_recent_posts": "No Recent Posts.",
       "footer_language_region": "Language / Region",
-      "footer_all_rights_reserved": "All Rights Reserved",
-      "footer_copyright": "Melvin Jones Repol (also known as Repol Systems) is a single legal entity responsible for all services and content on this website.",
-      "footer_open_source": "This site is Open Source."
+      "footer_all_rights_reserved": "All Rights Reserved"
     },
     "devtools_detector": {
       "description": "For the best experience, please close your developer tools. This website is designed to be enjoyed without distractions, and having the dev tools open may interfere with certain visual effects."
@@ -258,36 +256,6 @@
     "no_results_found": "No results found.",
     "github_cta_text": "Client's projects are confidential, but I'm always open to sharing more about my personal projects and code. If you're interested in seeing more of my work, feel free to check out my GitHub profile where I regularly share updates on my projects and experiments.",
     "github_button": "Github"
-  },
-  "uptime": {
-    "status_page_badge": "Status Page",
-    "title": "System Status",
-    "subtitle": "Live monitoring and uptime history",
-    "all_systems_operational": "All Systems Operational",
-    "service_disruption": "Service Disruption Detected",
-    "services_operational": "{online} of {total} services operational",
-    "total_services": "Total Services",
-    "operational": "Operational",
-    "last_refresh": "Last Refresh",
-    "legend_excellent": "Excellent",
-    "legend_good": "Good",
-    "legend_poor": "Poor",
-    "legend_no_data": "No Data",
-    "status_operational": "Operational",
-    "status_incident": "Incident",
-    "current_uptime": "Current",
-    "days_30": "30 Days",
-    "days_90": "90 Days",
-    "history_90_days": "90 Day History",
-    "last_incident": "Last Incident",
-    "duration_label": "Duration:",
-    "duration_minutes": "minutes",
-    "reason_label": "Reason:",
-    "title_line1": "System",
-    "title_line2": "Status",
-    "title_line3": "Monitor.",
-    "current_status": "Current Status",
-    "loading": "Loading..."
   },
   "legal": {
     "title_line1": "Policies",

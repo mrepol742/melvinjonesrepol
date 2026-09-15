@@ -19,6 +19,11 @@
       "source": "/webvium-search",
       "destination": "https://www.webvium.com",
       "permanent": true
+    },
+    {
+      "source": "/uptime",
+      "destination": "https://status.melvinjonesrepol.com",
+      "permanent": true
     }
   ]
 }
