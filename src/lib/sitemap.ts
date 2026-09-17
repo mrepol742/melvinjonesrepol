@@ -10,7 +10,6 @@ export const BLOG_SITEMAP_PAGE_SIZE = 100;
 
 export const STATIC_ROUTES = [
   "",
-  "/uptime",
   "/projects",
   "/protocol-discussion-platform",
   "/web-surface-scan",

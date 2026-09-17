@@ -20,10 +20,10 @@ export default function Header({
   isBlog?: boolean;
 }) {
   return (
-    <section className="relative min-h-screen px-6 pb-14 pt-32 md:px-10 lg:px-16">
+    <section className="relative min-h-svh px-6 pb-14 pt-32 md:min-h-screen md:px-10 lg:px-16">
       <div className="homepage-rule absolute left-0 top-0 h-full w-2" />
       <div
-        className={`mx-auto grid min-h-[calc(100vh-8rem)] max-w-7xl items-end gap-12 ${
+        className={`mx-auto grid min-h-[calc(100svh-11.5rem)] max-w-7xl items-end gap-12 md:min-h-[calc(100vh-11.5rem)] ${
           imageUrl
             ? "lg:grid-cols-[minmax(0,1.1fr)_minmax(20rem,.65fr)]"
             : "lg:grid-cols-1"

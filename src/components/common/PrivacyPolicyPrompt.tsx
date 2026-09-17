@@ -21,7 +21,7 @@ const defaultConsent: ConsentPreferences = {
 };
 
 export default function CookieBanner() {
-  const { updateConsent, bannerOpen, closeBanner } = useConsent();
+  const { consent, updateConsent, bannerOpen, closeBanner } = useConsent();
   const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(false);
   const [showPreferences, setShowPreferences] = useState(false);
@@ -51,9 +51,9 @@ export default function CookieBanner() {
 
   useEffect(() => {
     if (!bannerOpen) return;
-    setOpen(true);
-    let raf1: number, raf2: number;
-    raf1 = requestAnimationFrame(() => {
+    let raf2: number;
+    const raf1 = requestAnimationFrame(() => {
+      setOpen(true);
       raf2 = requestAnimationFrame(() => setVisible(true));
     });
     return () => {
@@ -87,6 +87,18 @@ export default function CookieBanner() {
       functional: false,
       advertising: false,
     });
+  };
+
+  const togglePreferences = () => {
+    if (!showPreferences) {
+      setPreferences(
+        consent
+          ? { ...defaultConsent, ...consent, necessary: true }
+          : defaultConsent,
+      );
+    }
+
+    setShowPreferences((current) => !current);
   };
 
   if (!open) return null;
@@ -123,52 +135,72 @@ export default function CookieBanner() {
             <label className="flex items-center justify-between">
               <span>Necessary Cookies</span>
 
-              <input type="checkbox" checked disabled />
+              <span className="relative inline-flex h-6 w-11 cursor-not-allowed items-center">
+                <input
+                  type="checkbox"
+                  checked
+                  disabled
+                  className="peer sr-only"
+                />
+                <span className="h-6 w-11 rounded-full bg-stone-700 transition-colors after:absolute after:left-1 after:top-1 after:h-4 after:w-4 after:rounded-full after:bg-white after:transition-transform peer-checked:bg-orange-600 peer-checked:after:translate-x-5 peer-disabled:opacity-100" />
+              </span>
             </label>
 
-            <label className="flex items-center justify-between">
+            <label className="flex cursor-pointer items-center justify-between">
               <span>Analytics Cookies</span>
 
-              <input
-                type="checkbox"
-                checked={preferences.analytics}
-                onChange={(e) =>
-                  setPreferences({
-                    ...preferences,
-                    analytics: e.target.checked,
-                  })
-                }
-              />
+              <span className="relative inline-flex h-6 w-11 items-center">
+                <input
+                  type="checkbox"
+                  checked={preferences.analytics}
+                  onChange={(e) =>
+                    setPreferences((current) => ({
+                      ...current,
+                      analytics: e.target.checked,
+                    }))
+                  }
+                  className="peer sr-only"
+                />
+                <span className="h-6 w-11 rounded-full bg-stone-700 transition-colors after:absolute after:left-1 after:top-1 after:h-4 after:w-4 after:rounded-full after:bg-white after:transition-transform peer-checked:bg-orange-600 peer-checked:after:translate-x-5 peer-focus-visible:ring-2 peer-focus-visible:ring-orange-500 peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-stone-950" />
+              </span>
             </label>
 
-            <label className="flex items-center justify-between">
+            <label className="flex cursor-pointer items-center justify-between">
               <span>Functional Cookies</span>
 
-              <input
-                type="checkbox"
-                checked={preferences.functional}
-                onChange={(e) =>
-                  setPreferences({
-                    ...preferences,
-                    functional: e.target.checked,
-                  })
-                }
-              />
+              <span className="relative inline-flex h-6 w-11 items-center">
+                <input
+                  type="checkbox"
+                  checked={preferences.functional}
+                  onChange={(e) =>
+                    setPreferences((current) => ({
+                      ...current,
+                      functional: e.target.checked,
+                    }))
+                  }
+                  className="peer sr-only"
+                />
+                <span className="h-6 w-11 rounded-full bg-stone-700 transition-colors after:absolute after:left-1 after:top-1 after:h-4 after:w-4 after:rounded-full after:bg-white after:transition-transform peer-checked:bg-orange-600 peer-checked:after:translate-x-5 peer-focus-visible:ring-2 peer-focus-visible:ring-orange-500 peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-stone-950" />
+              </span>
             </label>
 
-            <label className="flex items-center justify-between">
+            <label className="flex cursor-pointer items-center justify-between">
               <span>Advertising Cookies</span>
 
-              <input
-                type="checkbox"
-                checked={preferences.advertising}
-                onChange={(e) =>
-                  setPreferences({
-                    ...preferences,
-                    advertising: e.target.checked,
-                  })
-                }
-              />
+              <span className="relative inline-flex h-6 w-11 items-center">
+                <input
+                  type="checkbox"
+                  checked={preferences.advertising}
+                  onChange={(e) =>
+                    setPreferences((current) => ({
+                      ...current,
+                      advertising: e.target.checked,
+                    }))
+                  }
+                  className="peer sr-only"
+                />
+                <span className="h-6 w-11 rounded-full bg-stone-700 transition-colors after:absolute after:left-1 after:top-1 after:h-4 after:w-4 after:rounded-full after:bg-white after:transition-transform peer-checked:bg-orange-600 peer-checked:after:translate-x-5 peer-focus-visible:ring-2 peer-focus-visible:ring-orange-500 peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-stone-950" />
+              </span>
             </label>
 
             <button
@@ -184,7 +216,7 @@ export default function CookieBanner() {
         <div className="mt-4 flex flex-wrap justify-end gap-2">
           <button
             type="button"
-            onClick={() => setShowPreferences((prev) => !prev)}
+            onClick={togglePreferences}
             className="rounded-md border border-stone-600 px-4 py-2 text-sm hover:border-orange-500 hover:bg-orange-500/10 transition-colors"
           >
             Manage Preferences

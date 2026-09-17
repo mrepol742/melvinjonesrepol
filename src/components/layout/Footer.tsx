@@ -121,17 +121,6 @@ export default function Footer({
               Melvin Jones Repol
             </span>
 
-            <div className="flex items-center gap-2 text-xs text-zinc-400 leading-relaxed max-w-52">
-              <span className="relative flex h-1.5 w-1.5 me-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75" />
-                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-orange-600" />
-              </span>
-              <div className="flex flex-col">
-                <span className="text-zinc-400">Full Stack Developer</span>
-                <span className="opacity-60">UP-TO-DATE Webdesign</span>
-              </div>
-            </div>
-
             <p className="text-xs text-zinc-400 leading-relaxed max-w-52">
               {t("description")}
             </p>
@@ -273,11 +262,11 @@ export default function Footer({
             <span className="text-zinc-800 select-none">·</span>
 
             <Link
-              href="/uptime"
+              href="https://status.melvinjonesrepol.com"
               target="_blank"
               className="hover:text-orange-300 transition-colors"
             >
-              Uptime
+              Status
             </Link>
 
             <span className="text-zinc-800 select-none">·</span>
@@ -288,16 +277,6 @@ export default function Footer({
               className="hover:text-orange-300 transition-colors"
             >
               Legal
-            </Link>
-
-            <span className="text-zinc-800 select-none">·</span>
-
-            <Link
-              href="https://github.com/mrepol742/melvinjonesrepol"
-              target="_blank"
-              className="hover:text-orange-300 transition-colors"
-            >
-              {t("footer_open_source")}
             </Link>
           </div>
         </div>

@@ -12,11 +12,12 @@ export default function CertificateSection() {
         {certificates
           .filter((certificate) => certificate.featured)
           .map((certificate, idx) => (
-            <Link key={idx} href={certificate.link || "#"}>
-              <Card
-                subtitle={certificate.instructor}
-                className="group snap-start flex-shrink-0 w-80 md:w-96 flex"
-              >
+            <Link
+              key={idx}
+              href={certificate.link || "#"}
+              className="block w-[90vw] shrink-0 snap-start md:w-96"
+            >
+              <Card className="group h-full" subtitle={certificate.instructor}>
                 <h2 className="font-bold line-clamp-2">{certificate.title}</h2>
                 <p className="mb-2 text-sm">{certificate.instructor}</p>
 

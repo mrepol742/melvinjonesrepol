@@ -23,7 +23,7 @@ export async function generateMetadata({
   const { locale } = await params;
 
   return {
-    title: "Melvin Jones Repol | Software Engineer",
+    title: "Melvin Jones Repol - Software Engineer",
     description:
       "A software engineer building practical, reliable products across web, mobile, infrastructure, and open source since 2018.",
     keywords: [
@@ -36,7 +36,7 @@ export async function generateMetadata({
     ],
     alternates: getAlternates("", locale),
     openGraph: {
-      title: "Melvin Jones Repol | Software Engineer",
+      title: "Melvin Jones Repol - Software Engineer",
       description:
         "A software engineer building practical, reliable products across web, mobile, infrastructure, and open source since 2018.",
       url: "https://www.melvinjonesrepol.com",
@@ -53,7 +53,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: "Melvin Jones Repol | Software Engineer",
+      title: "Melvin Jones Repol - Software Engineer",
       description:
         "A software engineer building practical, reliable products across web, mobile, infrastructure, and open source since 2018.",
       images: [
