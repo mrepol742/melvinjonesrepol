@@ -67,20 +67,6 @@ export const metadata: Metadata = {
       "application/xml": "https://www.melvinjonesrepol.com/sitemap.xml",
     },
   },
-  creator: "Melvin Jones Repol",
-  applicationName: "Melvin Jones Repol",
-  category: "technology",
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
-  },
   openGraph: {
     title:
       "Melvin Jones Repol - Software Engineer",
