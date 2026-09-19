@@ -1,6 +1,6 @@
 import Card from "@/components/ui/Card";
 import { GameType } from "@/lib/steam/library";
-import { getTimeAgo, toHours } from "@/utils/date";
+import { getTimeAgo, formatDuration } from "@/utils/date";
 import Image from "next/image";
 
 export default function GameCard({ game }: { game: GameType }) {
@@ -36,12 +36,12 @@ export default function GameCard({ game }: { game: GameType }) {
         <div className="mt-1 flex flex-wrap gap-3 text-sm">
           <div>
             <span className="font-semibold">Total:</span>{" "}
-            {toHours(game.playtime_forever)}h
+            {formatDuration(game.playtime_forever)}
           </div>
           {game.playtime_2weeks && game.playtime_2weeks > 0 && (
             <div>
               <span className="font-semibold">2 Weeks:</span>{" "}
-              {toHours(game.playtime_2weeks)}h
+              {formatDuration(game.playtime_2weeks)}
             </div>
           )}
         </div>
@@ -50,19 +50,19 @@ export default function GameCard({ game }: { game: GameType }) {
           {game.playtime_mac_forever > 0 && (
             <div>
               <span className="font-semibold">Mac:</span>{" "}
-              {toHours(game.playtime_mac_forever)}h
+              {formatDuration(game.playtime_mac_forever)}
             </div>
           )}
           {game.playtime_linux_forever > 0 && (
             <div>
               <span className="font-semibold">Linux:</span>{" "}
-              {toHours(game.playtime_linux_forever)}h
+              {formatDuration(game.playtime_linux_forever)}
             </div>
           )}
           {game.playtime_deck_forever > 0 && (
             <div>
               <span className="font-semibold">Deck:</span>{" "}
-              {toHours(game.playtime_deck_forever)}h
+              {formatDuration(game.playtime_deck_forever)}
             </div>
           )}
           {game.rtime_last_played && game.rtime_last_played > 0 && (

@@ -130,9 +130,8 @@ export default function CookiePolicy() {
               <ul className="list-disc list-inside ml-4 mt-3 space-y-1">
                 <li>www.melvinjonesrepol.com</li>
                 <li>www.webvium.com</li>
-                <li>go.melvinjonesrepol.com</li>
+                <li>shrtly.melvinjonesrepol.com</li>
                 <li>Webvium Browser</li>
-                <li>Webvium Launcher</li>
                 <li>Webvium browser extensions</li>
                 <li>
                   Other websites, applications, tools, and services operated

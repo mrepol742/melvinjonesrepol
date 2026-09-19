@@ -88,9 +88,8 @@ export default function Terms() {
                 <ul className="list-disc list-inside ml-4 mt-3 space-y-1">
                   <li>Website (www.melvinjonesrepol.com)</li>
                   <li>Webvium Website (www.webvium.com)</li>
-                  <li>Shortlink (go.melvinjonesrepol.com)</li>
+                  <li>Shortlink (shrtly.melvinjonesrepol.com)</li>
                   <li>Webvium Browser (Android)</li>
-                  <li>Webvium Launcher (Android)</li>
                   <li>Floating Console (Browser Extension)</li>
                   <li>Disable Ctrl+Shift+C (Browser Extension)</li>
                   <li>Awesome New Tab (Browser Extension)</li>

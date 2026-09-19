@@ -121,16 +121,11 @@ export default function Privacy() {
                 </li>
                 <li>
                   <Link href="#shortlink">
-                    Shortlink (go.melvinjonesrepol.com)
+                    Shortlink (shrtly.melvinjonesrepol.com)
                   </Link>
                 </li>
                 <li>
                   <Link href="#webvium-browser">Webvium Browser (Android)</Link>
-                </li>
-                <li>
-                  <Link href="#webvium-launcher">
-                    Webvium Launcher (Android)
-                  </Link>
                 </li>
                 <li>
                   <Link href="#discontinued-legacy-webvium-services">
@@ -258,7 +253,7 @@ export default function Privacy() {
               </ul>
 
               <h3 className="text-xl font-semibold mt-6" id="shortlink">
-                Shortlink (go.melvinjonesrepol.com)
+                Shortlink (shrtly.melvinjonesrepol.com)
               </h3>
               <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
                 <li>We only collect the links you submit for shortening.</li>
@@ -312,15 +307,6 @@ export default function Privacy() {
                   their own privacy policies that we do not control.
                 </li>
               </ul>
-
-              <h3 className="text-xl font-semibold mt-6" id="webvium-launcher">
-                Webvium Launcher (Android)
-              </h3>
-              <p className="mt-2">
-                Webvium Launcher stores user settings locally on your device
-                (e.g., preferences and layout settings). No data is transmitted
-                to external servers by the launcher for these settings.
-              </p>
 
               <h3
                 className="text-xl font-semibold mt-6"

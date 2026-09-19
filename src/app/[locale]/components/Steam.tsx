@@ -1,7 +1,7 @@
 import Card from "@/components/ui/Card";
 import Slider from "@/components/ui/Slider";
 import { fetchSteamLibrary, GameType } from "@/lib/steam/library";
-import { toHours } from "@/utils/date";
+import { formatDuration } from "@/utils/date";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
@@ -32,14 +32,7 @@ export default async function Steam() {
     (sum, game) => sum + (game.playtime_2weeks ?? 0),
     0,
   );
-  const gameWithHighestPlaytime = steamActivities.reduce<GameType | undefined>(
-    (topGame, game) =>
-      (game.playtime_2weeks ?? 0) > (topGame?.playtime_2weeks ?? 0)
-        ? game
-        : topGame,
-    undefined,
-  );
-  const sortedByPlaytime2Weeks = [...steamActivities].sort(
+  const sortedByPlaytime2Weeks = [...mostPlayedFavoriteGames].sort(
     (a, b) => (b.playtime_2weeks ?? 0) - (a.playtime_2weeks ?? 0),
   );
 
@@ -64,7 +57,7 @@ export default async function Steam() {
 
           <div className="text-right">
             <p className="text-3xl font-bold leading-none">
-              {toHours(totalPlaytime2Weeks)} hrs
+              {formatDuration(totalPlaytime2Weeks)}
             </p>
             <p className="mt-1 text-xs uppercase tracking-wide">
               {t("last_14_days")}
@@ -76,33 +69,17 @@ export default async function Steam() {
           {t("gaming_activity_description")}
         </p>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-5">
-          <Card>
-            <p className="text-xs uppercase tracking-wide">
-              {t("top_game_label")}
-            </p>
-            <p className="mt-2 truncate text-xl font-semibold">
-              {gameWithHighestPlaytime
-                ? sanitizeGameName(gameWithHighestPlaytime.name)
-                : "—"}
-            </p>
-            <p className="mt-1 text-sm">
-              {gameWithHighestPlaytime
-                ? `${toHours(gameWithHighestPlaytime.playtime_2weeks ?? 0)} hrs`
-                : "—"}
-            </p>
-          </Card>
-
-          {sortedByPlaytime2Weeks.slice(0, 4).map((game, index) => (
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
+          {sortedByPlaytime2Weeks.slice(0, 6).map((game, index) => (
             <Card key={game.appid ?? index}>
               <p className="text-xs uppercase tracking-wide">
-                #{String(index + 1).padStart(2, "0")} {t("last_14_days")}
+                #{String(index + 1).padStart(2, "0")}
               </p>
-              <p className="mt-2 truncate text-xl font-semibold">
+              <p className="mt-2  text-xl font-semibold">
                 {sanitizeGameName(game.name)}
               </p>
               <p className="mt-1 text-sm">
-                {toHours(game.playtime_2weeks ?? 0)} hrs
+                {formatDuration(game.playtime_2weeks ?? 0)}
               </p>
             </Card>
           ))}
@@ -152,7 +129,7 @@ export default async function Steam() {
                   <span className="text-xl font-bold">{game.name}</span>
                 </div>
                 <span className="bg-gray-500/20 px-3 py-1 text-xs font-semibold">
-                  {toHours(game.playtime_forever)} {t("total_hours_label")}
+                  {formatDuration(game.playtime_forever)}
                 </span>
               </Card>
             </Link>

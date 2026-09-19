@@ -1,6 +1,10 @@
 import { fetchCurrentStats } from "@/lib/wakatime/stat";
 import { getTranslations } from "next-intl/server";
-import { faLinux } from "@fortawesome/free-brands-svg-icons";
+import {
+  faClaude,
+  faLinux,
+  faOpenai,
+} from "@fortawesome/free-brands-svg-icons";
 import { faLaptop } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Card from "@/components/ui/Card";
@@ -62,7 +66,7 @@ export default async function Wakatime() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-5">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
         <Card>
           <p className="text-xs uppercase tracking-wide">
             {t("top_language_label")}
@@ -135,8 +139,12 @@ export default async function Wakatime() {
           >
             <Card>
               <div className="flex items-center gap-3">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-orange-500/10 text-sm font-semibold uppercase text-orange-600 dark:text-orange-400">
-                  {agent.name.slice(0, 2)}
+                <span className="inline-flex items-center justify-center text-orange-600 dark:text-orange-400">
+                  {agent.name == "Sonnet" ? (
+                    <FontAwesomeIcon icon={faClaude} size="xl" />
+                  ) : (
+                    <FontAwesomeIcon icon={faOpenai} size="xl" />
+                  )}
                 </span>
                 <div className="min-w-0">
                   <p className="truncate text-sm font-semibold">{agent.name}</p>

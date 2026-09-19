@@ -45,24 +45,24 @@ export default async function Github() {
     },
     { label: t("stat_followers"), value: formatNumber(profile.followers) },
     { label: t("stat_following"), value: formatNumber(profile.following) },
-    { label: t("stat_account_age"), value: `${accountAgeYears.toFixed(1)}y` },
-    { label: t("stat_github_id"), value: formatNumber(profile.id) },
-    {
-      label: t("stat_avg_followers_per_repo"),
-      value: avgFollowersPerRepo.toFixed(2),
-    },
-    {
-      label: t("stat_repo_gist_ratio"),
-      value: repoToGistRatio.toFixed(2),
-    },
-    {
-      label: t("stat_follow_ratio"),
-      value: followRatio.toFixed(2),
-    },
-    {
-      label: t("stat_last_updated"),
-      value: new Date(profile.updated_at).toLocaleDateString(),
-    },
+    // { label: t("stat_account_age"), value: `${accountAgeYears.toFixed(1)}y` },
+    // { label: t("stat_github_id"), value: formatNumber(profile.id) },
+    // {
+    //   label: t("stat_avg_followers_per_repo"),
+    //   value: avgFollowersPerRepo.toFixed(2),
+    // },
+    // {
+    //   label: t("stat_repo_gist_ratio"),
+    //   value: repoToGistRatio.toFixed(2),
+    // },
+    // {
+    //   label: t("stat_follow_ratio"),
+    //   value: followRatio.toFixed(2),
+    // },
+    // {
+    //   label: t("stat_last_updated"),
+    //   value: new Date(profile.updated_at).toLocaleDateString(),
+    // },
   ];
 
   return (
@@ -85,7 +85,7 @@ export default async function Github() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-5">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {stats.map((item, index) => (
           <Card
             key={index}
