@@ -1,4 +1,4 @@
-import { fetchCurrentStats } from "@/lib/wakatime/stat";
+import { fetchCurrentStats } from "@/lib/stat";
 import { getTranslations } from "next-intl/server";
 import {
   faClaude,

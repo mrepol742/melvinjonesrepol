@@ -1,6 +1,6 @@
 import Card from "@/components/ui/Card";
 import Slider from "@/components/ui/Slider";
-import { fetchSteamLibrary, GameType } from "@/lib/steam/library";
+import { fetchSteamLibrary, GameType } from "@/lib/library";
 import { formatDuration } from "@/utils/date";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";

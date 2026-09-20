@@ -4,9 +4,10 @@ import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
 import { faAt, faUser } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { toast } from "react-toastify";
 import { useTranslations } from "next-intl";
+import { sanitizeMessageHtml } from "@/lib/message-html";
 
 export default function ContactMe() {
   const t = useTranslations("contact_me");
@@ -18,10 +19,17 @@ export default function ContactMe() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [grecaptchaLoaded, setGrecaptchaLoaded] = useState(false);
+  const [messageTab, setMessageTab] = useState<"message" | "preview">(
+    "message",
+  );
 
   const characterCount =
     formData.message.trim() === "" ? 0 : formData.message.trim().length;
   const isValidcharacterCount = characterCount >= 500 && characterCount <= 1000;
+  const messagePreview = useMemo(
+    () => sanitizeMessageHtml(formData.message),
+    [formData.message],
+  );
 
   useEffect(() => {
     const loadGrecaptcha = () => {
@@ -227,44 +235,120 @@ export default function ContactMe() {
           </div>
 
           <div>
-            <div className="mb-2 flex items-center justify-between">
-              <span className="text-xs font-bold uppercase tracking-widest text-stone-400">
-                {t("form_message_label")}
-              </span>
-              <span
-                className={`text-xs font-mono ${characterCount === 0 ? "text-stone-400" : isValidcharacterCount ? "text-orange-600 dark:text-orange-400" : "text-orange-700 dark:text-orange-300"}`}
-              >
-                {characterCount} / 1000
-              </span>
-            </div>
-            <div className="border border-stone-700 bg-stone-900 px-4 py-3 transition-all duration-200 focus-within:border-orange-500 focus-within:shadow-[3px_3px_0_0_rgba(234,88,12,0.35)]">
-              <textarea
-                rows={9}
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                placeholder={t("form_message_placeholder")}
-                className="w-full resize-none bg-transparent text-sm outline-none placeholder:opacity-40"
-              />
-            </div>
-            <div className="mt-2 flex items-center justify-between gap-4">
-              <p className="text-xs text-stone-400">
-                {characterCount > 0 && !isValidcharacterCount
-                  ? characterCount < 500
-                    ? `${500 - characterCount} more characters needed`
-                    : `${characterCount - 1000} characters over limit`
-                  : "A concise, detailed brief works best."}
-              </p>
-              <div className="flex gap-0.5" aria-hidden="true">
-                {Array.from({ length: 10 }).map((_, index) => (
-                  <span
-                    key={index}
-                    className={`h-1 w-4 ${characterCount >= (index + 1) * 100 ? "bg-orange-500" : "bg-stone-700"}`}
-                  />
-                ))}
+            <div
+              role="tablist"
+              aria-label="Contact message editor"
+              className="mb-4 border-b border-stone-700"
+            >
+              <div className="flex items-center justify-between">
+                <div>
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected={messageTab === "message"}
+                    aria-controls="message-panel"
+                    onClick={() => setMessageTab("message")}
+                    className={`border-b-2 px-4 py-3 text-xs font-bold uppercase tracking-widest transition-colors ${messageTab === "message" ? "border-orange-500 text-orange-400" : "border-transparent text-stone-400 hover:text-stone-200"}`}
+                  >
+                    {t("form_message_label")}
+                  </button>
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected={messageTab === "preview"}
+                    aria-controls="preview-panel"
+                    onClick={() => setMessageTab("preview")}
+                    className={`border-b-2 px-4 py-3 text-xs font-bold uppercase tracking-widest transition-colors ${messageTab === "preview" ? "border-orange-500 text-orange-400" : "border-transparent text-stone-400 hover:text-stone-200"}`}
+                  >
+                    Preview
+                  </button>
+                </div>
+
+                <span
+                  className={`text-xs font-mono ${characterCount === 0 ? "text-stone-400" : isValidcharacterCount ? "text-orange-600 dark:text-orange-400" : "text-orange-700 dark:text-orange-300"}`}
+                >
+                  {characterCount} / 1000
+                </span>
               </div>
             </div>
+
+            {messageTab === "message" ? (
+              <div id="message-panel" role="tabpanel">
+                <div className="border border-stone-700 bg-stone-900 px-4 py-3 transition-all duration-200 focus-within:border-orange-500 focus-within:shadow-[3px_3px_0_0_rgba(234,88,12,0.35)]">
+                  <textarea
+                    rows={9}
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    placeholder={t("form_message_placeholder")}
+                    className="w-full resize-none bg-transparent text-sm outline-none placeholder:opacity-40"
+                  />
+                </div>
+                <div className="mt-2 flex items-center justify-between gap-4">
+                  <p className="text-xs text-stone-400">
+                    {characterCount > 0 && !isValidcharacterCount
+                      ? characterCount < 500
+                        ? `${500 - characterCount} more characters needed`
+                        : `${characterCount - 1000} characters over limit`
+                      : "A concise, detailed brief works best."}
+                  </p>
+                  <div className="flex gap-0.5" aria-hidden="true">
+                    {Array.from({ length: 10 }).map((_, index) => (
+                      <span
+                        key={index}
+                        className={`h-1 w-4 ${characterCount >= (index + 1) * 100 ? "bg-orange-500" : "bg-stone-700"}`}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <section
+                id="preview-panel"
+                role="tabpanel"
+                aria-labelledby="message-preview-title"
+                className="overflow-hidden border border-stone-700 bg-stone-900"
+              >
+                <div className="bg-white p-4 text-stone-800 sm:p-6">
+                  <div className="mx-auto max-w-xl border border-orange-200 bg-white">
+                    <div className="border-b border-orange-200 px-6 py-5 font-mono text-base font-bold text-stone-800">
+                      Melvin Jones Repol
+                    </div>
+                    <div className="px-6 py-9">
+                      <p className="m-0 text-xs font-bold uppercase tracking-[0.12em] text-orange-600">
+                        New contact message
+                      </p>
+                      <h5 className="mt-4 font-mono text-2xl font-semibold tracking-tight text-stone-800">
+                        Someone reached out.
+                      </h5>
+                      <div className="mt-6 text-sm leading-6 text-stone-600">
+                        <p className="m-0">
+                          <strong>Name:</strong> {formData.name || "Your name"}
+                        </p>
+                        <p className="mt-2">
+                          <strong>Email:</strong>{" "}
+                          {formData.email || "you@example.com"}
+                        </p>
+                        <p className="mt-6 mb-2 font-bold">Message</p>
+                        <div
+                          className="contact-message-preview"
+                          dangerouslySetInnerHTML={{
+                            __html:
+                              messagePreview ||
+                              "<p>Your formatted message will appear here.</p>",
+                          }}
+                        />
+                      </div>
+                    </div>
+                    <div className="border-t border-orange-200 px-6 py-4 text-xs leading-5 text-stone-600">
+                      Melvin Jones Repol · Practical software, technical
+                      insights, and project updates.
+                    </div>
+                  </div>
+                </div>
+              </section>
+            )}
           </div>
 
           <div className="border-t border-stone-700 pt-6">

@@ -109,10 +109,7 @@ export default function Footer({
     "text-sm text-zinc-400 hover:text-orange-300 transition-colors duration-150";
 
   return (
-    <footer
-      className="bg-stone-950 text-white py-10 border-t-4 border-orange-600 rounded-none"
-      data-aos="fade-up"
-    >
+    <footer className="bg-stone-950 text-white py-10 border-t-4 border-orange-600 rounded-none">
       <nav aria-label="Footer Navigation" className="container mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-10">
           {/* Brand */}
