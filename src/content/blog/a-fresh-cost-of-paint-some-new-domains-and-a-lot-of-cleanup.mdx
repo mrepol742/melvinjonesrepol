@@ -1,0 +1,148 @@
+---
+title: "A Fresh Coat of Paint, Some New Domains, and a Lot of Cleanup"
+date: "2026-09-20"
+excerpt: "The website got a new identity, Webvium finally has its own home, old services are being retired, and a few important security changes happened behind the scenes."
+topics: ["webvium", "website", "infrastructure", "security"]
+---
+
+Sometimes maintaining projects is less about adding another feature and more about looking at everything you've built over the years and realizing, "Yeah... this could probably be organized better."
+
+That has pretty much been the theme of the latest round of changes across my websites and projects. Some things got redesigned, some moved to better domains, a few old services were finally retired, and others received changes that users probably won't notice at all.
+
+The goal wasn't just to make everything prettier. I wanted the projects to feel more connected while still giving each one its own identity.
+
+And after years of Webvium living under various subdomains and project pages, one particularly nice change finally happened: we now own [webvium.com](https://www.webvium.com).
+
+A Website That Feels More Like Me
+
+My main website, [melvinjonesrepol.com](https://www.melvinjonesrepol.com), recently received another major redesign.
+
+The previous versions worked, but over time the site had accumulated pages, projects, experiments, analytics, blogs, and other things from different stages of my development career. I wanted the new design to bring those pieces together instead of feeling like a collection of unrelated pages.
+
+The new version focuses more on the work itself, the projects behind it, and the personality behind the code. It is cleaner, more deliberate, and hopefully feels less like a traditional developer portfolio template.
+
+The same cleanup also extended beyond the homepage.
+
+Webvium Finally Has Its Own Home
+
+One of the biggest changes is the move to [webvium.com](https://www.webvium.com).
+
+Webvium has existed since 2018, so getting the actual ".com" domain after all these years felt like finally putting the correct nameplate on the door.
+
+Getting webvium.com isn't quite easy as it's a 12 year old domain much older than the project itself.
+
+The Webvium website has also been redesigned around that change. Instead of treating Webvium like another project attached to my personal website, it can now stand on its own.
+
+That separation matters because Webvium is slowly becoming its own ecosystem rather than simply being "that Android browser I built."
+
+The website, branding, downloads, policies, and future Webvium projects can now live under one proper identity.
+
+One Privacy Experience Across Everything
+
+There is one thing I intentionally did not want each website reinventing: privacy controls.
+
+My sites now share the same privacy and cookie consent experience.
+
+The same familiar prompt and preference modal is used across the ecosystem, with controls for things such as necessary, analytics, functional, and advertising cookies where applicable.
+
+It sounds like a small UI detail, but consistency matters here. Someone moving between my portfolio and another project shouldn't suddenly have to figure out an entirely different consent interface.
+
+It also makes maintaining privacy-related changes much easier. Instead of solving the same problem five slightly different ways, there is now a common approach.
+
+Less duplicated work is usually a good thing. Especially when the duplicated work is a cookie modal.
+
+A Much More Useful Status Page
+
+The service status page has also been separated from the main website and now lives at [status.melvinjonesrepol.com](https://status.melvinjonesrepol.com).
+
+But this wasn't just a domain change.
+
+The status page is now much more detailed, giving a clearer view of the availability and health of the services connected to my projects.
+
+I've also added direct links to the official status pages of third-party services that my infrastructure depends on. This makes it easier to check whether an issue is actually coming from one of my services or from an external provider.
+
+That's especially useful when something suddenly stops working and the first question is always the same: Is it me, or is something else down?
+
+Instead of hunting around for several different provider status pages, the status site can act as a central place to start investigating.
+
+Keeping the status infrastructure separate from the main website also makes more sense. If something on the primary website is having a bad day, the page explaining that it is having a bad day probably shouldn't depend entirely on the same application.
+
+Goodbye "go", Hello Shrtly
+
+Another small migration happened with my URL shortener.
+
+The old:
+
+"go.melvinjonesrepol.com"
+
+has been replaced by:
+
+[shrtly.melvinjonesrepol.com](https://shrtly.melvinjonesrepol.com)
+
+The new name actually describes what the service is rather than hiding behind a generic "go" subdomain.
+
+It is still a small utility, but giving these projects clearer identities is part of the larger cleanup.
+
+Some Services Had to Go
+
+Cleaning up infrastructure also means admitting when something no longer needs to exist.
+
+"ai.melvinjonesrepol.com" has been decommissioned.
+
+The old release infrastructure at "released.melvinjonesrepol.com" is also being retired. Webvium releases are moving to the Google Play Store instead of maintaining another dedicated release distribution system.
+
+The same applies to Uptodown. Builds distributed there will be removed in favor of the official Google Play Store build.
+
+Having several distribution channels sounded useful when they were originally added, but every additional channel becomes another release that needs to be maintained, verified, signed correctly, documented, and kept in sync.
+
+For Webvium, simplifying that process makes more sense now.
+
+Webvium Is Getting a Cleaner Android Identity Too
+
+The cleanup isn't limited to websites.
+
+Webvium's Android package identity has changed as well.
+
+Previously, applications used my personal namespace:
+
+"com.mrepol742.*"
+
+For example:
+
+"com.mrepol742.webvium"
+
+Webvium Browser now uses:
+
+"com.webvium.browser"
+
+That might look like a tiny string change, but Android package names are deeply tied to an application's identity. Moving away from my personal developer namespace gives Webvium a cleaner identity that matches the direction of the project itself.
+
+The signing key has also been replaced as part of the transition.
+
+These are the kinds of changes that are much easier to make while reorganizing the project than several years later when even more systems depend on the old identity.
+
+Separating Personal and Contract Work
+
+There was another change that has absolutely nothing to do with visual design, but I consider it one of the more important ones.
+
+I updated my GPG signing setup for work-related development.
+
+Previously, my personal GPG signature could also end up being used for commits associated with contract work. I've now separated those identities so contract-related changes use a dedicated work GPG signature instead.
+
+It creates a much clearer boundary.
+
+Personal projects are signed using my personal development identity. Contract work uses the appropriate work identity.
+
+This improves both security and transparency, especially when looking through signed Git history later. A verified signature should tell you more than "yep, Melvin signed something." Context matters too.
+
+Fewer Things, Clearer Purpose
+
+A lot changed, but strangely, the overall result is actually less infrastructure.
+
+Some domains moved. Some disappeared. Webvium finally got the domain it deserves. Distribution is becoming more centralized. Signing identities are being separated properly. Privacy controls are becoming consistent across projects. And the status page now provides a much clearer picture of both my own services and the third-party infrastructure they rely on.
+
+The websites themselves finally feel like they belong to the same developer without needing to look exactly the same.
+
+There will always be another redesign, another migration, or another domain I convince myself I absolutely need at 2 AM. That's just part of maintaining projects for years.
+
+For now, though, things feel a little more organized than they did yesterday.
