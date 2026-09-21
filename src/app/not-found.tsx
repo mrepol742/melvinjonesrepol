@@ -51,7 +51,7 @@ export default async function NotFound() {
   const t = await getTranslations("not_found");
   const quotes = t.raw("quotes") as string[];
   const quote = quotes[Math.floor(Math.random() * quotes.length)];
-  const posts = getRecentPosts(12, locale);
+  const posts = getRecentPosts(12);
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>

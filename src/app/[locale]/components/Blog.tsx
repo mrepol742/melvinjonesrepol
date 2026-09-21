@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function BlogSection({ locale = "en" }: { locale?: string }) {
   return (
     <Slider>
-      {getRecentPosts(10, locale).map((post: any, index: number) => {
+      {getRecentPosts(10).map((post: any, index: number) => {
         return (
           <Link
             key={index}

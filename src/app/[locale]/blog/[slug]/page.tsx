@@ -46,7 +46,7 @@ function extractHeadings(content: string): Heading[] {
 }
 
 export function generateStaticParams() {
-  return getAllPosts("en").map(({ slug }) => ({ locale: "en", slug }));
+  return getAllPosts().map(({ slug }) => ({ locale: "en", slug }));
 }
 
 export async function generateMetadata({
@@ -55,7 +55,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPostBySlug(slug, "en");
+  const post = getPostBySlug(slug);
 
   if (!post) return notFound();
 
@@ -153,8 +153,8 @@ export default async function BlogPost({
 }) {
   const { slug } = await params;
 
-  const post = getPostBySlug(slug, "en");
-  const posts = getAllPosts("en");
+  const post = getPostBySlug(slug);
+  const posts = getAllPosts();
   if (!post) notFound();
 
   const { content, data } = post;

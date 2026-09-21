@@ -61,7 +61,7 @@ export default async function BlogPage({
   const sParams = await searchParams;
   const query = Array.isArray(sParams.q) ? sParams.q.join(", ") : sParams.q || "";
   const topic = Array.isArray(sParams.topic) ? sParams.topic[0] : sParams.topic || "";
-  const posts = getAllPosts("en");
+  const posts = getAllPosts();
   const topics = Array.from(new Set(posts.flatMap((post) => post.topics ?? []).filter(Boolean))).sort();
   const filteredPosts = posts.filter((post) => {
     const haystack = `${post.title} ${post.excerpt ?? ""} ${(post.topics ?? []).join(" ")}`.toLowerCase();

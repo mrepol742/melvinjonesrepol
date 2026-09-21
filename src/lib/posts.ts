@@ -3,8 +3,6 @@ import path from "path";
 import matter from "gray-matter";
 
 const postsDirectory = path.join(process.cwd(), "src/content/blog");
-const localePostsDirectory = (locale: string) =>
-  path.join(postsDirectory, locale);
 
 export type BlogPost = {
   slug: string;
@@ -45,14 +43,13 @@ function readPostsFromDirectory(directory: string): BlogPost[] {
     });
 }
 
-export function getAllPosts(locale = "en") {
+export function getAllPosts() {
   try {
-    const localizedPosts = readPostsFromDirectory(localePostsDirectory(locale));
-    const posts =
-      localizedPosts.length > 0 ? localizedPosts : readPostsFromDirectory(postsDirectory);
+    const posts = readPostsFromDirectory(postsDirectory);
 
     return posts.sort(
-      (a, b) => new Date(b.date ?? 0).getTime() - new Date(a.date ?? 0).getTime(),
+      (a, b) =>
+        new Date(b.date ?? 0).getTime() - new Date(a.date ?? 0).getTime(),
     );
   } catch (err) {
     console.error("Failed to get all posts", err);
@@ -60,16 +57,11 @@ export function getAllPosts(locale = "en") {
   }
 }
 
-export function getPostBySlug(
-  slug: string,
-  locale = "en",
-): BlogPostContent | null {
+export function getPostBySlug(slug: string): BlogPostContent | null {
   try {
     if (!slug || slug.includes("/") || slug.includes("\\")) return null;
 
-    const localizedFile = path.join(localePostsDirectory(locale), `${slug}.mdx`);
-    const fallbackFile = path.join(postsDirectory, `${slug}.mdx`);
-    const filePath = fs.existsSync(localizedFile) ? localizedFile : fallbackFile;
+    const filePath = path.join(postsDirectory, `${slug}.mdx`);
 
     if (!fs.existsSync(filePath)) return null;
 
@@ -92,6 +84,6 @@ export function getPostBySlug(
   }
 }
 
-export function getRecentPosts(limit = 5, locale = "en") {
-  return getAllPosts(locale).slice(0, limit);
+export function getRecentPosts(limit = 5) {
+  return getAllPosts().slice(0, limit);
 }

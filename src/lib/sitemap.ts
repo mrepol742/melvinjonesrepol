@@ -47,12 +47,12 @@ export function getLocalizedStaticUrls(locale: string) {
 export function getBlogSitemapPageCount() {
   return Math.max(
     1,
-    Math.ceil(getAllPosts("en").length / BLOG_SITEMAP_PAGE_SIZE),
+    Math.ceil(getAllPosts().length / BLOG_SITEMAP_PAGE_SIZE),
   );
 }
 
 export function getBlogSitemapUrls(page: number) {
-  const posts = getAllPosts("en");
+  const posts = getAllPosts();
   const start = (page - 1) * BLOG_SITEMAP_PAGE_SIZE;
   const end = start + BLOG_SITEMAP_PAGE_SIZE;
 

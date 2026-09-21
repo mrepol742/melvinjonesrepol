@@ -8,7 +8,7 @@ const POSTS_PER_PAGE = 12;
 const SITE_URL = "https://www.melvinjonesrepol.com";
 
 export async function generateStaticParams() {
-  const posts = getAllPosts("en");
+  const posts = getAllPosts();
   const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
   return Array.from({ length: Math.max(0, totalPages - 1) }, (_, i) => ({
     pageNumber: String(i + 2),
@@ -76,7 +76,7 @@ export default async function BlogPageN({
   const { pageNumber } = await params;
   const page = Number(pageNumber);
 
-  const posts = getAllPosts("en");
+  const posts = getAllPosts();
   const totalPages = Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE));
 
   if (!Number.isInteger(page) || page < 2 || page > totalPages) {
