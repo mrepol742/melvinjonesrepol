@@ -1,0 +1,149 @@
+---
+title: "AI Can Hack Companies? What Does “Hack” Actually Mean?"
+date: "2026-09-21"
+excerpt: "AI companies are reporting increasingly capable cybersecurity models, but the word 'hack' is doing a lot of work when nobody explains what the model actually did."
+topics:
+  ["artificial-intelligence", "cybersecurity", "web-security", "ai-security"]
+---
+
+![https://i.imgur.com/n2X4I9M.png](https://i.imgur.com/n2X4I9M.png)
+
+I've been seeing more reports about AI models supposedly being capable of "hacking companies," and every time I see that phrase, I have the same question: what in the world does **hack** mean here? Did the model discover a zero-day, develop an exploit, gain remote code execution, and move through an internal network? Did it find an exposed password? Did it abuse a form without rate limiting? Or was there simply an endpoint with weak validation that happily accepted whatever the model threw at it? These are completely different security problems, yet they can all eventually produce the same headline: **AI hacked a company.**
+
+The capabilities are real, and reports from OpenAI and Anthropic show that models are getting considerably better at cybersecurity tasks. What bothers me is when those capabilities get compressed into a scary sentence while most of the technical context disappears.
+
+## "Hacked" Doesn't Tell Me Much
+
+Security isn't binary. Saying a system was hacked tells me that something went wrong, but it doesn't tell me how difficult the attack was or what the attacker actually accomplished.
+
+Take a public registration form as a simple example. Maybe there is no rate limiter, no CAPTCHA or equivalent challenge, no honeypot, weak email validation, no meaningful abuse detection, and no firewall rule reacting when one client suddenly starts hammering the endpoint.
+
+An AI agent notices this and creates thousands of accounts.
+
+Sure, the AI successfully abused the application, but did it demonstrate some incredible new hacking capability? I would argue that the more useful finding is that the application had almost nothing preventing automated abuse in the first place.
+
+The same question applies when credentials are exposed somewhere they shouldn't be. Finding a leaked API key and using it is very different from discovering a previously unknown vulnerability and building an exploit for it. Both can lead to a compromise, but putting them under the same vague "AI can hack companies" description hides the part security engineers actually care about.
+
+## OpenAI's Reports Are More Interesting Than the Headlines
+
+OpenAI has published cybersecurity evaluations that show why the technical details matter.
+
+During one third-party evaluation, models were accidentally given access to the public internet because of a testing configuration issue. A fictional target used during testing happened to share its name with a real domain. According to OpenAI, a model reached the real website, exploited what the company described as a basic security vulnerability, and found credentials associated with the site.
+
+That's a real security incident, but the details are important. OpenAI specifically explained that the event did not involve some sophisticated sandbox escape or a newly discovered zero-day. The model encountered a vulnerable real-world system because the evaluation environment unintentionally allowed it to reach the internet.
+
+That tells me something useful about the model. It can recognize an opportunity, interact with a real system, exploit a vulnerability, and continue working with what it finds.
+
+It doesn't automatically tell me that the model suddenly became capable of breaking through hardened corporate infrastructure from scratch.
+
+OpenAI has reported much more impressive examples too, including models discovering previously unknown vulnerabilities and performing increasingly difficult exploit-development tasks. Those cases deserve attention precisely because we know more about what the model accomplished.
+
+## Anthropic Has Been Reporting Similar Things
+
+Anthropic's threat intelligence reports make this discussion even more interesting because they look at AI being used during real cyber operations rather than only controlled benchmarks.
+
+Anthropic has documented cases involving Claude where AI assisted with reconnaissance, vulnerability research, credential analysis, exploitation, data processing, and other parts of an attack workflow. Some of these reports describe a surprisingly high degree of automation.
+
+That's significant progress, but again, I want the details.
+
+Was Claude given a target by a human operator? Did the model independently discover the vulnerability? What tools could it access? Was it executing commands directly or generating instructions for somebody else? Did a human decide which systems were worth targeting? How many attempts were required before something worked?
+
+Anthropic itself has described humans remaining involved in important parts of some operations, including target selection and decisions around collected information. That doesn't make the AI involvement unimportant. In fact, reducing the amount of manual work required for an attack can itself be a major security problem.
+
+It just means **AI-assisted hacking**, **mostly autonomous hacking**, and **fully autonomous compromise** shouldn't automatically be treated as interchangeable descriptions.
+
+## We've Been Able to Automate a Lot of This for Years
+
+This is another part of the conversation that gets lost.
+
+You don't necessarily need the newest frontier model to automate basic offensive security work. Even older capable models can inspect HTTP responses, generate payloads, modify requests, analyze errors, write scripts, and suggest another approach when something doesn't work.
+
+Give the model a browser, terminal, security tools, enough context, and an agent loop, and things become considerably more interesting. Add MCP tools or another orchestration layer and the model can interact with external systems instead of simply telling a human what command to type next.
+
+That distinction matters.
+
+A chatbot sitting in a browser and answering security questions is one thing. An agent with a terminal, browser automation, network access, persistent context, security tooling, and permission to keep trying is something completely different.
+
+The model didn't magically learn what SQL injection is when the latest version was released. What keeps improving is its ability to reason through the problem, use tools correctly, recover from failures, connect multiple steps, and continue working without a human constantly steering it.
+
+Those improvements are important, but they should be described for what they actually are.
+
+## Sometimes the Security Is Just Bad
+
+This is probably the less exciting explanation, but sometimes the target simply isn't particularly difficult.
+
+Imagine an application where the developers forgot rate limiting on the password reset endpoint. There is no CAPTCHA after repeated attempts, no meaningful monitoring, no temporary lockout, and nothing at the firewall level reacting to obviously automated traffic.
+
+You don't need the most expensive frontier model available to discover that weakness.
+
+Sometimes you barely need AI at all.
+
+The same applies to missing authorization checks, predictable identifiers, exposed development endpoints, old dependencies, leaked credentials, improperly configured cloud storage, weak email verification, or APIs that trust input they really shouldn't trust.
+
+An AI model automating the discovery and exploitation of those weaknesses is still important because automation changes the economics of attacking systems. What previously required somebody manually testing hundreds of targets can increasingly be delegated to software.
+
+But we should be careful about confusing **the AI becoming more capable** with **the target being incredibly easy to attack**.
+
+Both can be true at the same time.
+
+## Give Me the Technical Details
+
+When I read that an AI model hacked a company, there are a few things I actually want to know.
+
+What was the starting point? Was the model sitting on the public internet, or did researchers already provide credentials, source code, network access, or information about the target?
+
+What vulnerability did it exploit? Was it SQL injection, broken access control, command injection, credential exposure, an outdated dependency, weak authentication, or an actual zero-day?
+
+What tools did the model have? Giving an AI a browser and asking it questions is completely different from giving it Kali-style tooling, a terminal, persistent storage, network access, custom MCP servers, and an automated loop that can run for hours.
+
+How much human involvement was required? If a researcher selected the target, identified the interesting endpoint, suggested the vulnerability class, approved commands, and restarted the agent whenever it became stuck, that context matters.
+
+And finally, what did the model actually achieve? Reading something that wasn't supposed to be public isn't equivalent to remote code execution. Remote code execution on one machine isn't automatically equivalent to compromising an entire company's infrastructure.
+
+Those details aren't boring footnotes. They're the actual story.
+
+## The Part Developers Should Actually Worry About
+
+There is still a very real security problem here, even without the dramatic headlines.
+
+AI makes automation cheaper.
+
+An attacker doesn't necessarily need some magical model capable of instantly discovering zero-days. A model that can autonomously inspect thousands of websites, notice suspicious behavior, test common vulnerabilities, analyze responses, write small scripts, retry failures, and report promising targets is already useful.
+
+That means boring security controls become even more important.
+
+Rate limiting matters. Proper authentication and authorization matter. CAPTCHA and bot protection can matter where abuse is expected. Honeypots can provide useful signals. Input validation matters. Proper email verification matters. Firewalls and services like Cloudflare can add another layer. Monitoring matters because suddenly receiving 20,000 suspicious requests shouldn't be something you discover three weeks later while looking at logs for an unrelated bug.
+
+None of those controls are exciting, but that's kind of the point.
+
+The best defense against an AI automatically finding simple mistakes is to stop leaving simple mistakes everywhere.
+
+## Some AI Security Results Are Genuinely Impressive
+
+I also don't want this argument to turn into "AI hacking is just hype," because that wouldn't be accurate either.
+
+OpenAI has reported models discovering previously unknown vulnerabilities and increasingly succeeding at exploit-development benchmarks. Anthropic has published threat intelligence showing Claude being incorporated into sophisticated cyber workflows with substantial automation.
+
+Those developments deserve serious attention.
+
+Discovering a zero-day is interesting. Developing a working exploit is interesting. Chaining multiple vulnerabilities together is interesting. Escaping an isolated environment is interesting. Successfully adapting when the first exploit doesn't work is especially interesting because that starts demonstrating something beyond basic scripted automation.
+
+Those are exactly the capabilities I want AI companies and security researchers to document.
+
+The problem isn't that companies are researching or reporting them. We absolutely should know what these models can do.
+
+The problem starts when all of those very different capabilities get flattened into the same sentence.
+
+## Tell Me What the AI Actually Did
+
+AI cybersecurity capabilities are moving quickly, and reports from OpenAI, Anthropic, independent researchers, and security companies are giving us plenty of reasons to pay attention. Models are becoming better at tool use, vulnerability discovery, exploit development, reconnaissance, and carrying an objective through multiple steps with less human intervention.
+
+That's already interesting enough without turning every incident into a movie trailer.
+
+If the model discovered a zero-day, tell me that. If it chained several vulnerabilities together, explain the chain. If it found exposed credentials, say they were exposed credentials. If it abused an endpoint without rate limiting, tell me there wasn't a rate limiter. And if researchers gave it a terminal, network access, security tools, a target, and thousands of attempts, that belongs in the story too.
+
+Otherwise, saying **"AI hacked a company"** doesn't really tell me how capable the AI was.
+
+It mostly tells me that something somewhere was vulnerable.
+
+And whenever I see another headline claiming an AI model hacked a company, I'm probably going to keep asking the same boring developer question: **what exactly did it do?**
