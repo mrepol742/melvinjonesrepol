@@ -1,7 +1,7 @@
 import Card from "@/components/ui/Card";
 import Slider from "@/components/ui/Slider";
 import YoutubeVideo from "@/components/ui/YoutubeVideo";
-import { fetchYoutubeLatestVideos } from "@/lib/youtube/latest-videos";
+import { fetchYoutubeLatestVideos } from "@/lib/latest-videos";
 import { getTranslations } from "next-intl/server";
 
 export default async function Youtube() {

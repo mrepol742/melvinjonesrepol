@@ -1,6 +1,6 @@
 import Card from "@/components/ui/Card";
 import ScrambleText from "@/components/ui/ScrambleText";
-import { fetchGithubProfile } from "@/lib/github/profile";
+import { fetchGithubProfile } from "@/lib/profile";
 import { getTranslations } from "next-intl/server";
 
 function formatNumber(value: number) {

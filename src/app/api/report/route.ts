@@ -1,12 +1,32 @@
 import { NextResponse } from "next/server";
-import { transporter } from "@/lib/smtp/nodemailer";
 import { isDisposableEmail, validateEmail } from "@/lib/email-checker";
 import crypto from "crypto";
+import { createElement } from "react";
+import { Resend } from "resend";
+import ReportConfirmationEmail from "@/emails/ReportConfirmationEmail";
+import ReportMessageEmail from "@/emails/ReportMessageEmail";
+import { redis } from "@/lib/redis";
 
-const recentMessages = new Map<string, number>();
-const DUPLICATE_TIMEOUT = 30 * 60 * 1000;
-const NODE_MAILER_RECEIVER = process.env.NODE_MAILER_RECEIVER || "";
-const NODE_MAILER_USER = process.env.NODE_MAILER_USER || "";
+const DUPLICATE_TTL_SECONDS = 30 * 60;
+const RESEND_FROM_EMAIL =
+  process.env.RESEND_FROM_EMAIL || process.env.NEWSLETTER_FROM_EMAIL || "";
+const REPORT_RECEIVER_EMAIL =
+  process.env.REPORT_RECEIVER_EMAIL || process.env.CONTACT_RECEIVER_EMAIL || "";
+
+/**
+ * Generates a cache key for the report form submission.
+ *
+ * @param email The email address of the report form submitter.
+ * @param message The message of the report form submission.
+ * @returns A cache key string.
+ */
+function cacheKey(email: string, message: string) {
+  const hash = crypto
+    .createHash("sha256")
+    .update(`${email.toLowerCase()}:${message}`)
+    .digest("hex");
+  return `melvinjonesrepol:report:${hash}`;
+}
 
 export async function POST(request: Request) {
   try {
@@ -33,7 +53,7 @@ export async function POST(request: Request) {
       if (await isDisposableEmail(email))
         throw new Error("Disposable emails are not allowed");
 
-      if ([NODE_MAILER_RECEIVER, NODE_MAILER_USER].includes(email)) {
+      if ([REPORT_RECEIVER_EMAIL, RESEND_FROM_EMAIL].includes(email)) {
         throw new Error(
           "Nice try! 😏 You can't send this message using our emails.",
         );
@@ -49,29 +69,35 @@ export async function POST(request: Request) {
     }
 
     if (wordCount > 1000) {
-      throw new Error(
-        "Your message cannot exceed 1000 characters.",
+      throw new Error("Your message cannot exceed 1000 characters.");
+    }
+
+    if (
+      !process.env.RESEND_API_KEY ||
+      !RESEND_FROM_EMAIL ||
+      !REPORT_RECEIVER_EMAIL
+    ) {
+      throw new Error("Reports are temporarily unavailable.");
+    }
+
+    const _redis = redis();
+    if (!_redis) {
+      return NextResponse.json(
+        { error: "Reports are temporarily unavailable." },
+        { status: 503 },
       );
     }
 
-    const hash = crypto
-      .createHash("sha256")
-      .update(email + message)
-      .digest("hex");
-    const now = Date.now();
-    if (recentMessages.has(hash)) {
-      const lastSent = recentMessages.get(hash)!;
-      if (now - lastSent < DUPLICATE_TIMEOUT) {
-        throw new Error(
-          "You have already sent this message recently.",
-        );
-      }
-    }
-
-    recentMessages.set(hash, now);
-
-    for (const [key, time] of recentMessages) {
-      if (now - time > DUPLICATE_TIMEOUT) recentMessages.delete(key);
+    const key = cacheKey(email || "", message);
+    const reserved = await _redis.set(key, "pending", {
+      nx: true,
+      ex: DUPLICATE_TTL_SECONDS,
+    });
+    if (reserved !== "OK") {
+      return NextResponse.json(
+        { error: "You have already sent this message recently." },
+        { status: 429 },
+      );
     }
 
     const constructText = () => {
@@ -87,55 +113,44 @@ export async function POST(request: Request) {
       return text;
     };
 
-    const constructHtml = () => {
-      let html = `<strong>Report Type:</strong> ${type}<br>`;
-      if (device) html += `<strong>Device:</strong> ${device}<br>`;
-      if (os_version) html += `<strong>OS Version:</strong> ${os_version}<br>`;
-      if (app_version)
-        html += `<strong>App Version:</strong> ${app_version}<br>`;
-      if (app_version_code)
-        html += `<strong>App Version Code:</strong> ${app_version_code}<br>`;
-      if (app_name) html += `<strong>App Name:</strong> ${app_name}<br>`;
-      if (app_package_name)
-        html += `<strong>App Package Name:</strong> ${app_package_name}<br>`;
-      html += `<strong>Message:</strong><br>${message.replace(/\n/g, "<br>")}`;
-      if (crash_log)
-        html += `<br><br><strong>Crash Log:</strong><pre>${crash_log}</pre>`;
-      return html;
-    };
-
-    const info = await transporter.sendMail({
-      from: `Webvium ${type} <${email ? email : "No Email Provided"}>`,
-      to: NODE_MAILER_RECEIVER,
-      subject: `Webvium ${type} <${email ? email : "No Email Provided"}>`,
-      text: constructText(),
-      html: constructHtml(),
-    });
-
-    if (!info.messageId) {
-      throw new Error("Failed to send email.");
-    }
-
-    if (email)
-      transporter.sendMail({
-        from: `Do Not Reply <${NODE_MAILER_RECEIVER}>`,
-        to: email,
-        subject: "Your Message Has Been Sent",
-        html: `
-        <p>Hello,</p>
-        <p>This is a confirmation that your message has been successfully transmitted to the intended recipient.</p>
-        <p>Thank you for getting in touch. We appreciate you reaching out.</p>
-
-        <!--
-          Message Content:
-          ${message}
-
-          ${crash_log ? `Crash Log:\n${crash_log}` : ""}
-        -->
-      `,
+    try {
+      const resend = new Resend(process.env.RESEND_API_KEY);
+      const reportDelivery = await resend.emails.send({
+        from: RESEND_FROM_EMAIL,
+        to: [REPORT_RECEIVER_EMAIL],
+        subject: `Report: ${type}`,
+        text: constructText(),
+        replyTo: email || undefined,
+        react: createElement(ReportMessageEmail, {
+          type,
+          report: constructText(),
+        }),
       });
 
-    return NextResponse.json({ success: true });
+      if (reportDelivery.error) {
+        throw new Error(reportDelivery.error.message);
+      }
+
+      if (email) {
+        try {
+          const confirmation = await resend.emails.send({
+            from: RESEND_FROM_EMAIL,
+            to: [email],
+            subject: "Report confirmation",
+            text: "Your report was received successfully and will be reviewed as soon as possible.",
+            react: createElement(ReportConfirmationEmail),
+          });
+          if (confirmation.error) throw new Error(confirmation.error.message);
+        } catch (error) {
+          console.error("Report confirmation failed", error);
+        }
+      }
+
+      return NextResponse.json({ success: true });
+    } catch (error) {
+      await _redis.del(key);
+      throw error;
+    }
   } catch (error) {
     return NextResponse.json(
       {

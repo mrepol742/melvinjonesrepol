@@ -1,5 +1,5 @@
 import Card from "@/components/ui/Card";
-import { GameType } from "@/lib/steam/library";
+import { GameType } from "@/lib/library";
 import { getTimeAgo, formatDuration } from "@/utils/date";
 import Image from "next/image";
 

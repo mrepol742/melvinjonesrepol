@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ToastContainer } from "react-toastify";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
+import Newsletter from "@/components/layout/Newsletter";
 import ScrollTop from "@/components/ui/ScrollTop";
 import { getRecentPosts } from "@/lib/posts";
 import DevToolsDetector from "@/components/common/DevToolsDetector";
@@ -47,6 +48,7 @@ export default async function LocaleLayout({
 
       <ToastContainer />
       <ScrollTop />
+      <Newsletter />
       <Footer posts={posts} />
     </NextIntlClientProvider>
   );

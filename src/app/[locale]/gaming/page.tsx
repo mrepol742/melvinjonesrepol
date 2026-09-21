@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Metadata } from "next";
-import { fetchSteamLibrary, GameType } from "@/lib/steam/library";
+import { fetchSteamLibrary, GameType } from "@/lib/library";
 import CollectionFilters from "@/components/ui/CollectionFilters";
 import GameCard from "@/app/[locale]/gaming/components/GameCard";
 import { getAlternates } from "@/components/common/metadata/Alternatives";

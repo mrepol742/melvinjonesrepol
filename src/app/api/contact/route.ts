@@ -1,23 +1,39 @@
 import { NextResponse } from "next/server";
-import { transporter } from "@/lib/smtp/nodemailer";
 import { recaptcha } from "@/lib/recaptcha";
 import { isDisposableEmail, validateEmail } from "@/lib/email-checker";
 import crypto from "crypto";
+import { createElement } from "react";
+import { Resend } from "resend";
+import ContactConfirmationEmail from "@/emails/ContactConfirmationEmail";
+import ContactMessageEmail from "@/emails/ContactMessageEmail";
+import { redis } from "@/lib/redis";
+import { messageHtmlToText, sanitizeMessageHtml } from "@/lib/message-html";
 
-const recentMessages = new Map<string, number>();
-const DUPLICATE_TIMEOUT = 30 * 60 * 1000;
-const NODE_MAILER_RECEIVER = process.env.NODE_MAILER_RECEIVER || "";
-const NODE_MAILER_USER = process.env.NODE_MAILER_USER || "";
+const DUPLICATE_TTL_SECONDS = 30 * 60;
+const RESEND_FROM_EMAIL =
+  process.env.RESEND_FROM_EMAIL || process.env.NEWSLETTER_FROM_EMAIL || "";
+const CONTACT_RECEIVER_EMAIL = process.env.CONTACT_RECEIVER_EMAIL || "";
+
+/**
+ * Generates a cache key for the contact form submission.
+ *
+ * @param email The email address of the contact form submitter.
+ * @param message The message of the contact form submission.
+ * @returns A cache key string.
+ */
+function cacheKey(email: string, message: string) {
+  const hash = crypto
+    .createHash("sha256")
+    .update(`${email.toLowerCase()}:${message}`)
+    .digest("hex");
+  return `melvinjonesrepol:contact:${hash}`;
+}
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
 
     const { name, email, message, username, token } = body;
-
-    // recaptcha verification
-    if (!(await recaptcha(token, "contact_me")))
-      throw new Error("reCAPTCHA verification failed. Please try again.");
 
     if (!name || !email || !message) {
       throw new Error("All fields are required.");
@@ -36,7 +52,7 @@ export async function POST(request: Request) {
     if (await isDisposableEmail(email))
       throw new Error("Disposable emails are not allowed");
 
-    if ([NODE_MAILER_RECEIVER, NODE_MAILER_USER].includes(email)) {
+    if ([CONTACT_RECEIVER_EMAIL, RESEND_FROM_EMAIL].includes(email)) {
       throw new Error(
         "Nice try! 😏 You can't send this message using our emails.",
       );
@@ -51,60 +67,79 @@ export async function POST(request: Request) {
     }
 
     if (wordCount > 1000) {
-      throw new Error(
-        "Your message cannot exceed 1000 characters.",
+      throw new Error("Your message cannot exceed 1000 characters.");
+    }
+
+    if (
+      !process.env.RESEND_API_KEY ||
+      !RESEND_FROM_EMAIL ||
+      !CONTACT_RECEIVER_EMAIL
+    ) {
+      throw new Error("Contact requests are temporarily unavailable.");
+    }
+
+    // recaptcha verification
+    if (!(await recaptcha(token, "contact_me")))
+      throw new Error("reCAPTCHA verification failed. Please try again.");
+
+    const _redis = redis();
+    if (!_redis) {
+      return NextResponse.json(
+        { error: "Contact requests are temporarily unavailable." },
+        { status: 503 },
       );
     }
 
-    const hash = crypto
-      .createHash("sha256")
-      .update(email + message)
-      .digest("hex");
-    const now = Date.now();
-    if (recentMessages.has(hash)) {
-      const lastSent = recentMessages.get(hash)!;
-      if (now - lastSent < DUPLICATE_TIMEOUT) {
-        throw new Error(
-          "You have already sent this message recently.",
-        );
+    const key = cacheKey(email, message);
+    const reserved = await _redis.set(key, "pending", {
+      nx: true,
+      ex: DUPLICATE_TTL_SECONDS,
+    });
+    if (reserved !== "OK") {
+      return NextResponse.json(
+        { error: "You have already sent this message recently." },
+        { status: 429 },
+      );
+    }
+
+    try {
+      const resend = new Resend(process.env.RESEND_API_KEY);
+      const messageHtml = sanitizeMessageHtml(message);
+      const messageDelivery = await resend.emails.send({
+        from: RESEND_FROM_EMAIL,
+        to: [CONTACT_RECEIVER_EMAIL],
+        subject: `${name} <${email}>`,
+        text: messageHtmlToText(message),
+        replyTo: email,
+        react: createElement(ContactMessageEmail, {
+          name,
+          email,
+          messageHtml,
+        }),
+      });
+
+      if (messageDelivery.error) {
+        throw new Error(messageDelivery.error.message);
       }
+
+      try {
+        const confirmation = await resend.emails.send({
+          from: RESEND_FROM_EMAIL,
+          to: [email],
+          subject: "Contact confirmation",
+          text: `Hi ${name}, your message was received successfully. I will review it as soon as possible.`,
+          react: createElement(ContactConfirmationEmail, { name }),
+        });
+        if (confirmation.error) throw new Error(confirmation.error.message);
+      } catch (error) {
+        console.error("Contact confirmation failed", error);
+      }
+
+      return NextResponse.json({ success: true });
+    } catch (error) {
+      await _redis.del(key);
+      throw error;
     }
-
-    for (const [key, time] of recentMessages) {
-      if (now - time > DUPLICATE_TIMEOUT) recentMessages.delete(key);
-    }
-
-    const info = await transporter.sendMail({
-      from: `"${name}" <${email}>`,
-      to: NODE_MAILER_RECEIVER,
-      subject: `${name} <${email}>`,
-      text: message,
-      html: message,
-    });
-
-    if (!info.messageId) {
-      throw new Error("Failed to send email.");
-    }
-
-    transporter.sendMail({
-      from: `Do Not Reply <${NODE_MAILER_RECEIVER}>`,
-      to: email,
-      subject: "Your Message Has Been Sent",
-      html: `
-        <p>Hi <b>${name}</b>,</p>
-        <p>This is a confirmation that your message has been successfully transmitted to the intended recipient.</p>
-        <p>Thank you for getting in touch. We appreciate you reaching out.</p>
-
-        <!--
-          Message Content:
-          ${message}
-        -->
-      `,
-    });
-
-    recentMessages.set(hash, now);
-
-    return NextResponse.json({ success: true });
   } catch (error) {
     return NextResponse.json(
       {
