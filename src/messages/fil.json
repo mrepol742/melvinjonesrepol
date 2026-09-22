@@ -42,10 +42,6 @@
       "footer_canis_chatbot": "Canis Chatbot",
       "footer_hoc": "Hall of Codes",
       "footer_sitemap": "Sitemap",
-      "footer_ogc": "Open Graph Checker",
-      "footer_iat": "IP Address Tool",
-      "footer_qcg": "QR Code Generator",
-      "footer_uap": "User Agent Parser",
       "footer_webvium_browser": "Webvium Browser",
       "footer_shortlink": "Short Link Generator",
       "footer_recent_posts": "Mga Kamakailang Post",
@@ -276,41 +272,6 @@
     "questions_label": "May Tanong?",
     "contact_us": "Makipag-ugnayan sa amin"
   },
-  "tools_ip_address": {
-    "title": "IP Address",
-    "description": "Ang tool na ito ay magpapahintulot sa iyo na suriin ang iyong IP address at mga kaugnay na impormasyon.",
-    "isp_label": "ISP:",
-    "location_label": "Lokasyon:",
-    "fetching": "Kinukuha ang iyong impormasyon sa IP...",
-    "failed_fetch_error": "Nabigo ang pagkuha ng impormasyon sa IP"
-  },
-  "tools_open_graph": {
-    "title": "Open Graph Checker",
-    "description": "Maglagay ng URL ng website para kunin ang mga Open Graph metadata nito.",
-    "url_placeholder": "Maglagay ng URL ng website",
-    "fetch_button": "Kunin ang Metadata",
-    "result_title": "Open Graph Metadata",
-    "toast_pending": "Kinukuha ang Open Graph metadata...",
-    "toast_success": "Matagumpay na nakuha ang metadata!",
-    "toast_error": "May naganap na error habang kinukuha ang metadata.",
-    "recaptcha_error": "Hindi na-load ang reCAPTCHA. Subukan ulit mamaya."
-  },
-  "tools_qrcode_generator": {
-    "title": "QR Code Generator",
-    "description": "Ang tool na ito ay magpapahintulot sa iyo na gumawa ng mga QR code para sa anumang URL o teksto.",
-    "input_placeholder": "Maglagay ng URL o teksto",
-    "generate_button": "Gumawa",
-    "result_label": "Ang iyong QR Code:"
-  },
-  "tools_user_agent": {
-    "title": "Impormasyon ng User Agent",
-    "description": "Ang tool na ito ay nakaka-detect ng iyong browser, operating system, at impormasyon ng device mula sa iyong user agent string.",
-    "ua_string_label": "User Agent String",
-    "browser_label": "Browser:",
-    "os_label": "Operating System:",
-    "device_label": "Device:",
-    "detecting": "Idinidiskubre ang iyong user agent..."
-  },
   "github": {
     "section_label": "GitHub Analytics",
     "section_title": "Snapshot ng Aktibidad ng Developer",
@@ -435,7 +396,6 @@
       "Kahit Google, hindi ito mahanap.",
       "Na-refactor nang tuluyan ang page na hinahanap mo."
     ],
-    "description": "Ang page na hinahanap mo ay hindi umiiral o maaaring inilipat.",
-    "powered_by": "Huwag mag-alala, gumagana pa rin ang search kahit wala ang page! Powered by Algolia."
+    "description": "Ang page na hinahanap mo ay hindi umiiral o maaaring inilipat."
   }
 }

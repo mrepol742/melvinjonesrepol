@@ -42,10 +42,6 @@
       "footer_canis_chatbot": "Canis Chatbot",
       "footer_hoc": "Hall of Codes",
       "footer_sitemap": "Plan du site",
-      "footer_ogc": "Vérificateur Open Graph",
-      "footer_iat": "Outil d'adresse IP",
-      "footer_qcg": "Générateur de QR Code",
-      "footer_uap": "Analyseur de User-Agent",
       "footer_webvium_browser": "Navigateur Webvium",
       "footer_shortlink": "Générateur de liens courts",
       "footer_recent_posts": "Articles récents",
@@ -276,41 +272,6 @@
     "questions_label": "Des questions ?",
     "contact_us": "Nous contacter"
   },
-  "tools_ip_address": {
-    "title": "Adresse IP",
-    "description": "Cet outil vous permet de consulter votre adresse IP ainsi que les informations associées.",
-    "isp_label": "FAI :",
-    "location_label": "Localisation :",
-    "fetching": "Récupération des informations de votre adresse IP...",
-    "failed_fetch_error": "Impossible de récupérer les informations de l'adresse IP."
-  },
-  "tools_open_graph": {
-    "title": "Vérificateur Open Graph",
-    "description": "Saisissez l'URL d'un site web pour récupérer ses métadonnées Open Graph.",
-    "url_placeholder": "Saisissez l'URL du site web",
-    "fetch_button": "Récupérer les métadonnées",
-    "result_title": "Métadonnées Open Graph",
-    "toast_pending": "Récupération des métadonnées Open Graph...",
-    "toast_success": "Métadonnées récupérées avec succès !",
-    "toast_error": "Une erreur est survenue lors de la récupération des métadonnées.",
-    "recaptcha_error": "reCAPTCHA n'est pas chargé. Veuillez réessayer plus tard."
-  },
-  "tools_qrcode_generator": {
-    "title": "Générateur de QR Code",
-    "description": "Cet outil vous permet de générer des QR codes à partir de n'importe quelle URL ou de tout texte.",
-    "input_placeholder": "Saisissez une URL ou un texte",
-    "generate_button": "Générer",
-    "result_label": "Votre QR Code :"
-  },
-  "tools_user_agent": {
-    "title": "Informations sur l'Agent Utilisateur",
-    "description": "Cet outil détecte votre navigateur, votre système d'exploitation et les informations sur votre appareil à partir de votre chaîne User-Agent.",
-    "ua_string_label": "Chaîne User-Agent",
-    "browser_label": "Navigateur :",
-    "os_label": "Système d'exploitation :",
-    "device_label": "Appareil :",
-    "detecting": "Détection de votre agent utilisateur..."
-  },
   "github": {
     "section_label": "Statistiques GitHub",
     "section_title": "Aperçu de l'activité du développeur",
@@ -435,7 +396,6 @@
       "Même Google ne parvient pas à la trouver.",
       "La page que vous recherchez a été refactorisée jusqu'à disparaître."
     ],
-    "description": "La page que vous recherchez n'existe pas ou a peut-être été déplacée.",
-    "powered_by": "Ne vous inquiétez pas, la recherche fonctionne même si la page n'existe pas ! Propulsé par Algolia."
+    "description": "La page que vous recherchez n'existe pas ou a peut-être été déplacée."
   }
 }

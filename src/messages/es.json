@@ -42,10 +42,6 @@
       "footer_canis_chatbot": "Chatbot Canis",
       "footer_hoc": "Sala de Códigos",
       "footer_sitemap": "Mapa del sitio",
-      "footer_ogc": "Verificador Open Graph",
-      "footer_iat": "Herramienta de dirección IP",
-      "footer_qcg": "Generador de códigos QR",
-      "footer_uap": "Analizador de agente de usuario",
       "footer_webvium_browser": "Navegador Webvium",
       "footer_shortlink": "Generador de enlaces cortos",
       "footer_recent_posts": "Publicaciones recientes",
@@ -276,41 +272,6 @@
     "questions_label": "¿Preguntas?",
     "contact_us": "Contáctanos"
   },
-  "tools_ip_address": {
-    "title": "Dirección IP",
-    "description": "Esta herramienta te permite consultar tu dirección IP e información relacionada.",
-    "isp_label": "ISP:",
-    "location_label": "Ubicación:",
-    "fetching": "Obteniendo tu información de IP...",
-    "failed_fetch_error": "No se pudo obtener la información de IP"
-  },
-  "tools_open_graph": {
-    "title": "Verificador Open Graph",
-    "description": "Introduce una URL de sitio web para obtener sus metadatos Open Graph.",
-    "url_placeholder": "Introduce la URL del sitio web",
-    "fetch_button": "Obtener metadatos",
-    "result_title": "Metadatos Open Graph",
-    "toast_pending": "Obteniendo metadatos Open Graph...",
-    "toast_success": "¡Metadatos obtenidos con éxito!",
-    "toast_error": "Se produjo un error al obtener los metadatos.",
-    "recaptcha_error": "reCAPTCHA no está cargado. Inténtalo más tarde."
-  },
-  "tools_qrcode_generator": {
-    "title": "Generador de códigos QR",
-    "description": "Esta herramienta te permite generar códigos QR para cualquier URL o texto.",
-    "input_placeholder": "Introduce una URL o texto",
-    "generate_button": "Generar",
-    "result_label": "Tu código QR:"
-  },
-  "tools_user_agent": {
-    "title": "Información del agente de usuario",
-    "description": "Esta herramienta detecta tu navegador, sistema operativo e información del dispositivo desde tu cadena de agente de usuario.",
-    "ua_string_label": "Cadena de agente de usuario",
-    "browser_label": "Navegador:",
-    "os_label": "Sistema operativo:",
-    "device_label": "Dispositivo:",
-    "detecting": "Detectando tu agente de usuario..."
-  },
   "github": {
     "section_label": "Analíticas de GitHub",
     "section_title": "Instantánea de actividad del desarrollador",
@@ -435,7 +396,6 @@
       "Incluso Google no puede encontrar esto.",
       "La página que buscas ha sido refactorizada hasta desaparecer."
     ],
-    "description": "La página que buscas no existe o ha sido movida.",
-    "powered_by": "No te preocupes, la búsqueda funciona incluso si la página no existe. ¡Impulsado por Algolia!"
+    "description": "La página que buscas no existe o ha sido movida."
   }
 }

@@ -42,10 +42,6 @@
       "footer_canis_chatbot": "Canis 聊天机器人",
       "footer_hoc": "代码大厅",
       "footer_sitemap": "网站地图",
-      "footer_ogc": "Open Graph 检查器",
-      "footer_iat": "IP 地址工具",
-      "footer_qcg": "二维码生成器",
-      "footer_uap": "用户代理解析器",
       "footer_webvium_browser": "Webvium 浏览器",
       "footer_shortlink": "短链接生成器",
       "footer_recent_posts": "最近文章",
@@ -276,41 +272,6 @@
     "questions_label": "有疑问？",
     "contact_us": "联系我们"
   },
-  "tools_ip_address": {
-    "title": "IP 地址",
-    "description": "此工具可让您查看您的 IP 地址及相关信息。",
-    "isp_label": "ISP：",
-    "location_label": "位置：",
-    "fetching": "正在获取您的 IP 信息...",
-    "failed_fetch_error": "获取 IP 信息失败"
-  },
-  "tools_open_graph": {
-    "title": "Open Graph 检查器",
-    "description": "输入网站 URL 以获取其 Open Graph 元数据。",
-    "url_placeholder": "输入网站 URL",
-    "fetch_button": "获取元数据",
-    "result_title": "Open Graph 元数据",
-    "toast_pending": "正在获取 Open Graph 元数据...",
-    "toast_success": "元数据获取成功！",
-    "toast_error": "获取元数据时发生错误。",
-    "recaptcha_error": "reCAPTCHA 未加载，请稍后重试。"
-  },
-  "tools_qrcode_generator": {
-    "title": "二维码生成器",
-    "description": "此工具可让您为任意 URL 或文本生成二维码。",
-    "input_placeholder": "输入 URL 或文本",
-    "generate_button": "生成",
-    "result_label": "您的二维码："
-  },
-  "tools_user_agent": {
-    "title": "用户代理信息",
-    "description": "此工具可从您的用户代理字符串中检测您的浏览器、操作系统和设备信息。",
-    "ua_string_label": "用户代理字符串",
-    "browser_label": "浏览器：",
-    "os_label": "操作系统：",
-    "device_label": "设备：",
-    "detecting": "正在检测您的用户代理..."
-  },
   "github": {
     "section_label": "GitHub 数据分析",
     "section_title": "开发者活动快照",
@@ -435,7 +396,6 @@
       "连 Google 都找不到这个页面。",
       "你要找的页面已经被重构到消失了。"
     ],
-    "description": "你正在寻找的页面不存在或可能已被移动。",
-    "powered_by": "别担心，即使页面不存在，搜索仍然可用！由 Algolia 提供支持。"
+    "description": "你正在寻找的页面不存在或可能已被移动。"
   }
 }

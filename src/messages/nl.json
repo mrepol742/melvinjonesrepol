@@ -42,10 +42,6 @@
       "footer_canis_chatbot": "Canis Chatbot",
       "footer_hoc": "Hall of Codes",
       "footer_sitemap": "Sitemap",
-      "footer_ogc": "Open Graph Checker",
-      "footer_iat": "IP-adrestool",
-      "footer_qcg": "QR-codegenerator",
-      "footer_uap": "User Agent Parser",
       "footer_webvium_browser": "Webvium-browser",
       "footer_shortlink": "Generator voor korte links",
       "footer_recent_posts": "Recente berichten",
@@ -276,41 +272,6 @@
     "questions_label": "Vragen?",
     "contact_us": "Neem contact op"
   },
-  "tools_ip_address": {
-    "title": "IP-adres",
-    "description": "Met deze tool kun je je IP-adres en bijbehorende informatie bekijken.",
-    "isp_label": "ISP:",
-    "location_label": "Locatie:",
-    "fetching": "Je IP-informatie wordt opgehaald...",
-    "failed_fetch_error": "Kan de IP-informatie niet ophalen"
-  },
-  "tools_open_graph": {
-    "title": "Open Graph-controle",
-    "description": "Voer de URL van een website in om de Open Graph-metadata op te halen.",
-    "url_placeholder": "Voer de URL van een website in",
-    "fetch_button": "Metadata ophalen",
-    "result_title": "Open Graph-metadata",
-    "toast_pending": "Open Graph-metadata wordt opgehaald...",
-    "toast_success": "Metadata succesvol opgehaald!",
-    "toast_error": "Er is een fout opgetreden bij het ophalen van de metadata.",
-    "recaptcha_error": "reCAPTCHA is niet geladen. Probeer het later opnieuw."
-  },
-  "tools_qrcode_generator": {
-    "title": "QR-codegenerator",
-    "description": "Met deze tool kun je QR-codes genereren voor elke URL of tekst.",
-    "input_placeholder": "Voer een URL of tekst in",
-    "generate_button": "Genereren",
-    "result_label": "Je QR-code:"
-  },
-  "tools_user_agent": {
-    "title": "User Agent-informatie",
-    "description": "Deze tool detecteert je browser, besturingssysteem en apparaatinformatie op basis van je user agent-string.",
-    "ua_string_label": "User Agent-string",
-    "browser_label": "Browser:",
-    "os_label": "Besturingssysteem:",
-    "device_label": "Apparaat:",
-    "detecting": "Je user agent wordt gedetecteerd..."
-  },
   "github": {
     "section_label": "GitHub-analyses",
     "section_title": "Momentopname van ontwikkelaarsactiviteit",
@@ -435,7 +396,6 @@
       "Zelfs Google kan deze niet vinden.",
       "De pagina die je zoekt is geherstructureerd tot in de vergetelheid."
     ],
-    "description": "De pagina die je zoekt bestaat niet of is mogelijk verplaatst.",
-    "powered_by": "Geen zorgen, de zoekfunctie werkt nog steeds, zelfs als de pagina dat niet doet! Mogelijk gemaakt door Algolia."
+    "description": "De pagina die je zoekt bestaat niet of is mogelijk verplaatst."
   }
 }

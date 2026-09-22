@@ -42,10 +42,6 @@
       "footer_canis_chatbot": "Canis चैटबॉट",
       "footer_hoc": "कोड्स का हॉल",
       "footer_sitemap": "साइटमैप",
-      "footer_ogc": "ओपन ग्राफ चेकर",
-      "footer_iat": "IP एड्रेस टूल",
-      "footer_qcg": "QR कोड जेनरेटर",
-      "footer_uap": "यूज़र एजेंट पार्सर",
       "footer_webvium_browser": "Webvium ब्राउज़र",
       "footer_shortlink": "शॉर्ट लिंक जेनरेटर",
       "footer_recent_posts": "हाल की पोस्ट",
@@ -276,41 +272,6 @@
     "questions_label": "प्रश्न?",
     "contact_us": "संपर्क करें"
   },
-  "tools_ip_address": {
-    "title": "IP पता",
-    "description": "यह टूल आपको अपना IP पता और संबंधित जानकारी देखने की अनुमति देगा।",
-    "isp_label": "ISP:",
-    "location_label": "स्थान:",
-    "fetching": "आपकी IP जानकारी प्राप्त की जा रही है...",
-    "failed_fetch_error": "IP जानकारी प्राप्त करने में विफल"
-  },
-  "tools_open_graph": {
-    "title": "Open Graph चेकर",
-    "description": "Open Graph मेटाडेटा प्राप्त करने के लिए वेबसाइट URL दर्ज करें।",
-    "url_placeholder": "वेबसाइट URL दर्ज करें",
-    "fetch_button": "मेटाडेटा प्राप्त करें",
-    "result_title": "Open Graph मेटाडेटा",
-    "toast_pending": "Open Graph मेटाडेटा प्राप्त किया जा रहा है...",
-    "toast_success": "मेटाडेटा सफलतापूर्वक प्राप्त हुआ!",
-    "toast_error": "मेटाडेटा प्राप्त करते समय एक त्रुटि हुई।",
-    "recaptcha_error": "reCAPTCHA लोड नहीं हुआ। कृपया बाद में पुनः प्रयास करें।"
-  },
-  "tools_qrcode_generator": {
-    "title": "QR कोड जनरेटर",
-    "description": "यह टूल आपको किसी भी URL या टेक्स्ट के लिए QR कोड बनाने की अनुमति देगा।",
-    "input_placeholder": "URL या टेक्स्ट दर्ज करें",
-    "generate_button": "बनाएं",
-    "result_label": "आपका QR कोड:"
-  },
-  "tools_user_agent": {
-    "title": "यूज़र एजेंट जानकारी",
-    "description": "यह टूल आपके यूज़र एजेंट स्ट्रिंग से आपके ब्राउज़र, ऑपरेटिंग सिस्टम और डिवाइस की जानकारी का पता लगाता है।",
-    "ua_string_label": "यूज़र एजेंट स्ट्रिंग",
-    "browser_label": "ब्राउज़र:",
-    "os_label": "ऑपरेटिंग सिस्टम:",
-    "device_label": "डिवाइस:",
-    "detecting": "आपका यूज़र एजेंट पहचाना जा रहा है..."
-  },
   "github": {
     "section_label": "GitHub एनालिटिक्स",
     "section_title": "डेवलपर गतिविधि स्नैपशॉट",
@@ -435,7 +396,6 @@
       "यह चीज़ Google को भी नहीं मिल रही।",
       "जिस पेज को आप ढूंढ रहे हैं उसे पूरी तरह रिफैक्टर कर दिया गया है।"
     ],
-    "description": "आप जिस पेज को ढूंढ रहे हैं वह मौजूद नहीं है या स्थानांतरित कर दिया गया है।",
-    "powered_by": "चिंता न करें, पेज न होने पर भी सर्च काम करता है! Algolia द्वारा संचालित।"
+    "description": "आप जिस पेज को ढूंढ रहे हैं वह मौजूद नहीं है या स्थानांतरित कर दिया गया है।"
   }
 }

@@ -42,10 +42,6 @@
       "footer_canis_chatbot": "روبوت Canis للمحادثة",
       "footer_hoc": "قاعة الأكواد",
       "footer_sitemap": "خريطة الموقع",
-      "footer_ogc": "مدقق Open Graph",
-      "footer_iat": "أداة عنوان IP",
-      "footer_qcg": "مولد رموز QR",
-      "footer_uap": "محلل وكيل المستخدم",
       "footer_webvium_browser": "متصفح Webvium",
       "footer_shortlink": "مولد الروابط المختصرة",
       "footer_recent_posts": "أحدث المقالات",
@@ -276,41 +272,6 @@
     "questions_label": "هل لديك أسئلة؟",
     "contact_us": "تواصل معنا"
   },
-  "tools_ip_address": {
-    "title": "عنوان IP",
-    "description": "تتيح لك هذه الأداة التحقق من عنوان IP الخاص بك والمعلومات المرتبطة به.",
-    "isp_label": "مزود خدمة الإنترنت:",
-    "location_label": "الموقع:",
-    "fetching": "جارٍ جلب معلومات عنوان IP الخاص بك...",
-    "failed_fetch_error": "فشل في جلب معلومات عنوان IP"
-  },
-  "tools_open_graph": {
-    "title": "أداة فحص Open Graph",
-    "description": "أدخل رابط موقع ويب لجلب بيانات Open Graph الوصفية الخاصة به.",
-    "url_placeholder": "أدخل رابط الموقع",
-    "fetch_button": "جلب البيانات الوصفية",
-    "result_title": "بيانات Open Graph الوصفية",
-    "toast_pending": "جارٍ جلب بيانات Open Graph...",
-    "toast_success": "تم جلب البيانات الوصفية بنجاح!",
-    "toast_error": "حدث خطأ أثناء جلب البيانات الوصفية.",
-    "recaptcha_error": "لم يتم تحميل reCAPTCHA. يُرجى المحاولة مرة أخرى لاحقًا."
-  },
-  "tools_qrcode_generator": {
-    "title": "مولد رمز QR",
-    "description": "تتيح لك هذه الأداة إنشاء رموز QR لأي رابط أو نص.",
-    "input_placeholder": "أدخل رابطًا أو نصًا",
-    "generate_button": "إنشاء",
-    "result_label": "رمز QR الخاص بك:"
-  },
-  "tools_user_agent": {
-    "title": "معلومات وكيل المستخدم",
-    "description": "تكتشف هذه الأداة معلومات المتصفح ونظام التشغيل والجهاز من سلسلة وكيل المستخدم الخاصة بك.",
-    "ua_string_label": "سلسلة وكيل المستخدم",
-    "browser_label": "المتصفح:",
-    "os_label": "نظام التشغيل:",
-    "device_label": "الجهاز:",
-    "detecting": "جارٍ اكتشاف معلومات وكيل المستخدم..."
-  },
   "github": {
     "section_label": "تحليلات GitHub",
     "section_title": "لقطة من نشاط المطور",
@@ -435,7 +396,6 @@
       "حتى Google لم تتمكن من العثور على هذه الصفحة.",
       "الصفحة التي تبحث عنها أُعيدت هيكلتها حتى اختفت."
     ],
-    "description": "الصفحة التي تبحث عنها غير موجودة أو ربما تم نقلها.",
-    "powered_by": "لا تقلق، فالبحث يعمل حتى لو لم تعمل الصفحة! مدعوم بواسطة Algolia."
+    "description": "الصفحة التي تبحث عنها غير موجودة أو ربما تم نقلها."
   }
 }

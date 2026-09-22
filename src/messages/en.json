@@ -42,10 +42,6 @@
       "footer_canis_chatbot": "Canis Chatbot",
       "footer_hoc": "Hall of Codes",
       "footer_sitemap": "Sitemap",
-      "footer_ogc": "Open Graph Checker",
-      "footer_iat": "IP Address Tool",
-      "footer_qcg": "QR Code Generator",
-      "footer_uap": "User Agent Parser",
       "footer_webvium_browser": "Webvium Browser",
       "footer_shortlink": "Short Link Generator",
       "footer_recent_posts": "Recent Posts",
@@ -276,41 +272,6 @@
     "questions_label": "Questions?",
     "contact_us": "Contact us"
   },
-  "tools_ip_address": {
-    "title": "IP Address",
-    "description": "This tool will allow you to check your IP address and related information.",
-    "isp_label": "ISP:",
-    "location_label": "Location:",
-    "fetching": "Fetching your IP information...",
-    "failed_fetch_error": "Failed to fetch IP information"
-  },
-  "tools_open_graph": {
-    "title": "Open Graph Checker",
-    "description": "Enter a website URL to fetch its Open Graph metadata.",
-    "url_placeholder": "Enter website URL",
-    "fetch_button": "Fetch Metadata",
-    "result_title": "Open Graph Metadata",
-    "toast_pending": "Fetching Open Graph metadata...",
-    "toast_success": "Metadata fetched successfully!",
-    "toast_error": "An error occurred while fetching metadata.",
-    "recaptcha_error": "reCAPTCHA is not loaded. Please try again later."
-  },
-  "tools_qrcode_generator": {
-    "title": "QR Code Generator",
-    "description": "This tool will allow you to generate QR codes for any URL or text.",
-    "input_placeholder": "Enter URL or text",
-    "generate_button": "Generate",
-    "result_label": "Your QR Code:"
-  },
-  "tools_user_agent": {
-    "title": "User Agent Info",
-    "description": "This tool detects your browser, operating system, and device information from your user agent string.",
-    "ua_string_label": "User Agent String",
-    "browser_label": "Browser:",
-    "os_label": "Operating System:",
-    "device_label": "Device:",
-    "detecting": "Detecting your user agent..."
-  },
   "github": {
     "section_label": "GitHub Analytics",
     "section_title": "Developer Activity Snapshot",
@@ -435,7 +396,6 @@
       "Even Google can't find this one.",
       "The page you’re looking for has been refactored into oblivion."
     ],
-    "description": "The page you’re looking for doesn’t exist or may have been moved.",
-    "powered_by": "Dont worry the search works even if the page doesn't! Powered by Algolia."
+    "description": "The page you’re looking for doesn’t exist or may have been moved."
   }
 }

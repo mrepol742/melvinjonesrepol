@@ -70,10 +70,11 @@ export default function Footer({
   ];
 
   const toolLinks = [
-    { href: "/tools/open-graph", label: t("footer_ogc") },
-    { href: "/tools/ip-address", label: t("footer_iat") },
-    { href: "/tools/qrcode-generator", label: t("footer_qcg") },
-    { href: "/tools/user-agent", label: t("footer_uap") },
+    {
+      href: "https://tools.melvinjonesrepol.com",
+      label: "Useful Tools",
+      external: true,
+    },
     {
       href: "https://shrtly.melvinjonesrepol.com",
       label: t("footer_shortlink"),

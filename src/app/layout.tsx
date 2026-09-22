@@ -4,7 +4,6 @@ import "./globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import NortonSafeweb from "@/components/common/metadata/NortonSafeweb";
-import Algolia from "@/components/common/metadata/Algolia";
 import DoorEffect from "@/components/common/DoorEffect";
 import MouseCodeTrail from "@/components/common/MouseCodeTrail";
 import AOSWrapper from "@/components/common/AOSWrapper";
@@ -132,7 +131,6 @@ export default async function RootLayout({
       <head>
         <meta name="hostname" content="www.melvinjonesrepol.com" />
         <NortonSafeweb />
-        <Algolia />
         <GoogleAdsense />
         <script
           dangerouslySetInnerHTML={{
