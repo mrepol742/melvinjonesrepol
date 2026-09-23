@@ -237,8 +237,6 @@
     "games_label": "Juegos",
     "platform_label": "Plataforma",
     "no_results_found": "No se encontraron resultados.",
-    "steam_profile_text": "Puedes encontrar más actividades de juego en mi perfil de Steam.",
-    "steam_profile_button": "Perfil de Steam",
     "data_source_note": "Datos obtenidos de la API de Steam.",
     "titles_disclaimer": "Todos los títulos y portadas son propiedad de sus respectivos dueños."
   },
@@ -249,9 +247,7 @@
     "hero_description": "Aplicaciones listas para producción, plataformas SaaS, integraciones de IA, herramientas de automatización y proyectos full-stack construidos con tecnologías modernas y sólidas prácticas de ingeniería.",
     "projects_label": "Proyectos",
     "years_building_label": "Años construyendo",
-    "no_results_found": "No se encontraron resultados.",
-    "github_cta_text": "Los proyectos de clientes son confidenciales, pero siempre estoy dispuesto a compartir más sobre mis proyectos personales y código. Si quieres ver más de mi trabajo, visita mi perfil de GitHub donde comparto regularmente actualizaciones de proyectos y experimentos.",
-    "github_button": "Github"
+    "no_results_found": "No se encontraron resultados."
   },
   "legal": {
     "title_line1": "Políticas",

@@ -237,8 +237,6 @@
     "games_label": "Jeux",
     "platform_label": "Plateforme",
     "no_results_found": "Aucun résultat trouvé.",
-    "steam_profile_text": "Vous pouvez retrouver davantage de mes activités de jeu sur mon profil Steam.",
-    "steam_profile_button": "Profil Steam",
     "data_source_note": "Données récupérées via l'API Steam.",
     "titles_disclaimer": "Tous les titres et couvertures appartiennent à leurs propriétaires respectifs."
   },
@@ -249,9 +247,7 @@
     "hero_description": "Applications prêtes pour la production, plateformes SaaS, intégrations d'IA, outils d'automatisation et projets Full Stack développés avec des technologies modernes et des pratiques d'ingénierie solides.",
     "projects_label": "Projets",
     "years_building_label": "Années d'expérience",
-    "no_results_found": "Aucun résultat trouvé.",
-    "github_cta_text": "Les projets de mes clients sont confidentiels, mais je suis toujours ravi de partager davantage sur mes projets personnels et mon code. Si vous souhaitez découvrir davantage de mon travail, n'hésitez pas à consulter mon profil GitHub où je publie régulièrement des mises à jour sur mes projets et expérimentations.",
-    "github_button": "GitHub"
+    "no_results_found": "Aucun résultat trouvé."
   },
   "legal": {
     "title_line1": "Politiques",

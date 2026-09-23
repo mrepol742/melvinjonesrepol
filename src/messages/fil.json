@@ -237,8 +237,6 @@
     "games_label": "Mga Laro",
     "platform_label": "Platform",
     "no_results_found": "Walang nahanap na resulta.",
-    "steam_profile_text": "Makikita mo ang iba pang mga aktibidad sa paglalaro sa aking Steam profile.",
-    "steam_profile_button": "Steam Profile",
     "data_source_note": "Data na kinuha mula sa Steam API.",
     "titles_disclaimer": "Lahat ng pamagat at cover ay pag-aari ng kani-kanilang may-ari."
   },
@@ -249,9 +247,7 @@
     "hero_description": "Mga application na handa sa produksyon, SaaS platform, AI integrasyon, automation tools, at full-stack na proyekto na itinayo gamit ang modernong teknolohiya at matibay na mga gawi sa engineering.",
     "projects_label": "Mga Proyekto",
     "years_building_label": "Taon ng pagtatayo",
-    "no_results_found": "Walang nahanap na resulta.",
-    "github_cta_text": "Ang mga proyekto ng kliyente ay kumpidensyal, ngunit lagi akong bukas sa pagbabahagi ng higit pa tungkol sa aking mga personal na proyekto at code. Kung interesado kang makita ang aking mga gawa, bisitahin ang aking GitHub profile.",
-    "github_button": "Github"
+    "no_results_found": "Walang nahanap na resulta."
   },
   "legal": {
     "title_line1": "Mga Patakaran",

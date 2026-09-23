@@ -237,8 +237,6 @@
     "games_label": "游戏",
     "platform_label": "平台",
     "no_results_found": "未找到结果。",
-    "steam_profile_text": "您可以在我的 Steam 个人资料上找到更多游戏活动。",
-    "steam_profile_button": "Steam 个人资料",
     "data_source_note": "数据来自 Steam API。",
     "titles_disclaimer": "所有标题/封面均为各自所有者的财产。"
   },
@@ -249,9 +247,7 @@
     "hero_description": "生产就绪的应用程序、SaaS 平台、AI 集成、自动化工具以及使用现代技术和扎实工程实践构建的全栈项目。",
     "projects_label": "项目",
     "years_building_label": "年开发经验",
-    "no_results_found": "未找到结果。",
-    "github_cta_text": "客户项目属于保密内容，但我始终乐于分享我的个人项目和代码。如果您有兴趣了解更多，欢迎查看我的 GitHub，我会定期在那里分享项目和实验的最新进展。",
-    "github_button": "Github"
+    "no_results_found": "未找到结果。"
   },
   "legal": {
     "title_line1": "政策",

@@ -1,8 +1,5 @@
 import projects from "@/lib/projects";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import Button from "@/components/ui/Button";
 import ProjectCard from "@/app/[locale]/projects/components/ProjectCard";
-import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import Header from "@/components/ui/Header";
 import ProjectFilters from "@/app/[locale]/projects/components/ProjectFilters";
@@ -92,7 +89,10 @@ export default async function Project({
         />
 
         <p className="mt-6 text-sm text-stone-600 dark:text-stone-400">
-          Showing <span className="font-bold text-orange-700 dark:text-orange-300">{filteredProjects.length}</span>{" "}
+          Showing{" "}
+          <span className="font-bold text-orange-700 dark:text-orange-300">
+            {filteredProjects.length}
+          </span>{" "}
           {filteredProjects.length === 1 ? "project" : "projects"}
         </p>
 
@@ -109,25 +109,6 @@ export default async function Project({
             ))}
           </div>
         )}
-
-        <div className="my-6">
-          <p data-aos="fade-up" data-aos-delay="200" className="max-w-xl">
-            {t("github_cta_text")}
-          </p>
-
-          <Link
-            href="https://github.com/mrepol742"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <Button
-              icon={faGithub}
-              className="bg-orange-500 text-stone-950 before:bg-orange-700 after:bg-orange-700"
-            >
-              {t("github_button")}
-            </Button>
-          </Link>
-        </div>
       </section>
     </>
   );

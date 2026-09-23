@@ -237,8 +237,6 @@
     "games_label": "Games",
     "platform_label": "Platform",
     "no_results_found": "Geen resultaten gevonden.",
-    "steam_profile_text": "Je kunt meer van mijn gamingactiviteiten vinden op mijn Steam-profiel.",
-    "steam_profile_button": "Steam-profiel",
     "data_source_note": "Gegevens opgehaald via de Steam API.",
     "titles_disclaimer": "Alle titels en omslagafbeeldingen zijn eigendom van hun respectieve eigenaren."
   },
@@ -249,9 +247,7 @@
     "hero_description": "Productieklare applicaties, SaaS-platformen, AI-integraties, automatiseringstools en full-stackprojecten gebouwd met moderne technologieën en solide engineeringpraktijken.",
     "projects_label": "Projecten",
     "years_building_label": "Jaren ervaring",
-    "no_results_found": "Geen resultaten gevonden.",
-    "github_cta_text": "Projecten van klanten zijn vertrouwelijk, maar ik deel graag meer over mijn persoonlijke projecten en code. Als je meer van mijn werk wilt zien, bekijk dan gerust mijn GitHub-profiel, waar ik regelmatig updates deel over mijn projecten en experimenten.",
-    "github_button": "GitHub"
+    "no_results_found": "Geen resultaten gevonden."
   },
   "legal": {
     "title_line1": "Beleid",

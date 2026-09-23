@@ -1,27 +1,20 @@
 const Projects = [
   {
-    title: "Clearflow",
-    key: "clearflow",
+    title: "Digital Tools Marketplace & Automation Platform",
+    key: "digital_tools_marketplace",
     description:
-      "A modern community water billing and management system built with Expo (React Native) and Laravel.",
+      "A multi-tenant platform for discovering, testing, publishing, and managing digital tools, workflows, templates, and downloadable resources.",
     ai_description:
-      "Clearflow is a modern community water billing and management system built with Expo (React Native) and Laravel.",
+      "A multi-tenant marketplace and SaaS platform that enables creators to publish and manage digital tools, workflows, templates, and supporting resources. It provides a public, SEO-focused marketplace alongside an authenticated application for creators, customers, and administrators. Users can discover compatible tools, review setup details, and test supported resources in an interactive playground. The platform also includes a website-trained chat-widget solution, allowing customers to train assistants from approved website content, deploy widgets to verified domains, and manage conversations through a human-support inbox. It is designed for secure tenant isolation, scalable content delivery, subscription billing, moderation, and long-term marketplace growth.",
     type: "personal",
-    featured: false,
-    repo: "https://github.com/mrepol742/clearflow-community-water-billing",
-    technology: ["Laravel", "Expo (React Native)"],
-  },
-  {
-    title: "NPM Guard",
-    key: "npm_guard",
-    description:
-      "Due to the recent supply chain attacks, we developed NPM Guard to monitor and secure NPM package installations, ensuring the integrity and safety of your dependencies.",
-    ai_description:
-      "NPM Guard is an NPM package monitoring tool that scans your project's dependencies for vulnerabilities and ensures they are up-to-date and safe to use.",
-    type: "personal",
-    featured: false,
-    repo: "https://github.com/mrepol742/npm-guard",
-    technology: ["Python"],
+    featured: true,
+    technology: [
+      "Laravel",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "AWS S3",
+    ],
   },
   {
     title: "Subscription-Based Digital Music Platform",
@@ -90,19 +83,6 @@ const Projects = [
     technology: ["Java"],
   },
   {
-    title: "Hall of Codes Next",
-    key: "hall_of_codes_next",
-    description:
-      "This new version of Hall of Codes website built with Next.js. To promote the community, share knowledge, showcase projects and other awesome things.",
-    ai_description:
-      "Hall of Codes Next represents the evolution of our community platform, completely rebuilt using Next.js, TypeScript, and Tailwind CSS. It serves as a modern, high-performance hub for developers to share technical knowledge, showcase their open-source projects, and foster collaborative growth within the programming community.",
-    type: "personal",
-    link: "https://hallofcodes.vercel.app",
-    repo: "https://github.com/hallofcodes/hallofcodes",
-    featured: false,
-    technology: ["Next.js", "TypeScript", "Tailwind CSS"],
-  },
-  {
     title: "Ulisha Store AI Laravel",
     key: "ulisha_store_laravel",
     description:
@@ -129,45 +109,6 @@ const Projects = [
     cover: "/images/protocol-discussion-platform.png",
   },
   {
-    title: "Web Surface Scan",
-    key: "web_surface_scan",
-    description:
-      "A lightweight developer-focused tool for analyzing a website's technology stack, integrations, and potential security flaws using automated browser inspection.",
-    ai_description:
-      "Web Surface Scan is a specialized Node.js utility designed for security researchers and developers. It performs automated, deep browser inspections to extract technology footprints, analyze third-party integrations, and flag potential client-side security vulnerabilities, all through a clean TypeScript-driven architecture.",
-    type: "personal",
-    link: "/web-surface-scan",
-    repo: "https://github.com/mrepol742/web-surface-scan",
-    featured: false,
-    technology: ["Node.js", "TypeScript"],
-  },
-  {
-    title: "DJ Mixer Console",
-    key: "dj_mixer_console",
-    description:
-      "A simple, lightweight and fully offline capable mixer console that showcase Web Audio API capabilities in handling audio streams and real time audio manipulation.",
-    ai_description:
-      "This web-based DJ Mixer Console is a technical showcase of the native Web Audio API. It operates entirely offline and handles complex audio stream manipulations in real-time. Built with Angular and TypeScript, it offers a highly responsive, latency-free interface for audio enthusiasts to mix tracks directly in the browser.",
-    type: "personal",
-    link: "https://dj-remix-console.netlify.app",
-    repo: "https://github.com/mrepol742/dj-mixer-console",
-    featured: false,
-    technology: ["Angular", "TypeScript", "Web Audio API", "Tailwind CSS"],
-  },
-  {
-    title: "Webvium Launcher",
-    key: "webvium_launcher",
-    description:
-      "Lightweight, modern and lightning-fast Android launcher thats currently in development. Built with speed, simplicity and customization in mind.",
-    ai_description:
-      "Webvium Launcher is an experimental Android home screen replacement written natively in Kotlin. Prioritizing extreme performance and minimal resource consumption, it offers users a clean, highly customizable interface devoid of the bloatware typically found in OEM launchers.",
-    type: "personal",
-    link: "https://www.webvium.com",
-    repo: "https://github.com/webvium/webvium-launcher",
-    featured: false,
-    technology: ["Kotlin"],
-  },
-  {
     title: "Devpulse",
     key: "devpulse",
     description:
@@ -179,33 +120,6 @@ const Projects = [
     repo: "https://github.com/hallofcodes/devpulse",
     featured: false,
     technology: ["Next.js", "TypeScript", "Tailwind CSS"],
-  },
-  {
-    title: "Web Appp",
-    key: "web_appp",
-    description:
-      "A simple yet powerful template that lets you convert any website into a functional Android APK with minimal effort. This project makes it easy to package your web app for mobile distribution without requiring deep Android development knowledge.",
-    ai_description:
-      "Web Appp is a streamlined Kotlin-based wrapper designed to democratize Android app development. By simply dropping in a website URL, developers can instantly generate a production-ready Android APK. It bridges the gap between web development and mobile distribution, offering native-like performance without the steep learning curve of Android SDKs.",
-    type: "personal",
-    link: "https://www.webvium.com",
-    repo: "https://github.com/webvium/web-appp",
-    featured: false,
-    technology: ["Kotlin"],
-  },
-  {
-    title: "My Portfolio",
-    key: "my_portfolio",
-    description:
-      "A modern, responsive personal portfolio built with Next.js to showcase projects, skills, and achievements. Designed with performance and clean UI in mind, it highlights professional work in a sleek and interactive way.",
-    ai_description:
-      "My personal portfolio serves as the digital nexus of my professional identity. Engineered with Next.js App Router and Tailwind CSS, it achieves perfect Lighthouse scores while delivering a fluid, interactive user experience. It features dynamic content rendering, custom UI components, and a robust architecture that easily scales as my career evolves.",
-    type: "personal",
-    link: "https://www.melvinjonesrepol.com",
-    repo: "https://github.com/mrepol742/melvinjonesrepol",
-    featured: false,
-    technology: ["Next.js", "TypeScript", "Tailwind CSS"],
-    cover: "/images/melvin-jones-repol-portfolio-new.png",
   },
   {
     title: "Project Canis TG",
@@ -309,19 +223,6 @@ const Projects = [
     archived: true,
   },
   {
-    title: "Project Deep",
-    key: "project_deep",
-    description:
-      "A open-source collaboration! If you're eager to share your insights, tips, or experiences with a broader audience, contributing to Deep Repository is a fantastic opportunity.",
-    ai_description:
-      "Project Deep is an open-source initiative aimed at aggregating developer knowledge. It acts as a collaborative repository where developers can submit technical articles, code snippets, and career advice, fostering a community-driven approach to technical education.",
-    type: "personal",
-    repo: "https://github.com/mrepol742/project-deep",
-    link: "https://projectdeep.vercel.app",
-    featured: false,
-    technology: ["JavaScript"],
-  },
-  {
     title: "Project Orion",
     key: "project_orion",
     description:
@@ -359,19 +260,6 @@ const Projects = [
     archived: true,
   },
   {
-    title: "Hall of Codes Vue",
-    key: "hall_of_codes_vue",
-    description:
-      "This is Hall of Codes website built with Vue.js. To promote the community, share knowledge, showcase projects and other awesome things.",
-    ai_description:
-      "An earlier iteration of the Hall of Codes platform, this project was constructed using Vue.js. It laid the groundwork for the communitys digital presence, offering a fast, reactive single-page application (SPA) for developers to connect and share resources.",
-    type: "personal",
-    repo: "https://github.com/hallofcodes/hallofcodes-vue",
-    link: "https://hallofcodes.github.io",
-    featured: false,
-    technology: ["Vue.js"],
-  },
-  {
     title: "Webvium VPN",
     key: "webvium_vpn",
     description:
@@ -383,20 +271,6 @@ const Projects = [
     featured: false,
     technology: ["Java"],
     cover: "/images/webviumvpn-banner.png",
-    archived: true,
-  },
-  {
-    title: "mrepol742.github.io",
-    key: "mrepol742_github_io",
-    description:
-      "This is where i showcase my projects, landing pages, tools and other awesome things.",
-    ai_description:
-      "This repository houses the legacy version of my personal portfolio. Originally hosted on GitHub Pages, it served as my primary professional showcase, featuring static landing pages and simple interactive tools before I migrated to a more robust Next.js architecture.",
-    type: "personal",
-    link: "https://github.com/mrepol742/mrepol742.github.io",
-    featured: false,
-    technology: ["PHP"],
-    cover: "/images/myportfolio.png",
     archived: true,
   },
   {
