@@ -39,7 +39,8 @@ const ContentSecurityPolicy = `
     https://*.g.doubleclick.net
     https://*.steamstatic.com
     https://cdn.cloudflare.steamstatic.com
-    https://*.ytimg.com;
+    https://*.ytimg.com
+    https://i.imgur.com;
 
   font-src
     'self'

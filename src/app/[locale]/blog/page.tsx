@@ -59,28 +59,40 @@ export default async function BlogPage({
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const sParams = await searchParams;
-  const query = Array.isArray(sParams.q) ? sParams.q.join(", ") : sParams.q || "";
-  const topic = Array.isArray(sParams.topic) ? sParams.topic[0] : sParams.topic || "";
+  const query = Array.isArray(sParams.q)
+    ? sParams.q.join(", ")
+    : sParams.q || "";
+  const topic = Array.isArray(sParams.topic)
+    ? sParams.topic[0]
+    : sParams.topic || "";
   const posts = getAllPosts();
-  const topics = Array.from(new Set(posts.flatMap((post) => post.topics ?? []).filter(Boolean))).sort();
+  const topics = Array.from(
+    new Set(posts.flatMap((post) => post.topics ?? []).filter(Boolean)),
+  ).sort();
   const filteredPosts = posts.filter((post) => {
-    const haystack = `${post.title} ${post.excerpt ?? ""} ${(post.topics ?? []).join(" ")}`.toLowerCase();
-    return haystack.includes(query.toLowerCase()) && (!topic || post.topics?.includes(topic));
+    const haystack =
+      `${post.title} ${post.excerpt ?? ""} ${(post.topics ?? []).join(" ")}`.toLowerCase();
+    return (
+      haystack.includes(query.toLowerCase()) &&
+      (!topic || post.topics?.includes(topic))
+    );
   });
   const isFiltered = Boolean(query || topic);
   const totalPages = Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE));
-  const visiblePosts = isFiltered ? filteredPosts : posts.slice(0, POSTS_PER_PAGE);
+  const visiblePosts = isFiltered
+    ? filteredPosts
+    : posts.slice(0, POSTS_PER_PAGE);
 
   return (
     <>
       <Header
         title={
           <>
-            Insights
+            Notes.
             <br />
-            <span className="homepage-accent">&</span>
+            <span className="homepage-accent">Articles.</span>
             <br />
-            experiences.
+            Posts.
           </>
         }
         intro="Thoughts, insights, and experiences on software development, technology trends, and personal growth in the tech industry."
@@ -99,13 +111,18 @@ export default async function BlogPage({
         />
 
         <p className="mt-6 text-sm text-stone-600 dark:text-stone-400">
-          Showing <span className="font-bold text-orange-700 dark:text-orange-300">{visiblePosts.length}</span>{" "}
+          Showing{" "}
+          <span className="font-bold text-orange-700 dark:text-orange-300">
+            {visiblePosts.length}
+          </span>{" "}
           {visiblePosts.length === 1 ? "article" : "articles"}
         </p>
 
         {visiblePosts.length === 0 ? (
           <div className="py-20 text-center text-stone-500 dark:text-stone-400">
-            <p className="text-lg font-medium">No articles match these filters.</p>
+            <p className="text-lg font-medium">
+              No articles match these filters.
+            </p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 gap-4 md:gap-6">
