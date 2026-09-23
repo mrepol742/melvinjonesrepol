@@ -1,50 +1,72 @@
 # Melvin Jones Repol
 
-> Software Engineer based in Taytay, Rizal, Philippines. Focused on building scalable web applications, backend systems, automation tools, and developer-focused platforms.
+> Software Engineer based in Taytay, Rizal, Philippines, focused on building scalable web applications, backend systems, automation tools, developer platforms, and practical AI integrations.
 
-Core focus areas: full-stack web development, DevOps & cloud systems, backend architecture, automation & tooling, and AI integration in web systems.
+Primary website: https://www.melvinjonesrepol.com
 
-Core skills: JavaScript/TypeScript, Node.js/Express, React/Next.js, Laravel, Docker, AWS/cloud architecture, PostgreSQL/MongoDB, API design, system design.
+Core focus areas: full-stack web development, backend architecture, DevOps and cloud systems, automation and developer tooling, system design, and AI integration in web applications.
 
-## Docs
+Core technologies: JavaScript, TypeScript, Node.js, Express, React, Next.js, Laravel, Docker, AWS, PostgreSQL, MySQL, MongoDB, REST APIs, and cloud architecture.
 
-- [Home](https://www.melvinjonesrepol.com): Personal background, developer journey, real-time coding statistics, and technical philosophy.
-- [Projects](https://www.melvinjonesrepol.com/projects): Comprehensive list of projects with summaries, tech stacks, and links.
-- [Certificates](https://www.melvinjonesrepol.com/certificates): Certifications and courses completed in software development and related fields.
-- [Work Experience](https://www.melvinjonesrepol.com/work-experience): Detailed work history with roles, responsibilities, and achievements.
-- [Contact](https://www.melvinjonesrepol.com/contact): Contact form and social links for inquiries and networking.
-- [Blog](https://www.melvinjonesrepol.com/blog): Articles on software development, project case studies, and technical insights.
-- [Legal](https://www.melvinjonesrepol.com/legal): Legal information and policies for the website.
+## Main Website
+
+* [Home](https://www.melvinjonesrepol.com): Personal background, developer journey, current work, coding statistics, technical interests, and featured projects.
+* [Projects](https://www.melvinjonesrepol.com/projects): Software projects, open-source work, experiments, platforms, applications, and technical case studies.
+* [Certificates](https://www.melvinjonesrepol.com/certificates): Certifications, courses, and completed software development training.
+* [Work Experience](https://www.melvinjonesrepol.com/work-experience): Professional work history, roles, responsibilities, technologies, and development experience.
+* [Blog](https://www.melvinjonesrepol.com/blog): Articles covering software development, engineering experiences, project updates, experiments, and technical insights.
+* [Contact](https://www.melvinjonesrepol.com/contact): Contact information, inquiry form, and links to social profiles.
+* [Legal](https://www.melvinjonesrepol.com/legal): Privacy, terms, cookies, and other legal information covering the website and related services.
+
+## Sites & Services
+
+* [Developer Tools](https://tools.melvinjonesrepol.com): Collection of browser-based utilities and developer tools, including web, SEO, networking, encoding, generation, inspection, and productivity tools.
+* [Web Designs](https://web-designs.melvinjonesrepol.com): Collection of web design work, interface concepts, layouts, experiments, and frontend design examples.
+* [System Status](https://status.melvinjonesrepol.com): Operational status and availability information for websites, applications, APIs, infrastructure, and third-party services used across the Melvin Jones Repol ecosystem.
+* [Shrtly](https://shrtly.melvinjonesrepol.com): URL shortening service for creating and managing compact links used across projects and services.
 
 ## Featured Projects
 
-- [DevPulse](https://devpulse.hallofcodes.org): Turn your daily coding activity into competitive, shareable leaderboards. Track productivity, motivate your team, and visualize real developer impact.
-- [Canis Chatbot](https://www.melvinjonesrepol.com/canis-chatbot): TypeScript/Node.js/Prisma/Docker modular chatbot system for messaging platforms.
-- [Point of Sale](https://www.melvinjonesrepol.com/point-of-sale): Lightweight, offline-capable point-of-sale system built on JavaScript and backend APIs.
-- [Axleshift Freight Management](https://www.melvinjonesrepol.com/axleshift-freight-management): Full-stack logistics and freight management platform for tracking and operations.
-- [Webvium Browser](https://www.webvium.com): Custom Android web browser with unique features and optimizations.
+* [DevPulse](https://devpulse.hallofcodes.org): Developer productivity platform that turns coding activity into competitive and shareable leaderboards for individuals and teams.
+* [Canis Chatbot](https://www.melvinjonesrepol.com/canis-chatbot): Modular chatbot platform built with TypeScript, Node.js, Prisma, Docker, and integrations for messaging platforms.
+* [Point of Sale](https://www.melvinjonesrepol.com/point-of-sale): Lightweight and offline-capable point-of-sale system built with JavaScript and backend APIs.
+* [Axleshift Freight Management](https://www.melvinjonesrepol.com/axleshift-freight-management): Full-stack logistics and freight management platform for shipment tracking and operational workflows.
+* [Webvium Browser](https://www.webvium.com): Android web browser focused on performance, privacy, customization, and additional browser capabilities.
 
-+## Work Experience
+## Work Experience
 
-- [Freelance Developer](https://www.melvinjonesrepol.com/work-experience): Independent full-stack development work across client projects.
-- [Apptrade Inc.](https://www.melvinjonesrepol.com/work-experience): IT Staff Intern — internship focused on IT support and operations.
-- [Up to Date Web Design](https://www.melvinjonesrepol.com/work-experience): Mid-Level Full-Stack Developer.
+* [UP-TO-DATE WebDesign](https://www.melvinjonesrepol.com/work-experience): Mid-Level Full-Stack Developer working on web applications, backend systems, APIs, infrastructure, and development workflows.
+* [Independent Software Development](https://www.melvinjonesrepol.com/work-experience): Independent full-stack software development and consulting across client and personal projects.
+* [Apptrade Inc.](https://www.melvinjonesrepol.com/work-experience): IT Staff Intern with experience in IT support and operational tasks.
 
 ## Organizations
 
-- [Hall of Codes](https://www.hallofcodes.org/): Community bringing developers, maintainers, and builders together to mentor newcomers, review work, and turn ideas into sustainable open-source projects.
-- [The Webvium Project](https://www.webvium.com/): Ecosystem spanning Android browsers, website-to-app tools, and browser extensions, focused on performance, privacy, and simplicity.
+* [Hall of Codes](https://www.hallofcodes.org): Developer community bringing developers, maintainers, and builders together to mentor newcomers, review work, collaborate, and develop sustainable open-source projects.
+* [The Webvium Project](https://www.webvium.com): Software ecosystem spanning Android browsers, website-to-app tools, browser extensions, and related web technologies with a focus on performance, privacy, and simplicity.
 
 ## Online Presence
 
-- [Facebook](https://www.facebook.com/mrepol742)
-- [GitHub](https://github.com/mrepol742)
-- [LinkedIn](https://www.linkedin.com/in/mrepol742)
-- [X](https://x.com/mrepol742)
-- [YouTube](https://www.youtube.com/@mrepol742)
+* [GitHub](https://github.com/mrepol742): Source code, open-source projects, contributions, experiments, and development activity.
+* [LinkedIn](https://www.linkedin.com/in/mrepol742): Professional profile and employment information.
+* [Facebook](https://www.facebook.com/mrepol742): Public social profile.
+* [X](https://x.com/mrepol742): Development updates, technical posts, and public activity.
+* [YouTube](https://www.youtube.com/@mrepol742): Videos and other published content.
 
-## Optional
+## Additional Resources
 
-- [Gaming](https://www.melvinjonesrepol.com/gaming): Games played and gaming stats, showing how gaming intersects with software development work.
-- [Sitemap](https://www.melvinjonesrepol.com/sitemap.xml): XML sitemap for search engines and structured navigation.
-- [Robots.txt](https://www.melvinjonesrepol.com/robots.txt): Crawler/indexing instructions.
+* [Gaming](https://www.melvinjonesrepol.com/gaming): Gaming interests, games played, and gaming statistics.
+* [Sitemap](https://www.melvinjonesrepol.com/sitemap.xml): XML sitemap containing indexable pages and resources.
+* [Robots.txt](https://www.melvinjonesrepol.com/robots.txt): Search engine and crawler access instructions.
+
+## Related Domains
+
+The following domains and subdomains are part of or directly associated with projects operated by Melvin Jones Repol:
+
+* https://www.melvinjonesrepol.com
+* https://tools.melvinjonesrepol.com
+* https://web-designs.melvinjonesrepol.com
+* https://status.melvinjonesrepol.com
+* https://shrtly.melvinjonesrepol.com
+* https://www.webvium.com
+* https://www.hallofcodes.org
+* https://devpulse.hallofcodes.org
