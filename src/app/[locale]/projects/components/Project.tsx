@@ -19,11 +19,20 @@ export default async function Project({
   const tc = await getTranslations("projects_content");
   const q = query.toLowerCase();
 
+  function getProjectDescription(
+    projectKey: string,
+    defaultProjectDescription: string,
+  ): string {
+    const descriptionKey = `${projectKey}_description`;
+
+    return tc.has(descriptionKey)
+      ? tc(descriptionKey)
+      : defaultProjectDescription;
+  }
+
   const translatedProjects = projects.map((project) => ({
     ...project,
-    description: project.key
-      ? tc(`${project.key}_description` as any)
-      : project.description,
+    description: getProjectDescription(project.key, project.description),
   }));
 
   const projectTypes = Array.from(
@@ -101,7 +110,7 @@ export default async function Project({
             <h2>{t("no_results_found")}</h2>
           </div>
         ) : (
-          <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
             {filteredProjects.map((project, idx) => (
               <div key={idx}>
                 <ProjectCard {...project} />
