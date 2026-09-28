@@ -1,11 +1,7 @@
 import { getAlternates } from "@/components/common/metadata/Alternatives";
 import Footer from "@/components/layout/Footer";
 import Nav from "@/components/layout/Nav";
-<<<<<<< HEAD
 import ScrollTop from "@/components/ui/ScrollTop";
-=======
-import { getRecentPosts } from "@/lib/posts";
->>>>>>> ce4a7f1f256a35810eca7240f5fd07cbe214f320
 import { Metadata } from "next";
 import Link from "next/link";
 import { NextIntlClientProvider } from "next-intl";
