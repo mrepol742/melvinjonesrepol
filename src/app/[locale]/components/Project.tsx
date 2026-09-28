@@ -19,6 +19,17 @@ export default function ProjectCarousel() {
     setAiOpen((prev) => ({ ...prev, [index]: !prev[index] }));
   }
 
+  function getProjectDescription(
+    projectKey: string,
+    defaultProjectDescription: string,
+  ): string {
+    const descriptionKey = `${projectKey}_description`;
+
+    return tc.has(descriptionKey)
+      ? tc(descriptionKey)
+      : defaultProjectDescription;
+  }
+
   return (
     <>
       <Slider>
@@ -32,9 +43,10 @@ export default function ProjectCarousel() {
           .map((project, idx) => {
             const isAi = !!aiOpen[idx];
             const hasAi = Boolean(project.ai_description);
-            const description = project.key
-              ? tc(`${project.key}_description` as any)
-              : project.description;
+            const description = getProjectDescription(
+              project.key ?? "",
+              project.description,
+            );
 
             return (
               <Card

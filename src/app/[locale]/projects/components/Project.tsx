@@ -1,8 +1,5 @@
 import projects from "@/lib/projects";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import Button from "@/components/ui/Button";
 import ProjectCard from "@/app/[locale]/projects/components/ProjectCard";
-import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import Header from "@/components/ui/Header";
 import ProjectFilters from "@/app/[locale]/projects/components/ProjectFilters";
@@ -22,11 +19,20 @@ export default async function Project({
   const tc = await getTranslations("projects_content");
   const q = query.toLowerCase();
 
+  function getProjectDescription(
+    projectKey: string,
+    defaultProjectDescription: string,
+  ): string {
+    const descriptionKey = `${projectKey}_description`;
+
+    return tc.has(descriptionKey)
+      ? tc(descriptionKey)
+      : defaultProjectDescription;
+  }
+
   const translatedProjects = projects.map((project) => ({
     ...project,
-    description: project.key
-      ? tc(`${project.key}_description` as any)
-      : project.description,
+    description: getProjectDescription(project.key, project.description),
   }));
 
   const projectTypes = Array.from(
@@ -92,7 +98,10 @@ export default async function Project({
         />
 
         <p className="mt-6 text-sm text-stone-600 dark:text-stone-400">
-          Showing <span className="font-bold text-orange-700 dark:text-orange-300">{filteredProjects.length}</span>{" "}
+          Showing{" "}
+          <span className="font-bold text-orange-700 dark:text-orange-300">
+            {filteredProjects.length}
+          </span>{" "}
           {filteredProjects.length === 1 ? "project" : "projects"}
         </p>
 
@@ -101,7 +110,7 @@ export default async function Project({
             <h2>{t("no_results_found")}</h2>
           </div>
         ) : (
-          <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
             {filteredProjects.map((project, idx) => (
               <div key={idx}>
                 <ProjectCard {...project} />
@@ -109,25 +118,6 @@ export default async function Project({
             ))}
           </div>
         )}
-
-        <div className="my-6">
-          <p data-aos="fade-up" data-aos-delay="200" className="max-w-xl">
-            {t("github_cta_text")}
-          </p>
-
-          <Link
-            href="https://github.com/mrepol742"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <Button
-              icon={faGithub}
-              className="bg-orange-500 text-stone-950 before:bg-orange-700 after:bg-orange-700"
-            >
-              {t("github_button")}
-            </Button>
-          </Link>
-        </div>
       </section>
     </>
   );

@@ -144,26 +144,6 @@ export default async function Gaming({
           </div>
         )}
 
-        <div className="my-6">
-          <p data-aos="fade-up" data-aos-delay="200">
-            {t("steam_profile_text")}
-          </p>
-          <Link
-            href="https://steamcommunity.com/id/mrepol742"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <button
-              className="relative mt-3 overflow-hidden rounded-sm bg-orange-600 px-7 py-4 text-sm font-semibold text-white shadow-none transition-transform duration-200 hover:translate-x-1 hover:translate-y-1
-                          before:absolute before:bottom-0 before:right-0 before:h-1 before:w-full before:bg-orange-800 before:content-['']
-                          after:absolute after:bottom-0 after:right-0 after:h-full after:w-1 after:bg-orange-800 after:content-['']"
-              style={{ boxShadow: "1px 1px 0 0 #ea580c" }}
-            >
-              {t("steam_profile_button")}
-            </button>
-          </Link>
-        </div>
-
         <span className="ml-auto text-xs text-stone-500 dark:text-stone-400">
           {t("data_source_note")}
           <br />
