@@ -1,21 +1,11 @@
-import {
-  BASE_URL,
-  SITEMAP_LOCALES,
-  buildSitemapIndexXml,
-  getBlogSitemapPageCount,
-} from "@/lib/sitemap";
+import { BASE_URL, SITEMAP_LOCALES, buildSitemapIndexXml } from "@/lib/sitemap";
 
 export const revalidate = 43200;
 
 export async function GET() {
-  const blogPageCount = getBlogSitemapPageCount();
-
   const entries = [
     ...SITEMAP_LOCALES.map((locale) => ({
       url: `${BASE_URL}/sitemap-${locale}.xml`,
-    })),
-    ...Array.from({ length: blogPageCount }, (_, index) => ({
-      url: `${BASE_URL}/sitemap-blog-${index + 1}.xml`,
     })),
   ];
 

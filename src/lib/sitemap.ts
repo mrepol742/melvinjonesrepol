@@ -1,12 +1,9 @@
-import { getAllPosts } from "@/lib/posts";
 import { locales } from "@/lib/i18n";
 
 export const BASE_URL =
   process.env.NODE_ENV === "production"
     ? "https://www.melvinjonesrepol.com"
     : "http://localhost:3000";
-
-export const BLOG_SITEMAP_PAGE_SIZE = 100;
 
 export const STATIC_ROUTES = [
   "",
@@ -17,7 +14,6 @@ export const STATIC_ROUTES = [
   "/axleshift-freight-management",
   "/point-of-sale",
   "/orion-chatbot",
-  "/blog",
   "/certificates",
   "/work-experience",
   "/contact-me",
@@ -41,26 +37,6 @@ export function getLocalizedStaticUrls(locale: string) {
     url: `${BASE_URL}${prefix}${route}`,
     changeFrequency: "weekly" as const,
     priority: route === "" ? 1 : 0.7,
-  }));
-}
-
-export function getBlogSitemapPageCount() {
-  return Math.max(
-    1,
-    Math.ceil(getAllPosts("en").length / BLOG_SITEMAP_PAGE_SIZE),
-  );
-}
-
-export function getBlogSitemapUrls(page: number) {
-  const posts = getAllPosts("en");
-  const start = (page - 1) * BLOG_SITEMAP_PAGE_SIZE;
-  const end = start + BLOG_SITEMAP_PAGE_SIZE;
-
-  return posts.slice(start, end).map((post) => ({
-    url: `${BASE_URL}/blog/${post.slug}`,
-    lastModified: post.date ? new Date(post.date) : undefined,
-    changeFrequency: "monthly" as const,
-    priority: 0.6,
   }));
 }
 

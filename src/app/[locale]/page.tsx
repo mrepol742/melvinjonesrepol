@@ -5,7 +5,6 @@ import { getAlternates } from "@/components/common/metadata/Alternatives";
 import Project from "@/app/[locale]/components/Project";
 import Github from "@/app/[locale]/components/Github";
 import Wakatime from "@/app/[locale]/components/Wakatime";
-import Blog from "@/app/[locale]/components/Blog";
 import Certificate from "@/app/[locale]/components/Certificate";
 import Steam from "@/app/[locale]/components/Steam";
 import Youtube from "@/app/[locale]/components/Youtube";
@@ -187,18 +186,6 @@ export default async function Home({
             <Github />
             <Wakatime />
           </div>
-        </section>
-
-        <section className="homepage-section">
-          <div className="homepage-section-heading">
-            <p className="homepage-kicker">Notes from the workbench</p>
-            <h2>I write what I learn.</h2>
-            <p>
-              Engineering decisions, production lessons, security,
-              infrastructure, and the occasional hard-earned opinion.
-            </p>
-          </div>
-          <Blog locale={locale} />
         </section>
 
         <section className="homepage-section">

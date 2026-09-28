@@ -3,7 +3,6 @@ import { getAlternates } from "@/components/common/metadata/Alternatives";
 import Footer from "@/components/layout/Footer";
 import Nav from "@/components/layout/Nav";
 import ScrollTop from "@/components/ui/ScrollTop";
-import { getRecentPosts } from "@/lib/posts";
 import { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages, getTranslations } from "next-intl/server";
@@ -51,7 +50,6 @@ export default async function NotFound() {
   const t = await getTranslations("not_found");
   const quotes = t.raw("quotes") as string[];
   const quote = quotes[Math.floor(Math.random() * quotes.length)];
-  const posts = getRecentPosts(12, locale);
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
@@ -83,7 +81,7 @@ export default async function NotFound() {
       </div>
 
       <ScrollTop />
-      <Footer posts={posts} />
+      <Footer />
     </NextIntlClientProvider>
   );
 }

@@ -13,7 +13,7 @@ Core skills: JavaScript/TypeScript, Node.js/Express, React/Next.js, Laravel, Doc
 - [Certificates](https://www.melvinjonesrepol.com/certificates): Certifications and courses completed in software development and related fields.
 - [Work Experience](https://www.melvinjonesrepol.com/work-experience): Detailed work history with roles, responsibilities, and achievements.
 - [Contact](https://www.melvinjonesrepol.com/contact): Contact form and social links for inquiries and networking.
-- [Blog](https://www.melvinjonesrepol.com/blog): Articles on software development, project case studies, and technical insights.
+- [Blog](https://blog.melvinjonesrepol.com): Articles on software development, project case studies, and technical insights.
 - [Legal](https://www.melvinjonesrepol.com/legal): Legal information and policies for the website.
 
 ## Featured Projects

@@ -43,7 +43,7 @@ export default function Nav() {
     {
       key: "blog",
       label: t("nav_blog"),
-      href: "/blog",
+      href: "https://blog.melvinjonesrepol.com",
       icon: faBlog,
       desktopOnly: true,
       mobileMenu: true,

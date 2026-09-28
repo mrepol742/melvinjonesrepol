@@ -6,7 +6,6 @@ import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import Newsletter from "@/components/layout/Newsletter";
 import ScrollTop from "@/components/ui/ScrollTop";
-import { getRecentPosts } from "@/lib/posts";
 import DevToolsDetector from "@/components/common/DevToolsDetector";
 import { locales } from "@/lib/i18n";
 
@@ -28,7 +27,6 @@ export default async function LocaleLayout({
 
   const env = process.env.NEXT_PUBLIC_NODE_ENV || "production";
   const isProduction = env === "production";
-  const posts = getRecentPosts(12, locale);
   const messages = await getMessages();
 
   return (
@@ -49,7 +47,7 @@ export default async function LocaleLayout({
       <ToastContainer />
       <ScrollTop />
       <Newsletter />
-      <Footer posts={posts} />
+      <Footer />
     </NextIntlClientProvider>
   );
 }

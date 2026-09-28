@@ -24,6 +24,11 @@
       "source": "/uptime",
       "destination": "https://status.melvinjonesrepol.com",
       "permanent": true
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "https://blog.melvinjonesrepol.com/posts/:path*",
+      "permanent": true
     }
   ]
 }

@@ -28,12 +28,6 @@ export function getAlternates(path: string, locale?: string) {
     ),
     types: {
       "application/xml": `${baseUrl}/sitemap.xml`,
-      "application/rss+xml": [
-        {
-          title: "RSS Feed",
-          url: `${baseUrl}/rss.xml`,
-        },
-      ],
     },
   };
 }

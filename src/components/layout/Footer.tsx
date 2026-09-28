@@ -15,11 +15,7 @@ import { navLanguages } from "@/lib/i18n";
 import CookiePreference from "../common/CookiePreference";
 import TrustPilotWidget from "../common/TrustPilotWidget";
 
-export default function Footer({
-  posts,
-}: {
-  posts: { slug: string; title: string }[];
-}) {
+export default function Footer() {
   const t = useTranslations("components.footer");
   const locale = useLocale();
   const router = useRouter();
@@ -37,7 +33,7 @@ export default function Footer({
   const navLinks = [
     { href: "/", label: t("footer_home") },
     { href: "/projects", label: t("footer_projects") },
-    { href: "/blog", label: t("footer_blog") },
+    { href: "https://blog.melvinjonesrepol.com", label: t("footer_blog") },
     { href: "/gaming", label: t("footer_gaming") },
     { href: "/certificates", label: t("footer_certificates") },
     { href: "/work-experience", label: t("footer_work_experience") },
@@ -196,33 +192,8 @@ export default function Footer({
               ))}
             </ul>
           </div>
-
-          {/* Recent posts + Language */}
+          
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest mb-4">
-              {t("footer_recent_posts")}
-            </h4>
-
-            {posts.length > 0 ? (
-              <ul className="space-y-2.5 mb-8">
-                {posts.map((post) => (
-                  <li key={post.slug}>
-                    <Link
-                      href={`/blog/${post.slug}`}
-                      className={`block truncate ${linkClass}`}
-                      title={post.title}
-                    >
-                      {post.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p className="text-zinc-600 text-sm mb-8">
-                {t("footer_no_recent_posts")}
-              </p>
-            )}
-
             <h4 className="text-xs font-semibold uppercase tracking-widest mb-3">
               {t("footer_language_region")}
             </h4>
