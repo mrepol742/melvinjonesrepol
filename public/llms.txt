@@ -11,6 +11,7 @@ Core technologies: JavaScript, TypeScript, Node.js, Express, React, Next.js, Lar
 ## Main Website
 
 * [Home](https://www.melvinjonesrepol.com): Personal background, developer journey, current work, coding statistics, technical interests, and featured projects.
+* [About](https://www.melvinjonesrepol.com/about): About Melvin Jones Repol, his background, and his work.
 * [Projects](https://www.melvinjonesrepol.com/projects): Software projects, open-source work, experiments, platforms, applications, and technical case studies.
 * [Certificates](https://www.melvinjonesrepol.com/certificates): Certifications, courses, and completed software development training.
 * [Work Experience](https://www.melvinjonesrepol.com/work-experience): Professional work history, roles, responsibilities, technologies, and development experience.
@@ -67,6 +68,7 @@ The following domains and subdomains are part of or directly associated with pro
 * https://web-designs.melvinjonesrepol.com
 * https://status.melvinjonesrepol.com
 * https://shrtly.melvinjonesrepol.com
+* https://blog.melvinjonesrepol.com
 * https://www.webvium.com
 * https://www.hallofcodes.org
 * https://devpulse.hallofcodes.org

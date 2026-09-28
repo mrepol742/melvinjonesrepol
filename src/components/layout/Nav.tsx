@@ -15,6 +15,7 @@ import {
   faMoon,
   faSun,
   faTimes,
+  faUser,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
@@ -67,6 +68,13 @@ export default function Nav() {
       label: t("nav_work_experience"),
       href: "/work-experience",
       icon: faBriefcase,
+    },
+    {
+      key: "about",
+      label: t("nav_about"),
+      href: "/about",
+      icon: faUser,
+      mobileMenu: true,
     },
     {
       key: "legal",
@@ -141,7 +149,8 @@ export default function Nav() {
 
   const mobileMenuItems = navItems.filter((item) => item.mobileMenu);
 
-  const baseLinkClass = "group flex items-center hover:text-orange-300 transition-colors duration-200";
+  const baseLinkClass =
+    "group flex items-center hover:text-orange-300 transition-colors duration-200";
 
   const hoverLabelClass =
     "ml-1 overflow-hidden max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-200 whitespace-nowrap";
@@ -382,7 +391,7 @@ export default function Nav() {
                         transition-all duration-200
                       "
                     >
-                        <div className="w-10 h-10 rounded-md bg-stone-900 flex items-center justify-center text-white group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                      <div className="w-10 h-10 rounded-md bg-stone-900 flex items-center justify-center text-white group-hover:bg-orange-600 group-hover:text-white transition-colors">
                         <FontAwesomeIcon icon={item.icon} />
                       </div>
 

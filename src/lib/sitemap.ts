@@ -7,6 +7,7 @@ export const BASE_URL =
 
 export const STATIC_ROUTES = [
   "",
+  "/about",
   "/projects",
   "/protocol-discussion-platform",
   "/web-surface-scan",

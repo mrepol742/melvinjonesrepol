@@ -17,6 +17,7 @@ import TrustPilotWidget from "../common/TrustPilotWidget";
 
 export default function Footer() {
   const t = useTranslations("components.footer");
+  const tNav = useTranslations("components.nav");
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -37,6 +38,7 @@ export default function Footer() {
     { href: "/gaming", label: t("footer_gaming") },
     { href: "/certificates", label: t("footer_certificates") },
     { href: "/work-experience", label: t("footer_work_experience") },
+    { href: "/about", label: tNav("nav_about") },
     { href: "/contact-me", label: t("footer_contact_me") },
   ];
 
