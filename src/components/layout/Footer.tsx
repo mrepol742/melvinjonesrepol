@@ -57,7 +57,6 @@ export default function Footer() {
     { href: "/protocol-discussion-platform", label: t("footer_pdp") },
     { href: "/axleshift-freight-management", label: t("footer_afm") },
     { href: "/point-of-sale", label: t("footer_pos") },
-    { href: "https://ulishastore.com", label: t("footer_usl") },
     { href: "/canis-agent", label: t("footer_canis_chatbot") },
     {
       href: "https://www.hallofcodes.org",
