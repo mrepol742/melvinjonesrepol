@@ -184,6 +184,11 @@ export default function Privacy() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="#monitoring">
+                    Client project systems (production and staging monitoring)
+                  </Link>
+                </li>
+                <li>
                   Any related applications, tools, or services operated under
                   the Melvin Jones Repol or Webvium names (the “Services”)
                 </li>
@@ -289,9 +294,12 @@ export default function Privacy() {
                 Status (status.melvinjonesrepol.com)
               </h3>
               <p className="mt-2">
-                The status service provides availability information. Its
-                hosting provider may process standard request logs, IP address,
-                browser details, and security events when you visit it.
+                The status service is backed by UptimeRobot, which performs
+                availability checks and provides uptime, response-time,
+                incident, and status-page information for monitored projects.
+                UptimeRobot may process standard request logs, IP address,
+                browser details, subscription details, and security events when
+                you visit or subscribe to the status service.
               </p>
 
               <h3 className="text-xl font-semibold mt-6" id="stats">
@@ -450,6 +458,20 @@ export default function Privacy() {
                 </li>
                 <li>We do not transmit browsing data to our servers.</li>
               </ul>
+
+              <h3 className="text-xl font-semibold mt-6" id="monitoring">
+                Production and Staging Monitoring
+              </h3>
+              <p className="mt-2">
+                Systems we develop or operate may use Sentry in production or
+                staging for error, performance, release, and diagnostic
+                monitoring. Depending on the event and configuration, Sentry may
+                receive stack traces, error messages, request details, device or
+                browser information, IP-derived information, user or account
+                identifiers, and other diagnostic context. We seek to minimize
+                personal and sensitive data sent in telemetry, and project-
+                specific notices or agreements may impose additional controls.
+              </p>
             </div>
 
             <div>
@@ -536,6 +558,29 @@ export default function Privacy() {
                   </a>{" "}
                   — delivery, hosting, storage, security, and request processing
                   for the EmDash blog and other Cloudflare-backed Services.
+                </li>
+                <li>
+                  <a
+                    href="https://sentry.io/privacy/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline text-orange-600 dark:text-orange-400"
+                  >
+                    Sentry Privacy Policy
+                  </a>{" "}
+                  — production and staging error, performance, release, and
+                  diagnostic monitoring where enabled.
+                </li>
+                <li>
+                  <a
+                    href="https://uptimerobot.com/privacy/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline text-orange-600 dark:text-orange-400"
+                  >
+                    UptimeRobot Privacy Policy
+                  </a>{" "}
+                  — project availability monitoring and the public status page.
                 </li>
                 <li>
                   <a

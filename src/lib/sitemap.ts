@@ -24,7 +24,7 @@ export const STATIC_ROUTES = [
   "/legal/privacy-policy",
   "/legal/terms-of-service",
   "/legal/cookie-policy",
-  "/legal/developer-client-agreement",
+  "/legal/service-level-agreement",
 ] as const;
 
 export function getLocalizedStaticUrls(locale: string) {

@@ -58,7 +58,7 @@ const legalLinks = [
     description:
       "Learn how we collect, use, and protect your information across our services.",
     category: "Data",
-    version: "v1.4",
+    version: "v2.0",
   },
   {
     href: "/legal/terms-of-service",
@@ -66,7 +66,7 @@ const legalLinks = [
     description:
       "Understand the rules and guidelines for using our website, apps, and extensions.",
     category: "Usage",
-    version: "v1.4",
+    version: "v2.0",
   },
   {
     href: "/legal/cookie-policy",
@@ -74,15 +74,15 @@ const legalLinks = [
     description:
       "See how we and third-party services use cookies and similar tracking technologies.",
     category: "Tracking",
-    version: "v1.2",
+    version: "v2.0",
   },
   {
-    href: "/legal/developer-client-agreement",
-    title: "Developer Client Agreement",
+    href: "/legal/service-level-agreement",
+    title: "Service Level Agreement",
     description:
-      "Review the terms and conditions for our development services.",
-    category: "Contract",
-    version: "v1.0",
+      "Review uptime, monitoring, security, compliance, and support commitments for client systems.",
+    category: "Service",
+    version: "v2.0",
   },
   {
     href: "/legal/licenses/Apache-2.0.md",

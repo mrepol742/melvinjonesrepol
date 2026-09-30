@@ -158,12 +158,12 @@ export default function ContactMe() {
         </div>
 
         <Link
-          href="/legal/developer-client-agreement"
+          href="/legal/service-level-agreement"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-8 inline-flex border-b-2 border-orange-600 pb-1 text-xs font-bold uppercase tracking-widest hover:text-orange-700 dark:hover:text-orange-300"
         >
-          Read the developer agreement
+          Read the Service Level Agreement
         </Link>
       </aside>
 

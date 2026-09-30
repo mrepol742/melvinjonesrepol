@@ -115,6 +115,12 @@ export default function CookiePolicy() {
                   content such as videos.
                 </li>
                 <li>
+                  <strong>Advertising Cookies:</strong> This preference remains
+                  available in our cookie controls, but the main website has not
+                  served ads or used advertising cookies since October 1, 2026.
+                  Enabling the preference does not currently load advertising.
+                </li>
+                <li>
                   <strong>Third-Party Cookies:</strong> Certain features,
                   embedded content, widgets, or external services may place
                   cookies or use similar technologies for their own
@@ -211,6 +217,19 @@ export default function CookiePolicy() {
                   melvinjonesrepol.com and webvium.com. Submitting those forms
                   sends data to Resend but does not by itself authorize optional
                   analytics cookies.
+                </li>
+                <li>
+                  <a
+                    href="https://uptimerobot.com/privacy/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline text-orange-600 dark:text-orange-400"
+                  >
+                    UptimeRobot
+                  </a>{" "}
+                  backs status.melvinjonesrepol.com and may use cookies or
+                  similar technologies under its own policy when you visit or
+                  subscribe to the status page.
                 </li>
               </ul>
               <p className="mt-3">

@@ -29,6 +29,11 @@
       "source": "/blog/:path*",
       "destination": "https://blog.melvinjonesrepol.com/posts/:path*",
       "permanent": true
+    },
+    {
+      "source": "/legal/developer-client-agreement",
+      "destination": "https://www.melvinjonesrepol.com/legal/service-level-agreement",
+      "permanent": true
     }
   ]
 }
