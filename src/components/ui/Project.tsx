@@ -1,5 +1,4 @@
 import Image from "next/image";
-import HorizontalAdDisplayUnit from "./HorizontalAdDisplay";
 import Link from "next/link";
 import Header from "./Header";
 
@@ -175,15 +174,6 @@ export default function Project({
         </div>
       </section>
 
-      <section className="border-y border-stone-300 bg-orange-50/50 py-10 dark:border-orange-500/25 dark:bg-zinc-900">
-        <div className="max-w-5xl mx-auto px-6">
-          <p className="font-mono text-[10px] uppercase tracking-[0.3em] mb-4">
-            Advertisements
-          </p>
-          <HorizontalAdDisplayUnit />
-        </div>
-      </section>
-
       <section id="resources" className="py-28">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="font-mono text-xs uppercase tracking-[0.3em] mb-10">
@@ -230,14 +220,6 @@ export default function Project({
         </section>
       )}
 
-      <section className="mb-5 border-y border-stone-300 bg-orange-50/50 py-10 dark:border-orange-500/25 dark:bg-zinc-900">
-        <div className="max-w-5xl mx-auto px-6">
-          <p className="font-mono text-[10px] uppercase tracking-[0.3em] mb-4">
-            Advertisements
-          </p>
-          <HorizontalAdDisplayUnit />
-        </div>
-      </section>
     </>
   );
 }

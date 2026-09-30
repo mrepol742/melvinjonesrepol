@@ -70,7 +70,7 @@ export default function Privacy() {
               <p className="text-xs uppercase tracking-widest opacity-50 mb-1">
                 Last Updated
               </p>
-              <p className="text-sm font-medium">September 6, 2026</p>
+              <p className="text-sm font-medium">October 1, 2026</p>
             </div>
 
             <p>
@@ -92,8 +92,12 @@ export default function Privacy() {
                   launcher settings).
                 </li>
                 <li>
-                  We use limited third-party tools on our websites for ads,
+                  We use limited service providers for hosting, email delivery,
                   analytics, spam prevention, search, and other functionality.
+                </li>
+                <li>
+                  The main site has not served advertising since October 1,
+                  2026.
                 </li>
                 <li>
                   Extension permissions are disclosed at install time and are
@@ -115,13 +119,34 @@ export default function Privacy() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#webvium-website">
-                    Webvium Website (www.webvium.com)
+                  <Link href="#tools">Tools (tools.melvinjonesrepol.com)</Link>
+                </li>
+                <li>
+                  <Link href="#blog">Blog (blog.melvinjonesrepol.com)</Link>
+                </li>
+                <li>
+                  <Link href="#status">
+                    Status (status.melvinjonesrepol.com)
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#stats">
+                    Wakatime (stats.melvinjonesrepol.com)
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#web-designs">
+                    Web Designs (web-designs.melvinjonesrepol.com)
                   </Link>
                 </li>
                 <li>
                   <Link href="#shortlink">
-                    Shortlink (shrtly.melvinjonesrepol.com)
+                    Shrtly (shrtly.melvinjonesrepol.com)
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#webvium-website">
+                    Webvium Website (www.webvium.com)
                   </Link>
                 </li>
                 <li>
@@ -180,6 +205,12 @@ export default function Privacy() {
                 this Privacy Policy refer to the operator and the Services
                 provided under these names.
               </p>
+              <p className="mt-3">
+                For personal data that we decide how and why to process, Melvin
+                Jones Repol is the personal information controller under the
+                Philippine Data Privacy Act of 2012 and the controller under the
+                GDPR where that law applies.
+              </p>
             </div>
 
             <div>
@@ -194,16 +225,19 @@ export default function Privacy() {
                 <li>
                   <strong>Contact form:</strong> Name, email address, and
                   message when voluntarily submitted, used to respond to
-                  inquiries.
+                  inquiries. Delivery is powered by Resend. Limited anti-abuse
+                  records may be stored with Upstash Redis.
+                </li>
+                <li>
+                  <strong>Newsletter:</strong> Your email address and
+                  subscription status are processed through Resend when you
+                  subscribe. You may unsubscribe at any time using the link in a
+                  newsletter or by contacting us.
                 </li>
                 <li>
                   <strong>Analytics & performance:</strong> Google Analytics and
                   Google Search Console provide aggregated traffic and
                   performance metrics.
-                </li>
-                <li>
-                  <strong>Advertising:</strong> Google AdSense uses cookies and
-                  similar technologies to deliver ads.
                 </li>
                 <li>
                   <strong>Spam protection:</strong> Google reCAPTCHA Enterprise
@@ -221,7 +255,64 @@ export default function Privacy() {
                   <strong>Hosting logs:</strong> Vercel processes IP and request
                   logs for performance and security.
                 </li>
+                <li>
+                  <strong>No advertising:</strong> The main website has not
+                  displayed or served ads since October 1, 2026. It does not use
+                  Google AdSense for ad delivery after that date.
+                </li>
               </ul>
+
+              <h3 className="text-xl font-semibold mt-6" id="tools">
+                Tools (tools.melvinjonesrepol.com)
+              </h3>
+              <p className="mt-2">
+                This service may process information you submit to a selected
+                tool, along with ordinary request, device, error, and security
+                data needed to provide and protect that tool. A tool may provide
+                an additional notice when its processing differs from this
+                policy.
+              </p>
+
+              <h3 className="text-xl font-semibold mt-6" id="blog">
+                Blog (blog.melvinjonesrepol.com)
+              </h3>
+              <p className="mt-2">
+                The blog is powered by the Cloudflare EmDash content management
+                system and hosted on Cloudflare Workers. Cloudflare may process
+                IP addresses, request headers, security events, and diagnostic
+                data to deliver, secure, and operate the blog. Cloudflare&apos;s
+                applicable privacy and service terms also apply to its
+                processing and infrastructure.
+              </p>
+
+              <h3 className="text-xl font-semibold mt-6" id="status">
+                Status (status.melvinjonesrepol.com)
+              </h3>
+              <p className="mt-2">
+                The status service provides availability information. Its
+                hosting provider may process standard request logs, IP address,
+                browser details, and security events when you visit it.
+              </p>
+
+              <h3 className="text-xl font-semibold mt-6" id="stats">
+                WakaTime (stats.melvinjonesrepol.com)
+              </h3>
+              <p className="mt-2">
+                This service displays development activity and statistics.
+                WakaTime or the hosting provider may receive standard request
+                information when its content is requested. WakaTime&apos;s own
+                privacy terms apply to information it processes.
+              </p>
+
+              <h3 className="text-xl font-semibold mt-6" id="web-designs">
+                Web Designs (web-designs.melvinjonesrepol.com)
+              </h3>
+              <p className="mt-2">
+                This gallery may process standard hosting, request, performance,
+                and security data. Any third-party content or demonstrations
+                linked or embedded there may be governed by the third
+                party&apos;s own privacy policy.
+              </p>
 
               <h3 className="text-xl font-semibold mt-6" id="webvium-website">
                 Webvium Website (www.webvium.com)
@@ -232,9 +323,10 @@ export default function Privacy() {
                   under the Webvium name.
                 </li>
                 <li>
-                  Information voluntarily submitted through forms or other
-                  interactive features may be collected to provide the requested
-                  service or respond to inquiries.
+                  Contact-form names, email addresses, and messages, and
+                  newsletter email addresses and subscription status, are
+                  processed through Resend to deliver the requested email or
+                  subscription service.
                 </li>
                 <li>
                   Technical information such as IP address, browser information,
@@ -242,9 +334,9 @@ export default function Privacy() {
                   hosting and infrastructure providers used by the website.
                 </li>
                 <li>
-                  Where analytics, advertising, search, or other third-party
-                  services are enabled, those providers may process information
-                  according to their respective privacy policies.
+                  Where analytics, search, embedded content, or other
+                  third-party services are enabled, those providers may process
+                  information according to their respective privacy policies.
                 </li>
                 <li>
                   We do not sell or rent personal information collected through
@@ -367,7 +459,7 @@ export default function Privacy() {
               <ul className="list-disc list-inside ml-4 mt-3 space-y-1">
                 <li>Respond to inquiries and user feedback.</li>
                 <li>Operate and improve the Services.</li>
-                <li>Provide ads and measure site performance.</li>
+                <li>Measure site performance where you have consented.</li>
                 <li>Prevent spam, abuse, and security threats.</li>
                 <li>
                   Provide requested features and functionality across our
@@ -378,14 +470,73 @@ export default function Privacy() {
 
             <div>
               <h2 className="text-2xl font-semibold">
-                4. Sharing and Third Parties
+                4. Legal Bases for Processing
+              </h2>
+              <p className="mt-3">
+                We process personal data in accordance with Republic Act No.
+                10173 (the Philippine Data Privacy Act of 2012), its
+                Implementing Rules and Regulations, and applicable National
+                Privacy Commission issuances. Where the EU or UK GDPR applies,
+                we rely on one or more of the following legal bases, as
+                appropriate:
+              </p>
+              <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
+                <li>
+                  <strong>Consent</strong> for optional analytics, newsletters,
+                  and other processing for which consent is requested.
+                </li>
+                <li>
+                  <strong>Contract or steps at your request</strong> when needed
+                  to provide a Service or respond to a request you initiate.
+                </li>
+                <li>
+                  <strong>Legitimate interests</strong> in securing,
+                  maintaining, diagnosing, and improving the Services, where
+                  those interests are not overridden by your rights.
+                </li>
+                <li>
+                  <strong>Legal obligation</strong> when processing is required
+                  by applicable law or a valid legal request.
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-semibold">
+                5. Sharing and Service Providers
               </h2>
               <p className="mt-3">
                 We do not sell or rent personal data. We may share or allow
                 limited information to be processed by third-party providers
-                that help us operate, secure, analyze, or improve the Services.
+                that help us operate, secure, analyze, communicate, or improve
+                the Services. They process data under their own terms and, where
+                applicable, on our instructions.
               </p>
               <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
+                <li>
+                  <a
+                    href="https://resend.com/legal/privacy-policy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline text-orange-600 dark:text-orange-400"
+                  >
+                    Resend Privacy Policy
+                  </a>{" "}
+                  — contact-form and newsletter delivery and subscriber records
+                  for melvinjonesrepol.com and webvium.com.
+                </li>
+                <li>
+                  <a
+                    href="https://www.cloudflare.com/privacypolicy/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline text-orange-600 dark:text-orange-400"
+                  >
+                    Cloudflare Privacy Policy
+                  </a>{" "}
+                  — delivery, hosting, storage, security, and request processing
+                  for the EmDash blog and other Cloudflare-backed Services.
+                </li>
                 <li>
                   <a
                     href="https://policies.google.com/privacy"
@@ -398,16 +549,6 @@ export default function Privacy() {
                 </li>
                 <li>
                   <a
-                    href="https://adssettings.google.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline text-orange-600 dark:text-orange-400"
-                  >
-                    Google Ad Personalization Settings
-                  </a>
-                </li>
-                <li>
-                  <a
                     href="https://vercel.com/legal/privacy-policy"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -415,6 +556,17 @@ export default function Privacy() {
                   >
                     Vercel Privacy Policy
                   </a>
+                </li>
+                <li>
+                  <a
+                    href="https://upstash.com/trust/privacy.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline text-orange-600 dark:text-orange-400"
+                  >
+                    Upstash Privacy Policy
+                  </a>{" "}
+                  — limited anti-abuse and request-deduplication records.
                 </li>
                 <li>
                   <a
@@ -456,37 +608,88 @@ export default function Privacy() {
                     Microsoft Privacy Statement (Bing)
                   </a>
                 </li>
-              </ul>
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-semibold">5. Data Retention</h2>
-              <p className="mt-3">
-                Contact form submissions are retained only as long as needed to
-                respond to your request. Website logs and analytics data are
-                retained according to the applicable third-party provider’s
-                policies. Local app data remains on your device until you delete
-                it.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-semibold">
-                6. Your Choices and Rights
-              </h2>
-              <ul className="list-disc list-inside ml-4 mt-3 space-y-1">
-                <li>Control cookies and tracking in your browser settings.</li>
-                <li>Revoke app or site permissions in your device settings.</li>
-                <li>Uninstall any app or extension at any time.</li>
                 <li>
-                  Request access, correction, or deletion of contact form data
-                  by emailing <strong>mrepol742@gmail.com</strong>.
+                  Other providers disclosed at the point a feature is used, or
+                  when required to comply with law, protect rights and safety,
+                  investigate abuse, or complete a business transfer.
                 </li>
               </ul>
             </div>
 
             <div>
-              <h2 className="text-2xl font-semibold">7. Security</h2>
+              <h2 className="text-2xl font-semibold">
+                6. International Data Transfers
+              </h2>
+              <p className="mt-3">
+                Our providers may process information in the Philippines, the
+                United States, the European Economic Area, and other countries.
+                Those countries may have different data-protection rules. Where
+                required, we rely on appropriate safeguards such as contractual
+                protections, including standard contractual clauses, or another
+                lawful transfer mechanism.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-semibold">7. Data Retention</h2>
+              <p className="mt-3">
+                Contact form submissions are retained only as long as needed to
+                respond to your request, maintain necessary records, resolve
+                disputes, or comply with law. Newsletter data is retained until
+                you unsubscribe or request deletion, subject to a limited
+                suppression record where needed to honor your choice. Shortlink
+                data is kept only while needed to provide and protect that
+                service. Provider logs, security records, and analytics are kept
+                under the applicable provider settings and retention rules.
+                Local app data remains on your device until you delete it or
+                uninstall the app.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-semibold">
+                8. Your Choices and Privacy Rights
+              </h2>
+              <p className="mt-3">
+                Subject to applicable law and its exceptions, you may ask to be
+                informed about our processing and request access, correction,
+                erasure or blocking, objection or restriction, withdrawal of
+                consent, and data portability. You may also object to direct
+                marketing and lodge a complaint with a competent regulator.
+              </p>
+              <ul className="list-disc list-inside ml-4 mt-3 space-y-1">
+                <li>
+                  Change optional-cookie choices through Cookie Preferences or
+                  your browser settings. Withdrawing consent does not affect
+                  processing that was lawful before withdrawal.
+                </li>
+                <li>Revoke app or site permissions in your device settings.</li>
+                <li>Uninstall any app or extension at any time.</li>
+                <li>
+                  Exercise a privacy right by emailing{" "}
+                  <strong>mrepol742@gmail.com</strong>. We may need to verify
+                  your identity and may decline or limit a request where the law
+                  permits.
+                </li>
+              </ul>
+              <p className="mt-3">
+                In the Philippines, you may complain to the{" "}
+                <a
+                  href="https://privacy.gov.ph/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline text-orange-600 dark:text-orange-400"
+                >
+                  National Privacy Commission
+                </a>
+                . If the GDPR applies, you may complain to the data-protection
+                authority where you live, work, or believe an infringement
+                occurred.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-semibold">9. Security</h2>
               <p className="mt-3">
                 We use reasonable safeguards to protect information. No method
                 of transmission or storage is completely secure, so we cannot
@@ -495,7 +698,21 @@ export default function Privacy() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-semibold">8. Other Projects</h2>
+              <h2 className="text-2xl font-semibold">
+                10. Children&apos;s Privacy
+              </h2>
+              <p className="mt-3">
+                The Services are not directed to children under 13, and we do
+                not knowingly collect their personal data. Where local law sets
+                a higher age for valid consent to online data processing, a
+                parent or guardian must provide or authorize consent when
+                required. Contact us if you believe a child supplied personal
+                data improperly.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-semibold">11. Other Projects</h2>
               <p className="mt-3">
                 Other projects operated or published by Melvin Jones Repol may
                 be open-source, distributed for a fee, or provided as separate
@@ -507,7 +724,23 @@ export default function Privacy() {
 
             <div>
               <h2 className="text-2xl font-semibold">
-                9. Changes to This Privacy Policy
+                12. Applicable Privacy Laws
+              </h2>
+              <p className="mt-3">
+                This policy is intended to address the Philippine Data Privacy
+                Act and, where its territorial scope is met, the GDPR and
+                related European cookie rules. Other mandatory privacy or
+                consumer-protection laws may apply depending on where a Service
+                is offered, how it is used, and whether a legal threshold is
+                met. Mere technical availability in a country does not by itself
+                mean every law of that country applies. Nothing in this policy
+                limits rights that cannot lawfully be waived.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-semibold">
+                13. Changes to This Privacy Policy
               </h2>
               <p className="mt-3">
                 We may update this Privacy Policy from time to time. Updates
@@ -518,7 +751,7 @@ export default function Privacy() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-semibold">10. Contact</h2>
+              <h2 className="text-2xl font-semibold">14. Contact</h2>
               <p className="mt-3">
                 Questions about this Privacy Policy can be sent via the{" "}
                 <Link
@@ -532,7 +765,7 @@ export default function Privacy() {
             </div>
           </div>
 
-          <LegalFooter date="September 2026" />
+          <LegalFooter date="October 2026" />
         </div>
       </section>
     </>
