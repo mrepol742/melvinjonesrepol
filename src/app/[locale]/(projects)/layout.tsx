@@ -27,7 +27,7 @@ export default function ProjectLayout({
         .project-detail-theme .text-\\[\\#FFB020\\], .project-detail-theme .group:hover .group-hover\\:text-\\[\\#FFB020\\] { color: #c2410c !important; }
         .project-detail-theme .bg-\\[\\#FFB020\\] { background: #ea580c !important; color: #fff !important; }
       `}</style>
-      {isProduction && <AdBanner />}
+      {/*{isProduction && <AdBanner />}*/}
       {children}
     </div>
   );

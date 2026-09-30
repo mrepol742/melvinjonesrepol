@@ -131,7 +131,7 @@ export default async function RootLayout({
       <head>
         <meta name="hostname" content="www.melvinjonesrepol.com" />
         <NortonSafeweb />
-        <GoogleAdsense />
+        {/*<GoogleAdsense />*/}
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&window.matchMedia("(prefers-color-scheme: dark)").matches)){document.documentElement.classList.add("dark")}}catch(e){}})()`,
