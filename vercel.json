@@ -1,7 +1,32 @@
 {
   "redirects": [
     {
+      "source": "/browser",
+      "destination": "https://www.webvium.com",
+      "permanent": true
+    },
+    {
+      "source": "/vpn",
+      "destination": "https://www.webvium.com",
+      "permanent": true
+    },
+    {
+      "source": "/webvium",
+      "destination": "https://www.webvium.com",
+      "permanent": true
+    },
+    {
+      "source": "/webview",
+      "destination": "https://www.webvium.com",
+      "permanent": true
+    },
+    {
       "source": "/webvium-browser",
+      "destination": "https://www.webvium.com",
+      "permanent": true
+    },
+    {
+      "source": "/Webvium-browser",
       "destination": "https://www.webvium.com",
       "permanent": true
     },
@@ -26,13 +51,43 @@
       "permanent": true
     },
     {
+      "source": "/terms",
+      "destination": "/legal/terms-of-service",
+      "permanent": true
+    },
+    {
+      "source": "/privacy",
+      "destination": "/legal/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/cookie",
+      "destination": "/legal/cookie-policy",
+      "permanent": true
+    },
+    {
+      "source": "/refund",
+      "destination": "/legal/refund-policy",
+      "permanent": true
+    },
+    {
+      "source": "/sla",
+      "destination": "/legal/service-level-agreement",
+      "permanent": true
+    },
+    {
       "source": "/blog/:path*",
       "destination": "https://blog.melvinjonesrepol.com/posts/:path*",
       "permanent": true
     },
     {
+      "source": "/contact",
+      "destination": "/contact-me",
+      "permanent": true
+    },
+    {
       "source": "/legal/developer-client-agreement",
-      "destination": "https://www.melvinjonesrepol.com/legal/service-level-agreement",
+      "destination": "/legal/service-level-agreement",
       "permanent": true
     }
   ]
