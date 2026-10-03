@@ -3,7 +3,7 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  base-uri 'self' https://stats.uptimerobot.com;
+  base-uri 'self'
   object-src 'none';
 
   script-src

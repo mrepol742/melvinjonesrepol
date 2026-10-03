@@ -39,6 +39,7 @@ export default function Footer() {
     { href: "/certificates", label: t("footer_certificates") },
     { href: "/work-experience", label: t("footer_work_experience") },
     { href: "/about", label: tNav("nav_about") },
+    { href: "/faq", label: "FAQ" },
     { href: "/contact-me", label: t("footer_contact_me") },
   ];
 
@@ -194,7 +195,7 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-          
+
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-widest mb-3">
               {t("footer_language_region")}

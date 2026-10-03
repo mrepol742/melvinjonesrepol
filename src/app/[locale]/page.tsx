@@ -9,6 +9,8 @@ import Certificate from "@/app/[locale]/components/Certificate";
 import Steam from "@/app/[locale]/components/Steam";
 import Youtube from "@/app/[locale]/components/Youtube";
 import Header from "@/components/ui/Header";
+import EngineeringFaq from "@/components/ui/FAQ";
+import { featuredEngineeringQuestions } from "@/lib/faq";
 
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 
@@ -210,6 +212,21 @@ export default async function Home({
             <p>{t("certifications_description")}</p>
           </div>
           <Certificate />
+        </section>
+
+        <section className="homepage-section pb-24" aria-labelledby="faq-heading">
+          <div className="homepage-section-heading">
+            <p className="homepage-kicker">Frequently Asked Questions</p>
+            <h2 id="faq-heading">Common questions. Simple answers.</h2>
+            <p>
+              WordPress, Laravel, Next.js, hosting costs, and keeping apps running.
+              Here are a few questions that come up when building software.
+            </p>
+          </div>
+          <EngineeringFaq questions={featuredEngineeringQuestions} />
+          <Link href={locale === "en" ? "/faq" : `/${locale}/faq`} className="homepage-button homepage-button-secondary mt-8">
+            Read all 32 questions
+          </Link>
         </section>
       </main>
     </>
