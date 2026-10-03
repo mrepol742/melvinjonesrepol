@@ -76,6 +76,11 @@
       "permanent": true
     },
     {
+      "source": "/blog/page/:path*",
+      "destination": "https://blog.melvinjonesrepol.com/posts",
+      "permanent": true
+    },
+    {
       "source": "/blog/:path*",
       "destination": "https://blog.melvinjonesrepol.com/posts/:path*",
       "permanent": true
