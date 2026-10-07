@@ -1,6 +1,6 @@
 import Card from "@/components/ui/Card";
 import { GameType } from "@/lib/library";
-import { getTimeAgo, formatDuration } from "@/utils/date";
+import { formatDuration, getTimeAgo } from "@mrepol742/next-kit/util";
 import Image from "next/image";
 
 export default function GameCard({ game }: { game: GameType }) {
@@ -9,7 +9,7 @@ export default function GameCard({ game }: { game: GameType }) {
   function isExplicitName(name: string) {
     return explicitPatterns.some((pattern) => pattern.test(name));
   }
-
+  
   const isExplicit = isExplicitName(game.name);
   const coverUrl = !isExplicit ? game.cover_url : "";
 

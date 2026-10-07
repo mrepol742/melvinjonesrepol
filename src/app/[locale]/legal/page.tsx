@@ -105,6 +105,13 @@ const legalLinks = [
     category: "License",
     version: "v1.0",
   },
+  {
+    href: "/legal/licenses/Next-Kit.md",
+    title: "Next-Kit",
+    description: "The Next-Kit License",
+    category: "License",
+    version: "v1.0",
+  },
 ];
 
 function DocumentList({

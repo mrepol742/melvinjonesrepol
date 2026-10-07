@@ -143,7 +143,7 @@ export default async function Home({
         <section className="homepage-band border-y border-black/10 dark:border-white/10">
           <div className="mx-auto grid max-w-7xl gap-px bg-black/10 sm:grid-cols-3 dark:bg-white/10">
             {[
-              ["10+", "years building and learning"],
+              ["8+", "years building and learning"],
               ["Full stack", "web, mobile, systems"],
               ["Production minded", "from first commit to support"],
             ].map(([value, label]) => (

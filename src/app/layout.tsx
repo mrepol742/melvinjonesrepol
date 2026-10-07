@@ -4,17 +4,15 @@ import "./globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import NortonSafeweb from "@/components/common/metadata/NortonSafeweb";
-import DoorEffect from "@/components/common/DoorEffect";
-import MouseCodeTrail from "@/components/common/MouseCodeTrail";
 import AOSWrapper from "@/components/common/AOSWrapper";
 import NextTopLoader from "nextjs-toploader";
 import GoogleAnalytics from "@/components/common/metadata/GoogleAnalytics";
 import ServiceWorkerRegister from "@/components/common/ServiceWorkerRegister";
 import BrowserCheck from "@/components/common/BrowserCheck";
-import { ConsentProvider, useConsent } from "@/context/consent";
+import { ConsentProvider } from "@/context/consent";
 import LivechatAI from "@/components/common/LivechatAI";
-import GoogleAdsense from "@/components/common/metadata/GoogleAdsense";
 import CookieBanner from "@/components/common/PrivacyPolicyPrompt";
+import "@mrepol742/next-kit/styles.css";
 
 config.autoAddCss = false;
 

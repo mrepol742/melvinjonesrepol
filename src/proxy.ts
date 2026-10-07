@@ -1,10 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 import createMiddleware from "next-intl/middleware";
-import HeadlessBrowserCheck from "./lib/proxy/headless-browser-check";
-import RateLimiter from "./lib/proxy/rate-limiter";
 import { locales, nonEnLocales } from "./lib/i18n";
+import { createHeadlessBrowserCheck } from "@mrepol742/next-kit/next/headless-browser-check";
+import { createNextRateLimiter } from "@mrepol742/next-kit/next/rate-limiter";
+import { createMemoryRateLimitStore } from "@mrepol742/next-kit/server/rate-limit";
 
 const env = process.env.NODE_ENV;
+const store = createMemoryRateLimitStore();
+const getKey = (request: NextRequest) =>
+  request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
 
 const handleI18nRouting = createMiddleware({
   locales,
@@ -21,13 +25,39 @@ const handleI18nRoutingBlog = createMiddleware({
   localeDetection: false,
 });
 
+// Keep contact/report and general API traffic in separate policy buckets.
+const contactReportLimiter = createNextRateLimiter({
+  store,
+  prefix: "melvinjonesrepol:api:contact-report",
+  maxRequests: 5,
+  windowMs: 60 * 60 * 1000,
+  getKey,
+});
+const generalLimiter = createNextRateLimiter({
+  store,
+  prefix: "melvinjonesrepol:api:general",
+  maxRequests: 30,
+  windowMs: 30 * 60 * 1000,
+  getKey,
+});
+
 export default async function proxy(request: NextRequest) {
-  const headlessResponse = HeadlessBrowserCheck(request);
+  const headlessResponse = createHeadlessBrowserCheck()(request);
   if (headlessResponse) return headlessResponse;
 
   if (env === "production") {
-    const rateLimiter = RateLimiter(request);
-    if (rateLimiter) return rateLimiter;
+    const limiter = /^\/api\/(contact|report)(?:\/|$)/.test(
+      request.nextUrl.pathname,
+    )
+      ? contactReportLimiter
+      : generalLimiter;
+    const response = await limiter(request);
+    if (response) return response;
+  }
+
+  // API routes need request checks, but must not enter locale routing.
+  if (request.nextUrl.pathname.startsWith("/api/")) {
+    return NextResponse.next();
   }
 
   // hello world
@@ -63,6 +93,6 @@ export default async function proxy(request: NextRequest) {
 // exclude static assets
 export const config = {
   matcher: [
-    "/((?!api|_next/static|_next/image|images|sounds|videos|sw\\.js|.*\\.json$|.*\\.pdf$|.*\\.xml$|.*\\.md$|.*\\.mp4$|.*\\.jpg$|.*\\.png$|.*\\.ico$|.*\\.svg$|.*\\.webp$|.*\\.txt$|.*\\.mkd$).*)",
+    "/((?!_next/static|_next/image|images|sounds|videos|sw\\.js|.*\\.json$|.*\\.pdf$|.*\\.xml$|.*\\.md$|.*\\.mp4$|.*\\.jpg$|.*\\.png$|.*\\.ico$|.*\\.svg$|.*\\.webp$|.*\\.txt$|.*\\.mkd$).*)",
   ],
 };

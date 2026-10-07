@@ -1,42 +1,29 @@
-import { RecaptchaEnterpriseServiceClient } from "@google-cloud/recaptcha-enterprise";
+import { createRecaptchaVerifier } from "@mrepol742/next-kit/server/recaptcha";
 
-const projectId = process.env.GOOGLE_CLOUD_PROJECT || "";
-const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "";
+let verify: ReturnType<typeof createRecaptchaVerifier> | undefined;
 
-const credentials = JSON.parse(
-  Buffer.from(process.env.GOOGLE_APPLICATION_CREDENTIALS!, "base64").toString(
-    "utf-8",
-  ),
-);
-const client = new RecaptchaEnterpriseServiceClient({ credentials });
-
-async function recaptcha(token: string, action: string): Promise<boolean> {
+export async function recaptcha(token: string, action: string): Promise<boolean> {
   if (!token || !action) return false;
 
   try {
-    const [assessment] = await client.createAssessment({
-      parent: client.projectPath(projectId),
-      assessment: {
-        event: {
-          token,
-          siteKey,
-          expectedAction: action,
-        },
-      },
-    });
+    if (!verify) {
+      // This application stores service account JSON as base64 in this variable.
+      const encodedCredentials = process.env.GOOGLE_APPLICATION_CREDENTIALS;
+      const credentials = encodedCredentials
+        ? JSON.parse(Buffer.from(encodedCredentials, "base64").toString("utf-8"))
+        : undefined;
 
-    const tokenProps = assessment.tokenProperties;
-    const score = assessment.riskAnalysis?.score ?? 0;
-
-    if (!tokenProps?.valid || tokenProps.action !== action) {
-      return false;
+      verify = createRecaptchaVerifier({
+        projectId: process.env.GOOGLE_CLOUD_PROJECT || "",
+        siteKey: process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "",
+        credentials,
+        minimumScore: 0.5,
+        onError: (error) => console.error("Failed to validate captcha:", error),
+      });
     }
-
-    return score >= 0.5;
-  } catch (err) {
-    console.error("Failed to validate captcha:", err);
+    return await verify(token, action);
+  } catch (error) {
+    console.error("Failed to validate captcha:", error);
     return false;
   }
 }
-
-export { recaptcha };

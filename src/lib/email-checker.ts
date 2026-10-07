@@ -1,45 +1,17 @@
-const BLOCKLIST_URL =
-  "https://raw.githubusercontent.com/disposable-email-domains/disposable-email-domains/refs/heads/main/disposable_email_blocklist.conf";
+import {
+  createEmailChecker,
+  validateEmail as validateEmailFormat,
+} from "@mrepol742/next-kit/email";
 
-let cachedDomains: Set<string> | null = null;
-let lastFetched: number | null = null;
-const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours in ms
-
-export async function isDisposableEmail(email: string): Promise<boolean> {
-  try {
-    const domain = email.split("@").pop()?.toLowerCase();
-    if (!domain) return true;
-
-    const now = Date.now();
-
-    if (!cachedDomains || !lastFetched || now - lastFetched > CACHE_TTL) {
-      const res = await fetch(BLOCKLIST_URL);
-      if (!res.ok) {
-        throw new Error(`Failed to fetch blocklist: ${res.statusText}`);
-      }
-
-      const text = await res.text();
-      const domains = text
-        .split("\n")
-        .map((d) => d.trim().toLowerCase())
-        .filter(Boolean);
-
-      cachedDomains = new Set(domains);
-      lastFetched = now;
-    }
-
-    return cachedDomains.has(domain);
-  } catch (err) {
-    console.error("Failed to check disposable email", err);
-    return false;
-  }
-}
+// Preserve availability when the remote disposable-domain list is unreachable.
+const emailChecker = createEmailChecker({ onFetchError: "allow" });
+export const isDisposableEmail = emailChecker.isDisposableEmail;
 
 export function validateEmail(email: string) {
-  if (!/^[^@]+@[^@]+\.[^@]+$/.test(email)) return false;
+  if (!validateEmailFormat(email)) return false;
 
+  // Site-specific placeholder addresses remain blocked.
   const lower = email.toLowerCase();
-
   if (/^(example|test|fake|dummy|admin|user)[0-9]*@/.test(lower)) return false;
   if (/@(example\.com|test\.com|localhost|invalid|fake\.\w+)$/.test(lower))
     return false;
