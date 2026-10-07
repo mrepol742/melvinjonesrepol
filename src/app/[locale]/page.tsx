@@ -8,6 +8,7 @@ import Wakatime from "@/app/[locale]/components/Wakatime";
 import Certificate from "@/app/[locale]/components/Certificate";
 import Steam from "@/app/[locale]/components/Steam";
 import Youtube from "@/app/[locale]/components/Youtube";
+import NpmPackages from "@/app/[locale]/components/NpmPackages";
 import Header from "@/components/ui/Header";
 import EngineeringFaq from "@/components/ui/FAQ";
 import { featuredEngineeringQuestions } from "@/lib/faq";
@@ -172,6 +173,21 @@ export default async function Home({
           <Project />
         </section>
 
+        <section
+          className="homepage-section border-y border-black/10 dark:border-white/10"
+          aria-labelledby="npm-packages-heading"
+        >
+          <div className="homepage-section-heading">
+            <p className="homepage-kicker">Open source on NPM</p>
+            <h2 id="npm-packages-heading">Small packages. Useful ideas.</h2>
+            <p>
+              Published tools, experiments, and shared utilities built for the
+              JavaScript community.
+            </p>
+          </div>
+          <NpmPackages />
+        </section>
+
         <section className="homepage-section homepage-split-section">
           <div className="homepage-section-heading">
             <p className="homepage-kicker">The practice</p>
@@ -214,17 +230,24 @@ export default async function Home({
           <Certificate />
         </section>
 
-        <section className="homepage-section pb-24" aria-labelledby="faq-heading">
+        <section
+          className="homepage-section pb-24"
+          aria-labelledby="faq-heading"
+        >
           <div className="homepage-section-heading">
             <p className="homepage-kicker">Frequently Asked Questions</p>
             <h2 id="faq-heading">Common questions. Simple answers.</h2>
             <p>
-              WordPress, Laravel, Next.js, hosting costs, and keeping apps running.
-              Here are a few questions that come up when building software.
+              WordPress, Laravel, Next.js, hosting costs, and keeping apps
+              running. Here are a few questions that come up when building
+              software.
             </p>
           </div>
           <EngineeringFaq questions={featuredEngineeringQuestions} />
-          <Link href={locale === "en" ? "/faq" : `/${locale}/faq`} className="homepage-button homepage-button-secondary mt-8">
+          <Link
+            href={locale === "en" ? "/faq" : `/${locale}/faq`}
+            className="homepage-button homepage-button-secondary mt-8"
+          >
             Read all 32 questions
           </Link>
         </section>
