@@ -113,7 +113,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-10">
           {/* Brand */}
           <div className="sm:col-span-2 md:col-span-1">
-            <span className="mb-4 inline-flex items-center gap-2 rounded-md border border-zinc-700 bg-zinc-950 px-3 py-1.5 font-mono text-xl font-bold shadow-inner">
+            <span className="mb-4 inline-flex items-center gap-2 whitespace-nowrap rounded-md border border-zinc-700 bg-zinc-950 px-3 py-1.5 font-mono text-xl font-bold shadow-inner">
               <span className="text-zinc-500">$</span>
               <span className="text-orange-400">npx mrepol742</span>
             </span>

@@ -14,6 +14,7 @@ import EngineeringFaq from "@/components/ui/FAQ";
 import { featuredEngineeringQuestions } from "@/lib/faq";
 
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
+import Blog from "./components/Blog";
 
 export const revalidate = 10800;
 
@@ -219,6 +220,15 @@ export default async function Home({
             <Youtube />
             <Steam />
           </div>
+        </section>
+
+        <section className="homepage-section pb-24">
+          <div className="homepage-section-heading">
+            <p className="homepage-kicker">Latest writing</p>
+            <h2>From the blog.</h2>
+            <p>Thoughts, projects, and things I learn along the way.</p>
+          </div>
+          <Blog />
         </section>
 
         <section className="homepage-section pb-24">

@@ -19,6 +19,7 @@
     "aos": "^2.3.4",
     "devicon": "^2.17.0",
     "devtools-detector": "^2.0.25",
+    "fast-xml-parser": "^5.11.2",
     "next": "^16.2.3",
     "next-intl": "^4.12.0",
     "nextjs-toploader": "^3.8.16",
