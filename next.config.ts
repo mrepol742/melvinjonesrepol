@@ -3,7 +3,7 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  base-uri 'self'
+  base-uri 'self';
   object-src 'none';
 
   script-src
@@ -66,7 +66,8 @@ const ContentSecurityPolicy = `
     https://www.youtube.com
     https://ipapi.co
     https://stats.uptimerobot.com
-    https://*.ytimg.com;
+    https://*.ytimg.com
+    https://blog.melvinjonesrepol.com;
 
   frame-src
     'self'

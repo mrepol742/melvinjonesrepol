@@ -1,13 +1,30 @@
+"use client";
+
 import Card from "@/components/ui/Card";
 import Slider from "@/components/ui/Slider";
-import { fetchBlog } from "@/lib/blog";
+import { BlogItem, fetchBlog } from "@/lib/blog";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getTimeAgo } from "@mrepol742/next-kit/util";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
-export default async function Blog() {
-  const blogs = await fetchBlog();
+export default function Blog() {
+  const [blogs, setBlogs] = useState<BlogItem[]>([]);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    fetchBlog()
+      .then((items) => {
+        if (!cancelled) setBlogs(items);
+      })
+      .catch((err) => console.error("Error fetching blog RSS feed", err));
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   return (
     <>
