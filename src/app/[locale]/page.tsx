@@ -15,6 +15,7 @@ import { featuredEngineeringQuestions } from "@/lib/faq";
 
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 import Blog from "./components/Blog";
+import Investing from "./components/Investing";
 
 export const revalidate = 10800;
 
@@ -238,6 +239,18 @@ export default async function Home({
             <p>{t("certifications_description")}</p>
           </div>
           <Certificate />
+        </section>
+
+        <section className="homepage-section pb-24">
+          <div className="homepage-section-heading">
+            <p className="homepage-kicker">Beyond the code</p>
+            <h2>My other portfolio.</h2>
+            <p>
+              REITs, construction, and US index feeder funds. Slow, boring,
+              deliberate.
+            </p>
+          </div>
+          <Investing />
         </section>
 
         <section
