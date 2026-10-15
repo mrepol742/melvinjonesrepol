@@ -268,7 +268,6 @@
     "contact_us": "联系我们"
   },
   "github": {
-    "section_label": "GitHub 数据分析",
     "section_title": "开发者活动快照",
     "error_message": "无法加载 GitHub 个人资料。",
     "stat_public_repos": "公开仓库",
@@ -311,7 +310,6 @@
     "private_game": "私密"
   },
   "wakatime": {
-    "section_label": "WakaTime",
     "section_title": "每周编码数据分析",
     "page_description": "每周编码活动、主要语言、AI 模型使用情况和工具趋势的详细拆解。",
     "last_7_days": "过去 7 天",

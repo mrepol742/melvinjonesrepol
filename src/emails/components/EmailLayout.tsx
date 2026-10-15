@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 
 type EmailLayoutProps = {
-  eyebrow: string;
   title: string;
   children: ReactNode;
   ctaLabel?: string;
@@ -9,9 +8,8 @@ type EmailLayoutProps = {
 };
 
 /**
- * Renders an email layout with an eyebrow, title, and optional CTA button.
+ * Renders an email layout with a title, and optional CTA button.
  *
- * @param eyebrow The eyebrow text to display.
  * @param title The title text to display.
  * @param children The content to display within the layout.
  * @param ctaLabel The label for the CTA button, if any.
@@ -19,7 +17,6 @@ type EmailLayoutProps = {
  * @returns The rendered email layout.
  */
 export default function EmailLayout({
-  eyebrow,
   title,
   children,
   ctaLabel,
@@ -82,18 +79,6 @@ export default function EmailLayout({
                     </tr>
                     <tr>
                       <td style={{ padding: "52px 32px 44px" }}>
-                        <p
-                          style={{
-                            margin: "0 0 20px",
-                            color: "#ea580c",
-                            fontSize: "13px",
-                            fontWeight: 700,
-                            letterSpacing: "1.6px",
-                            textTransform: "uppercase",
-                          }}
-                        >
-                          {eyebrow}
-                        </p>
                         <h1
                           style={{
                             margin: 0,

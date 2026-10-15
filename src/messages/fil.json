@@ -268,7 +268,6 @@
     "contact_us": "Makipag-ugnayan sa amin"
   },
   "github": {
-    "section_label": "GitHub Analytics",
     "section_title": "Snapshot ng Aktibidad ng Developer",
     "error_message": "Hindi ma-load ang GitHub profile.",
     "stat_public_repos": "Mga Pampublikong Repo",
@@ -311,7 +310,6 @@
     "private_game": "Pribado"
   },
   "wakatime": {
-    "section_label": "WakaTime",
     "section_title": "Lingguhang Analytics sa Pag-coding",
     "page_description": "Detalyadong breakdown ng lingguhang coding activity, nangungunang mga wika, paggamit ng AI model, at mga trend sa tooling.",
     "last_7_days": "sa nakaraang 7 araw",

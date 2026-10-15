@@ -268,7 +268,6 @@
     "contact_us": "Neem contact op"
   },
   "github": {
-    "section_label": "GitHub-analyses",
     "section_title": "Momentopname van ontwikkelaarsactiviteit",
     "error_message": "Kan GitHub-profiel niet laden.",
     "stat_public_repos": "Openbare repositories",
@@ -311,7 +310,6 @@
     "private_game": "Privé"
   },
   "wakatime": {
-    "section_label": "WakaTime",
     "section_title": "Wekelijkse codeerstatistieken",
     "page_description": "Een gedetailleerd overzicht van wekelijkse codeeractiviteit, populairste talen, AI-modelgebruik en toolingtrends.",
     "last_7_days": "in de afgelopen 7 dagen",

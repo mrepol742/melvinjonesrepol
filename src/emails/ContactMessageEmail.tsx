@@ -12,7 +12,7 @@ export default function ContactMessageEmail({
   messageHtml,
 }: ContactMessageEmailProps) {
   return (
-    <EmailLayout eyebrow="New contact message" title="Someone reached out.">
+    <EmailLayout title="Someone reached out.">
       <p style={{ margin: 0 }}>
         <strong>Name:</strong> {name}
       </p>

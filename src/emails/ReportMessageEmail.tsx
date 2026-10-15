@@ -10,7 +10,7 @@ export default function ReportMessageEmail({
   report,
 }: ReportMessageEmailProps) {
   return (
-    <EmailLayout eyebrow="New report" title="A report needs review.">
+    <EmailLayout title="A report needs review.">
       <p style={{ margin: 0 }}>
         <strong>Report type:</strong> {type}
       </p>

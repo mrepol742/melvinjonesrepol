@@ -3,7 +3,6 @@ import EmailLayout from "@/emails/components/EmailLayout";
 export default function ContactConfirmationEmail({ name }: { name: string }) {
   return (
     <EmailLayout
-      eyebrow="Contact confirmation"
       title="Your message is on its way."
       ctaLabel="Visit melvinjonesrepol.com"
       ctaUrl="https://www.melvinjonesrepol.com"

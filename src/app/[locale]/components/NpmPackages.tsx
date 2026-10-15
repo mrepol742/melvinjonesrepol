@@ -1,8 +1,10 @@
 import Card from "@/components/ui/Card";
+import Slider from "@/components/ui/Slider";
 import { fetchNpmPackages } from "@/lib/npm-packages";
 import { faNpm } from "@fortawesome/free-brands-svg-icons";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 
 function formatNumber(value: number) {
   return new Intl.NumberFormat("en-US", { notation: "compact" }).format(value);
@@ -39,18 +41,18 @@ export default async function NpmPackages() {
         </div>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+      <Slider>
         {data.objects.map((item) => {
           const packageData = item.package;
           const keywords = packageData.keywords.slice(0, 3);
 
           return (
-            <a
+            <Link
               key={packageData.name}
               href={packageData.links.npm}
               target="_blank"
               rel="noreferrer"
-              className="group flex"
+              className="block w-[90vw] shrink-0 snap-start md:w-96"
               aria-label={`View ${packageData.name} on NPM`}
             >
               <Card className="flex h-full flex-col border-t-4 border-t-orange-600">
@@ -96,23 +98,18 @@ export default async function NpmPackages() {
                   />
                 </div>
               </Card>
-            </a>
+            </Link>
           );
         })}
-      </div>
+      </Slider>
 
-      <div className="flex flex-col items-start justify-between gap-4 border-t border-stone-300 pt-6 text-sm sm:flex-row sm:items-center dark:border-white/15">
-        <p className="text-zinc-600 dark:text-zinc-400">
-          Registry data refreshed {new Date(data.last_fetched).toUTCString()}
-        </p>
-        <a
-          href="https://www.npmjs.com/~mrepol742"
-          target="_blank"
-          rel="noreferrer"
-          className="homepage-text-link mt-0"
-        >
-          View my NPM profile <span aria-hidden="true">→</span>
-        </a>
+      <div
+        className="text-sm text-muted"
+        data-aos="fade-up"
+        data-aos-delay={100}
+      >
+        Last updated:
+        {data.last_fetched ? new Date(data.last_fetched).toUTCString() : "—"}
       </div>
     </div>
   );

@@ -56,7 +56,6 @@ export default function ProjectFilters({
     <div className="border-y border-stone-300 py-5 dark:border-stone-700" data-aos="fade-up">
       <div className="mb-4 flex flex-wrap items-baseline justify-between gap-3">
         <div>
-          <p className="homepage-kicker">Find the right work</p>
           <p className="mt-1 text-sm text-stone-600 dark:text-stone-400">
             Search the archive or narrow it by type, status, and stack.
           </p>

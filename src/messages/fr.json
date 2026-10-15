@@ -268,7 +268,6 @@
     "contact_us": "Nous contacter"
   },
   "github": {
-    "section_label": "Statistiques GitHub",
     "section_title": "Aperçu de l'activité du développeur",
     "error_message": "Impossible de charger le profil GitHub.",
     "stat_public_repos": "Dépôts publics",
@@ -311,7 +310,6 @@
     "private_game": "Privé"
   },
   "wakatime": {
-    "section_label": "WakaTime",
     "section_title": "Statistiques hebdomadaires de développement",
     "page_description": "Une vue détaillée de l'activité de code hebdomadaire, des principaux langages, de l'utilisation des modèles d'IA et des tendances des outils.",
     "last_7_days": "au cours des 7 derniers jours",

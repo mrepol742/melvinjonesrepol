@@ -121,7 +121,6 @@ export default function ContactMe() {
   return (
     <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[minmax(16rem,.7fr)_minmax(0,1.3fr)]">
       <aside className="lg:sticky lg:top-28 lg:self-start">
-        <p className="homepage-kicker">Start with context</p>
         <h2 className="mt-4 max-w-md text-4xl font-black uppercase leading-[0.88] tracking-[-0.06em] md:text-6xl">
           Let&apos;s build
           <br />
@@ -169,7 +168,6 @@ export default function ContactMe() {
 
       <div className="border border-orange-500/50 bg-stone-950 p-6 text-stone-100 shadow-[5px_5px_0_0_rgba(234,88,12,0.55)] md:p-10">
         <div className="border-b border-stone-700 pb-6">
-          <p className="homepage-kicker">Project brief</p>
           <h3 className="mt-2 text-2xl font-bold tracking-tight">
             Give me the useful version.
           </h3>

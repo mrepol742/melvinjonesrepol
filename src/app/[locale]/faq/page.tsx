@@ -24,7 +24,6 @@ export default async function FaqPage({ params }: { params: Promise<{ locale: st
     <main className="homepage-shell min-h-screen px-6 pb-24 pt-36 md:px-10">
       <div className="mx-auto max-w-5xl">
         <header className="homepage-section-heading">
-          <p className="homepage-kicker">Frequently Asked Questions</p>
           <h1 className="mt-4 text-5xl font-black tracking-tight sm:text-7xl">Common questions. Simple answers.</h1>
           <p>{description} The right choice depends on what you need and who will maintain it.</p>
         </header>

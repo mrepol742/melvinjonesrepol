@@ -268,7 +268,6 @@
     "contact_us": "Contact us"
   },
   "github": {
-    "section_label": "GitHub Analytics",
     "section_title": "Developer Activity Snapshot",
     "error_message": "Unable to load GitHub profile.",
     "stat_public_repos": "Public Repos",
@@ -311,7 +310,6 @@
     "private_game": "Private"
   },
   "wakatime": {
-    "section_label": "WakaTime",
     "section_title": "Weekly Coding Analytics",
     "page_description": "A detailed breakdown of weekly coding activity, top languages, AI model usage, and tooling trends.",
     "last_7_days": "in the last 7 days",

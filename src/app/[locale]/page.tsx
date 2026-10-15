@@ -165,7 +165,6 @@ export default async function Home({
 
         <section className="homepage-section" id="work">
           <div className="homepage-section-heading">
-            <p className="homepage-kicker">Selected work</p>
             <h2>Real systems. Real constraints.</h2>
             <p>
               Products built to solve operational problems, not just fill a
@@ -180,19 +179,26 @@ export default async function Home({
           aria-labelledby="npm-packages-heading"
         >
           <div className="homepage-section-heading">
-            <p className="homepage-kicker">Open source on NPM</p>
             <h2 id="npm-packages-heading">Small packages. Useful ideas.</h2>
             <p>
               Published tools, experiments, and shared utilities built for the
               JavaScript community.
             </p>
+
+            <Link
+              href="https://www.npmjs.com/~mrepol742"
+              target="_blank"
+              rel="noreferrer"
+              className="homepage-text-link mt-0"
+            >
+              View my NPM profile <span aria-hidden="true">→</span>
+            </Link>
           </div>
           <NpmPackages />
         </section>
 
         <section className="homepage-section homepage-split-section">
           <div className="homepage-section-heading">
-            <p className="homepage-kicker">The practice</p>
             <h2>Still close to the code.</h2>
             <p>
               The work is shaped by years of shipping, debugging, maintaining,
@@ -210,7 +216,6 @@ export default async function Home({
 
         <section className="homepage-section">
           <div className="homepage-section-heading">
-            <p className="homepage-kicker">Beyond the pull request</p>
             <h2>Videos, games, and curiosity.</h2>
             <p>
               I make time to share, play, and stay curious. Good engineering
@@ -225,7 +230,6 @@ export default async function Home({
 
         <section className="homepage-section pb-24">
           <div className="homepage-section-heading">
-            <p className="homepage-kicker">Latest writing</p>
             <h2>From the blog.</h2>
             <p>Thoughts, projects, and things I learn along the way.</p>
           </div>
@@ -234,7 +238,6 @@ export default async function Home({
 
         <section className="homepage-section pb-24">
           <div className="homepage-section-heading">
-            <p className="homepage-kicker">Proof of the journey</p>
             <h2>Always adding range.</h2>
             <p>{t("certifications_description")}</p>
           </div>
@@ -243,7 +246,6 @@ export default async function Home({
 
         <section className="homepage-section pb-24">
           <div className="homepage-section-heading">
-            <p className="homepage-kicker">Beyond the code</p>
             <h2>My other portfolio.</h2>
             <p>
               REITs, construction, and US index feeder funds. Slow, boring,
@@ -258,7 +260,6 @@ export default async function Home({
           aria-labelledby="faq-heading"
         >
           <div className="homepage-section-heading">
-            <p className="homepage-kicker">Frequently Asked Questions</p>
             <h2 id="faq-heading">Common questions. Simple answers.</h2>
             <p>
               WordPress, Laravel, Next.js, hosting costs, and keeping apps

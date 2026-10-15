@@ -67,22 +67,11 @@ export default async function Github() {
 
   return (
     <section className="w-full space-y-6">
-      <div className="flex items-end justify-between gap-4">
-        <div>
-          <p className="text-xs uppercase tracking-[0.2em]" data-aos="fade-up">
-            {t("section_label")}
-          </p>
-          <h2
-            className="text-2xl font-semibold tracking-tight"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            {t("section_title")}
-          </h2>
-        </div>
-        <div className="text-xs" data-aos="fade-up" data-aos-delay="100">
-          <p className="text-right text-gray-500">@{profile.login}</p>
-        </div>
+      <div className="mb-4 flex items-center justify-between">
+        <p className="text-sm font-semibold uppercase tracking-wide">
+          Github
+        </p>
+        <p className="text-xs">@{profile.login}</p>
       </div>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">

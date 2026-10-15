@@ -268,7 +268,6 @@
     "contact_us": "تواصل معنا"
   },
   "github": {
-    "section_label": "تحليلات GitHub",
     "section_title": "لقطة من نشاط المطور",
     "error_message": "تعذر تحميل ملف GitHub الشخصي.",
     "stat_public_repos": "المستودعات العامة",
@@ -311,7 +310,6 @@
     "private_game": "خاص"
   },
   "wakatime": {
-    "section_label": "WakaTime",
     "section_title": "تحليلات البرمجة الأسبوعية",
     "page_description": "تفصيل مفصل لنشاط البرمجة الأسبوعي، وأهم اللغات، واستخدام نماذج الذكاء الاصطناعي، واتجاهات الأدوات.",
     "last_7_days": "خلال آخر 7 أيام",

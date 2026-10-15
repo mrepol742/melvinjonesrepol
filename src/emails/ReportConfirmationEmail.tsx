@@ -3,7 +3,6 @@ import EmailLayout from "@/emails/components/EmailLayout";
 export default function ReportConfirmationEmail() {
   return (
     <EmailLayout
-      eyebrow="Report confirmation"
       title="Your report was received."
       ctaLabel="Visit melvinjonesrepol.com"
       ctaUrl="https://www.melvinjonesrepol.com"

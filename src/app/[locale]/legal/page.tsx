@@ -198,7 +198,6 @@ export default async function Legal() {
 
           <div className="mt-20 grid gap-10 lg:grid-cols-[minmax(14rem,.45fr)_minmax(0,1.55fr)]">
             <div className="border border-stone-300 bg-stone-100 p-6 dark:border-stone-700 dark:bg-stone-950 lg:sticky lg:top-28 lg:self-start md:p-8">
-              <p className="homepage-kicker">Document directory</p>
               <h2 className="mt-4 text-4xl text-white uppercase leading-[0.88] tracking-[-0.06em] md:text-5xl">
                 The rules,
                 <br />
@@ -219,7 +218,6 @@ export default async function Legal() {
             <div>
               <div className="mb-5 flex items-end justify-between gap-4">
                 <div>
-                  <p className="homepage-kicker">Policies & agreements</p>
                   <h3 className="mt-2 text-2xl font-bold tracking-tight">
                     How we work and handle information.
                   </h3>
@@ -232,7 +230,6 @@ export default async function Legal() {
 
               <div className="mb-5 mt-16 flex items-end justify-between gap-4">
                 <div>
-                  <p className="homepage-kicker">Licenses</p>
                   <h3 className="mt-2 text-2xl font-bold tracking-tight">
                     The terms attached to open-source work.
                   </h3>

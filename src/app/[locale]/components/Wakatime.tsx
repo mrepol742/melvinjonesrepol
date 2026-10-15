@@ -51,19 +51,11 @@ export default async function Wakatime() {
 
   return (
     <section className="w-full space-y-8">
-      <div className="flex flex-wrap items-end justify-between gap-4">
-        <div>
-          <p className="text-xs uppercase tracking-[0.2em]">
-            {t("section_label")}
-          </p>
-          <h2 className="text-2xl font-semibold tracking-tight">
-            {t("section_title")}
-          </h2>
-        </div>
-
-        <div className="text-right">
-          <p className="text-3xl font-bold leading-none">{totalHours} hrs</p>
-        </div>
+      <div className="mb-4 flex items-center justify-between">
+        <p className="text-sm font-semibold uppercase tracking-wide">
+          Wakatime
+        </p>
+        <p className="text-xs">{totalHours} hrs</p>
       </div>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
