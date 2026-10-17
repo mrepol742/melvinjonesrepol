@@ -78,19 +78,10 @@ export default function Nav() {
       mobileMenu: true,
     },
     {
-      key: "legal",
-      label: "Legal",
-      href: "/legal",
-      icon: faFileContract,
-      desktopOnly: true,
-      mobileMenu: true,
-    },
-    {
-      key: "faq",
-      label: "Frequently Asked Questions",
-      href: "/faq",
-      icon: faCircleQuestion,
-      desktopOnly: true,
+      key: "contact-me",
+      label: t("nav_contact_me"),
+      href: "/contact-me",
+      icon: faEnvelope,
       mobileMenu: true,
     },
   ];
@@ -155,8 +146,6 @@ export default function Nav() {
   const handleMobileLinkClick = () => {
     setIsMobileMenuOpen(false);
   };
-
-  const mobileMenuItems = navItems.filter((item) => item.mobileMenu);
 
   const baseLinkClass =
     "group flex items-center hover:text-orange-300 transition-colors duration-200";
@@ -309,23 +298,9 @@ export default function Nav() {
           <div className="p-5 border-b border-white/10">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <Image
-                  src="/favicon.ico"
-                  alt="Logo"
-                  width={42}
-                  height={42}
-                  className="rounded-full"
-                />
-
-                <div className="min-w-0">
-                  <p className="font-semibold text-white truncate">
-                    Melvin Jones Repol
-                  </p>
-
-                  <p className="text-sm text-stone-400 truncate">
-                    support@melvinjonesrepol.com
-                  </p>
-                </div>
+                <p className="font-semibold text-white truncate">
+                  Melvin Jones Repol
+                </p>
               </div>
 
               <div className="flex items-center gap-4">
@@ -345,60 +320,19 @@ export default function Nav() {
 
           <div className="flex-1 overflow-y-auto p-4">
             <div className="mb-6">
-              <p className="px-3 mb-2 text-xs font-semibold uppercase tracking-wider text-orange-300/70">
-                {t("nav_main_sections")}
-              </p>
-
               <ul className="space-y-1">
-                {navItems
-                  .filter(
-                    (item) =>
-                      item.key === "projects" ||
-                      item.key === "certificates" ||
-                      item.key === "work-experience",
-                  )
-                  .map((item) => (
-                    <li key={item.key}>
-                      <Link
-                        href={item.href}
-                        onClick={handleMobileLinkClick}
-                        className="
+                {navItems.map((item) => (
+                  <li key={item.key}>
+                    <Link
+                      href={item.href}
+                      onClick={handleMobileLinkClick}
+                      className="
                           group flex items-center gap-3
                           rounded-xl
                           px-3 py-3
                           hover:bg-orange-500/10
                           transition-all duration-200
                         "
-                      >
-                        <div className="w-10 h-10 rounded-md bg-stone-900 flex items-center justify-center text-white group-hover:bg-orange-600 group-hover:text-white transition-colors">
-                          <FontAwesomeIcon icon={item.icon} />
-                        </div>
-
-                        <span className="text-sm text-white">{item.label}</span>
-                      </Link>
-                    </li>
-                  ))}
-              </ul>
-            </div>
-
-            <div>
-              <p className="px-3 mb-2 text-xs font-semibold uppercase tracking-wider text-orange-300/70">
-                {t("nav_other_sections")}
-              </p>
-
-              <ul className="space-y-1">
-                {mobileMenuItems.map((item) => (
-                  <li key={item.key}>
-                    <Link
-                      href={item.href}
-                      onClick={handleMobileLinkClick}
-                      className="
-                        group flex items-center gap-3
-                        rounded-xl
-                        px-3 py-3
-                          hover:bg-orange-500/10
-                        transition-all duration-200
-                      "
                     >
                       <div className="w-10 h-10 rounded-md bg-stone-900 flex items-center justify-center text-white group-hover:bg-orange-600 group-hover:text-white transition-colors">
                         <FontAwesomeIcon icon={item.icon} />
@@ -433,14 +367,6 @@ export default function Nav() {
                 ▼
               </span>
             </div>
-
-            <Link
-              href="/contact-me"
-              onClick={handleMobileLinkClick}
-              className="flex items-center justify-center rounded-md px-4 py-3 bg-orange-600 hover:bg-orange-500 text-white text-sm transition-colors"
-            >
-              {t("nav_contact_me")}
-            </Link>
           </div>
         </aside>
       </div>
