@@ -124,9 +124,6 @@ export default async function AboutPage({
 
       <section className="mx-auto grid max-w-7xl gap-12 px-6 py-24 md:px-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24 lg:py-32">
         <div>
-          <p className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-orange-700 dark:text-orange-400">
-            How I work
-          </p>
           <h2 className="mt-4 text-4xl font-black uppercase leading-[0.92] tracking-[-0.06em] sm:text-5xl">
             Start with the problem.
           </h2>
@@ -158,9 +155,6 @@ export default async function AboutPage({
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
             <div className="max-w-xl">
-              <p className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-orange-700 dark:text-orange-400">
-                The foundation
-              </p>
               <h2 className="mt-4 text-4xl font-black uppercase leading-[0.92] tracking-[-0.06em] sm:text-5xl">
                 Good work starts with good judgment.
               </h2>
@@ -195,9 +189,6 @@ export default async function AboutPage({
 
       <section className="mx-auto grid max-w-7xl gap-12 px-6 py-24 md:px-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24 lg:py-32">
         <div>
-          <p className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-orange-700 dark:text-orange-400">
-            Collaboration
-          </p>
           <h2 className="mt-4 text-4xl font-black uppercase leading-[0.92] tracking-[-0.06em] sm:text-5xl">
             A calm, direct way of working.
           </h2>
@@ -225,9 +216,6 @@ export default async function AboutPage({
 
       <section className="mx-auto max-w-7xl px-6 py-24 md:px-10 lg:py-32">
         <div className="border-l-4 border-orange-600 pl-6 md:pl-10">
-          <p className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-orange-700 dark:text-orange-400">
-            Outside the delivery cycle
-          </p>
           <h2 className="mt-4 max-w-3xl text-4xl font-black uppercase leading-[0.92] tracking-[-0.06em] sm:text-5xl">
             Curiosity is part of the job.
           </h2>

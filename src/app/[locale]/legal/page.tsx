@@ -168,7 +168,7 @@ export default async function Legal() {
             <br />
             <span className="homepage-accent">{t("title_line2")}</span>
             <br />
-            {t("title_line3")}
+            Licenses
           </>
         }
         intro={t("hero_description")}
@@ -198,7 +198,7 @@ export default async function Legal() {
 
           <div className="mt-20 grid gap-10 lg:grid-cols-[minmax(14rem,.45fr)_minmax(0,1.55fr)]">
             <div className="border border-stone-300 bg-stone-100 p-6 dark:border-stone-700 dark:bg-stone-950 lg:sticky lg:top-28 lg:self-start md:p-8">
-              <h2 className="mt-4 text-4xl text-white uppercase leading-[0.88] tracking-[-0.06em] md:text-5xl">
+              <h2 className="mt-4 text-4xl text-dark dark:text-white uppercase leading-[0.88] tracking-[-0.06em] md:text-5xl">
                 The rules,
                 <br />
                 plainly <span className="homepage-accent">stated.</span>
@@ -209,7 +209,7 @@ export default async function Legal() {
               </p>
               <Link
                 href="/contact-me"
-                className="mt-7 text-white inline-flex border-b-2 border-orange-600 pb-1 text-xs font-bold uppercase tracking-widest hover:text-orange-700 dark:hover:text-orange-300"
+                className="mt-7 text-dark dark:text-white inline-flex border-b-2 border-orange-600 pb-1 text-xs font-bold uppercase tracking-widest hover:text-orange-700 dark:hover:text-orange-300"
               >
                 Ask a question
               </Link>

@@ -166,12 +166,12 @@ export default function ContactMe() {
         </Link>
       </aside>
 
-      <div className="border border-orange-500/50 bg-stone-950 p-6 text-stone-100 shadow-[5px_5px_0_0_rgba(234,88,12,0.55)] md:p-10">
-        <div className="border-b border-stone-700 pb-6">
+      <div className="border border-stone-300 bg-stone-50 p-6 text-stone-950 shadow-[5px_5px_0_0_rgba(249,115,22,0.35)] transition-colors md:p-10 dark:border-orange-500/35 dark:bg-stone-950 dark:text-stone-100 dark:shadow-[5px_5px_0_0_rgba(234,88,12,0.55)]">
+        <div className="border-b border-stone-300 pb-6 dark:border-stone-700">
           <h3 className="mt-2 text-2xl font-bold tracking-tight">
             Give me the useful version.
           </h3>
-          <p className="mt-2 text-sm leading-6 text-stone-400">
+          <p className="mt-2 text-sm leading-6 text-stone-600 dark:text-stone-400">
             Please include the problem, the goal, and any relevant timeline or
             constraints. Messages need 500 to 1,000 characters.
           </p>
@@ -180,7 +180,7 @@ export default function ContactMe() {
         <form onSubmit={handleSubmit} className="mt-8 space-y-6">
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
             <label>
-              <span className="mb-2 block text-xs font-bold uppercase tracking-widest text-stone-400">
+              <span className="mb-2 block text-xs font-bold uppercase tracking-widest text-stone-600 dark:text-stone-400">
                 {t("form_name_label")}
               </span>
               <Input
@@ -192,11 +192,10 @@ export default function ContactMe() {
                   placeholder: t("form_name_placeholder"),
                   required: true,
                 }}
-                className="border-stone-700 bg-stone-900 text-stone-100"
               />
             </label>
             <label>
-              <span className="mb-2 block text-xs font-bold uppercase tracking-widest text-stone-400">
+              <span className="mb-2 block text-xs font-bold uppercase tracking-widest text-stone-600 dark:text-stone-400">
                 {t("form_email_label")}
               </span>
               <Input
@@ -208,7 +207,6 @@ export default function ContactMe() {
                   placeholder: t("form_email_placeholder"),
                   required: true,
                 }}
-                className="border-stone-700 bg-stone-900 text-stone-100"
               />
             </label>
           </div>
@@ -236,7 +234,7 @@ export default function ContactMe() {
             <div
               role="tablist"
               aria-label="Contact message editor"
-              className="mb-4 border-b border-stone-700"
+              className="mb-4 border-b border-stone-300 dark:border-stone-700"
             >
               <div className="flex items-center justify-between">
                 <div>
@@ -246,7 +244,11 @@ export default function ContactMe() {
                     aria-selected={messageTab === "message"}
                     aria-controls="message-panel"
                     onClick={() => setMessageTab("message")}
-                    className={`border-b-2 px-4 py-3 text-xs font-bold uppercase tracking-widest transition-colors ${messageTab === "message" ? "border-orange-500 text-orange-400" : "border-transparent text-stone-400 hover:text-stone-200"}`}
+                    className={`border-b-2 px-4 py-3 text-xs font-bold uppercase tracking-widest transition-colors ${
+                      messageTab === "message"
+                        ? "border-orange-500 text-orange-600 dark:text-orange-400"
+                        : "border-transparent text-stone-500 hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-200"
+                    }`}
                   >
                     {t("form_message_label")}
                   </button>
@@ -256,14 +258,24 @@ export default function ContactMe() {
                     aria-selected={messageTab === "preview"}
                     aria-controls="preview-panel"
                     onClick={() => setMessageTab("preview")}
-                    className={`border-b-2 px-4 py-3 text-xs font-bold uppercase tracking-widest transition-colors ${messageTab === "preview" ? "border-orange-500 text-orange-400" : "border-transparent text-stone-400 hover:text-stone-200"}`}
+                    className={`border-b-2 px-4 py-3 text-xs font-bold uppercase tracking-widest transition-colors ${
+                      messageTab === "preview"
+                        ? "border-orange-500 text-orange-600 dark:text-orange-400"
+                        : "border-transparent text-stone-500 hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-200"
+                    }`}
                   >
                     Preview
                   </button>
                 </div>
 
                 <span
-                  className={`text-xs font-mono ${characterCount === 0 ? "text-stone-400" : isValidcharacterCount ? "text-orange-600 dark:text-orange-400" : "text-orange-700 dark:text-orange-300"}`}
+                  className={`text-xs font-mono ${
+                    characterCount === 0
+                      ? "text-stone-500 dark:text-stone-400"
+                      : isValidcharacterCount
+                        ? "text-orange-600 dark:text-orange-400"
+                        : "text-orange-700 dark:text-orange-300"
+                  }`}
                 >
                   {characterCount} / 1000
                 </span>
@@ -272,7 +284,7 @@ export default function ContactMe() {
 
             {messageTab === "message" ? (
               <div id="message-panel" role="tabpanel">
-                <div className="border border-stone-700 bg-stone-900 px-4 py-3 transition-all duration-200 focus-within:border-orange-500 focus-within:shadow-[3px_3px_0_0_rgba(234,88,12,0.35)]">
+                <div className="border border-stone-300 bg-white px-4 py-3 text-stone-950 transition-all duration-300 focus-within:-translate-y-[1px] focus-within:border-orange-500 focus-within:shadow-[3px_3px_0_0_rgb(249_115_22)] dark:border-orange-500/35 dark:bg-zinc-900 dark:text-stone-100">
                   <textarea
                     rows={9}
                     name="message"
@@ -284,7 +296,7 @@ export default function ContactMe() {
                   />
                 </div>
                 <div className="mt-2 flex items-center justify-between gap-4">
-                  <p className="text-xs text-stone-400">
+                  <p className="text-xs text-stone-600 dark:text-stone-400">
                     {characterCount > 0 && !isValidcharacterCount
                       ? characterCount < 500
                         ? `${500 - characterCount} more characters needed`
@@ -295,7 +307,11 @@ export default function ContactMe() {
                     {Array.from({ length: 10 }).map((_, index) => (
                       <span
                         key={index}
-                        className={`h-1 w-4 ${characterCount >= (index + 1) * 100 ? "bg-orange-500" : "bg-stone-700"}`}
+                        className={`h-1 w-4 ${
+                          characterCount >= (index + 1) * 100
+                            ? "bg-orange-500"
+                            : "bg-stone-300 dark:bg-stone-700"
+                        }`}
                       />
                     ))}
                   </div>
@@ -306,7 +322,7 @@ export default function ContactMe() {
                 id="preview-panel"
                 role="tabpanel"
                 aria-labelledby="message-preview-title"
-                className="overflow-hidden border border-stone-700 bg-stone-900"
+                className="overflow-hidden border border-stone-300 bg-white dark:border-stone-700 dark:bg-zinc-900"
               >
                 <div className="bg-white p-4 text-stone-800 sm:p-6">
                   <div className="mx-auto max-w-xl border border-orange-200 bg-white">
@@ -349,8 +365,8 @@ export default function ContactMe() {
             )}
           </div>
 
-          <div className="border-t border-stone-700 pt-6">
-            <p className="mb-4 text-xs leading-5 text-stone-400">
+          <div className="border-t border-stone-300 pt-6 dark:border-stone-700">
+            <p className="mb-4 text-xs leading-5 text-stone-600 dark:text-stone-400">
               {t("form_privacy_prefix")}{" "}
               <Link
                 href="/legal/privacy-policy"
