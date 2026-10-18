@@ -9,6 +9,7 @@ export const STATIC_ROUTES = [
   "",
   "/about",
   "/faq",
+  "/hotwheels-collection",
   "/projects",
   "/protocol-discussion-platform",
   "/web-surface-scan",

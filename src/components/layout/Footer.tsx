@@ -67,7 +67,7 @@ export default function Footer() {
     { href: "/sitemap.xml", label: t("footer_sitemap") },
   ];
 
-  const toolLinks = [
+  const moreLinks = [
     {
       href: "https://tools.melvinjonesrepol.com",
       label: "Useful Tools",
@@ -76,6 +76,11 @@ export default function Footer() {
     {
       href: "https://shrtly.melvinjonesrepol.com",
       label: t("footer_shortlink"),
+      external: true,
+    },
+    {
+      href: "/hotwheels-collection",
+      label: "Hotwheels Collection",
       external: true,
     },
   ];
@@ -177,13 +182,13 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Tools */}
+          {/* More */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-widest mb-4">
-              Tools
+              More
             </h4>
             <ul className="space-y-2.5">
-              {toolLinks.map(({ href, label, external }) => (
+              {moreLinks.map(({ href, label, external }) => (
                 <li key={href}>
                   <Link
                     href={href}
