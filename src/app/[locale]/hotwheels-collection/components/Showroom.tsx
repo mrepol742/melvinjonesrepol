@@ -57,7 +57,6 @@ export default function Showroom() {
   }, [go]);
 
   const current = items[active];
-  const meta = current ? rarityMeta[current.rarity] : null;
 
   return (
     <section
@@ -133,97 +132,106 @@ export default function Showroom() {
           </section>
         </>
       ) : (
-        <>
-          <p
-            aria-hidden="true"
-            className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[60%] text-[40vw] font-black leading-none tracking-[-0.08em] text-transparent [-webkit-text-stroke:2px_rgba(234,88,12,0.25)] lg:text-[28rem]"
-          >
-            {String(active + 1).padStart(2, "0")}
-          </p>
+        (() => {
+          const meta = rarityMeta[current.rarity];
 
-          <div className="relative z-10 grid flex-1 items-center gap-6 px-6 md:px-10 lg:grid-cols-[1fr_1.2fr]">
-            <div key={current.name} className="animate-[fadeUp_.4s_ease-out]">
-              <h2 className="mt-4 text-5xl font-black uppercase leading-[0.9] tracking-[-0.06em] sm:text-6xl lg:text-7xl">
-                {current.name}
-              </h2>
-              <div className="mt-8 flex gap-3">
-                <button
-                  onClick={() => go(-1)}
-                  className="homepage-button homepage-button-secondary"
-                  aria-label="Previous car"
-                >
-                  ←
-                </button>
-                <button
-                  onClick={() => go(1)}
-                  className="homepage-button homepage-button-primary"
-                  aria-label="Next car"
-                >
-                  Next car →
-                </button>
-              </div>
-            </div>
-
-            <div className="relative mx-auto w-full max-w-xl">
-              <div
-                key={current.name + "-car"}
-                className={`relative -rotate-3 border-2 border-black bg-[var(--background)] p-6 transition-all duration-500 ${meta.glow} animate-[fadeUp_.5s_ease-out]`}
+          return (
+            <>
+              <p
+                aria-hidden="true"
+                className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[60%] text-[40vw] font-black leading-none tracking-[-0.08em] text-transparent [-webkit-text-stroke:2px_rgba(234,88,12,0.25)] lg:text-[28rem]"
               >
-                <div className="absolute -top-3 left-6 bg-black px-2 py-0.5 font-mono text-[10px] uppercase tracking-[0.2em] text-white">
-                  Hot Wheels
-                </div>
-                <Image
-                  src={`/images/${current.name}.jpeg`}
-                  alt={current.name}
-                  className="mx-auto h-56 w-full object-contain drop-shadow-2xl sm:h-72"
-                  width="14"
-                  height="56"
-                />
-              </div>
-            </div>
-          </div>
+                {String(active + 1).padStart(2, "0")}
+              </p>
 
-          <div className="relative z-10 h-44 shrink-0">
-            <div className="absolute inset-x-0 bottom-10 h-3 bg-orange-600" />
-            <div className="absolute inset-x-0 bottom-[2.9rem] h-px border-t-2 border-dashed border-orange-100/80" />
-
-            {items.map((item, i) => {
-              const offset = i - active;
-              if (Math.abs(offset) > 4) return null;
-              const m = rarityMeta[item.rarity];
-              const isActive = offset === 0;
-
-              return (
-                <button
-                  key={i}
-                  onClick={() => setActive(i)}
-                  aria-label={`${item.name} (${m.label})`}
-                  className="absolute bottom-10 left-1/2 origin-bottom transition-all duration-500 ease-out"
-                  style={{
-                    transform: `translateX(calc(-50% + ${offset * 110}px)) translateY(${isActive ? -18 : Math.abs(offset) * 6}px) rotate(${offset * 5}deg) scale(${isActive ? 1.15 : 0.85})`,
-                    opacity: isActive ? 1 : 0.75 - Math.abs(offset) * 0.12,
-                    zIndex: 10 - Math.abs(offset),
-                  }}
+              <div className="relative z-10 grid flex-1 items-center gap-6 px-6 md:px-10 lg:grid-cols-[1fr_1.2fr]">
+                <div
+                  key={current.name}
+                  className="animate-[fadeUp_.4s_ease-out]"
                 >
+                  <h2 className="mt-4 text-5xl font-black uppercase leading-[0.9] tracking-[-0.06em] sm:text-6xl lg:text-7xl">
+                    {current.name}
+                  </h2>
+                  <div className="mt-8 flex gap-3">
+                    <button
+                      onClick={() => go(-1)}
+                      className="homepage-button homepage-button-secondary"
+                      aria-label="Previous car"
+                    >
+                      ←
+                    </button>
+                    <button
+                      onClick={() => go(1)}
+                      className="homepage-button homepage-button-primary"
+                      aria-label="Next car"
+                    >
+                      Next car →
+                    </button>
+                  </div>
+                </div>
+
+                <div className="relative mx-auto w-full max-w-xl">
                   <div
-                    className={`flex h-20 w-24 items-center justify-center border-2 bg-[var(--background)] ${isActive ? "border-orange-600" : "border-stone-300 dark:border-white/20"}`}
+                    key={current.name + "-car"}
+                    className={`relative -rotate-3 border-2 border-black bg-[var(--background)] p-6 transition-all duration-500 ${meta.glow} animate-[fadeUp_.5s_ease-out]`}
                   >
+                    <div className="absolute -top-3 left-6 bg-black px-2 py-0.5 font-mono text-[10px] uppercase tracking-[0.2em] text-white">
+                      Hot Wheels
+                    </div>
                     <Image
-                      src={`/images/${item.name}.jpeg`}
-                      alt={item.name}
-                      className="h-14 w-20 object-contain"
+                      src={`/images/${current.name}.jpeg`}
+                      alt={current.name}
+                      className="mx-auto h-56 w-full object-contain drop-shadow-2xl sm:h-72"
                       width="14"
-                      height="20"
+                      height="56"
                     />
                   </div>
-                  <span
-                    className={`mx-auto mt-1 block h-1.5 w-10 ${item.rarity === "golden" ? "bg-amber-400" : item.rarity === "grey" ? "bg-zinc-400" : "bg-orange-600"}`}
-                  />
-                </button>
-              );
-            })}
-          </div>
-        </>
+                </div>
+              </div>
+
+              <div className="relative z-10 h-44 shrink-0">
+                <div className="absolute inset-x-0 bottom-10 h-3 bg-orange-600" />
+                <div className="absolute inset-x-0 bottom-[2.9rem] h-px border-t-2 border-dashed border-orange-100/80" />
+
+                {items.map((item, i) => {
+                  const offset = i - active;
+                  if (Math.abs(offset) > 4) return null;
+                  const m = rarityMeta[item.rarity];
+                  const isActive = offset === 0;
+
+                  return (
+                    <button
+                      key={i}
+                      onClick={() => setActive(i)}
+                      aria-label={`${item.name} (${m.label})`}
+                      className="absolute bottom-10 left-1/2 origin-bottom transition-all duration-500 ease-out"
+                      style={{
+                        transform: `translateX(calc(-50% + ${offset * 110}px)) translateY(${isActive ? -18 : Math.abs(offset) * 6}px) rotate(${offset * 5}deg) scale(${isActive ? 1.15 : 0.85})`,
+                        opacity: isActive ? 1 : 0.75 - Math.abs(offset) * 0.12,
+                        zIndex: 10 - Math.abs(offset),
+                      }}
+                    >
+                      <div
+                        className={`flex h-20 w-24 items-center justify-center border-2 bg-[var(--background)] ${isActive ? "border-orange-600" : "border-stone-300 dark:border-white/20"}`}
+                      >
+                        <Image
+                          src={`/images/${item.name}.jpeg`}
+                          alt={item.name}
+                          className="h-14 w-20 object-contain"
+                          width="14"
+                          height="20"
+                        />
+                      </div>
+                      <span
+                        className={`mx-auto mt-1 block h-1.5 w-10 ${item.rarity === "golden" ? "bg-amber-400" : item.rarity === "grey" ? "bg-zinc-400" : "bg-orange-600"}`}
+                      />
+                    </button>
+                  );
+                })}
+              </div>
+            </>
+          );
+        })()
       )}
 
       <style>{`@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}`}</style>
