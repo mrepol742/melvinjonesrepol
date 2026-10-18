@@ -16,6 +16,7 @@ import { featuredEngineeringQuestions } from "@/lib/faq";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 import Blog from "./components/Blog";
 import Investing from "./components/Investing";
+import IExistOutsideGithub from "./components/IExistOutsideGithub";
 
 export const revalidate = 10800;
 
@@ -242,6 +243,17 @@ export default async function Home({
             <p>{t("certifications_description")}</p>
           </div>
           <Certificate />
+        </section>
+
+        <section className="homepage-section pb-24">
+          <div className="homepage-section-heading">
+            <h2>I Exist Outside GitHub.</h2>
+            <p>
+              Apparently, theres more to life than shipping code. Heres where
+              else you can find me.
+            </p>
+          </div>
+          <IExistOutsideGithub />
         </section>
 
         <section className="homepage-section pb-24">
