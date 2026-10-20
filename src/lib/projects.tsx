@@ -1,24 +1,18 @@
 const Projects = [
   {
-    title: "Digital Tools Marketplace & Automation Platform",
-    key: "digital_tools_marketplace",
+    title: "Veyra",
+    key: "project_veyra",
     description:
       "A multi-tenant platform for discovering, testing, publishing, and managing digital tools, workflows, templates, and downloadable resources.",
     ai_description:
       "A multi-tenant marketplace and SaaS platform that enables creators to publish and manage digital tools, workflows, templates, and supporting resources. It provides a public, SEO-focused marketplace alongside an authenticated application for creators, customers, and administrators. Users can discover compatible tools, review setup details, and test supported resources in an interactive playground. The platform also includes a website-trained chat-widget solution, allowing customers to train assistants from approved website content, deploy widgets to verified domains, and manage conversations through a human-support inbox. It is designed for secure tenant isolation, scalable content delivery, subscription billing, moderation, and long-term marketplace growth.",
     type: "personal",
     featured: true,
-    technology: [
-      "Laravel",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "AWS S3",
-    ],
+    technology: ["Laravel", "React", "TypeScript", "Tailwind CSS", "AWS S3"],
   },
   {
-    title: "Subscription-Based Digital Music Platform",
-    key: "digital_music_platform",
+    title: "Orynth",
+    key: "project_orynth",
     description:
       "A centralized digital music platform offering curated remix content through a subscription-based access model managed by administrators.",
     ai_description:
@@ -28,8 +22,8 @@ const Projects = [
     technology: ["Laravel", "Blade", "Bootstrap", "Cloudflare R2"],
   },
   {
-    title: "Enterprise Asset Management System",
-    key: "enterprise_ams",
+    title: "Caldris",
+    key: "project_caldris",
     description:
       "An in-progress enterprise asset management platform with role-based access control, asset tracking, and assignment workflows, integrated with AWS Cognito for authentication and SSO.",
     ai_description:
@@ -39,8 +33,8 @@ const Projects = [
     technology: ["Laravel", "Angular", "Tailwind CSS", "AWS Cognito"],
   },
   {
-    title: "Digital Music Marketplace",
-    key: "digital_music_marketplace",
+    title: "Zevora",
+    key: "project_zevora",
     description:
       "A web-based e-commerce platform that enables creators and vendors to distribute digital music content while allowing users to discover trending remixes and featured tracks.",
     ai_description:
@@ -50,8 +44,8 @@ const Projects = [
     technology: ["Laravel", "Blade", "Bootstrap", "AWS S3"],
   },
   {
-    title: "Payment & Order Management Integration",
-    key: "payment_order_management",
+    title: "Nuvex",
+    key: "project_nuvex",
     description:
       "A client-focused backend integration project involving payment processing implementation and structured database architecture for order management workflows.",
     ai_description:
@@ -61,8 +55,8 @@ const Projects = [
     technology: ["PayPal API"],
   },
   {
-    title: "Restaurant Ordering Platform",
-    key: "restaurant_ordering",
+    title: "Talven",
+    key: "project_talven",
     description:
       "An Android-based restaurant ordering application connected to a centralized backend system for streamlined menu management and customer order processing.",
     ai_description:
@@ -72,8 +66,8 @@ const Projects = [
     technology: ["Java", "Express.js"],
   },
   {
-    title: "Learning & Creative Platform",
-    key: "learning_creative_platform",
+    title: "Elaris",
+    key: "project_elaris",
     description:
       "An Android educational application designed to help users learn creative crafting techniques through guided tutorials, video lessons, project tracking, and interactive note-taking features.",
     ai_description:
@@ -83,14 +77,13 @@ const Projects = [
     technology: ["Java"],
   },
   {
-    title: "Ulisha Store AI Laravel",
-    key: "ulisha_store_laravel",
+    title: "Veltrix",
+    key: "project_veltrix",
     description:
-      "A modern and efficient AI-powered e-commerce solutions tailored for small to medium-sized businesses specifically built with Laravel, enabling seamless setup and cost effective web hosting.",
+      "A modern and efficient AI-powered e-commerce platform tailored for small to medium-sized businesses, specifically built with Laravel, enabling seamless setup and cost-effective web hosting.",
     ai_description:
       "Ulisha Store is a comprehensive AI-powered e-commerce platform engineered with Laravel and React. Designed specifically for SMBs, it offers a cost-effective, easily deployable architecture that simplifies inventory management, order processing, and customer interactions without the overhead of enterprise-level software.",
     type: "venture",
-    link: "https://ulishastore.com",
     featured: true,
     technology: ["Laravel", "Blade", "React", "Tailwind CSS"],
   },
