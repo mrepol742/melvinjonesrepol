@@ -82,7 +82,7 @@ const legalLinks = [
     description:
       "Review uptime, monitoring, security, compliance, and support commitments for client systems.",
     category: "Service",
-    version: "v2.0",
+    version: "v2.1",
   },
   {
     href: "/legal/licenses/Apache-2.0.md",

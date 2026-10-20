@@ -69,9 +69,8 @@ export default function ServiceLevelAgreement() {
               <p className="text-xs uppercase tracking-widest opacity-50 mb-1">
                 Last Updated
               </p>
-              <p className="text-sm font-medium">October 1, 2026</p>
+              <p className="text-sm font-medium">October 21, 2026</p>
             </div>
-
             <p>
               This Service Level Agreement (“SLA”) governs development, hosting,
               monitoring, maintenance, and support services provided by Melvin
@@ -80,14 +79,12 @@ export default function ServiceLevelAgreement() {
               identified in an accepted proposal, statement of work, order,
               invoice, or other written project agreement (“Service Order”).
             </p>
-
             <p>
               A Service Order may add to or change this SLA. If the documents
               conflict, the Service Order controls for project-specific scope,
               pricing, support, compliance, and service levels; this SLA
               controls for all other matters.
             </p>
-
             <div>
               <h2 className="text-2xl font-semibold">1. Covered Services</h2>
               <p className="mt-3">Services may include:</p>
@@ -112,7 +109,6 @@ export default function ServiceLevelAgreement() {
                 hosting, maintenance, or support Service Order.
               </p>
             </div>
-
             <div>
               <h2 className="text-2xl font-semibold">
                 2. Service Availability Commitment
@@ -135,7 +131,6 @@ export default function ServiceLevelAgreement() {
                 agreed core production function is materially unavailable.
               </p>
             </div>
-
             <div>
               <h2 className="text-2xl font-semibold">
                 3. Monitoring and Status Information
@@ -172,7 +167,6 @@ export default function ServiceLevelAgreement() {
                 with server logs, provider records, and other reliable evidence.
               </p>
             </div>
-
             <div>
               <h2 className="text-2xl font-semibold">
                 4. Availability Exclusions
@@ -209,7 +203,6 @@ export default function ServiceLevelAgreement() {
                 </li>
               </ul>
             </div>
-
             <div>
               <h2 className="text-2xl font-semibold">
                 5. Incidents and Client Communications
@@ -239,7 +232,6 @@ export default function ServiceLevelAgreement() {
                 </li>
               </ul>
             </div>
-
             <div>
               <h2 className="text-2xl font-semibold">
                 6. Security and SOC 2-Aligned Compliance
@@ -266,7 +258,6 @@ export default function ServiceLevelAgreement() {
                 applicable auditor&apos;s report.
               </p>
             </div>
-
             <div>
               <h2 className="text-2xl font-semibold">
                 7. GDPR, HIPAA, and Project-Specific Compliance
@@ -296,7 +287,6 @@ export default function ServiceLevelAgreement() {
                 alone satisfy every obligation applicable to the Client.
               </p>
             </div>
-
             <div>
               <h2 className="text-2xl font-semibold">
                 8. Data Processing and Observability Providers
@@ -332,7 +322,6 @@ export default function ServiceLevelAgreement() {
                 , including their applicable privacy and data-processing terms.
               </p>
             </div>
-
             <div>
               <h2 className="text-2xl font-semibold">
                 9. Client Responsibilities
@@ -359,7 +348,6 @@ export default function ServiceLevelAgreement() {
                 </li>
               </ul>
             </div>
-
             <div>
               <h2 className="text-2xl font-semibold">
                 10. Development, Acceptance, and Changes
@@ -373,7 +361,6 @@ export default function ServiceLevelAgreement() {
                 written change order, revised fee, or revised schedule.
               </p>
             </div>
-
             <div>
               <h2 className="text-2xl font-semibold">
                 11. Fees, Suspension, and Termination
@@ -389,7 +376,6 @@ export default function ServiceLevelAgreement() {
                 remain effective.
               </p>
             </div>
-
             <div>
               <h2 className="text-2xl font-semibold">
                 12. Ownership and Confidentiality
@@ -405,10 +391,42 @@ export default function ServiceLevelAgreement() {
                 or display a Client project without permission.
               </p>
             </div>
+            <div>
+              <h2 className="text-2xl font-semibold">
+                13. Project References and Public Portfolio Use
+              </h2>
+              <p className="mt-3">
+                For portfolio, résumé, CV, and professional experience
+                documentation purposes, the Client agrees that the Developer may
+                refer to completed or publicly released projects using a
+                descriptive or pseudonymous project name or alias instead of the
+                Client’s actual name, brand, or project name. The Developer may
+                publish a brief, non-confidential project description, publicly
+                accessible project URL where appropriate, and the technologies,
+                frameworks, and tools used in the project.
+              </p>
+              <p className="mt-3">
+                Such references must be limited to the project alias,
+                description, URL, and technologies used. They must not disclose
+                the Client’s confidential information, source code, credentials,
+                internal architecture, proprietary business processes, personal
+                data, or other non-public information. The Developer must not
+                imply the Client’s endorsement or disclose the Client’s identity
+                through these references without separate written permission.
+              </p>
+              <p className="mt-3">
+                This permission applies to professional résumés, CVs,
+                portfolios, personal websites, and professional profiles, and
+                survives completion or termination of the applicable Service
+                Order, subject to the confidentiality obligations in this SLA.
+                Any additional disclosure or use outside these permitted
+                categories requires the Client’s prior written consent.
+              </p>
+            </div>
 
             <div>
               <h2 className="text-2xl font-semibold">
-                13. Warranties and Liability
+                14. Warranties and Liability
               </h2>
               <p className="mt-3">
                 We warrant that professional services will be performed with
@@ -428,10 +446,9 @@ export default function ServiceLevelAgreement() {
                 be unlawful or to liability that cannot legally be limited.
               </p>
             </div>
-
             <div>
               <h2 className="text-2xl font-semibold">
-                14. Governing Law and Changes
+                15. Governing Law and Changes
               </h2>
               <p className="mt-3">
                 This SLA is governed by the laws of the Republic of the
@@ -442,9 +459,8 @@ export default function ServiceLevelAgreement() {
                 Service Order.
               </p>
             </div>
-
             <div>
-              <h2 className="text-2xl font-semibold">15. Contact</h2>
+              <h2 className="text-2xl font-semibold">16. Contact</h2>
               <p className="mt-3">
                 Questions and incident reports may be sent through the{" "}
                 <Link
