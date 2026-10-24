@@ -1,5 +1,18 @@
 const Projects = [
   {
+    title: "WISP",
+    key: "wisp",
+    description:
+      "Publicly available disease statistics from reputable sources, each shown with its source, definition, and reporting period",
+    ai_description:
+      "Publicly available disease statistics from reputable sources, each shown with its source, definition, and reporting period",
+    type: "community",
+    link: "https://wisp.hallofcodes.org",
+    repo: "https://github.com/hallofcodes/wisp",
+    cover: "/images/wisp.png",
+    technology: ["Next.js", "TypeScript", "Tailwind CSS"],
+  },
+  {
     title: "Veyra",
     key: "project_veyra",
     description:
@@ -111,6 +124,7 @@ const Projects = [
     type: "community",
     link: "https://devpulse.hallofcodes.org",
     repo: "https://github.com/hallofcodes/devpulse",
+    cover: "/images/devpulse.png",
     featured: false,
     technology: ["Next.js", "TypeScript", "Tailwind CSS"],
   },
@@ -275,6 +289,7 @@ const Projects = [
       "Project Webvium is a fully-fledged Android web browser developed natively in Java. It was engineered from the ground up to challenge mainstream browsers by offering a hyper-minimalist footprint, aggressive privacy controls, and rapid page rendering. It represents a deep dive into Androids WebView architecture and efficient memory management on mobile devices.",
     type: "personal",
     link: "https://www.webvium.com/browser",
+    cover: "/images/webvium-banner.png",
     featured: true,
     technology: ["Java"],
   },
