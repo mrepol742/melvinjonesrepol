@@ -69,7 +69,7 @@ export default function Terms() {
               <p className="text-xs uppercase tracking-widest opacity-50 mb-1">
                 Last Updated
               </p>
-              <p className="text-sm font-medium">October 1, 2026</p>
+              <p className="text-sm font-medium">October 26, 2026</p>
             </div>
 
             <p>
@@ -248,13 +248,14 @@ export default function Terms() {
                 <p className="mt-3">
                   Some Services integrate or interact with third-party providers
                   such as Resend, Cloudflare, Google, Uptodown, Trustpilot,
-                  Algolia, Vercel, GitHub, Microsoft, WakaTime, Sentry,
-                  UptimeRobot, and other third-party services. Sentry may provide
-                  production or staging observability, while UptimeRobot backs
-                  status.melvinjonesrepol.com and performs project availability
-                  monitoring. Those services are governed by their own terms and
-                  policies. To the extent permitted by law, we are not responsible
-                  for their independent practices, availability, or content.
+                  AISKillHub.dev Vercel, GitHub, Microsoft, WakaTime, Sentry,
+                  UptimeRobot, and other third-party services. Sentry may
+                  provide production or staging observability, while UptimeRobot
+                  backs status.melvinjonesrepol.com and performs project
+                  availability monitoring. Those services are governed by their
+                  own terms and policies. To the extent permitted by law, we are
+                  not responsible for their independent practices, availability,
+                  or content.
                 </p>
               </div>
 
