@@ -3,6 +3,7 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const ContentSecurityPolicy = `
   default-src 'self';
+
   base-uri 'self';
   object-src 'none';
 
@@ -10,20 +11,15 @@ const ContentSecurityPolicy = `
     'self'
     'unsafe-inline'
     'unsafe-eval'
-    https://ep2.adtrafficquality.google
-    https://fundingchoicesmessages.google.com
     https://www.googletagmanager.com
     https://www.google-analytics.com
-    https://pagead2.googlesyndication.com
-    https://googleads.g.doubleclick.net
     https://*.trustpilot.com
     https://cdn.trustpilot.net
     https://www.youtube.com
     https://www.google.com
     https://www.gstatic.com
-    https://app.livechatai.com
-    https://unpkg.com
-    https://*.ytimg.com;
+    https://*.ytimg.com
+    https://app.aiskillhub.dev;
 
   style-src
     'self'
@@ -36,7 +32,6 @@ const ContentSecurityPolicy = `
     blob:
     https:
     https://www.google-analytics.com
-    https://*.g.doubleclick.net
     https://*.steamstatic.com
     https://cdn.cloudflare.steamstatic.com
     https://*.ytimg.com
@@ -49,46 +44,31 @@ const ContentSecurityPolicy = `
 
   connect-src
     'self'
-    https://ep1.adtrafficquality.google
-    https://pagead2.googlesyndication.com
     https://analytics.google.com
     https://www.google.com
     https://www.google.com.ph
     https://www.google-analytics.com
     https://region1.google-analytics.com
-    https://stats.g.doubleclick.net
     https://*.trustpilot.com
     https://cdn.cloudflare.steamstatic.com
     https://*.steamstatic.com
-    https://app.livechatai.com
-    https://unpkg.com
-    https://cors.io
     https://www.youtube.com
-    https://ipapi.co
     https://stats.uptimerobot.com
     https://*.ytimg.com
     https://blog.melvinjonesrepol.com;
 
   frame-src
     'self'
-    https://ep2.adtrafficquality.google
     https://www.google.com
     https://www.google.com.ph
-    https://td.doubleclick.net
-    https://googleads.g.doubleclick.net
     https://www.youtube.com
     https://www.youtube-nocookie.com
     https://recaptcha.google.com
-    https://app.livechatai.com
     https://stats.uptimerobot.com
-    https://*.trustpilot.com;
+    https://*.trustpilot.com
+    https://app.aiskillhub.dev;
 
   worker-src 'self' blob:;
-  child-src 'self' blob:;
-
-  form-action 'self';
-
-  upgrade-insecure-requests;
 `.replace(/\n/g, "");
 
 const nextConfig: NextConfig = {

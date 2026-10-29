@@ -1,13 +1,8 @@
-import AdBanner from "@/components/common/AdBanner";
-
 export default function ProjectLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const env = process.env.NEXT_PUBLIC_NODE_ENV || "production";
-  const isProduction = env === "production";
-
   return (
     <div className="project-detail-theme">
       <style>{`
@@ -27,7 +22,7 @@ export default function ProjectLayout({
         .project-detail-theme .text-\\[\\#FFB020\\], .project-detail-theme .group:hover .group-hover\\:text-\\[\\#FFB020\\] { color: #c2410c !important; }
         .project-detail-theme .bg-\\[\\#FFB020\\] { background: #ea580c !important; color: #fff !important; }
       `}</style>
-      {/*{isProduction && <AdBanner />}*/}
+
       {children}
     </div>
   );

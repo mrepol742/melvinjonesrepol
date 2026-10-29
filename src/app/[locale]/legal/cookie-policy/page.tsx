@@ -69,7 +69,7 @@ export default function CookiePolicy() {
               <p className="text-xs uppercase tracking-widest opacity-50 mb-1">
                 Last Updated
               </p>
-              <p className="text-sm font-medium">October 1, 2026</p>
+              <p className="text-sm font-medium">October 26, 2026</p>
             </div>
 
             <p>
@@ -180,6 +180,16 @@ export default function CookiePolicy() {
                     className="underline text-orange-600 dark:text-orange-400"
                   >
                     Trustpilot
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://aiskillhub.dev/legal/privacy-policy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline text-orange-600 dark:text-orange-400"
+                  >
+                    AISKillHub.dev
                   </a>
                 </li>
                 <li>

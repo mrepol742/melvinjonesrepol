@@ -70,7 +70,7 @@ export default function Privacy() {
               <p className="text-xs uppercase tracking-widest opacity-50 mb-1">
                 Last Updated
               </p>
-              <p className="text-sm font-medium">October 1, 2026</p>
+              <p className="text-sm font-medium">October 26, 2026</p>
             </div>
 
             <p>
@@ -253,8 +253,8 @@ export default function Privacy() {
                   and interaction data to provide on-site search.
                 </li>
                 <li>
-                  <strong>Widgets:</strong> The Trustpilot widget may collect IP
-                  address and browsing information.
+                  <strong>Widgets:</strong> The Trustpilot & AISKillHub.dev
+                  widget may collect IP address and browsing information.
                 </li>
                 <li>
                   <strong>Hosting logs:</strong> Vercel processes IP and request
@@ -349,6 +349,10 @@ export default function Privacy() {
                 <li>
                   We do not sell or rent personal information collected through
                   the Webvium website.
+                </li>
+                <li>
+                  The AISKillHub.dev widget may collect IP address and browsing
+                  information.
                 </li>
               </ul>
 
@@ -615,22 +619,22 @@ export default function Privacy() {
                 </li>
                 <li>
                   <a
-                    href="https://www.algolia.com/policies/privacy/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline text-orange-600 dark:text-orange-400"
-                  >
-                    Algolia Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a
                     href="https://legal.trustpilot.com/privacy-policy"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="underline text-orange-600 dark:text-orange-400"
                   >
                     Trustpilot Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://aiskillhub.dev/legal/privacy-policy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline text-orange-600 dark:text-orange-400"
+                  >
+                    AISKillHub.dev Privacy Policy
                   </a>
                 </li>
                 <li>

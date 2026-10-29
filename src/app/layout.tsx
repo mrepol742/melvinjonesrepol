@@ -8,9 +8,7 @@ import AOSWrapper from "@/components/common/AOSWrapper";
 import NextTopLoader from "nextjs-toploader";
 import GoogleAnalytics from "@/components/common/metadata/GoogleAnalytics";
 import ServiceWorkerRegister from "@/components/common/ServiceWorkerRegister";
-import BrowserCheck from "@/components/common/BrowserCheck";
 import { ConsentProvider } from "@/context/consent";
-import LivechatAI from "@/components/common/LivechatAI";
 import CookieBanner from "@/components/common/PrivacyPolicyPrompt";
 import "@mrepol742/next-kit/styles.css";
 
@@ -129,27 +127,14 @@ export default async function RootLayout({
       <head>
         <meta name="hostname" content="www.melvinjonesrepol.com" />
         <NortonSafeweb />
-        {/*<GoogleAdsense />*/}
-        {/*<script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&window.matchMedia("(prefers-color-scheme: dark)").matches)){document.documentElement.classList.add("dark")}}catch(e){}})()`,
-          }}
-        />*/}
+        <script src="https://app.aiskillhub.dev/widget.js" data-widget="wgt_ducqv2faayu6snomucoy7tjz" async></script>
       </head>
 
       <body className="antialiased min-h-screen flex flex-col background-grid">
         <ConsentProvider>
-          {/* <DoorEffect /> */}
-          {/* <MouseCodeTrail /> */}
           <CookieBanner />
           <AOSWrapper />
           <NextTopLoader showSpinner={false} color="#ea580c" />
-
-          {/*<div className="background-gloss">
-            <div className="gloss-circle circle1"></div>
-            <div className="gloss-circle circle2"></div>
-            <div className="gloss-circle circle3"></div>
-          </div>*/}
 
           <main>{children}</main>
 
@@ -157,11 +142,8 @@ export default async function RootLayout({
             <>
               <GoogleAnalytics />
               <ServiceWorkerRegister />
-              {/* <BrowserCheck /> */}
             </>
           )}
-
-          <LivechatAI />
         </ConsentProvider>
       </body>
     </html>
