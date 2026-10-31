@@ -44,6 +44,7 @@ export default function Footer() {
   ];
 
   const projectLinks = [
+    { href: "https://www.webvium.com", label: t("footer_webvium_browser") },
     {
       href: "https://web-designs.melvinjonesrepol.com",
       label: "Web Design",
@@ -54,17 +55,10 @@ export default function Footer() {
       label: t("footer_wakatime_stats"),
       external: true,
     },
-    { href: "https://www.webvium.com", label: t("footer_webvium_browser") },
     { href: "/protocol-discussion-platform", label: t("footer_pdp") },
     { href: "/axleshift-freight-management", label: t("footer_afm") },
     { href: "/point-of-sale", label: t("footer_pos") },
     { href: "/canis-agent", label: t("footer_canis_chatbot") },
-    {
-      href: "https://www.hallofcodes.org",
-      label: t("footer_hoc"),
-      external: true,
-    },
-    { href: "/sitemap.xml", label: t("footer_sitemap") },
   ];
 
   const moreLinks = [
@@ -76,6 +70,16 @@ export default function Footer() {
     {
       href: "https://shrtly.melvinjonesrepol.com",
       label: t("footer_shortlink"),
+      external: true,
+    },
+    {
+      href: "https://www.hallofcodes.org",
+      label: t("footer_hoc"),
+      external: true,
+    },
+    {
+      href: "https://aiskillhub.dev",
+      label: "AISkillHub",
       external: true,
     },
     {
