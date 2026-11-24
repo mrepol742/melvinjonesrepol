@@ -13,7 +13,7 @@ export async function generateMetadata({
 
   const title = "Privacy Policy - Melvin Jones Repol & Webvium";
   const description =
-    "This Privacy Policy describes how Melvin Jones Repol handles information in connection with melvinjonesrepol.com, webvium.com, Webvium Browser, Chrome extensions, and other related projects and services.";
+    "This Privacy Policy describes how Melvin Jones Repol handles information in connection with melvinjonesrepol.com, webvium.com, Webvium Browser, Webvium VPN, Chrome extensions, and other related projects and services.";
 
   return {
     title,
@@ -70,7 +70,7 @@ export default function Privacy() {
               <p className="text-xs uppercase tracking-widest opacity-50 mb-1">
                 Last Updated
               </p>
-              <p className="text-sm font-medium">October 26, 2026</p>
+              <p className="text-sm font-medium">November 25, 2026</p>
             </div>
 
             <p>
@@ -153,10 +153,7 @@ export default function Privacy() {
                   <Link href="#webvium-browser">Webvium Browser (Android)</Link>
                 </li>
                 <li>
-                  <Link href="#discontinued-legacy-webvium-services">
-                    Discontinued/Legacy Webvium Services (Beta, Dev, VPN,
-                    Search)
-                  </Link>
+                  <Link href="#webvium-vpn">Webvium VPN (Android)</Link>
                 </li>
                 <li>
                   <Link href="#chrome-extensions">
@@ -402,37 +399,54 @@ export default function Privacy() {
                   version, and optional crash logs.
                 </li>
                 <li>
-                  <strong>Update checks:</strong> The app may check a public
-                  GitHub repository for updates. GitHub may receive IP/request
-                  metadata.
-                </li>
-                <li>
                   <strong>Third-party sites:</strong> Websites you visit have
                   their own privacy policies that we do not control.
                 </li>
               </ul>
 
-              <h3
-                className="text-xl font-semibold mt-6"
-                id="discontinued-legacy-webvium-services"
-              >
-                Discontinued/Legacy Webvium Services
+              <h3 className="text-xl font-semibold mt-6" id="webvium-vpn">
+                Webvium VPN (Android)
               </h3>
               <p className="mt-2">
-                The following services are no longer maintained or supported:
+                Webvium VPN is designed with privacy in mind.
               </p>
               <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
                 <li>
-                  <strong>Webvium VPN:</strong> Discontinued. Use at your own
-                  risk; no updates or support are provided.
+                  We do not collect personal data, browsing history or VPN
+                  activity.
+                </li>
+                <li>We do not use analytics, telemetry, or tracking.</li>
+                <li>
+                  <strong>Proxy sources:</strong> Public proxy lists may be
+                  retrieved from ProxyScrape and publicly available GitHub
+                  repositories.
                 </li>
                 <li>
-                  <strong>Webvium Beta & Dev:</strong> Discontinued. The stable
-                  version now follows a rolling update model.
+                  <strong>Custom configurations:</strong> You can add your own
+                  proxy servers and OpenVPN configuration files. These
+                  configurations are stored locally on your device and are not
+                  uploaded to Webvium servers.
                 </li>
                 <li>
-                  <strong>Webvium Search:</strong> Discontinued in favor of
-                  built-in search functionality.
+                  <strong>Local data:</strong> VPN configurations, proxy
+                  settings, and related preferences are stored on your device.
+                </li>
+                <li>
+                  <strong>Network activity:</strong> Your internet traffic is
+                  routed through the VPN or proxy server you select. The
+                  operator of that server may be able to observe or process
+                  certain connection information or traffic.
+                </li>
+                <li>
+                  <strong>Device permissions:</strong> Webvium VPN uses network
+                  access and foreground service permissions to establish and
+                  maintain VPN connections. Notification permissions may be used
+                  to display VPN connection status.
+                </li>
+                <li>
+                  <strong>Send Report:</strong> If you send feedback, we may
+                  receive your optional email address, message, device info, app
+                  version, and optional crash logs.
                 </li>
               </ul>
 
@@ -814,7 +828,7 @@ export default function Privacy() {
             </div>
           </div>
 
-          <LegalFooter date="October 2026" />
+          <LegalFooter date="November 2026" />
         </div>
       </section>
     </>

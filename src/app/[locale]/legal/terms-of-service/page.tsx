@@ -69,7 +69,7 @@ export default function Terms() {
               <p className="text-xs uppercase tracking-widest opacity-50 mb-1">
                 Last Updated
               </p>
-              <p className="text-sm font-medium">October 26, 2026</p>
+              <p className="text-sm font-medium">November 25, 2026</p>
             </div>
 
             <p>
@@ -95,15 +95,12 @@ export default function Terms() {
                   <li>Web Designs (web-designs.melvinjonesrepol.com)</li>
                   <li>Shrtly (shrtly.melvinjonesrepol.com)</li>
                   <li>Webvium Browser (Android)</li>
+                  <li>Webvium VPN (Android)</li>
                   <li>Floating Console (Browser Extension)</li>
                   <li>Disable Ctrl+Shift+C (Browser Extension)</li>
                   <li>Awesome New Tab (Browser Extension)</li>
                   <li>Browser Storage Inspector (Browser Extension)</li>
                   <li>Webvium Adblocker (Browser Extension)</li>
-                  <li>
-                    Discontinued/Legacy Webvium Services (Beta, Dev, VPN,
-                    Search)
-                  </li>
                   <li>
                     Any related applications, tools, websites, or services
                     operated or published under the Melvin Jones Repol or
@@ -307,21 +304,7 @@ export default function Terms() {
 
               <div>
                 <h2 className="text-2xl font-semibold">
-                  11. Discontinued/Legacy Services
-                </h2>
-                <p className="mt-3">
-                  Discontinued services, including Webvium VPN, Beta/Dev builds,
-                  and Webvium Search, are no longer actively maintained or
-                  supported. Such services are provided “as is” and “as
-                  available,” without guarantees of updates, availability,
-                  compatibility, security, or continued operation. Use of
-                  discontinued services is at your own risk.
-                </p>
-              </div>
-
-              <div>
-                <h2 className="text-2xl font-semibold">
-                  12. Disclaimer of Warranties
+                  11. Disclaimer of Warranties
                 </h2>
                 <p className="mt-3">
                   The Services are provided “as is” and “as available.” To the
@@ -334,7 +317,7 @@ export default function Terms() {
 
               <div>
                 <h2 className="text-2xl font-semibold">
-                  13. Limitation of Liability
+                  12. Limitation of Liability
                 </h2>
                 <p className="mt-3">
                   To the maximum extent permitted by law, Melvin Jones Repol
@@ -349,7 +332,7 @@ export default function Terms() {
 
               <div>
                 <h2 className="text-2xl font-semibold">
-                  14. Suspension and Termination
+                  13. Suspension and Termination
                 </h2>
                 <p className="mt-3">
                   We may restrict or terminate access to a Service where
@@ -363,7 +346,7 @@ export default function Terms() {
 
               <div>
                 <h2 className="text-2xl font-semibold">
-                  15. Governing Law and Mandatory Rights
+                  14. Governing Law and Mandatory Rights
                 </h2>
                 <p className="mt-3">
                   These Terms are governed by the laws of the Republic of the
@@ -387,7 +370,7 @@ export default function Terms() {
 
               <div>
                 <h2 className="text-2xl font-semibold">
-                  16. Changes to These Terms
+                  15. Changes to These Terms
                 </h2>
                 <p className="mt-3">
                   We may update these Terms from time to time. Updated Terms
@@ -400,7 +383,7 @@ export default function Terms() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-semibold">17. Contact</h2>
+                <h2 className="text-2xl font-semibold">16. Contact</h2>
                 <p className="mt-3">
                   Questions about these Terms of Service can be sent via the{" "}
                   <Link
@@ -415,7 +398,7 @@ export default function Terms() {
             </div>
           </div>
 
-          <LegalFooter date="October 2026" />
+          <LegalFooter date="November 2026" />
         </div>
       </section>
     </>
