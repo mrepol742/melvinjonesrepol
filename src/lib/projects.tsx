@@ -274,11 +274,10 @@ const Projects = [
     ai_description:
       "Webvium VPN is a native Android application engineered in Java. It provides users with a secure, encrypted tunnel for internet traffic, emphasizing strict privacy protocols and minimal battery consumption. It strips away the complex configurations of standard VPN clients in favor of a one-tap connection model.",
     type: "personal",
-    link: "https://www.webvium.com",
-    featured: false,
+    link: "https://www.webvium.com/vpn",
+    featured: true,
     technology: ["Java"],
     cover: "/images/webviumvpn-banner.png",
-    archived: true,
   },
   {
     title: "Webvium Browser",
